@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState } from "react";
 import questionData from "../data/questions.json";
 import type { Level, OptionLabel, Question, SubjectCode } from "../data/types";
 import { loadProgress, saveProgress, type Progress } from "../lib/progress";
-import { CollectionProgress } from "./CollectionProgress";
 import { QuestionCard } from "./QuestionCard";
 
 const questions = questionData as Question[];
@@ -99,11 +98,6 @@ export function QuizApp() {
             兩科試題，作答後會顯示答案與本站自編詳解初稿。
           </p>
         </div>
-        <div className="status-card">
-          <span>題庫狀態</span>
-          <strong>114 年第四次初級已匯入</strong>
-          <p>官方題目 {questions.length} 題・詳解初稿 {questions.length} 題</p>
-        </div>
       </header>
 
       <section className="dashboard" aria-label="作答統計">
@@ -120,8 +114,6 @@ export function QuizApp() {
           <strong>{levelLabels[level]}</strong>
         </div>
       </section>
-
-      <CollectionProgress />
 
       <section className="workspace">
         <aside className="filters">
