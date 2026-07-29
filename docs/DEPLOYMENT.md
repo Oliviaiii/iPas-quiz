@@ -2,6 +2,14 @@
 
 最後更新：2026-07-29
 
+## 目前環境
+
+- GitHub repository：https://github.com/Oliviaiii/iPas-quiz
+- GitHub Pages：https://oliviaiii.github.io/iPas-quiz/
+- Pages 來源：GitHub Actions
+- Cloudflare Web Analytics 網站：`oliviaiii.github.io`
+- 專案路徑：`/iPas-quiz/`
+
 ## 1. 部署方式
 
 本專案使用 Next.js 靜態輸出：

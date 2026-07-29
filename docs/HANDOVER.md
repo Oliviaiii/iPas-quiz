@@ -67,5 +67,9 @@
 - 已複核詳解：示範題 4 題；此狀態只代表介面測試資料。
 - 來源清冊更新：尚未開始。
 - 執行測試：資料測試、ESLint、Next.js 靜態建置與瀏覽器作答流程。
+- GitHub repository：https://github.com/Oliviaiii/iPas-quiz
+- 正式網站：https://oliviaiii.github.io/iPas-quiz/
+- 流量分析：Cloudflare Web Analytics 的 `oliviaiii.github.io` 網站，查看
+  `/iPas-quiz/` 路徑。
 - 未解問題：待建立官方來源清冊並逐批匯入正式試題。
 - 下一步：盤點官方試卷，建立 `official-exam`／`official-sample` 資料。

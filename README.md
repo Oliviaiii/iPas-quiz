@@ -3,6 +3,9 @@
 本專案預計製作一套可在瀏覽器使用的簡易刷題工具，範圍只包含經濟部
 iPAS「AI 應用規劃師」初級與中級。
 
+- 線上網站：https://oliviaiii.github.io/iPas-quiz/
+- GitHub：https://github.com/Oliviaiii/iPas-quiz
+
 目前已完成可部署的第一版基礎架構，但尚未開始匯入官方題目，也尚未宣稱任何
 年度或科目的題庫已完整收錄。
 
