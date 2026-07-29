@@ -31,7 +31,11 @@
 | `retrievedAt` | 本次取得或確認日期 |
 | `expectedCount` | 官方文件中的題目數 |
 | `importedCount` | 已匯入題數 |
-| `status` | `discovered`、`imported`、`verified`、`blocked` |
+| `availability` | `published`、`not-found`、`scheduled`、`superseded` |
+| `inclusion` | `target` 或只作版本查核的 `audit-only` |
+| `answerVerifiedCount` | 已逐題對照官方答案的題數 |
+| `explanationDraftCount` | 已有自編詳解初稿的題數 |
+| `explanationReviewedCount` | 詳解已完成人工複核的題數 |
 | `notes` | 勘誤、重複文件、版面異常或其他說明 |
 
 如果官方網站同一文件有多個網址，指定一個主要網址，其他網址放在別名清單；
@@ -114,3 +118,5 @@
 5. 執行完整性測試。
 6. 更新題庫盤點截止日期與進度數字。
 
+完整場次清單及當前數字見
+[AI 應用規劃師題源與匯入進度](SOURCE_INVENTORY.md)。

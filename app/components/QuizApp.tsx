@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import questionData from "../data/demo-questions.json";
 import type { Level, OptionLabel, Question, SubjectCode } from "../data/types";
 import { loadProgress, saveProgress, type Progress } from "../lib/progress";
+import { CollectionProgress } from "./CollectionProgress";
 import { QuestionCard } from "./QuestionCard";
 
 const questions = questionData as Question[];
@@ -109,6 +110,8 @@ export function QuizApp() {
           <strong>{levelLabels[level]}</strong>
         </div>
       </section>
+
+      <CollectionProgress />
 
       <section className="workspace">
         <aside className="filters">

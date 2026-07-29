@@ -14,3 +14,5 @@ npm-debug.log*
 
 # test artifacts
 /output/
+/.playwright-cli/
+/tmp/

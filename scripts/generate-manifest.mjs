@@ -19,9 +19,21 @@ const digest = createHash("sha256")
 
 const byLevel = Object.groupBy(questions, (question) => question.level);
 const bySubject = Object.groupBy(questions, (question) => question.subjectCode);
+const targetSources = sources.filter((source) => source.inclusion === "target");
+const examSources = sources.filter((source) => source.sourceType === "official-exam");
+const publishedExamSources = examSources.filter(
+  (source) => source.availability === "published",
+);
+const currentSampleSources = sources.filter(
+  (source) =>
+    source.sourceType === "official-sample" &&
+    source.availability === "published",
+);
+const sumSourceField = (items, field) =>
+  items.reduce((total, item) => total + (item[field] ?? 0), 0);
 const manifest = {
   schemaVersion: 1,
-  inventoryCutoff: null,
+  inventoryCutoff: "2026-07-29",
   sourceCount: sources.length,
   officialQuestionCount: questions.filter((question) =>
     question.sourceType.startsWith("official-"),
@@ -37,6 +49,35 @@ const manifest = {
     missing: questions.filter((question) => question.explanationStatus === "missing").length,
     draft: questions.filter((question) => question.explanationStatus === "draft").length,
     reviewed: questions.filter((question) => question.explanationStatus === "reviewed").length,
+  },
+  collectionProgress: {
+    examSessionCount: new Set(
+      examSources.map(
+        (source) => `${source.rocYear}-${source.level}-${source.session}`,
+      ),
+    ).size,
+    publishedExamPaperCount: publishedExamSources.length,
+    publishedExamQuestionTarget: sumSourceField(
+      publishedExamSources,
+      "expectedCount",
+    ),
+    currentSampleQuestionTarget: sumSourceField(
+      currentSampleSources,
+      "expectedCount",
+    ),
+    knownQuestionTarget: sumSourceField(targetSources, "expectedCount"),
+    importedCount: sumSourceField(targetSources, "importedCount"),
+    answerVerifiedCount: sumSourceField(targetSources, "answerVerifiedCount"),
+    explanationReviewedCount: sumSourceField(
+      targetSources,
+      "explanationReviewedCount",
+    ),
+    availability: Object.fromEntries(
+      ["published", "not-found", "scheduled", "superseded"].map((status) => [
+        status,
+        sources.filter((source) => source.availability === status).length,
+      ]),
+    ),
   },
   contentHash: digest,
 };

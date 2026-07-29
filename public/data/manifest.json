@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "inventoryCutoff": null,
-  "sourceCount": 0,
+  "inventoryCutoff": "2026-07-29",
+  "sourceCount": 38,
   "officialQuestionCount": 0,
   "practiceQuestionCount": 4,
   "countsByLevel": {
@@ -19,5 +19,21 @@
     "draft": 0,
     "reviewed": 4
   },
-  "contentHash": "f7fe0ef6bf0b9e7d"
+  "collectionProgress": {
+    "examSessionCount": 12,
+    "publishedExamPaperCount": 12,
+    "publishedExamQuestionTarget": 600,
+    "currentSampleQuestionTarget": 115,
+    "knownQuestionTarget": 715,
+    "importedCount": 0,
+    "answerVerifiedCount": 0,
+    "explanationReviewedCount": 0,
+    "availability": {
+      "published": 17,
+      "not-found": 9,
+      "scheduled": 7,
+      "superseded": 5
+    }
+  },
+  "contentHash": "738ab5dc28bdd7f0"
 }
