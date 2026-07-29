@@ -152,13 +152,13 @@
     "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "retrievedAt": "2026-07-29",
     "expectedCount": 50,
-    "importedCount": 0,
-    "answerVerifiedCount": 0,
-    "explanationDraftCount": 0,
+    "importedCount": 50,
+    "answerVerifiedCount": 50,
+    "explanationDraftCount": 50,
     "explanationReviewedCount": 0,
     "availability": "published",
     "inclusion": "target",
-    "notes": "官方 PDF 已確認，共 50 題；待逐題匯入與複核。"
+    "notes": "50 題已逐頁核對並匯入；官方答案已核對，本站詳解為 AI 輔助初稿，尚待獨立人工複核。"
   },
   {
     "sourceId": "aiap-114-elementary-4-genai-planning",
@@ -175,13 +175,13 @@
     "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "retrievedAt": "2026-07-29",
     "expectedCount": 50,
-    "importedCount": 0,
-    "answerVerifiedCount": 0,
-    "explanationDraftCount": 0,
+    "importedCount": 50,
+    "answerVerifiedCount": 50,
+    "explanationDraftCount": 50,
     "explanationReviewedCount": 0,
     "availability": "published",
     "inclusion": "target",
-    "notes": "官方 PDF 已確認，共 50 題；待逐題匯入與複核。"
+    "notes": "50 題已逐頁核對並匯入；官方答案已核對，本站詳解為 AI 輔助初稿，尚待獨立人工複核。"
   },
   {
     "sourceId": "aiap-114-intermediate-1-ai-tech-planning",

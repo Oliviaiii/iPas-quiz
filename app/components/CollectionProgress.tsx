@@ -45,6 +45,20 @@ function sessionAvailability(items: SourceInventoryItem[]): SourceAvailability {
   return "not-found";
 }
 
+function sessionStatus(items: SourceInventoryItem[], availability: SourceAvailability) {
+  const expected = sum(items, "expectedCount");
+  if (expected > 0 && sum(items, "explanationReviewedCount") === expected) {
+    return { label: "題目與詳解已完成", className: "complete" };
+  }
+  if (expected > 0 && sum(items, "importedCount") === expected) {
+    return { label: "題目已匯入・詳解待複核", className: "imported" };
+  }
+  return {
+    label: availabilityLabels[availability],
+    className: availability,
+  };
+}
+
 function ProgressMeter({
   label,
   value,
@@ -135,6 +149,7 @@ export function CollectionProgress() {
               {sessions.map((items) => {
                 const first = items[0];
                 const availability = sessionAvailability(items);
+                const status = sessionStatus(items, availability);
                 const expected = items.some((item) => item.expectedCount === null)
                   ? null
                   : sum(items, "expectedCount");
@@ -147,8 +162,8 @@ export function CollectionProgress() {
                           {first.rocYear} 年{first.sessionLabel}
                         </h4>
                       </div>
-                      <span className={`source-status ${availability}`}>
-                        {availabilityLabels[availability]}
+                      <span className={`source-status ${status.className}`}>
+                        {status.label}
                       </span>
                     </div>
 

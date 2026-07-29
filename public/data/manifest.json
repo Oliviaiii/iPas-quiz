@@ -2,22 +2,32 @@
   "schemaVersion": 1,
   "inventoryCutoff": "2026-07-29",
   "sourceCount": 38,
-  "officialQuestionCount": 0,
-  "practiceQuestionCount": 4,
+  "officialQuestionCount": 100,
+  "practiceQuestionCount": 0,
   "countsByLevel": {
-    "elementary": 2,
-    "intermediate": 2
+    "elementary": 100
   },
   "countsBySubject": {
-    "ai-foundation": 1,
-    "genai-planning": 1,
-    "ai-tech-planning": 1,
-    "machine-learning": 1
+    "ai-foundation": 50,
+    "genai-planning": 50
+  },
+  "countsBySourceType": {
+    "official-exam": 100
+  },
+  "countsByYear": {
+    "114": 100
+  },
+  "countsBySession": {
+    "114-elementary-4": 100
+  },
+  "extractionStatus": {
+    "imported": 0,
+    "verified": 100
   },
   "explanationStatus": {
     "missing": 0,
-    "draft": 0,
-    "reviewed": 4
+    "draft": 100,
+    "reviewed": 0
   },
   "collectionProgress": {
     "examSessionCount": 12,
@@ -25,8 +35,9 @@
     "publishedExamQuestionTarget": 600,
     "currentSampleQuestionTarget": 115,
     "knownQuestionTarget": 715,
-    "importedCount": 0,
-    "answerVerifiedCount": 0,
+    "importedCount": 100,
+    "answerVerifiedCount": 100,
+    "explanationDraftCount": 100,
     "explanationReviewedCount": 0,
     "availability": {
       "published": 17,
@@ -35,5 +46,5 @@
       "superseded": 5
     }
   },
-  "contentHash": "738ab5dc28bdd7f0"
+  "contentHash": "caca8c72a838c672"
 }

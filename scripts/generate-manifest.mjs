@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
 
-const questionsUrl = new URL("../app/data/demo-questions.json", import.meta.url);
+const questionsUrl = new URL("../app/data/questions.json", import.meta.url);
 const sourcesUrl = new URL("../app/data/sources.json", import.meta.url);
 const manifestUrl = new URL("../public/data/manifest.json", import.meta.url);
 const checking = process.argv.includes("--check");
@@ -19,6 +19,12 @@ const digest = createHash("sha256")
 
 const byLevel = Object.groupBy(questions, (question) => question.level);
 const bySubject = Object.groupBy(questions, (question) => question.subjectCode);
+const bySourceType = Object.groupBy(questions, (question) => question.sourceType);
+const byYear = Object.groupBy(questions, (question) => String(question.rocYear));
+const bySession = Object.groupBy(
+  questions,
+  (question) => `${question.rocYear}-${question.level}-${question.session}`,
+);
 const targetSources = sources.filter((source) => source.inclusion === "target");
 const examSources = sources.filter((source) => source.sourceType === "official-exam");
 const publishedExamSources = examSources.filter(
@@ -45,6 +51,19 @@ const manifest = {
   countsBySubject: Object.fromEntries(
     Object.entries(bySubject).map(([key, items]) => [key, items.length]),
   ),
+  countsBySourceType: Object.fromEntries(
+    Object.entries(bySourceType).map(([key, items]) => [key, items.length]),
+  ),
+  countsByYear: Object.fromEntries(
+    Object.entries(byYear).map(([key, items]) => [key, items.length]),
+  ),
+  countsBySession: Object.fromEntries(
+    Object.entries(bySession).map(([key, items]) => [key, items.length]),
+  ),
+  extractionStatus: {
+    imported: questions.filter((question) => question.extractionStatus === "imported").length,
+    verified: questions.filter((question) => question.extractionStatus === "verified").length,
+  },
   explanationStatus: {
     missing: questions.filter((question) => question.explanationStatus === "missing").length,
     draft: questions.filter((question) => question.explanationStatus === "draft").length,
@@ -68,6 +87,10 @@ const manifest = {
     knownQuestionTarget: sumSourceField(targetSources, "expectedCount"),
     importedCount: sumSourceField(targetSources, "importedCount"),
     answerVerifiedCount: sumSourceField(targetSources, "answerVerifiedCount"),
+    explanationDraftCount: sumSourceField(
+      targetSources,
+      "explanationDraftCount",
+    ),
     explanationReviewedCount: sumSourceField(
       targetSources,
       "explanationReviewedCount",

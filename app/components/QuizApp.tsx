@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import questionData from "../data/demo-questions.json";
+import questionData from "../data/questions.json";
 import type { Level, OptionLabel, Question, SubjectCode } from "../data/types";
 import { loadProgress, saveProgress, type Progress } from "../lib/progress";
 import { CollectionProgress } from "./CollectionProgress";
@@ -24,7 +24,17 @@ export function QuizApp() {
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
-      setProgress(loadProgress());
+      const savedProgress = loadProgress();
+      const validQuestionIds = new Set(questions.map((question) => question.id));
+      const validProgress = Object.fromEntries(
+        Object.entries(savedProgress).filter(([questionId]) =>
+          validQuestionIds.has(questionId),
+        ),
+      );
+      setProgress(validProgress);
+      if (Object.keys(validProgress).length !== Object.keys(savedProgress).length) {
+        saveProgress(validProgress);
+      }
       setReady(true);
     });
     return () => window.cancelAnimationFrame(frame);
@@ -85,14 +95,14 @@ export function QuizApp() {
           <p className="kicker">iPAS AI APPLICATION PLANNER</p>
           <h1>AI 應用規劃師刷題工具</h1>
           <p>
-            初級與中級考古題將依官方來源逐批匯入。現在先以非官方示範題驗證作答、
-            錯題與詳解流程。
+            初級與中級考古題依官方來源逐批匯入。現在可練習 114 年第四次初級
+            兩科試題，作答後會顯示答案與本站自編詳解初稿。
           </p>
         </div>
         <div className="status-card">
           <span>題庫狀態</span>
-          <strong>基礎架構建置中</strong>
-          <p>官方題目 0 題・示範題 {questions.length} 題</p>
+          <strong>114 年第四次初級已匯入</strong>
+          <p>官方題目 {questions.length} 題・詳解初稿 {questions.length} 題</p>
         </div>
       </header>
 
@@ -166,14 +176,14 @@ export function QuizApp() {
           </button>
 
           <button type="button" className="text-button" onClick={resetProgress}>
-            清除示範進度
+            清除作答進度
           </button>
 
           <div className="notice">
             <b>資料說明</b>
             <p>
-              目前題目只用於測試介面，不計入官方題庫。正式題庫會附年度、梯次、
-              題號與官方 PDF 來源。
+              本批題幹與答案取自官方公告 PDF；解析為本站 AI 輔助初稿，
+              並非官方詳解，尚待獨立人工複核。
             </p>
           </div>
         </aside>
@@ -208,7 +218,7 @@ export function QuizApp() {
       </section>
 
       <footer className="site-footer">
-        <p>非 iPAS 官方網站。正式題目將依官方公開資料整理並標示來源。</p>
+        <p>非 iPAS 官方網站。題目依官方公開資料整理；詳解為本站自編內容。</p>
         <p>作答紀錄只保存在你的瀏覽器中。</p>
       </footer>
     </main>

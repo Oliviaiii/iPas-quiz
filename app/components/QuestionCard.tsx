@@ -24,11 +24,16 @@ export function QuestionCard({
     <article className="question-card">
       <div className="question-topline">
         <div className="tag-row">
-          <span className="tag practice">介面示範題・非官方</span>
+          <span className="tag">
+            {question.rocYear} 年第{question.session}次・官方公告試題
+          </span>
           <span className="tag">{question.subjectLabel}</span>
+          {question.explanationStatus === "draft" ? (
+            <span className="tag draft">詳解初稿</span>
+          ) : null}
         </div>
         <span className="question-position">
-          {position} / {total}
+          官方第 {question.officialQuestionNumber} 題・{position} / {total}
         </span>
       </div>
 
@@ -92,9 +97,27 @@ export function QuestionCard({
             <b>容易混淆</b>
             <p>{question.explanation.trap}</p>
           </div>
+
+          {question.explanation.editorialNote ? (
+            <p className="editorial-note">{question.explanation.editorialNote}</p>
+          ) : null}
+
+          <div className="reference-list">
+            <p className="eyebrow">參考來源</p>
+            <ul>
+              {question.explanation.references.map((reference) => (
+                <li key={`${reference.url}-${reference.locator ?? ""}`}>
+                  <a href={reference.url} target="_blank" rel="noreferrer">
+                    {reference.title}
+                  </a>
+                  {reference.locator ? `－${reference.locator}` : ""}
+                </li>
+              ))}
+            </ul>
+          </div>
         </section>
       ) : (
-        <p className="answer-hint">選擇答案後，會立即顯示結果與完整解析。</p>
+        <p className="answer-hint">選擇答案後，會立即顯示結果與詳解初稿。</p>
       )}
 
       <footer className="question-navigation">

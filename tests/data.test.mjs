@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const questions = JSON.parse(
-  await readFile(new URL("../app/data/demo-questions.json", import.meta.url), "utf8"),
+  await readFile(new URL("../app/data/questions.json", import.meta.url), "utf8"),
 );
 const sources = JSON.parse(
   await readFile(new URL("../app/data/sources.json", import.meta.url), "utf8"),
@@ -12,23 +12,45 @@ const manifest = JSON.parse(
   await readFile(new URL("../public/data/manifest.json", import.meta.url), "utf8"),
 );
 
-test("keeps the temporary practice bank explicit and structurally valid", () => {
-  assert.equal(questions.length, 4);
-  assert.ok(questions.every((question) => question.sourceType === "practice"));
+test("contains exactly the 100 official 114 fourth-session elementary questions", () => {
+  assert.equal(questions.length, 100);
+  assert.ok(questions.every((question) => question.sourceType === "official-exam"));
+  assert.ok(questions.every((question) => question.level === "elementary"));
+  assert.ok(questions.every((question) => question.rocYear === 114));
+  assert.ok(questions.every((question) => question.session === "4"));
   assert.ok(questions.every((question) => question.options.length === 4));
   assert.ok(questions.every((question) => question.officialAnswer.length === 1));
-  assert.ok(questions.every((question) => question.explanationStatus === "reviewed"));
+  assert.ok(questions.every((question) => question.extractionStatus === "verified"));
+  assert.ok(questions.every((question) => question.explanationStatus === "draft"));
   assert.ok(
     questions.every((question) =>
       ["A", "B", "C", "D"].every((label) => question.explanation.optionAnalysis[label]),
     ),
   );
+  assert.ok(questions.every((question) => question.explanation.editorialNote));
 });
 
 test("uses unique stable question ids", () => {
   const ids = questions.map((question) => question.id);
   assert.equal(new Set(ids).size, ids.length);
-  assert.ok(ids.every((id) => id.startsWith("aiap-practice-")));
+  assert.ok(ids.every((id) => id.startsWith("aiap-elementary-114-04-")));
+});
+
+test("preserves complete question numbers and official answer sequences", () => {
+  const expectations = {
+    "ai-foundation": "BCDCDCBBBCBADCABACAADCDCCDBDAADBDCDCBCADDCDCCBBAAA",
+    "genai-planning": "BDBADBCCBBACDBBDDDBDACDDBCCBCABACBBAACADAADCADBADC",
+  };
+  for (const [subjectCode, answers] of Object.entries(expectations)) {
+    const items = questions.filter((question) => question.subjectCode === subjectCode);
+    assert.equal(items.length, 50);
+    assert.deepEqual(
+      items.map((question) => question.officialQuestionNumber),
+      Array.from({ length: 50 }, (_, index) => index + 1),
+    );
+    assert.equal(items.map((question) => question.officialAnswer[0]).join(""), answers);
+    assert.ok(items.every((question) => question.sourcePage >= 1 && question.sourcePage <= 13));
+  }
 });
 
 test("tracks every 114 and 115 elementary/intermediate exam session", () => {
@@ -75,6 +97,7 @@ test("keeps source progress auditable and official-only", () => {
       (source) =>
         source.importedCount <= (source.expectedCount ?? 0) &&
         source.answerVerifiedCount <= source.importedCount &&
+        source.explanationDraftCount <= source.importedCount &&
         source.explanationReviewedCount <= source.importedCount,
     ),
   );
@@ -97,19 +120,22 @@ test("separates published, unavailable, future, and superseded work", () => {
   assert.ok(publishedExams.every((source) => source.expectedCount === 50));
 });
 
-test("publishes the verified inventory totals without claiming imported questions", () => {
+test("publishes the verified inventory and imported-question totals", () => {
   assert.equal(manifest.inventoryCutoff, "2026-07-29");
   assert.equal(manifest.sourceCount, 38);
-  assert.equal(manifest.officialQuestionCount, 0);
-  assert.equal(manifest.practiceQuestionCount, questions.length);
+  assert.equal(manifest.officialQuestionCount, 100);
+  assert.equal(manifest.practiceQuestionCount, 0);
+  assert.equal(manifest.extractionStatus.verified, 100);
+  assert.equal(manifest.explanationStatus.draft, 100);
   assert.deepEqual(manifest.collectionProgress, {
     examSessionCount: 12,
     publishedExamPaperCount: 12,
     publishedExamQuestionTarget: 600,
     currentSampleQuestionTarget: 115,
     knownQuestionTarget: 715,
-    importedCount: 0,
-    answerVerifiedCount: 0,
+    importedCount: 100,
+    answerVerifiedCount: 100,
+    explanationDraftCount: 100,
     explanationReviewedCount: 0,
     availability: {
       published: 17,

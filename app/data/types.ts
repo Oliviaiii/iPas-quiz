@@ -18,22 +18,27 @@ export type QuestionExplanation = {
   references: {
     title: string;
     url: string;
+    locator?: string;
     checkedAt: string;
   }[];
+  editorialNote?: string;
   author: string;
   authoredAt: string;
-  reviewer: string;
-  reviewedAt: string;
+  reviewer?: string;
+  reviewedAt?: string;
 };
 
 export type Question = {
   id: string;
   sourceId: string;
-  sourceType: "practice";
+  sourceType: "official-exam" | "official-sample";
   level: Level;
   subjectCode: SubjectCode;
   subjectLabel: string;
+  rocYear: number;
+  session: string;
   officialQuestionNumber: number;
+  sourcePage: number;
   prompt: string;
   options: {
     label: OptionLabel;
@@ -43,8 +48,8 @@ export type Question = {
   scoring: "single";
   sourceUrl: string;
   answerSourceUrl: string;
-  extractionStatus: "verified";
-  explanationStatus: "reviewed";
+  extractionStatus: "imported" | "verified";
+  explanationStatus: "missing" | "draft" | "reviewed";
   explanation: QuestionExplanation;
 };
 
