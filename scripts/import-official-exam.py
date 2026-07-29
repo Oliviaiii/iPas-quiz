@@ -1,4 +1,4 @@
-"""Import official elementary AIAP exam papers from the announced PDFs.
+"""Import official AIAP exam papers from the announced PDFs.
 
 Phase one only imports official questions, options and answers. Explanations
 stay empty with ``explanationStatus: "missing"``; template explanations are
@@ -7,10 +7,15 @@ forbidden by ``docs/DELIVERY_PHASES.md``.
 Each batch replaces only its own ``sourceId`` values, so re-running never
 touches questions imported from other papers.
 
+Only text-only papers can be imported by this script. Papers whose questions
+depend on embedded figures (charts, code screenshots, formula images) are not
+listed here until the site can display those figures.
+
 Usage::
 
-    python scripts/import-elementary-official.py 115-1
-    python scripts/import-elementary-official.py 115-2
+    python scripts/import-official-exam.py 115-1
+    python scripts/import-official-exam.py 115-2
+    python scripts/import-official-exam.py 114-2-intermediate
 """
 
 from __future__ import annotations
@@ -34,10 +39,15 @@ OFFICIAL_RESOURCE_URL = (
 SUBJECTS = {
     "ai-foundation": ("人工智慧基礎概論", "第一科："),
     "genai-planning": ("生成式 AI 應用與規劃", "第二科："),
+    "ai-tech-planning": ("人工智慧技術應用與規劃", "第一科："),
+    "big-data": ("大數據處理分析與應用", "第二科："),
+    "machine-learning": ("機器學習技術與應用", "第三科："),
 }
 
 BATCHES = {
     "115-1": {
+        "level": "elementary",
+        "levelLabel": "初級",
         "rocYear": 115,
         "session": "1",
         "sessionLabel": "第一次",
@@ -60,6 +70,8 @@ BATCHES = {
         ],
     },
     "115-2": {
+        "level": "elementary",
+        "levelLabel": "初級",
         "rocYear": 115,
         "session": "2",
         "sessionLabel": "第二次",
@@ -81,6 +93,25 @@ BATCHES = {
             },
         ],
     },
+    "114-2-intermediate": {
+        "level": "intermediate",
+        "levelLabel": "中級",
+        "rocYear": 114,
+        "session": "2",
+        "sessionLabel": "第二次",
+        "idPrefix": "aiap-intermediate-114-02",
+        "papers": [
+            {
+                "path": PDF_DIR / "past-01.pdf",
+                "sourceId": "aiap-114-intermediate-2-ai-tech-planning",
+                "subjectCode": "ai-tech-planning",
+                "pageCount": 14,
+                "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+            },
+            # 第二科與第三科各有 7 題、10 題依賴 PDF 內嵌圖片（圖表、程式碼截圖、
+            # 公式圖），在網站能顯示這些圖片前不匯入，以免題目殘缺。
+        ],
+    },
 }
 
 ANSWER_TRANSLATION = str.maketrans(
@@ -93,6 +124,7 @@ ANSWER_TRANSLATION = str.maketrans(
 )
 
 PAGE_MARKER = re.compile(r"^第\d+頁，共\d+頁$")
+PAGE_HEADER = re.compile(r"^\d+年第[一二三四]次AI應用規劃師-[初中]級能力鑑定")
 
 # 中日韓文字、全形標點與全形括號；用來移除 PDF 斷行留下的多餘空白。
 CJK_LIKE = "⺀-〿㐀-鿿＀-￯"
@@ -106,14 +138,13 @@ LETTER_FIXES = {
 }
 
 
-def clean_page(text: str, batch: dict, subject_heading: str) -> str:
+def clean_page(text: str, subject_heading: str) -> str:
     """Drop the repeated page furniture so cross-page questions join cleanly."""
-    header = f"{batch['rocYear']} 年{batch['sessionLabel']} AI 應用規劃師"
     lines = []
-    for line in text.splitlines():
+    for index, line in enumerate(text.splitlines()):
         stripped = line.strip()
         compact = line.replace(" ", "")
-        if stripped.startswith(header):
+        if PAGE_HEADER.match(compact):
             continue
         if stripped.startswith(subject_heading):
             continue
@@ -122,6 +153,10 @@ def clean_page(text: str, batch: dict, subject_heading: str) -> str:
         if PAGE_MARKER.match(compact):
             continue
         if compact in {"一、選擇題", "答案題目"}:
+            continue
+        # 中級試卷的「答案」欄標題有時被拆成單獨的「答」、「案」兩行；
+        # 只在頁首範圍內移除，避免誤刪題目內容。
+        if index < 10 and compact in {"答", "案", "題目"}:
             continue
         if "以下空白" in compact:
             continue
@@ -182,7 +217,7 @@ def parse_paper(batch: dict, paper: dict) -> list[dict]:
         )
 
     pages = [
-        clean_page(page.extract_text() or "", batch, subject_heading)
+        clean_page(page.extract_text() or "", subject_heading)
         for page in reader.pages
     ]
     combined_parts = []
@@ -203,8 +238,8 @@ def parse_paper(batch: dict, paper: dict) -> list[dict]:
         raise ValueError(f"{paper['sourceId']}: expected 50 questions, found {found}")
 
     source_title = (
-        f"{batch['rocYear']} 年{batch['sessionLabel']}初級 AI 應用規劃師"
-        f"－{subject_label}公告試題"
+        f"{batch['rocYear']} 年{batch['sessionLabel']}{batch['levelLabel']}"
+        f" AI 應用規劃師－{subject_label}公告試題"
     )
 
     questions = []
@@ -253,7 +288,7 @@ def parse_paper(batch: dict, paper: dict) -> list[dict]:
                 ),
                 "sourceId": paper["sourceId"],
                 "sourceType": "official-exam",
-                "level": "elementary",
+                "level": batch["level"],
                 "subjectCode": paper["subjectCode"],
                 "subjectLabel": subject_label,
                 "rocYear": batch["rocYear"],
@@ -295,8 +330,9 @@ def main() -> None:
     for paper in batch["papers"]:
         imported.extend(parse_paper(batch, paper))
 
-    if len(imported) != 100:
-        raise ValueError(f"Expected 100 questions, got {len(imported)}")
+    expected_total = 50 * len(batch["papers"])
+    if len(imported) != expected_total:
+        raise ValueError(f"Expected {expected_total} questions, got {len(imported)}")
 
     questions = kept + imported
     ids = [question["id"] for question in questions]

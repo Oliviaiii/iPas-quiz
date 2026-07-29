@@ -16,6 +16,7 @@ const manifest = JSON.parse(
 const importedPapers = [
   {
     idPrefix: "aiap-elementary-114-04-",
+    level: "elementary",
     rocYear: 114,
     session: "4",
     subjectCode: "ai-foundation",
@@ -24,6 +25,7 @@ const importedPapers = [
   },
   {
     idPrefix: "aiap-elementary-114-04-",
+    level: "elementary",
     rocYear: 114,
     session: "4",
     subjectCode: "genai-planning",
@@ -32,6 +34,7 @@ const importedPapers = [
   },
   {
     idPrefix: "aiap-elementary-115-01-",
+    level: "elementary",
     rocYear: 115,
     session: "1",
     subjectCode: "ai-foundation",
@@ -40,6 +43,7 @@ const importedPapers = [
   },
   {
     idPrefix: "aiap-elementary-115-01-",
+    level: "elementary",
     rocYear: 115,
     session: "1",
     subjectCode: "genai-planning",
@@ -48,6 +52,7 @@ const importedPapers = [
   },
   {
     idPrefix: "aiap-elementary-115-02-",
+    level: "elementary",
     rocYear: 115,
     session: "2",
     subjectCode: "ai-foundation",
@@ -56,18 +61,32 @@ const importedPapers = [
   },
   {
     idPrefix: "aiap-elementary-115-02-",
+    level: "elementary",
     rocYear: 115,
     session: "2",
     subjectCode: "genai-planning",
     answers: "BABCDBBCACBADBBAADCDDCCCDDBDBAACCBAAADBDADBACCCBBD",
     pageCount: 13,
   },
+  {
+    idPrefix: "aiap-intermediate-114-02-",
+    level: "intermediate",
+    rocYear: 114,
+    session: "2",
+    subjectCode: "ai-tech-planning",
+    answers: "BABCABACBDCBBACDDDBBBDADBDCCBABDCDABBBCAADBCDACBAC",
+    pageCount: 14,
+  },
 ];
 
-test("contains only verified official elementary questions", () => {
+test("contains only verified official exam questions", () => {
   assert.equal(questions.length, importedPapers.length * 50);
   assert.ok(questions.every((question) => question.sourceType === "official-exam"));
-  assert.ok(questions.every((question) => question.level === "elementary"));
+  assert.ok(
+    questions.every((question) =>
+      ["elementary", "intermediate"].includes(question.level),
+    ),
+  );
   assert.ok(questions.every((question) => question.options.length === 4));
   assert.ok(questions.every((question) => question.officialAnswer.length === 1));
   assert.ok(questions.every((question) => question.scoring === "single"));
@@ -152,6 +171,7 @@ test("preserves complete question numbers and official answer sequences", () => 
   for (const paper of importedPapers) {
     const items = questions.filter(
       (question) =>
+        question.level === paper.level &&
         question.rocYear === paper.rocYear &&
         question.session === paper.session &&
         question.subjectCode === paper.subjectCode,
@@ -263,15 +283,20 @@ test("separates published, unavailable, future, and superseded work", () => {
 test("publishes the verified inventory and imported-question totals", () => {
   assert.equal(manifest.inventoryCutoff, "2026-07-29");
   assert.equal(manifest.sourceCount, 38);
-  assert.equal(manifest.officialQuestionCount, 300);
+  assert.equal(manifest.officialQuestionCount, 350);
   assert.equal(manifest.practiceQuestionCount, 0);
-  assert.equal(manifest.extractionStatus.verified, 300);
-  assert.equal(manifest.explanationStatus.missing, 297);
+  assert.equal(manifest.extractionStatus.verified, 350);
+  assert.equal(manifest.explanationStatus.missing, 347);
   assert.equal(manifest.explanationStatus.draft, 3);
+  assert.deepEqual(manifest.countsByLevel, {
+    elementary: 300,
+    intermediate: 50,
+  });
   assert.deepEqual(manifest.countsBySession, {
     "114-elementary-4": 100,
     "115-elementary-1": 100,
     "115-elementary-2": 100,
+    "114-intermediate-2": 50,
   });
   assert.deepEqual(manifest.collectionProgress, {
     examSessionCount: 12,
@@ -279,8 +304,8 @@ test("publishes the verified inventory and imported-question totals", () => {
     publishedExamQuestionTarget: 600,
     currentSampleQuestionTarget: 115,
     knownQuestionTarget: 715,
-    importedCount: 300,
-    answerVerifiedCount: 300,
+    importedCount: 350,
+    answerVerifiedCount: 350,
     explanationDraftCount: 3,
     explanationReviewedCount: 0,
     availability: {
