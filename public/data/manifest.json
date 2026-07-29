@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "inventoryCutoff": null,
+  "sourceCount": 0,
+  "officialQuestionCount": 0,
+  "practiceQuestionCount": 4,
+  "countsByLevel": {
+    "elementary": 2,
+    "intermediate": 2
+  },
+  "countsBySubject": {
+    "ai-foundation": 1,
+    "genai-planning": 1,
+    "ai-tech-planning": 1,
+    "machine-learning": 1
+  },
+  "explanationStatus": {
+    "missing": 0,
+    "draft": 0,
+    "reviewed": 4
+  },
+  "contentHash": "f7fe0ef6bf0b9e7d"
+}
