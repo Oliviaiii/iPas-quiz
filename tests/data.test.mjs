@@ -12,22 +12,72 @@ const manifest = JSON.parse(
   await readFile(new URL("../public/data/manifest.json", import.meta.url), "utf8"),
 );
 
-test("contains exactly the 100 official 114 fourth-session elementary questions", () => {
-  assert.equal(questions.length, 100);
+// 每份已匯入的官方試卷：題號 1..50、官方答案序列與來源頁數上限。
+const importedPapers = [
+  {
+    idPrefix: "aiap-elementary-114-04-",
+    rocYear: 114,
+    session: "4",
+    subjectCode: "ai-foundation",
+    answers: "BCDCDCBBBCBADCABACAADCDCCDBDAADBDCDCBCADDCDCCBBAAA",
+    pageCount: 13,
+  },
+  {
+    idPrefix: "aiap-elementary-114-04-",
+    rocYear: 114,
+    session: "4",
+    subjectCode: "genai-planning",
+    answers: "BDBADBCCBBACDBBDDDBDACDDBCCBCABACBBAACADAADCADBADC",
+    pageCount: 13,
+  },
+  {
+    idPrefix: "aiap-elementary-115-01-",
+    rocYear: 115,
+    session: "1",
+    subjectCode: "ai-foundation",
+    answers: "DDDCBCCDAABBABACABABDCBDACCCBAACDCCABBDABDDACCDCDB",
+    pageCount: 12,
+  },
+  {
+    idPrefix: "aiap-elementary-115-01-",
+    rocYear: 115,
+    session: "1",
+    subjectCode: "genai-planning",
+    answers: "ADADCDADBDBBBADDBACCDDADACACCBCAAABCCCDBABBBDCACBC",
+    pageCount: 11,
+  },
+];
+
+test("contains only verified official elementary questions", () => {
+  assert.equal(questions.length, importedPapers.length * 50);
   assert.ok(questions.every((question) => question.sourceType === "official-exam"));
   assert.ok(questions.every((question) => question.level === "elementary"));
-  assert.ok(questions.every((question) => question.rocYear === 114));
-  assert.ok(questions.every((question) => question.session === "4"));
   assert.ok(questions.every((question) => question.options.length === 4));
   assert.ok(questions.every((question) => question.officialAnswer.length === 1));
+  assert.ok(questions.every((question) => question.scoring === "single"));
   assert.ok(questions.every((question) => question.extractionStatus === "verified"));
+  assert.ok(
+    questions.every(
+      (question) => question.sourceUrl && question.answerSourceUrl && question.prompt,
+    ),
+  );
+  assert.ok(
+    questions.every((question) =>
+      question.options.every(
+        (option) => option.text.length > 0 && "ABCD".includes(option.label),
+      ),
+    ),
+  );
+});
+
+test("keeps explanations out of phase one imports", () => {
   assert.equal(
     questions.filter((question) => question.explanationStatus === "draft").length,
     3,
   );
   assert.equal(
     questions.filter((question) => question.explanationStatus === "missing").length,
-    97,
+    questions.length - 3,
   );
   const forbiddenFiller = [
     "沒有滿足題幹的關鍵條件",
@@ -75,23 +125,47 @@ test("contains exactly the 100 official 114 fourth-session elementary questions"
 test("uses unique stable question ids", () => {
   const ids = questions.map((question) => question.id);
   assert.equal(new Set(ids).size, ids.length);
-  assert.ok(ids.every((id) => id.startsWith("aiap-elementary-114-04-")));
+  assert.ok(
+    ids.every((id) =>
+      importedPapers.some((paper) => id.startsWith(paper.idPrefix)),
+    ),
+  );
 });
 
 test("preserves complete question numbers and official answer sequences", () => {
-  const expectations = {
-    "ai-foundation": "BCDCDCBBBCBADCABACAADCDCCDBDAADBDCDCBCADDCDCCBBAAA",
-    "genai-planning": "BDBADBCCBBACDBBDDDBDACDDBCCBCABACBBAACADAADCADBADC",
-  };
-  for (const [subjectCode, answers] of Object.entries(expectations)) {
-    const items = questions.filter((question) => question.subjectCode === subjectCode);
-    assert.equal(items.length, 50);
+  for (const paper of importedPapers) {
+    const items = questions.filter(
+      (question) =>
+        question.rocYear === paper.rocYear &&
+        question.session === paper.session &&
+        question.subjectCode === paper.subjectCode,
+    );
+    const label = `${paper.rocYear}-${paper.session} ${paper.subjectCode}`;
+    assert.equal(items.length, 50, label);
     assert.deepEqual(
       items.map((question) => question.officialQuestionNumber),
       Array.from({ length: 50 }, (_, index) => index + 1),
+      label,
     );
-    assert.equal(items.map((question) => question.officialAnswer[0]).join(""), answers);
-    assert.ok(items.every((question) => question.sourcePage >= 1 && question.sourcePage <= 13));
+    assert.equal(
+      items.map((question) => question.officialAnswer[0]).join(""),
+      paper.answers,
+      label,
+    );
+    assert.ok(
+      items.every(
+        (question) =>
+          question.sourcePage >= 1 && question.sourcePage <= paper.pageCount,
+      ),
+      label,
+    );
+    assert.ok(
+      items.every(
+        (question) => question.id === `${paper.idPrefix}${paper.subjectCode}-` +
+          String(question.officialQuestionNumber).padStart(3, "0"),
+      ),
+      label,
+    );
   }
 });
 
@@ -143,6 +217,14 @@ test("keeps source progress auditable and official-only", () => {
         source.explanationReviewedCount <= source.importedCount,
     ),
   );
+  // 清冊的匯入數必須與實際題庫一致，不得單方面調高進度。
+  for (const source of sources) {
+    assert.equal(
+      questions.filter((question) => question.sourceId === source.sourceId).length,
+      source.importedCount,
+      source.sourceId,
+    );
+  }
 });
 
 test("separates published, unavailable, future, and superseded work", () => {
@@ -165,19 +247,23 @@ test("separates published, unavailable, future, and superseded work", () => {
 test("publishes the verified inventory and imported-question totals", () => {
   assert.equal(manifest.inventoryCutoff, "2026-07-29");
   assert.equal(manifest.sourceCount, 38);
-  assert.equal(manifest.officialQuestionCount, 100);
+  assert.equal(manifest.officialQuestionCount, 200);
   assert.equal(manifest.practiceQuestionCount, 0);
-  assert.equal(manifest.extractionStatus.verified, 100);
-  assert.equal(manifest.explanationStatus.missing, 97);
+  assert.equal(manifest.extractionStatus.verified, 200);
+  assert.equal(manifest.explanationStatus.missing, 197);
   assert.equal(manifest.explanationStatus.draft, 3);
+  assert.deepEqual(manifest.countsBySession, {
+    "114-elementary-4": 100,
+    "115-elementary-1": 100,
+  });
   assert.deepEqual(manifest.collectionProgress, {
     examSessionCount: 12,
     publishedExamPaperCount: 12,
     publishedExamQuestionTarget: 600,
     currentSampleQuestionTarget: 115,
     knownQuestionTarget: 715,
-    importedCount: 100,
-    answerVerifiedCount: 100,
+    importedCount: 200,
+    answerVerifiedCount: 200,
     explanationDraftCount: 3,
     explanationReviewedCount: 0,
     availability: {
