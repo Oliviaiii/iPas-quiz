@@ -275,6 +275,44 @@ main {
   line-height: 1.55;
 }
 
+.question-passage {
+  margin: 28px 0;
+  padding: 18px 20px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-left: 3px solid rgba(15, 23, 42, 0.35);
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.03);
+}
+
+.question-passage p {
+  margin: 10px 0;
+  line-height: 1.7;
+}
+
+.question-passage pre {
+  margin: 10px 0;
+  padding: 12px;
+  overflow-x: auto;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.06);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.question-figures {
+  display: grid;
+  gap: 12px;
+  margin: 14px 0;
+}
+
+.question-figures img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 8px;
+  background: #fff;
+}
+
 .options {
   display: grid;
   gap: 12px;

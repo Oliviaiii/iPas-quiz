@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
@@ -77,6 +78,24 @@ const importedPapers = [
     answers: "BABCABACBDCBBACDDDBBBDADBDCCBABDCDABBBCAADBCDACBAC",
     pageCount: 14,
   },
+  {
+    idPrefix: "aiap-intermediate-114-02-",
+    level: "intermediate",
+    rocYear: 114,
+    session: "2",
+    subjectCode: "big-data",
+    answers: "DBABBCCBCCCADDCABACDBDCAACDADCBADBBBCBDBACBDACBDCB",
+    pageCount: 17,
+  },
+  {
+    idPrefix: "aiap-intermediate-114-02-",
+    level: "intermediate",
+    rocYear: 114,
+    session: "2",
+    subjectCode: "machine-learning",
+    answers: "BCCBACADACDCBCBABACCCBACADDCDCBDBDADBBCCDBADBBBCCC",
+    pageCount: 19,
+  },
 ];
 
 test("contains only verified official exam questions", () => {
@@ -96,11 +115,10 @@ test("contains only verified official exam questions", () => {
       (question) => question.sourceUrl && question.answerSourceUrl && question.prompt,
     ),
   );
+  // 選項內容可能是文字或官方附圖；兩者皆空由附圖測試擋下。
   assert.ok(
     questions.every((question) =>
-      question.options.every(
-        (option) => option.text.length > 0 && "ABCD".includes(option.label),
-      ),
+      question.options.every((option) => "ABCD".includes(option.label)),
     ),
   );
 });
@@ -155,6 +173,48 @@ test("keeps explanations out of phase one imports", () => {
     ),
   );
   assert.ok(questions.every((question) => question.explanation.editorialNote));
+});
+
+test("keeps official figures and shared passages usable", () => {
+  const figuresOf = (question) => [
+    ...(question.figures ?? []),
+    ...question.options.flatMap((option) => option.figures ?? []),
+    ...(question.passage?.blocks ?? [])
+      .filter((block) => block.kind === "figure")
+      .map((block) => block.figure),
+  ];
+  const seen = new Set();
+  for (const question of questions) {
+    for (const figure of figuresOf(question)) {
+      assert.ok(figure.src.startsWith("/images/questions/"), figure.src);
+      assert.ok(figure.alt.length > 0, figure.src);
+      assert.ok(figure.width > 0 && figure.height > 0, figure.src);
+      assert.ok(
+        existsSync(new URL(`../public${figure.src}`, import.meta.url)),
+        `missing asset ${figure.src}`,
+      );
+      seen.add(figure.src);
+    }
+    // 題幹沒有文字時必須有附圖，選項亦同，否則題目無法作答。
+    assert.ok(
+      question.prompt.length > 0 || (question.figures ?? []).length > 0,
+      question.id,
+    );
+    for (const option of question.options) {
+      assert.ok(
+        option.text.length > 0 || (option.figures ?? []).length > 0,
+        `${question.id} ${option.label}`,
+      );
+    }
+    if (question.passage) {
+      assert.ok(
+        question.passage.questionNumbers.includes(question.officialQuestionNumber),
+        question.id,
+      );
+      assert.ok(question.passage.blocks.length > 0, question.id);
+    }
+  }
+  assert.equal(seen.size, 38);
 });
 
 test("uses unique stable question ids", () => {
@@ -283,20 +343,20 @@ test("separates published, unavailable, future, and superseded work", () => {
 test("publishes the verified inventory and imported-question totals", () => {
   assert.equal(manifest.inventoryCutoff, "2026-07-29");
   assert.equal(manifest.sourceCount, 38);
-  assert.equal(manifest.officialQuestionCount, 350);
+  assert.equal(manifest.officialQuestionCount, 450);
   assert.equal(manifest.practiceQuestionCount, 0);
-  assert.equal(manifest.extractionStatus.verified, 350);
-  assert.equal(manifest.explanationStatus.missing, 347);
+  assert.equal(manifest.extractionStatus.verified, 450);
+  assert.equal(manifest.explanationStatus.missing, 447);
   assert.equal(manifest.explanationStatus.draft, 3);
   assert.deepEqual(manifest.countsByLevel, {
     elementary: 300,
-    intermediate: 50,
+    intermediate: 150,
   });
   assert.deepEqual(manifest.countsBySession, {
     "114-elementary-4": 100,
     "115-elementary-1": 100,
     "115-elementary-2": 100,
-    "114-intermediate-2": 50,
+    "114-intermediate-2": 150,
   });
   assert.deepEqual(manifest.collectionProgress, {
     examSessionCount: 12,
@@ -304,8 +364,8 @@ test("publishes the verified inventory and imported-question totals", () => {
     publishedExamQuestionTarget: 600,
     currentSampleQuestionTarget: 115,
     knownQuestionTarget: 715,
-    importedCount: 350,
-    answerVerifiedCount: 350,
+    importedCount: 450,
+    answerVerifiedCount: 450,
     explanationDraftCount: 3,
     explanationReviewedCount: 0,
     availability: {

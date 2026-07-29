@@ -16,3 +16,4 @@ npm-debug.log*
 /output/
 /.playwright-cli/
 /tmp/
+__pycache__/

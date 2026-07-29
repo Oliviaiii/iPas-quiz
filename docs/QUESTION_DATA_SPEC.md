@@ -40,6 +40,18 @@ ID 建立後不得因為排序、文案修改或檔案搬移而變更，否則�
 概念格式如下：
 
 ```ts
+type Figure = {
+  src: string; // 相對於 public/，例如 /images/questions/xxx.png
+  alt: string;
+  width: number;
+  height: number;
+};
+
+type PassageBlock =
+  | { kind: "text"; text: string }
+  | { kind: "pre"; text: string } // 表格、程式碼或執行結果，需保留排版
+  | { kind: "figure"; figure: Figure };
+
 type Question = {
   id: string;
   sourceId: string;
@@ -50,10 +62,16 @@ type Question = {
   session?: string;
   officialQuestionNumber: number;
   sourcePage: number;
+  passage?: {
+    questionNumbers: number[]; // 共用此敘述的官方題號
+    blocks: PassageBlock[];
+  };
   prompt: string;
+  figures?: Figure[]; // 題幹附圖
   options: {
     label: "A" | "B" | "C" | "D";
     text: string;
+    figures?: Figure[]; // 選項本身是圖片時使用
   }[];
   officialAnswer: ("A" | "B" | "C" | "D")[];
   scoring: "single" | "multiple" | "all-credit" | "cancelled";
@@ -66,6 +84,14 @@ type Question = {
 ```
 
 不能把複數答案、送分或取消題強制轉成一般單選答案。
+
+官方 PDF 內嵌的圖表、程式碼截圖與公式圖必須隨題目一起匯入，不得只留文字：
+
+- 圖片檔放在 `public/images/questions/`，檔名須可追溯到來源試卷與頁碼。
+- 圖片要掛在正確位置：題幹用 `figures`，選項用 `options[].figures`，題組敘述
+  用 `passage.blocks` 中的 `figure` 區塊。
+- 題幹或選項可以沒有文字，但不得同時沒有文字與圖片。
+- 題組敘述複製到該組每一題，讓每題都能單獨作答。
 
 ## 4. 詳解格式
 

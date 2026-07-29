@@ -290,13 +290,13 @@
     "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
     "retrievedAt": "2026-07-29",
     "expectedCount": 50,
-    "importedCount": 0,
-    "answerVerifiedCount": 0,
+    "importedCount": 50,
+    "answerVerifiedCount": 50,
     "explanationDraftCount": 0,
     "explanationReviewedCount": 0,
     "availability": "published",
     "inclusion": "target",
-    "notes": "官方 PDF 已確認，共 50 題；其中 7 題（第 3、40、41、42、47、49、50 題）依賴 PDF 內嵌圖片，網站可顯示圖片前暫不匯入。"
+    "notes": "50 題已逐頁核對並匯入；官方答案已核對。第 3、40、41、42、43、49、50 題含官方 PDF 附圖，第 43～47、48～50 題為共用題組。詳解留待第二階段撰寫。"
   },
   {
     "sourceId": "aiap-114-intermediate-2-machine-learning",
@@ -313,13 +313,13 @@
     "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
     "retrievedAt": "2026-07-29",
     "expectedCount": 50,
-    "importedCount": 0,
-    "answerVerifiedCount": 0,
+    "importedCount": 50,
+    "answerVerifiedCount": 50,
     "explanationDraftCount": 0,
     "explanationReviewedCount": 0,
     "availability": "published",
     "inclusion": "target",
-    "notes": "官方 PDF 已確認，共 50 題；其中 10 題（第 38～41、45～50 題）依賴 PDF 內嵌圖片與程式碼截圖，且第 46～47、48～50 題共用題組敘述，網站可顯示圖片前暫不匯入。"
+    "notes": "50 題已逐頁核對並匯入；官方答案已核對。第 38～41、45～50 題含官方 PDF 附圖（含選項為程式碼截圖者），第 42～45、46～47、48～50 題為共用題組。詳解留待第二階段撰寫。"
   },
   {
     "sourceId": "aiap-115-elementary-1-ai-foundation",

@@ -1,7 +1,26 @@
 "use client";
 
-import type { OptionLabel, Question } from "../data/types";
+import Image from "next/image";
+import type { Figure, OptionLabel, Question } from "../data/types";
 import type { StoredAnswer } from "../lib/progress";
+
+function FigureList({ figures }: { figures?: Figure[] }) {
+  if (!figures?.length) return null;
+  return (
+    <div className="question-figures">
+      {figures.map((figure) => (
+        <Image
+          key={figure.src}
+          src={figure.src}
+          alt={figure.alt}
+          width={figure.width}
+          height={figure.height}
+          unoptimized
+        />
+      ))}
+    </div>
+  );
+}
 
 export function QuestionCard({
   question,
@@ -40,7 +59,26 @@ export function QuestionCard({
         </span>
       </div>
 
-      <h2>{question.prompt}</h2>
+      {question.passage ? (
+        <section className="question-passage" aria-label="題組敘述">
+          <p className="eyebrow">
+            題組敘述（官方第 {question.passage.questionNumbers[0]}～
+            {question.passage.questionNumbers.at(-1)} 題共用）
+          </p>
+          {question.passage.blocks.map((block, index) =>
+            block.kind === "figure" ? (
+              <FigureList key={index} figures={[block.figure]} />
+            ) : block.kind === "pre" ? (
+              <pre key={index}>{block.text}</pre>
+            ) : (
+              <p key={index}>{block.text}</p>
+            ),
+          )}
+        </section>
+      ) : null}
+
+      {question.prompt ? <h2>{question.prompt}</h2> : null}
+      <FigureList figures={question.figures} />
 
       <div className="options" aria-label="作答選項">
         {question.options.map((option) => {
@@ -56,7 +94,10 @@ export function QuestionCard({
               onClick={() => onAnswer(option.label)}
             >
               <span className="option-label">{option.label}</span>
-              <span>{option.text}</span>
+              <span>
+                {option.text}
+                <FigureList figures={option.figures} />
+              </span>
               {isCorrect ? <strong>正確答案</strong> : null}
               {isWrong ? <strong>你的答案</strong> : null}
             </button>
