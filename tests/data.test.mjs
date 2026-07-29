@@ -21,10 +21,52 @@ test("contains exactly the 100 official 114 fourth-session elementary questions"
   assert.ok(questions.every((question) => question.options.length === 4));
   assert.ok(questions.every((question) => question.officialAnswer.length === 1));
   assert.ok(questions.every((question) => question.extractionStatus === "verified"));
-  assert.ok(questions.every((question) => question.explanationStatus === "draft"));
+  assert.equal(
+    questions.filter((question) => question.explanationStatus === "draft").length,
+    3,
+  );
+  assert.equal(
+    questions.filter((question) => question.explanationStatus === "missing").length,
+    97,
+  );
+  const forbiddenFiller = [
+    "沒有滿足題幹的關鍵條件",
+    "機制或適用情境不同",
+    "直接符合題幹設定",
+    "也對應",
+    "在題幹脈絡下屬於可成立或可採用的描述",
+  ];
   assert.ok(
     questions.every((question) =>
-      ["A", "B", "C", "D"].every((label) => question.explanation.optionAnalysis[label]),
+      Object.values(question.explanation.optionAnalysis).every(
+        (analysis) => !forbiddenFiller.some((filler) => analysis.includes(filler)),
+      ),
+    ),
+  );
+  const completeOptionAnalyses = questions.filter((question) =>
+    ["A", "B", "C", "D"].every(
+      (label) => question.explanation.optionAnalysis[label]?.length >= 35,
+    ),
+  );
+  assert.deepEqual(
+    completeOptionAnalyses.map((question) => question.id),
+    [
+      "aiap-elementary-114-04-ai-foundation-002",
+      "aiap-elementary-114-04-ai-foundation-003",
+      "aiap-elementary-114-04-ai-foundation-004",
+    ],
+  );
+  const questionsAwaitingExplanation = questions.filter(
+    (question) => question.explanationStatus === "missing",
+  );
+  assert.ok(
+    questionsAwaitingExplanation.every(
+      (question) =>
+        question.explanation.summary === "" &&
+        question.explanation.concept === "" &&
+        question.explanation.answerReason === "" &&
+        question.explanation.trap === "" &&
+        Object.keys(question.explanation.optionAnalysis).length === 0,
     ),
   );
   assert.ok(questions.every((question) => question.explanation.editorialNote));
@@ -126,7 +168,8 @@ test("publishes the verified inventory and imported-question totals", () => {
   assert.equal(manifest.officialQuestionCount, 100);
   assert.equal(manifest.practiceQuestionCount, 0);
   assert.equal(manifest.extractionStatus.verified, 100);
-  assert.equal(manifest.explanationStatus.draft, 100);
+  assert.equal(manifest.explanationStatus.missing, 97);
+  assert.equal(manifest.explanationStatus.draft, 3);
   assert.deepEqual(manifest.collectionProgress, {
     examSessionCount: 12,
     publishedExamPaperCount: 12,
@@ -135,7 +178,7 @@ test("publishes the verified inventory and imported-question totals", () => {
     knownQuestionTarget: 715,
     importedCount: 100,
     answerVerifiedCount: 100,
-    explanationDraftCount: 100,
+    explanationDraftCount: 3,
     explanationReviewedCount: 0,
     availability: {
       published: 17,

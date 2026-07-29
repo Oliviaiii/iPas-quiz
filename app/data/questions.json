@@ -36,18 +36,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「人類監督與介入」在題目情境中的正確適用方式。",
-      "concept": "人在迴圈內、迴圈上與迴圈外的差別，在於人類介入決策的時點與程度。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「人類對 AI 的運行進行日常監督，必要時可立即介入修正或干預」最直接符合人類監督與介入的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「AI 系統只能提供建議」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的人類監督與介入機制或適用情境不同。",
-        "B": "正確。「人類對 AI 的運行進行日常監督」直接符合題幹設定，也對應人類監督與介入的核心判斷。",
-        "C": "不正確。此項以「人類平時不參與 AI 的運作」作過度絕對的限制，忽略人類監督與介入仍需依資料、任務或系統條件判斷。",
-        "D": "不正確。此項描述「AI 的所有判斷與行動在執行前」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的人類監督與介入機制或適用情境不同。"
-      },
-      "trap": "不要只看到「人類監督」就作答，要辨認人類是逐筆核准、日常監督，還是只在異常時接手。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -62,7 +57,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -106,16 +101,16 @@
     "extractionStatus": "verified",
     "explanationStatus": "draft",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「特徵交叉」在題目情境中的正確適用方式。",
-      "concept": "特徵交叉把兩個或多個欄位的組合關係建立成新特徵，讓模型學到單一欄位看不出的交互作用。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「特徵交叉（Feature Cross）」最直接符合特徵交叉的判斷條件，因此依官方公告答案選 C。",
+      "summary": "正確答案是 C。題目要把「星期幾」與「幾點」的組合關係直接做成模型可學習的特徵。",
+      "concept": "特徵交叉會把兩個或多個欄位的組合建立成新特徵，例如「星期一_08時」與「星期日_08時」。模型因此能分別學到平日早上尖峰與假日早上的通勤差異。",
+      "answerReason": "單看星期幾或時間，無法直接表示兩者交互作用；特徵交叉正是用來建立「星期幾 × 時間」的組合特徵，所以選 C。",
       "optionAnalysis": {
-        "A": "不正確。此項描述「One-hot 編碼（One-hot encoding）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的特徵交叉機制或適用情境不同。",
-        "B": "不正確。此項描述「正規化（Normalization）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的特徵交叉機制或適用情境不同。",
-        "C": "正確。「特徵交叉（Feature Cross）」直接符合題幹設定，也對應特徵交叉的核心判斷。",
-        "D": "不正確。此項描述「寬深模型（Wide and Deep）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的特徵交叉機制或適用情境不同。"
+        "A": "One-hot 編碼是把單一類別欄位轉成 0／1 指示欄，例如把星期一到星期日拆成七欄。它能表示「星期幾」，但若只分別編碼星期與時間，並不會自動產生「星期一早上八點」這種組合關係。",
+        "B": "正規化是把數值縮放到相近尺度，例如把溫度與收入轉成可比較的範圍，避免數值尺度差異影響訓練。它不負責建立兩個欄位之間的交互作用。",
+        "C": "特徵交叉會建立「星期幾 × 時間」的新特徵，讓模型直接區分平日尖峰、平日離峰與假日時段，因此最符合本題。",
+        "D": "寬深模型是一種結合 wide 線性部分與 deep 神經網路部分的模型架構：wide 部分擅長記住既有特徵組合，deep 部分用來泛化到未見組合。若題目問推薦系統或同時兼顧記憶與泛化的模型架構，才較適合選它；本題只問要用哪種特徵工程技巧把兩欄結合。"
       },
-      "trap": "編碼與縮放處理的是單一欄位表示；特徵交叉處理的是欄位之間的組合關係。",
+      "trap": "One-hot 是表示單一類別，正規化是調整數值尺度，特徵交叉才是明確建立欄位組合；寬深模型則是模型架構，不是這題要找的特徵工程操作。",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -127,6 +122,18 @@
           "title": "iPAS AI 應用規劃師官方學習資源",
           "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
           "locator": "初級學習指引",
+          "checkedAt": "2026-07-29"
+        },
+        {
+          "title": "Google Machine Learning Crash Course－Feature crosses",
+          "url": "https://developers.google.com/machine-learning/crash-course/categorical-data/feature-crosses",
+          "locator": "特徵交叉的用途與使用情境",
+          "checkedAt": "2026-07-29"
+        },
+        {
+          "title": "Google Research－Wide & Deep Learning for Recommender Systems",
+          "url": "https://research.google/pubs/wide-deep-learning-for-recommender-systems/",
+          "locator": "記憶與泛化的模型架構",
           "checkedAt": "2026-07-29"
         }
       ],
@@ -174,16 +181,16 @@
     "extractionStatus": "verified",
     "explanationStatus": "draft",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「ETL 資料流程」在題目情境中的正確適用方式。",
-      "concept": "ETL 依序代表擷取、轉換與載入；清理、排序與格式轉換通常屬於 Transform。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「T 包括資料的清理與排序」最直接符合ETL 資料流程的判斷條件，因此依官方公告答案選 D。",
+      "summary": "正確答案是 D。ETL 的三個字母依序是 Extract、Transform、Load。",
+      "concept": "Extract 從來源擷取資料；Transform 清理、排序、轉換格式或整併資料；Load 再把處理後資料寫入資料倉儲等目標系統。",
+      "answerReason": "資料清理與排序都是在載入目標系統前改變資料內容或格式，屬於 Transform，因此選 D。",
       "optionAnalysis": {
-        "A": "不正確。此項描述「E 表示將資料直接儲存至目標儲存庫」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的ETL 資料流程機制或適用情境不同。",
-        "B": "不正確。此項描述「ETL 的處理順序可以自由調整為 TEL」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的ETL 資料流程機制或適用情境不同。",
-        "C": "不正確。此項描述「L 表示將目標儲存庫經過反加密處理載入資料」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的ETL 資料流程機制或適用情境不同。",
-        "D": "正確。「T 包括資料的清理與排序」直接符合題幹設定，也對應ETL 資料流程的核心判斷。"
+        "A": "E 是 Extract，工作是從資料庫、檔案或 API 等來源讀取資料；把資料寫入目標儲存庫是 Load，不是 Extract。",
+        "B": "ETL 的名稱同時表示典型處理順序：先擷取、再轉換、最後載入。若先載入再轉換，通常稱為 ELT；不能把 ETL 任意改排成 TEL 還視為相同流程。",
+        "C": "L 是 Load，意思是把已轉換的資料載入目標資料庫或資料倉儲，與「將目標儲存庫反加密」無關。",
+        "D": "T 是 Transform，包含資料清理、排序、格式統一、欄位轉換與彙整，所以此敘述正確。"
       },
-      "trap": "題目常把 Extract、Transform、Load 的工作內容互換，應先依三個字母的順序判斷。",
+      "trap": "不要只背三個英文字母；要把每階段的資料流向連起來：來源讀出、途中整理、寫入目標。",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -242,16 +249,16 @@
     "extractionStatus": "verified",
     "explanationStatus": "draft",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「模型正則化與泛化」在題目情境中的正確適用方式。",
-      "concept": "正則化用懲罰項限制模型複雜度；L1 容易產生稀疏權重，L2 則傾向讓權重平滑縮小。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「L1 運用減少權重的絕對值來控制模型的複雜度」最直接符合模型正則化與泛化的判斷條件，因此依官方公告答案選 C。",
+      "summary": "正確答案是 C。L1 與 L2 都是在損失函數加入權重懲罰，以限制模型複雜度。",
+      "concept": "L1 使用權重絕對值總和，容易讓部分係數變成 0，形成稀疏模型；L2 使用權重平方和，通常讓係數平滑縮小但不會大量精確歸零。",
+      "answerReason": "L1 的懲罰項是權重絕對值總和，會壓縮不重要的權重並控制模型複雜度，因此選 C。",
       "optionAnalysis": {
-        "A": "不正確。此項描述「L1 權重個數愈多」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型正則化與泛化機制或適用情境不同。",
-        "B": "不正確。此項描述「L2 稱為 Lasso 正則化」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型正則化與泛化機制或適用情境不同。",
-        "C": "正確。「L1 運用減少權重的絕對值來控制模型的複雜度」直接符合題幹設定，也對應模型正則化與泛化的核心判斷。",
-        "D": "不正確。此項描述「L2 較 L1 正則化方法會將特徵權重趨近於零」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型正則化與泛化機制或適用情境不同。"
+        "A": "權重數量多不代表正確率一定提高；可調參數過多反而可能記住訓練資料雜訊而過度擬合。L1 的目的之一正是讓不重要的權重歸零，降低有效特徵數。",
+        "B": "Lasso 對應 L1 正則化；L2 正則化通常稱為 Ridge。這個選項把兩者名稱對調了。",
+        "C": "L1 在損失函數加入權重絕對值的懲罰，促使部分權重縮小甚至變成 0，以限制模型複雜度並達到特徵選擇效果。",
+        "D": "L2 會把權重平滑地往 0 壓縮，但通常不會讓大量權重精確等於 0；較容易產生稀疏、零權重解的是 L1，因此此敘述方向相反。"
       },
-      "trap": "Lasso 對應 L1、Ridge 對應 L2；「趨近零」與「直接變成零」也要分清楚。",
+      "trap": "記法：L1／Lasso 容易留下少數非零權重；L2／Ridge 傾向讓所有權重一起縮小。",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -308,18 +315,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「模型正則化與泛化」在題目情境中的正確適用方式。",
-      "concept": "正則化用懲罰項限制模型複雜度；L1 容易產生稀疏權重，L2 則傾向讓權重平滑縮小。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「如何在模型偏差與變異之間取得平衡，以避免過度擬合或欠擬合」最直接符合模型正則化與泛化的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「因資料來源或收集方式限制」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型正則化與泛化機制或適用情境不同。",
-        "B": "不正確。此項描述「測試資料樣本與訓練資料高度重複」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型正則化與泛化機制或適用情境不同。",
-        "C": "不正確。此項描述「訓練資料中類別分布不均」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型正則化與泛化機制或適用情境不同。",
-        "D": "正確。「如何在模型偏差與變異之間取得平衡」直接符合題幹設定，也對應模型正則化與泛化的核心判斷。"
-      },
-      "trap": "Lasso 對應 L1、Ridge 對應 L2；「趨近零」與「直接變成零」也要分清楚。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -334,7 +336,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -376,18 +378,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「模型正則化與泛化」在題目情境中的正確適用方式。",
-      "concept": "正則化用懲罰項限制模型複雜度；L1 容易產生稀疏權重，L2 則傾向讓權重平滑縮小。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「L1 對大係數懲罰較強，促使稀疏解」最直接符合模型正則化與泛化的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「L1 正則化忽略目標變數」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型正則化與泛化機制或適用情境不同。",
-        "B": "不正確。此項描述「L1 對梯度有平滑作用」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型正則化與泛化機制或適用情境不同。",
-        "C": "正確。「L1 對大係數懲罰較強」直接符合題幹設定，也對應模型正則化與泛化的核心判斷。",
-        "D": "不正確。此項描述「L1 會轉換損失函數為非凸形」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型正則化與泛化機制或適用情境不同。"
-      },
-      "trap": "Lasso 對應 L1、Ridge 對應 L2；「趨近零」與「直接變成零」也要分清楚。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -402,7 +399,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -444,18 +441,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「資料品質與前處理」在題目情境中的正確適用方式。",
-      "concept": "AI 模型品質取決於資料的正確性、完整性、代表性、格式與標註一致性。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「透過建構資料的整體分布，並利用條件關係進行推斷和分類的模型」最直接符合資料品質與前處理的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「透過直接學習輸入特徵與目標標籤之間的邊界或關係來進行分類的模型」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "B": "正確。「透過建構資料的整體分布」直接符合題幹設定，也對應資料品質與前處理的核心判斷。",
-        "C": "不正確。此項描述「側重探索資料中樣本間的相似性」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "D": "不正確。此項描述「透過試錯學習」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。"
-      },
-      "trap": "增加資料量不一定改善模型；若資料本身有偏誤或品質問題，可能放大錯誤。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -470,7 +462,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -512,18 +504,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「機器學習類型」在題目情境中的正確適用方式。",
-      "concept": "監督式學習使用標籤，非監督式學習探索未標註資料結構，強化學習則依環境回饋學習行動策略。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「條件語言模型（Conditional Language Model）」最直接符合機器學習類型的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「決策樹分類器（Decision Tree Classifier）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習類型機制或適用情境不同。",
-        "B": "正確。「條件語言模型（Conditional Language Model）」直接符合題幹設定，也對應機器學習類型的核心判斷。",
-        "C": "不正確。此項描述「強化學習 Q-learning 函數模型」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習類型機制或適用情境不同。",
-        "D": "不正確。此項描述「基因演算法（Genetic Algorithm）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習類型機制或適用情境不同。"
-      },
-      "trap": "判斷時先找標籤、獎勵與互動環境三個線索，不要只看應用名稱。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -538,7 +525,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -580,18 +567,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「資料品質與前處理」在題目情境中的正確適用方式。",
-      "concept": "AI 模型品質取決於資料的正確性、完整性、代表性、格式與標註一致性。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「Regulatory Sandbox」最直接符合資料品質與前處理的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「Data Protection Impact Assessment」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "B": "正確。「Regulatory Sandbox」直接符合題幹設定，也對應資料品質與前處理的核心判斷。",
-        "C": "不正確。此項描述「AI Trust Label」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "D": "不正確。此項描述「AI Ethics Review Board」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。"
-      },
-      "trap": "增加資料量不一定改善模型；若資料本身有偏誤或品質問題，可能放大錯誤。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -606,7 +588,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -648,18 +630,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「AI 應用情境判斷」在題目情境中的正確適用方式。",
-      "concept": "本題要求依題幹限制，比較各選項的技術目的、適用條件與導入風險。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「每日公布人工智慧系統運作狀況」最直接符合AI 應用情境判斷的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「辦理人工智慧人才培育」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 應用情境判斷機制或適用情境不同。",
-        "B": "不正確。此項描述「清楚了解生成式 AI 技術之運作模式」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 應用情境判斷機制或適用情境不同。",
-        "C": "正確。「每日公布人工智慧系統運作狀況」直接符合題幹設定，也對應AI 應用情境判斷的核心判斷。",
-        "D": "不正確。此項描述「指派高階主管或委員會進行監督管理」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 應用情境判斷機制或適用情境不同。"
-      },
-      "trap": "遇到情境題時，先圈出目標、資料條件與限制，再排除只符合部分條件的選項。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -674,7 +651,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -716,18 +693,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「機器學習類型」在題目情境中的正確適用方式。",
-      "concept": "監督式學習使用標籤，非監督式學習探索未標註資料結構，強化學習則依環境回饋學習行動策略。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「根據使用者行為將用戶分群，以優化行銷策略」最直接符合機器學習類型的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「根據已標記的醫療影像訓練模型診斷疾病」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習類型機制或適用情境不同。",
-        "B": "正確。「根據使用者行為將用戶分群」直接符合題幹設定，也對應機器學習類型的核心判斷。",
-        "C": "不正確。此項描述「透過已知交通事故記錄預測未來事故發生機率」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習類型機制或適用情境不同。",
-        "D": "不正確。此項描述「根據歷史股價預測未來股市的走勢」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習類型機制或適用情境不同。"
-      },
-      "trap": "判斷時先找標籤、獎勵與互動環境三個線索，不要只看應用名稱。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -742,7 +714,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -784,18 +756,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「AI 應用情境判斷」在題目情境中的正確適用方式。",
-      "concept": "本題要求依題幹限制，比較各選項的技術目的、適用條件與導入風險。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「散佈圖（Scatter Plot）」最直接符合AI 應用情境判斷的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。「散佈圖（Scatter Plot）」直接符合題幹設定，也對應AI 應用情境判斷的核心判斷。",
-        "B": "不正確。此項描述「折線圖（Line Chart）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 應用情境判斷機制或適用情境不同。",
-        "C": "不正確。此項描述「直方圖（Histogram）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 應用情境判斷機制或適用情境不同。",
-        "D": "不正確。此項描述「長條圖（Bar Chart）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 應用情境判斷機制或適用情境不同。"
-      },
-      "trap": "遇到情境題時，先圈出目標、資料條件與限制，再排除只符合部分條件的選項。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -810,7 +777,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -852,18 +819,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「機器學習類型」在題目情境中的正確適用方式。",
-      "concept": "監督式學習使用標籤，非監督式學習探索未標註資料結構，強化學習則依環境回饋學習行動策略。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「在股票市場資料中，輸入歷史股價序列，嘗試將未來可能走勢劃分成若干 「上升型、盤整型、下降型」 群組，無需使用任何標籤 — 非監督式學習（Unsupervised Learning）」最直接符合機器學習類型的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項以「在醫療影像資料中」作過度絕對的限制，忽略機器學習類型仍需依資料、任務或系統條件判斷。",
-        "B": "不正確。此項描述「在自駕車模擬環境中」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習類型機制或適用情境不同。",
-        "C": "不正確。此項描述「在顧客購買紀錄中」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習類型機制或適用情境不同。",
-        "D": "正確。「在股票市場資料中」直接符合題幹設定，也對應機器學習類型的核心判斷。"
-      },
-      "trap": "判斷時先找標籤、獎勵與互動環境三個線索，不要只看應用名稱。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -878,7 +840,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -920,18 +882,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「資料品質與前處理」在題目情境中的正確適用方式。",
-      "concept": "AI 模型品質取決於資料的正確性、完整性、代表性、格式與標註一致性。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「建構模型推算下一季的主力商品銷量，以規劃備貨與倉儲資源配置」最直接符合資料品質與前處理的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「視覺化所有產品線過去月銷售走勢與標準差」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "B": "不正確。此項描述「藉由資料比對分析」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "C": "正確。「建構模型推算下一季的主力商品銷量」直接符合題幹設定，也對應資料品質與前處理的核心判斷。",
-        "D": "不正確。此項描述「透過熱圖分析廣告投放成本與訂單轉換率之間的潛在關聯性」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。"
-      },
-      "trap": "增加資料量不一定改善模型；若資料本身有偏誤或品質問題，可能放大錯誤。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -946,7 +903,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -988,18 +945,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「AI 專案測試與驗證」在題目情境中的正確適用方式。",
-      "concept": "AI 系統需分別驗證模型品質、系統整合、效能、風險與實際業務價值。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「類別 A」最直接符合AI 專案測試與驗證的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。「類別 A」直接符合題幹設定，也對應AI 專案測試與驗證的核心判斷。",
-        "B": "不正確。此項描述「類別 B」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 專案測試與驗證機制或適用情境不同。",
-        "C": "不正確。此項以「類別 A 與 B 各一半」作過度絕對的限制，忽略AI 專案測試與驗證仍需依資料、任務或系統條件判斷。",
-        "D": "不正確。此項描述「類別 A 或 B」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 專案測試與驗證機制或適用情境不同。"
-      },
-      "trap": "開發環境表現不等於上線品質；測試範圍要對應題目所處的生命週期。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -1014,7 +966,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -1056,18 +1008,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「AI 應用情境判斷」在題目情境中的正確適用方式。",
-      "concept": "本題要求依題幹限制，比較各選項的技術目的、適用條件與導入風險。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「RNN 在長序列訓練中可能出現梯度消失，影響模型效果」最直接符合AI 應用情境判斷的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項以「RNN 無法處理可變長度的序列輸入」作過度絕對的限制，忽略AI 應用情境判斷仍需依資料、任務或系統條件判斷。",
-        "B": "正確。「RNN 在長序列訓練中可能出現梯度消失」直接符合題幹設定，也對應AI 應用情境判斷的核心判斷。",
-        "C": "不正確。此項以「RNN 無法捕捉時間上的依賴關係」作過度絕對的限制，忽略AI 應用情境判斷仍需依資料、任務或系統條件判斷。",
-        "D": "不正確。此項描述「RNN 只能用於分類任務」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 應用情境判斷機制或適用情境不同。"
-      },
-      "trap": "遇到情境題時，先圈出目標、資料條件與限制，再排除只符合部分條件的選項。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -1082,7 +1029,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -1124,18 +1071,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「機器學習類型」在題目情境中的正確適用方式。",
-      "concept": "監督式學習使用標籤，非監督式學習探索未標註資料結構，強化學習則依環境回饋學習行動策略。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「強化式學習（Reinforcement Learning）」最直接符合機器學習類型的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。「強化式學習（Reinforcement Learning）」直接符合題幹設定，也對應機器學習類型的核心判斷。",
-        "B": "不正確。此項描述「監督式學習（Supervised Learning）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習類型機制或適用情境不同。",
-        "C": "不正確。此項描述「非監督式學習（Unsupervised Learning）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習類型機制或適用情境不同。",
-        "D": "不正確。此項描述「遷移學習（Transfer Learning）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習類型機制或適用情境不同。"
-      },
-      "trap": "判斷時先找標籤、獎勵與互動環境三個線索，不要只看應用名稱。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -1150,7 +1092,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -1192,18 +1134,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「資料品質與前處理」在題目情境中的正確適用方式。",
-      "concept": "AI 模型品質取決於資料的正確性、完整性、代表性、格式與標註一致性。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「Deep Q-Learning 透過深度神經網路近似 Q 值，避免了 Q 表在高維空間中難以擴展的問題」最直接符合資料品質與前處理的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「Q-Learning 與 Deep Q-Learning 的差異在於是否使用標記資料作為學習基礎」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "B": "不正確。此項描述「Q-Learning 可處理任意維度的狀態空間」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "C": "正確。「Deep Q-Learning 透過深度神經網路近似 Q 值」直接符合題幹設定，也對應資料品質與前處理的核心判斷。",
-        "D": "不正確。此項以「Deep Q-Learning 無法搭配經驗回放（Experience Replay）」作過度絕對的限制，忽略資料品質與前處理仍需依資料、任務或系統條件判斷。"
-      },
-      "trap": "增加資料量不一定改善模型；若資料本身有偏誤或品質問題，可能放大錯誤。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -1218,7 +1155,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -1260,18 +1197,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「損失函數」在題目情境中的正確適用方式。",
-      "concept": "損失函數衡量模型預測與真實目標的差距；分類與迴歸通常使用不同形式的損失。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「均方誤差（MSE）」最直接符合損失函數的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。「均方誤差（MSE）」直接符合題幹設定，也對應損失函數的核心判斷。",
-        "B": "不正確。此項描述「交叉熵損失（Cross-Entropy Loss）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的損失函數機制或適用情境不同。",
-        "C": "不正確。此項描述「Hinge 損失（Hinge Loss）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的損失函數機制或適用情境不同。",
-        "D": "不正確。此項描述「KL 散度（Kullback-Leibler Divergence）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的損失函數機制或適用情境不同。"
-      },
-      "trap": "損失函數是訓練目標，不等同於最終呈現給使用者的評估指標。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -1286,7 +1218,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -1328,18 +1260,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「機器學習模型選擇」在題目情境中的正確適用方式。",
-      "concept": "模型選擇要配合分類、迴歸、分群等任務，以及資料型態、可解釋性與運算限制。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「邏輯迴歸（Logistic Regression）」最直接符合機器學習模型選擇的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。「邏輯迴歸（Logistic Regression）」直接符合題幹設定，也對應機器學習模型選擇的核心判斷。",
-        "B": "不正確。此項描述「支援向量機（Support Vector Machine）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習模型選擇機制或適用情境不同。",
-        "C": "不正確。此項描述「決策樹（Decision Tree）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習模型選擇機制或適用情境不同。",
-        "D": "不正確。此項描述「K 平均演算法（K-means）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習模型選擇機制或適用情境不同。"
-      },
-      "trap": "同一演算法可能有分類或迴歸版本；題目的預測目標才是選模型的第一判斷點。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -1354,7 +1281,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -1396,18 +1323,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「機器學習模型選擇」在題目情境中的正確適用方式。",
-      "concept": "模型選擇要配合分類、迴歸、分群等任務，以及資料型態、可解釋性與運算限制。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「隨機森林（Random Forest）」最直接符合機器學習模型選擇的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「邏輯迴歸（Logistic Regression）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習模型選擇機制或適用情境不同。",
-        "B": "不正確。此項描述「支援向量機（Support Vector Machine）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習模型選擇機制或適用情境不同。",
-        "C": "不正確。此項描述「決策樹（Decision Tree）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習模型選擇機制或適用情境不同。",
-        "D": "正確。「隨機森林（Random Forest）」直接符合題幹設定，也對應機器學習模型選擇的核心判斷。"
-      },
-      "trap": "同一演算法可能有分類或迴歸版本；題目的預測目標才是選模型的第一判斷點。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -1422,7 +1344,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -1464,18 +1386,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「檢索增強生成」在題目情境中的正確適用方式。",
-      "concept": "RAG 先檢索外部知識，再把相關內容提供給生成模型，可改善可追溯性與知識更新效率。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「編碼器將資料轉換為潛在空間表示，解碼器再重建資料」最直接符合檢索增強生成的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「解碼器的任務是將低維壓縮向量分類為不同類別」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的檢索增強生成機制或適用情境不同。",
-        "B": "不正確。此項描述「編碼器將輸入資料轉換為可視化圖像以利模型學習」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的檢索增強生成機制或適用情境不同。",
-        "C": "正確。「編碼器將資料轉換為潛在空間表示」直接符合題幹設定，也對應檢索增強生成的核心判斷。",
-        "D": "不正確。此項描述「編碼器利用最大邊際機率對資料進行異常點偵測」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的檢索增強生成機制或適用情境不同。"
-      },
-      "trap": "Embedding、向量資料庫、檢索與生成是不同環節；題目會針對其中一段提問。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -1490,7 +1407,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -1532,18 +1449,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「法遵與資料治理」在題目情境中的正確適用方式。",
-      "concept": "AI 導入需區分個資、著作權、授權、跨境傳輸與用途限制，並保留可稽核的治理流程。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「互動性」最直接符合法遵與資料治理的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「當責性」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的法遵與資料治理機制或適用情境不同。",
-        "B": "不正確。此項描述「可靠性」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的法遵與資料治理機制或適用情境不同。",
-        "C": "不正確。此項描述「隱私及資安」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的法遵與資料治理機制或適用情境不同。",
-        "D": "正確。「互動性」直接符合題幹設定，也對應法遵與資料治理的核心判斷。"
-      },
-      "trap": "技術上可處理資料，不代表法律上可任意蒐集、利用或再公開。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -1558,7 +1470,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -1600,18 +1512,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「資料品質與前處理」在題目情境中的正確適用方式。",
-      "concept": "AI 模型品質取決於資料的正確性、完整性、代表性、格式與標註一致性。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「較大的參數量能提升模型的表達能力與預測效能，但需足夠訓練資料支持」最直接符合資料品質與前處理的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「模型參數增加會線性提升效能」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "B": "不正確。此項描述「參數越多模型推理越快」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "C": "正確。「較大的參數量能提升模型的表達能力與預測效能」直接符合題幹設定，也對應資料品質與前處理的核心判斷。",
-        "D": "不正確。此項描述「增加參數量不影響記憶體使用」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。"
-      },
-      "trap": "增加資料量不一定改善模型；若資料本身有偏誤或品質問題，可能放大錯誤。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -1626,7 +1533,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -1668,18 +1575,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「模型正則化與泛化」在題目情境中的正確適用方式。",
-      "concept": "正則化用懲罰項限制模型複雜度；L1 容易產生稀疏權重，L2 則傾向讓權重平滑縮小。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「調整或擴充訓練語料，使不同群體或類型資料的比例更加平衡，避免模型過度偏向出現頻率高的類別」最直接符合模型正則化與泛化的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「讓模型在訓練時隨機替換輸出」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型正則化與泛化機制或適用情境不同。",
-        "B": "不正確。此項描述「增加模型的參數量」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型正則化與泛化機制或適用情境不同。",
-        "C": "正確。「調整或擴充訓練語料」直接符合題幹設定，也對應模型正則化與泛化的核心判斷。",
-        "D": "不正確。此項描述「對訓練資料施加額外正則化或噪音」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型正則化與泛化機制或適用情境不同。"
-      },
-      "trap": "Lasso 對應 L1、Ridge 對應 L2；「趨近零」與「直接變成零」也要分清楚。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -1694,7 +1596,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -1736,18 +1638,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「模型微調」在題目情境中的正確適用方式。",
-      "concept": "微調以領域資料調整模型參數；參數高效微調只更新少量參數，以降低訓練資源需求。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「模型過度適應微調的資料分佈，逐漸遺忘先前預訓練所獲得的廣泛知識，在原有任務或廣泛領域上表現變差」最直接符合模型微調的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項以「由於計算資源或訓練步驟不足」作過度絕對的限制，忽略模型微調仍需依資料、任務或系統條件判斷。",
-        "B": "不正確。此項以「微調後模型的表現變得隨機」作過度絕對的限制，忽略模型微調仍需依資料、任務或系統條件判斷。",
-        "C": "不正確。此項以「微調後模型的部分權重產生偏移」作過度絕對的限制，忽略模型微調仍需依資料、任務或系統條件判斷。",
-        "D": "正確。「模型過度適應微調的資料分佈」直接符合題幹設定，也對應模型微調的核心判斷。"
-      },
-      "trap": "提示工程、RAG 與微調處理問題的層次不同，不要因為都能改善回答就混為一談。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -1762,7 +1659,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -1804,18 +1701,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「Token 與上下文管理」在題目情境中的正確適用方式。",
-      "concept": "模型以 Token 處理輸入輸出；上下文長度會影響可納入資訊量、成本與推論表現。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「移除模型中影響較小或冗餘的部分權重參數，以減少模型大小並提升推理效率」最直接符合Token 與上下文管理的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「將模型中所有權重按比例縮小」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的Token 與上下文管理機制或適用情境不同。",
-        "B": "正確。「移除模型中影響較小或冗餘的部分權重參數」直接符合題幹設定，也對應Token 與上下文管理的核心判斷。",
-        "C": "不正確。此項以「在訓練時僅更新部分權重而將其他權重凍結」作過度絕對的限制，忽略Token 與上下文管理仍需依資料、任務或系統條件判斷。",
-        "D": "不正確。此項描述「根據注意力分數動態跳過處理部分輸入 Token」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的Token 與上下文管理機制或適用情境不同。"
-      },
-      "trap": "上下文較長不保證每段資訊都能被同等利用，仍需切分、檢索與重點安排。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -1830,7 +1722,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -1872,18 +1764,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「檢索增強生成」在題目情境中的正確適用方式。",
-      "concept": "RAG 先檢索外部知識，再把相關內容提供給生成模型，可改善可追溯性與知識更新效率。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「自注意力層的計算和其記憶體使用，因為注意力矩陣的大小隨序列長度呈平方級增長」最直接符合檢索增強生成的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「模型輸出層產生文本的過程」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的檢索增強生成機制或適用情境不同。",
-        "B": "不正確。此項描述「詞嵌入 (Embedding) 查找操作」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的檢索增強生成機制或適用情境不同。",
-        "C": "不正確。此項描述「Softmax 函數的計算」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的檢索增強生成機制或適用情境不同。",
-        "D": "正確。「自注意力層的計算和其記憶體使用」直接符合題幹設定，也對應檢索增強生成的核心判斷。"
-      },
-      "trap": "Embedding、向量資料庫、檢索與生成是不同環節；題目會針對其中一段提問。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -1898,7 +1785,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -1940,18 +1827,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「可解釋人工智慧」在題目情境中的正確適用方式。",
-      "concept": "可解釋方法用來說明模型輸出的依據；LIME、SHAP 與反事實解釋的觀察角度不同。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「解釋單一樣本（局部預測）的黑箱模型決策過程」最直接符合可解釋人工智慧的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。「解釋單一樣本（局部預測）的黑箱模型決策過程」直接符合題幹設定，也對應可解釋人工智慧的核心判斷。",
-        "B": "不正確。此項描述「全面提升黑箱模型整體的預測準確度」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的可解釋人工智慧機制或適用情境不同。",
-        "C": "不正確。此項以「將黑箱模型轉換成完全可解釋的模型作為替代」作過度絕對的限制，忽略可解釋人工智慧仍需依資料、任務或系統條件判斷。",
-        "D": "不正確。此項描述「用於生成大量擬真數據來替代訓練集」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的可解釋人工智慧機制或適用情境不同。"
-      },
-      "trap": "解釋模型不等於取代原模型，也不保證模型本身公平或正確。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -1966,7 +1848,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -2008,18 +1890,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「可解釋人工智慧」在題目情境中的正確適用方式。",
-      "concept": "可解釋方法用來說明模型輸出的依據；LIME、SHAP 與反事實解釋的觀察角度不同。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「透過提供可理解的決策依據，促進患者與醫療專業人員對系統診斷結果的信任與接受度」最直接符合可解釋人工智慧的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。「透過提供可理解的決策依據」直接符合題幹設定，也對應可解釋人工智慧的核心判斷。",
-        "B": "不正確。此項描述「以可解釋性方法優化臨床資料蒐集與管理流程」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的可解釋人工智慧機制或適用情境不同。",
-        "C": "不正確。此項描述「利用解釋機制增強模型預測的統計顯著性與準確度」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的可解釋人工智慧機制或適用情境不同。",
-        "D": "不正確。此項描述「透過提供透明化的運作過程」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的可解釋人工智慧機制或適用情境不同。"
-      },
-      "trap": "解釋模型不等於取代原模型，也不保證模型本身公平或正確。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -2034,7 +1911,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -2076,18 +1953,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「可解釋人工智慧」在題目情境中的正確適用方式。",
-      "concept": "可解釋方法用來說明模型輸出的依據；LIME、SHAP 與反事實解釋的觀察角度不同。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「生成的反事實樣本必須滿足特徵間的因果約束和業務邏輯約束，同時確保建議的改變在現實中具有可操作性且符合公平放貸法規」最直接符合可解釋人工智慧的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「需要建立完整的客戶行為預測模型來估算建議改變的實施成本」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的可解釋人工智慧機制或適用情境不同。",
-        "B": "不正確。此項描述「必須使用聯邦學習技術保護客戶隱私」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的可解釋人工智慧機制或適用情境不同。",
-        "C": "不正確。此項描述「需要建構時間序列因果圖來處理客戶信用狀況的動態變化」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的可解釋人工智慧機制或適用情境不同。",
-        "D": "正確。「生成的反事實樣本必須滿足特徵間的因果約束和業務邏輯約束」直接符合題幹設定，也對應可解釋人工智慧的核心判斷。"
-      },
-      "trap": "解釋模型不等於取代原模型，也不保證模型本身公平或正確。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -2102,7 +1974,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -2144,18 +2016,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「AI 公平性與偏誤」在題目情境中的正確適用方式。",
-      "concept": "偏誤可能來自資料蒐集、標註、抽樣、模型設計或部署情境，需透過檢測與治理持續管理。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「增加樣本數並考慮使用分位數或中位數作為中心趨勢估計」最直接符合AI 公平性與偏誤的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項以「直接使用樣本平均數與變異數估計母體參數」作過度絕對的限制，忽略AI 公平性與偏誤仍需依資料、任務或系統條件判斷。",
-        "B": "正確。「增加樣本數並考慮使用分位數或中位數作為中心趨勢估計」直接符合題幹設定，也對應AI 公平性與偏誤的核心判斷。",
-        "C": "不正確。此項描述「將樣本隨機重新排列後」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 公平性與偏誤機制或適用情境不同。",
-        "D": "不正確。此項以「完全依賴樣本標準差來估計母體參數」作過度絕對的限制，忽略AI 公平性與偏誤仍需依資料、任務或系統條件判斷。"
-      },
-      "trap": "公平性問題不只靠增加資料量解決，資料代表性與評估分群同樣重要。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -2170,7 +2037,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -2212,18 +2079,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「機器學習類型」在題目情境中的正確適用方式。",
-      "concept": "監督式學習使用標籤，非監督式學習探索未標註資料結構，強化學習則依環境回饋學習行動策略。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「採用基於重建誤差的自編碼器模型（ Sequence-to-Sequence Autoencoder）進行異常偵測，並僅使用正常資料進行訓練」最直接符合機器學習類型的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「將每筆異常事件資料複製多次以提升模型對異常的辨識敏感度」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習類型機制或適用情境不同。",
-        "B": "不正確。此項描述「對時間序列進行差分與標準化後」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習類型機制或適用情境不同。",
-        "C": "不正確。此項描述「使用經過時間序列特化的 SMOTE 技術生成異常樣本」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習類型機制或適用情境不同。",
-        "D": "正確。「採用基於重建誤差的自編碼器模型（ Sequence-to-Sequence Autoencoder）進行異常偵測」直接符合題幹設定，也對應機器學習類型的核心判斷。"
-      },
-      "trap": "判斷時先找標籤、獎勵與互動環境三個線索，不要只看應用名稱。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -2238,7 +2100,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -2280,18 +2142,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「資料品質與前處理」在題目情境中的正確適用方式。",
-      "concept": "AI 模型品質取決於資料的正確性、完整性、代表性、格式與標註一致性。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「建立欄位命名標準，統一金額單位與格式，進行欄位正規化與語義合併，減少重複資訊影響特徵重要性估計」最直接符合資料品質與前處理的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「利用資料探勘技術自動選擇資料集中對目標變數最敏感的欄位」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "B": "不正確。此項描述「保留所有相似欄位」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "C": "正確。「建立欄位命名標準」直接符合題幹設定，也對應資料品質與前處理的核心判斷。",
-        "D": "不正確。此項描述「將重複欄位視為類別欄位」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。"
-      },
-      "trap": "增加資料量不一定改善模型；若資料本身有偏誤或品質問題，可能放大錯誤。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -2306,7 +2163,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -2348,18 +2205,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「分類模型評估」在題目情境中的正確適用方式。",
-      "concept": "Precision、Recall、F1 與 ROC-AUC 分別觀察不同錯誤成本與分類表現，需依任務風險選擇。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「模型學到的決策邊界主要由多數類別主導，忽視了稀有類別，造成該類別的召回率（Recall）大幅降低」最直接符合分類模型評估的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「模型在預測時傾向輸出稀有類別」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的分類模型評估機制或適用情境不同。",
-        "B": "不正確。此項以「模型由於類別分布不均」作過度絕對的限制，忽略分類模型評估仍需依資料、任務或系統條件判斷。",
-        "C": "不正確。此項描述「模型過度聚焦於稀有類別樣本」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的分類模型評估機制或適用情境不同。",
-        "D": "正確。「模型學到的決策邊界主要由多數類別主導」直接符合題幹設定，也對應分類模型評估的核心判斷。"
-      },
-      "trap": "先判斷題目在意誤報還是漏報，再選 Precision 或 Recall；不要只看 Accuracy。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -2374,7 +2226,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -2416,18 +2268,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「機器學習模型選擇」在題目情境中的正確適用方式。",
-      "concept": "模型選擇要配合分類、迴歸、分群等任務，以及資料型態、可解釋性與運算限制。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「繪製各類流量來源對轉換率的關聯圖，尋找潛在關係」最直接符合機器學習模型選擇的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「建立隨機森林模型」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習模型選擇機制或適用情境不同。",
-        "B": "不正確。此項描述「使用 K-means 對使用者群進行分群並立即制定對應促銷策略」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習模型選擇機制或適用情境不同。",
-        "C": "正確。「繪製各類流量來源對轉換率的關聯圖」直接符合題幹設定，也對應機器學習模型選擇的核心判斷。",
-        "D": "不正確。此項描述「對不同購物路徑設定統計假設並進行雙樣本 t 檢定」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習模型選擇機制或適用情境不同。"
-      },
-      "trap": "同一演算法可能有分類或迴歸版本；題目的預測目標才是選模型的第一判斷點。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -2442,7 +2289,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -2484,18 +2331,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「資料品質與前處理」在題目情境中的正確適用方式。",
-      "concept": "AI 模型品質取決於資料的正確性、完整性、代表性、格式與標註一致性。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「採取時間序列敏感的抽樣策略，例如依據交易時間區間進行分層， 以保存原始的時間結構特性」最直接符合資料品質與前處理的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「擴充樣本數量」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "B": "正確。「採取時間序列敏感的抽樣策略」直接符合題幹設定，也對應資料品質與前處理的核心判斷。",
-        "C": "不正確。此項以「將資料完全隨機打散」作過度絕對的限制，忽略資料品質與前處理仍需依資料、任務或系統條件判斷。",
-        "D": "不正確。此項描述「在模型評估時」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。"
-      },
-      "trap": "增加資料量不一定改善模型；若資料本身有偏誤或品質問題，可能放大錯誤。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -2510,7 +2352,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -2552,18 +2394,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「檢索增強生成」在題目情境中的正確適用方式。",
-      "concept": "RAG 先檢索外部知識，再把相關內容提供給生成模型，可改善可追溯性與知識更新效率。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「採用索引的增量或分段更新方式，使新資料能即時納入而不需全部重建」最直接符合檢索增強生成的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「調整生成模型的回應隨機性參數」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的檢索增強生成機制或適用情境不同。",
-        "B": "不正確。此項描述「提升檢索與索引的運算效能」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的檢索增強生成機制或適用情境不同。",
-        "C": "正確。「採用索引的增量或分段更新方式」直接符合題幹設定，也對應檢索增強生成的核心判斷。",
-        "D": "不正確。此項描述「建立常見問題的標準答案集」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的檢索增強生成機制或適用情境不同。"
-      },
-      "trap": "Embedding、向量資料庫、檢索與生成是不同環節；題目會針對其中一段提問。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -2578,7 +2415,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -2620,18 +2457,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「AI 應用情境判斷」在題目情境中的正確適用方式。",
-      "concept": "本題要求依題幹限制，比較各選項的技術目的、適用條件與導入風險。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「在模型檢核時， 同時呈現平均絕對誤差 （MAE） 與重症子群的誤差指標」最直接符合AI 應用情境判斷的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。「在模型檢核時」直接符合題幹設定，也對應AI 應用情境判斷的核心判斷。",
-        "B": "不正確。此項以「僅針對一般病人樣本進行交叉驗證」作過度絕對的限制，忽略AI 應用情境判斷仍需依資料、任務或系統條件判斷。",
-        "C": "不正確。此項描述「將所有病人的住院日數進行標準化處理」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 應用情境判斷機制或適用情境不同。",
-        "D": "不正確。此項描述「只採用單一的整體決定係數 (R²) 作為模型優劣的判斷依據」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 應用情境判斷機制或適用情境不同。"
-      },
-      "trap": "遇到情境題時，先圈出目標、資料條件與限制，再排除只符合部分條件的選項。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -2646,7 +2478,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -2688,18 +2520,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「機器學習類型」在題目情境中的正確適用方式。",
-      "concept": "監督式學習使用標籤，非監督式學習探索未標註資料結構，強化學習則依環境回饋學習行動策略。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「2、3、5」最直接符合機器學習類型的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不是本題答案。此項所述「3、5、6」在題幹脈絡下屬於可成立或可採用的描述，因此不是題目要求找出的例外。",
-        "B": "不是本題答案。此項所述「1、4、6」在題幹脈絡下屬於可成立或可採用的描述，因此不是題目要求找出的例外。",
-        "C": "不是本題答案。此項所述「2、4、6」在題幹脈絡下屬於可成立或可採用的描述，因此不是題目要求找出的例外。",
-        "D": "正確。官方答案把「2、3、5」視為本題要找的例外或不符合項目；它與機器學習類型的正確適用條件不一致。"
-      },
-      "trap": "判斷時先找標籤、獎勵與互動環境三個線索，不要只看應用名稱。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -2714,7 +2541,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -2756,18 +2583,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「資料品質與前處理」在題目情境中的正確適用方式。",
-      "concept": "AI 模型品質取決於資料的正確性、完整性、代表性、格式與標註一致性。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「One-hot 編碼（One-hot Encoding）」最直接符合資料品質與前處理的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「布林轉換（Boolean Conversion）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "B": "不正確。此項描述「序數編碼（Ordinal Encoding）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "C": "不正確。此項描述「數值標準化（Numerical Standardization）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "D": "正確。「One-hot 編碼（One-hot Encoding）」直接符合題幹設定，也對應資料品質與前處理的核心判斷。"
-      },
-      "trap": "增加資料量不一定改善模型；若資料本身有偏誤或品質問題，可能放大錯誤。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -2782,7 +2604,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -2824,18 +2646,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「聯邦學習與隱私」在題目情境中的正確適用方式。",
-      "concept": "聯邦學習讓各節點在本地訓練，再交換模型更新，降低集中搬移原始敏感資料的需求。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「聯邦學習（Federated Learning）」最直接符合聯邦學習與隱私的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「資料匿名化（Data Anonymization）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的聯邦學習與隱私機制或適用情境不同。",
-        "B": "不正確。此項描述「差分隱私（Differential Privacy）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的聯邦學習與隱私機制或適用情境不同。",
-        "C": "正確。「聯邦學習（Federated Learning）」直接符合題幹設定，也對應聯邦學習與隱私的核心判斷。",
-        "D": "不正確。此項描述「交叉驗證（Cross-validation）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的聯邦學習與隱私機制或適用情境不同。"
-      },
-      "trap": "聯邦學習不代表零風險，仍要搭配安全聚合、權限與隱私保護措施。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -2850,7 +2667,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -2892,18 +2709,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「資料品質與前處理」在題目情境中的正確適用方式。",
-      "concept": "AI 模型品質取決於資料的正確性、完整性、代表性、格式與標註一致性。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「數值標準化（Numerical Standardization）」最直接符合資料品質與前處理的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「布林轉換（Boolean Conversion）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "B": "不正確。此項描述「時間序列分解（Time Series Decomposition）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "C": "不正確。此項描述「One-hot 編碼（One-hot Encoding）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "D": "正確。「數值標準化（Numerical Standardization）」直接符合題幹設定，也對應資料品質與前處理的核心判斷。"
-      },
-      "trap": "增加資料量不一定改善模型；若資料本身有偏誤或品質問題，可能放大錯誤。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -2918,7 +2730,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -2960,18 +2772,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「資料品質與前處理」在題目情境中的正確適用方式。",
-      "concept": "AI 模型品質取決於資料的正確性、完整性、代表性、格式與標註一致性。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「根據顧客的消費行為與特徵，將顧客自動劃分為數個群組，以便進行差異化行銷」最直接符合資料品質與前處理的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「根據歷史交易紀錄與已標註的詐欺案例」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "B": "不正確。此項描述「使用醫療數據與病患的診斷標籤」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "C": "正確。「根據顧客的消費行為與特徵」直接符合題幹設定，也對應資料品質與前處理的核心判斷。",
-        "D": "不正確。此項描述「透過大量已標註影像」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。"
-      },
-      "trap": "增加資料量不一定改善模型；若資料本身有偏誤或品質問題，可能放大錯誤。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -2986,7 +2793,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -3028,18 +2835,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「AI 應用情境判斷」在題目情境中的正確適用方式。",
-      "concept": "本題要求依題幹限制，比較各選項的技術目的、適用條件與導入風險。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「透過 Z 分數 （Z-score） 或標準差範圍檢測異常值， 並依研究需求決定是否調整或移除」最直接符合AI 應用情境判斷的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「將所有極端偏高或偏低的血壓數據直接刪除」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 應用情境判斷機制或適用情境不同。",
-        "B": "不正確。此項描述「使用對數轉換 （Log Transformation）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 應用情境判斷機制或適用情境不同。",
-        "C": "正確。「透過 Z 分數 （Z-score） 或標準差範圍檢測異常值」直接符合題幹設定，也對應AI 應用情境判斷的核心判斷。",
-        "D": "不正確。此項描述「將檢測到的離群值以 Label Encoding 編碼」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 應用情境判斷機制或適用情境不同。"
-      },
-      "trap": "遇到情境題時，先圈出目標、資料條件與限制，再排除只符合部分條件的選項。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -3054,7 +2856,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -3096,18 +2898,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「資料品質與前處理」在題目情境中的正確適用方式。",
-      "concept": "AI 模型品質取決於資料的正確性、完整性、代表性、格式與標註一致性。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「評估每個特徵與目標變數之間的相關性，選擇對預測結果貢獻最大的特徵」最直接符合資料品質與前處理的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「根據特徵的整體分布、變異度或資訊量進行篩選」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "B": "正確。「評估每個特徵與目標變數之間的相關性」直接符合題幹設定，也對應資料品質與前處理的核心判斷。",
-        "C": "不正確。此項描述「使用模型評估特徵對預測結果的重要性」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "D": "不正確。此項描述「將特徵透過降維方法（如 PCA）轉換為新特徵」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。"
-      },
-      "trap": "增加資料量不一定改善模型；若資料本身有偏誤或品質問題，可能放大錯誤。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -3122,7 +2919,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -3164,18 +2961,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「資料品質與前處理」在題目情境中的正確適用方式。",
-      "concept": "AI 模型品質取決於資料的正確性、完整性、代表性、格式與標註一致性。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「選用 ReLU 或其變體作為隱藏層的啟動函數，以改善梯度傳播」最直接符合資料品質與前處理的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「對輸入資料進行隨機旋轉或水平翻轉」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "B": "正確。「選用 ReLU 或其變體作為隱藏層的啟動函數」直接符合題幹設定，也對應資料品質與前處理的核心判斷。",
-        "C": "不正確。此項描述「減少樣本量提升訓練速度」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "D": "不正確。此項描述「對目標變數或特徵進行標準化」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。"
-      },
-      "trap": "增加資料量不一定改善模型；若資料本身有偏誤或品質問題，可能放大錯誤。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -3190,7 +2982,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -3232,18 +3024,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「資料品質與前處理」在題目情境中的正確適用方式。",
-      "concept": "AI 模型品質取決於資料的正確性、完整性、代表性、格式與標註一致性。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「探討顧客年齡資料的整體分布特徵，並檢視是否存在異常集中或分散現象」最直接符合資料品質與前處理的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。「探討顧客年齡資料的整體分布特徵」直接符合題幹設定，也對應資料品質與前處理的核心判斷。",
-        "B": "不正確。此項描述「比較不同商品在各月份的銷售額變化趨勢」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "C": "不正確。此項描述「追蹤公司近一年營收的時間序列變化」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "D": "不正確。此項描述「檢視產品價格與月銷售量之間的關聯性」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。"
-      },
-      "trap": "增加資料量不一定改善模型；若資料本身有偏誤或品質問題，可能放大錯誤。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -3258,7 +3045,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -3300,18 +3087,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「資料品質與前處理」在題目情境中的正確適用方式。",
-      "concept": "AI 模型品質取決於資料的正確性、完整性、代表性、格式與標註一致性。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「資料複雜性」最直接符合資料品質與前處理的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。「資料複雜性」直接符合題幹設定，也對應資料品質與前處理的核心判斷。",
-        "B": "不正確。此項描述「事實正確性」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "C": "不正確。此項描述「偏見與歧視」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "D": "不正確。此項描述「惡意與濫用可能性」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。"
-      },
-      "trap": "增加資料量不一定改善模型；若資料本身有偏誤或品質問題，可能放大錯誤。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -3326,7 +3108,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -3368,18 +3150,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「資料品質與前處理」在題目情境中的正確適用方式。",
-      "concept": "AI 模型品質取決於資料的正確性、完整性、代表性、格式與標註一致性。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「如何確保訓練語料的涵蓋性與標註品質，以避免模型偏差影響輸出」最直接符合資料品質與前處理的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。官方答案把「如何確保訓練語料的涵蓋性與標註品質」視為本題要找的例外或不符合項目；它與資料品質與前處理的正確適用條件不一致。",
-        "B": "不是本題答案。此項所述「當批次規模增大時」在題幹脈絡下屬於可成立或可採用的描述，因此不是題目要求找出的例外。",
-        "C": "不是本題答案。此項所述「在推論過程中」在題幹脈絡下屬於可成立或可採用的描述，因此不是題目要求找出的例外。",
-        "D": "不是本題答案。此項所述「在叢集環境中精確安排推論任務」在題幹脈絡下屬於可成立或可採用的描述，因此不是題目要求找出的例外。"
-      },
-      "trap": "增加資料量不一定改善模型；若資料本身有偏誤或品質問題，可能放大錯誤。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -3394,7 +3171,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -3436,18 +3213,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「No Code／Low Code」在題目情境中的正確適用方式。",
-      "concept": "No Code／Low Code 以視覺模型、元件與自動化降低開發門檻，但整合、測試、治理與客製化仍需工程管理。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「模型是用來抽象描述資料結構、業務流程與介面邏輯的核心元素， 影響應用的設計與維護」最直接符合No Code／Low Code的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項以「模型僅扮演設計視覺化的輔助工具」作過度絕對的限制，忽略No Code／Low Code仍需依資料、任務或系統條件判斷。",
-        "B": "正確。「模型是用來抽象描述資料結構、業務流程與介面邏輯的核心元素」直接符合題幹設定，也對應No Code／Low Code的核心判斷。",
-        "C": "不正確。此項以「模型僅依循 UML（Unified Modeling Language）等傳統建模方式」作過度絕對的限制，忽略No Code／Low Code仍需依資料、任務或系統條件判斷。",
-        "D": "不正確。此項以「模型在 Low Code 平台中已被自動程式碼生成全面取代」作過度絕對的限制，忽略No Code／Low Code仍需依資料、任務或系統條件判斷。"
-      },
-      "trap": "低程式碼不代表完全沒有程式碼，也不代表可忽略測試、資安與生命週期管理。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -3462,7 +3234,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -3504,18 +3276,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「聯邦學習與隱私」在題目情境中的正確適用方式。",
-      "concept": "聯邦學習讓各節點在本地訓練，再交換模型更新，降低集中搬移原始敏感資料的需求。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「聯邦學習（Federated Learning）」最直接符合聯邦學習與隱私的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「同態加密（Homomorphic Encryption）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的聯邦學習與隱私機制或適用情境不同。",
-        "B": "不正確。此項描述「安全多方計算（Secure Multi-party Computation）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的聯邦學習與隱私機制或適用情境不同。",
-        "C": "不正確。此項描述「零知識證明（Zero-knowledge Proofs）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的聯邦學習與隱私機制或適用情境不同。",
-        "D": "正確。「聯邦學習（Federated Learning）」直接符合題幹設定，也對應聯邦學習與隱私的核心判斷。"
-      },
-      "trap": "聯邦學習不代表零風險，仍要搭配安全聚合、權限與隱私保護措施。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -3530,7 +3297,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -3572,18 +3339,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「No Code／Low Code」在題目情境中的正確適用方式。",
-      "concept": "No Code／Low Code 以視覺模型、元件與自動化降低開發門檻，但整合、測試、治理與客製化仍需工程管理。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「導入可重複執行的自動化測試流程，並透過 API 或服務虛擬化進行模組化驗證」最直接符合No Code／Low Code的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「依賴 No Code/Low Code平台提供的即時預覽與基本單元測試功能」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的No Code／Low Code機制或適用情境不同。",
-        "B": "正確。「導入可重複執行的自動化測試流程」直接符合題幹設定，也對應No Code／Low Code的核心判斷。",
-        "C": "不正確。此項描述「將測試聚焦於使用者介面互動與操作流程驗證」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的No Code／Low Code機制或適用情境不同。",
-        "D": "不正確。此項描述「依靠使用者回饋與正式上線後的監控資料」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的No Code／Low Code機制或適用情境不同。"
-      },
-      "trap": "低程式碼不代表完全沒有程式碼，也不代表可忽略測試、資安與生命週期管理。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -3598,7 +3360,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -3640,18 +3402,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「提示工程」在題目情境中的正確適用方式。",
-      "concept": "提示工程透過任務、限制、範例與輸出格式等上下文，引導模型產生較符合需求的結果。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「圖結構轉換為文字提示時，可能導致部分關聯資訊遺失」最直接符合提示工程的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。「圖結構轉換為文字提示時」直接符合題幹設定，也對應提示工程的核心判斷。",
-        "B": "不正確。此項以「APE 在圖資料上無法產生任何提示內容」作過度絕對的限制，忽略提示工程仍需依資料、任務或系統條件判斷。",
-        "C": "不正確。此項描述「圖轉文字後能完整保留所有上下文」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的提示工程機制或適用情境不同。",
-        "D": "不正確。此項以「Graph Prompting 僅能處理線性路徑」作過度絕對的限制，忽略提示工程仍需依資料、任務或系統條件判斷。"
-      },
-      "trap": "提示方法改善的是輸入引導，不等同於重新訓練模型，也不能保證消除幻覺。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -3666,7 +3423,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -3708,18 +3465,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「提示工程」在題目情境中的正確適用方式。",
-      "concept": "提示工程透過任務、限制、範例與輸出格式等上下文，引導模型產生較符合需求的結果。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「回饋機制通常僅針對局部片段，難以全面評估最終輸出品質」最直接符合提示工程的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「迭代優化難以因應上下文的不斷變動」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的提示工程機制或適用情境不同。",
-        "B": "不正確。此項以「模型的記憶容量有限」作過度絕對的限制，忽略提示工程仍需依資料、任務或系統條件判斷。",
-        "C": "不正確。此項以「提示內容難以有效分解」作過度絕對的限制，忽略提示工程仍需依資料、任務或系統條件判斷。",
-        "D": "正確。「回饋機制通常僅針對局部片段」直接符合題幹設定，也對應提示工程的核心判斷。"
-      },
-      "trap": "提示方法改善的是輸入引導，不等同於重新訓練模型，也不能保證消除幻覺。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -3734,7 +3486,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -3776,18 +3528,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「No Code／Low Code」在題目情境中的正確適用方式。",
-      "concept": "No Code／Low Code 以視覺模型、元件與自動化降低開發門檻，但整合、測試、治理與客製化仍需工程管理。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「透過生成式 AI 在 No Code 平台中自動建立介面模板，並結合使用者數據即時生成個人化功能與行銷推播內容」最直接符合No Code／Low Code的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「使用生成式 AI 自動產生 API 呼叫與元件配置」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的No Code／Low Code機制或適用情境不同。",
-        "B": "正確。「透過生成式 AI 在 No Code 平台中自動建立介面模板」直接符合題幹設定，也對應No Code／Low Code的核心判斷。",
-        "C": "不正確。此項描述「在 No Code 平台中導入生成式 AI」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的No Code／Low Code機制或適用情境不同。",
-        "D": "不正確。此項以「在 No Code 平台中完全依賴生成式 AI 自動產生所有應用功能與流程」作過度絕對的限制，忽略No Code／Low Code仍需依資料、任務或系統條件判斷。"
-      },
-      "trap": "低程式碼不代表完全沒有程式碼，也不代表可忽略測試、資安與生命週期管理。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -3802,7 +3549,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -3844,18 +3591,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「系統整合與 API」在題目情境中的正確適用方式。",
-      "concept": "系統整合需釐清用戶端、伺服端、通訊協定、介面契約與錯誤處理責任。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「AI Host →MCP Client → MCP Server →資料查詢→結果回傳 AI Host」最直接符合系統整合與 API的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「MCP Server →AI Host →MCP Client →資料查詢→結果回傳 AI Host」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的系統整合與 API機制或適用情境不同。",
-        "B": "不正確。此項描述「MCP Client →AI Host →MCP Server →資料查詢→結果回傳 AI Host」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的系統整合與 API機制或適用情境不同。",
-        "C": "正確。「AI Host →MCP Client → MCP Server →資料查詢→結果回傳 AI Host」直接符合題幹設定，也對應系統整合與 API的核心判斷。",
-        "D": "不正確。此項描述「AI Host→MCP Server→MCP Client→資料查詢→結果回傳 AI Host」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的系統整合與 API機制或適用情境不同。"
-      },
-      "trap": "能連線不等於整合完成；還要驗證資料格式、權限、重試與可測試性。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -3870,7 +3612,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -3912,18 +3654,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「AI 代理與任務規劃」在題目情境中的正確適用方式。",
-      "concept": "AI 代理會結合目標、規劃、工具使用、記憶與回饋，逐步完成多階段任務。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「Client Agent 發起任務，Remote Agent 執行並回傳結果」最直接符合AI 代理與任務規劃的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「Remote Agent 主動分派任務給Client Agent」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 代理與任務規劃機制或適用情境不同。",
-        "B": "不正確。此項描述「由人工事先設定 Client Agent 與 Remote Agent 處理任務的先後順序」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 代理與任務規劃機制或適用情境不同。",
-        "C": "正確。「Client Agent 發起任務」直接符合題幹設定，也對應AI 代理與任務規劃的核心判斷。",
-        "D": "不正確。此項描述「Client Agent 與 Remote Agent 同時處理任務並同步處理結果」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 代理與任務規劃機制或適用情境不同。"
-      },
-      "trap": "代理不是單次文字生成；需注意它如何拆解任務、選工具與依結果調整。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -3938,7 +3675,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -3980,18 +3717,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「模型微調」在題目情境中的正確適用方式。",
-      "concept": "微調以領域資料調整模型參數；參數高效微調只更新少量參數，以降低訓練資源需求。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「優化提示與上下文」最直接符合模型微調的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「縮短模型訓練時間」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型微調機制或適用情境不同。",
-        "B": "正確。「優化提示與上下文」直接符合題幹設定，也對應模型微調的核心判斷。",
-        "C": "不正確。此項描述「增加模型參數數量」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型微調機制或適用情境不同。",
-        "D": "不正確。此項描述「優化 Fine-tuning 正確率」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型微調機制或適用情境不同。"
-      },
-      "trap": "提示工程、RAG 與微調處理問題的層次不同，不要因為都能改善回答就混為一談。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -4006,7 +3738,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -4048,18 +3780,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「Token 與上下文管理」在題目情境中的正確適用方式。",
-      "concept": "模型以 Token 處理輸入輸出；上下文長度會影響可納入資訊量、成本與推論表現。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「可能生成幻覺或隨機採信其中一方的內容」最直接符合Token 與上下文管理的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「永遠選擇第一段資訊作為答案依據」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的Token 與上下文管理機制或適用情境不同。",
-        "B": "正確。「可能生成幻覺或隨機採信其中一方的內容」直接符合題幹設定，也對應Token 與上下文管理的核心判斷。",
-        "C": "不正確。此項描述「拒絕回答」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的Token 與上下文管理機制或適用情境不同。",
-        "D": "不正確。此項描述「自動判斷並只選擇正確的資訊」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的Token 與上下文管理機制或適用情境不同。"
-      },
-      "trap": "上下文較長不保證每段資訊都能被同等利用，仍需切分、檢索與重點安排。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -4074,7 +3801,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -4116,18 +3843,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「AI 代理與任務規劃」在題目情境中的正確適用方式。",
-      "concept": "AI 代理會結合目標、規劃、工具使用、記憶與回饋，逐步完成多階段任務。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「使用廣度優先、深度優先或最佳優先等演算法進行探索」最直接符合AI 代理與任務規劃的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。「使用廣度優先、深度優先或最佳優先等演算法進行探索」直接符合題幹設定，也對應AI 代理與任務規劃的核心判斷。",
-        "B": "不正確。此項描述「每一步都隨機選擇動作」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 代理與任務規劃機制或適用情境不同。",
-        "C": "不正確。此項描述「只執行事先假定的一條路徑」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 代理與任務規劃機制或適用情境不同。",
-        "D": "不正確。此項以「完全依靠 LLM 一次性推斷最優完整路徑」作過度絕對的限制，忽略AI 代理與任務規劃仍需依資料、任務或系統條件判斷。"
-      },
-      "trap": "代理不是單次文字生成；需注意它如何拆解任務、選工具與依結果調整。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -4142,7 +3864,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -4184,18 +3906,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「法遵與資料治理」在題目情境中的正確適用方式。",
-      "concept": "AI 導入需區分個資、著作權、授權、跨境傳輸與用途限制，並保留可稽核的治理流程。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「可確保輸入模型的敏感資料不會傳輸給第三方，提升資料隱私和自主控制」最直接符合法遵與資料治理的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「可以達到無運算成本」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的法遵與資料治理機制或適用情境不同。",
-        "B": "不正確。此項描述「模型的預測能力會比在雲端運行時更精度」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的法遵與資料治理機制或適用情境不同。",
-        "C": "正確。「可確保輸入模型的敏感資料不會傳輸給第三方」直接符合題幹設定，也對應法遵與資料治理的核心判斷。",
-        "D": "不正確。此項描述「以上皆是」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的法遵與資料治理機制或適用情境不同。"
-      },
-      "trap": "技術上可處理資料，不代表法律上可任意蒐集、利用或再公開。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -4210,7 +3927,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -4252,18 +3969,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「資料品質與前處理」在題目情境中的正確適用方式。",
-      "concept": "AI 模型品質取決於資料的正確性、完整性、代表性、格式與標註一致性。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「GitHub Copilot 由OpenAI 的 Codex 模型提供技術支援，可即時在開發者編輯程式碼時給出整行或整個函式建議」最直接符合資料品質與前處理的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「GitHub Copilot 基於程式碼片段查詢工具」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "B": "不正確。此項以「GitHub Copilot 僅適用於GitHub 上的開源專案」作過度絕對的限制，忽略資料品質與前處理仍需依資料、任務或系統條件判斷。",
-        "C": "不正確。此項描述「GitHub Copilot 利用靜態分析技術分析程式碼」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "D": "正確。「GitHub Copilot 由OpenAI 的 Codex 模型提供技術支援」直接符合題幹設定，也對應資料品質與前處理的核心判斷。"
-      },
-      "trap": "增加資料量不一定改善模型；若資料本身有偏誤或品質問題，可能放大錯誤。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -4278,7 +3990,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -4320,18 +4032,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「檢索增強生成」在題目情境中的正確適用方式。",
-      "concept": "RAG 先檢索外部知識，再把相關內容提供給生成模型，可改善可追溯性與知識更新效率。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「向量資料庫檢索 （Vector Retrieval）＋API 調用 （API Calling）」最直接符合檢索增強生成的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「API 調用（API Calling）＋ 任務規劃器（Task Planner）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的檢索增強生成機制或適用情境不同。",
-        "B": "正確。「向量資料庫檢索 （Vector Retrieval）＋API 調用 （API Calling）」直接符合題幹設定，也對應檢索增強生成的核心判斷。",
-        "C": "不正確。此項描述「向量資料庫檢索 （Vector Retrieval ）＋任務規劃器（ Task Planner）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的檢索增強生成機制或適用情境不同。",
-        "D": "不正確。此項描述「任務規劃器（Task Planner）＋溫度參數（Temperature）設定」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的檢索增強生成機制或適用情境不同。"
-      },
-      "trap": "Embedding、向量資料庫、檢索與生成是不同環節；題目會針對其中一段提問。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -4346,7 +4053,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -4388,18 +4095,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「模型微調」在題目情境中的正確適用方式。",
-      "concept": "微調以領域資料調整模型參數；參數高效微調只更新少量參數，以降低訓練資源需求。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「利用控制變量（Control Tokens）或風格標籤在同一模型內動態調整風格」最直接符合模型微調的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「直接微調預訓練模型針對每個客戶群體分別訓練不同風格模型」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型微調機制或適用情境不同。",
-        "B": "正確。「利用控制變量（Control Tokens）或風格標籤在同一模型內動態調整風格」直接符合題幹設定，也對應模型微調的核心判斷。",
-        "C": "不正確。此項描述「利用生成對抗網路 （GAN） 生成不同風格文本」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型微調機制或適用情境不同。",
-        "D": "不正確。此項描述「採用規則式替換方法」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型微調機制或適用情境不同。"
-      },
-      "trap": "提示工程、RAG 與微調處理問題的層次不同，不要因為都能改善回答就混為一談。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -4414,7 +4116,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -4456,18 +4158,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「AI 代理與任務規劃」在題目情境中的正確適用方式。",
-      "concept": "AI 代理會結合目標、規劃、工具使用、記憶與回饋，逐步完成多階段任務。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「多個代理重複做同樣的任務，造成效率低落」最直接符合AI 代理與任務規劃的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「回覆內容前後不連貫」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 代理與任務規劃機制或適用情境不同。",
-        "B": "不正確。此項以「不同代理的答案互相衝突」作過度絕對的限制，忽略AI 代理與任務規劃仍需依資料、任務或系統條件判斷。",
-        "C": "不正確。此項描述「系統陷入無限對話循環」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 代理與任務規劃機制或適用情境不同。",
-        "D": "正確。「多個代理重複做同樣的任務」直接符合題幹設定，也對應AI 代理與任務規劃的核心判斷。"
-      },
-      "trap": "代理不是單次文字生成；需注意它如何拆解任務、選工具與依結果調整。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -4482,7 +4179,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -4524,18 +4221,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「檢索增強生成」在題目情境中的正確適用方式。",
-      "concept": "RAG 先檢索外部知識，再把相關內容提供給生成模型，可改善可追溯性與知識更新效率。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「保留語氣相關 Fine-tuning，僅透過檢索系統更新文件內容，不頻繁改動模型」最直接符合檢索增強生成的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「每週重新 Fine-tune 模型」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的檢索增強生成機制或適用情境不同。",
-        "B": "不正確。此項以「完全依靠基礎模型與 RAG」作過度絕對的限制，忽略檢索增強生成仍需依資料、任務或系統條件判斷。",
-        "C": "不正確。此項描述「每日進行增量 Fine-tune」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的檢索增強生成機制或適用情境不同。",
-        "D": "正確。「保留語氣相關 Fine-tuning」直接符合題幹設定，也對應檢索增強生成的核心判斷。"
-      },
-      "trap": "Embedding、向量資料庫、檢索與生成是不同環節；題目會針對其中一段提問。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -4550,7 +4242,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -4592,18 +4284,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「提示工程」在題目情境中的正確適用方式。",
-      "concept": "提示工程透過任務、限制、範例與輸出格式等上下文，引導模型產生較符合需求的結果。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「提升檢索系統品質，確保取得的政策內容正確且最新」最直接符合提示工程的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「調整溫度參數」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的提示工程機制或適用情境不同。",
-        "B": "不正確。此項描述「加強 Prompt 設計」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的提示工程機制或適用情境不同。",
-        "C": "不正確。此項描述「優化微調語料」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的提示工程機制或適用情境不同。",
-        "D": "正確。「提升檢索系統品質」直接符合題幹設定，也對應提示工程的核心判斷。"
-      },
-      "trap": "提示方法改善的是輸入引導，不等同於重新訓練模型，也不能保證消除幻覺。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -4618,7 +4305,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -4660,18 +4347,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「提示工程」在題目情境中的正確適用方式。",
-      "concept": "提示工程透過任務、限制、範例與輸出格式等上下文，引導模型產生較符合需求的結果。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「LLM 的 Prompt 缺乏明確指示，導致語意分類判斷錯誤」最直接符合提示工程的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不是本題答案。此項所述「醫療資料庫 API 對應規則設計不清」在題幹脈絡下屬於可成立或可採用的描述，因此不是題目要求找出的例外。",
-        "B": "正確。官方答案把「LLM 的 Prompt 缺乏明確指示」視為本題要找的例外或不符合項目；它與提示工程的正確適用條件不一致。",
-        "C": "不是本題答案。此項所述「查詢 API 回傳速度過慢」在題幹脈絡下屬於可成立或可採用的描述，因此不是題目要求找出的例外。",
-        "D": "不是本題答案。此項所述「LLM 未經醫療領域微調」在題幹脈絡下屬於可成立或可採用的描述，因此不是題目要求找出的例外。"
-      },
-      "trap": "提示方法改善的是輸入引導，不等同於重新訓練模型，也不能保證消除幻覺。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -4686,7 +4368,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -4728,18 +4410,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「資料品質與前處理」在題目情境中的正確適用方式。",
-      "concept": "AI 模型品質取決於資料的正確性、完整性、代表性、格式與標註一致性。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「模型可能生成與實際影像不符的診斷結論，導致誤判並引發醫療與法律風險」最直接符合資料品質與前處理的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項以「模型在生成報告時語句流暢」作過度絕對的限制，忽略資料品質與前處理仍需依資料、任務或系統條件判斷。",
-        "B": "不正確。此項以「模型若資料不足」作過度絕對的限制，忽略資料品質與前處理仍需依資料、任務或系統條件判斷。",
-        "C": "不正確。此項以「模型偏向生成內容而非分類」作過度絕對的限制，忽略資料品質與前處理仍需依資料、任務或系統條件判斷。",
-        "D": "正確。「模型可能生成與實際影像不符的診斷結論」直接符合題幹設定，也對應資料品質與前處理的核心判斷。"
-      },
-      "trap": "增加資料量不一定改善模型；若資料本身有偏誤或品質問題，可能放大錯誤。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -4754,7 +4431,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -4796,18 +4473,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「檢索增強生成」在題目情境中的正確適用方式。",
-      "concept": "RAG 先檢索外部知識，再把相關內容提供給生成模型，可改善可追溯性與知識更新效率。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「1 → 2 → 4 → 3」最直接符合檢索增強生成的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。官方答案把「1 → 2 → 4 → 3」視為本題要找的例外或不符合項目；它與檢索增強生成的正確適用條件不一致。",
-        "B": "不是本題答案。此項所述「2 → 1→ 3 → 4」在題幹脈絡下屬於可成立或可採用的描述，因此不是題目要求找出的例外。",
-        "C": "不是本題答案。此項所述「1 → 3 → 2 → 4」在題幹脈絡下屬於可成立或可採用的描述，因此不是題目要求找出的例外。",
-        "D": "不是本題答案。此項所述「3 → 1 → 2 → 4」在題幹脈絡下屬於可成立或可採用的描述，因此不是題目要求找出的例外。"
-      },
-      "trap": "Embedding、向量資料庫、檢索與生成是不同環節；題目會針對其中一段提問。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -4822,7 +4494,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -4864,18 +4536,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「AI 專案測試與驗證」在題目情境中的正確適用方式。",
-      "concept": "AI 系統需分別驗證模型品質、系統整合、效能、風險與實際業務價值。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「模型過度依賴訓練語料中的常見報告範式，導致生成結果以樣板化結構取代真正的推理」最直接符合AI 專案測試與驗證的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項以「模型在生成過程中缺乏對字體與排版的優化能力」作過度絕對的限制，忽略AI 專案測試與驗證仍需依資料、任務或系統條件判斷。",
-        "B": "不正確。此項以「測試資料涵蓋過多統計圖表」作過度絕對的限制，忽略AI 專案測試與驗證仍需依資料、任務或系統條件判斷。",
-        "C": "正確。「模型過度依賴訓練語料中的常見報告範式」直接符合題幹設定，也對應AI 專案測試與驗證的核心判斷。",
-        "D": "不正確。此項以「模型因無法正確辨識報告中的頁碼與標題層級」作過度絕對的限制，忽略AI 專案測試與驗證仍需依資料、任務或系統條件判斷。"
-      },
-      "trap": "開發環境表現不等於上線品質；測試範圍要對應題目所處的生命週期。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -4890,7 +4557,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -4932,18 +4599,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「提示工程」在題目情境中的正確適用方式。",
-      "concept": "提示工程透過任務、限制、範例與輸出格式等上下文，引導模型產生較符合需求的結果。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「要求模型從表格中擷取所有城市的最高氣溫」最直接符合提示工程的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不是本題答案。此項所述「要求模型判斷一段影評文字的情感傾向」在題幹脈絡下屬於可成立或可採用的描述，因此不是題目要求找出的例外。",
-        "B": "不是本題答案。此項所述「要求模型將一段新聞摘要濃縮為一句話」在題幹脈絡下屬於可成立或可採用的描述，因此不是題目要求找出的例外。",
-        "C": "不是本題答案。此項所述「要求模型將一段繁體中文翻譯成英文」在題幹脈絡下屬於可成立或可採用的描述，因此不是題目要求找出的例外。",
-        "D": "正確。官方答案把「要求模型從表格中擷取所有城市的最高氣溫」視為本題要找的例外或不符合項目；它與提示工程的正確適用條件不一致。"
-      },
-      "trap": "提示方法改善的是輸入引導，不等同於重新訓練模型，也不能保證消除幻覺。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -4958,7 +4620,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -5000,18 +4662,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「法遵與資料治理」在題目情境中的正確適用方式。",
-      "concept": "AI 導入需區分個資、著作權、授權、跨境傳輸與用途限制，並保留可稽核的治理流程。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「投入資源自訓並私有化部署 LLM，並同步建立自動化風控機制」最直接符合法遵與資料治理的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不是本題答案。此項所述「導入開源模型並由 IT 團隊自建」在題幹脈絡下屬於可成立或可採用的描述，因此不是題目要求找出的例外。",
-        "B": "不是本題答案。此項所述「在需求確認階段即納入法遵與稽核單位」在題幹脈絡下屬於可成立或可採用的描述，因此不是題目要求找出的例外。",
-        "C": "不是本題答案。此項所述「優先使用雲端大型 API 模型快速部署」在題幹脈絡下屬於可成立或可採用的描述，因此不是題目要求找出的例外。",
-        "D": "正確。官方答案把「投入資源自訓並私有化部署 LLM」視為本題要找的例外或不符合項目；它與法遵與資料治理的正確適用條件不一致。"
-      },
-      "trap": "技術上可處理資料，不代表法律上可任意蒐集、利用或再公開。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -5026,7 +4683,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -5068,18 +4725,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「Token 與上下文管理」在題目情境中的正確適用方式。",
-      "concept": "模型以 Token 處理輸入輸出；上下文長度會影響可納入資訊量、成本與推論表現。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「在生成過程中結合圖片特徵與語言建模，讓模型同時利用影像內容與文字資訊」最直接符合Token 與上下文管理的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「強化語言模型的句法與流暢性」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的Token 與上下文管理機制或適用情境不同。",
-        "B": "正確。「在生成過程中結合圖片特徵與語言建模」直接符合題幹設定，也對應Token 與上下文管理的核心判斷。",
-        "C": "不正確。此項描述「調整生成策略（如 Beam Search 或溫度參數）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的Token 與上下文管理機制或適用情境不同。",
-        "D": "不正確。此項描述「專注於文字序列上下文的建模」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的Token 與上下文管理機制或適用情境不同。"
-      },
-      "trap": "上下文較長不保證每段資訊都能被同等利用，仍需切分、檢索與重點安排。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -5094,7 +4746,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -5136,18 +4788,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「模型微調」在題目情境中的正確適用方式。",
-      "concept": "微調以領域資料調整模型參數；參數高效微調只更新少量參數，以降低訓練資源需求。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「降低生成溫度，以減少隨機性並提升風格一致性」最直接符合模型微調的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「擴充語料庫並微調模型」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型微調機制或適用情境不同。",
-        "B": "不正確。此項描述「增加提示詞複雜度」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型微調機制或適用情境不同。",
-        "C": "正確。「降低生成溫度」直接符合題幹設定，也對應模型微調的核心判斷。",
-        "D": "不正確。此項描述「使用全連接神經網路對生成結果後期篩選」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型微調機制或適用情境不同。"
-      },
-      "trap": "提示工程、RAG 與微調處理問題的層次不同，不要因為都能改善回答就混為一談。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -5162,7 +4809,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -5204,18 +4851,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「機器學習模型選擇」在題目情境中的正確適用方式。",
-      "concept": "模型選擇要配合分類、迴歸、分群等任務，以及資料型態、可解釋性與運算限制。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「將語音轉文字後標註發言角色與主題邊界，結合語意分群進行動態摘要」最直接符合機器學習模型選擇的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「使用語音轉文字模型即時輸出逐字稿並轉入 GPT 摘要」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習模型選擇機制或適用情境不同。",
-        "B": "不正確。此項描述「將語音逐段切分並建立關鍵字索引」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習模型選擇機制或適用情境不同。",
-        "C": "正確。「將語音轉文字後標註發言角色與主題邊界」直接符合題幹設定，也對應機器學習模型選擇的核心判斷。",
-        "D": "不正確。此項描述「將所有語音內容儲存為完整紀錄」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的機器學習模型選擇機制或適用情境不同。"
-      },
-      "trap": "同一演算法可能有分類或迴歸版本；題目的預測目標才是選模型的第一判斷點。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -5230,7 +4872,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -5272,18 +4914,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「提示工程」在題目情境中的正確適用方式。",
-      "concept": "提示工程透過任務、限制、範例與輸出格式等上下文，引導模型產生較符合需求的結果。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「「以下是兩組客服對話範例，請依照相同風格回覆新的顧客問題」」最直接符合提示工程的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「「請回答顧客詢問：如何申請退貨？」」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的提示工程機制或適用情境不同。",
-        "B": "正確。「「以下是兩組客服對話範例」直接符合題幹設定，也對應提示工程的核心判斷。",
-        "C": "不正確。此項描述「「請逐步分析顧客投訴的原因」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的提示工程機制或適用情境不同。",
-        "D": "不正確。此項描述「「請以正式的語氣回覆顧客的提問」」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的提示工程機制或適用情境不同。"
-      },
-      "trap": "提示方法改善的是輸入引導，不等同於重新訓練模型，也不能保證消除幻覺。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -5298,7 +4935,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -5340,18 +4977,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「資料品質與前處理」在題目情境中的正確適用方式。",
-      "concept": "AI 模型品質取決於資料的正確性、完整性、代表性、格式與標註一致性。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「建立與外部即時行情來源同步的查詢模組，確保 AI 能即時擷取最新金融數據」最直接符合資料品質與前處理的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「將 AI 系統連結至公司內部歷史交易資料庫」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "B": "不正確。此項描述「調整模型的回應邏輯」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "C": "正確。「建立與外部即時行情來源同步的查詢模組」直接符合題幹設定，也對應資料品質與前處理的核心判斷。",
-        "D": "不正確。此項描述「增加訓練資料中模擬的金融危機與市場異常案例」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。"
-      },
-      "trap": "增加資料量不一定改善模型；若資料本身有偏誤或品質問題，可能放大錯誤。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -5366,7 +4998,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -5408,18 +5040,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「資料品質與前處理」在題目情境中的正確適用方式。",
-      "concept": "AI 模型品質取決於資料的正確性、完整性、代表性、格式與標註一致性。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「2 → 3 → 4 → 1」最直接符合資料品質與前處理的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。「2 → 3 → 4 → 1」直接符合題幹設定，也對應資料品質與前處理的核心判斷。",
-        "B": "不正確。此項描述「3 → 2 → 1 → 4」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "C": "不正確。此項描述「2 → 1 → 3 → 4」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。",
-        "D": "不正確。此項描述「1 → 4 → 3 → 2」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的資料品質與前處理機制或適用情境不同。"
-      },
-      "trap": "增加資料量不一定改善模型；若資料本身有偏誤或品質問題，可能放大錯誤。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -5434,7 +5061,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -5476,18 +5103,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「隱私強化技術」在題目情境中的正確適用方式。",
-      "concept": "同態加密、安全多方計算與零知識證明解決的信任與計算問題不同，應依資料是否移動及誰參與計算判斷。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「實施資料最小化與去識別化，確保 AI 在訓練與生成過程中不直接處理或暴露敏感個資」最直接符合隱私強化技術的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「在加密環境下導入完整的顧客訂單與行為資料」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的隱私強化技術機制或適用情境不同。",
-        "B": "正確。「實施資料最小化與去識別化」直接符合題幹設定，也對應隱私強化技術的核心判斷。",
-        "C": "不正確。此項描述「強化模型的回覆審查流程」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的隱私強化技術機制或適用情境不同。",
-        "D": "不正確。此項描述「設定 AI 的角色與回覆範圍」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的隱私強化技術機制或適用情境不同。"
-      },
-      "trap": "加密技術不是彼此可任意替換；先確認題目要求的是共同計算、驗證，還是加密狀態運算。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -5502,7 +5124,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -5544,18 +5166,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「AI 應用情境判斷」在題目情境中的正確適用方式。",
-      "concept": "本題要求依題幹限制，比較各選項的技術目的、適用條件與導入風險。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「具備跨語言專業術語對齊與條文語意抽取能力，能正確辨識不同國家規範間的對應與差異」最直接符合AI 應用情境判斷的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。「具備跨語言專業術語對齊與條文語意抽取能力」直接符合題幹設定，也對應AI 應用情境判斷的核心判斷。",
-        "B": "不正確。此項描述「能自動最佳化文件檢索效率」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 應用情境判斷機制或適用情境不同。",
-        "C": "不正確。此項描述「能將合規文件轉換為多種輸出形式 （如簡報 、 摘要或法規清單）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 應用情境判斷機制或適用情境不同。",
-        "D": "不正確。此項描述「具備根據歷史案例生成合規解釋的能力」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 應用情境判斷機制或適用情境不同。"
-      },
-      "trap": "遇到情境題時，先圈出目標、資料條件與限制，再排除只符合部分條件的選項。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -5570,7 +5187,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -5612,18 +5229,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「No Code／Low Code」在題目情境中的正確適用方式。",
-      "concept": "No Code／Low Code 以視覺模型、元件與自動化降低開發門檻，但整合、測試、治理與客製化仍需工程管理。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「透過可視化建模介面，降低技術門檻並促進跨部門協作」最直接符合No Code／Low Code的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「自動化大量資料的標註與前處理」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的No Code／Low Code機制或適用情境不同。",
-        "B": "不正確。此項描述「提升運算基礎設施的可擴展性」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的No Code／Low Code機制或適用情境不同。",
-        "C": "正確。「透過可視化建模介面」直接符合題幹設定，也對應No Code／Low Code的核心判斷。",
-        "D": "不正確。此項描述「提供進階特徵工程能力」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的No Code／Low Code機制或適用情境不同。"
-      },
-      "trap": "低程式碼不代表完全沒有程式碼，也不代表可忽略測試、資安與生命週期管理。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -5638,7 +5250,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -5680,18 +5292,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「AI 專案測試與驗證」在題目情境中的正確適用方式。",
-      "concept": "AI 系統需分別驗證模型品質、系統整合、效能、風險與實際業務價值。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「生成內容的醫療準確性與臨床一致性，避免出現錯誤或誤導性資訊」最直接符合AI 專案測試與驗證的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「資料儲存與存取架構的完整性」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 專案測試與驗證機制或適用情境不同。",
-        "B": "正確。「生成內容的醫療準確性與臨床一致性」直接符合題幹設定，也對應AI 專案測試與驗證的核心判斷。",
-        "C": "不正確。此項描述「模型在不同病例語境下的泛化能力」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 專案測試與驗證機制或適用情境不同。",
-        "D": "不正確。此項描述「系統回應時間的穩定性」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 專案測試與驗證機制或適用情境不同。"
-      },
-      "trap": "開發環境表現不等於上線品質；測試範圍要對應題目所處的生命週期。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -5706,7 +5313,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -5748,18 +5355,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「AI 專案測試與驗證」在題目情境中的正確適用方式。",
-      "concept": "AI 系統需分別驗證模型品質、系統整合、效能、風險與實際業務價值。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「客戶從輸入問題到收到第一個完整回應所需的時間」最直接符合AI 專案測試與驗證的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「AI 模型在同一分鐘內可完成的回覆訊息數量」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 專案測試與驗證機制或適用情境不同。",
-        "B": "正確。「客戶從輸入問題到收到第一個完整回應所需的時間」直接符合題幹設定，也對應AI 專案測試與驗證的核心判斷。",
-        "C": "不正確。此項描述「客服系統能連續提供服務的運行時長」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 專案測試與驗證機制或適用情境不同。",
-        "D": "不正確。此項描述「AI 產生回答時用詞的多樣性與表達創意程度」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 專案測試與驗證機制或適用情境不同。"
-      },
-      "trap": "開發環境表現不等於上線品質；測試範圍要對應題目所處的生命週期。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -5774,7 +5376,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -5816,18 +5418,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「提示工程」在題目情境中的正確適用方式。",
-      "concept": "提示工程透過任務、限制、範例與輸出格式等上下文，引導模型產生較符合需求的結果。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「導入輸入檢測與回應審核流程，防止敏感指令被執行」最直接符合提示工程的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。「導入輸入檢測與回應審核流程」直接符合題幹設定，也對應提示工程的核心判斷。",
-        "B": "不正確。此項以「限制 AI 可回應的主題範圍」作過度絕對的限制，忽略提示工程仍需依資料、任務或系統條件判斷。",
-        "C": "不正確。此項描述「隨機變化回覆內容」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的提示工程機制或適用情境不同。",
-        "D": "不正確。此項描述「擴充與更新航班與票務資料來源」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的提示工程機制或適用情境不同。"
-      },
-      "trap": "提示方法改善的是輸入引導，不等同於重新訓練模型，也不能保證消除幻覺。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -5842,7 +5439,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -5884,18 +5481,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「模型漂移監控」在題目情境中的正確適用方式。",
-      "concept": "資料漂移是輸入分布改變；概念漂移是輸入與目標之間的關係改變。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「訓練時使用的資料分佈，與部署後實際輸入資料的統計特徵隨時間逐漸出現差異，導致模型表現衰退」最直接符合模型漂移監控的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。「訓練時使用的資料分佈」直接符合題幹設定，也對應模型漂移監控的核心判斷。",
-        "B": "不正確。此項描述「在資料前處理過程中」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型漂移監控機制或適用情境不同。",
-        "C": "不正確。此項描述「模型對訓練數據擬合過度」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型漂移監控機制或適用情境不同。",
-        "D": "不正確。此項描述「後端資料庫因欄位定義或結構調整」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的模型漂移監控機制或適用情境不同。"
-      },
-      "trap": "輸入特徵變化與判斷規則變化是兩件事，題目通常會用情境提示其中一種。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -5910,7 +5502,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -5952,18 +5544,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「AI 公平性與偏誤」在題目情境中的正確適用方式。",
-      "concept": "偏誤可能來自資料蒐集、標註、抽樣、模型設計或部署情境，需透過檢測與治理持續管理。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「導入資料與結果的公平性檢測流程，並依合規規範調整模型或決策邏輯」最直接符合AI 公平性與偏誤的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「提升模型運算速度與效能」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 公平性與偏誤機制或適用情境不同。",
-        "B": "不正確。此項描述「全面移除與申貸人身份相關的敏感屬性」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 公平性與偏誤機制或適用情境不同。",
-        "C": "正確。「導入資料與結果的公平性檢測流程」直接符合題幹設定，也對應AI 公平性與偏誤的核心判斷。",
-        "D": "不正確。此項描述「減少訓練樣本數量」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 公平性與偏誤機制或適用情境不同。"
-      },
-      "trap": "公平性問題不只靠增加資料量解決，資料代表性與評估分群同樣重要。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -5978,7 +5565,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -6020,18 +5607,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「提示工程」在題目情境中的正確適用方式。",
-      "concept": "提示工程透過任務、限制、範例與輸出格式等上下文，引導模型產生較符合需求的結果。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「情境一採用 CoT，情境二採用ToT」最直接符合提示工程的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。「情境一採用 CoT」直接符合題幹設定，也對應提示工程的核心判斷。",
-        "B": "不正確。此項描述「情境一採用 ToT」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的提示工程機制或適用情境不同。",
-        "C": "不正確。此項描述「情境一與情境二都適合 CoT」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的提示工程機制或適用情境不同。",
-        "D": "不正確。此項描述「情境一與情境二都適合 ToT」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的提示工程機制或適用情境不同。"
-      },
-      "trap": "提示方法改善的是輸入引導，不等同於重新訓練模型，也不能保證消除幻覺。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -6046,7 +5628,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -6088,18 +5670,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「提示工程」在題目情境中的正確適用方式。",
-      "concept": "提示工程透過任務、限制、範例與輸出格式等上下文，引導模型產生較符合需求的結果。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「Graph Prompting 能捕捉非線性結構與上下文關聯，適合處理網絡化資訊」最直接符合提示工程的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「Graph Prompting 幾乎不需要推理」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的提示工程機制或適用情境不同。",
-        "B": "不正確。此項以「Graph Prompting 僅需單次提示」作過度絕對的限制，忽略提示工程仍需依資料、任務或系統條件判斷。",
-        "C": "不正確。此項描述「Graph Prompting 的生成速度通常更快」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的提示工程機制或適用情境不同。",
-        "D": "正確。「Graph Prompting 能捕捉非線性結構與上下文關聯」直接符合題幹設定，也對應提示工程的核心判斷。"
-      },
-      "trap": "提示方法改善的是輸入引導，不等同於重新訓練模型，也不能保證消除幻覺。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -6114,7 +5691,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -6156,18 +5733,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「提示工程」在題目情境中的正確適用方式。",
-      "concept": "提示工程透過任務、限制、範例與輸出格式等上下文，引導模型產生較符合需求的結果。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「範例數量過少，無法涵蓋新領域的多樣性，導致模型泛化不足」最直接符合提示工程的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。「範例數量過少」直接符合題幹設定，也對應提示工程的核心判斷。",
-        "B": "不正確。此項描述「範例表徵有限」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的提示工程機制或適用情境不同。",
-        "C": "不正確。此項描述「範例覆蓋不足」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的提示工程機制或適用情境不同。",
-        "D": "不正確。此項描述「範例資訊過於稀缺」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的提示工程機制或適用情境不同。"
-      },
-      "trap": "提示方法改善的是輸入引導，不等同於重新訓練模型，也不能保證消除幻覺。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -6182,7 +5754,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -6224,18 +5796,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「檢索增強生成」在題目情境中的正確適用方式。",
-      "concept": "RAG 先檢索外部知識，再把相關內容提供給生成模型，可改善可追溯性與知識更新效率。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「讓小型模型學習大型模型的知識，在降低運算成本的同時維持檢索與生成品質」最直接符合檢索增強生成的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。「讓小型模型學習大型模型的知識」直接符合題幹設定，也對應檢索增強生成的核心判斷。",
-        "B": "不正確。此項以「只能應用於語音或影像辨識」作過度絕對的限制，忽略檢索增強生成仍需依資料、任務或系統條件判斷。",
-        "C": "不正確。此項描述「因為 RAG 已有檢索機制」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的檢索增強生成機制或適用情境不同。",
-        "D": "不正確。此項以「僅能依賴特定 API 供應商才能使用」作過度絕對的限制，忽略檢索增強生成仍需依資料、任務或系統條件判斷。"
-      },
-      "trap": "Embedding、向量資料庫、檢索與生成是不同環節；題目會針對其中一段提問。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -6250,7 +5817,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -6292,18 +5859,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「AI 專案測試與驗證」在題目情境中的正確適用方式。",
-      "concept": "AI 系統需分別驗證模型品質、系統整合、效能、風險與實際業務價值。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「模型越大，Benchmark 結果可能提升，但幅度取決於訓練數據品質與資源配置」最直接符合AI 專案測試與驗證的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「小模型在正確調整下能超越大模型」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 專案測試與驗證機制或適用情境不同。",
-        "B": "不正確。此項描述「大模型在多數情境下表現較好」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 專案測試與驗證機制或適用情境不同。",
-        "C": "不正確。此項以「模型規模與基準測試結果完全無關」作過度絕對的限制，忽略AI 專案測試與驗證仍需依資料、任務或系統條件判斷。",
-        "D": "正確。「模型越大」直接符合題幹設定，也對應AI 專案測試與驗證的核心判斷。"
-      },
-      "trap": "開發環境表現不等於上線品質；測試範圍要對應題目所處的生命週期。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -6318,7 +5880,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -6360,18 +5922,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「檢索增強生成」在題目情境中的正確適用方式。",
-      "concept": "RAG 先檢索外部知識，再把相關內容提供給生成模型，可改善可追溯性與知識更新效率。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「RAG 常用於擴展知識庫內容，而 MCP 更著重於動態工具與 API 呼叫的整合」最直接符合檢索增強生成的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「MCP 擴展模型工具」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的檢索增強生成機制或適用情境不同。",
-        "B": "不正確。此項描述「MCP 能標準化連接資源」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的檢索增強生成機制或適用情境不同。",
-        "C": "正確。「RAG 常用於擴展知識庫內容」直接符合題幹設定，也對應檢索增強生成的核心判斷。",
-        "D": "不正確。此項描述「RAG 透過統一協議」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的檢索增強生成機制或適用情境不同。"
-      },
-      "trap": "Embedding、向量資料庫、檢索與生成是不同環節；題目會針對其中一段提問。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -6386,7 +5943,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -6428,18 +5985,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「AI 專案測試與驗證」在題目情境中的正確適用方式。",
-      "concept": "AI 系統需分別驗證模型品質、系統整合、效能、風險與實際業務價值。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「MMLU」最直接符合AI 專案測試與驗證的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。「MMLU」直接符合題幹設定，也對應AI 專案測試與驗證的核心判斷。",
-        "B": "不正確。此項描述「GSM8K」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 專案測試與驗證機制或適用情境不同。",
-        "C": "不正確。此項描述「MATH」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 專案測試與驗證機制或適用情境不同。",
-        "D": "不正確。此項描述「C-Eval」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 專案測試與驗證機制或適用情境不同。"
-      },
-      "trap": "開發環境表現不等於上線品質；測試範圍要對應題目所處的生命週期。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -6454,7 +6006,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -6496,18 +6048,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「AI 應用情境判斷」在題目情境中的正確適用方式。",
-      "concept": "本題要求依題幹限制，比較各選項的技術目的、適用條件與導入風險。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「完整重建並追蹤 AI 模型的全部推理過程」最直接符合AI 應用情境判斷的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「檢查工程師輸入內容」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 應用情境判斷機制或適用情境不同。",
-        "B": "不正確。此項描述「過濾與驗證 AI 輸出的維修指引」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 應用情境判斷機制或適用情境不同。",
-        "C": "不正確。此項描述「確保生成的操作建議符合法規與產業安全規範」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 應用情境判斷機制或適用情境不同。",
-        "D": "正確。「完整重建並追蹤 AI 模型的全部推理過程」直接符合題幹設定，也對應AI 應用情境判斷的核心判斷。"
-      },
-      "trap": "遇到情境題時，先圈出目標、資料條件與限制，再排除只符合部分條件的選項。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -6522,7 +6069,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -6564,18 +6111,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 B。本題核心是辨認「Token 與上下文管理」在題目情境中的正確適用方式。",
-      "concept": "模型以 Token 處理輸入輸出；上下文長度會影響可納入資訊量、成本與推論表現。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 B 所述「提高檢索相關性與降低長上下文噪音」最直接符合Token 與上下文管理的判斷條件，因此依官方公告答案選 B。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「讓模型在回答時能加快推理速度」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的Token 與上下文管理機制或適用情境不同。",
-        "B": "正確。「提高檢索相關性與降低長上下文噪音」直接符合題幹設定，也對應Token 與上下文管理的核心判斷。",
-        "C": "不正確。此項描述「降低系統記憶體和硬體資源的負擔」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的Token 與上下文管理機制或適用情境不同。",
-        "D": "不正確。此項描述「使模型在生成回覆時更具創造性與多樣化」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的Token 與上下文管理機制或適用情境不同。"
-      },
-      "trap": "上下文較長不保證每段資訊都能被同等利用，仍需切分、檢索與重點安排。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -6590,7 +6132,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -6632,18 +6174,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 A。本題核心是辨認「檢索增強生成」在題目情境中的正確適用方式。",
-      "concept": "RAG 先檢索外部知識，再把相關內容提供給生成模型，可改善可追溯性與知識更新效率。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 A 所述「支援同時處理多種資訊表示，提升跨文本型態的檢索效果」最直接符合檢索增強生成的判斷條件，因此依官方公告答案選 A。",
-      "optionAnalysis": {
-        "A": "正確。「支援同時處理多種資訊表示」直接符合題幹設定，也對應檢索增強生成的核心判斷。",
-        "B": "不正確。此項描述「透過多向量壓縮與共享權重方式」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的檢索增強生成機制或適用情境不同。",
-        "C": "不正確。此項描述「以切分並過濾文件片段」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的檢索增強生成機制或適用情境不同。",
-        "D": "不正確。此項描述「透過調整生成階段的溫度參數」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的檢索增強生成機制或適用情境不同。"
-      },
-      "trap": "Embedding、向量資料庫、檢索與生成是不同環節；題目會針對其中一段提問。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -6658,7 +6195,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -6700,18 +6237,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 D。本題核心是辨認「AI 代理與任務規劃」在題目情境中的正確適用方式。",
-      "concept": "AI 代理會結合目標、規劃、工具使用、記憶與回饋，逐步完成多階段任務。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 D 所述「作為代理在執行過程中的參考框架，用於組織決策步驟並支援任務推理」最直接符合AI 代理與任務規劃的判斷條件，因此依官方公告答案選 D。",
-      "optionAnalysis": {
-        "A": "不正確。此項以「透過圖形結構完全取代大型語言模型的推理」作過度絕對的限制，忽略AI 代理與任務規劃仍需依資料、任務或系統條件判斷。",
-        "B": "不正確。此項以「僅用於保存代理的輸出結果」作過度絕對的限制，忽略AI 代理與任務規劃仍需依資料、任務或系統條件判斷。",
-        "C": "不正確。此項描述「將代理限制在既定流程內」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的AI 代理與任務規劃機制或適用情境不同。",
-        "D": "正確。「作為代理在執行過程中的參考框架」直接符合題幹設定，也對應AI 代理與任務規劃的核心判斷。"
-      },
-      "trap": "代理不是單次文字生成；需注意它如何拆解任務、選工具與依結果調整。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -6726,7 +6258,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }
@@ -6768,18 +6300,13 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "draft",
+    "explanationStatus": "missing",
     "explanation": {
-      "summary": "正確答案是 C。本題核心是辨認「Token 與上下文管理」在題目情境中的正確適用方式。",
-      "concept": "模型以 Token 處理輸入輸出；上下文長度會影響可納入資訊量、成本與推論表現。",
-      "answerReason": "題幹要求依指定目標與限制選出最符合者；選項 C 所述「生成式語言建模（Text Generation），依據上下文持續產生新的內容」最直接符合Token 與上下文管理的判斷條件，因此依官方公告答案選 C。",
-      "optionAnalysis": {
-        "A": "不正確。此項描述「序列到序列建模（Sequence-to-Sequence Modeling）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的Token 與上下文管理機制或適用情境不同。",
-        "B": "不正確。此項描述「遮罩語言建模（Masked Language Modeling ）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的Token 與上下文管理機制或適用情境不同。",
-        "C": "正確。「生成式語言建模（Text Generation）」直接符合題幹設定，也對應Token 與上下文管理的核心判斷。",
-        "D": "不正確。此項描述「文本分類（Text Classification）」，但沒有滿足題幹的關鍵條件；它與官方答案所對應的Token 與上下文管理機制或適用情境不同。"
-      },
-      "trap": "上下文較長不保證每段資訊都能被同等利用，仍需切分、檢索與重點安排。",
+      "summary": "",
+      "concept": "",
+      "answerReason": "",
+      "optionAnalysis": {},
+      "trap": "",
       "references": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
@@ -6794,7 +6321,7 @@
           "checkedAt": "2026-07-29"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-07-29"
     }

@@ -13,7 +13,7 @@ export type QuestionExplanation = {
   summary: string;
   concept: string;
   answerReason: string;
-  optionAnalysis: Record<OptionLabel, string>;
+  optionAnalysis: Partial<Record<OptionLabel, string>>;
   trap: string;
   references: {
     title: string;

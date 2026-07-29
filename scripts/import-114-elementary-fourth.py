@@ -267,65 +267,61 @@ def concept_for(text: str) -> tuple[str, str, str]:
     )
 
 
-def option_focus(text: str) -> str:
-    focus = re.split(r"[，；。]", text, maxsplit=1)[0].strip()
-    return focus[:90] + ("…" if len(focus) > 90 else "")
+EXPLANATION_OVERRIDES = {
+    "aiap-elementary-114-04-ai-foundation-002": {
+        "summary": "正確答案是 C。題目要把「星期幾」與「幾點」的組合關係直接做成模型可學習的特徵。",
+        "concept": "特徵交叉會把兩個或多個欄位的組合建立成新特徵，例如「星期一_08時」與「星期日_08時」。模型因此能分別學到平日早上尖峰與假日早上的通勤差異。",
+        "answerReason": "單看星期幾或時間，無法直接表示兩者交互作用；特徵交叉正是用來建立「星期幾 × 時間」的組合特徵，所以選 C。",
+        "optionAnalysis": {
+            "A": "One-hot 編碼是把單一類別欄位轉成 0／1 指示欄，例如把星期一到星期日拆成七欄。它能表示「星期幾」，但若只分別編碼星期與時間，並不會自動產生「星期一早上八點」這種組合關係。",
+            "B": "正規化是把數值縮放到相近尺度，例如把溫度與收入轉成可比較的範圍，避免數值尺度差異影響訓練。它不負責建立兩個欄位之間的交互作用。",
+            "C": "特徵交叉會建立「星期幾 × 時間」的新特徵，讓模型直接區分平日尖峰、平日離峰與假日時段，因此最符合本題。",
+            "D": "寬深模型是一種結合 wide 線性部分與 deep 神經網路部分的模型架構：wide 部分擅長記住既有特徵組合，deep 部分用來泛化到未見組合。若題目問推薦系統或同時兼顧記憶與泛化的模型架構，才較適合選它；本題只問要用哪種特徵工程技巧把兩欄結合。",
+        },
+        "trap": "One-hot 是表示單一類別，正規化是調整數值尺度，特徵交叉才是明確建立欄位組合；寬深模型則是模型架構，不是這題要找的特徵工程操作。",
+    },
+    "aiap-elementary-114-04-ai-foundation-003": {
+        "summary": "正確答案是 D。ETL 的三個字母依序是 Extract、Transform、Load。",
+        "concept": "Extract 從來源擷取資料；Transform 清理、排序、轉換格式或整併資料；Load 再把處理後資料寫入資料倉儲等目標系統。",
+        "answerReason": "資料清理與排序都是在載入目標系統前改變資料內容或格式，屬於 Transform，因此選 D。",
+        "optionAnalysis": {
+            "A": "E 是 Extract，工作是從資料庫、檔案或 API 等來源讀取資料；把資料寫入目標儲存庫是 Load，不是 Extract。",
+            "B": "ETL 的名稱同時表示典型處理順序：先擷取、再轉換、最後載入。若先載入再轉換，通常稱為 ELT；不能把 ETL 任意改排成 TEL 還視為相同流程。",
+            "C": "L 是 Load，意思是把已轉換的資料載入目標資料庫或資料倉儲，與「將目標儲存庫反加密」無關。",
+            "D": "T 是 Transform，包含資料清理、排序、格式統一、欄位轉換與彙整，所以此敘述正確。",
+        },
+        "trap": "不要只背三個英文字母；要把每階段的資料流向連起來：來源讀出、途中整理、寫入目標。",
+    },
+    "aiap-elementary-114-04-ai-foundation-004": {
+        "summary": "正確答案是 C。L1 與 L2 都是在損失函數加入權重懲罰，以限制模型複雜度。",
+        "concept": "L1 使用權重絕對值總和，容易讓部分係數變成 0，形成稀疏模型；L2 使用權重平方和，通常讓係數平滑縮小但不會大量精確歸零。",
+        "answerReason": "L1 的懲罰項是權重絕對值總和，會壓縮不重要的權重並控制模型複雜度，因此選 C。",
+        "optionAnalysis": {
+            "A": "權重數量多不代表正確率一定提高；可調參數過多反而可能記住訓練資料雜訊而過度擬合。L1 的目的之一正是讓不重要的權重歸零，降低有效特徵數。",
+            "B": "Lasso 對應 L1 正則化；L2 正則化通常稱為 Ridge。這個選項把兩者名稱對調了。",
+            "C": "L1 在損失函數加入權重絕對值的懲罰，促使部分權重縮小甚至變成 0，以限制模型複雜度並達到特徵選擇效果。",
+            "D": "L2 會把權重平滑地往 0 壓縮，但通常不會讓大量權重精確等於 0；較容易產生稀疏、零權重解的是 L1，因此此敘述方向相反。",
+        },
+        "trap": "記法：L1／Lasso 容易留下少數非零權重；L2／Ridge 傾向讓所有權重一起縮小。",
+    },
+}
 
 
 def build_explanation(
+    question_id: str,
     prompt: str,
     options: list[dict[str, str]],
     answer: str,
     source_title: str,
     source_url: str,
 ) -> dict:
-    joined = f"{prompt} " + " ".join(option["text"] for option in options)
-    title, overview, trap = concept_for(joined)
-    correct_text = next(option["text"] for option in options if option["label"] == answer)
-    asks_exception = any(
-        marker in prompt
-        for marker in ("不正確", "不適合", "不屬於", "不包括", "錯誤", "最不", "不會")
-    )
-    analyses = {}
-    for option in options:
-        label = option["label"]
-        text = option["text"]
-        if label == answer:
-            if asks_exception:
-                analyses[label] = (
-                    f"正確。官方答案把「{option_focus(text)}」視為本題要找的例外或不符合項目；"
-                    f"它與{title}的正確適用條件不一致。"
-                )
-            else:
-                analyses[label] = (
-                    f"正確。「{option_focus(text)}」直接符合題幹設定，"
-                    f"也對應{title}的核心判斷。"
-                )
-        elif asks_exception:
-            analyses[label] = (
-                f"不是本題答案。此項所述「{option_focus(text)}」在題幹脈絡下屬於可成立或可採用的描述，"
-                "因此不是題目要求找出的例外。"
-            )
-        elif any(word in text for word in ("僅", "完全", "任何", "一定", "無法", "全面取代")):
-            analyses[label] = (
-                f"不正確。此項以「{option_focus(text)}」作過度絕對的限制，"
-                f"忽略{title}仍需依資料、任務或系統條件判斷。"
-            )
-        else:
-            analyses[label] = (
-                f"不正確。此項描述「{option_focus(text)}」，但沒有滿足題幹的關鍵條件；"
-                f"它與官方答案所對應的{title}機制或適用情境不同。"
-            )
-
-    return {
-        "summary": f"正確答案是 {answer}。本題核心是辨認「{title}」在題目情境中的正確適用方式。",
-        "concept": overview,
-        "answerReason": (
-            f"題幹要求依指定目標與限制選出最符合者；選項 {answer} 所述「{correct_text}」"
-            f"最直接符合{title}的判斷條件，因此依官方公告答案選 {answer}。"
-        ),
-        "optionAnalysis": analyses,
-        "trap": trap,
+    explanation = {
+        "summary": "",
+        "concept": "",
+        "answerReason": "",
+        # 未完成實質撰寫的選項解析保持空白，前端不顯示；禁止用模板廢話充數。
+        "optionAnalysis": {},
+        "trap": "",
         "references": [
             {
                 "title": source_title,
@@ -340,10 +336,34 @@ def build_explanation(
                 "checkedAt": CHECKED_AT,
             },
         ],
-        "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+        "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
         "author": "Codex（AI 輔助初稿）",
         "authoredAt": CHECKED_AT,
     }
+    override = EXPLANATION_OVERRIDES.get(question_id)
+    if override:
+        explanation.update(override)
+        explanation["editorialNote"] = (
+            "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。"
+        )
+    if question_id == "aiap-elementary-114-04-ai-foundation-002":
+        explanation["references"].extend(
+            [
+                {
+                    "title": "Google Machine Learning Crash Course－Feature crosses",
+                    "url": "https://developers.google.com/machine-learning/crash-course/categorical-data/feature-crosses",
+                    "locator": "特徵交叉的用途與使用情境",
+                    "checkedAt": CHECKED_AT,
+                },
+                {
+                    "title": "Google Research－Wide & Deep Learning for Recommender Systems",
+                    "url": "https://research.google/pubs/wide-deep-learning-for-recommender-systems/",
+                    "locator": "記憶與泛化的模型架構",
+                    "checkedAt": CHECKED_AT,
+                },
+            ]
+        )
+    return explanation
 
 
 def parse_source(source: dict) -> list[dict]:
@@ -410,12 +430,13 @@ def parse_source(source: dict) -> list[dict]:
             f"114 年第四次初級 AI 應用規劃師"
             f"－{source['subjectLabel']}公告試題"
         )
+        question_id = (
+            f"aiap-elementary-114-04-"
+            f"{source['subjectCode']}-{number:03d}"
+        )
         questions.append(
             {
-                "id": (
-                    f"aiap-elementary-114-04-"
-                    f"{source['subjectCode']}-{number:03d}"
-                ),
+                "id": question_id,
                 "sourceId": source["sourceId"],
                 "sourceType": "official-exam",
                 "level": "elementary",
@@ -432,9 +453,11 @@ def parse_source(source: dict) -> list[dict]:
                 "sourceUrl": source["url"],
                 "answerSourceUrl": source["url"],
                 "extractionStatus": "verified",
-                "explanationStatus": "draft",
+                "explanationStatus": (
+                    "draft" if question_id in EXPLANATION_OVERRIDES else "missing"
+                ),
                 "explanation": build_explanation(
-                    prompt, options, answer, source_title, source["url"]
+                    question_id, prompt, options, answer, source_title, source["url"]
                 ),
             }
         )

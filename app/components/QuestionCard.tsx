@@ -19,6 +19,9 @@ export function QuestionCard({
   onMove: (direction: -1 | 1) => void;
 }) {
   const correctAnswer = question.officialAnswer[0];
+  const analyzedOptions = question.options.filter(
+    (option) => question.explanation.optionAnalysis[option.label]?.trim(),
+  );
 
   return (
     <article className="question-card">
@@ -70,33 +73,45 @@ export function QuestionCard({
             <span>{answer.correct ? "答對了" : "這題答錯了"}</span>
             <strong>正確答案：{correctAnswer}</strong>
           </div>
-          <p className="analysis-summary">{question.explanation.summary}</p>
+          {question.explanation.summary ? (
+            <p className="analysis-summary">{question.explanation.summary}</p>
+          ) : null}
 
-          <div className="analysis-grid">
-            <section>
-              <p className="eyebrow">核心觀念</p>
-              <p>{question.explanation.concept}</p>
+          {question.explanation.concept || question.explanation.answerReason ? (
+            <div className="analysis-grid">
+              {question.explanation.concept ? (
+                <section>
+                  <p className="eyebrow">核心觀念</p>
+                  <p>{question.explanation.concept}</p>
+                </section>
+              ) : null}
+              {question.explanation.answerReason ? (
+                <section>
+                  <p className="eyebrow">解題理由</p>
+                  <p>{question.explanation.answerReason}</p>
+                </section>
+              ) : null}
+            </div>
+          ) : null}
+
+          {analyzedOptions.length > 0 ? (
+            <section className="option-analysis">
+              <p className="eyebrow">選項分析</p>
+              {analyzedOptions.map((option) => (
+                <div key={option.label}>
+                  <b>{option.label}</b>
+                  <p>{question.explanation.optionAnalysis[option.label]}</p>
+                </div>
+              ))}
             </section>
-            <section>
-              <p className="eyebrow">解題理由</p>
-              <p>{question.explanation.answerReason}</p>
-            </section>
-          </div>
+          ) : null}
 
-          <section className="option-analysis">
-            <p className="eyebrow">選項分析</p>
-            {question.options.map((option) => (
-              <div key={option.label}>
-                <b>{option.label}</b>
-                <p>{question.explanation.optionAnalysis[option.label]}</p>
-              </div>
-            ))}
-          </section>
-
-          <div className="trap-note">
-            <b>容易混淆</b>
-            <p>{question.explanation.trap}</p>
-          </div>
+          {question.explanation.trap ? (
+            <div className="trap-note">
+              <b>容易混淆</b>
+              <p>{question.explanation.trap}</p>
+            </div>
+          ) : null}
 
           {question.explanation.editorialNote ? (
             <p className="editorial-note">{question.explanation.editorialNote}</p>
@@ -117,7 +132,11 @@ export function QuestionCard({
           </div>
         </section>
       ) : (
-        <p className="answer-hint">選擇答案後，會立即顯示結果與詳解初稿。</p>
+        <p className="answer-hint">
+          {question.explanationStatus === "missing"
+            ? "選擇答案後，會立即顯示官方答案；本題實質詳解待撰寫。"
+            : "選擇答案後，會立即顯示結果與詳解初稿。"}
+        </p>
       )}
 
       <footer className="question-navigation">

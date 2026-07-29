@@ -74,12 +74,7 @@ type QuestionExplanation = {
   summary: string;
   concept: string;
   answerReason: string;
-  optionAnalysis: {
-    A: string;
-    B: string;
-    C: string;
-    D: string;
-  };
+  optionAnalysis: Partial<Record<"A" | "B" | "C" | "D", string>>;
   trap: string;
   references: {
     title: string;
@@ -96,6 +91,10 @@ type QuestionExplanation = {
 ```
 
 若詳解狀態是 `reviewed`，`reviewer` 與 `reviewedAt` 必須存在。
+
+`draft` 階段尚未完成實質撰寫的選項可以不放入 `optionAnalysis`；前端只顯示
+非空白內容。不得用「不符合題幹」、「適用情境不同」等模板句填滿 A～D。
+`reviewed` 狀態則必須具備 A、B、C、D 四個符合撰寫規則的選項解析。
 
 ## 5. 狀態的精確含義
 
@@ -134,4 +133,3 @@ type QuestionExplanation = {
 - 題庫內容雜湊。
 
 網站顯示的題數必須來自 manifest，不可手動寫死。
-

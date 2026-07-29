@@ -154,11 +154,11 @@
     "expectedCount": 50,
     "importedCount": 50,
     "answerVerifiedCount": 50,
-    "explanationDraftCount": 50,
+    "explanationDraftCount": 3,
     "explanationReviewedCount": 0,
     "availability": "published",
     "inclusion": "target",
-    "notes": "50 題已逐頁核對並匯入；官方答案已核對，本站詳解為 AI 輔助初稿，尚待獨立人工複核。"
+    "notes": "50 題已逐頁核對並匯入；官方答案已核對。第 2～4 題已有實質 A～D 詳解初稿，其餘模板內容已移除並待重寫。"
   },
   {
     "sourceId": "aiap-114-elementary-4-genai-planning",
@@ -177,11 +177,11 @@
     "expectedCount": 50,
     "importedCount": 50,
     "answerVerifiedCount": 50,
-    "explanationDraftCount": 50,
+    "explanationDraftCount": 0,
     "explanationReviewedCount": 0,
     "availability": "published",
     "inclusion": "target",
-    "notes": "50 題已逐頁核對並匯入；官方答案已核對，本站詳解為 AI 輔助初稿，尚待獨立人工複核。"
+    "notes": "50 題已逐頁核對並匯入；官方答案已核對。原模板式選項分析已全部移除，50 題實質詳解均待重寫。"
   },
   {
     "sourceId": "aiap-114-intermediate-1-ai-tech-planning",
