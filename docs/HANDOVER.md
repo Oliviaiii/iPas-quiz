@@ -3,15 +3,15 @@
 ## 目前進度（2026-07-29）
 
 - 114～115 年初級 8 個場次、中級 4 個場次已建立逐科追蹤。
-- 官方目前提供 12 份歷屆試卷，共 600 題；已匯入 114 年第四次初級兩科與
-  115 年第一次初級兩科，共 200 題。
+- 官方目前提供 12 份歷屆試卷，共 600 題；初級 6 份已全部匯入，共 300 題
+  （114 年第四次、115 年第一次、115 年第二次）。
 - 最新 114 年 9 月版官方樣題共 115 題；尚未匯入。
 - 114 年 1 月舊版樣題共 25 題，列為重複題與版本稽核，不直接加入目標。
-- 114 年第四次與 115 年第一次初級題目與官方答案均已逐頁核對；目前僅 3 題
-  有實質 A～D 詳解初稿，其餘 197 題為 `missing`，尚未有任何題目完成人工複核。
+- 已匯入的 300 題初級題目與官方答案均已逐頁核對；目前僅 3 題有實質 A～D
+  詳解初稿，其餘 297 題為 `missing`，尚未有任何題目完成人工複核。
 - 專案目前採兩階段執行：第一階段先完成 715 題全部匯入與答案核對，第二階段
   才統一處理全部詳解。
-- 下一個內容工作固定為匯入 115 年第二次初級兩科，共 100 題；暫不繼續撰寫
+- 下一個內容工作固定為匯入 114 年第二次中級三科，共 150 題；暫不繼續撰寫
   詳解。
 - 詳細數字與官方入口見 [題源與匯入進度](SOURCE_INVENTORY.md)。
 
@@ -159,7 +159,8 @@
 - 官方來源：
   - [第一科　人工智慧基礎概論公告試題](https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf)（12 頁）
   - [第二科　生成式 AI 應用與規劃公告試題](https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf)（11 頁）
-- 匯入方式：新增 `scripts/import-115-elementary-first.py`；以 pypdf 擷取文字，
+- 匯入方式：原為 `scripts/import-115-elementary-first.py`（已於下一批改寫為
+  可帶批次參數的 `scripts/import-elementary-official.py`）；以 pypdf 擷取文字，
   另以 pypdfium2 將 23 頁全部轉圖，逐頁目視核對題號、題幹、A～D 選項、官方
   答案與來源頁碼。腳本只取代這兩個 `sourceId`，不影響既有題目。
 - 新增題目：`aiap-elementary-115-01-ai-foundation-001` 至 `050`，以及
@@ -180,3 +181,33 @@
 - 未解問題：無；兩份 PDF 皆為純文字版，沒有圖片題、跨頁表格或勘誤。
 - 下一步：匯入 115 年第二次初級兩科共 100 題（`past-11.pdf`、`past-12.pdf`），
   仍不撰寫詳解。
+
+## 2026-07-29 115 年第二次初級交接
+
+- 處理範圍：115 年第二次初級第一科、第二科，共 100 題。
+- 官方來源：
+  - [第一科　人工智慧基礎概論公告試題](https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf)（13 頁）
+  - [第二科　生成式 AI 應用與規劃公告試題](https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf)（13 頁）
+- 匯入方式：把上一批的專用腳本改寫為 `scripts/import-elementary-official.py`，
+  以批次參數執行（`python scripts/import-elementary-official.py 115-2`）；
+  重跑 `115-1` 產生的資料與改寫前逐位元組相同，確認重構未改動既有題目。
+  另以 pypdfium2 將 26 頁全部轉圖，逐頁目視核對題號、題幹、A～D 選項、
+  官方答案與來源頁碼。
+- 新增題目：`aiap-elementary-115-02-ai-foundation-001` 至 `050`，以及
+  `aiap-elementary-115-02-genai-planning-001` 至 `050`。
+- 已核對題目：100 題；`extractionStatus` 均為 `verified`。
+- 詳解初稿：0 題；`explanationStatus` 全部為 `missing`，未產生任何模板內容。
+- 已複核詳解：0 題。
+- 官方答案序列（供覆核）：
+  - 第一科：`ADABCCAADACBDBDDDBABCDAAABADCBDDBCAADCCCCCBCBCBBDB`
+  - 第二科：`BABCDBBCACBADBBAADCDDCCCDDBDBAACCBAAADBDADBACCCBBD`
+- 文字整理：第一科第 10 題選項的 `Volume` 在官方文字層被字距拆成
+  「V olume」且與後方中文之間沒有空白，已還原為「Volume 與 …」。
+- 來源清冊更新：兩科各為匯入 50、答案核對 50；初級歷屆考題 6 科全部完成，
+  總進度 300／715。
+- 執行測試：`npm test`（manifest 一致性檢查與 8 項資料測試）、`npm run lint`、
+  `npm run build`。
+- 未解問題：無；兩份 PDF 皆為純文字版，沒有圖片題、跨頁表格或勘誤。
+- 下一步：匯入 114 年第二次中級三科共 150 題（`past-01.pdf`～`past-03.pdf`）。
+  中級試卷版面與初級不同（頁首與題型標題有差異），沿用
+  `import-elementary-official.py` 前需先確認 `clean_page` 的頁首規則。

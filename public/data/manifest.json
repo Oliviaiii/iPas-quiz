@@ -2,32 +2,33 @@
   "schemaVersion": 1,
   "inventoryCutoff": "2026-07-29",
   "sourceCount": 38,
-  "officialQuestionCount": 200,
+  "officialQuestionCount": 300,
   "practiceQuestionCount": 0,
   "countsByLevel": {
-    "elementary": 200
+    "elementary": 300
   },
   "countsBySubject": {
-    "ai-foundation": 100,
-    "genai-planning": 100
+    "ai-foundation": 150,
+    "genai-planning": 150
   },
   "countsBySourceType": {
-    "official-exam": 200
+    "official-exam": 300
   },
   "countsByYear": {
     "114": 100,
-    "115": 100
+    "115": 200
   },
   "countsBySession": {
     "114-elementary-4": 100,
-    "115-elementary-1": 100
+    "115-elementary-1": 100,
+    "115-elementary-2": 100
   },
   "extractionStatus": {
     "imported": 0,
-    "verified": 200
+    "verified": 300
   },
   "explanationStatus": {
-    "missing": 197,
+    "missing": 297,
     "draft": 3,
     "reviewed": 0
   },
@@ -37,8 +38,8 @@
     "publishedExamQuestionTarget": 600,
     "currentSampleQuestionTarget": 115,
     "knownQuestionTarget": 715,
-    "importedCount": 200,
-    "answerVerifiedCount": 200,
+    "importedCount": 300,
+    "answerVerifiedCount": 300,
     "explanationDraftCount": 3,
     "explanationReviewedCount": 0,
     "availability": {
@@ -48,5 +49,5 @@
       "superseded": 5
     }
   },
-  "contentHash": "817a4908ccb0a7d0"
+  "contentHash": "94621795b035b118"
 }

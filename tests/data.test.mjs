@@ -46,6 +46,22 @@ const importedPapers = [
     answers: "ADADCDADBDBBBADDBACCDDADACACCBCAAABCCCDBABBBDCACBC",
     pageCount: 11,
   },
+  {
+    idPrefix: "aiap-elementary-115-02-",
+    rocYear: 115,
+    session: "2",
+    subjectCode: "ai-foundation",
+    answers: "ADABCCAADACBDBDDDBABCDAAABADCBDDBCAADCCCCCBCBCBBDB",
+    pageCount: 13,
+  },
+  {
+    idPrefix: "aiap-elementary-115-02-",
+    rocYear: 115,
+    session: "2",
+    subjectCode: "genai-planning",
+    answers: "BABCDBBCACBADBBAADCDDCCCDDBDBAACCBAAADBDADBACCCBBD",
+    pageCount: 13,
+  },
 ];
 
 test("contains only verified official elementary questions", () => {
@@ -247,14 +263,15 @@ test("separates published, unavailable, future, and superseded work", () => {
 test("publishes the verified inventory and imported-question totals", () => {
   assert.equal(manifest.inventoryCutoff, "2026-07-29");
   assert.equal(manifest.sourceCount, 38);
-  assert.equal(manifest.officialQuestionCount, 200);
+  assert.equal(manifest.officialQuestionCount, 300);
   assert.equal(manifest.practiceQuestionCount, 0);
-  assert.equal(manifest.extractionStatus.verified, 200);
-  assert.equal(manifest.explanationStatus.missing, 197);
+  assert.equal(manifest.extractionStatus.verified, 300);
+  assert.equal(manifest.explanationStatus.missing, 297);
   assert.equal(manifest.explanationStatus.draft, 3);
   assert.deepEqual(manifest.countsBySession, {
     "114-elementary-4": 100,
     "115-elementary-1": 100,
+    "115-elementary-2": 100,
   });
   assert.deepEqual(manifest.collectionProgress, {
     examSessionCount: 12,
@@ -262,8 +279,8 @@ test("publishes the verified inventory and imported-question totals", () => {
     publishedExamQuestionTarget: 600,
     currentSampleQuestionTarget: 115,
     knownQuestionTarget: 715,
-    importedCount: 200,
-    answerVerifiedCount: 200,
+    importedCount: 300,
+    answerVerifiedCount: 300,
     explanationDraftCount: 3,
     explanationReviewedCount: 0,
     availability: {

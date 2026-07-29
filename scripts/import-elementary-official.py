@@ -1,17 +1,23 @@
-"""Import the two official 115 first-session elementary AIAP PDFs.
+"""Import official elementary AIAP exam papers from the announced PDFs.
 
 Phase one only imports official questions, options and answers. Explanations
 stay empty with ``explanationStatus: "missing"``; template explanations are
 forbidden by ``docs/DELIVERY_PHASES.md``.
 
-Existing questions from other sources are preserved; re-running the script
-replaces only the two 115 first-session elementary sources.
+Each batch replaces only its own ``sourceId`` values, so re-running never
+touches questions imported from other papers.
+
+Usage::
+
+    python scripts/import-elementary-official.py 115-1
+    python scripts/import-elementary-official.py 115-2
 """
 
 from __future__ import annotations
 
 import json
 import re
+import sys
 from pathlib import Path
 
 from pypdf import PdfReader
@@ -25,28 +31,57 @@ OFFICIAL_RESOURCE_URL = (
     "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources"
 )
 
-SOURCES = [
-    {
-        "path": PDF_DIR / "past-09.pdf",
-        "sourceId": "aiap-115-elementary-1-ai-foundation",
-        "subjectCode": "ai-foundation",
-        "subjectLabel": "人工智慧基礎概論",
-        "subjectHeading": "第一科：",
-        "pageCount": 12,
-        "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
-    },
-    {
-        "path": PDF_DIR / "past-10.pdf",
-        "sourceId": "aiap-115-elementary-1-genai-planning",
-        "subjectCode": "genai-planning",
-        "subjectLabel": "生成式 AI 應用與規劃",
-        "subjectHeading": "第二科：",
-        "pageCount": 11,
-        "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
-    },
-]
+SUBJECTS = {
+    "ai-foundation": ("人工智慧基礎概論", "第一科："),
+    "genai-planning": ("生成式 AI 應用與規劃", "第二科："),
+}
 
-SOURCE_IDS = {source["sourceId"] for source in SOURCES}
+BATCHES = {
+    "115-1": {
+        "rocYear": 115,
+        "session": "1",
+        "sessionLabel": "第一次",
+        "idPrefix": "aiap-elementary-115-01",
+        "papers": [
+            {
+                "path": PDF_DIR / "past-09.pdf",
+                "sourceId": "aiap-115-elementary-1-ai-foundation",
+                "subjectCode": "ai-foundation",
+                "pageCount": 12,
+                "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+            },
+            {
+                "path": PDF_DIR / "past-10.pdf",
+                "sourceId": "aiap-115-elementary-1-genai-planning",
+                "subjectCode": "genai-planning",
+                "pageCount": 11,
+                "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+            },
+        ],
+    },
+    "115-2": {
+        "rocYear": 115,
+        "session": "2",
+        "sessionLabel": "第二次",
+        "idPrefix": "aiap-elementary-115-02",
+        "papers": [
+            {
+                "path": PDF_DIR / "past-11.pdf",
+                "sourceId": "aiap-115-elementary-2-ai-foundation",
+                "subjectCode": "ai-foundation",
+                "pageCount": 13,
+                "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+            },
+            {
+                "path": PDF_DIR / "past-12.pdf",
+                "sourceId": "aiap-115-elementary-2-genai-planning",
+                "subjectCode": "genai-planning",
+                "pageCount": 13,
+                "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+            },
+        ],
+    },
+}
 
 ANSWER_TRANSLATION = str.maketrans(
     {
@@ -63,21 +98,26 @@ PAGE_MARKER = re.compile(r"^第\d+頁，共\d+頁$")
 CJK_LIKE = "⺀-〿㐀-鿿＀-￯"
 
 # 官方 PDF 的字距在少數字母後被拆成兩段，需還原成原詞。
+# 較長的鍵必須排在前面：文字層在「V olume與」之間沒有空白，還原後要補回。
 LETTER_FIXES = {
+    "V olume與": "Volume 與",
     "V AE": "VAE",
     "V olume": "Volume",
 }
 
 
-def clean_page(text: str, source: dict) -> str:
+def clean_page(text: str, batch: dict, subject_heading: str) -> str:
+    """Drop the repeated page furniture so cross-page questions join cleanly."""
+    header = f"{batch['rocYear']} 年{batch['sessionLabel']} AI 應用規劃師"
     lines = []
     for line in text.splitlines():
+        stripped = line.strip()
         compact = line.replace(" ", "")
-        if line.startswith("115 年第一次 AI 應用規劃師"):
+        if stripped.startswith(header):
             continue
-        if line.startswith(source["subjectHeading"]):
+        if stripped.startswith(subject_heading):
             continue
-        if line.startswith("考試日期："):
+        if compact.startswith("考試日期："):
             continue
         if PAGE_MARKER.match(compact):
             continue
@@ -129,18 +169,22 @@ def build_explanation(source_title: str, source_url: str) -> dict:
     }
 
 
-def parse_source(source: dict) -> list[dict]:
-    if not source["path"].exists():
-        raise FileNotFoundError(f"Missing official PDF: {source['path']}")
+def parse_paper(batch: dict, paper: dict) -> list[dict]:
+    if not paper["path"].exists():
+        raise FileNotFoundError(f"Missing official PDF: {paper['path']}")
 
-    reader = PdfReader(source["path"])
-    if len(reader.pages) != source["pageCount"]:
+    subject_label, subject_heading = SUBJECTS[paper["subjectCode"]]
+    reader = PdfReader(paper["path"])
+    if len(reader.pages) != paper["pageCount"]:
         raise ValueError(
-            f"{source['sourceId']}: expected {source['pageCount']} pages, "
+            f"{paper['sourceId']}: expected {paper['pageCount']} pages, "
             f"found {len(reader.pages)}"
         )
 
-    pages = [clean_page(page.extract_text() or "", source) for page in reader.pages]
+    pages = [
+        clean_page(page.extract_text() or "", batch, subject_heading)
+        for page in reader.pages
+    ]
     combined_parts = []
     page_starts = []
     cursor = 0
@@ -156,10 +200,11 @@ def parse_source(source: dict) -> list[dict]:
     matches = list(question_pattern.finditer(combined))
     if len(matches) != 50:
         found = [match.group(2) for match in matches]
-        raise ValueError(f"{source['sourceId']}: expected 50 questions, found {found}")
+        raise ValueError(f"{paper['sourceId']}: expected 50 questions, found {found}")
 
     source_title = (
-        f"115 年第一次初級 AI 應用規劃師－{source['subjectLabel']}公告試題"
+        f"{batch['rocYear']} 年{batch['sessionLabel']}初級 AI 應用規劃師"
+        f"－{subject_label}公告試題"
     )
 
     questions = []
@@ -174,7 +219,7 @@ def parse_source(source: dict) -> list[dict]:
         labels = [option.group(1) for option in option_matches]
         if labels != ["A", "B", "C", "D"]:
             raise ValueError(
-                f"{source['sourceId']} Q{number}: invalid option labels {labels}"
+                f"{paper['sourceId']} Q{number}: invalid option labels {labels}"
             )
 
         prompt = normalize_text(body[: option_matches[0].start()])
@@ -192,7 +237,7 @@ def parse_source(source: dict) -> list[dict]:
                 }
             )
         if not prompt or any(not option["text"] for option in options):
-            raise ValueError(f"{source['sourceId']} Q{number}: empty prompt or option")
+            raise ValueError(f"{paper['sourceId']} Q{number}: empty prompt or option")
 
         source_page = 1
         for start, page_number in page_starts:
@@ -204,27 +249,26 @@ def parse_source(source: dict) -> list[dict]:
         questions.append(
             {
                 "id": (
-                    f"aiap-elementary-115-01-"
-                    f"{source['subjectCode']}-{number:03d}"
+                    f"{batch['idPrefix']}-{paper['subjectCode']}-{number:03d}"
                 ),
-                "sourceId": source["sourceId"],
+                "sourceId": paper["sourceId"],
                 "sourceType": "official-exam",
                 "level": "elementary",
-                "subjectCode": source["subjectCode"],
-                "subjectLabel": source["subjectLabel"],
-                "rocYear": 115,
-                "session": "1",
+                "subjectCode": paper["subjectCode"],
+                "subjectLabel": subject_label,
+                "rocYear": batch["rocYear"],
+                "session": batch["session"],
                 "officialQuestionNumber": number,
                 "sourcePage": source_page,
                 "prompt": prompt,
                 "options": options,
                 "officialAnswer": [answer],
                 "scoring": "single",
-                "sourceUrl": source["url"],
-                "answerSourceUrl": source["url"],
+                "sourceUrl": paper["url"],
+                "answerSourceUrl": paper["url"],
                 "extractionStatus": "verified",
                 "explanationStatus": "missing",
-                "explanation": build_explanation(source_title, source["url"]),
+                "explanation": build_explanation(source_title, paper["url"]),
             }
         )
 
@@ -232,20 +276,24 @@ def parse_source(source: dict) -> list[dict]:
     actual_numbers = [question["officialQuestionNumber"] for question in questions]
     if actual_numbers != expected_numbers:
         raise ValueError(
-            f"{source['sourceId']}: question numbers are not exactly 1..50"
+            f"{paper['sourceId']}: question numbers are not exactly 1..50"
         )
     return questions
 
 
 def main() -> None:
+    if len(sys.argv) != 2 or sys.argv[1] not in BATCHES:
+        raise SystemExit(f"usage: {sys.argv[0]} [{'|'.join(BATCHES)}]")
+    batch_key = sys.argv[1]
+    batch = BATCHES[batch_key]
+    source_ids = {paper["sourceId"] for paper in batch["papers"]}
+
     existing = json.loads(OUTPUT.read_text(encoding="utf-8"))
-    kept = [
-        question for question in existing if question["sourceId"] not in SOURCE_IDS
-    ]
+    kept = [question for question in existing if question["sourceId"] not in source_ids]
 
     imported = []
-    for source in SOURCES:
-        imported.extend(parse_source(source))
+    for paper in batch["papers"]:
+        imported.extend(parse_paper(batch, paper))
 
     if len(imported) != 100:
         raise ValueError(f"Expected 100 questions, got {len(imported)}")
@@ -260,7 +308,7 @@ def main() -> None:
         encoding="utf-8",
     )
     print(
-        f"Imported {len(imported)} official questions; "
+        f"Imported {len(imported)} official questions for {batch_key}; "
         f"{len(questions)} questions in {OUTPUT}"
     )
 
