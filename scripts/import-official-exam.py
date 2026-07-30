@@ -7,20 +7,28 @@ forbidden by ``docs/DELIVERY_PHASES.md``.
 Each batch replaces only its own ``sourceId`` values, so re-running never
 touches questions imported from other papers.
 
-Only text-only papers can be imported by this script. Papers whose questions
-depend on embedded figures (charts, code screenshots, formula images) are not
-listed here until the site can display those figures.
+Papers whose questions depend on embedded figures (charts, code screenshots,
+formula images) additionally need a hand-reviewed figure map named by the
+batch's ``figureMap`` key. A batch that declares one fails until the reviewed
+map and the extracted images are both present, so a figure-bearing paper can
+never be imported as text-only.
+
+Official PDFs are not committed. Download them into ``tmp/pdfs`` (gitignored)
+with ``scripts/fetch-official-pdfs.py``, or point ``IPAS_PDF_DIR`` at wherever
+they already are.
 
 Usage::
 
     python scripts/import-official-exam.py 115-1
     python scripts/import-official-exam.py 115-2
     python scripts/import-official-exam.py 114-2-intermediate
+    python scripts/import-official-exam.py 115-1-intermediate
 """
 
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -32,9 +40,8 @@ from pypdf import PdfReader
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "app" / "data" / "questions.json"
 FIGURE_DIR = ROOT / "public" / "images" / "questions"
-FIGURE_MAP = Path(__file__).with_name("figures-114-2-intermediate.json")
-PDF_DIR = Path("C:/project/iPas-quiz/tmp/pdfs")
-EXTRACTED_FIGURE_DIR = PDF_DIR / "figures-114-2"
+# 官方 PDF 不進版控；預設放在 repo 的 tmp/pdfs，可用 IPAS_PDF_DIR 指到別處。
+PDF_DIR = Path(os.environ.get("IPAS_PDF_DIR") or ROOT / "tmp" / "pdfs")
 CHECKED_AT = "2026-07-29"
 OFFICIAL_RESOURCE_URL = (
     "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources"
@@ -104,6 +111,8 @@ BATCHES = {
         "session": "2",
         "sessionLabel": "第二次",
         "idPrefix": "aiap-intermediate-114-02",
+        "figureMap": "figures-114-2-intermediate.json",
+        "figureDir": "figures-114-2",
         "papers": [
             {
                 "path": PDF_DIR / "past-01.pdf",
@@ -127,6 +136,46 @@ BATCHES = {
                 "pageCount": 19,
                 "figureTag": "s3",
                 "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+            },
+        ],
+    },
+    # 115 年第一次中級三科。網址取自 app/data/sources.json，已確認每科 50 題。
+    # 中級試卷含題目內嵌圖片，因此本批宣告 figureMap；在產出經人工逐頁複核的
+    # 對照表之前，匯入會直接失敗，不會把圖片題匯成只有文字的殘缺題目。
+    # pageCount 留 None：取得官方 PDF 後由腳本印出實際頁數，再回填釘住。
+    "115-1-intermediate": {
+        "level": "intermediate",
+        "levelLabel": "中級",
+        "rocYear": 115,
+        "session": "1",
+        "sessionLabel": "第一次",
+        "idPrefix": "aiap-intermediate-115-01",
+        "figureMap": "figures-115-1-intermediate.json",
+        "figureDir": "figures-115-1",
+        "papers": [
+            {
+                "path": PDF_DIR / "past-06.pdf",
+                "sourceId": "aiap-115-intermediate-1-ai-tech-planning",
+                "subjectCode": "ai-tech-planning",
+                "pageCount": None,
+                "figureTag": "s1",
+                "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+            },
+            {
+                "path": PDF_DIR / "past-07.pdf",
+                "sourceId": "aiap-115-intermediate-1-big-data",
+                "subjectCode": "big-data",
+                "pageCount": None,
+                "figureTag": "s2",
+                "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+            },
+            {
+                "path": PDF_DIR / "past-08.pdf",
+                "sourceId": "aiap-115-intermediate-1-machine-learning",
+                "subjectCode": "machine-learning",
+                "pageCount": None,
+                "figureTag": "s3",
+                "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
             },
         ],
     },
@@ -199,17 +248,26 @@ def normalize_text(text: str) -> str:
     return text.strip(" \n;；")
 
 
-def load_figures(paper: dict) -> dict:
+def load_figures(batch: dict, paper: dict) -> dict:
     """Return {slot key: [figure]} for a paper, from the reviewed mapping file."""
     tag = paper.get("figureTag")
     if not tag:
         return {}
-    mapping = json.loads(FIGURE_MAP.read_text(encoding="utf-8"))
+    figure_map = Path(__file__).with_name(batch["figureMap"])
+    if not figure_map.exists():
+        raise FileNotFoundError(
+            f"{paper['sourceId']} declares figures but the reviewed figure map "
+            f"{figure_map} does not exist. Render the official PDF, check every "
+            "figure against its page, and write the map before importing — a "
+            "figure-bearing paper must not be imported as text only."
+        )
+    mapping = json.loads(figure_map.read_text(encoding="utf-8"))
     entries = mapping[paper["subjectCode"]]
+    extracted_dir = PDF_DIR / batch["figureDir"]
     figures: dict = {}
     for file_name, entry in entries.items():
         page = int(re.search(r"-p(\d+)-", file_name).group(1))
-        source = EXTRACTED_FIGURE_DIR / file_name
+        source = extracted_dir / file_name
         if not source.exists():
             raise FileNotFoundError(f"Missing extracted figure: {source}")
         target_name = f"{paper['sourceId']}-{file_name.split('-', 1)[1]}"
@@ -320,7 +378,13 @@ def parse_paper(batch: dict, paper: dict) -> list[dict]:
 
     subject_label, subject_heading = SUBJECTS[paper["subjectCode"]]
     reader = PdfReader(paper["path"])
-    if len(reader.pages) != paper["pageCount"]:
+    if paper["pageCount"] is None:
+        # 新試卷第一次匯入時還不知道頁數；印出實際值供回填釘住。
+        print(
+            f"{paper['sourceId']}: pageCount not pinned yet, "
+            f"found {len(reader.pages)} pages"
+        )
+    elif len(reader.pages) != paper["pageCount"]:
         raise ValueError(
             f"{paper['sourceId']}: expected {paper['pageCount']} pages, "
             f"found {len(reader.pages)}"
@@ -361,7 +425,7 @@ def parse_paper(batch: dict, paper: dict) -> list[dict]:
                 break
         return page_number
 
-    figures = load_figures(paper)
+    figures = load_figures(batch, paper)
     passages: dict[int, dict] = {}
 
     questions = []
@@ -481,61 +545,6 @@ def parse_paper(batch: dict, paper: dict) -> list[dict]:
     }
     if unused:
         raise ValueError(f"{paper['sourceId']}: unattached figures {sorted(unused)}")
-        labels = [option.group(1) for option in option_matches]
-        if labels != ["A", "B", "C", "D"]:
-            raise ValueError(
-                f"{paper['sourceId']} Q{number}: invalid option labels {labels}"
-            )
-
-        prompt = normalize_text(body[: option_matches[0].start()])
-        options = []
-        for option_index, option_match in enumerate(option_matches):
-            option_end = (
-                option_matches[option_index + 1].start()
-                if option_index + 1 < len(option_matches)
-                else len(body)
-            )
-            options.append(
-                {
-                    "label": option_match.group(1),
-                    "text": normalize_text(body[option_match.end() : option_end]),
-                }
-            )
-        if not prompt or any(not option["text"] for option in options):
-            raise ValueError(f"{paper['sourceId']} Q{number}: empty prompt or option")
-
-        source_page = 1
-        for start, page_number in page_starts:
-            if start <= match.start():
-                source_page = page_number
-            else:
-                break
-
-        questions.append(
-            {
-                "id": (
-                    f"{batch['idPrefix']}-{paper['subjectCode']}-{number:03d}"
-                ),
-                "sourceId": paper["sourceId"],
-                "sourceType": "official-exam",
-                "level": batch["level"],
-                "subjectCode": paper["subjectCode"],
-                "subjectLabel": subject_label,
-                "rocYear": batch["rocYear"],
-                "session": batch["session"],
-                "officialQuestionNumber": number,
-                "sourcePage": source_page,
-                "prompt": prompt,
-                "options": options,
-                "officialAnswer": [answer],
-                "scoring": "single",
-                "sourceUrl": paper["url"],
-                "answerSourceUrl": paper["url"],
-                "extractionStatus": "verified",
-                "explanationStatus": "missing",
-                "explanation": build_explanation(source_title, paper["url"]),
-            }
-        )
 
     expected_numbers = list(range(1, 51))
     actual_numbers = [question["officialQuestionNumber"] for question in questions]

@@ -20,6 +20,30 @@
 115 年第一次中級三科及 114 年 9 月官方樣題。完整規則見
 [題庫建置兩階段執行計畫](DELIVERY_PHASES.md)。
 
+### 目前阻礙：取得官方 PDF 的網路限制
+
+2026-07-30 嘗試匯入 115 年第一次中級三科時，執行環境的連外政策拒絕官方兩個
+網域（gateway 對 CONNECT 回應 403）：
+
+| 主機 | 用途 |
+| --- | --- |
+| `www.ipas.org.tw` | 公告試題 PDF 檔案 |
+| `ipd.nat.gov.tw` | 官方歷屆考題與樣題頁 |
+
+官方 PDF 未進版控（`tmp/` 在 `.gitignore`），因此在此環境無法取得任何一份
+待匯入文件；下一批 114 年 9 月樣題同樣位於這兩個網域，換批也無法繞過。
+
+依 [SOURCE_AND_COVERAGE_RULES.md](SOURCE_AND_COVERAGE_RULES.md)，不得以第三方
+整理的題目或答案替代官方文件，也不得憑記憶生成題目，因此本次不匯入任何題目，
+`importedCount` 與 `answerVerifiedCount` 全部保持原值。
+
+解除方式為在執行環境的連外設定允許上述兩個網域，之後執行：
+
+```sh
+python scripts/fetch-official-pdfs.py 115-1-intermediate
+python scripts/import-official-exam.py 115-1-intermediate
+```
+
 ## 進度摘要
 
 | 範圍 | 已找到官方 PDF | 已知題數 | 已匯入 | 答案已複核 | 詳解已複核 |

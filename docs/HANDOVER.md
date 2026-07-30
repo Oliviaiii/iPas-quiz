@@ -270,3 +270,51 @@
 - 下一步：匯入 115 年第一次中級三科共 150 題（`past-06.pdf`～`past-08.pdf`）。
   該梯次題型標題為「一、單選題」，且同樣可能含圖片題與題組敘述，可沿用
   `scripts/import-official-exam.py` 與本次的附圖對應流程。
+
+## 2026-07-30 115 年第一次中級匯入受阻與匯入腳本可攜化
+
+- 處理範圍：原定匯入 115 年第一次中級三科共 150 題；因無法取得官方 PDF 而
+  未匯入任何題目。改為完成該批匯入所需的前置程式修正。
+- 阻礙：執行環境（Claude Code on the web 容器）的連外政策拒絕
+  `www.ipas.org.tw` 與 `ipd.nat.gov.tw`，gateway 對 CONNECT 回應 403。官方 PDF
+  未進版控，該環境亦無既有副本（另已確認專案負責人的 Google Drive 沒有官方
+  試題 PDF）。下一批 114 年 9 月樣題位於同樣網域，換批無法繞過。
+- 未採取的做法：不以第三方題庫或記憶生成題目替代官方文件；不重試或繞過
+  政策拒絕。因此 `questions.json`、`sources.json` 與 manifest 均未變動。
+- 新增題目：0 題。已核對題目：0 題。詳解初稿：0 題。已複核詳解：0 題。
+- 程式變更（`scripts/import-official-exam.py`）：
+  - `PDF_DIR` 原為寫死的 `C:/project/iPas-quiz/tmp/pdfs`，在非 Windows 環境
+    無法執行；改為預設 repo 內的 `tmp/pdfs`，並可用 `IPAS_PDF_DIR` 覆寫。
+  - 圖片對照表與擷取圖片目錄原寫死為 114-2，改為由批次的 `figureMap`、
+    `figureDir` 指定，中級新梯次才能帶自己的對照表。
+  - `pageCount` 允許為 `None`：新試卷首次匯入時印出實際頁數供回填釘住，
+    已釘住的試卷仍維持頁數不符即中止。
+  - 移除 `parse_paper` 內一段永遠不會執行的舊版解析程式（位於
+    `raise ValueError(... unattached figures ...)` 之後）。現行路徑本身已有
+    更嚴格的選項標籤與空白檢查，功能未減少。
+- 新增批次 `115-1-intermediate`：三科的官方網址取自 `app/data/sources.json`，
+  檔名沿用交接文件已載明的 `past-06.pdf`～`past-08.pdf`。三科都宣告
+  `figureMap: figures-115-1-intermediate.json`；該對照表尚未產出，因此目前
+  執行匯入會以明確錯誤中止，不會把圖片題匯成只有文字的殘缺題目（fail closed）。
+- 新增腳本 `scripts/fetch-official-pdfs.py`：依批次下載官方 PDF 到
+  `IPAS_PDF_DIR`，處理官方檔名的中文 percent-encoding，並驗證回應開頭為
+  `%PDF`。下載失敗時列出被拒的主機並以非零狀態結束，不提供第三方鏡像退路。
+- 執行測試：`npm test` 通過（manifest 一致性檢查與 9 項資料測試）；兩支
+  Python 腳本 `py_compile` 通過，批次註冊與用法訊息已確認。
+- 未執行測試：`npm run lint` 與 `npm run build`（該環境未安裝 `node_modules`，
+  且本次變更只涉及 Python 腳本與文件）。**匯入腳本的重構未能對實際 PDF 重跑
+  驗證**——沒有官方 PDF 可用，因此無法像前幾批那樣確認重跑 `114-2-intermediate`
+  逐位元組相同。下一位接手者取得 PDF 後，應先重跑既有批次確認資料不變，
+  再匯入新批次。
+- 未解問題：官方 PDF 取得管道。需在執行環境的連外設定允許
+  `www.ipas.org.tw` 與 `ipd.nat.gov.tw`。
+- 下一步（網路解除後）：
+
+  ```sh
+  python scripts/fetch-official-pdfs.py 115-1-intermediate
+  python scripts/import-official-exam.py 114-2-intermediate   # 迴歸：確認資料不變
+  python scripts/import-official-exam.py 115-1-intermediate   # 先回填 pageCount
+  ```
+
+  匯入前須將三份 PDF 全部渲染、逐頁目視核對，並產出經人工確認的
+  `scripts/figures-115-1-intermediate.json` 圖片對照表。
