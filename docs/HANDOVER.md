@@ -1,19 +1,22 @@
 # 專案交接清單
 
-## 目前進度（2026-07-29）
+## 目前進度（2026-07-30）
 
 - 114～115 年初級 8 個場次、中級 4 個場次已建立逐科追蹤。
-- 官方目前提供 12 份歷屆試卷，共 600 題；已匯入 450 題：初級 6 份共 300 題
-  （114 年第四次、115 年第一次、115 年第二次），以及 114 年第二次中級三科
-  150 題。
-- 最新 114 年 9 月版官方樣題共 115 題；尚未匯入。
+- 官方目前提供的 12 份歷屆試卷共 600 題**已全部匯入**：初級 6 科 300 題
+  （114 年第四次、115 年第一次、115 年第二次），中級 6 科 300 題
+  （114 年第二次、115 年第一次）。
+- 最新 114 年 9 月版官方樣題共 115 題；尚未匯入，是第一階段最後一批。
 - 114 年 1 月舊版樣題共 25 題，列為重複題與版本稽核，不直接加入目標。
-- 已匯入的 450 題與官方答案均已逐頁核對；目前僅 3 題有實質 A～D 詳解初稿，
-  其餘 447 題為 `missing`，尚未有任何題目完成人工複核。
+- 已匯入的 600 題與官方答案均已核對；目前僅 3 題有實質 A～D 詳解初稿，
+  其餘 597 題為 `missing`，尚未有任何題目完成人工複核。
 - 專案目前採兩階段執行：第一階段先完成 715 題全部匯入與答案核對，第二階段
   才統一處理全部詳解。
 - 題目資料已支援官方附圖與共用題組敘述；中級試卷的圖片題須連同圖片匯入。
-- 下一個內容工作為匯入 115 年第一次中級三科共 150 題；暫不撰寫詳解。
+  目前共 72 張官方附圖、12 組共用題組敘述。
+- 下一個內容工作為匯入 114 年 9 月官方樣題五科共 115 題；暫不撰寫詳解。
+- 官方 PDF 不進版控，每次匯入需先放行 `www.ipas.org.tw` 與 `ipd.nat.gov.tw`
+  的連外權限，再執行 `scripts/fetch-official-pdfs.py`。
 - 詳細數字與官方入口見 [題源與匯入進度](SOURCE_INVENTORY.md)。
 
 每位接手者開始工作前，應先閱讀：
@@ -271,50 +274,73 @@
   該梯次題型標題為「一、單選題」，且同樣可能含圖片題與題組敘述，可沿用
   `scripts/import-official-exam.py` 與本次的附圖對應流程。
 
-## 2026-07-30 115 年第一次中級匯入受阻與匯入腳本可攜化
+## 2026-07-30 115 年第一次中級三科交接
 
-- 處理範圍：原定匯入 115 年第一次中級三科共 150 題；因無法取得官方 PDF 而
-  未匯入任何題目。改為完成該批匯入所需的前置程式修正。
-- 阻礙：執行環境（Claude Code on the web 容器）的連外政策拒絕
-  `www.ipas.org.tw` 與 `ipd.nat.gov.tw`，gateway 對 CONNECT 回應 403。官方 PDF
-  未進版控，該環境亦無既有副本（另已確認專案負責人的 Google Drive 沒有官方
-  試題 PDF）。下一批 114 年 9 月樣題位於同樣網域，換批無法繞過。
-- 未採取的做法：不以第三方題庫或記憶生成題目替代官方文件；不重試或繞過
-  政策拒絕。因此 `questions.json`、`sources.json` 與 manifest 均未變動。
-- 新增題目：0 題。已核對題目：0 題。詳解初稿：0 題。已複核詳解：0 題。
-- 程式變更（`scripts/import-official-exam.py`）：
-  - `PDF_DIR` 原為寫死的 `C:/project/iPas-quiz/tmp/pdfs`，在非 Windows 環境
-    無法執行；改為預設 repo 內的 `tmp/pdfs`，並可用 `IPAS_PDF_DIR` 覆寫。
-  - 圖片對照表與擷取圖片目錄原寫死為 114-2，改為由批次的 `figureMap`、
-    `figureDir` 指定，中級新梯次才能帶自己的對照表。
-  - `pageCount` 允許為 `None`：新試卷首次匯入時印出實際頁數供回填釘住，
-    已釘住的試卷仍維持頁數不符即中止。
-  - 移除 `parse_paper` 內一段永遠不會執行的舊版解析程式（位於
-    `raise ValueError(... unattached figures ...)` 之後）。現行路徑本身已有
-    更嚴格的選項標籤與空白檢查，功能未減少。
-- 新增批次 `115-1-intermediate`：三科的官方網址取自 `app/data/sources.json`，
-  檔名沿用交接文件已載明的 `past-06.pdf`～`past-08.pdf`。三科都宣告
-  `figureMap: figures-115-1-intermediate.json`；該對照表尚未產出，因此目前
-  執行匯入會以明確錯誤中止，不會把圖片題匯成只有文字的殘缺題目（fail closed）。
-- 新增腳本 `scripts/fetch-official-pdfs.py`：依批次下載官方 PDF 到
-  `IPAS_PDF_DIR`，處理官方檔名的中文 percent-encoding，並驗證回應開頭為
-  `%PDF`。下載失敗時列出被拒的主機並以非零狀態結束，不提供第三方鏡像退路。
-- 執行測試：`npm test` 通過（manifest 一致性檢查與 9 項資料測試）；兩支
-  Python 腳本 `py_compile` 通過，批次註冊與用法訊息已確認。
-- 未執行測試：`npm run lint` 與 `npm run build`（該環境未安裝 `node_modules`，
-  且本次變更只涉及 Python 腳本與文件）。**匯入腳本的重構未能對實際 PDF 重跑
-  驗證**——沒有官方 PDF 可用，因此無法像前幾批那樣確認重跑 `114-2-intermediate`
-  逐位元組相同。下一位接手者取得 PDF 後，應先重跑既有批次確認資料不變，
-  再匯入新批次。
-- 未解問題：官方 PDF 取得管道。需在執行環境的連外設定允許
-  `www.ipas.org.tw` 與 `ipd.nat.gov.tw`。
-- 下一步（網路解除後）：
-
-  ```sh
-  python scripts/fetch-official-pdfs.py 115-1-intermediate
-  python scripts/import-official-exam.py 114-2-intermediate   # 迴歸：確認資料不變
-  python scripts/import-official-exam.py 115-1-intermediate   # 先回填 pageCount
-  ```
-
-  匯入前須將三份 PDF 全部渲染、逐頁目視核對，並產出經人工確認的
-  `scripts/figures-115-1-intermediate.json` 圖片對照表。
+- 處理範圍：115 年第一次中級第一科「人工智慧技術應用與規劃」、第二科「大數據
+  處理分析與應用」、第三科「機器學習技術與應用」，共 150 題；官方 12 份歷屆
+  試卷 600 題至此全部匯入完畢。
+- 官方來源（皆為 15/17/18 頁，考試日期 115 年 05 月 23 日）：
+  - [第一科公告試題](https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf)（15 頁）
+  - [第二科公告試題](https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf)（17 頁）
+  - [第三科公告試題](https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf)（18 頁）
+- 取得 PDF 的前置條件：執行環境預設的 Trusted 連外等級不含
+  `www.ipas.org.tw` 與 `ipd.nat.gov.tw`，會在 CONNECT 階段被回 403。本次由專案
+  負責人把環境連外改為 Custom 並加入這兩個網域後才取得官方 PDF。
+- 匯入方式：`python scripts/fetch-official-pdfs.py 115-1-intermediate` 下載，
+  再 `python scripts/import-official-exam.py 115-1-intermediate`。
+- 新增題目：`aiap-intermediate-115-01-ai-tech-planning-001` 至 `050`、
+  `aiap-intermediate-115-01-big-data-001` 至 `050`、
+  `aiap-intermediate-115-01-machine-learning-001` 至 `050`。
+- 已核對題目：150 題，`extractionStatus` 均為 `verified`。核對方式：
+  1. 50 頁全部渲染；含圖片、題組或自動檢查有疑慮的 23 頁逐頁目視核對。
+  2. 官方答案以 pdfplumber 依表格座標獨立讀取最左欄字母，與匯入結果逐題比對，
+     150/150 完全一致（此路徑不與匯入用的正規表示式共用程式碼）。
+  3. 題幹與選項共 746 個欄位，改以 pdfplumber 裁掉答案欄與題號欄後重新擷取比對；
+     4 筆不符全部個別檢視確認為參考端裁切與下標排版造成，資料本身無誤。
+  4. 三份 PDF 內嵌圖片以程式全數列舉（每頁重複的 1084×454 iPAS 浮水印已確認為
+     標誌並排除），因此不會漏圖。
+- 詳解初稿：0 題；`explanationStatus` 全部為 `missing`，未產生任何模板內容。
+- 已複核詳解：0 題。
+- 官方答案序列（供覆核）：
+  - 第一科：`DCBCCCCBDABBCABADDAABCBDBDABCCABDBBAADADADCBBCDCAD`
+  - 第二科：`AABAADBDBBCCBCCADDDBDCCCCADCDBBBACDDABCABDCACACCBD`
+  - 第三科：`CCACCBBBAADACCDABADCDCDDADCBBBADBDDBACABBCDBABBDCB`
+- 圖片：34 張（第一科 1、第二科 14、第三科 19），對照表為
+  `scripts/figures-115-1-intermediate.json`。第二科第 49 題的 A～D 選項本身即為
+  程式碼截圖；第二科第 48～50 題與第三科第 42～43、44～45、46～48 題的題組敘述
+  含附圖。共用題組共 7 組：第二科 41～44、45～47、48～50，第三科 42～43、
+  44～45、46～48、49～50。
+- 解析器修正（三項，皆為本梯次版面差異所暴露的既有缺陷）：
+  1. `clean_page` 原本只移除「一、選擇題」。本梯次第二科第 12 頁、第三科第 11 頁
+     另有「二、程式題」章節標題，會被併進前一題最後一個選項的文字。改為以
+     `SECTION_HEADING` 正規表示式移除任何「N、XX題」標題。
+  2. 第三科程式題章節（第 11～18 頁）的兩欄標題印成「題目 答案」，與其他試卷
+     相反，原本的字串比對漏掉。改為兩種順序都移除。
+  3. 題目起始樣式的 `^\s*` 會把前一頁結尾的換行一起吃掉，使跨頁第一題的
+     `sourcePage` 少算一頁。改為 `^[ \t　]*` 只允許同一行的空白。此修正同時
+     更正既有資料一筆：`aiap-intermediate-114-02-big-data-043` 的 `sourcePage`
+     由 13 改為 14（該題實際印在第 14 頁）。六份中級試卷的 `sourcePage` 現已
+     全數與逐頁掃描結果一致。
+- 迴歸驗證：重跑 `114-2-intermediate` 後，除上述 Q43 頁碼修正外，既有 450 題
+  逐位元組相同（449/450 完全未變，1 筆為刻意更正）。
+- 網站驗證：`npm run build` 靜態輸出後以 Chromium（桌面 1280×900、手機 390×844）
+  實際操作，切到中級→第二科→第 49 題，4 張選項截圖與題組附圖共 5 張圖片全部
+  正常載入，無 broken image、無 console error。首頁說明文字已同步加入
+  115 年第一次中級。
+- 來源清冊更新：三科各為匯入 50、答案核對 50，詳解初稿與複核均為 0；
+  總進度 600／715。三科 `retrievedAt` 記為 2026-07-30（實際取得 PDF 之日）；
+  盤點截止日仍為 2026-07-29，因為本次未新增匯入目標。
+- 自動測試更新：`tests/data.test.mjs` 新增三份試卷的題號、答案序列與頁數上限，
+  圖片總數 38 → 72，manifest 期望值改為 600 題，並放寬 `retrievedAt` 允許
+  2026-07-30。
+- 執行測試：`npm test`（manifest 一致性檢查與 9 項資料測試，全部通過）、
+  `npm run lint`、`npm run build`，以及上述瀏覽器操作。
+- 已知限制（沿用上一批）：題幹與選項的附圖一律排在該段文字之後；官方版面中
+  少數圖片排在文字之前或文字中間（如第二科第 43 題），顯示順序會略有差異，
+  內容則完整。題幹內的編號清單（如第二科第 49 題的 1./2./3.）在正規化時會併成
+  同一段，內容不缺但版面不保留。
+- 未解問題：無。
+- 下一步：匯入 114 年 9 月最新版官方樣題五科共 115 題（初級兩科 35+35、中級三科
+  15+15+15），即第一階段最後一批。樣題與歷屆考題來源不同（`official-sample`、
+  `DownloadFile.ashx` 網址、同一 PDF 內含多科），需在 `scripts/import-official-exam.py`
+  另建批次規則，且不得與 114 年 1 月舊版樣題重複匯入。

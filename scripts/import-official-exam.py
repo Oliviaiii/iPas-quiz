@@ -142,7 +142,6 @@ BATCHES = {
     # 115 年第一次中級三科。網址取自 app/data/sources.json，已確認每科 50 題。
     # 中級試卷含題目內嵌圖片，因此本批宣告 figureMap；在產出經人工逐頁複核的
     # 對照表之前，匯入會直接失敗，不會把圖片題匯成只有文字的殘缺題目。
-    # pageCount 留 None：取得官方 PDF 後由腳本印出實際頁數，再回填釘住。
     "115-1-intermediate": {
         "level": "intermediate",
         "levelLabel": "中級",
@@ -157,7 +156,7 @@ BATCHES = {
                 "path": PDF_DIR / "past-06.pdf",
                 "sourceId": "aiap-115-intermediate-1-ai-tech-planning",
                 "subjectCode": "ai-tech-planning",
-                "pageCount": None,
+                "pageCount": 15,
                 "figureTag": "s1",
                 "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
             },
@@ -165,7 +164,7 @@ BATCHES = {
                 "path": PDF_DIR / "past-07.pdf",
                 "sourceId": "aiap-115-intermediate-1-big-data",
                 "subjectCode": "big-data",
-                "pageCount": None,
+                "pageCount": 17,
                 "figureTag": "s2",
                 "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
             },
@@ -173,7 +172,7 @@ BATCHES = {
                 "path": PDF_DIR / "past-08.pdf",
                 "sourceId": "aiap-115-intermediate-1-machine-learning",
                 "subjectCode": "machine-learning",
-                "pageCount": None,
+                "pageCount": 18,
                 "figureTag": "s3",
                 "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
             },
@@ -192,6 +191,9 @@ ANSWER_TRANSLATION = str.maketrans(
 
 PAGE_MARKER = re.compile(r"^第\d+頁，共\d+頁$")
 PAGE_HEADER = re.compile(r"^\d+年第[一二三四]次AI應用規劃師-[初中]級能力鑑定")
+# 題型章節標題，例如「一、選擇題」、「二、程式題」。這類標題自成一列且不屬於
+# 任何題目；若留在文字層，會被併進前一題最後一個選項的文字裡。
+SECTION_HEADING = re.compile(r"^[一二三四五六七八九十]+、\S{2,6}題$")
 # 題組敘述在官方版面自成一列，答案欄留白，文字層固定以兩個半形空白開頭。
 PASSAGE_START = re.compile(r"(?m)^ {2}\S")
 PASSAGE_RANGE = re.compile(r"(\d{1,2})\s*[~～－-]\s*(\d{1,2})\s*題")
@@ -224,7 +226,9 @@ def clean_page(text: str, subject_heading: str) -> str:
             continue
         if PAGE_MARKER.match(compact):
             continue
-        if compact in {"一、選擇題", "答案題目"}:
+        # 表格欄位標題。115 年第一次中級第三科的程式題章節把兩欄標題印成
+        # 「題目 答案」，與其他試卷相反，兩種順序都要移除。
+        if compact in {"答案題目", "題目答案"} or SECTION_HEADING.match(compact):
             continue
         # 中級試卷的「答案」欄標題有時被拆成單獨的「答」、「案」兩行；
         # 只在頁首範圍內移除，避免誤刪題目內容。
@@ -403,8 +407,10 @@ def parse_paper(batch: dict, paper: dict) -> list[dict]:
         cursor += len(page) + 1
     combined = "\n".join(combined_parts)
 
+    # \u884c\u9996\u7e2e\u6392\u53ea\u5141\u8a31\u540c\u4e00\u884c\u7684\u7a7a\u767d\uff1a`\s*` \u6703\u628a\u524d\u4e00\u9801\u7d50\u5c3e\u7684\u63db\u884c\u4e00\u8d77\u5403\u6389\uff0c\u8b93\u8de8\u9801
+    # \u7b2c\u4e00\u984c\u7684 match \u4f4d\u7f6e\u843d\u5728\u524d\u4e00\u9801\uff0c`sourcePage` \u56e0\u6b64\u5c11\u7b97\u4e00\u9801\u3002
     question_pattern = re.compile(
-        r"(?m)^\s*([ABCD\uff21\uff22\uff23\uff24])\s+([0-9]{1,2})[.]\s+"
+        r"(?m)^[ \t\u3000]*([ABCD\uff21\uff22\uff23\uff24])\s+([0-9]{1,2})[.]\s+"
     )
     matches = list(question_pattern.finditer(combined))
     if len(matches) != 50:

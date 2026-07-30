@@ -96,6 +96,33 @@ const importedPapers = [
     answers: "BCCBACADACDCBCBABACCCBACADDCDCBDBDADBBCCDBADBBBCCC",
     pageCount: 19,
   },
+  {
+    idPrefix: "aiap-intermediate-115-01-",
+    level: "intermediate",
+    rocYear: 115,
+    session: "1",
+    subjectCode: "ai-tech-planning",
+    answers: "DCBCCCCBDABBCABADDAABCBDBDABCCABDBBAADADADCBBCDCAD",
+    pageCount: 15,
+  },
+  {
+    idPrefix: "aiap-intermediate-115-01-",
+    level: "intermediate",
+    rocYear: 115,
+    session: "1",
+    subjectCode: "big-data",
+    answers: "AABAADBDBBCCBCCADDDBDCCCCADCDBBBACDDABCABDCACACCBD",
+    pageCount: 17,
+  },
+  {
+    idPrefix: "aiap-intermediate-115-01-",
+    level: "intermediate",
+    rocYear: 115,
+    session: "1",
+    subjectCode: "machine-learning",
+    answers: "CCACCBBBAADACCDABADCDCDDADCBBBADBDDBACABBCDBABBDCB",
+    pageCount: 18,
+  },
 ];
 
 test("contains only verified official exam questions", () => {
@@ -214,7 +241,8 @@ test("keeps official figures and shared passages usable", () => {
       assert.ok(question.passage.blocks.length > 0, question.id);
     }
   }
-  assert.equal(seen.size, 38);
+  // 114 年第二次中級 38 張、115 年第一次中級 34 張。
+  assert.equal(seen.size, 72);
 });
 
 test("uses unique stable question ids", () => {
@@ -303,7 +331,12 @@ test("keeps source progress auditable and official-only", () => {
       ["www.ipas.org.tw", "ipd.nat.gov.tw"].includes(new URL(source.url).hostname),
     ),
   );
-  assert.ok(sources.every((source) => source.retrievedAt === "2026-07-29"));
+  // 盤點日為 2026-07-29；已於後續批次重新取得官方 PDF 的來源記錄實際取得日期。
+  assert.ok(
+    sources.every((source) =>
+      ["2026-07-29", "2026-07-30"].includes(source.retrievedAt),
+    ),
+  );
   assert.ok(
     sources.every(
       (source) =>
@@ -343,20 +376,21 @@ test("separates published, unavailable, future, and superseded work", () => {
 test("publishes the verified inventory and imported-question totals", () => {
   assert.equal(manifest.inventoryCutoff, "2026-07-29");
   assert.equal(manifest.sourceCount, 38);
-  assert.equal(manifest.officialQuestionCount, 450);
+  assert.equal(manifest.officialQuestionCount, 600);
   assert.equal(manifest.practiceQuestionCount, 0);
-  assert.equal(manifest.extractionStatus.verified, 450);
-  assert.equal(manifest.explanationStatus.missing, 447);
+  assert.equal(manifest.extractionStatus.verified, 600);
+  assert.equal(manifest.explanationStatus.missing, 597);
   assert.equal(manifest.explanationStatus.draft, 3);
   assert.deepEqual(manifest.countsByLevel, {
     elementary: 300,
-    intermediate: 150,
+    intermediate: 300,
   });
   assert.deepEqual(manifest.countsBySession, {
     "114-elementary-4": 100,
     "115-elementary-1": 100,
     "115-elementary-2": 100,
     "114-intermediate-2": 150,
+    "115-intermediate-1": 150,
   });
   assert.deepEqual(manifest.collectionProgress, {
     examSessionCount: 12,
@@ -364,8 +398,8 @@ test("publishes the verified inventory and imported-question totals", () => {
     publishedExamQuestionTarget: 600,
     currentSampleQuestionTarget: 115,
     knownQuestionTarget: 715,
-    importedCount: 450,
-    answerVerifiedCount: 450,
+    importedCount: 600,
+    answerVerifiedCount: 600,
     explanationDraftCount: 3,
     explanationReviewedCount: 0,
     availability: {

@@ -1,0 +1,43 @@
+{
+  "_comment": "115 年第一次中級三科的官方 PDF 內嵌圖片對應表。key 是擷取檔名（科目-頁碼-該頁由上而下序號），value 的 slot 為 prompt（題幹）、A~D（選項）或 passage（題組敘述）。每頁重複出現的 1084x454 iPAS 浮水印標誌不是試題圖片，已排除。所有對應皆已逐頁對照官方 PDF 渲染圖確認。",
+  "ai-tech-planning": {
+    "s1-p06-1.png": { "question": 19, "slot": "prompt" }
+  },
+  "big-data": {
+    "s2-p01-1.png": { "question": 2, "slot": "prompt" },
+    "s2-p02-1.png": { "question": 8, "slot": "prompt" },
+    "s2-p06-1.png": { "question": 19, "slot": "prompt" },
+    "s2-p07-1.png": { "question": 23, "slot": "prompt" },
+    "s2-p12-1.png": { "question": 39, "slot": "prompt" },
+    "s2-p12-2.png": { "question": 40, "slot": "prompt" },
+    "s2-p13-1.png": { "question": 41, "slot": "prompt" },
+    "s2-p14-1.png": { "question": 43, "slot": "prompt" },
+    "s2-p16-1.png": { "passage": "48-50", "slot": "passage" },
+    "s2-p17-1.png": { "question": 49, "slot": "A" },
+    "s2-p17-2.png": { "question": 49, "slot": "B" },
+    "s2-p17-3.png": { "question": 49, "slot": "C" },
+    "s2-p17-4.png": { "question": 49, "slot": "D" },
+    "s2-p17-5.png": { "question": 50, "slot": "prompt" }
+  },
+  "machine-learning": {
+    "s3-p11-1.png": { "question": 40, "slot": "prompt" },
+    "s3-p11-2.png": { "question": 41, "slot": "prompt" },
+    "s3-p12-1.png": { "passage": "42-43", "slot": "passage" },
+    "s3-p13-1.png": { "passage": "44-45", "slot": "passage" },
+    "s3-p13-2.png": { "passage": "44-45", "slot": "passage" },
+    "s3-p13-3.png": { "passage": "44-45", "slot": "passage" },
+    "s3-p13-4.png": { "passage": "44-45", "slot": "passage" },
+    "s3-p14-1.png": { "question": 44, "slot": "prompt" },
+    "s3-p14-2.png": { "question": 45, "slot": "prompt" },
+    "s3-p14-3.png": { "question": 45, "slot": "prompt" },
+    "s3-p15-1.png": { "passage": "46-48", "slot": "passage" },
+    "s3-p15-2.png": { "passage": "46-48", "slot": "passage" },
+    "s3-p15-3.png": { "passage": "46-48", "slot": "passage" },
+    "s3-p15-4.png": { "question": 46, "slot": "prompt" },
+    "s3-p15-5.png": { "question": 46, "slot": "prompt" },
+    "s3-p16-1.png": { "question": 47, "slot": "prompt" },
+    "s3-p16-2.png": { "question": 47, "slot": "prompt" },
+    "s3-p17-1.png": { "question": 48, "slot": "prompt" },
+    "s3-p18-1.png": { "question": 50, "slot": "prompt" }
+  }
+}
