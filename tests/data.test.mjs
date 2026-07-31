@@ -150,14 +150,29 @@ test("contains only verified official exam questions", () => {
   );
 });
 
-test("keeps explanations out of phase one imports", () => {
-  assert.equal(
-    questions.filter((question) => question.explanationStatus === "draft").length,
-    3,
+test("keeps explanation drafts complete and free of filler", () => {
+  // 第二階段逐批撰寫；每批完成後更新此數字。
+  const draftIds = [
+    "aiap-elementary-114-04-ai-foundation-002",
+    "aiap-elementary-114-04-ai-foundation-003",
+    "aiap-elementary-114-04-ai-foundation-004",
+    ...Array.from({ length: 10 }, (_, index) =>
+      `aiap-elementary-114-04-ai-foundation-${String(index + 5).padStart(3, "0")}`,
+    ),
+  ];
+  assert.deepEqual(
+    questions
+      .filter((question) => question.explanationStatus === "draft")
+      .map((question) => question.id),
+    draftIds,
   );
   assert.equal(
     questions.filter((question) => question.explanationStatus === "missing").length,
-    questions.length - 3,
+    questions.length - draftIds.length,
+  );
+  assert.equal(
+    questions.filter((question) => question.explanationStatus === "reviewed").length,
+    0,
   );
   const forbiddenFiller = [
     "沒有滿足題幹的關鍵條件",
@@ -178,14 +193,27 @@ test("keeps explanations out of phase one imports", () => {
       (label) => question.explanation.optionAnalysis[label]?.length >= 35,
     ),
   );
-  assert.deepEqual(
-    completeOptionAnalyses.map((question) => question.id),
-    [
-      "aiap-elementary-114-04-ai-foundation-002",
-      "aiap-elementary-114-04-ai-foundation-003",
-      "aiap-elementary-114-04-ai-foundation-004",
-    ],
-  );
+  // 標記為 draft 的題目都必須有完整的 A～D 解析，反之亦然。
+  assert.deepEqual(completeOptionAnalyses.map((question) => question.id), draftIds);
+  for (const question of questions.filter((q) => q.explanationStatus === "draft")) {
+    assert.ok(question.explanation.summary.startsWith("正確答案是 "), question.id);
+    assert.ok(
+      question.explanation.summary.includes(question.officialAnswer[0]),
+      question.id,
+    );
+    assert.ok(question.explanation.concept.length >= 60, question.id);
+    assert.ok(question.explanation.answerReason.length >= 40, question.id);
+    assert.ok(question.explanation.trap.length >= 20, question.id);
+    assert.ok(question.explanation.references.length > 0, question.id);
+    for (const reference of question.explanation.references) {
+      assert.ok(/^https:\/\//.test(reference.url), `${question.id} ${reference.url}`);
+      assert.ok(reference.title && reference.locator, question.id);
+      assert.ok(/^\d{4}-\d{2}-\d{2}$/.test(reference.checkedAt), question.id);
+    }
+    assert.ok(question.explanation.author, question.id);
+    assert.ok(question.explanation.authoredAt, question.id);
+    assert.equal(question.explanation.reviewer, undefined, question.id);
+  }
   const questionsAwaitingExplanation = questions.filter(
     (question) => question.explanationStatus === "missing",
   );
@@ -380,8 +408,9 @@ test("publishes the verified inventory and imported-question totals", () => {
   assert.equal(manifest.officialQuestionCount, 600);
   assert.equal(manifest.practiceQuestionCount, 0);
   assert.equal(manifest.extractionStatus.verified, 600);
-  assert.equal(manifest.explanationStatus.missing, 597);
-  assert.equal(manifest.explanationStatus.draft, 3);
+  assert.equal(manifest.explanationStatus.missing, 587);
+  assert.equal(manifest.explanationStatus.draft, 13);
+  assert.equal(manifest.explanationStatus.reviewed, 0);
   assert.deepEqual(manifest.countsByLevel, {
     elementary: 300,
     intermediate: 300,
@@ -401,7 +430,7 @@ test("publishes the verified inventory and imported-question totals", () => {
     knownQuestionTarget: 600,
     importedCount: 600,
     answerVerifiedCount: 600,
-    explanationDraftCount: 3,
+    explanationDraftCount: 13,
     explanationReviewedCount: 0,
     availability: {
       published: 12,
