@@ -17,3 +17,6 @@ npm-debug.log*
 /.playwright-cli/
 /tmp/
 __pycache__/
+
+# claude code worktrees（含各自的 .next 建置快取）
+/.claude/worktrees/
