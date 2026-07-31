@@ -154,11 +154,11 @@
     "expectedCount": 50,
     "importedCount": 50,
     "answerVerifiedCount": 50,
-    "explanationDraftCount": 13,
+    "explanationDraftCount": 50,
     "explanationReviewedCount": 0,
     "availability": "published",
     "inclusion": "target",
-    "notes": "114 年第四次初級第一科，50 題已匯入並核對官方答案。第二階段詳解進度：第 2～4、5～14 題共 13 題已完成合格 A～D 逐項解析（狀態 draft，尚未獨立複核）；其餘 37 題尚未撰寫。"
+    "notes": "114 年第四次初級第一科，50 題已匯入並核對官方答案。第二階段詳解進度：50 題全部完成合格 A～D 逐項解析（狀態 draft），本科初稿已寫完，尚待第二階段 B 獨立人工複核。"
   },
   {
     "sourceId": "aiap-114-elementary-4-genai-planning",
