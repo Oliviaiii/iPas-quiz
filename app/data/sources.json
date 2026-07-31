@@ -177,11 +177,11 @@
     "expectedCount": 50,
     "importedCount": 50,
     "answerVerifiedCount": 50,
-    "explanationDraftCount": 0,
+    "explanationDraftCount": 10,
     "explanationReviewedCount": 0,
     "availability": "published",
     "inclusion": "target",
-    "notes": "50 題已逐頁核對並匯入；官方答案已核對。原模板式選項分析已全部移除，50 題實質詳解均待重寫。"
+    "notes": "114 年第四次初級第二科，50 題已匯入並核對官方答案。第二階段詳解進度：第 1～10 題已完成合格 A～D 逐項解析（狀態 draft），其餘 40 題尚未撰寫。"
   },
   {
     "sourceId": "aiap-114-intermediate-1-ai-tech-planning",
