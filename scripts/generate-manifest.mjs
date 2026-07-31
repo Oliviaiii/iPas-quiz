@@ -39,7 +39,7 @@ const sumSourceField = (items, field) =>
   items.reduce((total, item) => total + (item[field] ?? 0), 0);
 const manifest = {
   schemaVersion: 1,
-  inventoryCutoff: "2026-07-29",
+  inventoryCutoff: "2026-07-31",
   sourceCount: sources.length,
   officialQuestionCount: questions.filter((question) =>
     question.sourceType.startsWith("official-"),

@@ -656,15 +656,15 @@
     "examDate": null,
     "publishedAt": "2025-09-20",
     "url": "https://ipd.nat.gov.tw/ipas/DownloadFile.ashx?filename=11f7a001-0f61-4398-bb1d-a4a07c5a0fcd_iPAS+AI%E6%87%89%E7%94%A8%E8%A6%8F%E5%8A%83%E5%B8%AB%E5%88%9D%E7%B4%9A%E8%83%BD%E5%8A%9B%E9%91%91%E5%AE%9A-%E8%80%83%E8%A9%A6%E6%A8%A3%E9%A1%8C%28114%E5%B9%B49%E6%9C%88%E7%89%88%29.pdf&type=10",
-    "retrievedAt": "2026-07-29",
-    "expectedCount": 35,
+    "retrievedAt": "2026-07-31",
+    "expectedCount": null,
     "importedCount": 0,
     "answerVerifiedCount": 0,
     "explanationDraftCount": 0,
     "explanationReviewedCount": 0,
-    "availability": "published",
+    "availability": "not-found",
     "inclusion": "target",
-    "notes": "最新版官方初級樣題；同一 PDF 內第一科共 35 題。"
+    "notes": "2026-07-31 複查：官方已下架此樣題。學習資源頁只剩「初級／中級能力鑑定試題公告」兩個檔案區塊，沒有考試樣題區塊；本欄記錄的下載網址回傳官方「找不到頁面」404；下載頁與考試資訊頁亦無樣題 PDF，官方最新消息 0 次提及樣題。盤點時確認的題數為初級第一科 35 題，保留供日後官方補發時比對。官方新增的「評鑑內容範圍參考」是考科範圍表，不含題目，不能替代樣題。"
   },
   {
     "sourceId": "aiap-sample-11409-elementary-genai-planning",
@@ -679,15 +679,15 @@
     "examDate": null,
     "publishedAt": "2025-09-20",
     "url": "https://ipd.nat.gov.tw/ipas/DownloadFile.ashx?filename=11f7a001-0f61-4398-bb1d-a4a07c5a0fcd_iPAS+AI%E6%87%89%E7%94%A8%E8%A6%8F%E5%8A%83%E5%B8%AB%E5%88%9D%E7%B4%9A%E8%83%BD%E5%8A%9B%E9%91%91%E5%AE%9A-%E8%80%83%E8%A9%A6%E6%A8%A3%E9%A1%8C%28114%E5%B9%B49%E6%9C%88%E7%89%88%29.pdf&type=10",
-    "retrievedAt": "2026-07-29",
-    "expectedCount": 35,
+    "retrievedAt": "2026-07-31",
+    "expectedCount": null,
     "importedCount": 0,
     "answerVerifiedCount": 0,
     "explanationDraftCount": 0,
     "explanationReviewedCount": 0,
-    "availability": "published",
+    "availability": "not-found",
     "inclusion": "target",
-    "notes": "最新版官方初級樣題；同一 PDF 內第二科共 35 題。"
+    "notes": "2026-07-31 複查：官方已下架此樣題。學習資源頁只剩「初級／中級能力鑑定試題公告」兩個檔案區塊，沒有考試樣題區塊；本欄記錄的下載網址回傳官方「找不到頁面」404；下載頁與考試資訊頁亦無樣題 PDF，官方最新消息 0 次提及樣題。盤點時確認的題數為初級第二科 35 題，保留供日後官方補發時比對。官方新增的「評鑑內容範圍參考」是考科範圍表，不含題目，不能替代樣題。"
   },
   {
     "sourceId": "aiap-sample-11409-intermediate-ai-tech-planning",
@@ -702,15 +702,15 @@
     "examDate": null,
     "publishedAt": "2025-09-20",
     "url": "https://ipd.nat.gov.tw/ipas/DownloadFile.ashx?filename=4002eaa2-bfea-400e-abd1-2f4c1a1f8de8_iPAS+AI%E6%87%89%E7%94%A8%E8%A6%8F%E5%8A%83%E5%B8%AB%E4%B8%AD%E7%B4%9A%E8%83%BD%E5%8A%9B%E9%91%91%E5%AE%9A-%E8%80%83%E8%A9%A6%E6%A8%A3%E9%A1%8C%28114%E5%B9%B49%E6%9C%88%E7%89%88%29+_v2.pdf&type=10",
-    "retrievedAt": "2026-07-29",
-    "expectedCount": 15,
+    "retrievedAt": "2026-07-31",
+    "expectedCount": null,
     "importedCount": 0,
     "answerVerifiedCount": 0,
     "explanationDraftCount": 0,
     "explanationReviewedCount": 0,
-    "availability": "published",
+    "availability": "not-found",
     "inclusion": "target",
-    "notes": "最新版官方中級樣題；同一 PDF 內第一科共 15 題。"
+    "notes": "2026-07-31 複查：官方已下架此樣題。學習資源頁只剩「初級／中級能力鑑定試題公告」兩個檔案區塊，沒有考試樣題區塊；本欄記錄的下載網址回傳官方「找不到頁面」404；下載頁與考試資訊頁亦無樣題 PDF，官方最新消息 0 次提及樣題。盤點時確認的題數為中級第一科 15 題，保留供日後官方補發時比對。官方新增的「評鑑內容範圍參考」是考科範圍表，不含題目，不能替代樣題。"
   },
   {
     "sourceId": "aiap-sample-11409-intermediate-big-data",
@@ -725,15 +725,15 @@
     "examDate": null,
     "publishedAt": "2025-09-20",
     "url": "https://ipd.nat.gov.tw/ipas/DownloadFile.ashx?filename=4002eaa2-bfea-400e-abd1-2f4c1a1f8de8_iPAS+AI%E6%87%89%E7%94%A8%E8%A6%8F%E5%8A%83%E5%B8%AB%E4%B8%AD%E7%B4%9A%E8%83%BD%E5%8A%9B%E9%91%91%E5%AE%9A-%E8%80%83%E8%A9%A6%E6%A8%A3%E9%A1%8C%28114%E5%B9%B49%E6%9C%88%E7%89%88%29+_v2.pdf&type=10",
-    "retrievedAt": "2026-07-29",
-    "expectedCount": 15,
+    "retrievedAt": "2026-07-31",
+    "expectedCount": null,
     "importedCount": 0,
     "answerVerifiedCount": 0,
     "explanationDraftCount": 0,
     "explanationReviewedCount": 0,
-    "availability": "published",
+    "availability": "not-found",
     "inclusion": "target",
-    "notes": "最新版官方中級樣題；同一 PDF 內第二科共 15 題。"
+    "notes": "2026-07-31 複查：官方已下架此樣題。學習資源頁只剩「初級／中級能力鑑定試題公告」兩個檔案區塊，沒有考試樣題區塊；本欄記錄的下載網址回傳官方「找不到頁面」404；下載頁與考試資訊頁亦無樣題 PDF，官方最新消息 0 次提及樣題。盤點時確認的題數為中級第二科 15 題，保留供日後官方補發時比對。官方新增的「評鑑內容範圍參考」是考科範圍表，不含題目，不能替代樣題。"
   },
   {
     "sourceId": "aiap-sample-11409-intermediate-machine-learning",
@@ -748,15 +748,15 @@
     "examDate": null,
     "publishedAt": "2025-09-20",
     "url": "https://ipd.nat.gov.tw/ipas/DownloadFile.ashx?filename=4002eaa2-bfea-400e-abd1-2f4c1a1f8de8_iPAS+AI%E6%87%89%E7%94%A8%E8%A6%8F%E5%8A%83%E5%B8%AB%E4%B8%AD%E7%B4%9A%E8%83%BD%E5%8A%9B%E9%91%91%E5%AE%9A-%E8%80%83%E8%A9%A6%E6%A8%A3%E9%A1%8C%28114%E5%B9%B49%E6%9C%88%E7%89%88%29+_v2.pdf&type=10",
-    "retrievedAt": "2026-07-29",
-    "expectedCount": 15,
+    "retrievedAt": "2026-07-31",
+    "expectedCount": null,
     "importedCount": 0,
     "answerVerifiedCount": 0,
     "explanationDraftCount": 0,
     "explanationReviewedCount": 0,
-    "availability": "published",
+    "availability": "not-found",
     "inclusion": "target",
-    "notes": "最新版官方中級樣題；同一 PDF 內第三科共 15 題。"
+    "notes": "2026-07-31 複查：官方已下架此樣題。學習資源頁只剩「初級／中級能力鑑定試題公告」兩個檔案區塊，沒有考試樣題區塊；本欄記錄的下載網址回傳官方「找不到頁面」404；下載頁與考試資訊頁亦無樣題 PDF，官方最新消息 0 次提及樣題。盤點時確認的題數為中級第三科 15 題，保留供日後官方補發時比對。官方新增的「評鑑內容範圍參考」是考科範圍表，不含題目，不能替代樣題。"
   },
   {
     "sourceId": "aiap-sample-11401-elementary-ai-foundation",
@@ -771,7 +771,7 @@
     "examDate": null,
     "publishedAt": "2025-01-01",
     "url": "https://www.ipas.org.tw/DownloadFile.ashx?filename=e8d50f7f-17ce-4057-ad60-f42db15b20cd_iPAS+AI%E6%87%89%E7%94%A8%E8%A6%8F%E5%8A%83%E5%B8%AB%E8%83%BD%E5%8A%9B%E9%91%91%E5%AE%9A_%E8%80%83%E8%A9%A6%E6%A8%A3%E9%A1%8C%28114%E5%B9%B41%E6%9C%88%E7%89%88%29.pdf&type=10",
-    "retrievedAt": "2026-07-29",
+    "retrievedAt": "2026-07-31",
     "expectedCount": 5,
     "importedCount": 0,
     "answerVerifiedCount": 0,
@@ -779,7 +779,7 @@
     "explanationReviewedCount": 0,
     "availability": "superseded",
     "inclusion": "audit-only",
-    "notes": "已被 114 年 9 月版更新；保留版本追蹤，匯入時先比對重複題。"
+    "notes": "已被 114 年 9 月版更新；2026-07-31 複查時本網址同樣回傳 404，官方已一併下架。維持 superseded 與 audit-only，不計入目標。"
   },
   {
     "sourceId": "aiap-sample-11401-elementary-genai-planning",
@@ -794,7 +794,7 @@
     "examDate": null,
     "publishedAt": "2025-01-01",
     "url": "https://www.ipas.org.tw/DownloadFile.ashx?filename=e8d50f7f-17ce-4057-ad60-f42db15b20cd_iPAS+AI%E6%87%89%E7%94%A8%E8%A6%8F%E5%8A%83%E5%B8%AB%E8%83%BD%E5%8A%9B%E9%91%91%E5%AE%9A_%E8%80%83%E8%A9%A6%E6%A8%A3%E9%A1%8C%28114%E5%B9%B41%E6%9C%88%E7%89%88%29.pdf&type=10",
-    "retrievedAt": "2026-07-29",
+    "retrievedAt": "2026-07-31",
     "expectedCount": 5,
     "importedCount": 0,
     "answerVerifiedCount": 0,
@@ -802,7 +802,7 @@
     "explanationReviewedCount": 0,
     "availability": "superseded",
     "inclusion": "audit-only",
-    "notes": "已被 114 年 9 月版更新；保留版本追蹤，匯入時先比對重複題。"
+    "notes": "已被 114 年 9 月版更新；2026-07-31 複查時本網址同樣回傳 404，官方已一併下架。維持 superseded 與 audit-only，不計入目標。"
   },
   {
     "sourceId": "aiap-sample-11401-intermediate-ai-tech-planning",
@@ -817,7 +817,7 @@
     "examDate": null,
     "publishedAt": "2025-01-01",
     "url": "https://www.ipas.org.tw/DownloadFile.ashx?filename=e8d50f7f-17ce-4057-ad60-f42db15b20cd_iPAS+AI%E6%87%89%E7%94%A8%E8%A6%8F%E5%8A%83%E5%B8%AB%E8%83%BD%E5%8A%9B%E9%91%91%E5%AE%9A_%E8%80%83%E8%A9%A6%E6%A8%A3%E9%A1%8C%28114%E5%B9%B41%E6%9C%88%E7%89%88%29.pdf&type=10",
-    "retrievedAt": "2026-07-29",
+    "retrievedAt": "2026-07-31",
     "expectedCount": 5,
     "importedCount": 0,
     "answerVerifiedCount": 0,
@@ -825,7 +825,7 @@
     "explanationReviewedCount": 0,
     "availability": "superseded",
     "inclusion": "audit-only",
-    "notes": "已被 114 年 9 月版更新；保留版本追蹤，匯入時先比對重複題。"
+    "notes": "已被 114 年 9 月版更新；2026-07-31 複查時本網址同樣回傳 404，官方已一併下架。維持 superseded 與 audit-only，不計入目標。"
   },
   {
     "sourceId": "aiap-sample-11401-intermediate-big-data",
@@ -840,7 +840,7 @@
     "examDate": null,
     "publishedAt": "2025-01-01",
     "url": "https://www.ipas.org.tw/DownloadFile.ashx?filename=e8d50f7f-17ce-4057-ad60-f42db15b20cd_iPAS+AI%E6%87%89%E7%94%A8%E8%A6%8F%E5%8A%83%E5%B8%AB%E8%83%BD%E5%8A%9B%E9%91%91%E5%AE%9A_%E8%80%83%E8%A9%A6%E6%A8%A3%E9%A1%8C%28114%E5%B9%B41%E6%9C%88%E7%89%88%29.pdf&type=10",
-    "retrievedAt": "2026-07-29",
+    "retrievedAt": "2026-07-31",
     "expectedCount": 5,
     "importedCount": 0,
     "answerVerifiedCount": 0,
@@ -848,7 +848,7 @@
     "explanationReviewedCount": 0,
     "availability": "superseded",
     "inclusion": "audit-only",
-    "notes": "已被 114 年 9 月版更新；保留版本追蹤，匯入時先比對重複題。"
+    "notes": "已被 114 年 9 月版更新；2026-07-31 複查時本網址同樣回傳 404，官方已一併下架。維持 superseded 與 audit-only，不計入目標。"
   },
   {
     "sourceId": "aiap-sample-11401-intermediate-machine-learning",
@@ -863,7 +863,7 @@
     "examDate": null,
     "publishedAt": "2025-01-01",
     "url": "https://www.ipas.org.tw/DownloadFile.ashx?filename=e8d50f7f-17ce-4057-ad60-f42db15b20cd_iPAS+AI%E6%87%89%E7%94%A8%E8%A6%8F%E5%8A%83%E5%B8%AB%E8%83%BD%E5%8A%9B%E9%91%91%E5%AE%9A_%E8%80%83%E8%A9%A6%E6%A8%A3%E9%A1%8C%28114%E5%B9%B41%E6%9C%88%E7%89%88%29.pdf&type=10",
-    "retrievedAt": "2026-07-29",
+    "retrievedAt": "2026-07-31",
     "expectedCount": 5,
     "importedCount": 0,
     "answerVerifiedCount": 0,
@@ -871,6 +871,6 @@
     "explanationReviewedCount": 0,
     "availability": "superseded",
     "inclusion": "audit-only",
-    "notes": "已被 114 年 9 月版更新；保留版本追蹤，匯入時先比對重複題。"
+    "notes": "已被 114 年 9 月版更新；2026-07-31 複查時本網址同樣回傳 404，官方已一併下架。維持 superseded 與 audit-only，不計入目標。"
   }
 ]

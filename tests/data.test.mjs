@@ -334,7 +334,7 @@ test("keeps source progress auditable and official-only", () => {
   // 盤點日為 2026-07-29；已於後續批次重新取得官方 PDF 的來源記錄實際取得日期。
   assert.ok(
     sources.every((source) =>
-      ["2026-07-29", "2026-07-30"].includes(source.retrievedAt),
+      ["2026-07-29", "2026-07-30", "2026-07-31"].includes(source.retrievedAt),
     ),
   );
   assert.ok(
@@ -359,8 +359,9 @@ test("keeps source progress auditable and official-only", () => {
 test("separates published, unavailable, future, and superseded work", () => {
   const count = (status) =>
     sources.filter((source) => source.availability === status).length;
-  assert.equal(count("published"), 17);
-  assert.equal(count("not-found"), 9);
+  // 114 年 9 月版樣題五科已於 2026-07-31 遭官方下架，改列 not-found。
+  assert.equal(count("published"), 12);
+  assert.equal(count("not-found"), 14);
   assert.equal(count("scheduled"), 7);
   assert.equal(count("superseded"), 5);
 
@@ -374,7 +375,7 @@ test("separates published, unavailable, future, and superseded work", () => {
 });
 
 test("publishes the verified inventory and imported-question totals", () => {
-  assert.equal(manifest.inventoryCutoff, "2026-07-29");
+  assert.equal(manifest.inventoryCutoff, "2026-07-31");
   assert.equal(manifest.sourceCount, 38);
   assert.equal(manifest.officialQuestionCount, 600);
   assert.equal(manifest.practiceQuestionCount, 0);
@@ -396,17 +397,26 @@ test("publishes the verified inventory and imported-question totals", () => {
     examSessionCount: 12,
     publishedExamPaperCount: 12,
     publishedExamQuestionTarget: 600,
-    currentSampleQuestionTarget: 115,
-    knownQuestionTarget: 715,
+    currentSampleQuestionTarget: 0,
+    knownQuestionTarget: 600,
     importedCount: 600,
     answerVerifiedCount: 600,
     explanationDraftCount: 3,
     explanationReviewedCount: 0,
     availability: {
-      published: 17,
-      "not-found": 9,
+      published: 12,
+      "not-found": 14,
       scheduled: 7,
       superseded: 5,
     },
   });
+  // 第一階段完成條件：目標、已匯入、答案已核對三者相等。
+  assert.equal(
+    manifest.collectionProgress.knownQuestionTarget,
+    manifest.collectionProgress.importedCount,
+  );
+  assert.equal(
+    manifest.collectionProgress.importedCount,
+    manifest.collectionProgress.answerVerifiedCount,
+  );
 });
