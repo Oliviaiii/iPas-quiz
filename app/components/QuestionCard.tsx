@@ -184,6 +184,9 @@ export function QuestionCard({
         <button type="button" onClick={() => onMove(-1)}>
           上一題
         </button>
+        <span className="nav-position" aria-hidden="true">
+          {position} / {total}
+        </span>
         <button type="button" className="primary" onClick={() => onMove(1)}>
           下一題
         </button>

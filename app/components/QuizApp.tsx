@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import questionData from "../data/questions.json";
 import type { Level, OptionLabel, Question, SubjectCode } from "../data/types";
 import { loadProgress, saveProgress, type Progress } from "../lib/progress";
@@ -86,6 +86,24 @@ export function QuizApp() {
   const answeredCount = Object.keys(progress).length;
   const wrongCount = Object.values(progress).filter((answer) => !answer.correct).length;
   const current = filtered[currentIndex];
+
+  const quizAreaRef = useRef<HTMLDivElement | null>(null);
+  const lastSeenQuestionId = useRef<string | null>(null);
+
+  // 切到另一題時把題目捲回畫面頂端；作答（同一題）與初次載入不捲動。
+  useEffect(() => {
+    const currentId = current?.id ?? null;
+    const previousId = lastSeenQuestionId.current;
+    lastSeenQuestionId.current = currentId;
+    if (!currentId || !previousId || currentId === previousId) return;
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    quizAreaRef.current?.scrollIntoView({
+      behavior: reduceMotion ? "auto" : "smooth",
+      block: "start",
+    });
+  }, [current?.id]);
 
   return (
     <main>
@@ -181,7 +199,7 @@ export function QuizApp() {
           </div>
         </aside>
 
-        <div className="quiz-area">
+        <div className="quiz-area" ref={quizAreaRef}>
           {!ready ? (
             <div className="empty-state">讀取作答紀錄中…</div>
           ) : current ? (

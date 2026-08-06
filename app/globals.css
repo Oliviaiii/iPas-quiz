@@ -225,8 +225,13 @@ main {
 }
 
 .question-card {
-  padding: clamp(24px, 5vw, 52px);
+  --card-pad: clamp(24px, 5vw, 52px);
+  padding: var(--card-pad);
   border-radius: 8px 34px 8px 8px;
+}
+
+.quiz-area {
+  scroll-margin-top: 16px;
 }
 
 .question-topline {
@@ -500,12 +505,26 @@ main {
 }
 
 .question-navigation {
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
   display: flex;
   gap: 12px;
-  justify-content: flex-end;
-  margin-top: 32px;
-  padding-top: 24px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 32px calc(var(--card-pad) * -1) calc(var(--card-pad) * -1);
+  padding: 14px var(--card-pad) calc(14px + env(safe-area-inset-bottom, 0px));
   border-top: 1px solid var(--line);
+  border-radius: 0 0 8px 8px;
+  background: var(--card);
+  box-shadow: 0 -10px 24px rgba(28, 43, 34, 0.06);
+}
+
+.nav-position {
+  color: var(--muted);
+  font-family: Georgia, serif;
+  font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 .question-navigation button {
@@ -617,5 +636,9 @@ main {
 
   .option strong {
     grid-column: 2;
+  }
+
+  .question-navigation button {
+    flex: 1;
   }
 }
