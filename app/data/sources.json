@@ -361,11 +361,11 @@
     "expectedCount": 50,
     "importedCount": 50,
     "answerVerifiedCount": 50,
-    "explanationDraftCount": 0,
+    "explanationDraftCount": 50,
     "explanationReviewedCount": 0,
     "availability": "published",
     "inclusion": "target",
-    "notes": "50 題已逐頁核對並匯入；官方答案已核對。詳解留待第二階段撰寫。"
+    "notes": "50 題已逐頁核對並匯入；官方答案已核對。第二階段 A 詳解初稿 50 題全部完成，尚待獨立人工複核。"
   },
   {
     "sourceId": "aiap-115-elementary-2-ai-foundation",
