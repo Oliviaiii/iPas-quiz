@@ -695,3 +695,27 @@
 - 執行測試：npm test（9 項全過）、npm run lint（通過）、npm run build。
 - 下一步：115 年第二次初級第一科「人工智慧基礎概論」第 1～50 題；五批撰寫
   助手已於本日啟動，產出腳本後依 2026-08-03 條目的套用程序處理。
+
+## 2026-08-06 115 年第二次初級第一科詳解初稿（部分批次，腳本未套用）
+
+- 處理範圍：五個並行 AI 助手撰寫 115 年第二次初級第一科「人工智慧基礎概論」
+  第 1～50 題的詳解初稿腳本；工作時限與使用額度同時到頂，保留已完成的三批。
+- 已產出腳本（均未執行；`questions.json`、清冊與 manifest 未變動，全站詳解
+  初稿仍為 200 題）：
+  - `scripts/write-explanations-115-2-s1-011-020.py`（第 11～20 題；撰寫助手
+    在斷線前寫出完整檔案，未及回報自檢，與 2026-08-03 兩批相同情形）
+  - `scripts/write-explanations-115-2-s1-021-030.py`（第 21～30 題，自檢通過）
+  - `scripts/write-explanations-115-2-s1-041-050.py`（第 41～50 題，自檢通過）
+- 預檢：`scripts/validate-explanation-drafts.py` 逐題檢查三批共 30 題，全部
+  通過（答案一致、欄位長度、A～D 齊備、禁用字串、參考資料欄位）。
+- 未完成批次：第 1～10、31～40 題；無半成品檔案。
+- 執行測試：未跑 npm test／lint／build（資料檔未變動，維持上一條目的綠燈
+  狀態）。
+- 下一步：
+  1. 補寫第 1～10、31～40 兩批腳本。
+  2. 第 11～20 題比照上一條目的回收查證程序：常數與沿用 locator 逐字元
+     比對、標示 2026-08-06 的新網址以 WebFetch 複驗。
+  3. 依 2026-08-03 條目的套用程序執行五批、同步 `sources.json`
+     （`aiap-115-elementary-2-ai-foundation` 的 `explanationDraftCount`
+     0→50）、manifest、`tests/data.test.mjs`（draftIds、draft 250／
+     missing 350）、清冊與本文件，跑 npm test／lint／build 後提交。
