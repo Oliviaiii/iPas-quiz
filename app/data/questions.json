@@ -14332,30 +14332,47 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 A。情感分析與關鍵詞提取都只處理貼文文本的內容層次，能掌握立場傾向與議題熱度，全程不需要辨識任何發文者的身份。",
+      "concept": "輿情分析的對象是「內容」而不是「人」：情感分析（Sentiment Analysis）判斷一段文字的立場或情緒傾向（正面、負面、中立），關鍵詞提取（Keyword Extraction）找出高頻或具代表性的議題詞彙，兩者結合就能回答「選民對哪些政策議題抱持什麼態度」這類彙總層次的問題，屬於自然語言處理中的文本分類與資訊擷取任務。\n另一條界線是個人資料保護：依《個人資料保護法》第 2 條，特徵及其他得以直接或間接方式識別該個人之資料都屬個人資料，人臉影像正是典型；第 5 條並要求蒐集、處理或利用不得逾越特定目的之必要範圍。輿情分析要的是群體態度分布，辨識特定個人既非必要，還會讓專案踩進個資蒐用的高風險區。",
+      "answerReason": "題幹同時給了兩個條件：要提升對政策議題態度傾向的分析涵蓋率，且不涉及對特定個人的身份辨識。A 的兩項技術都在文本內容層次運作，輸出是立場分布與議題詞彙統計，不需要、也不會去指認發文者是誰，是四個組合中唯一同時滿足這兩個條件的方案。",
+      "optionAnalysis": {
+        "A": "正確。情感分析把每篇貼文歸為支持、反對或中立，關鍵詞提取彙整討論度最高的政策詞彙，兩者相加即可產出「各議題的態度傾向與聲量」這種彙總結果，全程只碰文本內容，不涉及發文者身份，同時滿足需求與去識別的限制。",
+        "B": "文本分類本身是常見的 NLP 技術，但這個組合把人臉辨識用於「辨識發文者身份後再分類政治立場」：人臉是個資法第 2 條所稱可識別特定個人的資料，對個人政治立場建檔更是高敏感應用，正面牴觸題幹「不涉及對特定個人的身份辨識」的限制。",
+        "C": "語音辨識與影像辨識是把造勢「影片」轉成文字再整理主題，處理的資料源與題幹設定的「社群媒體貼文」不同，對貼文態度傾向的涵蓋沒有直接幫助；且對群眾畫面做影像辨識，還可能連帶識別出入鏡的特定個人，增加不必要的個資風險。",
+        "D": "推薦系統的本務是依使用者歷史行為推送其可能感興趣的內容，社群圖譜分析則描繪人際連結；把兩者用於「預測個別使用者的投票選擇」，等於針對特定個人做政治傾向剖繪，與輿情分析要的群體彙總相反，也違反題幹的去識別化前提。"
+      },
+      "trap": "第一，輿情分析看「內容與群體」，個人剖繪看「特定的人」，選項一出現「個別使用者」「辨識身份」就要警覺是否逾越分析目的。第二，人臉、聲紋這類特徵屬於可識別個人的資料，出現在技術組合裡就與「不涉及身份辨識」的前提衝突。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 1 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "全國法規資料庫－個人資料保護法",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0050021",
+          "locator": "第 2 條第 1 款：個人資料包含特徵及其他得以直接或間接方式識別該個人之資料；第 5 條：蒐集、處理或利用不得逾越特定目的之必要範圍",
+          "checkedAt": "2026-08-06"
+        },
+        {
+          "title": "Hugging Face Tasks－Text Classification",
+          "url": "https://huggingface.co/tasks/text-classification",
+          "locator": "任務定義：為給定文本指派標籤；任務變體含情感分析（Sentiment Analysis），將文本分為正面、負面或中立等極性",
+          "checkedAt": "2026-08-06"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-14：深度學習在自然語言處理、電腦視覺（如影像辨識、物件偵測）、語音辨識等領域的應用",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -14395,30 +14412,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 D。非監督式學習能在無標註資料中找出偏離常態的樣本，但「準確判斷每筆資料屬於哪種特定異常類別」需要已標註的類別資訊，這正是它做不到的事。",
+      "concept": "三種主要學習方式的差別在於可用的監督訊號。監督式學習（Supervised Learning）以已標註資料學習輸入與輸出的對應，適合分類與迴歸；非監督式學習（Unsupervised Learning）沒有標籤，靠資料內在結構做分群、降維或找出偏離常態的離群點；強化學習（Reinforcement Learning）讓代理人與環境互動，依獎勵回饋逐步調整策略。\n落在異常偵測上，這條界線特別重要：無標註時，非監督式方法（例如以正常資料建模的新奇偵測）只能回答「這筆資料偏不偏離常態」；至於「它屬於破損、滲漏還是貼錯標籤哪一類異常」，是分類問題，必須有各類別的標註資料才學得起來。",
+      "answerReason": "題目要挑「有誤」的敘述。D 前半句「可用於異常包裹偵測」成立，但後半句宣稱能在缺乏標註資料下「準確判斷每筆資料是否屬於特定異常類別」——把異常「分到特定類別」是需要類別標籤的監督式分類任務，非監督式方法只能標記偏離程度，無法保證對應到人為定義的異常類別，因此 D 的敘述有誤。",
+      "optionAnalysis": {
+        "A": "敘述正確。監督式學習用於異常包裹偵測時，是把問題化為「正常／異常」的分類，前提正是選項所說的大量已標註歷史資料；標註涵蓋的異常樣態越完整，模型判別越可靠，與監督式學習的定義一致，所以它不是本題要挑的錯誤敘述。",
+        "B": "敘述正確。非監督式學習可依揀貨動線的相似度分群，找出潛在的作業模式；但因為沒有「對／錯」標籤，它只能呈現資料結構，無法直接判定某種行為是否正確，選項對其能力邊界的描述是對的，因此不是本題答案。",
+        "C": "敘述正確。路線規劃可建模為序列決策：代理人嘗試不同配送路線，環境以時間、成本等回饋作為獎勵訊號，強化學習藉由反覆試誤逐步逼近較佳策略，正是它適用的任務型態，敘述沒有問題。",
+        "D": "有誤，為本題答案。非監督式異常偵測（例如以正常資料建模、視偏離者為異常）能在無標註下「找出可疑樣本」，但選項宣稱能「準確判斷每筆資料是否屬於特定異常類別」——類別是人為定義的標籤，缺乏標註就沒有依據把樣本對應到特定類別，這件事必須交給有標註資料的監督式分類。"
+      },
+      "trap": "第一，異常偵測有兩個層次：「偵測出偏離」無標註可做，「判定異常類別」必須有標註，題目常在後半句偷渡能力。第二，看到「準確判斷」「能夠分類」這類強斷言，先檢查該方法手上有沒有對應的監督訊號。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 2 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-35～3-38：機器學習分為監督式（以有標記數據學習輸入與輸出的映射）、非監督式（不依賴標記，分析資料內在結構做聚類與降維）與強化學習（代理與環境互動、依獎勵回饋更新策略）",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "scikit-learn－Novelty and Outlier Detection",
+          "url": "https://scikit-learn.org/stable/modules/outlier_detection.html",
+          "locator": "新奇偵測以正常資料建模，異常樣本偏離該模型",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -14458,30 +14486,47 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 A。整個檢測流程的輸入是電路板外觀影像，從頭到尾沒有任何文字或語音資料，自然語言處理在此沒有用武之地。",
+      "concept": "判斷一個 AI 應用「展現了哪些核心技術能力」，第一步是看輸入資料型態與任務目標。本題系統的輸入是產線上大量的電路板外觀影像，任務是短時間內判定焊接品質：從影像中萃取焊點特徵屬於電腦視覺（Computer Vision）；把偏離正常樣態的焊點挑出來屬於異常偵測（Anomaly Detection）；判定「這片板子哪裡出了問題、屬於哪種瑕疵」，則對應資料分析層次中回答「為什麼、出了什麼問題」的診斷性分析（Diagnostic Analytics）。\n自然語言處理（Natural Language Processing, NLP）處理的對象是人類語言文字，典型任務如機器翻譯、文本生成與情感分析；題幹情境中不存在任何需要理解或產生的文字，這項能力並未被用上。",
+      "answerReason": "題目問「最不符合」此應用展現的能力。B、C、D 都能在「影像品檢」流程中找到對應角色，唯獨 A 的自然語言處理需要文字或語音輸入，而本系統處理的自始至終是外觀影像，與語言完全無關，因此最不符合的是 A。",
+      "optionAnalysis": {
+        "A": "正確（最不符合）。自然語言處理專門處理文字與語言，任務如翻譯、摘要、情感分析，適用前提是資料中存在語言內容；焊接瑕疵檢測的輸入是影像像素，沒有任何語句需要理解，因此它是四個選項中唯一與題幹情境無關的能力。",
+        "B": "電腦視覺以影像或影片為輸入，透過卷積等方法萃取邊緣、紋理與形狀特徵，影像辨識、物件偵測與圖像分割正是其應用場景；用鏡頭檢查電路板焊點是電腦視覺在製造業最典型的落地，明確符合題幹情境，不是本題要挑的選項。",
+        "C": "異常偵測用於識別資料集中不符合預期的異常點；瑕疵檢測的本質正是「把偏離正常焊接樣態的少數個體挑出來」，包括以大量正常品建模、視偏離者為異常的作法，與題幹的品質判定任務吻合，因此不是答案。",
+        "D": "診斷性分析在資料分析層次中負責探究「問題出在哪裡、為什麼發生」；系統判定某片電路板存在焊接瑕疵並定位問題焊點，等於對產品品質狀態做出診斷，供後續追查製程成因。它的關聯雖不如電腦視覺直接，但仍與題幹情境對得上，輪不到它當「最不符合」。"
+      },
+      "trap": "第一，題目問「最不符合」：即使某選項（如診斷性分析）的關聯較間接，只要存在合理對應，就要挑那個完全沒有輸入資料可處理的選項。第二，判斷技術能力先問「輸入是什麼」：影像對電腦視覺、文字對 NLP，不要被「自動判斷」這類字眼帶往語言理解。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 3 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-14：深度學習在自然語言處理、電腦視覺（如影像辨識、物件偵測）、語音辨識等領域的應用",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-10：異常檢測用於識別資料集中不符合預期的異常點",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-10：預測性分析使用歷史數據預測未來可能發生的事件或趨勢；同節另有診斷性分析與鑽取分析的定義",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -14521,30 +14566,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 B。毫秒級跨市場套利的成敗取決於能否即時消化海量報價並瞬間完成交易決策，這種高速大量資料處理能力正是系統最核心的依賴。",
+      "concept": "題幹描述的是高頻交易情境：系統在毫秒等級掃描跨市場價格差異、分析大量即時報價並自動下單。價差轉瞬即逝、決策視窗以毫秒計，因此系統的核心能力是「在極短時間內處理大量數值資料並完成決策」——這也是 AI 相對於人工最突出的優勢之一：運算速度與資料吞吐量遠超過人類，且能不間斷地執行既定邏輯。\n評估「最核心依賴」時，要把核心能力與周邊能力分開：新聞情緒分析、極端情境模擬、個人化推薦都可能出現在同一家金融科技公司的系統版圖裡，但都不在「毫秒級即時決策」的關鍵路徑上。",
+      "answerReason": "題幹的關鍵條件有三：毫秒等級、大量即時報價、自動執行交易指令。B 的「快速分析龐大市場數據並在極短時間內識別交易機會，驅動自動化交易決策」逐點對應這三個條件；其餘選項描述的技術各有用途，但都不在即時交易決策的關鍵路徑上，因此選 B。",
+      "optionAnalysis": {
+        "A": "自然語言處理分析財經新聞可產出市場情緒指標，實務上確實有交易系統採用；但選項自己寫明它是「輔助性」訊號，新聞的產生與解析週期遠慢於毫秒級的價差視窗，無法支撐題幹要求的即時決策核心，層級對不上。",
+        "B": "正確。跨市場價差套利要求系統同時吸收多個市場的巨量報價流，在毫秒內完成比對、識別機會並送出指令；這裡最核心的依賴就是高速、大量、低延遲的資料分析與自動化決策能力，與題幹敘述逐條吻合。",
+        "C": "生成對抗網路（GAN）由生成器與判別器組成，可用於資料生成，例如模擬極端市場情境供壓力測試；這類工作屬於事前的離線風險演練，產出的是備援策略，而不是逐筆報價當下的即時交易判斷，並非題幹所問的核心能力。",
+        "D": "推薦系統依投資人歷史行為推薦合適標的，服務的是財富管理或理財平台的個人化建議情境；它面向的是「使用者偏好」，與本題「跨市場價差的毫秒級識別與自動下單」是兩種完全不同的任務，方向不符。"
+      },
+      "trap": "第一，題目問「最核心」而不是「有沒有用」：情緒分析、情境模擬對交易公司都有價值，但關鍵路徑上的能力只有高速資料處理與即時決策。第二，選項出現「輔助性」「預先產出」這類字眼時，通常已經暗示它不是即時決策的核心。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 4 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-36：監督式學習以有標記的數據為基礎，學習輸入與輸出之間的映射關係，迴歸與分類為兩大任務，應用領域包含醫療診斷與金融預測",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-16 至 3-17：生成對抗網路由生成器與判別器組成，應用於圖像、文本與語音生成",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：高頻交易特性之一手外部來源（如主管機關或交易所文件）尚未取得，investopedia.com 本日無法以自動化方式開啟，B 選項所述能力係依題幹敘述與 AI 基礎概念整理，待複核補查外部參考。查核日期 2026-08-06。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -14584,30 +14640,35 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 C。基本法要求政府使用 AI 應評估風險、避免演算法歧視並確保透明可解釋與救濟管道，先做偏誤影響評估並建立可解釋與申訴機制正是此精神的落實。",
+      "concept": "《人工智慧基本法》於 115 年 1 月 14 日公布，第 4 條揭示政府推動 AI 應遵循的基本原則，與本題直接相關的有三項：「公平與不歧視」要求研發與應用過程盡可能避免演算法產生偏差及歧視，不應對特定群體造成歧視結果；「透明與可解釋」要求對 AI 產出做適當資訊揭露，以利評估風險並瞭解對權益的影響；「問責」要求承擔內部治理與外部社會責任。\n落到政府自身，第 19 條規定政府使用 AI 執行業務或提供服務應進行風險評估並規劃因應措施；第 17 條要求就高風險應用明確責任歸屬，並建立救濟、補償機制。低收入補助資格審核直接影響弱勢者的重大權益，正是需要優先落實這些要求的場景。",
+      "answerReason": "題幹的警訊是「不同族群核准率差異顯著」，這正是第 4 條要避免的演算法偏差與歧視風險；「內部測試準確率高」與「未接獲大量申訴」都不能取代基本法要求的風險評估與救濟設計。C 的作法——先做偏誤影響評估、再建立可解釋與申訴機制——同時回應公平、透明與救濟三個面向，是最符合基本法精神的優先步驟。",
+      "optionAnalysis": {
+        "A": "要求廠商出具無歧視聲明屬於形式承諾，沒有對系統的實際輸出做任何檢驗；而且系統由誰開發不影響政府的責任——基本法的問責原則要求使用機關承擔內部治理與外部社會責任，把關不能外包給廠商的一紙聲明，「持續觀察」也只是延後處理已經浮現的風險。",
+        "B": "提升整體準確率處理的是「平均表現」，而題幹的問題出在「族群之間的差異」：一個整體準確率很高的模型，仍可能系統性地對特定族群不利，兩者是不同維度的指標。不先做分群檢視與偏誤評估，單純拉高總準確率無法回應歧視疑慮。",
+        "C": "正確。偏誤影響評估對應第 19 條政府使用 AI 應進行風險評估的要求，可解釋機制對應第 4 條透明與可解釋原則，申訴機制呼應第 17 條的救濟設計；三者合起來才能查明核准率差異的成因，並給受影響者救濟管道，是最適當的優先作法。",
+        "D": "以「尚無大量申訴」為由暫不調整，是把風險管理建立在被動訊號上：民眾若不知道審核由 AI 參與、不了解判斷依據，本來就難以提出申訴，申訴量低可能只是透明度不足的結果。基本法要求的是事前風險評估與預防，而非等損害擴大後再處理。"
+      },
+      "trap": "第一，「整體準確率高」與「群體間公平」是兩回事，看到族群差異就要想到分群評估與偏誤檢測，而不是繼續優化平均指標。第二，「沒人申訴」不等於「沒有問題」：在當事人不知情的情況下，申訴訊號會系統性偏低，不能作為免除評估義務的理由。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 5 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "全國法規資料庫－人工智慧基本法",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0160093",
+          "locator": "第 4 條基本原則：透明與可解釋、公平與不歧視（避免演算法產生偏差及歧視）、問責；第 17 條：高風險應用之責任歸屬與救濟、補償機制；第 19 條：政府使用 AI 執行業務應進行風險評估（115-01-14 公布）",
+          "checkedAt": "2026-08-06"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -14647,30 +14708,35 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 C。評測中心公布的語言模型評測項目共十項，聚焦安全、公平、透明等可信任特性，「效率性」不在其列。",
+      "concept": "數位發展部於 2023 年 12 月啟動「AI 產品與系統評測中心」，推動我國 AI 評測制度與可信任 AI 環境。依啟動時的新聞發布，針對語言模型規劃的評測項目共十項：安全性（Safety）、可解釋性（Explainable）、彈性（Resilient）、公平性（Fair）、準確性（Accuracy）、透明性（Transparency）、當責性（Accountable）、可靠性（Reliability）、隱私（Privacy）與資安（Secure）。\n這十項的共同點是評估系統「值不值得信任」：會不會產生有害輸出、對不同群體是否公平、行為可否被理解與問責、資料與系統是否安全。至於運算效率、回應速度這類效能與體驗指標，不在可信任評測的構面之內。",
+      "answerReason": "逐一比對選項與十項評測項目：資安（Secure）、公平性（Fair）、可靠性（Reliability）都名列其中，只有「效率性（Efficiency）」不在名單上——效率屬於系統效能指標，不是評測中心用來衡量可信任程度的構面，因此選 C。",
+      "optionAnalysis": {
+        "A": "資安（Secure）是十項評測項目之一，評估系統能否抵禦攻擊與非授權存取、防範資料外洩，屬於可信任 AI 的基本防線；它「屬於」評測項目，所以不是本題要挑的答案。",
+        "B": "公平性（Fair）同樣名列十項之中，關注模型輸出是否對不同族群、性別等群體存在系統性偏差，是生成式 AI 評測的核心構面之一，因此也不是本題要選的項目。",
+        "C": "正確。效率性（Efficiency）描述的是運算資源利用與處理速度，屬於效能面指標；評測中心的十個項目聚焦安全、公平、透明、當責、隱私等可信任特性，並未把效率列為評測項目，因此不屬於該中心評測項目的是它。",
+        "D": "可靠性（Reliability）也在十項之列，指系統在預期使用條件下能否穩定產出一致的結果，而不是時好時壞；它是可信任評測的構面之一，不是本題答案。"
+      },
+      "trap": "第一，本題問「不屬於」，先確認作答方向。第二，把「可信任構面」與「效能體驗指標」分開：安全、公平、透明、當責、隱私、資安屬前者；效率、速度、互動流暢度屬後者，後者出現在選項時通常就是要挑出的那一個。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 6 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "數位發展部－「AI 產品與系統評測中心」啟動新聞發布",
+          "url": "https://moda.gov.tw/ADI/news/latest-news/9295",
+          "locator": "語言模型評測項目十項：安全性、可解釋性、彈性、公平性、準確性、透明性、當責性、可靠性、隱私、資安；未含效率性（新聞日期 2023-12-06）",
+          "checkedAt": "2026-08-06"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -14710,30 +14776,47 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 A。要在訓練階段就降低有害或偏頗輸出的風險，最優先的是把好資料關：來源多元、內容清洗與偏見過濾。",
+      "concept": "生成式 AI 在訓練階段從大量文本中學習語言規律與知識分布，模型「學到什麼」幾乎完全由訓練資料決定：語料若集中於單一立場或含有害內容，模型輸出就會複製這些傾向。因此訓練階段風險控管的核心是資料治理——確保來源多元以維持觀點平衡，並以內容清洗與偏見過濾降低有害、偏頗資訊進入模型的機會；學習指引也把數據品質列為影響生成模型效果的因素之一，並提到以去偏處理減少資料中的隱性偏見。\n輸出端的格式限制與內容過濾屬於推論階段的防線，可以補強但無法取代：模型內部已經學到的偏頗，不會因為輸出被框住而消失。",
+      "answerReason": "題幹限定「模型訓練階段」，且同時要求「降低有害偏頗風險」與「兼顧多元性與公平性」。A 的多元來源正對應多元性，嚴格清洗與偏見過濾正對應降低有害偏頗，兩者都作用在訓練資料這個源頭，是四個選項中唯一同時滿足階段與目標的措施。",
+      "optionAnalysis": {
+        "A": "正確。訓練資料的組成決定模型的知識與立場分布：來源多元可避免單一觀點壟斷，內容清洗剔除有害素材，偏見過濾降低刻板印象進入模型的機會；三者都在訓練階段的源頭發揮作用，同時兼顧安全與多元公平，是最應優先落實的措施。",
+        "B": "完全避免外部文本等於放棄絕大多數語料。生成式模型需要大量且多樣的文本才能建立語言能力與廣泛知識，只靠極少量資料訓練出的模型能力嚴重不足；而且「不用外部資料」並不保證留下的資料沒有偏頗，手段與目標不成比例。",
+        "C": "僅使用公司內部新聞稿與公告，來源高度單一且天然帶有企業立場，恰好與題幹要求的「多元性與公平性」背道而馳：模型會把單一立場當成常態，偏頗風險不降反升，資料量也遠不足以支撐新聞摘要與評論生成所需的語言能力。",
+        "D": "限制輸出固定格式是推論／輸出端的約束手段，能減少格式失控，卻改變不了模型參數中已習得的偏頗內容——有害觀點仍可能以合乎格式的方式輸出。題幹明確問「訓練階段」最優先的措施，這個選項作用的階段就不對。"
+      },
+      "trap": "第一，分清楚防線的階段：資料治理在訓練階段，輸出過濾在推論階段，題目問哪一段就答哪一段的手段。第二，「限縮資料來源」與「資料多元化」方向相反，看到「完全避免」「僅使用」這類極端字眼，先檢查它是否犧牲了題幹要求的多元性。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 7 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-17：生成式 AI 的訓練階段在大量文本數據上學習語言的規律和模式，使模型具備基本的語言理解和生成能力",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-19：影響生成模型效果的因素包含數據品質、模型結構、超參數與計算資源",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-35：開發去偏演算法以減少資料中的隱性偏見，確保模型公平性",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -14773,30 +14856,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 A。規範要求揭露的是讓消費者知情並行使權利所需的服務資訊，模型架構與完整訓練資料屬於內部技術細節，不在必要揭露之列。",
+      "concept": "《金融機構運用人工智慧技術作業規範》由中華民國銀行商業同業公會全國聯合會訂定，規範金融機構運用 AI 辦理業務時的治理與消費者保障。與消費者互動的揭露要求，方向是保障「知情權與選擇權」：告知該服務係由 AI 技術自動完成、說明服務適用的對象與用途範圍，並讓消費者知道有無替代方案或異議處理管道可用。金管會 113 年 6 月發布的「金融業運用人工智慧（AI）指引」同樣以落實透明性與可解釋性、尊重客戶選擇權為核心方向。\n另一面則是揭露的界線：模型架構、訓練資料這類內部技術細節涉及營業秘密與資安，過度公開反而衍生其他風險，透明義務從來不是「把系統內部全部攤開」。",
+      "answerReason": "題目問「不屬於」必要揭露事項。B 的適用對象與用途範圍、C 的異議處理管道、D 的「由 AI 自動完成」告知，都是消費者決定是否使用服務、以及對結果行使權利所需的資訊；A 要求「詳細公開機器學習模型架構與完整訓練資料內容」，是內部技術細節的全面公開，既非消費者知情所需，也與營業秘密及資安考量衝突，因此選 A。",
+      "optionAnalysis": {
+        "A": "正確（不屬必要揭露）。模型架構與完整訓練資料是機構的核心技術資產，全面公開可能暴露營業秘密、增加被攻擊或被規避的風險；消費者要做出使用決定，需要的是服務層面的資訊而非實作細節，規範的揭露義務並不包含這種全面技術公開。",
+        "B": "說明服務的適用對象與用途範圍，讓消費者了解使用限制與服務邊界，屬於知情權的基本內容：消費者必須先知道這套 AI 核保適用於誰、能做什麼，才能判斷要不要使用，這是規範要求落實的揭露方向，不是本題答案。",
+        "C": "對 AI 核保結果有異議時能否人工複核或申訴，關係到消費者的救濟途徑；讓消費者事先知道有這條路，是消費者權益保障的一環，與金管會指引強調尊重客戶選擇權、提供替代方案的方向一致，屬於應告知的事項。",
+        "D": "告知「本次審查由 AI 系統自動完成、非人工逐案審核」是透明性的起點：消費者唯有知道決定出自自動化系統，才可能進一步詢問依據或提出異議，規範對與消費者互動的 AI 服務明確要求這項告知，因此不是本題要挑的選項。"
+      },
+      "trap": "第一，題目問「不屬於」，先確定作答方向。第二，區分「消費者知情所需的服務資訊」與「機構內部技術細節」：揭露義務落在前者；後者受營業秘密與資安考量保護，看到「詳細公開」「完整訓練資料」這類全面揭露字眼就要提高警覺。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 8 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "中華民國銀行商業同業公會全國聯合會－「金融機構運用人工智慧技術作業規範」",
+          "url": "https://www.ba.org.tw/memberStandard/details?id=68",
+          "locator": "規範專頁與全文 PDF 下載連結（附件一：金融機構運用人工智慧技術作業規範 1141012，頁面日期 2025/11/18）",
+          "checkedAt": "2026-08-06"
+        },
+        {
+          "title": "金融監督管理委員會－發布「金融業運用人工智慧（AI）指引」新聞稿",
+          "url": "https://www.fsc.gov.tw/ch/home.jsp?id=96&parentpath=0,2&mcustomize=news_view.jsp&dataserno=202406200001&dtable=News",
+          "locator": "金管會 113 年 6 月發布 AI 指引，核心原則含落實透明性與可解釋性、尊重客戶選擇權與替代方案",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：銀行公會規範全文 PDF（附件一，版本 1141012）未能以自動化方式讀取，B、C、D 所對應的確切條號待人工下載規範全文複核；本題揭露事項係依規範專頁、金管會 AI 指引新聞稿及本站前批（115-1 第一科第 13 題）已查核內容整理。查核日期 2026-08-06。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -14836,30 +14930,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 D。①看不懂判斷依據是透明性問題，②特定族裔誤診率偏高是公平性問題，③個資未告知就再利用是隱私性問題。",
+      "concept": "AI 倫理常以幾項核心原則歸納，常見的五項為：透明性（Transparency，判斷依據可被理解與檢視）、公平性（Fairness，不對特定群體造成系統性差別待遇）、隱私性（Privacy，個人資料受保護並在告知同意範圍內使用）、安全性（Safety，系統穩健且能抵禦攻擊）與問責性（Accountability，出問題時責任歸屬明確）。我國《人工智慧基本法》第 4 條揭示的基本原則也涵蓋透明與可解釋、公平與不歧視、隱私保護與資料治理、資安與安全、問責這一組概念。\n解對應題的方法是抓每個情境「受損的利益」：看不懂依據是透明問題；群體差別待遇是公平問題；個資逾越告知同意範圍是隱私問題；系統被攻破或失控是安全問題；找不到負責者是問責問題。",
+      "answerReason": "①放射科醫師無法理解系統判斷高風險的依據與理由，受損的是「可理解、可檢視」，對應透明性；②系統對特定族裔病患的誤診率顯著偏高，是對特定群體的系統性差別待遇，對應公平性；③病患個資在未告知當事人下被納入模型再訓練，逾越了蒐集利用的告知同意界線，對應隱私性。三個對應合起來就是 D。",
+      "optionAnalysis": {
+        "A": "這組把①標成安全性、②標成問責性。安全性關注系統穩健與抵禦攻擊，①的醫師困境是「看不懂依據」，沒有系統被入侵或失效的情節；問責性關注責任歸屬，②的問題是特定族裔受到系統性不利對待，屬於公平性而非責任歸屬，兩個對應都放錯位置。",
+        "B": "這組把①標成隱私性、②標成安全性。①的情境完全沒有個資外洩或逾越同意的元素，醫師要的是判斷理由，屬於透明性；②的誤診率差異也不是安全防護問題，而是群體間表現不均的公平性問題；③標成公平性同樣錯置，未告知即再利用個資是隱私性的典型侵害。",
+        "C": "這組把①標成公平性、②標成透明性。①並未涉及不同群體之間的差別待遇，單純是判斷依據不可理解，應屬透明性；②則相反，正是群體間誤診率不均的公平性問題；③標成問責性也不對，題幹描述的是個資使用逾越告知範圍，核心受損利益是隱私。",
+        "D": "正確。①「無法理解判斷依據」對應透明性——系統應做適當資訊揭露，使人能評估與檢視；②「特定族裔誤診率偏高」對應公平性——不應對特定群體造成系統性不利；③「個資未告知即納入再訓練」對應隱私性——個人資料應在告知同意與特定目的範圍內使用。"
+      },
+      "trap": "第一，透明性與問責性容易混淆：前者是「能不能被理解」，後者是「誰來負責」；醫師看不懂依據時，還沒進到追究責任那一步。第二，公平性與隱私性的判準不同：前者看群體之間的差別待遇，後者看個人資料是否逾越告知同意範圍，抓準受損利益就不會排錯。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 9 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "全國法規資料庫－人工智慧基本法",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0160093",
+          "locator": "第 4 條基本原則：隱私保護與資料治理、資安與安全、透明與可解釋、公平與不歧視、問責（115-01-14 公布）",
+          "checkedAt": "2026-08-06"
+        },
+        {
+          "title": "數位發展部－「AI 產品與系統評測中心」啟動新聞發布",
+          "url": "https://moda.gov.tw/ADI/news/latest-news/9295",
+          "locator": "語言模型評測項目含公平性、透明性、當責性、隱私、資安等可信任構面（新聞日期 2023-12-06）",
+          "checkedAt": "2026-08-06"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：題幹所稱「AI 倫理五大核心原則」的官方學習指引原文章節與頁碼尚未取得（本日未連線 ipas.org.tw），本題以通行歸納並對照《人工智慧基本法》第 4 條原則撰寫；待複核比對學習指引原文用語。查核日期 2026-08-06。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -14899,30 +15004,35 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 A。5 萬個感測器每秒不斷產生海量記錄是 Volume，資料持續高速湧入且需即時處理是 Velocity，題幹點名的正是這兩項挑戰。",
+      "concept": "大數據特性常以多個 V 描述，各自指向不同瓶頸：Volume（資料量）指資料規模龐大帶來的儲存與平行處理壓力；Velocity（速度）指資料產生與必須被處理的速率，對應串流與即時架構；Variety（多樣性）指來源與型態繁雜的整合困難；業界常見的 5V 另加 Veracity（真實性，資料可信程度）與 Value（價值，從低價值密度資料中萃取價值）。NIST 大數據互通性框架對 Volume、Velocity、Variety 有正式界定。\n解題時把題幹的痛點逐一貼標籤：「5 萬個感測器」「每秒產生大量資料記錄」指向規模與速度，「需即時處理持續產生的資料」再次強調速度；判斷主要挑戰組合時，以題幹明說的瓶頸為準。",
+      "answerReason": "題幹兩度點名關鍵：每秒產生大量資料記錄（量大、高速），且需「即時處理持續產生的資料」（高速）。這正是 Volume 與 Velocity 的組合——資料量龐大且持續高速產生，必須有能承載大量寫入並即時運算的架構，因此選 A。",
+      "optionAnalysis": {
+        "A": "正確。全市 5 萬個感測器每秒不斷寫入，累積規模對儲存與運算都是 Volume 挑戰；資料持續高速產生又要求即時處理，是 Velocity 挑戰；選項後半的理由「資料量龐大且持續高速產生」與題幹敘述互相呼應。",
+        "B": "題幹整合氣象、交通與工廠排放等來源，Variety（多樣性）的面向確實存在，但它不是題幹強調的主要瓶頸；Veracity 指資料是否準確可信，處理雜訊、錯誤與來源可疑等品質問題，題幹並未出現任何資料品質疑慮的描述，這一半掛不上。",
+        "C": "Velocity 這一半是對的，但 Value 指從大量低價值密度資料中萃取有用資訊的挑戰；題幹要求的是「即時處理持續產生的資料」，並沒有「判斷資料是否具分析價值」的情節，選項給 Velocity 配的理由也偏離題幹敘述。",
+        "D": "Volume 這一半成立，但把另一半配成 Value（篩選有用資訊）就偏了：題幹的第二個明確痛點是即時性——資料持續產生且需即時處理——對應的是 Velocity 而非價值萃取，這個組合漏掉了題幹反覆強調的速度要求。"
+      },
+      "trap": "第一，多 V 題先把題幹痛點逐句貼標：量大對 Volume、即時對 Velocity、格式雜對 Variety、可信度對 Veracity、萃取難對 Value，再挑「題幹明說」的組合。第二，來源多元（Variety）在本題確實存在，但題目問的是「主要挑戰組合」，要以題幹點名的量與速度為準，不要把背景敘述當成主要瓶頸。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 10 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "NIST Big Data Interoperability Framework: Volume 1, Definitions（NIST SP 1500-1r2）",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1500-1r2.pdf",
+          "locator": "第 3.2.3 節 Variety：需要分析來自多個儲存庫、領域或型態的資料；第 3.2.1、3.2.2 節分別界定 Volume 與 Velocity",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：NIST SP 1500-1r2 所列大數據基本特性為 volume、velocity、variety 與 variability，veracity 與 value 屬業界常見 5V 用語，選項 B、C、D 中相關說明依通用定義撰寫，未宣稱出自 NIST；待複核確認是否需補充採用該等用語的正式出處。查核日期 2026-08-06。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -14962,30 +15072,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 C。以性別充當愛滋病毒感染風險的代理特徵，會把對特定族群的歧視性標籤寫進模型決策，違反公平性原則，這是治理審查層面的否決理由。",
+      "concept": "機器學習的特徵選擇不只是統計與工程問題，也是治理與倫理問題。性別、種族、宗教這類屬性稱為敏感屬性（sensitive attributes），把它們或與其高度相關的變數當成預測輸入時，模型輸出會隨群體身分而系統性不同，等於把「屬於某個群體」本身當成風險訊號，這種作法即是以敏感屬性作為代理（proxy）所造成的歧視。\n公平性研究整理各種偏差來源後的基本共識是：自動化決策不應對特定群體或族群產生歧視性行為。即使敏感屬性與目標變數在歷史資料中存在統計相關，直接拿來預測疾病風險仍會複製並強化既有的社會偏見與污名，對愛滋病毒感染這類高度污名化的議題尤其嚴重。官方學習指引也把開發去偏演算法、減少資料中的隱性偏見、確保模型公平性列為機器學習的重要課題。",
+      "answerReason": "資料治理委員會審查的是特徵使用的正當性。以性別預測愛滋病毒感染風險，等於讓模型把特定性別制度化地標記為高風險族群，理賠風險評估將因群體身分而差別對待，強化歧視性標籤並牴觸公平性原則；這屬於「即使技術上可行也不應該做」的倫理紅線，正是 C 所述的理由，層級遠高於其他選項談的工程細節。",
+      "optionAnalysis": {
+        "A": "類別型變數需要編碼轉換（如 One-Hot）才能輸入模型是事實，但這是所有類別特徵共通的例行前處理，工具成熟、成本極低，向來不是治理審查關心的層面；委員會反對的是這個特徵本身不該用於預測疾病風險，就算編碼毫無成本，異議依然成立。",
+        "B": "缺失值影響訓練穩定性屬於資料品質議題，可用填補、刪除或缺失旗標處理，而且任何欄位都可能出現缺失，並非性別特徵特有的問題；本題的爭點在於特徵使用的正當性——即使性別欄位完整無缺，以它預測愛滋感染風險的公平性疑慮依舊存在。",
+        "C": "正確。性別在此充當感染風險的代理特徵，模型一旦採納，就會系統性地把特定性別群體標記為高風險，把歷史資料中的偏見固化成自動化決策，加深對該族群的污名與歧視，違反公平性原則；這正是治理委員會在特徵審查階段必須攔下的類型，對應的解方是去偏處理與公平性檢測，而不是照用敏感屬性。",
+        "D": "把爭點說成「統計相關性有限、可能降低預測效能」是把倫理問題錯置成效能問題：效能觀點隱含「只要相關性夠強就可以用」，但公平性異議的重點恰好相反——無論統計相關強弱，以性別標記疾病風險都會造成群體歧視；效能不佳可以換特徵解決，歧視性用法則是從根本上不該採用。"
+      },
+      "trap": "第一，區分「技術可行性」與「倫理正當性」：編碼成本、缺失值、預測效能都是技術面，治理審查的否決理由在公平性。第二，敏感屬性的問題不是「預測力不足」，而是「即使有預測力也不應直接用來標記群體風險」，別被效能語言帶偏。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 11 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-35：開發去偏演算法以減少資料中的隱性偏見，確保模型公平性",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "A Survey on Bias and Fairness in Machine Learning（arXiv:1908.09635）",
+          "url": "https://arxiv.org/abs/1908.09635",
+          "locator": "摘要：整理 AI 應用中的各種偏差來源與公平性定義分類，指出系統決策不應對特定群體或族群產生歧視性行為",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -15025,30 +15146,35 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 B。ERP 訂單存於固定欄位的關聯式資料庫、感測器數值是欄位規律的連續紀錄，兩者皆屬結構化；手寫描述掃描成 PDF 的自由文字則是非結構化。",
+      "concept": "資料型態依「原生的組織方式」分成三類。結構化資料有預先定義的欄位與資料表結構，可直接以 SQL 查詢彙整，典型代表是關聯式資料庫（如 MySQL、PostgreSQL）中的業務資料；半結構化資料不套固定資料表，但自帶標籤或層級可供解析，如 XML、JSON、CSV；非結構化資料沒有預定義格式，自由文本、影像、音訊都屬之。\n判斷時看資料存放的原生形式：ERP 訂單是資料庫表格；感測器回傳的是「時間戳記加數值」這種欄位固定、逐筆規律的紀錄，同樣是結構化；手寫異常描述掃描成 PDF 後是影像化的自由文字，既無欄位也無標籤，屬於非結構化。",
+      "answerReason": "三類資料逐一對應：ERP 訂單資料存放在企業資源規劃系統後端的關聯式資料庫，欄位（訂單編號、品項、數量、交期）固定，是標準結構化資料；設備感測器產生的連續數值紀錄每筆都是固定欄位的量測值，亦屬結構化；維修技師的手寫異常描述掃描為 PDF，內容是無格式的自由文字影像，屬非結構化。只有 B 三項全對。",
+      "optionAnalysis": {
+        "A": "此選項把 ERP 訂單資料歸為半結構化。半結構化指 XML、JSON、CSV 這類以標籤或分隔符自述結構、但不必放進固定資料表的格式；ERP 訂單存放於關聯式資料庫、欄位嚴格定義，是最典型的結構化資料，第一項就分類錯誤，整組對應因此不成立。",
+        "B": "正確。ERP 訂單資料與感測器數值紀錄都有固定欄位與一致格式，可直接進資料表以 SQL 處理，同屬結構化；手寫維修描述掃描成 PDF 後是自由文字影像，無任何欄位或標籤結構，需經 OCR 與文字處理才能分析，是典型的非結構化資料。",
+        "C": "此選項有兩處錯置：感測器數值每筆都是固定欄位的規律紀錄，屬結構化而非非結構化；掃描 PDF 中的手寫描述沒有標籤或層級可供程式解析，是非結構化而非半結構化。半結構化的判斷關鍵是有自述性標記（如 JSON 鍵值、XML 標籤），手寫文字影像並不具備。",
+        "D": "「都能轉成數值就都算結構化」混淆了原生型態與加工後的產物：非結構化資料經 OCR、文字向量化等特徵工程後確實可以量化分析，但型態分類看的是資料本身有無預定義結構；若以可轉換為標準，任何資料最終都能轉成數值，非結構化這個類別將不復存在，分類也就失去意義。"
+      },
+      "trap": "第一，型態分類看資料的原生組織方式，不看事後能否轉換分析。第二，半結構化的判斷點是有無自述性標籤（JSON、XML、CSV），別把「不是整齊表格」一律當成半結構化；感測器串流因逐筆欄位固定屬結構化，最容易被直覺誤判。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 12 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-4 至 3-5：結構化數據常見於關聯式資料庫（如 MySQL、PostgreSQL）；XML、JSON、CSV 屬半結構化；自由文本屬非結構化",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -15088,30 +15214,35 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 D。Label Encoding 把無序的職業類別對映成單一欄位裡的整數，線性模型會把整數的大小與間距當成真實的量，讀出根本不存在的順序關係。",
+      "concept": "「職業類別」是名目（nominal）變數：工程師、教師、業務、自由業之間沒有大小或先後。Label Encoding（scikit-learn 中對特徵做同樣轉換的是 OrdinalEncoder）把每個類別指派為 0 至 n_categories−1 的整數；官方文件明確提醒，這種整數表示不能直接用於期望連續輸入的估計器，因為模型會把類別解讀為有順序，而這個順序往往是任意指派的。\n線性模型對每個特徵學習一個係數，輸入值的大小直接乘進預測：若編碼為工程師=0、教師=1、業務=2、自由業=3，模型便隱含「自由業的效果是教師的三倍」「相鄰類別間距相等」這類虛構關係。One-Hot Encoding 則把 n 類展開成 n 個 0/1 指示欄位，各類別有獨立係數，不會引入這種假順序。",
+      "answerReason": "題目問哪種編碼「最可能導致模型錯誤解讀類別之間的關係」。Label Encoding 用單一欄位的整數同時承載類別身分、大小與間距，線性模型會照整數值的大小加權，把任意指派的編號當成真實的量化關係；其餘選項或以 0/1 展開（One-Hot）、或拆成二進位位元（Binary）、或以目標統計量取代（Target），都不會讓單一係數直接乘上任意的類別編號。",
+      "optionAnalysis": {
+        "A": "One-Hot Encoding 把 n 個類別展開成 n 個 0/1 指示欄位，每個類別各有一欄與獨立係數，彼此之間沒有大小關係，是線性模型處理名目變數的標準作法；代價是欄位數隨類別數增加、資料變稀疏，在高基數欄位才需要斟酌，對四種職業完全不會造成順序誤讀。",
+        "B": "Binary Encoding 先給類別整數編號，再把編號轉成二進位、拆成少數幾個 0/1 位元欄位，常用於類別數很多時兼顧維度與資訊量；雖然位元組合仍帶有人為編號的痕跡，但每個欄位只有 0 與 1 兩種值，線性模型不會在單一欄位上讀出「某類是另一類三倍」的等距大小關係，誤讀風險明顯低於直接使用整數的 Label Encoding。",
+        "C": "Target Encoding 以各類別對應的目標統計量（例如該職業歷史上的平均違約率）取代類別值，數值大小承載的是與預測目標的實際關聯，並非任意順序；它的主要風險是目標洩漏與小樣本類別的過擬合，需搭配交叉驗證或平滑化控制，與憑空製造類別順序是不同性質的問題。",
+        "D": "正確。Label Encoding 將工程師、教師、業務、自由業對映為 0、1、2、3 這樣的整數，單一欄位同時攜帶大小與間距；線性模型以一個係數乘上整數值，等於假設類別有次序且間距相等，而職業類別本無此關係。scikit-learn 文件也因此提醒：整數表示會被期望連續輸入的估計器解讀為有序，通常不是想要的結果。"
+      },
+      "trap": "第一，Label／Ordinal 編碼並非一律錯誤：類別真有次序（如滿意度低／中／高）或使用以切點分裂、不在意間距的樹模型時可以接受；「線性模型加名目類別」才是最容易出錯的組合。第二，別把 Target Encoding 的目標洩漏風險與本題的順序誤讀混為一談，兩者要用不同手段防範。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 13 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "scikit-learn－8.3. Preprocessing data",
+          "url": "https://scikit-learn.org/stable/modules/preprocessing.html",
+          "locator": "8.3.4 Encoding categorical features：OrdinalEncoder 將每個類別特徵轉為 0 至 n_categories−1 的整數；此整數表示不能直接用於所有估計器，因為估計器期望連續輸入，會把類別解讀為有順序",
+          "checkedAt": "2026-08-06"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -15151,30 +15282,35 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 B。標準 k-fold 隨機分割資料，訓練折會混入比測試折更晚的觀測，等於用未來預測過去，時間依賴性被破壞，驗證分數因此高估上線表現。",
+      "concept": "逐時用電資料是典型的時間序列：相鄰時點高度相關（自相關），且有日夜、季節等結構。scikit-learn 文件指出，KFold、ShuffleSplit 這類傳統交叉驗證假設樣本獨立同分布（i.i.d.），用在時間序列會使訓練與測試樣本之間出現不合理的相關，對泛化誤差給出過於樂觀的估計。\n正確作法是改用時間序列專用的切割，例如 TimeSeriesSplit：它是 k-fold 的變形，永遠以前 k 折作訓練集、第 k+1 折作測試集，測試資料在時間上一律晚於訓練資料，模擬上線後只能用過去預測未來的真實情境。題幹「交叉驗證分數好、上線誤差偏高」的落差，正是隨機切割讓未來資訊洩漏進訓練的典型症狀。",
+      "answerReason": "模型上線後只能以歷史資料預測未來需求；標準 5-fold 卻把三年資料隨機打散成五份，每一輪驗證的訓練集幾乎都包含比測試樣本更晚的時點，模型在驗證時實質上「偷看了未來」，分數自然偏高；上線後失去這個不當優勢，誤差便原形畢露。B 指出隨機分割破壞時間依賴性，正是根本問題。",
+      "optionAnalysis": {
+        "A": "k-fold 的計算成本是把模型重複訓練 k 次；三年逐時資料約 2.6 萬筆，對現代硬體毫無壓力，計算資源不構成使用限制。更關鍵的是，題幹症狀是「驗證好、上線差」的系統性落差，即使資源無限，隨機切割造成的未來資訊洩漏依然存在，此選項沒有觸及病因。",
+        "B": "正確。標準 k-fold 把樣本隨機分配到各折，訓練集因此包含大量晚於測試樣本的觀測，模型在驗證時利用了上線時不可能取得的未來資訊；這破壞了時間序列的先後依賴，使交叉驗證分數系統性高估實際預測能力，正是驗證與上線表現落差的根本原因。",
+        "C": "折數 k 影響的是每折的大小與誤差估計的變異程度，5 折改 10 折仍是隨機分配樣本，訓練集照樣混入晚於測試集的時點，時間洩漏原封不動；把折數當解方，等於把「估計穩定性」的旋鈕誤認成「切割方式」的問題，方向就錯了。",
+        "D": "k-fold 本身與任務型態無關：KFold 對迴歸與分類一體適用，需要留意標籤比例的其實是分層抽樣版本（StratifiedKFold，針對分類設計）。說 k-fold 僅適用分類並不符事實；它在本題失效的原因是資料具時間依賴性，而不是預測目標為連續數值。"
+      },
+      "trap": "第一，時間序列上「驗證分數好、上線表現差」優先懷疑切割方式造成的未來資訊洩漏，而不是急著換更複雜的模型。第二，分清兩個旋鈕：折數影響估計變異，切割方式決定有無洩漏；本題錯在切割方式，調折數無濟於事。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 14 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "scikit-learn－3.1. Cross-validation: evaluating estimator performance",
+          "url": "https://scikit-learn.org/stable/modules/cross_validation.html",
+          "locator": "3.1.2.6 Cross validation of time series data：KFold 與 ShuffleSplit 假設樣本獨立同分布，用於時間序列會使訓練與測試樣本間出現不合理相關、高估泛化能力；TimeSeriesSplit 以前 k 折訓練、第 k+1 折測試",
+          "checkedAt": "2026-08-06"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -15214,30 +15350,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 D。決策樹以「單一特徵是否超過切點」分裂，只用到各特徵內部的大小順序，特徵之間量級懸殊不影響樹的結構，可在不標準化的情況下直接訓練。",
+      "concept": "標準化（Standardization）把不同量級的特徵轉換到統一尺度，官方學習指引說明其目的是消除特徵間的尺度差異。是否需要標準化，取決於模型如何使用特徵：凡是計算樣本間距離、幾何邊界，或以梯度最佳化求解的模型，特徵量級會直接進入計算，尺度懸殊時大量級特徵會主導結果。\n決策樹的運作方式不同：每次分裂只在單一特徵上尋找最佳切點（如「血壓 ≤ 140？」），評估的是切點兩側的純度變化，只依賴該特徵內部樣本的排序；標準化是單調變換，不改變排序，因此分裂結構與預測完全不變。scikit-learn 的決策樹文件也把「需要的資料準備很少，其他技術常需要資料正規化」列為決策樹的優點之一。",
+      "answerReason": "年齡、體重、血壓與診斷類別代碼的量級各異。KNN 與 SVM 的核心計算是距離與邊界間隔，未標準化時大量級特徵會壓過其他特徵；線性迴歸以梯度求解或加入正則化時同樣受尺度影響。只有決策樹以逐特徵的切點分裂運作，各特徵獨立找切點、互不比較量級，對特徵尺度最不敏感，最適合不標準化直接訓練。",
+      "optionAnalysis": {
+        "A": "線性迴歸（Linear Regression）以特徵的線性組合預測數值；使用梯度下降求解時，尺度懸殊會把損失面拉成狹長山谷、收斂變慢，若加入 L1/L2 正則化，懲罰項會不公平地壓制量級大的特徵係數，因此實務上通常建議先標準化。它對尺度的敏感度雖低於距離型模型，仍不是最不敏感的選擇。",
+        "B": "支援向量機（SVM）尋找最大化類別間隔的超平面，間隔與距離的計算把所有特徵放進同一個空間；量級大的特徵（如血壓數值）會主導邊界方向，使用 RBF 核時距離差異更被指數放大，未標準化的 SVM 效果通常明顯變差，是對尺度相當敏感、慣例上必先標準化的模型。",
+        "C": "K 近鄰（K-Nearest Neighbors）以樣本間距離決定最近鄰，距離由各特徵差值平方和累加而成；未標準化時，量級大的特徵幾乎獨占距離計算，量級小的特徵形同被忽略，鄰居的選取因此失真，是教科書上「必須先標準化」的典型案例，與題目要求恰好相反。",
+        "D": "正確。決策樹每個節點只在單一特徵上找切點、判斷是否超過門檻，各特徵的切點搜尋彼此獨立，不同特徵之間從不比較數值大小；標準化屬單調變換，不改變任何特徵內的樣本排序，因此樹的分裂結構、深度與預測全數不變，跳過標準化也不影響訓練結果。"
+      },
+      "trap": "第一，判斷模型是否需要標準化，先看它有沒有用到距離、內積或梯度：有就敏感；樹模型以排序切點分裂，不受尺度影響。第二，「不需標準化」不等於「不需前處理」：決策樹仍可能要處理遺漏值與類別編碼，只是尺度轉換這一步可以省略。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 15 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "scikit-learn－1.10. Decision Trees",
+          "url": "https://scikit-learn.org/stable/modules/tree.html",
+          "locator": "1.10 Decision Trees 優點清單：Requires little data preparation——其他技術常需要資料正規化、建立虛擬變數與移除空白值",
+          "checkedAt": "2026-08-06"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-40：數據標準化旨在將不同量級的數據轉換到統一範圍，消除特徵間的尺度差異",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：線性迴歸若以普通最小平方閉式解求解且不含正則化，標準化只改變係數尺度、不影響預測結果；本題將 A 判為相對敏感，是以實務常見的梯度求解與正則化情境為準的程度比較，複核者宜確認選項 A 的表述是否恰當。查核日期 2026-08-06。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -15277,30 +15424,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 D。異常檢測的目標是從資料中即時找出與正常模式顯著偏離的少數訊號，設備感測資料的故障預警正是它的典型應用。",
+      "concept": "異常檢測（Anomaly Detection）用於識別資料集中不符合預期模式的異常點。常見作法是先以大量正常運作資料描繪「正常」的分布或模型，再把顯著偏離這個基準的觀測標記為異常；scikit-learn 將其中「以正常資料建模、判斷新樣本是否偏離」的設定稱為新奇偵測（novelty detection）。\n它與其他分析任務的分工不同：分群（clustering）找出資料中的自然群體結構；監督式分類以帶標籤的正負樣本學習對應關係；儀表板與 KPI 追蹤屬於描述性分析。異常事件通常稀少、樣態事先未知，難以蒐集完整標註，因此才用「偏離正常」的角度來偵測。",
+      "answerReason": "D 描述從設備感測資料中即時偵測「與正常運作模式顯著偏離」的訊號並預警故障，同時命中異常檢測的兩個要件：以正常模式為基準、找出顯著偏離的少數觀測；這正是預測性維護中異常檢測的標準用法。其他三個選項各屬分群、監督式預測與描述性分析的範疇。",
+      "optionAnalysis": {
+        "A": "依消費偏好將客群分組是聚類（分群）分析的應用：目的在找出資料中的自然群體結構，讓每一群獲得對應的行銷策略。分群關注「所有樣本各屬哪一群」，結果涵蓋全體客戶，沒有「正常基準」與「偏離者」的概念，與偵測少數異常訊號的目標不同。",
+        "B": "以歷史交易與客戶資料建模預測未來違約，是監督式分類／風險預測：資料中有明確的目標欄位（是否違約）與足量的正負樣本，模型學的是特徵到標籤的對應。異常檢測則多用在標註稀少、異常樣態未知的場景，兩者在資料條件與任務目標上都不同。",
+        "C": "彙整各部門營運數據、建置儀表板供管理層追蹤 KPI，屬於描述性分析與商業智慧（BI）範疇：它把既有數據彙總呈現，本身不建立正常模式、也不自動判定偏離，指標異常仍須人工從圖表中察覺；異常檢測的重點恰是由演算法自動標記顯著偏離的觀測。",
+        "D": "正確。從連續的設備感測資料中比對正常運作模式、即時標記顯著偏離的訊號並發出故障預警，完全符合異常檢測「識別不符合預期模式的異常點」的定義；在故障樣本稀少、故障型態多變的工業場景，以偏離正常為訊號正是最可行的偵測策略。"
+      },
+      "trap": "第一，區分「偵測未知偏離」與「預測已知事件」：違約預測有標籤、屬監督式分類；故障預警常缺乏足量故障樣本，靠偏離正常模式來偵測。第二，分群與異常檢測雖都可無監督，前者找群體結構、後者找離群個體，目標並不相同。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 16 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-10：異常檢測用於識別資料集中不符合預期的異常點",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "scikit-learn－Novelty and Outlier Detection",
+          "url": "https://scikit-learn.org/stable/modules/outlier_detection.html",
+          "locator": "新奇偵測以正常資料建模，異常樣本偏離該模型",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -15340,30 +15498,35 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 D。將卡號替換為隨機編號且不保留對應關係，同一乘客仍能以同一編號跨時間串連，卻無從回推真實身分，同時滿足研究需求與去識別化要求。",
+      "concept": "個人資料保護法施行細則第 17 條界定：所稱無從識別特定當事人，指個人資料以代碼、匿名、隱藏部分資料或其他方式，無從辨識該特定個人者。判準在「處理後能否辨識特定個人」——若保留了可回連原始身分的鑰匙（對照表、可逆代碼），就只是假名化，仍有識別當事人的可能。\n本題還有一個功能條件：研究需要跨時間追蹤同一乘客的行為，因此識別鍵不能整個刪除，也不能把資料彙總到個體消失；合適的作法是「一致的代碼替換加上銷毀對應關係」——同一卡號固定換成同一個隨機編號，讓旅次可歸戶，但對應表不存在，任何人都無法從編號回推卡號或持卡人。",
+      "answerReason": "D 以隨機編號替換卡號：替換規則一致，同一乘客的上下車紀錄仍能以同一編號跨時間串連，通勤模式研究得以進行；不保留任何對應關係，無論資料外洩或內部查詢，都無法從編號回推卡號與個人，符合施行細則「以代碼……無從辨識該特定個人」的要求，是四個選項中唯一同時滿足追蹤能力與去識別化的作法。",
+      "optionAnalysis": {
+        "A": "刪除卡號欄位確實移除了直接識別項，但卡號同時是串連同一乘客多筆旅次的唯一鍵；刪除後每筆上下車紀錄都成了無法歸戶的散點，「跨時間追蹤同一乘客」的研究前提直接落空。去識別化追求的是在降低識別風險與保留資料用途之間取得平衡，而不是把識別鍵一刪了之。",
+        "B": "雜湊（hash）是把輸入映射成固定長度值的單向函數，但用在卡號上有兩個問題：保留對照表等於留下回連身分的鑰匙，任何取得該表的人都能還原對應，本質上是可逆的假名化；且卡號格式固定、值域有限，攻擊者可窮舉所有可能卡號計算 MD5 反查比對。兩者都使資料達不到「無從辨識特定個人」的標準。",
+        "C": "彙總為每日各路線總乘客數屬於統計彙整，個體層級完全消失，識別風險固然最低，但個人旅次軌跡也一併不存在，無法追蹤任何乘客的跨時間行為，題幹的研究需求無法達成；彙總統計適合對外公開的總量報表，不適合需要個體縱貫分析的通勤模式研究。",
+        "D": "正確。一致的隨機編號讓同一乘客的紀錄仍可歸戶，支撐跨時間的通勤模式分析；不保留對應關係則切斷了編號與卡號、持卡人之間的回連路徑，符合施行細則所稱以代碼方式使資料無從辨識特定個人，兼顧了資料可用性與隱私保護。"
+      },
+      "trap": "第一，假名化與去識別化的分界在「對應關係是否保留」：留著對照表或可逆金鑰，就仍可能識別當事人。第二，別忽略題幹的功能條件——需保留跨時間追蹤能力，凡是消滅個體連結的作法（刪除識別鍵、彙總成總數）再安全也不合題意。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 17 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "全國法規資料庫－個人資料保護法施行細則",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0050022",
+          "locator": "第 17 條：本法所稱無從識別特定當事人，指個人資料以代碼、匿名、隱藏部分資料或其他方式，無從辨識該特定個人者",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：學理上，保留個體軌跡的假名化資料仍可能透過時空軌跡交叉比對產生殘餘重新識別風險，本題依四個選項相對比較判 D 最符合去識別化要求；複核者宜評估是否需補充此限制的說明或權威來源。查核日期 2026-08-06。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -15403,30 +15566,35 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 B。溫度時序平滑連續，以缺口前後的實測值做線性插補，補值必落在鄰近觀測之間、貼合局部走勢，不會製造虛假異常。",
+      "concept": "補值方法要配合資料型態與缺失原因。本題缺失已確認來自短暫失聯而非設備異常，溫度又是隨時間平滑變化的連續量，最合理的假設是：缺漏期間的真實值介於缺口前後的觀測之間。線性插補（linear interpolation）正是在缺口兩端實測值之間以直線取值。\npandas 的 DataFrame.interpolate 即為此設計：以插值法填補 NaN，預設 method='linear' 把數值視為等距內插；取樣間隔不均時另可用 'time' 方法依實際時間間隔加權。插補值沿著局部趨勢走，不會出現與鄰近讀數脫節的突兀數值，也保住了時間軸的完整與等距。",
+      "answerReason": "題幹的兩個要求是「不引入虛假異常」與「顧及時間連續性」。線性插補以缺口前後的實測溫度內插，補值介於兩端觀測之間、與局部走勢一致，序列保持平滑連續；相較之下，補 0 與補全域平均都會製造跳點，刪除時點則破壞時間軸，只有 B 同時滿足兩個要求。",
+      "optionAnalysis": {
+        "A": "補 0 隱含「失聯期間溫度為 0 度」的假設，與缺口前後的實際讀數嚴重脫節，會在序列上鑿出一段段人造深谷；下游的異常偵測或預測模型會把這些深谷當成真實的溫度驟降事件，正是題幹明言要避免的虛假異常，工業製程溫度也幾乎不可能恰好是 0。",
+        "B": "正確。線性插補假設缺口內的值沿前後兩個實測點之間的直線變化，補值必然介於兩端觀測之間，與溫度平滑連續的物理特性一致；缺口僅約 5% 且來自短暫失聯，兩端都有可靠讀數可依靠，插補後序列保持平滑與等距，不會產生突兀的假訊號。",
+        "C": "以整份資料的平均值填補，適合沒有時間結構的橫斷面數值欄位；溫度有日夜與季節起伏，全域平均會把夜間或冬季的缺口補成偏離當下水準的值，在缺口兩端形成階梯狀跳點，既扭曲局部趨勢，也可能被下游分析誤讀為異常變化，違反題幹前提。",
+        "D": "直接刪除含遺漏值的時間點會在時間軸上留下空洞：原本等距的序列變得不等距，滑動視窗統計、週期分解與 lag 特徵等時序處理全會錯位；且約 5% 的缺口分散出現，逐點刪除也浪費了缺口前後完好的資訊。刪除法較適合缺失極少且樣本彼此獨立的非時序資料。"
+      },
+      "trap": "第一，補值方法跟著資料結構走：橫斷面資料常用平均數或中位數，時間序列優先考慮插補或前值遞補。第二，先確認缺失機制——本題已確認缺失與異常無關才可插補；若斷訊本身與故障相關，平滑插補反而會把關鍵異常訊號抹掉。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 18 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "pandas API 文件－DataFrame.interpolate",
+          "url": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.interpolate.html",
+          "locator": "方法說明：Fill NaN values using an interpolation method；預設 method='linear'，將數值視為等距內插，另有 'time' 方法依時間間隔內插",
+          "checkedAt": "2026-08-06"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -15466,30 +15634,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 A。害蟲檢測最不能容忍的是漏檢，漏掉的害蟲會持續繁殖擴散；召回率正是衡量「實際存在的害蟲被找出多少比例」的指標，最需優先關注。",
+      "concept": "以「有害蟲」為正類整理本題數據：正確識別的害蟲 TP=80，被誤判為有蟲的正常葉片 FP=20，漏檢的害蟲 FN=10。召回率（Recall）= TP/(TP+FN) = 80/90 ≈ 88.9%，衡量分類器找出所有正樣本的能力；精確率（Precision）= TP/(TP+FP) = 80/100 = 80%，衡量陽性判定中有多少為真。\n指標的選擇取決於錯誤代價：漏檢（FN）代表害蟲留在溫室裡持續繁殖蔓延，可能造成整批作物損失；誤報（FP）的代價只是人工多檢查幾片正常葉片。兩類錯誤代價明顯不對稱時，應優先監控代價高的那一側對應的指標。",
+      "answerReason": "對害蟲防治這個關鍵任務，目標是把實際存在的害蟲盡可能全部找出來：漏掉一隻的後果（蟲害擴散）遠比多查一片葉子嚴重。召回率的分母是全部實際害蟲（TP+FN），每漏檢一隻數值就下降，直接量化漏檢風險，與題幹的任務目標一致，因此是最需優先關注的指標。",
+      "optionAnalysis": {
+        "A": "正確。召回率 = TP/(TP+FN)，分母是全部實際存在的害蟲，每漏檢一隻數值就直接下降，是四個選項中唯一把漏檢量放進分母核心的指標；對「盡量找出所有害蟲、防止擴散」的任務目標而言，它的變化最直接反映防治成效，應作為優先關注與優化的主指標。",
+        "B": "精確率回答「被判為有蟲的案例中有多少是真的」，適用於誤報成本高的情境，例如每次警報都會觸發昂貴停機或大面積施藥時；它的分母不含漏檢的 FN，即使漏掉的害蟲增加，精確率也可以毫無變化，無法反映本題最在意的蟲害擴散風險。",
+        "C": "準確率 = (TP+TN)/全部樣本，在正負樣本懸殊時會被大量真陰性撐高：本題 1000 張測試影像中絕大多數是正常葉片，就算漏檢的害蟲增加，準確率仍顯得很漂亮，對關鍵少數的偵測品質幾乎沒有鑑別力，是不平衡資料下最容易誤導決策的指標。",
+        "D": "F1 分數是精確率與召回率的調和平均，適合兩類錯誤代價相近、需要以單一數字綜合比較模型時；學習指引也提到它適合處理數據不平衡的問題。但本題已明示漏檢是關鍵風險，兩類錯誤代價並不對等，以 F1 折衷會稀釋對召回率的關注，不如以召回率為主指標、精確率作輔助。"
+      },
+      "trap": "第一，選指標先問「哪種錯誤代價高」：怕漏抓（偽陰性）優先看召回率，怕誤報（偽陽性）優先看精確率。第二，類別不平衡時準確率常常虛高，先檢查正負樣本比例，再決定準確率有沒有參考價值。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 19 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "scikit-learn－3.4. Metrics and scoring",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+          "locator": "3.4.4.9 Precision, recall and F-measures：recall = tp/(tp+fn)，為分類器找出所有正樣本的能力；precision = tp/(tp+fp)",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-42：F1 分數綜合考慮精確率（Precision）與召回率（Recall），適合處理數據不平衡的問題",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -15529,30 +15708,35 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 B。中間人攻擊發生在傳輸途中，對症之道是傳輸加密並驗證通訊雙方身分：竊聽者讀不懂密文、竄改會被偵測、假冒者通不過驗證，且不犧牲即時傳輸效率。",
+      "concept": "中間人攻擊（Man-in-the-Middle, MITM）指攻擊者介入通訊兩端之間，攔截、竊聽、竄改傳輸內容，甚至假冒其中一方。防禦核心是在兩端之間建立安全通道：TLS（Transport Layer Security）標準 RFC 8446 明定，TLS 的主要目標是在兩個通訊端之間提供安全通道，具備三項性質——身分驗證（伺服器端必經驗證、用戶端可選）、機密性（傳輸資料僅端點可見）與完整性（資料遭竄改可被偵測），且即使攻擊者完全控制網路，這些性質仍須成立。\n實務上以 HTTPS/TLS 或 VPN 加密通道傳輸，大量資料以對稱金鑰加密執行，額外負擔小，能維持跨國即時傳輸的效率。",
+      "answerReason": "題幹的兩個條件是：防範傳輸過程中的竊取與竄改（即中間人攻擊），且不影響跨國即時傳輸效率。B 的「傳輸過程加密加上確認雙方身分」正是 TLS 安全通道的組成——加密提供機密性擋竊聽、完整性驗證使竄改可被偵測、身分驗證防止攻擊者假冒端點；全程仍走網路即時傳輸，效率不受影響，兩個條件同時滿足。",
+      "optionAnalysis": {
+        "A": "接收端的存取權限與身分驗證屬於資料「落地之後」的控管，保護的是儲存與讀取階段不被未授權者存取；中間人攻擊發生在資料仍在網路途中的階段，攻擊者攔截封包時根本不會經過接收端的權限檢查，傳輸途中被竊聽或竄改的風險原封不動。",
+        "B": "正確。傳輸加密使途中攔截者只能取得無法解讀的密文，訊息驗證機制讓任何竄改在接收端被偵測，通訊前的雙方身分確認（如憑證驗證）則阻止攻擊者假冒端點插入通訊；三者合起來正是對抗中間人攻擊的標準控制，以 TLS 實作時效能負擔小，即時性得以維持。",
+        "C": "把資料拆分成多批傳送，走的仍是同一條未受保護的網路路徑；位於路徑中間的攻擊者每一批都攔得到，收齊即可重組完整資料，竄改其中一批也不會被察覺。分批頂多增加攔截作業的瑣碎程度，不提供機密性或完整性保障，不是對抗中間人攻擊的有效控制。",
+        "D": "改用離線備援方式（如實體介質遞送）確實避開了網路上的攻擊面，適合作為災難備援或極端敏感資料的補充管道；但跨國實體遞送動輒數日，與題幹「不影響系統跨國即時傳輸效率」的前提直接衝突，作為日常傳輸方案並不可行。"
+      },
+      "trap": "第一，先定位威脅發生的環節：傳輸途中的風險要用傳輸層控制（加密加身分驗證）處理，端點的存取控管防不了路上的攔截。第二，對抗中間人攻擊是三件套——加密防竊聽、完整性驗證防竄改、身分驗證防假冒，只做其中一項仍留缺口。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 20 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "IETF RFC 8446－The Transport Layer Security (TLS) Protocol Version 1.3",
+          "url": "https://datatracker.ietf.org/doc/html/rfc8446",
+          "locator": "第 1 節：TLS 的主要目標是在兩個通訊端之間提供安全通道，性質包含身分驗證（伺服器端必為已驗證）、機密性（傳輸資料僅端點可見）與完整性（資料遭竄改可被偵測），即使攻擊者完全控制網路仍須成立",
+          "checkedAt": "2026-08-06"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -15592,30 +15776,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 C。深度學習的核心特性是以多層神經網路從大量資料中自動學習由低階到高階的抽象特徵，不依賴人工設計特徵。",
+      "concept": "深度學習（Deep Learning）是機器學習的分支，以多層神經網路對輸入做逐層的非線性轉換：淺層學到邊緣、字詞搭配這類低階特徵，深層再把它們組合成輪廓、語意等抽象概念。這種「表徵學習（Representation Learning）」讓特徵由模型自己從資料中學出來，與傳統機器學習必須先由專家做特徵工程形成鮮明對比；Bengio 等人的回顧論文即指出，機器學習的成效普遍取決於資料表徵，除了以領域知識協助設計表徵，也能夠直接學習表徵。\n代價是資料與運算需求：多層網路參數量龐大，通常需要大量訓練資料與 GPU 等運算資源才能發揮，資料太少時容易過度擬合，實務上會改用遷移學習或較簡單的模型。官方學習指引也把自然語言處理、電腦視覺與語音辨識列為深度學習的主要應用領域，這些多屬辨識與預測性質的任務。",
+      "answerReason": "題目要選「最為正確」的敘述。C 同時講對了兩件事：一是結構——透過多層神經網路；二是學習方式——從大量資料中自動學習抽象特徵。這正是深度學習與傳統人工特徵工程最大的差異，也與它對大量資料的需求相符，因此選 C。",
+      "optionAnalysis": {
+        "A": "人工設計特徵是傳統機器學習的作法：由專家依領域知識先萃取特徵，再交給支援向量機、決策樹等模型。深度學習的價值恰好在於把特徵萃取交給網路自動完成，逐層學出可用的表徵，通常不需要人工設計特徵來提升表現，敘述方向與其特性相反。",
+        "B": "資料壓縮與特徵轉換比較接近自編碼器、主成分分析這類降維方法的用途，只是深度學習眾多應用中的一小塊。深度學習大量用於影像辨識、語音辨識、機器翻譯等辨識與預測任務，官方學習指引所列的應用場景正是這些，說它「較少用於預測任務」與實際情況不符。",
+        "C": "正確。多層神經網路把輸入逐層做非線性轉換，淺層擷取低階特徵、深層組合成抽象概念，特徵是模型自己從大量資料中學出來的，不必人工逐項設計，這是深度學習相對於傳統方法的核心優勢。",
+        "D": "說反了。多層網路的參數量龐大，需要足夠的資料才能把參數估得穩；資料量有限時深度模型容易把雜訊背下來、過度擬合。此時常見的因應方式是遷移學習、資料增強或改用較簡單的模型，而不是期待深度學習天生適合小資料情境。"
+      },
+      "trap": "第一，把「自動學特徵」與「人工做特徵工程」對調，是本題 A、C 的設計陷阱：前者屬深度學習，後者屬傳統機器學習。第二，別把自編碼器的壓縮用途放大成整個深度學習的主要用途，深度學習的主流應用是辨識與預測任務。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 21 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-14：深度學習在自然語言處理、電腦視覺（如影像辨識、物件偵測）、語音辨識等領域的應用",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "Bengio, Courville & Vincent, Representation Learning: A Review and New Perspectives (arXiv)",
+          "url": "https://arxiv.org/abs/1206.5538",
+          "locator": "摘要：機器學習的成效普遍取決於資料表徵；除以特定領域知識協助設計表徵外，亦可學習表徵，論文回顧非監督特徵學習與深度學習的進展",
+          "checkedAt": "2026-08-06"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -15655,30 +15850,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 D。依瀏覽與點擊模式將使用者分群且未使用標註資料，正是非監督式學習的分群應用。",
+      "concept": "判斷情境屬於哪種機器學習類型，先問兩件事：訓練資料有沒有標註、學習訊號從哪裡來。監督式學習使用帶有標記的資料，學習輸入與輸出的對應；非監督式學習不用標記，從資料的內在結構發掘模式，分群（Clustering）與降維是代表任務；半監督式學習（Semi-supervised Learning）同時使用少量標註與大量未標註資料；強化學習（Reinforcement Learning）則沒有事先給定的答案，靠與環境互動得到的回饋訊號調整策略。\n配對題常見的出法是「情境對、標籤錯」：情境描述本身是真實可行的作法，但配上的學習類型名稱張冠李戴。因此每個選項都要把「有無標註」與「回饋來源」對回定義逐一檢查。",
+      "answerReason": "D 的情境有兩個關鍵條件：「依瀏覽與點擊模式將使用者分群」與「未使用標註資料」。沒有標籤、目標是從行為資料中找出自然形成的群體結構，正是非監督式學習中分群的典型應用，情境與類型名稱互相吻合，因此選 D。",
+      "optionAnalysis": {
+        "A": "同時使用少量標註資料與大量未標註資料訓練，定義上是半監督式學習，不是監督式學習。監督式學習要求每筆訓練樣本都附有標記；本選項的情境描述本身合理，錯在配上的類型名稱，這也是本題最容易誤選的干擾項。",
+        "B": "未使用任何標註資料、依購買行為自動將商品分群，是非監督式學習的分群任務。監督式學習得先有「每件商品屬於哪一類」的標記才能訓練，與題述「未使用任何標註資料」的條件互相矛盾，因此配對錯誤。",
+        "C": "根據操作結果的回饋持續調整決策策略，是強化學習的運作方式：代理採取行動、環境回饋獎懲、策略隨之更新。非監督式學習處理的是靜態資料中的結構發掘，沒有行動與回饋迴圈，這個情境不該貼上非監督式的標籤。",
+        "D": "正確。使用者分群沒有預先定義的類別標籤，模型從瀏覽與點擊模式中找出行為相似的群體，屬於非監督式學習的分群應用；「未使用標註資料」也與非監督式學習的定義一致，配對正確。"
+      },
+      "trap": "第一，判斷順序是「先看有無標註、再看回饋來源」：少量標註加大量未標註是半監督式，靠獎懲回饋調整策略是強化學習。第二，別只看情境是否合理就作答——本題 A、B、C 的情境描述都是真實作法，錯的是配對的學習類型名稱。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 22 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-13：監督式學習使用帶有標記的訓練數據，非監督式學習從未標記數據中發掘潛在的模式、結構或分群，強化學習基於回饋機制",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "scikit-learn－1.14. Semi-supervised learning",
+          "url": "https://scikit-learn.org/stable/modules/semi_supervised.html",
+          "locator": "1.14 節：半監督式學習指訓練資料中僅部分樣本有標註，估計器會利用額外的未標註資料改善泛化",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -15718,30 +15924,47 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 A。房價是連續數值，預測屬於迴歸任務，應以均方誤差（MSE）這類迴歸指標評估預測準確程度。",
+      "concept": "挑選評估指標的第一步是判斷任務型態。本題系統要輸出「每間房屋的成交價格」，是連續數值，屬於迴歸任務；精確率、召回率與 F1 分數則建立在混淆矩陣之上，前提是輸出為離散類別，能數出真陽性、偽陽性與偽陰性，迴歸任務沒有這些格子可數。\n均方誤差（Mean Squared Error, MSE）把每筆預測值與真實值的差取平方後平均，數值越小代表估價越貼近實際成交價；平方運算讓大幅偏離的估價受到更重的懲罰，對「估價要當議價參考」的場景來說，正好反映嚴重估錯的代價。scikit-learn 即把 mean_squared_error 定義為迴歸損失，最佳值為 0。",
+      "answerReason": "題幹要在上線前評估「自動估算成交價格」的準確程度，輸出是連續金額而非類別。四個選項中只有均方誤差是為連續值誤差設計的指標；其餘三者都要先有分類結果才能計算，套不進房價預測，因此選 A。",
+      "optionAnalysis": {
+        "A": "正確。均方誤差衡量預測價格與實際成交價之間差距平方的平均，直接量化迴歸模型的預測誤差；數值越小代表預測越準，平方項並使離譜的估價被放大懲罰，適合作為上線前驗收預測準確程度的指標。",
+        "B": "精確率的定義是被模型判為正類的樣本中實際為正類的比例，用於分類任務，例如垃圾郵件過濾中衡量誤報多寡。房價預測沒有「正類」可言，也算不出真陽性與偽陽性，精確率在此無從計算。",
+        "C": "F1 分數是精確率與召回率的調和平均，用在需要同時兼顧誤報與漏抓的分類問題，特別是類別不平衡的資料。它的輸入仍是混淆矩陣的計數，對連續價格預測而言沒有可用的分類結果，無法衡量估價準確度。",
+        "D": "召回率衡量實際為正類的樣本中被模型找出的比例，適合漏抓代價高的分類場景，例如疾病篩檢或詐欺偵測。房價估算既沒有類別標籤，也沒有「漏抓」的概念，召回率同樣套不上這個任務。"
+      },
+      "trap": "第一，先分辨任務是迴歸還是分類再挑指標：MSE、RMSE、MAE、R² 屬迴歸，精確率、召回率、F1、準確率屬分類，兩組不能混用。第二，看到 Precision 與 Recall 同時出現時，先確認題目有沒有分類標籤，沒有就整組分類指標一起排除。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 23 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-11：迴歸模型用於預測房地產價格等連續數值；3-18 損失函數的作用",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "scikit-learn－sklearn.metrics.mean_squared_error",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html",
+          "locator": "mean_squared_error：Mean squared error regression loss（迴歸的均方誤差損失），回傳非負浮點值，最佳值為 0.0",
+          "checkedAt": "2026-08-06"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-42：F1 分數綜合考慮精確率（Precision）與召回率（Recall），適合處理數據不平衡的問題",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -15781,30 +16004,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 A。「推薦過去表現好的商品」與「嘗試未知商品」之間的取捨，正是強化學習中探索與利用的權衡。",
+      "concept": "強化學習的代理依據策略選擇行動，並依環境回饋的獎勵更新策略，目標是最大化長期累積獎勵。這個框架有一個內建的兩難：利用（Exploitation）是選擇目前已知回報最高的行動，短期收益最穩；探索（Exploration）是嘗試回報尚不確定的行動，短期可能吃虧，卻有機會發現更好的選項。只利用不探索，會困在局部最佳；只探索不利用，短期成效與使用者體驗都會受損。\n多臂拉霸機（Multi-armed Bandit）是這個問題最基本的模型：Bubeck 與 Cesa-Bianchi 的專論開篇即說，這是在「過去報酬最高的選項」與「未來可能報酬更高的新選項」之間取得平衡，廣告投放與網站最佳化正是典型應用，與本題的商品推薦情境同構。",
+      "answerReason": "題幹把兩難描述得很完整：總是推薦過去表現良好的商品是「利用」，代價是可能錯失高潛力商品；頻繁嘗試未知商品是「探索」，代價是短期成效與使用者體驗。這一組取捨正是強化學習的探索與利用權衡，因此選 A。",
+      "optionAnalysis": {
+        "A": "正確。推薦已知表現好的商品對應利用既有知識、鎖定目前最高的預期回報；嘗試未知商品對應探索、以短期成本換取發現更佳選項的機會。如何在兩者之間分配資源，就是探索與利用的權衡，與題幹敘述逐句對得上。",
+        "B": "偏差與變異的權衡描述的是監督式學習中模型複雜度的取捨：模型太簡單會系統性偏離真實關係（高偏差），太複雜則對訓練資料的波動過度敏感（高變異）。它談的是預測誤差的組成，不涉及「下一步該選哪個行動」的決策問題。",
+        "C": "梯度爆炸與消失是深層網路反向傳播時的數值問題：梯度經多層連乘後放大到失控或衰減到近零，導致訓練不穩或停滯，處方是更換啟動函數、梯度裁剪或殘差連接。它發生在模型訓練的數值層面，與推薦策略該守成還是嘗新無關。",
+        "D": "過擬合與欠擬合描述模型對訓練資料的擬合程度：前者把訓練資料的雜訊也背下來、泛化變差，後者連訓練資料的規律都沒學到。題幹的困境不是模型擬合好壞，而是行動選擇上「守成」與「嘗新」的衝突，兩者屬於不同層次的問題。"
+      },
+      "trap": "第一，A、B 都叫「權衡」，但一個在行動選擇層（探索對利用），一個在模型估計層（偏差對變異），看到推薦、嘗試新選項這類敘述要對到前者。第二，梯度問題與擬合問題都是「模型訓練」的毛病，題幹講的是「決策策略」的兩難，先分清楚層次再作答。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 24 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-37 至 3-38：代理基於策略（Policy）選擇行動，執行後依結果更新決策策略以最大化累積獎勵",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "Bubeck & Cesa-Bianchi, Regret Analysis of Stochastic and Nonstochastic Multi-armed Bandit Problems (arXiv)",
+          "url": "https://arxiv.org/abs/1204.5721",
+          "locator": "摘要：多臂拉霸機是具探索—利用權衡的循序決策問題最基本的範例，即在過去報酬最高的選項與未來可能報酬更高的新選項之間取得平衡",
+          "checkedAt": "2026-08-06"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -15844,30 +16078,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 A。LSTM 以閘門機制讓早期資訊得以長距離保留，正是針對 RNN 難以記住序列前段內容的缺點而設計。",
+      "concept": "一般循環神經網路（RNN）逐步讀入序列，以隱藏狀態把先前的資訊往後傳遞；但誤差沿時間步反向傳播時梯度會連乘，序列一長便指數衰減，前段資訊的影響幾乎傳不到後面，這就是梯度消失造成的長期依賴問題。官方學習指引也把梯度消失與梯度爆炸列為 RNN 訓練的典型缺點。\n長短期記憶網路（LSTM）在此基礎上加入細胞狀態與三道閘門：遺忘門決定丟掉哪些舊資訊、輸入門決定寫入哪些新資訊、輸出門決定輸出多少，讓重要資訊能沿細胞狀態跨越很長的時間步保留下來，有效緩解梯度消失。題幹「句子較長時難以保留前段資訊」正是這個病徵的直接描述。",
+      "answerReason": "題幹的問題明確指向「長時間序列中前段資訊流失、辨識準確度下降」，這是 RNN 梯度消失的典型表現。四個選項中只有 LSTM 是專為改善此問題而設計的序列模型，透過閘門讓早期訊息得以保留，因此最適合，選 A。",
+      "optionAnalysis": {
+        "A": "正確。LSTM 以遺忘門、輸入門與輸出門調節細胞狀態，讓關鍵資訊能跨越長序列保留下來，官方學習指引即說明它有效解決了梯度消失問題，正對症題幹長句辨識時前段資訊流失的需求。",
+        "B": "RNN 正是題幹所述問題的來源：隱藏狀態雖能傳遞先前資訊，但梯度沿長序列連乘後迅速衰減，前段內容難以留存。改用一般 RNN 等於維持現狀，長句辨識準確度下降的問題不會改善。",
+        "C": "CNN 以卷積核擷取局部特徵，擅長影像這類具空間結構的資料；一維卷積雖可處理序列，捕捉的仍是固定視窗內的局部樣式，缺少跨越整句保留早期資訊的記憶機制，對題幹的長期依賴問題幫助有限。",
+        "D": "GAN 由生成器與判別器對抗訓練而成，用途是生成影像、語音等新內容，屬於生成模型。語音辨識是把輸入語音轉成文字的辨識任務，GAN 的架構與訓練目標都對不上，也沒有處理長序列記憶的設計。"
+      },
+      "trap": "第一，看到「序列很長、早期資訊留不住」就要想到梯度消失與 LSTM／GRU 這組對應，而不是換成其他用途的架構。第二，RNN 與 LSTM 同屬循環架構，差別在有無閘門與細胞狀態：LSTM 是針對 RNN 缺點的改良版，兩者不能互換使用。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 25 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-15：LSTM 透過遺忘門、輸入門和輸出門，有效解決了梯度消失問題；GRU 結構較簡單但效果相近",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-16：循環神經網路的缺點包含訓練過程容易出現梯度消失或梯度爆炸問題",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -15907,30 +16152,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 B。少量標註加大量未標註資料的組合，正是半監督式學習設計要解決的情境，兩種資料都能派上用場。",
+      "concept": "本題的資料結構是解題關鍵：120 萬筆銷售紀錄中只有約 8 萬筆標記為「正常銷售」或「損耗發生」，其餘 112 萬筆未標註，而標註資源有限。監督式學習只能使用有標記的部分；非監督式學習完全不用標記；半監督式學習則同時吃下兩者——用少量標註資料學習分類邊界，再利用大量未標註資料掌握整體分布，把類別邊界推向樣本稀疏的合理位置，通常能比只用標註資料訓練得到更好的泛化表現。\nscikit-learn 的文件即說明，半監督式學習適用於標註樣本少、未標註樣本多的情況，演算法能利用未標註資料改善表現，與本題「標註資源有限但希望提升預測表現」的目標一致。",
+      "answerReason": "題幹同時給了三個條件：已有少量標註、存在大量未標註、標註資源有限。B 的半監督式學習恰好讓兩種資料各盡其用——標註資料提供類別訊號、未標註資料提供分布資訊——不必再投入人力補標就能提升模型表現，因此是最適合的選擇。",
+      "optionAnalysis": {
+        "A": "只用 8 萬筆標註資料訓練是標準的監督式作法，可行但把 112 萬筆未標註資料整批丟棄，等於放棄資料中蘊含的分布資訊。在標註偏少、又明確希望提升預測表現的前提下，這個選擇沒有善用手上最大的資料資產。",
+        "B": "正確。半監督式學習以少量標註資料確立「正常銷售」與「損耗發生」的分類邊界，同時從 112 萬筆未標註紀錄學習銷售資料的整體分布，讓邊界落在更合理的位置，是標註資源有限時提升預測表現的對症作法。",
+        "C": "非監督式分群不使用任何標記，得到的群集只反映資料相似性，未必對齊「正常與損耗」這條業務界線；事後還要專家逐群人工判讀，反而把已有的 8 萬筆標註晾在一旁。手上已有可靠標記時，先讓它參與訓練才是合理順序。",
+        "D": "強化學習的框架需要代理、行動空間與環境回饋：代理採取行動、環境給獎勵、策略隨之更新，適合推薦、控制這類循序決策問題。損耗預測是從歷史資料學習對應關係的預測任務，沒有可選擇的行動；把實際損耗結果當回饋訊號，本質上是持續蒐集新標籤，並沒有解決 112 萬筆未標註資料如何利用的問題。"
+      },
+      "trap": "第一，「部分有標註、大量未標註」是半監督式學習的招牌情境，看到兩種資料並存就先想到它，而不是在監督式與非監督式之間二選一。第二，別把「事後由專家確認分群結果」當成善用未標註資料的方法，那只是把標註工作往後挪，既有標記並沒有參與訓練。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 26 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "scikit-learn－半監督式學習（Semi-supervised learning）",
+          "url": "https://scikit-learn.org/stable/modules/semi_supervised.html",
+          "locator": "Semi-supervised learning：標註樣本極少、未標註樣本很多時，這類演算法能有良好表現",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-13：監督式學習使用帶有標記的訓練數據，非監督式學習從未標記數據中發掘潛在的模式、結構或分群，強化學習基於回饋機制",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -15970,30 +16226,47 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 A。自編碼器可只用正常感測數值訓練、以重建誤差判斷異常，最適合（甲）的設備異常偵測情境。",
+      "concept": "自編碼器（Autoencoder）由編碼器與解碼器組成：編碼器把輸入壓縮成低維表示，解碼器再把它重建回原輸入，訓練目標是讓重建結果盡量接近原始輸入。它不需要人工標籤，常見用途是降維、去噪與異常偵測。\n用在異常偵測的邏輯是：只用正常資料訓練，模型學會重建「正常的樣子」；推論時正常樣本重建誤差小，偏離正常模式的樣本重建誤差明顯偏高，據此設定門檻即可判斷異常。官方學習指引在自編碼器家族（變分自編碼器）的應用中，也列出透過學習正常數據的分佈識別異常樣本，並廣泛用於工業故障檢測。設備感測器的異常判斷正是「正常樣本多、異常樣本少且型態難以窮舉」的場景，與這套作法吻合。",
+      "answerReason": "（甲）要從感測器數值判斷設備是否異常，異常樣態多變且難以事先蒐集標記，讓自編碼器只學正常運轉的數值模式、以重建誤差當異常分數，是業界的標準作法。（乙）情緒判斷與（丙）瑕疵分類則是有明確類別標籤的分類任務，主流架構分別是文本分類模型與卷積神經網路分類器，自編碼器至多擔任前處理或特徵抽取的配角，因此只有甲入選，答案為 A。",
+      "optionAnalysis": {
+        "A": "正確。設備異常偵測的難處在於異常樣本稀少且型態難以窮舉，自編碼器只用正常感測數值訓練、以重建誤差劃出異常門檻，不需要異常標籤就能運作，正好符合（甲）的需求，是三個場景中自編碼器最適合擔任主要架構的一個。",
+        "B": "（乙）判斷客服對話的客戶情緒是文本分類任務：輸入文字、輸出正面或負面等類別，需要情緒標籤做監督式訓練，主流架構是循環網路或 Transformer 類的文本分類模型。自編碼器的訓練目標是重建輸入而非輸出類別，不適合單獨擔任此任務的主架構。",
+        "C": "（丙）依產品影像輪廓「直接進行瑕疵分類」，是輸入影像、輸出瑕疵類別的監督式影像分類，卷積神經網路是標準主架構。要直接輸出類別就需要帶標籤的分類器；自編碼器不產生類別輸出，重建誤差只能區分正常與異常，給不出多類別的瑕疵型態。",
+        "D": "甲與丙只對了一半：甲確實適合自編碼器，但丙的設定是拿標好類別的影像直接做瑕疵分類，以卷積分類器端到端訓練即可完成，自編碼器並非主要模型架構。把丙一併算入，忽略了「分類需要標籤與類別輸出」這個關鍵差異。"
+      },
+      "trap": "第一，自編碼器的輸出是「重建後的輸入」而不是「類別」，凡是要直接輸出類別的任務，它就不會是主架構；它擅長的是無標籤下的降維、去噪與異常偵測。第二，同樣是「找出瑕疵」，（甲）是無標籤的異常偵測、（丙）是有標籤的瑕疵分類，資料有無標籤決定了適用架構，別被表面相似的字眼帶著走。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 27 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-53：變分自編碼器由編碼器與解碼器組成，應用場景包含異常檢測——透過學習正常數據的分佈識別異常樣本，廣泛應用於網路安全與工業故障檢測",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "Bank, Koenigstein & Giryes, Autoencoders (arXiv)",
+          "url": "https://arxiv.org/abs/2003.05991",
+          "locator": "摘要：自編碼器是把輸入編碼為壓縮且有意義的表示、再解碼重建使其盡量接近原輸入的神經網路",
+          "checkedAt": "2026-08-06"
+        },
+        {
+          "title": "scikit-learn－Novelty and Outlier Detection",
+          "url": "https://scikit-learn.org/stable/modules/outlier_detection.html",
+          "locator": "新奇偵測以正常資料建模，異常樣本偏離該模型",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：官方學習指引 3-53 的異常檢測應用段落係針對變分自編碼器（自編碼器的變形）撰寫，本題選項僅稱自編碼器，重建誤差偵測異常的原理相同；複核者可確認是否需補一般自編碼器異常偵測的專門出處。查核日期 2026-08-06。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -16033,30 +16306,35 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 D。Batch Normalization 在訓練時對各層輸入做批次標準化，降低批次間內部特徵分布的變動，使梯度更新更穩定。",
+      "concept": "深層網路訓練時，前面層的參數每更新一次，後面層看到的輸入分布就跟著改變；Batch Normalization 原論文把這個現象稱為內部共變數偏移（Internal Covariate Shift），並指出它迫使訓練使用較小的學習率、且對參數初始化非常敏感。\nBatch Normalization 的作法是在各隱藏層對每個小批次（mini-batch）的輸入做標準化——減去批次均值、除以批次標準差，再以可學習的縮放與平移參數保留表達彈性——讓每層輸入的分布在訓練過程中維持穩定。論文指出此法允許使用更高的學習率、對初始化不必那麼小心，還帶有正則化效果，某些情況下可取代 Dropout。題幹「不同批次資料造成學習方向不穩、損失震盪」正是它要對治的症狀。",
+      "answerReason": "題幹的病徵是損失函數震盪、不同批次把模型拉往不同方向，也就是各層輸入分布隨批次劇烈變動。D 指出 Batch Normalization 降低不同批次輸入造成的內部特徵分布變動、使梯度更新更穩定，與原論文「以標準化層輸入減少內部共變數偏移、加速並穩定訓練」的定位一致，因此正確。",
+      "optionAnalysis": {
+        "A": "將輸入影像標準化屬於資料前處理，作用在網路的最前端，而且標準化統一的是數值尺度，不是把不同類別的特徵分布調成一致。題幹的 Batch Normalization 加在各隱藏層，處理的是網路內部逐層傳遞時的分布變動，作用位置與對象都和前處理不同。",
+        "B": "權重初始化是訓練開始前一次性決定的事，Batch Normalization 並不會改動初始化方式。兩者的實際關係是：因為每層輸入都被標準化，訓練對初始權重的敏感度下降，原論文的說法是「可以不必那麼小心地初始化」，這是降低敏感度，不是自動調整初始化。",
+        "C": "非線性能力來自啟動函數與網路結構；Batch Normalization 的標準化與縮放平移都是線性運算，不會提高模型的非線性表達上限。它的貢獻在於訓練的穩定與加速，而不是把分類精度的理論上限拉高。",
+        "D": "正確。對每個小批次在各隱藏層做標準化，使層輸入的均值與變異數維持穩定，前層參數更新造成的分布飄移被壓低，各批次算出的梯度方向因此更一致，損失曲線的震盪隨之縮小，正是題幹團隊要達到的效果。"
+      },
+      "trap": "第一，分清楚「輸入資料前處理的標準化」與「隱藏層的批次標準化」：前者只做一次、作用在原始特徵，後者內建在網路各層、隨訓練逐批進行。第二，Batch Normalization 帶來的是穩定與加速（可用更大學習率、附帶正則化），不要記成提升非線性能力或更改初始化的技巧。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 28 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "Ioffe & Szegedy, Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift (arXiv)",
+          "url": "https://arxiv.org/abs/1502.03167",
+          "locator": "摘要：各層輸入分布隨前層參數更新而改變（內部共變數偏移），以標準化層輸入處理；允許更高學習率、對初始化較不敏感，並具正則化效果",
+          "checkedAt": "2026-08-06"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -16096,30 +16374,35 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 C。GRPO 是 DeepSeekMath 為強化大型語言模型數學推理能力而提出的強化學習方法，最適合逐步推導解答的推理任務。",
+      "concept": "GRPO（Group Relative Policy Optimization）出自 DeepSeekMath 論文，是近端策略優化（Proximal Policy Optimization, PPO）的變形：它針對同一道題目讓模型抽樣產生一組多個回答，以組內多個輸出的平均獎勵作為基準線（baseline），因此不需要 PPO 額外的價值函數模型，論文說明此設計顯著降低訓練資源，摘要並指出 GRPO「在增強數學推理能力的同時，優化 PPO 的記憶體使用」。\n這類以強化學習微調大型語言模型的方法，適用前提是任務有可評分的最終結果與多步推理過程——數學應用題與邏輯謎題正是如此：答案可驗證對錯，獎勵訊號明確，模型在「逐步推導」的長鏈輸出上獲得回饋後，推理品質能被系統性拉高。",
+      "answerReason": "題目問 GRPO 最適合強化哪一類任務。GRPO 的出處 DeepSeekMath 本身就是為提升開源語言模型的數學推理極限而做，摘要明言 GRPO 用於增強數學推理能力；數學應用題與邏輯謎題的逐步推導有明確可驗證的對錯可作為獎勵訊號，正是這套方法的設計目標，因此選 C。",
+      "optionAnalysis": {
+        "A": "情緒傾向判斷是典型的文本分類任務，以標註資料做監督式訓練或用現成分類模型即可快速歸類，輸出是單一類別、不涉及多步推導。它缺乏 GRPO 所要強化的長鏈推理過程，不是這套方法的設計對象。",
+        "B": "語音轉文字屬於自動語音辨識（ASR），核心是聲學訊號到文字序列的對應，通常以大量語音與文字的配對資料訓練專用模型。GRPO 作用的對象是大型語言模型的推理行為，不處理聲學建模，與即時轉寫的需求搭不上。",
+        "C": "正確。數學應用題與邏輯謎題需要逐步推導且答案可驗證，能為強化學習提供明確的獎勵訊號；GRPO 正是 DeepSeekMath 為強化數學推理而提出的 PPO 變形，用在這類任務上最能發揮其設計目的。",
+        "D": "商品圖片的外觀辨識是電腦視覺的影像分類問題，主流作法是卷積神經網路或視覺 Transformer 的監督式訓練。它的輸入是影像、輸出是類別，沒有語言模型的逐步推理鏈可供 GRPO 優化。"
+      },
+      "trap": "第一，看到「基於強化學習優化大型語言模型」，先想它強化的是「有可驗證結果的多步推理」，數學與邏輯題是代表；分類、轉寫、影像辨識這類單步對應任務不是它的目標。第二，GRPO 與 PPO 的差異在於以組內相對分數取代價值模型來估基準線，屬於訓練效率與記憶體的改良，別誤解成適用任務範圍的擴張。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 29 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models（arXiv:2402.03300）",
+          "url": "https://ar5iv.labs.arxiv.org/html/2402.03300",
+          "locator": "摘要與第 4.1.1 節：GRPO 為 PPO 之變形，用以增強數學推理能力並優化 PPO 的記憶體使用；其捨棄評價模型，改以同一問題多個抽樣輸出的平均獎勵估計基準線，顯著降低訓練資源",
+          "checkedAt": "2026-08-06"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -16159,30 +16442,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 B。顯著性圖標示的是輸入文字中對模型當次預測影響較大的片段，讓律師看見風險判斷倚重了哪些字句。",
+      "concept": "顯著性圖（Saliency Map）是可解釋 AI（Explainable AI, XAI）中的局部解釋方法。原始論文以「類別分數對輸入的梯度」計算每個輸入單元對當次預測的影響，梯度大代表該處稍有變動就會明顯改變模型輸出，因此被視為重要區域；此法最早在影像上提出，針對給定的輸入與類別逐筆產生。\n同樣的原理用到自然語言處理時，衡量單位從像素換成字詞：以梯度等方式計算每個詞對本次預測的貢獻，再以深淺標示在原文上；Li 等人的研究即以梯度反向傳播等方法視覺化各單元的顯著性（salience），衡量其對最終結果的貢獻。在合約風險審查中，這讓律師能看到模型判定高風險時倚重了哪些條款字句，據以檢視判斷是否合理。",
+      "answerReason": "題幹問顯著性圖在此 NLP 情境中「主要用來標示什麼」。它的定義就是針對單一預測，量化輸入各部分（此處為文字片段）對輸出結果的影響程度並視覺化呈現。B 所述「模型進行預測時，輸入文字中對結果影響程度較高的文字片段」與此定義一致，也正好回應律師想了解判斷依據的需求，因此選 B。",
+      "optionAnalysis": {
+        "A": "段落之間的語意相似程度靠文本表示的相似度計算（例如句向量的餘弦相似度），用於比對重複或矛盾條款屬於文本比對分析。顯著性圖衡量的是「輸入對模型輸出的影響」，不是輸入各段落彼此之間的關係，兩者比較的對象不同。",
+        "B": "正確。顯著性圖針對模型的單次預測，計算輸入文字中各片段對該結果的影響程度並標示出來，律師因此能看到風險判定主要依據哪些條款文字，達成可解釋 AI 讓人檢視模型依據的目的。",
+        "C": "標示不同版本合約之間新增或修改的位置是文件版本比對（diff）功能，靠字串或條款結構的比對即可完成，不需要預測模型，也與模型的判斷依據無關。顯著性圖解釋的是模型為何做出當前判斷，而不是兩份文件差在哪裡。",
+        "D": "訓練資料中的高頻詞彙屬於語料庫的整體統計，反映的是資料集特性，與任何一次具體預測無關。顯著性圖是逐筆解釋：同一個詞在不同合約、不同預測中的影響程度可以完全不同，不能用全域詞頻代替。"
+      },
+      "trap": "第一，顯著性圖是「局部」解釋——綁定單一輸入與單次預測；凡是講整體統計（高頻詞）或文件之間比較（版本差異、段落相似）的選項，都不是它的功能。第二，別把「解釋模型依據」與「文本比對工具」混為一談：前者回答模型為什麼這樣判，後者回答兩段文字有多像或差在哪。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 30 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "Simonyan, Vedaldi & Zisserman, Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps (arXiv)",
+          "url": "https://arxiv.org/abs/1312.6034",
+          "locator": "摘要：以類別分數對輸入影像的梯度計算類別顯著性圖，該圖針對給定的影像與類別而產生",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "Li, Chen, Hovy & Jurafsky, Visualizing and Understanding Neural Models in NLP (arXiv)",
+          "url": "https://arxiv.org/abs/1506.01066",
+          "locator": "摘要：提出以梯度反向傳播等方法視覺化單元的顯著性（salience），衡量各單元對最終組合語意的貢獻",
+          "checkedAt": "2026-08-06"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -16222,30 +16516,35 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 D。PDP 呈現的是特徵對預測的平均整體趨勢，無法回答單一批次資料的個別歸因問題。",
+      "concept": "部分依賴圖（Partial Dependence Plots, PDP）是模型層級的全域解釋工具：固定我們關注的特徵（如溫度），把其他特徵的值邊際化（平均掉）之後，畫出模型預測值隨該特徵變動的曲線。scikit-learn 文件說明，PDP 顯示目標回應與所關注輸入特徵之間的依賴關係，呈現的是該特徵的「平均效果」。\n正因為是對整個資料集取平均，PDP 回答的是「整體而言，溫度升高時良品率如何變化」這類全域趨勢問題，不會告訴你「這一筆樣本的預測被哪個特徵推動了多少」。要看單一樣本層級的關係，得改用逐筆各畫一條線的個體條件期望圖（ICE），或 SHAP、LIME 這類局部歸因方法；文件也提醒，PDP 的平均可能掩蓋特徵交互作用造成的異質關係。",
+      "answerReason": "主管想問的是「某一筆瑕疵批次中，溫度是不是主要原因」，這是單一樣本的局部歸因問題。PDP 在計算時已把其他特徵邊際化、對所有樣本取平均，產出的只有溫度對良品率的整體趨勢曲線；平均的過程也可能掩蓋批次之間的異質差異，因此無法據以判斷特定批次的成因，D 正確指出了這個限制。",
+      "optionAnalysis": {
+        "A": "PDP 確實不顯示預測準確率——準確率要在測試集上以評估指標另行計算，這句話本身沒有說錯。但它沒有點中本題的癥結：主管的問題卡在「能不能做單一批次的歸因」，就算 PDP 附上準確率資訊，仍然回答不了個別批次的原因，所以 A 不是最能說明此情境的限制。",
+        "B": "說 PDP 僅能反映模型輸出結果、無法提供任何特徵影響資訊，把它的本職功能整個抹掉了。PDP 存在的目的正是呈現特徵對預測輸出的邊際影響趨勢，例如溫度上升時良品率平均如何變化；它的限制在於只到「平均、全域」的層級，而不是完全沒有特徵資訊。",
+        "C": "PDP 並非只能分析單一特徵：常見實作支援兩個特徵的二維 PDP，以等高線呈現交互影響，只是超過兩個特徵便難以視覺化。更重要的是，本題的困難出在「全域平均」與「單筆歸因」的落差，而不是可分析的特徵數量，C 說的限制既不精確也不是此情境的重點。",
+        "D": "正確。PDP 把其他特徵邊際化後對全體樣本取平均，輸出的是溫度對良品率的整體趨勢；單一瑕疵批次的預測是多個特徵在該筆數值組合下共同作用的結果，平均曲線無法回推這一筆的成因。想做逐筆診斷，應改用 ICE、SHAP、LIME 這類局部解釋工具。"
+      },
+      "trap": "第一，先分清全域解釋與局部解釋：PDP、排列重要性看整體平均，ICE、SHAP、LIME 看單筆樣本；題目一問到「某一筆資料的原因」，就要想到局部工具。第二，別把「PDP 有限制」擴大成「PDP 沒有用」，選項 B 這種全盤否定的敘述通常是干擾項。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 31 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "scikit-learn－5.1. Partial Dependence and Individual Conditional Expectation plots",
+          "url": "https://scikit-learn.org/stable/modules/partial_dependence.html",
+          "locator": "第 5.1.1 節：PDP 顯示目標回應與所關注輸入特徵間的依賴關係，對其餘特徵邊際化，呈現特徵的平均效果；第 5.1.2 節：ICE 逐樣本各畫一條線，PDP 的平均可能掩蓋交互作用造成的異質關係",
+          "checkedAt": "2026-08-06"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -16285,30 +16584,35 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 D。LIME 的代理模型是用來擬合原黑箱模型在目標實例附近預測行為的簡單可解釋模型。",
+      "concept": "LIME（Local Interpretable Model-agnostic Explanations）解釋單一預測的流程是：在要解釋的樣本附近產生大量擾動樣本，拿原黑箱模型對這些擾動樣本評分，再以距離加權訓練一個簡單的可解釋模型（例如稀疏線性模型）去逼近黑箱模型在該鄰域內的輸出，這個簡單模型就是代理模型（Surrogate model）。\nRibeiro 等人的原始論文把這個設計描述為「以在預測附近學習可解釋模型的方式，對任何分類器的預測提供可解釋且忠實的說明」。理解代理模型的兩個關鍵字是「局部」與「近似」：它只需要在目標樣本的鄰域內貼近黑箱模型的行為，離開鄰域就不保證有效；它的用途是解釋，實際的預測仍由原黑箱模型負責。",
+      "answerReason": "題幹說系統「建立了一個簡化模型來近似原模型在該筆資料附近的行為」，這句話就是代理模型的定義：在目標實例（該筆信貸申請）附近，以可解釋的簡單模型擬合原黑箱模型的預測行為，再從簡單模型的權重讀出各特徵在這筆決策中的影響方向與大小，因此選 D。",
+      "optionAnalysis": {
+        "A": "全局代理模型確實是一種存在的解釋手法——以單一簡單模型逼近黑箱模型在整個輸入空間的行為。但 LIME 名稱裡的 Local 表明它刻意只做局部近似：單筆資料附近的行為用線性模型就貼得住，整個決策面卻往往複雜到簡單模型裝不下；把 LIME 的代理模型說成全局解釋所有預測，方向正好相反。",
+        "B": "產生擾動資料是 LIME 流程中的取樣步驟，用來探測黑箱模型在鄰域內的反應，它本身不是代理模型。代理模型是拿這些擾動樣本與黑箱模型的輸出訓練出來的簡單模型，是流程的最終產物；選項把前置的資料生成機制與代理模型混為一談。",
+        "C": "LIME 的代理模型不是獨立訓練的生成式模型，也不負責輔助預測：它以黑箱模型的輸出為擬合目標，存在目的只有解釋這一筆決策。信貸審核結果仍由原模型做成；若拿代理模型參與預測，一離開該筆資料的鄰域，它與原模型的行為就可能明顯偏離。",
+        "D": "正確。代理模型的意義正是在目標實例附近，用一個人看得懂的簡單模型擬合原黑箱模型的預測行為；因為只要求局部貼合，簡單模型的權重就能忠實反映黑箱模型在這筆申請上如何看待各特徵，達成不改動原模型又能解釋個案的目標。"
+      },
+      "trap": "第一，抓住 LIME 的 L（Local）：代理模型只在單筆樣本附近有效，選項寫成「全局解釋所有預測」就是陷阱。第二，分清代理模型的角色是「解釋」而不是「預測」：它不會取代原模型上線，也不是用來生成資料或輔助推論的模型。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 32 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "Ribeiro, Singh & Guestrin, \"Why Should I Trust You?\": Explaining the Predictions of Any Classifier (arXiv)",
+          "url": "https://arxiv.org/abs/1602.04938",
+          "locator": "摘要：LIME 以在預測附近學習可解釋模型的方式，對任何分類器的預測提供可解釋且忠實的說明",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -16348,30 +16652,35 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 B。稀疏專家混合每次推論只啟用部分專家子網路，讓模型總參數規模很大時仍能控制單次運算成本。",
+      "concept": "要同時做到「模型規模大」與「運算有效率」，關鍵技術之一是條件計算（Conditional Computation）：不讓每個輸入都動用全部參數，而是依輸入內容挑選網路的一部分來計算。稀疏專家混合（Sparse Mixture-of-Experts, MoE）是其代表：模型在部分層放入多個並列的專家子網路（Experts），再由可訓練的閘控網路（Gating Network）替每個輸入選出少數幾個專家參與計算，其餘專家閒置。\nShazeer 等人的論文說明，稀疏閘控 MoE 層可由上千個前饋子網路組成，閘控網路為每個樣本決定稀疏的專家組合，在計算效率僅小幅損失的情況下，把模型容量提升超過一千倍。換句話說，「總參數量」與「單次前向實際啟用的參數量」被拆開了：規模可以持續擴大以維持生成品質，單次推論的成本卻只隨被選中的專家數成長。",
+      "answerReason": "題幹的條件是模型規模較大，同時要兼顧運算效率。稠密模型的運算量與總參數同步成長，兩者難以同時成立；稀疏 MoE 以閘控路由讓每次推論只啟用部分專家，總參數大幅擴增時單次計算量仍受控，正是 B 所述「每次僅使用部分模型來提升效率」的設計，因此選 B。",
+      "optionAnalysis": {
+        "A": "單一稠密（Dense）Transformer 的特徵是每個輸入的前向計算都用到全部模型參數，品質可以靠加大參數堆出來，但運算成本也隨參數量等比上升。題幹強調規模較大時仍要兼顧效率，稠密架構恰好是效率隨規模惡化的類型，與需求方向相反。",
+        "B": "正確。稀疏專家混合在每層放置多個專家子網路，由閘控網路依輸入選出少數專家計算、其餘不參與；總參數可以擴充到極大以維持生成品質，單次推論只付出被啟用那部分的成本，同時滿足「規模大」與「有效率」兩個要求。",
+        "C": "生成對抗網路（GAN）由生成器與鑑別器對抗訓練，長於產生逼真影像，早期影像風格轉換確實常用它。但選項描述的是「兩個模型互相比較以提升品質」的訓練機制，沒有觸及「每次只啟用部分參數」的設計，無法說明大規模模型如何兼顧運算效率，而後者才是題幹點名的重點。",
+        "D": "卷積神經網路（CNN）以卷積核擷取影像局部特徵，是視覺任務的基礎架構，也能用於影像轉換。但 CNN 的每次前向仍會用到全部權重，「直接進行影像轉換」的敘述同樣沒有回應題幹「模型規模較大仍兼顧運算效率」的設計問題，說明力不如稀疏啟用的專家混合。"
+      },
+      "trap": "第一，看到「規模大」與「效率」同時出現，先想條件計算與稀疏啟用（MoE），而不是先想模型家族（GAN、CNN）本身。第二，分清「總參數量」與「單次啟用參數量」：MoE 的關鍵是兩者脫鉤，稠密模型則兩者綁在一起，這是 A 與 B 的分水嶺。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 33 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "Shazeer et al., Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer（arXiv:1701.06538）",
+          "url": "https://arxiv.org/abs/1701.06538",
+          "locator": "摘要：稀疏閘控 MoE 層由可達數千個前饋子網路組成，可訓練的閘控網路為每個樣本選出稀疏的專家組合；以條件計算在計算效率僅小幅損失下實現逾千倍的模型容量提升",
+          "checkedAt": "2026-08-06"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：題幹以 2025 年照片轉公仔風格影像服務為背景，未指名特定產品；商用模型是否採 MoE 屬未公開的內部實作，本詳解僅依選項文字的架構特性作答，未認定特定產品的實作方式。查核日期 2026-08-06。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -16411,30 +16720,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 C。CLIP 以網路蒐集的圖文配對資料訓練，DINO 只用未標註影像做自蒸餾，兩者的資料型態不同。",
+      "concept": "兩個模型都不依賴人工逐張標註的類別標籤，但取得監督訊號的來源不同。CLIP（Contrastive Language-Image Pre-training）的訓練資料是從網路蒐集的 4 億對（影像，文字）配對，預訓練任務是判斷哪段文字說明與哪張影像相配，等於把自然語言當成影像表示的監督訊號。\nDINO 則是純影像的自監督方法，論文自述為「無標籤的自蒸餾（self-distillation with no labels）」：同一張未標註影像經過不同裁切與增強後，分別送進學生網路與教師網路，訓練學生的輸出貼近教師，全程不使用文字或人工標籤。因此本題的考點就落在資料型態：CLIP 需要圖文成對資料，DINO 只需要未標註影像。",
+      "answerReason": "題目問訓練資料型態的差異。CLIP 的每筆訓練樣本是一張影像加上一段對應文字，靠配對關係學到圖文對齊的表示；DINO 的訓練樣本只有影像本身，監督訊號由同一影像的不同視角自行產生。C 正確描述「CLIP 用圖像與文字配對資料、DINO 用未標註圖像資料」的對比，因此選 C。",
+      "optionAnalysis": {
+        "A": "監督式學習指使用人工標註的類別標籤（例如 ImageNet 的分類標記）訓練，而 CLIP 與 DINO 的共同賣點正是避開人工逐張標註：CLIP 用網路上天然成對的圖文資料，DINO 完全不用標籤。這個選項對兩個模型的資料型態都描述錯誤。",
+        "B": "「皆使用未標註圖像資料」只對 DINO 成立。CLIP 的訓練資料除了影像還必須有成對的文字說明，否則無法定義「哪段文字配哪張圖」的對比學習任務；把 CLIP 說成只用未標註圖像，抹掉了它賴以運作的語言監督訊號，與論文設定不符。",
+        "C": "正確。CLIP 以 4 億對取自網路的圖文配對做對比學習，文字是它的監督來源；DINO 以未標註影像做無標籤自蒸餾，監督訊號來自同一影像的不同增強視角。兩者對資料的需求一個是「圖加文」、一個是「只有圖」，正是題目要辨別的差異。",
+        "D": "把兩個模型的資料來源互換了：CLIP 並非只用未標註影像，DINO 也不使用圖文配對，敘述與兩篇論文的設定完全相反。記憶時可抓名稱線索——CLIP 的 Language 說明它離不開文字，DINO 論文強調 no labels，只吃未標註影像。"
+      },
+      "trap": "第一，「自監督」不等於「資料只有影像」：CLIP 的監督訊號來自天然成對的文字，DINO 來自影像自身的增強視角，兩者都不需人工標註但資料型態不同。第二，這類對照題最常見的陷阱是 D 這種左右互換，先記死「CLIP＝圖文配對、DINO＝純影像」再核對選項。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 34 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "Radford et al., Learning Transferable Visual Models From Natural Language Supervision（arXiv:2103.00020）",
+          "url": "https://arxiv.org/abs/2103.00020",
+          "locator": "摘要：以 4 億對取自網路的（影像，文字）配對資料預訓練，任務為預測哪段文字說明與哪張影像相配",
+          "checkedAt": "2026-08-06"
+        },
+        {
+          "title": "Caron et al., Emerging Properties in Self-Supervised Vision Transformers（arXiv:2104.14294）",
+          "url": "https://arxiv.org/abs/2104.14294",
+          "locator": "摘要：DINO 為無標籤自蒸餾（self-distillation with no labels）方法，以自監督方式訓練 Vision Transformer，不使用人工標籤",
+          "checkedAt": "2026-08-06"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：題幹將 CLIP 歸為自監督學習；CLIP 論文自述為以自然語言為監督訊號（natural language supervision），學界亦有將其歸為弱監督或圖文對比學習者。本題依官方答案聚焦兩者訓練資料型態的差異，分類名稱的歧義不影響作答。查核日期 2026-08-06。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -16474,30 +16794,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 A。傳統 Transformer 推理時受固定長度上下文窗口限制，難以一次整合散落在長文件各處的資訊。",
+      "concept": "Transformer 以自注意力讓序列中任意兩個位置直接互相參照，但一次能處理的內容受上下文窗口（Context Window）限制：模型生成回應時所能參照的全部文本（含輸入與輸出）必須落在固定的 token 上限內，可視為模型的工作記憶。長篇法規文件常超過窗口，必須截斷或分段餵入，散落在不同段落的條文因此無法在同一次推理中同時被看到。\n即使文件塞得進窗口，長上下文的利用品質也會退化：研究顯示，當關鍵資訊位於長上下文中段時，模型表現明顯下滑；隨著 token 數增加，準確率與召回率也逐步下降。這兩層限制加起來，正好解釋題幹「需整合文件中彼此距離較遠、較不相關的資訊時，連貫性與準確性下降」的現象。",
+      "answerReason": "題幹症狀是：問題需要整合散落在長文件各處、彼此關聯較弱的資訊時，回答品質明顯變差。這對應傳統 Transformer 的限制——推理時只能在固定長度的上下文窗口內作業，超出窗口的內容進不了模型；即便同在窗口內，距離遙遠的分散資訊實際被利用的效率也隨長度下降。A 同時點出固定窗口與難以整合分散資訊兩個要素，最能說明此情境。",
+      "optionAnalysis": {
+        "A": "正確。傳統 Transformer 的可處理長度在推理時有固定上限，長篇法規必須截斷或分段；需要跨段整合的資訊若不在同一個窗口內，模型無法同時參照，即使同在窗口內，分散於前後兩端的關鍵內容也常被利用得不完整，與使用者反映的症狀一致。",
+        "B": "「能記住的內容取決於訓練語料」說的是模型參數化知識的範圍——訓練時沒學過的知識，推理時答不出來，通常靠檢索或微調補足。但題幹的法規文件已經以輸入的形式提供給模型，問題出在讀入與整合長輸入的能力，而非模型先前學過什麼，把症狀歸給訓練語料對不上情境。",
+        "C": "前半句符合事實：自注意力的計算量約隨序列長度平方成長，長序列的處理效率確實下降。錯在後半句「仍可完整處理所有輸入內容」——上下文窗口有固定的 token 上限，超長文件必須截斷或分段，模型無法完整處理任意長度的輸入，這半句與事實相反，整條敘述因此不成立。",
+        "D": "Transformer 的權重在推理階段是固定的，不需要也不會在每次推理後重新訓練；新資訊可以直接放進上下文或透過檢索當場提供給模型使用，只是受窗口長度限制。把「記住新資訊」說成必須重新訓練，混淆了參數更新（訓練）與上下文提供（推理）兩種機制。"
+      },
+      "trap": "第一，分清兩種「記不住」：訓練語料沒涵蓋是知識缺口，靠檢索或微調補；文件塞不進窗口、分散資訊整合不佳，是架構層的上下文限制，靠加長窗口、分段與檢索（RAG）緩解。第二，遇到半對半錯的選項要整句檢查：C 的效率下降是真的，「仍可完整處理」才是致命錯誤。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 35 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "Claude Developer Platform 文件－Context windows",
+          "url": "https://platform.claude.com/docs/en/docs/build-with-claude/context-windows",
+          "locator": "How the context window works：上下文窗口指模型生成回應時所能參照的全部文本，相當於模型的工作記憶；隨 token 數增加，準確率與召回率會逐步下降（context rot）",
+          "checkedAt": "2026-08-06"
+        },
+        {
+          "title": "arXiv－Lost in the Middle: How Language Models Use Long Contexts",
+          "url": "https://arxiv.org/abs/2307.03172",
+          "locator": "關鍵資訊位於長上下文中段時，模型表現顯著下降，顯示長上下文噪音會影響回答品質",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -16537,30 +16868,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 A。持續比對預測值與實際值的差距，並依梯度逐步更新模型內部參數，正是優化器在訓練迴圈中的職責。",
+      "concept": "深度學習的訓練迴圈可以拆成幾個分工明確的元件：模型架構決定資料如何一層層被轉換；損失函數把預測值與實際值的差距量化成一個數字；接著以反向傳播算出損失對每個參數的梯度；最後由優化器（Optimizer）依據這些梯度更新模型內部參數，常見演算法包括 SGD、Adam、RMSprop 等。\nPyTorch 官方文件的描述是：優化器物件會保存當前狀態，並依據計算出的梯度更新參數；訓練時每一步先以 loss.backward() 算出梯度，再呼叫 optimizer.step() 完成一次參數更新。這個「算差距、求梯度、更新參數」的循環反覆進行，直到損失收斂、預測趨於穩定，正是題幹工程師描述的機制。",
+      "answerReason": "工程師的敘述有三個要素：比對預測值與實際值的差距、透過一套機制逐步調整內部參數、直到結果趨於穩定。差距的量化由損失函數負責，但「依據差距逐步調整參數直到收斂」這個執行更新的機制，對應的元件是優化器——它拿到梯度後決定每個參數往哪個方向、移動多少，四個選項中只有 A 承擔這個角色。",
+      "optionAnalysis": {
+        "A": "正確。優化器是訓練迴圈中依梯度更新參數的元件：每一輪以損失函數量化預測與實際值的差距，反向傳播求出梯度後，由優化器（如 SGD、Adam）按學習率與各自的更新規則調整權重，迭代到損失不再明顯下降，與題幹「逐步調整參數直到趨於穩定」的描述一致。",
+        "B": "資料前處理模組在訓練開始前運作，負責清理缺失值、標準化數值、編碼類別等，讓資料變成模型能讀取的格式；它不參與訓練中的參數更新，也不會比對預測值與實際值。題幹描述的是訓練迴圈內反覆迭代的機制，發生時點與職責都對不上。",
+        "C": "模型架構指網路的層數、每層型態與連接方式（如卷積層、注意力層的堆疊），決定參數擺在哪裡、資料怎麼流動；它是「被調整對象」的骨架，本身不是執行調整的機制。工程師說的是那套持續更新參數的流程，而不是網路長什麼樣子。",
+        "D": "激活函數（如 ReLU、Sigmoid）為神經元輸出加入非線性，讓網路能逼近複雜函數；它在前向傳播時逐點運算，不比對預測與實際值，也不主動更新任何參數。它影響的是梯度傳遞的品質，真正拿梯度去改參數的仍是優化器。"
+      },
+      "trap": "第一，把訓練迴圈的分工背清楚：損失函數「量差距」、反向傳播「算梯度」、優化器「改參數」，題目描述哪個動作就選哪個元件。第二，別看到「調整」就想到架構或激活函數：前者是被更新的結構，後者是前向的非線性轉換，都不是執行更新的機制。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 36 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "PyTorch 官方文件－torch.optim",
+          "url": "https://docs.pytorch.org/docs/2.13/optim.html",
+          "locator": "套件說明：torch.optim 實作各種最佳化演算法；優化器物件保存當前狀態並依據計算出的梯度更新參數，以 loss.backward() 計算梯度後呼叫 optimizer.step() 執行更新，提供 SGD、Adam 等演算法",
+          "checkedAt": "2026-08-06"
+        },
+        {
+          "title": "Keras 官方文件－Optimizers",
+          "url": "https://keras.io/api/optimizers/",
+          "locator": "優化器為編譯 Keras 模型的兩個必要引數之一（另一為損失函數），文件列出 SGD、Adam、RMSprop 等優化器與學習率排程用法",
+          "checkedAt": "2026-08-06"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -16600,30 +16942,47 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 D。顯著性圖以梯度直接算出影像中每個像素對本次預測的影響力，天生就是標示關鍵區域的工具。",
+      "concept": "醫院的需求是：對「這一張」X 光的「這一次」判讀，標出影像中影響最大的區域。這屬於影像上的局部解釋，而且要求輸出本身就是與影像對齊的重要性熱圖。\n顯著性圖（Saliency Map）正是為此設計：Simonyan 等人的論文以「類別分數對輸入影像的梯度」計算類別顯著性圖，梯度大的像素代表稍微改動就會明顯影響該類別的分數，即為模型判讀時最敏感的區域；結果以熱度圖疊在原影像上，放射科醫師可以直接對照病灶位置，檢視模型是否看對地方。它針對給定的影像與類別逐筆產生，粒度直達像素，不需要先把影像轉成表格特徵。",
+      "answerReason": "四個選項中，LIME、SHAP 與 PDP 都是與資料型態無關的通用歸因框架，要用在影像上得先做超像素分割或遮蔽取樣，產出的是區塊或特徵層級的近似歸因；顯著性圖則是針對影像模型的原生方法，直接以梯度產生與原圖逐像素對齊的重要性熱圖，「標示影像中對預測結果影響最大的區域」就是它的定義輸出，最直接滿足評估委員會的需求，因此選 D。",
+      "optionAnalysis": {
+        "A": "LIME 的作法是在目標樣本附近產生擾動樣本，再以簡單模型做局部近似；用於影像時需先切成超像素、反覆遮蔽採樣，得到的是區塊層級的近似解釋，計算成本高且結果受分割方式影響。它可以間接標出重要區塊，但不如以梯度直接產生像素級熱圖的方法來得直接。",
+        "B": "SHAP 以 Shapley 值把單筆預測拆解成各特徵的貢獻，理論性質完整，常用於表格資料的逐筆歸因；用在影像上同樣要透過遮蔽或近似取樣把像素群當成特徵處理，運算負擔大。本題只要求標示影響最大的影像區域，SHAP 的特徵貢獻框架不是為影像區域標示而生的最直接工具。",
+        "C": "部分依賴圖（PDP）呈現的是某個特徵在整個資料集上對預測的平均影響趨勢，屬於全域解釋，輸入通常是表格化特徵。本題要的是「單一病患、單一次診斷」的區域標示，PDP 既不逐筆解釋，也不輸出影像熱圖，層級與輸出形式都對不上需求。",
+        "D": "正確。顯著性圖以類別分數對輸入影像逐像素求梯度，直接得到「哪些像素最影響本次判讀」的熱圖，針對給定影像與類別逐筆產生，可疊在 X 光片上供醫師比對病灶，正是「標示影像中影響最大區域」需求的原生解法。"
+      },
+      "trap": "第一，先分層級再選工具：PDP 是全域平均，LIME、SHAP、顯著性圖才做單筆解釋；題目問單一影像的判讀依據，就先刪掉 PDP。第二，同屬局部解釋時再比「直接程度」：顯著性圖是影像原生方法、輸出像素級熱圖，LIME 與 SHAP 是通用框架，需先分割或遮蔽才能套到影像上。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 37 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "Simonyan, Vedaldi & Zisserman, Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps (arXiv)",
+          "url": "https://arxiv.org/abs/1312.6034",
+          "locator": "摘要：以類別分數對輸入影像的梯度計算類別顯著性圖，該圖針對給定的影像與類別而產生",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "Ribeiro, Singh & Guestrin, \"Why Should I Trust You?\": Explaining the Predictions of Any Classifier (arXiv)",
+          "url": "https://arxiv.org/abs/1602.04938",
+          "locator": "摘要：LIME 以在預測附近學習可解釋模型的方式，對任何分類器的預測提供可解釋且忠實的說明",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "Lundberg & Lee, A Unified Approach to Interpreting Model Predictions (arXiv)",
+          "url": "https://arxiv.org/abs/1705.07874",
+          "locator": "摘要：SHAP 為每個特徵指派對應於特定預測的重要性數值，屬於加法式特徵歸因",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：LIME 與 SHAP 經超像素分割或遮蔽取樣後亦能產生影像區域級解釋，本題判 D 的依據是題幹強調「最能直接」標示影像區域，而顯著性圖以梯度原生輸出像素級熱圖，屬程度比較而非絕對排除，建議複核者確認此判準。查核日期 2026-08-06。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -16663,30 +17022,47 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 C。異常樣本難以事先完整標記、只能以大量正常評論的分布找偏離，對應半監督式設定下的異常偵測。",
+      "concept": "異常偵測的資料現實是：正常樣本極多，異常樣本稀少、樣態多變且難以事先窮舉標記。常見做法是主要以正常資料學習「正常長什麼樣」，再把明顯偏離正常分布的新樣本判為異常；scikit-learn 文件把這種「以未被異常污染的資料建模、再對新觀測值偵測異常」的設定稱為新奇偵測（Novelty Detection），文獻上也常稱為半監督式異常偵測——它介於兩端之間：不像監督式需要兩類標註齊備，也不是毫無先驗的探索，而是利用「訓練資料幾乎都是正常」這個已知條件。\n題幹的系統正是這個設定：平台握有大量正常評論，要偵測的是大量重複貼文、機器人生成內容這類難以事先完整標記的異常行為，因此以正常分布為基準、對偏離者示警是最合適的框架。",
+      "answerReason": "題幹給了兩個條件：異常樣本難以事先完整標記（排除需要兩類標註齊備的作法），以及系統主要依據大量正常評論的分布來識別偏離行為（以正常資料建模、對偏離示警）。這正是半監督式異常偵測的定義——用幾乎都是正常的資料學習正常分布，新評論若明顯偏離該分布即視為異常，連未曾見過的新型灌水手法也能因偏離而被抓到，因此選 C。",
+      "optionAnalysis": {
+        "A": "關聯規則挖掘從交易式資料中找「哪些項目經常一起出現」的規律，典型應用是購物籃分析；用在評論上找出常見字詞組合，產出的是共現規則，而不是「偏離正常分布」的判定。它沒有把正常行為建成可比對的基準，無法對新型異常評論示警，與題幹的偵測目標不合。",
+        "B": "監督式二元分類要同時有足量且具代表性的正常與異常標註樣本，才能學出兩類的邊界；題幹已言明異常樣本難以事先完整標記，而且機器人手法會不斷翻新，分類器只認得訓練時看過的異常型態，新手法會直接漏接。標註前提不成立，是它在本題出局的原因。",
+        "C": "正確。以大量正常評論學習正常行為的分布，再把明顯偏離的評論行為（如異常密集的重複貼文、非人類的發文節奏）標記出來；這種只需正常資料、不必窮舉異常型態的設定，正是半監督式異常偵測的用法，scikit-learn 稱之為新奇偵測。",
+        "D": "強化學習讓代理人與環境互動，依獎勵訊號逐步調整行動策略，適合下棋、機器人控制、廣告出價這類序列決策問題。評論異常偵測是對既有資料做判定，沒有可互動的環境，也沒有現成的獎勵函數可回饋，套用強化學習缺乏成立的前提。"
+      },
+      "trap": "第一，用「標註狀況」決定框架：兩類標註齊備用監督式分類，幾乎只有正常資料就走半監督式（新奇偵測）路線，完全沒有先驗才輪到純非監督探索。第二，別把「找出常見字詞組合」與「找出偏離正常的行為」混為一談：前者是共現規律，後者才是異常偵測的目標。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 38 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "scikit-learn－Novelty and Outlier Detection",
+          "url": "https://scikit-learn.org/stable/modules/outlier_detection.html",
+          "locator": "新奇偵測以正常資料建模，異常樣本偏離該模型",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "scikit-learn－1.14. Semi-supervised learning",
+          "url": "https://scikit-learn.org/stable/modules/semi_supervised.html",
+          "locator": "1.14 節：半監督式學習指訓練資料中僅部分樣本有標註，估計器會利用額外的未標註資料改善泛化",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-35～3-38：機器學習分為監督式（以有標記數據學習輸入與輸出的映射）、非監督式（不依賴標記，分析資料內在結構做聚類與降維）與強化學習（代理與環境互動、依獎勵回饋更新策略）",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：「以純正常資料訓練的異常偵測」在文獻中有半監督式異常偵測、新奇偵測（novelty detection）、單類分類等不同稱呼，scikit-learn 文件歸於 novelty detection；本題依官方答案採半監督式的說法，名詞使用待複核者確認。查核日期 2026-08-06。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -16726,30 +17102,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 C。CRF 直接對標籤序列給定輸入的條件機率 P(y|x) 建模，屬於鑑別式模型。",
+      "concept": "生成式與鑑別式模型的分界在於建模對象。生成式模型學習輸入與輸出的聯合分佈 P(x,y)（或資料本身的分佈），可以由分佈生成新樣本，序列標註中的代表是隱馬可夫模型（HMM）；鑑別式模型則直接學習給定輸入下輸出的條件分佈 P(y|x)，把全部力氣放在「怎麼判對」，不花成本描述輸入資料如何生成。\nSutton 與 McCallum 的 CRF 導論說明：CRF 就是直接對條件分佈 p(y|x) 建模的方法，是 HMM 的鑑別式對應版本，兩者的關係如同 naive Bayes（生成式）之於 logistic regression（鑑別式）；由於不必對輸入建模，CRF 能自由使用大量重疊的輸入特徵（如大小寫、詞綴、前後文），並在 NER、詞性標註等序列標註任務中同時考慮相鄰標籤的相依性。",
+      "answerReason": "題幹點名 NER 這種要為整句每個詞指派標籤、並考慮詞與詞關聯的序列標註任務，並指定以 CRF 作為模型。CRF 的定義就是直接對「給定整句輸入時，整條標籤序列的條件機率」建模，訓練與推論都圍繞 P(y|x) 進行，不建模輸入句子本身的生成過程，因此在模型類型上屬於鑑別式模型，選 C。",
+      "optionAnalysis": {
+        "A": "生成式模型學的是聯合分佈 P(x,y)，能夠描述資料如何生成，序列標註中的代表是 HMM：先假設標籤序列生成，再由標籤生成觀測詞。CRF 恰好是把這個方向反過來的設計——只對 P(y|x) 建模、不描述 x 的生成，把 CRF 歸為生成式，正好選到它刻意避開的那一類。",
+        "B": "無監督模型指不使用標註資料、從資料自身結構學習的方法，如分群與降維。CRF 的訓練恰恰需要逐詞標好標籤的語料（如人名、地名、組織的 BIO 標記），是典型的監督式訓練；NER 資料集的標籤就是它的學習目標，說它無監督與其訓練方式相反。",
+        "C": "正確。CRF 直接對條件分佈 P(y|x) 建模，屬於鑑別式模型；它以特徵函數同時看整句輸入與相鄰標籤，推論時找出整條序列的最佳標籤組合，既保留鑑別式可用豐富特徵的優點，又能處理標籤之間的相依性，正適合 NER 這類序列標註任務。",
+        "D": "自迴歸模型把序列機率拆成「逐步以前文預測下一個元素」，如 GPT 這類語言模型逐 token 生成。CRF 不是逐步生成輸出，而是對整條標籤序列做全域正規化，一次性求條件機率最大的序列；兩者處理序列的方式不同，自迴歸也不是 CRF 的分類歸屬。"
+      },
+      "trap": "第一，分類看「建模對象」：學 P(x,y) 或能生成資料的是生成式，直接學 P(y|x) 的是鑑別式；CRF、logistic regression 屬後者，HMM、naive Bayes 屬前者。第二，別把「處理序列」與「自迴歸」畫上等號：CRF 靠標籤間的相依結構與全域正規化處理序列，不是逐步生成。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 39 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "Sutton & McCallum, An Introduction to Conditional Random Fields（arXiv:1011.4088）",
+          "url": "https://ar5iv.labs.arxiv.org/html/1011.4088",
+          "locator": "第 2.3 節：CRF 直接對條件分佈 p(y|x) 建模，是 HMM 的鑑別式對應，關係如同 naive Bayes 之於 logistic regression；第 5 節列出 NER、詞性標註等序列標註應用",
+          "checkedAt": "2026-08-06"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-48：生成式 AI 學習資料的聯合分佈或邊際分佈並生成新樣本，典型模型包括 GAN、VAE 與擴散模型",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -16789,30 +17176,47 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 C。GAN 以生成器與鑑別器對抗學習資料分佈，能創作訓練集中未曾出現的新旋律，而非重播或重建既有內容。",
+      "concept": "題幹的三個要求把答案範圍限定得很清楚：要能「生成全新旋律」（必須是生成式模型）、不能「拼接既有片段」（排除靠既有樣本作答的實例式方法）、也不能「僅進行資料的重建」（排除以重建輸入為目標的模型）。\n生成對抗網路（GAN）由兩個網路對抗訓練：生成模型 G 捕捉資料分佈、負責產生樣本，鑑別模型 D 估計樣本來自真實訓練資料的機率，G 的訓練目標是讓 D 分不出真假。訓練收斂後，G 學到的是音樂資料的整體分佈，可以從隨機雜訊取樣，生成訓練集中不存在、卻符合學到的結構與風格的新樣本。官方學習指引也把 GAN 與 VAE、擴散模型並列為學習資料分佈並生成新樣本的生成式模型代表。",
+      "answerReason": "技術長的要求是真正學習音樂的結構與風格、創作從未出現過的新旋律。四個選項中，KNN 與隨機森林是判別與預測用途，無法生成內容；自編碼器的訓練目標是把輸入壓縮後重建回原樣，對應題幹明文排除的「僅進行資料的重建」；只有 GAN 以對抗訓練學習資料分佈，從分佈中取樣產生全新樣本，同時滿足「學結構風格」與「生成新旋律」兩個要求，因此選 C。",
+      "optionAnalysis": {
+        "A": "K-近鄰演算法是基於實例的方法：預測時找出訓練集中最相近的 K 筆樣本，以多數決或平均作答，本身不學習資料分佈，也不產生新內容。硬要拿它「生成」音樂，結果只能是檢索並重複既有歌曲片段，正好落入題幹禁止的「播放或拼接既有歌曲」情況。",
+        "B": "自編碼器由編碼器把輸入壓縮成低維表示、解碼器再重建回原輸入，訓練目標是重建誤差最小，常用於降維、去噪與異常偵測。題幹明文排除「僅進行資料的重建」，而標準自編碼器缺乏可供取樣的分佈假設，難以直接生成新旋律；要具備生成能力需改造成 VAE 等變形，那已不是本選項所稱的自編碼器。",
+        "C": "正確。GAN 的生成器從隨機雜訊產生樣本，鑑別器判斷樣本是真是假，兩者對抗迭代後，生成器學到訓練資料的分佈，能生成符合音樂結構與風格、卻未曾在訓練集中出現的新旋律；調整取樣位置還能帶出風格變化，符合平台提供多樣靈感素材的需求。",
+        "D": "隨機森林是多棵決策樹的集成，以投票或平均輸出類別或數值，強項是結構化資料的分類與迴歸，例如判斷一首歌屬於哪種曲風。它的輸出是標籤或分數，不是可播放的旋律序列，也不建模資料分佈，無從生成新的音樂內容。"
+      },
+      "trap": "第一，先分「判別」與「生成」：KNN、隨機森林輸出類別或數值，生成新內容要找 GAN、VAE、擴散模型這一族。第二，再用題幹的排除條件收斂答案：「不能只重建」踢掉自編碼器，「不能拼接既有片段」踢掉實例式方法，剩下的生成式模型才是答案。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 40 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "Goodfellow et al., Generative Adversarial Networks（arXiv:1406.2661）",
+          "url": "https://arxiv.org/abs/1406.2661",
+          "locator": "摘要：生成模型 G 捕捉資料分佈，鑑別模型 D 估計樣本來自訓練資料的機率；G 的訓練目標是最大化 D 犯錯的機率，兩者構成極小極大雙人賽局",
+          "checkedAt": "2026-08-06"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-48：生成式 AI 學習資料的聯合分佈或邊際分佈並生成新樣本，典型模型包括 GAN、VAE 與擴散模型",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-23：檢核題第 8 題解析指出決策樹、線性迴歸和貝氏分類雖是重要的機器學習方法，但並不擅長生成新的內容",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -16852,30 +17256,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 C。SVM 在高維度、樣本相對有限時表現良好，但訓練要解二次規劃問題，樣本量一大運算成本便顯著上升。",
+      "concept": "支援向量機（Support Vector Machine, SVM）是監督式分類方法，核心是找出與最近樣本（支援向量）距離最大的分類超平面，搭配核技巧（kernel trick）可處理非線性邊界；官方學習指引將它列為常見分類方法，特別適合二元分類。\nscikit-learn 文件整理它的特性：在高維度空間有效，即使特徵維度大於樣本數仍然有效，且決策函數只用到支援向量這個子集，記憶體使用有效率。代價在訓練端：其核心是二次規劃（QP）問題，libsvm 實作的訓練複雜度介於「特徵數×樣本數平方」與「特徵數×樣本數三次方」之間，計算與儲存需求會隨訓練樣本數快速上升，因此樣本量非常大時訓練成本顯著增加。",
+      "answerReason": "C 同時說中 SVM 的強項與限制：高維度且樣本數相對有限的情境表現良好，呼應文件所列「在高維空間有效、維度大於樣本數仍有效」的優點；而訓練資料量龐大時，二次規劃求解的計算與儲存成本快速上升。這與 scikit-learn 對 SVM 優缺點的描述一致，是四個選項中唯一正確刻畫其特性的敘述，因此選 C。",
+      "optionAnalysis": {
+        "A": "這個選項把「大規模非結構化資料」與「自動適應新資料」湊在一起，兩點都不符：影像、語音等非結構化資料的主流作法是深度學習而非 SVM；標準 SVM 是批次訓練模型，訓練完成後參數固定，遇到分布改變的新流量必須重新訓練，並不存在自動適應新進資料的特性。",
+        "B": "透過多個模型集體決策提升穩定性描述的是集成學習（Ensemble Learning），例如隨機森林以多棵樹投票、Bagging 以重抽樣訓練多個基模型再整合。SVM 是單一模型，靠最大化分類間隔取得泛化能力，並不是靠多個模型之間的投票或平均。",
+        "C": "正確。SVM 在高維度空間有效，特徵維度大於樣本數時仍可運作，適合樣本相對有限的情境；但訓練要解二次規劃，時間複雜度約在樣本數的二至三次方之間，資料量一大，計算與儲存成本便顯著上升，這正是它在大規模資料上的主要瓶頸。",
+        "D": "具備逐層抽象化的特徵自動萃取能力是深度神經網路（如 CNN）的招牌特性，卷積層會自動從影像、語音中學出由低階到高階的特徵。SVM 不會自動萃取特徵，效果取決於人工設計的特徵與核函數的選擇，兩者的分工正好相反。"
+      },
+      "trap": "第一，分清楚「高維度」與「大樣本」：SVM 擅長高維、中小樣本，樣本量才是它的瓶頸，兩者常被混為一談。第二，「集體決策」是集成學習的關鍵字、「自動萃取特徵」是深度學習的關鍵字，看到這兩句就不應該選 SVM。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 41 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "scikit-learn－1.4. Support Vector Machines",
+          "url": "https://scikit-learn.org/stable/modules/svm.html",
+          "locator": "優點：在高維空間有效、維度大於樣本數仍有效；1.4.4 Complexity：計算與儲存需求隨訓練樣本數快速增加，libsvm 實作的訓練複雜度介於 O(n_features×n_samples²) 與 O(n_features×n_samples³) 之間",
+          "checkedAt": "2026-08-06"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-36：支援向量機透過建立最佳的分類邊界（超平面）將數據劃分為不同類別，特別適合二元分類，例如以醫學影像判別腫瘤良惡性",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -16915,30 +17330,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 C。LIME 是解釋單筆預測的局部解釋方法，最適合說明某一筆貸款申請為何被模型拒絕。",
+      "concept": "可解釋人工智慧（Explainable AI, XAI）要回答的是「模型為什麼做出這個預測」。LIME（Local Interpretable Model-agnostic Explanations）是其中的局部解釋方法：針對單一筆預測，在該樣本附近產生擾動樣本、觀察黑盒模型的輸出變化，再以線性模型等可解釋模型近似黑盒模型在這個局部的行為，從而指出哪些輸入因素把這筆預測推向目前的結果。\n名稱中的三個關鍵字就是它的定位：Local（解釋單筆預測而非整個模型）、Interpretable（用人看得懂的簡單模型呈現）、Model-agnostic（不限模型種類，任何分類器都適用）。",
+      "answerReason": "C 是典型的單筆決策歸因情境：某「一筆」貸款申請被模型拒絕，想知道這筆資料中各項因素與結果之間的關聯。這正是 LIME 的用途——對個別預測做局部解釋，讓金融機構能向申請人說明拒絕的依據。其餘三個選項處理的是系統效能與資安工程問題，不涉及解釋模型預測，因此選 C。",
+      "optionAnalysis": {
+        "A": "分析訊息傳輸效率瓶頸屬於系統效能分析與網路工程的範疇，用的是監控指標、鏈路追蹤與壓力測試等工具。它診斷的對象是系統的吞吐量與延遲，不是機器學習模型的預測結果，自然用不上解釋預測的 LIME。",
+        "B": "強化資料安全與隱私保護靠的是加密、存取控制、去識別化、差分隱私等安全技術。XAI 的方向是把模型決策攤開給人檢視，與「隱藏、保護資料」追求的目標不同；LIME 本身不提供任何防護機制，無法達成這個選項描述的工作。",
+        "C": "正確。單筆貸款申請被拒，正是「解釋個別預測」的場景：LIME 在這筆申請資料附近建立局部可解釋模型，指出收入、負債比等哪些因素把預測推向拒絕，協助機構向申請人與監理單位說明決策依據。",
+        "D": "監控並優化推薦系統的回應速度屬於效能調校與系統維運，手段是快取、負載平衡、模型壓縮等。LIME 解釋的是模型「為何給出這個結果」，不會讓系統變快；把解釋工具當成效能工具，是類別上的誤植。"
+      },
+      "trap": "第一，先分辨問題是「解釋模型決策」還是「系統效能、資安工程」：LIME 只處理前者。第二，記住 LIME 的 L 代表 Local，它解釋的是單一筆預測；題目出現「某筆申請」「這位病人」等個案字眼時，就是局部解釋方法的訊號。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 42 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "Ribeiro, Singh & Guestrin, \"Why Should I Trust You?\": Explaining the Predictions of Any Classifier (arXiv)",
+          "url": "https://arxiv.org/abs/1602.04938",
+          "locator": "摘要：LIME 以在預測附近學習可解釋模型的方式，對任何分類器的預測提供可解釋且忠實的說明",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-35：模型可解釋性與人為監督是醫療、法律等高風險領域的應用前提",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -16978,30 +17404,35 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 B。SHAP 值是單筆預測的特徵歸因，說明這位申請人的各項特徵分別把評分往上推或往下拉多少。",
+      "concept": "SHAP（SHapley Additive exPlanations）借用合作賽局的 Shapley 值：把一筆預測看成各特徵「合作」產生的成果，依每個特徵加入與否造成的邊際變化，把預測值與基準值（通常是所有樣本的平均輸出）之間的差距，公平分配給各個特徵。\nLundberg 與 Lee 的原始論文說明，SHAP 為每個特徵指派一個「對應於特定預測」的重要性數值，屬於加法式特徵歸因：各特徵的貢獻值有正有負、可以相加，加總後正好還原這筆預測偏離基準值的幅度。因此對單一申請人而言，SHAP 值回答的是：他的每一項特徵，分別把風險評分往上推或往下拉了多少。",
+      "answerReason": "分析師問的是「對於某位特定申請人的評分，各項輸入特徵分別貢獻多少」，這是逐筆的局部歸因問題。B 描述的正是 SHAP 值的內容：針對這位申請人，各特徵各自讓評分上升或下降的影響程度，方向與幅度並存，與 Shapley 值把單筆預測差距分配給各特徵的定義一致，因此選 B。",
+      "optionAnalysis": {
+        "A": "「訓練過程中對結果穩定性的影響」講的是訓練動態與模型穩健性分析，例如換一批資料重訓後結果變動多大，屬於模型驗證議題。SHAP 是在模型訓練完成後解釋單筆預測的輸出，不觀察訓練過程，也不衡量訓練的穩定性。",
+        "B": "正確。SHAP 值是各特徵對「這一筆」預測的貢獻分配：正值代表把該申請人的風險評分往上推，負值代表往下拉，絕對值大小代表影響程度，加總後可還原評分與基準值的差距，正是分析師想要的資訊。",
+        "C": "在所有客戶資料上衡量各特徵對整體預測準確度的影響，是全域特徵重要性的問題，常用排列重要性（permutation importance）等方法，或把多筆 SHAP 值取絕對值平均後彙總。本題問的是單一申請人的局部歸因，層級不同；把單筆貢獻說成整體準確度影響，就答非所問。",
+        "D": "特徵在模型中被使用的頻率是另一種粗略的重要性統計，例如樹模型計算某特徵被用來分裂節點的次數。它只說明特徵被用得多不多，不帶方向、不帶量值，更不專屬於特定申請人；SHAP 值則是帶正負號、對應單筆預測的貢獻量。"
+      },
+      "trap": "第一，分清楚「局部」與「全域」：SHAP 值本體是單筆預測的歸因，全域重要性是把多筆結果再彙總的衍生用法。第二，SHAP 值有正負方向，不是次數或頻率統計；題目強調「上升或下降的影響」時，就是在指向帶符號的貢獻值。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 43 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "Lundberg & Lee, A Unified Approach to Interpreting Model Predictions (arXiv)",
+          "url": "https://arxiv.org/abs/1705.07874",
+          "locator": "摘要：SHAP 為每個特徵指派對應於特定預測的重要性數值，屬於加法式特徵歸因",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -17041,30 +17472,35 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 C。超大型模型每次推理的延遲與資源消耗都遠高於小型模型，部署時必須在模型效能與營運成本之間權衡。",
+      "concept": "大型語言模型的推理（inference）成本與模型規模直接相關：每生成一個 token，都要把上百億甚至上千億個參數載入運算一次，參數量越大，所需的 GPU 記憶體、算力與電力越多，回應延遲也越長。以 120B 參數等級的模型服務高流量的客服與風控場景，每次請求的運算成本會遠高於數十億參數的小型模型。\n因此企業部署超大型模型時，核心課題是「模型效能與營運成本的權衡」：是否所有任務都需要最大的模型、能否以較小模型或量化、蒸餾等技術處理多數請求，把大型模型留給高難度任務。效率化研究綜述也指出，大型語言模型的卓越能力伴隨可觀的資源需求，發展效率技術正是為了因應這個挑戰。",
+      "answerReason": "題目問部署超大型模型於正式環境時「最需要優先考量」的因素。C 指出推理延遲較高、運算資源消耗龐大、每次請求成本遠高於小型模型，需在效能與營運成本間審慎權衡——這是 120B 等級模型上線時真實且無法迴避的工程與財務課題。A、B、D 的敘述則各自包含與事實不符的前提，因此選 C。",
+      "optionAnalysis": {
+        "A": "輸出結果的變異程度主要由解碼策略控制，例如溫度與取樣參數；把溫度調低或改用貪婪解碼，相同輸入即可得到高度一致的輸出。參數量龐大並不會導致「每次輸出差異極大」，這個選項把生成隨機性的來源歸因到了錯的地方。",
+        "B": "批次處理（batching）是大型模型推理服務的標準優化手段，推理伺服器普遍以連續批次（continuous batching）把多個請求併批計算來提高吞吐量。超大型模型不但支援批次處理，實務上反而更依賴它分攤成本，選項的前提與工程現況相反。",
+        "C": "正確。參數量越大，每個 token 的運算量與所需記憶體越多，推理延遲與單次請求成本隨之上升；在高併發的正式環境，這會直接反映在 GPU 數量與電力帳單上。因此上線前必須評估模型效能是否值得這些營運成本，或改以較小模型、壓縮技術取得平衡。",
+        "D": "目前主流的大型語言模型在推理時不會依任務難易自動增減運算資源：稠密架構對每個 token 都動用全部參數，資源配置由部署方的服務架構決定，而非模型自行調整。以此為由主張不需考量推理成本，前提並不成立。"
+      },
+      "trap": "第一，分辨「模型能力」與「營運成本」是兩本帳：模型越大能力通常越強，但延遲與單次請求成本也越高，題目問的是部署階段的優先考量。第二，回應一致性問題出在解碼參數而非參數量，看到把輸出隨機性怪罪於模型大小的敘述要提高警覺。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 44 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "Efficient Large Language Models: A Survey（arXiv:2312.03863）",
+          "url": "https://arxiv.org/abs/2312.03863",
+          "locator": "摘要：大型語言模型的能力伴隨可觀的資源需求，凸顯發展效率技術以因應其效率挑戰的必要",
+          "checkedAt": "2026-08-06"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -17104,30 +17540,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 B。路口監視畫面是二維影像，車輛類型識別是影像辨識任務，卷積神經網路正是為此設計的架構。",
+      "concept": "挑選神經網路架構的第一步是看資料型態與任務需求。監視器畫面是二維影像，要辨識畫面中的汽車、機車、公車屬於影像分類與物件辨識任務。卷積神經網路（CNN）以卷積層的局部感受野掃過影像，抽取邊緣、紋理等局部特徵，再經池化層降維，逐層組合出車輛輪廓這類高階特徵；官方學習指引列出的 CNN 應用場景正是影像辨識、物件偵測與圖像分割。\n相對地，RNN 與 LSTM 是為序列資料設計，靠循環連結記住先前輸入，適合語音、文字與時間序列；MLP 則把輸入攤平成一維向量後以全連接層處理，會丟失影像的空間結構。",
+      "answerReason": "題目要處理的輸入是路口監視攝影機的影像，任務是即時辨識畫面中的車輛類型。這需要從像素中萃取空間特徵並判斷物件類別，正是 CNN 的設計目標與典型應用（影像辨識、物件偵測），因此選 B。其餘選項的架構都以序列或一維向量為處理對象，不是影像任務的首選。",
+      "optionAnalysis": {
+        "A": "循環神經網路（RNN）以循環連結保存先前時刻的資訊，專為語音、文字這類有時間順序的序列資料設計。單張影像的像素關聯是空間上的鄰近關係而非時間先後，RNN 缺少卷積的局部特徵萃取能力，不是影像辨識的合適主幹。",
+        "B": "正確。CNN 的卷積層以共享權重的濾波器掃描影像、抽取局部特徵，池化層降維並保留重要資訊，能有效學出車輛的形狀與紋理特徵；影像辨識與物件偵測正是官方學習指引所列的 CNN 應用場景，符合路口車輛類型識別的需求。",
+        "C": "長短期記憶網路（LSTM）是 RNN 的改良型，靠遺忘門、輸入門與輸出門解決長序列訓練時的梯度消失問題，擅長捕捉長期依賴，常用於語音辨識與文本處理。它處理的仍是序列資料，影像中的空間結構不是它的設計對象。",
+        "D": "多層感知機（MLP）由全連接層組成，需先把影像攤平成一維向量，空間鄰近關係因此被打散；且每個像素都連接到每個神經元，參數量隨影像解析度暴增，也沒有卷積的權重共享與平移不變性，處理影像的效率與效果都不如 CNN。"
+      },
+      "trap": "第一，先看資料的關聯型態：影像是空間鄰近關係選 CNN，語音文字是時間先後關係選 RNN 或 LSTM。第二，LSTM 是 RNN 家族處理長期依賴的改良版，不要因為題幹出現「即時」兩字就聯想到時間序列架構，判斷依據是輸入資料本身的型態。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 45 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-14～3-15：CNN 以卷積層提取局部特徵、池化層降維，應用場景為影像辨識、物件偵測與圖像分割；3-15～3-16：RNN 專為序列數據設計，適合語音、文本等時間序列特性的資料",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-15：LSTM 透過遺忘門、輸入門和輸出門，有效解決了梯度消失問題；GRU 結構較簡單但效果相近",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -17167,30 +17614,35 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 C。AutoSkill 的目標是把反覆出現的互動經驗萃取成可重複使用的明確技能模組，讓代理跨會話累積能力。",
+      "concept": "AutoSkill 是 2026 年提出的 LLM 代理（agent）終身學習框架。論文指出：使用者在實際應用中會反覆表達穩定的偏好與要求（例如減少幻覺、遵循機構的寫作慣例），但這些互動經驗很少被整併成可重複使用的知識，代理因此難以跨會話累積個人化能力。AutoSkill 的做法是從對話與互動軌跡中自動萃取、維護並重複使用「技能」，讓重複出現的經驗沉澱為明確的技能模組，之後遇到相關請求時動態注入，全程不需重新訓練底層模型。\n它被設計成與模型無關（model-agnostic）的外掛層，並提供標準化的技能表示，便於在不同代理、使用者與任務之間共享轉移。",
+      "answerReason": "AutoSkill 論文摘要開宗明義點出問題：互動經驗很少被整併成可重複使用的知識；而框架的目標正是讓代理從對話與互動軌跡中自動萃取、維護並重複使用技能。C 的「將重複的互動經驗轉化為可重複使用的明確技能模組」就是這件事的直接描述，因此選 C。",
+      "optionAnalysis": {
+        "A": "AutoSkill 是建立在 LLM 代理之上的外掛層，設計成與各種既有模型相容，目的在強化代理跨會話累積能力，而不是降低對大型語言模型的依賴；底層任務仍由 LLM 執行，框架沒有以其他系統取代 LLM 的意圖。",
+        "B": "AutoSkill 明確標榜「不需重新訓練底層模型」：技能以外掛形式在請求時動態注入，模型參數自始至終不變。持續更新模型參數以提升表現，描述的是微調或持續學習的路線，與 AutoSkill 把知識放在參數之外的設計相反。",
+        "C": "正確。框架的核心流程就是把使用者反覆出現的偏好與做法，從對話與互動軌跡中萃取成明確、標準化的技能模組，之後自動選用並注入相關請求，讓經驗得以跨會話重複使用並持續自我演化。",
+        "D": "透過檢索外部知識改善回應品質是檢索增強生成（RAG）的定位：從外部知識庫取回文件內容供模型作答。AutoSkill 注入的是從自身互動經驗蒸餾出的技能（做事方法與偏好），來源是使用歷程而非外部知識庫，兩者解決的問題不同。"
+      },
+      "trap": "第一，分辨知識的來源：RAG 取用的是外部文件知識，AutoSkill 沉澱的是自身互動經驗形成的技能。第二，看到「不需重新訓練」「外掛層」等描述，就應排除任何以更新模型參數為手段的選項。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 46 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "AutoSkill: Experience-Driven Lifelong Learning via Skill Self-Evolution（arXiv:2603.01145）",
+          "url": "https://arxiv.org/abs/2603.01145",
+          "locator": "摘要：互動經驗鮮少被整併為可重複使用的知識；AutoSkill 讓 LLM 代理自動從對話與互動軌跡中萃取、維護並重複使用技能，且不需重新訓練底層模型",
+          "checkedAt": "2026-08-06"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：本題所稱 AutoSkill 依 arXiv:2603.01145（AutoSkill: Experience-Driven Lifelong Learning via Skill Self-Evolution）摘要撰寫，與官方答案 C 的描述一致；命題實際依據的文獻未經官方公布，複核時請確認是否另有所指。查核日期 2026-08-06。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -17230,30 +17682,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 B。輸出長期塌縮到少數幾種相似形式、喪失多樣性，正是模式崩潰的定義式描述。",
+      "concept": "模式崩潰（Mode Collapse）指生成式模型的輸出塌縮到資料分布中的少數幾種型態：模型反覆產生相似度極高的樣本，無法涵蓋真實資料的多樣性。這個術語在生成對抗網路（GAN）文獻中被系統性討論——生成器發現少數幾種輸出足以騙過鑑別器後，就停在這些「模式」上不再探索；Unrolled GAN 論文即以解決 mode collapse、提升生成器對資料分布的多樣性與涵蓋度為主要貢獻。\n語言模型的生成同樣是從輸出分布取樣，若訓練或對齊過程使輸出分布過度集中，就會出現題幹描述的現象：長期集中產生少數幾種相似的回應形式，缺乏多樣性。",
+      "answerReason": "題幹的症狀是「長期集中產生少數幾種相似的回應形式、缺乏多樣性」——輸出塌縮到少數型態、放棄分布中的其他模式，正是模式崩潰的定義。過度擬合講的是訓練與新資料間的表現落差，梯度消失講的是深層網路難以訓練，收斂速度只是訓練快慢的度量，都不是在描述輸出多樣性的塌縮，因此選 B。",
+      "optionAnalysis": {
+        "A": "過度擬合（Overfitting）指模型把訓練資料的細節與雜訊背起來，訓練集表現很好、換到新資料表現明顯變差，判斷依據是訓練與驗證表現之間的落差。題幹描述的是輸出集中在少數回應形式的多樣性問題，並未提到新舊資料間的表現差距，兩者的症狀並不相同。",
+        "B": "正確。輸出長期塌縮到少數幾種相似形式、無法反映資料分布的多樣性，正是模式崩潰的典型樣貌；GAN 文獻對此有系統性討論，生成器只要找到少數能過關的輸出型態就不再探索其他模式，與題幹的觀察吻合。",
+        "C": "梯度消失（Vanishing Gradient）指反向傳播時梯度逐層縮小，深層或長序列網路的前段參數幾乎更新不到，症狀是訓練停滯、損失降不下去，官方學習指引將它列為循環神經網路訓練的典型問題。它影響的是「學不學得動」，不是「輸出集不集中」。",
+        "D": "收斂速度（Convergence Rate）是描述訓練過程逼近最佳解快慢的度量，本身是中性的性質而非病徵；收斂快或慢都不必然造成輸出集中於少數形式。題幹問的是一種輸出多樣性喪失的「現象及其可能原因」，收斂速度連現象都稱不上。"
+      },
+      "trap": "第一，抓住各名詞的判斷訊號：訓練與驗證表現落差是過度擬合，訓練停滯是梯度消失，輸出多樣性塌縮才是模式崩潰。第二，模式崩潰的「模式」指資料分布中的型態（mode），不是「模型」；別把 Mode 誤讀成 Model。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 47 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "Unrolled Generative Adversarial Networks（arXiv:1611.02163）",
+          "url": "https://arxiv.org/abs/1611.02163",
+          "locator": "摘要：此技術解決 GAN 常見的 mode collapse 問題，並提升生成器對資料分布的多樣性與涵蓋度",
+          "checkedAt": "2026-08-06"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-16：循環神經網路的缺點包含訓練過程容易出現梯度消失或梯度爆炸問題",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：Mode Collapse 的系統性討論出自 GAN 文獻，本題將其延伸用於大型語言模型輸出多樣性的描述；已引用 Unrolled GAN 論文作為術語出處，官方教材是否另有 LLM 語境的對應段落，待複核確認。查核日期 2026-08-06。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -17293,30 +17756,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 B。甲是輸入分布未變、特徵與購買結果的關係變了（概念漂移）；乙是新客群使輸入特徵分布改變（資料漂移）。",
+      "concept": "模型上線後的劣化要先分辨「什麼在變」。資料漂移（Data Drift）指輸入資料的統計分布偏離訓練期間的分布——模型面對的客群、裝置、行為特徵變了；官方學習指引即要求定期檢查數據漂移、分析輸入數據的分佈變化。概念漂移（Concept Drift）則指輸入與目標之間的對應關係改變：同樣的輸入特徵，對應的結果不再相同。文獻上把概念漂移描述為資料底層分布隨時間發生不可預見的變化，機器學習實務進一步把「輸入分布本身的改變」與「輸入與目標關係的改變」區分開來，前者稱資料漂移，後者稱概念漂移。\n鑑別點：輸入分布看起來沒變、但特徵的預測意義變了，是概念漂移；輸入分布本身明顯改變，是資料漂移。",
+      "answerReason": "情形甲的關鍵句是「即便輸入特徵分布與訓練期相近，預測準確率仍明顯下降」——輸入沒變，但長時間停留不再代表高購買意願，特徵與購買結果之間的關係變了，屬於概念漂移。情形乙是新入口帶來年齡、裝置、使用時段分布與訓練資料顯著不同的新客群——輸入分布本身改變，屬於資料漂移。甲為概念漂移、乙為資料漂移，因此選 B。",
+      "optionAnalysis": {
+        "A": "這個選項把兩種漂移對調了。資料漂移的定義要件是輸入分布改變，但情形甲明說輸入特徵分布與訓練期相近，改變的是行為訊號與購買結果的對應關係；情形乙改變的恰恰是輸入特徵的分布（年齡、裝置、時段），符合資料漂移的定義，兩者與 A 的標示正好相反。",
+        "B": "正確。甲：輸入分布不變、特徵與目標的關係改變（停留時間不再是強購買訊號），是概念漂移；乙：新族群使輸入特徵分布顯著偏離訓練資料，是資料漂移。兩個情形分別踩中兩種漂移的定義要件，配對無誤。",
+        "C": "過擬合是訓練階段就種下的問題：模型把訓練資料的雜訊背起來，上線初期就會暴露泛化不佳。情形甲的模型上線初期表現穩定，半年後才隨消費趨勢轉變而下滑，成因是外部環境隨時間改變，時間樣態與過擬合不符；乙判為資料漂移雖然正確，整組配對仍然錯誤。",
+        "D": "「兩者都導致準確率下降，所以都是概念漂移」把共同的症狀當成同一種病因。準確率下降是各種模型劣化共有的表象，分類依據應是「什麼改變了」：情形乙的題幹只說輸入特徵分布顯著不同，沒有任何特徵與結果關係改變的描述，應判為資料漂移而非概念漂移。"
+      },
+      "trap": "第一，鑑別題幹線索：「輸入分布相近但準確率下降」指向概念漂移，「輸入分布顯著改變」指向資料漂移，不要被兩案共同的「準確率下降」帶著走。第二，過擬合是上線前就存在的泛化問題；上線後隨環境變化才出現的劣化，應優先往漂移方向判斷。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 48 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "Learning under Concept Drift: A Review（arXiv:2004.05785）",
+          "url": "https://arxiv.org/abs/2004.05785",
+          "locator": "摘要：概念漂移指串流資料的底層分布隨時間發生不可預見的變化；綜述並整理漂移偵測、理解與適應的方法",
+          "checkedAt": "2026-08-06"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-44：模型監控與重新訓練——定期檢查數據漂移（Data Drift），分析輸入數據的分佈變化，可能導致模型預測準確性降低",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：資料漂移定義所引學習指引段落出自科目二（生成式 AI 應用與規劃）3-44，科目一學習指引是否另有漂移對應章節，複核時可再確認補引；概念漂移定義另引 arXiv 綜述佐證。查核日期 2026-08-06。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -17356,30 +17830,35 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 D。把生成式 AI 模擬的攻擊流量納入訓練，等於擴充攻擊樣本的涵蓋範圍，讓鑑別式模型對未知攻擊更有辨識力。",
+      "concept": "生成式 AI 與鑑別式 AI 的分工不同：鑑別式模型學習類別之間的決策邊界，負責判斷輸入屬於哪一類，例如把網路流量分為正常或攻擊；生成式模型學習資料的分布並能生成相似的新樣本，官方學習指引即以「學習資料的聯合分佈或邊際分佈並生成新樣本」界定生成式 AI。\n資安防禦的痛點是：鑑別式模型只看過歷史攻擊樣本，對訓練資料中沒出現過的新型變種攻擊，決策邊界可能失守。把生成式 AI 用來模擬可能的攻擊流量，等於替訓練資料補上「還沒發生、但可能發生」的樣本，讓鑑別式模型預先見過更多攻擊變化型態，屬於以合成資料擴充訓練集的做法。",
+      "answerReason": "題目問「此做法對鑑別式防禦模型的主要助益」。把生成式 AI 模擬的攻擊流量納入訓練，擴充了攻擊樣本的涵蓋範圍，使鑑別式模型學到更廣的攻擊特徵變化，對訓練集中未出現過的新型攻擊更有辨識力——D 的敘述正是這個因果，因此選 D。生成式模型在此扮演供應訓練資料的輔助角色，並未接手防禦判斷。",
+      "optionAnalysis": {
+        "A": "合成資料是真實資料的補充而非替代：模擬流量的品質取決於生成模型對攻擊行為的掌握，若完全取代真實攻擊資料，模型可能學到生成器的人工痕跡而非真實攻擊特徵。題幹的目的是因應新型變種攻擊、提升辨識能力，重點不在省下蒐集成本。",
+        "B": "在這個架構裡，防禦決策仍由鑑別式模型負責，生成式 AI 只負責產生模擬攻擊樣本供訓練使用。鑑別式模型擅長判斷類別歸屬，生成式模型擅長產生樣本，兩者是互補分工；說生成式 AI 直接接手防禦決策、取代原有模型，誤解了它在流程中的角色。",
+        "C": "模型的架構由設計者決定，不會因為訓練資料中含有生成樣本就「自動轉為生成式架構」。鑑別式模型吃進更多攻擊樣本後，學到的仍是更完整的決策邊界，任務性質（判斷流量是否為攻擊）與架構都沒有改變；這個選項把資料層的擴充誤說成架構層的轉變。",
+        "D": "正確。將模擬的攻擊流量納入訓練集，等於預先讓模型見過更多攻擊變化型態，決策邊界因此涵蓋更廣的攻擊特徵空間；面對訓練資料中未出現的未知攻擊時，被正確辨識的機會隨之提升，這正是生成式與鑑別式協作的主要助益。"
+      },
+      "trap": "第一，分清楚兩類模型的分工：生成式產生樣本、鑑別式做判斷，題目中生成式 AI 是資料供應者，不是決策者。第二，合成資料的價值在「擴充涵蓋、補足稀有樣本」，看到「取代真實資料」「取代原有模型」這類全有全無的說法，通常就是錯誤選項。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 49 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-48：生成式 AI 學習資料的聯合分佈或邊際分佈並生成新樣本，典型模型包括 GAN、VAE 與擴散模型",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {
@@ -17419,30 +17898,41 @@
     "sourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "answerSourceUrl": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
     "extractionStatus": "verified",
-    "explanationStatus": "missing",
+    "explanationStatus": "draft",
     "explanation": {
-      "summary": "",
-      "concept": "",
-      "answerReason": "",
-      "optionAnalysis": {},
-      "trap": "",
+      "summary": "正確答案是 B。RAG 把知識放在外部知識庫，文件同步更新後即可被檢索到，不需重新訓練，正符合內規每月更新且須立即反映的需求。",
+      "concept": "檢索增強生成（RAG）把知識放在模型外部：文件先建入可檢索的知識庫，回答時檢索相關段落、連同問題交給模型生成答案。知識屬於「非參數化記憶」，更新文件或替換索引即可改變模型作答依據，不必動到模型參數；RAG 原始論文的索引熱抽換實驗正是展示這一點——替換文件索引，同一個模型的回答內容就跟著改變。\n微調（Fine-tuning）則是在預訓練模型上以特定領域資料繼續訓練，把知識寫進模型參數；官方學習指引將其定位為使用特定領域或任務的數據進一步訓練，以提升特定任務表現。參數化的知識要更新，就得重新走一次資料整理、訓練、驗證與部署的流程，無法在文件更新的當下立即生效。",
+      "answerReason": "題幹的硬性需求是：內規每月滾動更新，文件更新後系統必須「立即」反映，不能等待重新訓練。RAG 把最新文件同步進知識庫後，下一次查詢即可檢索到新內容，模型完全不需重新訓練，正面滿足這個需求；微調每次更新都要重跑訓練流程，先天與「立即反映」衝突。B 正確描述了這個差異，因此選 B。",
+      "optionAnalysis": {
+        "A": "微調確實能把內規知識寫進模型，但「將更新文件加入訓練資料」與「即時反映」互相矛盾：每次更新都要經過資料準備、訓練、驗證與重新部署，期間系統仍以舊參數作答；每月更新等於每月重訓，時效與成本都不符合題幹「不能等待重新訓練」的要求。",
+        "B": "正確。把更新後的內規文件同步至外部知識庫（重建或增量更新該批文件的索引），檢索端立即以新版內容作答，底層模型不需任何重新訓練；知識的時效由知識庫的維護節奏決定，正符合內規每月滾動更新、必須即時反映的場景。",
+        "C": "「經內規語料微調後回應品質必優於 RAG」是未經驗證的絕對化比較：兩者的品質取決於資料量、檢索品質與任務型態，並無普遍定論。更關鍵的是，本題的決定條件是知識更新時效，微調即使在語氣與格式上有優勢，也無法在文件更新當下立即生效，不符合題幹的硬性需求。",
+        "D": "把兩者的差異說成「僅在建置成本高低」抹掉了本質區別：RAG 的知識在外部知識庫，更新文件即可生效；微調的知識在模型參數，更新必須重新訓練。對「能否即時反映更新內容」這個題幹核心需求，兩者的表現完全不同，並非皆可達成。"
+      },
+      "trap": "第一，抓住題幹的決定條件：「更新後立即反映、不能等重訓」指向知識放在模型外部的 RAG；若題目改問「內化專業語氣與格式」，才輪到微調。第二，別接受「品質必然較好」「差異只在成本」這類絕對化敘述，兩者是知識存放位置不同的兩種方法，適用場景要看題目給的條件。",
       "references": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
-          "locator": "官方公告試題（題號與答案）",
+          "locator": "第 50 題題幹、選項與官方答案",
           "checkedAt": "2026-07-29"
         },
         {
-          "title": "iPAS AI 應用規劃師官方學習資源",
-          "url": "https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources",
-          "locator": "初級學習指引",
-          "checkedAt": "2026-07-29"
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks（arXiv:2005.11401）",
+          "url": "https://ar5iv.labs.arxiv.org/html/2005.11401",
+          "locator": "第 4.5 節 Index hot-swapping：非參數化記憶的優點是知識可在測試時直接更新，替換索引即可反映新資訊",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-18：微調階段是在預訓練模型的基礎上，使用特定領域或任務的數據進一步訓練，以提升特定任務表現",
+          "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站尚未完成本題的實質詳解，目前只顯示官方答案。",
-      "author": "Claude（AI 輔助匯入）",
-      "authoredAt": "2026-07-29"
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "author": "Claude Code（AI 輔助初稿）",
+      "authoredAt": "2026-08-06"
     }
   },
   {

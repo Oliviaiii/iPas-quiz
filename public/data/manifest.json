@@ -34,8 +34,8 @@
     "verified": 600
   },
   "explanationStatus": {
-    "missing": 400,
-    "draft": 200,
+    "missing": 350,
+    "draft": 250,
     "reviewed": 0
   },
   "collectionProgress": {
@@ -46,7 +46,7 @@
     "knownQuestionTarget": 600,
     "importedCount": 600,
     "answerVerifiedCount": 600,
-    "explanationDraftCount": 200,
+    "explanationDraftCount": 250,
     "explanationReviewedCount": 0,
     "availability": {
       "published": 12,
@@ -55,5 +55,5 @@
       "superseded": 5
     }
   },
-  "contentHash": "fb33af2f86fc24e0"
+  "contentHash": "64f3539966e05650"
 }
