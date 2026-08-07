@@ -152,7 +152,7 @@ test("contains only verified official exam questions", () => {
 
 test("keeps explanation drafts complete and free of filler", () => {
   // 第二階段逐批撰寫；每批完成後更新此數字。
-  // 114 年第四次初級兩科、115 年第一次初級兩科、115 年第二次初級第一科完成。
+  // 初級六科（114-4、115-1、115-2 各兩科）全部完成。
   const draftIds = [
     ...Array.from({ length: 50 }, (_, index) =>
       `aiap-elementary-114-04-ai-foundation-${String(index + 1).padStart(3, "0")}`,
@@ -168,6 +168,9 @@ test("keeps explanation drafts complete and free of filler", () => {
     ),
     ...Array.from({ length: 50 }, (_, index) =>
       `aiap-elementary-115-02-ai-foundation-${String(index + 1).padStart(3, "0")}`,
+    ),
+    ...Array.from({ length: 50 }, (_, index) =>
+      `aiap-elementary-115-02-genai-planning-${String(index + 1).padStart(3, "0")}`,
     ),
   ];
   assert.deepEqual(
@@ -418,8 +421,8 @@ test("publishes the verified inventory and imported-question totals", () => {
   assert.equal(manifest.officialQuestionCount, 600);
   assert.equal(manifest.practiceQuestionCount, 0);
   assert.equal(manifest.extractionStatus.verified, 600);
-  assert.equal(manifest.explanationStatus.missing, 350);
-  assert.equal(manifest.explanationStatus.draft, 250);
+  assert.equal(manifest.explanationStatus.missing, 300);
+  assert.equal(manifest.explanationStatus.draft, 300);
   assert.equal(manifest.explanationStatus.reviewed, 0);
   assert.deepEqual(manifest.countsByLevel, {
     elementary: 300,
@@ -440,7 +443,7 @@ test("publishes the verified inventory and imported-question totals", () => {
     knownQuestionTarget: 600,
     importedCount: 600,
     answerVerifiedCount: 600,
-    explanationDraftCount: 250,
+    explanationDraftCount: 300,
     explanationReviewedCount: 0,
     availability: {
       published: 12,
