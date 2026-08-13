@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-elementary-4-ai-foundation",
+  "range": {
+    "start": 21,
+    "end": 30
+  },
+  "reviewedAt": "2026-08-13",
+  "reviewer": "Codex independent AI reviewer",
+  "counts": {
+    "pass": 10,
+    "corrected": 0,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-021",
+      "officialQuestionNumber": 21,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 5 頁，第 21 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn User Guide－Ensembles",
+          "url": "https://scikit-learn.org/stable/modules/ensemble.html",
+          "locator": "1.11 節：集成方法結合多個基礎估計器，以改善單一估計器的泛化能力與穩健性；隨機森林為代表方法",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-022",
+      "officialQuestionNumber": 22,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 5 頁，第 22 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Auto-Encoding Variational Bayes",
+          "url": "https://arxiv.org/abs/1312.6114",
+          "locator": "原始論文：以辨識模型近似潛在變數後驗分布，並由生成模型重建或生成資料",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-023",
+      "officialQuestionNumber": 23,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 5 頁，第 23 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "數位發展部「AI 產品與系統評測中心」啟動新聞發布",
+          "url": "https://moda.gov.tw/ADI/news/latest-news/9295",
+          "locator": "第 112 段：列出安全性、可解釋性、彈性、公平性、準確性、透明性、當責性、可靠性、隱私及資安等 10 項，未列互動性",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-024",
+      "officialQuestionNumber": 24,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 5 頁，第 24 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Scaling Laws for Neural Language Models",
+          "url": "https://arxiv.org/abs/2001.08361",
+          "locator": "摘要與 scaling laws：效能與模型大小、資料量及訓練計算量共同相關，並非參數增加即可線性且無瓶頸地提升",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "OpenAI－Introducing gpt-oss",
+          "url": "https://openai.com/index/introducing-gpt-oss/",
+          "locator": "模型規格表：20b 與 120b 的總參數、啟用參數、層數與記憶體部署需求不同",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-025",
+      "officialQuestionNumber": 25,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 5～6 頁，第 25 題跨頁題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "NIST SP 1270－Towards a Standard for Identifying and Managing Bias in Artificial Intelligence",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1270.pdf",
+          "locator": "資料與資料集偏差章節：代表性不足及類別不平衡會形成系統性偏差，應在資料生命週期處理",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-026",
+      "officialQuestionNumber": 26,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 6 頁，第 26 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Recall and Learn: Fine-tuning Deep Pretrained Language Models with Less Forgetting",
+          "url": "https://arxiv.org/abs/2004.12651",
+          "locator": "摘要：微調的序列遷移學習會面臨災難性遺忘，使預訓練知識與能力退化",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-027",
+      "officialQuestionNumber": 27,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 6 頁，第 27 題題幹、A～D 選項與答案欄 B；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Deep Compression: Compressing Deep Neural Networks with Pruning, Trained Quantization and Huffman Coding",
+          "url": "https://arxiv.org/abs/1510.00149",
+          "locator": "摘要與方法：剪除低貢獻連結，再重新訓練保留的稀疏網路，以減少儲存與計算需求",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-028",
+      "officialQuestionNumber": 28,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 6 頁，第 28 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Attention Is All You Need",
+          "url": "https://arxiv.org/abs/1706.03762",
+          "locator": "表 1：全自注意力層的每層複雜度為 O(n²d)，序列長度 n 增加時形成長序列瓶頸",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-029",
+      "officialQuestionNumber": 29,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 7 頁，第 29 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Why Should I Trust You?: Explaining the Predictions of Any Classifier",
+          "url": "https://arxiv.org/abs/1602.04938",
+          "locator": "摘要與第 3 節：LIME 以局部可解釋模型近似分類器在單一預測附近的行為",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-030",
+      "officialQuestionNumber": 30,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 7 頁，第 30 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "WHO－Ethics and governance of artificial intelligence for health",
+          "url": "https://iris.who.int/bitstream/handle/10665/350567/9789240037403-eng.pdf",
+          "locator": "透明、可解釋與可理解原則：臨床人員與患者需能理解系統目的、運作與限制，以支持知情使用及適當信任",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    }
+  ]
+}

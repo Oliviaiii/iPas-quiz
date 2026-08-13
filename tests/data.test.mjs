@@ -152,7 +152,7 @@ test("contains only verified official exam questions", () => {
 
 test("keeps explanation drafts complete and free of filler", () => {
   // 第二階段逐批撰寫；每批完成後更新此數字。
-  // 初級六科（114-4、115-1、115-2 各兩科）全部完成。
+  // 固定題庫 12 科的詳解初稿全部完成。
   const draftIds = [
     ...Array.from({ length: 50 }, (_, index) =>
       `aiap-elementary-114-04-ai-foundation-${String(index + 1).padStart(3, "0")}`,
@@ -171,6 +171,24 @@ test("keeps explanation drafts complete and free of filler", () => {
     ),
     ...Array.from({ length: 50 }, (_, index) =>
       `aiap-elementary-115-02-genai-planning-${String(index + 1).padStart(3, "0")}`,
+    ),
+    ...Array.from({ length: 50 }, (_, index) =>
+      `aiap-intermediate-114-02-ai-tech-planning-${String(index + 1).padStart(3, "0")}`,
+    ),
+    ...Array.from({ length: 50 }, (_, index) =>
+      `aiap-intermediate-114-02-big-data-${String(index + 1).padStart(3, "0")}`,
+    ),
+    ...Array.from({ length: 50 }, (_, index) =>
+      `aiap-intermediate-114-02-machine-learning-${String(index + 1).padStart(3, "0")}`,
+    ),
+    ...Array.from({ length: 50 }, (_, index) =>
+      `aiap-intermediate-115-01-ai-tech-planning-${String(index + 1).padStart(3, "0")}`,
+    ),
+    ...Array.from({ length: 50 }, (_, index) =>
+      `aiap-intermediate-115-01-big-data-${String(index + 1).padStart(3, "0")}`,
+    ),
+    ...Array.from({ length: 50 }, (_, index) =>
+      `aiap-intermediate-115-01-machine-learning-${String(index + 1).padStart(3, "0")}`,
     ),
   ];
   assert.deepEqual(
@@ -421,8 +439,8 @@ test("publishes the verified inventory and imported-question totals", () => {
   assert.equal(manifest.officialQuestionCount, 600);
   assert.equal(manifest.practiceQuestionCount, 0);
   assert.equal(manifest.extractionStatus.verified, 600);
-  assert.equal(manifest.explanationStatus.missing, 300);
-  assert.equal(manifest.explanationStatus.draft, 300);
+  assert.equal(manifest.explanationStatus.missing, 0);
+  assert.equal(manifest.explanationStatus.draft, 600);
   assert.equal(manifest.explanationStatus.reviewed, 0);
   assert.deepEqual(manifest.countsByLevel, {
     elementary: 300,
@@ -443,7 +461,7 @@ test("publishes the verified inventory and imported-question totals", () => {
     knownQuestionTarget: 600,
     importedCount: 600,
     answerVerifiedCount: 600,
-    explanationDraftCount: 300,
+    explanationDraftCount: 600,
     explanationReviewedCount: 0,
     availability: {
       published: 12,

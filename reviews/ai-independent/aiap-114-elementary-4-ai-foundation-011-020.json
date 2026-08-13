@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-elementary-4-ai-foundation",
+  "range": {
+    "start": 11,
+    "end": 20
+  },
+  "reviewedAt": "2026-08-13",
+  "reviewer": "Codex independent AI reviewer",
+  "counts": {
+    "pass": 7,
+    "corrected": 3,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-011",
+      "officialQuestionNumber": 11,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 2 頁，第 11 題題幹、A～D 選項與答案 B；頁面已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-9、3-13：依消費行為客戶分群；非監督式學習使用未標記資料發掘模式與分群",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-012",
+      "officialQuestionNumber": 12,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 3 頁，第 12 題題幹、A～D 選項與答案 A；頁面已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-8：散佈圖展示兩個變量之間的關係；同頁列出直方圖與折線圖用途",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-013",
+      "officialQuestionNumber": 13,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "風險：既有詳解把 A 判定為半監督式學習，但現有參考資料只定位至學習指引 3-13～3-14 的監督式、非監督式與強化學習說明，未直接支撐『少量有標記加大量未標記』的半監督式定義。證據：scikit-learn 官方 semi_supervised API 明載此類演算法使用少量有標記及大量未標記資料。建議動作：以 draft 修正腳本新增該官方來源；不改題目、官方答案或詳解正文。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 3 頁，第 13 題題幹、A～D 選項與答案 D；頁面已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn－sklearn.semi_supervised",
+          "url": "https://scikit-learn.org/stable/api/sklearn.semi_supervised.html",
+          "locator": "Semi-supervised learning algorithms：使用少量有標記資料及大量未標記資料進行分類",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-13～3-14：監督式、非監督式與強化學習的判別特徵",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-014",
+      "officialQuestionNumber": 14,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 3 頁，第 14 題題幹、A～D 選項與答案 C；頁面已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-9～3-10：探索性、診斷性與預測性分析；預測性分析以歷史資料預測未來事件或趨勢",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-015",
+      "officialQuestionNumber": 15,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 3～4 頁，第 15 題題幹、A～D 選項與答案 A；頁面已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-12：KNN 分類取 K 個最近鄰中出現次數最多的類別",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn－Nearest Neighbors",
+          "url": "https://scikit-learn.org/stable/modules/neighbors.html",
+          "locator": "Nearest Neighbors Classification：鄰居投票及 weights='distance' 的距離加權變形",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-016",
+      "officialQuestionNumber": 16,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 4 頁，第 16 題題幹、A～D 選項與答案 B；頁面已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-15：RNN 捕捉序列時間依賴；LSTM 以閘門結構緩解梯度消失",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-017",
+      "officialQuestionNumber": 17,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 4 頁，第 17 題題幹、A～D 選項與答案 A；頁面已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-13～3-14、3-37：強化學習以代理、環境、行動與獎勵回饋更新策略",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-018",
+      "officialQuestionNumber": 18,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "風險：既有詳解的學習指引定位為 3-13～3-14，只能支撐一般強化學習，無法支撐 DQN 用神經網路近似 Q 值及經驗回放的逐項分析。證據：同一份學習指引 3-38 明載 Q 表的高維限制、DNN 近似 Q 值、經驗回放與目標網路；Google DeepMind 官方說明也確認 DQN 隨機抽樣回放經驗以降低資料相關性。建議動作：以 draft 修正腳本改正定位並新增 DeepMind 來源；不改官方答案。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 4 頁，第 18 題題幹、A～D 選項與答案 C；頁面已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-38：Q 表的高維限制、DNN 近似 Q 值、Experience Replay 與 Target Network",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Google DeepMind－Deep Reinforcement Learning",
+          "url": "https://deepmind.google/blog/deep-reinforcement-learning/",
+          "locator": "DQN 以深度神經網路表示 Q-network，並隨機抽樣回放經驗以取得多樣、低相關的訓練資料",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-019",
+      "officialQuestionNumber": 19,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "風險：既有詳解引用學習指引 3-11 與 3-18，但 MSE 的公式、用途及與交叉熵的區分實際位於 3-41，原定位不足以支持逐項解析。證據：學習指引 3-41 明載 MSE 用於迴歸並計算平方誤差平均；scikit-learn 官方 metrics API 亦將 mean_squared_error 列為 regression loss。建議動作：以 draft 修正腳本把定位改為 3-11 與 3-41；不改官方答案或正文。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 4 頁，第 19 題題幹、A～D 選項與答案 A；頁面已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-11、3-41：房價是連續值迴歸；MSE 用於迴歸並計算預測值與真實值平方誤差的平均",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn－Metrics API",
+          "url": "https://scikit-learn.org/stable/api/sklearn.metrics.html",
+          "locator": "Regression metrics：mean_squared_error 為 mean squared error regression loss",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-020",
+      "officialQuestionNumber": 20,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 4～5 頁，第 20 題題幹、A～D 選項與答案 A；頁面已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-12、3-50：邏輯迴歸以 sigmoid 輸出 0～1 機率並以 0.5 等閾值分類；醫療風險為應用例",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn－Linear Models／Logistic regression",
+          "url": "https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression",
+          "locator": "Logistic regression：以 logistic function 建模機率，預測機率可用預設 0.5 閾值作分類",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    }
+  ]
+}

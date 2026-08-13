@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-elementary-1-ai-foundation",
+  "range": {
+    "start": 41,
+    "end": 50
+  },
+  "reviewedAt": "2026-08-13",
+  "reviewer": "Codex independent AI reviewer",
+  "counts": {
+    "pass": 10,
+    "corrected": 0,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-041",
+      "officialQuestionNumber": 41,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 10 頁，第 41 題題幹、A～D 選項與答案欄 B；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+          "url": "https://arxiv.org/abs/2205.14135",
+          "locator": "摘要：FlashAttention 是 IO-aware exact attention，以 tiling 減少 GPU HBM 與 SRAM 間的記憶體讀寫",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-042",
+      "officialQuestionNumber": 42,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 10 頁，第 42 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+          "url": "https://arxiv.org/abs/2005.11401",
+          "locator": "摘要與方法：RAG 以可檢索的非參數化向量索引補充模型知識，讓外部知識可獨立更新",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-043",
+      "officialQuestionNumber": 43,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 10 頁，第 43 題六項敘述、A～D 組合選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn－Semi-supervised learning",
+          "url": "https://scikit-learn.org/stable/modules/semi_supervised.html",
+          "locator": "半監督式學習同時利用少量已標註樣本與大量未標註樣本，而非僅使用未標註資料",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+          "url": "https://arxiv.org/abs/1810.04805",
+          "locator": "BERT 預訓練以未標註文本自行構造遮蔽詞與句子關係目標，例示自監督目標不需人工逐筆標註",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-044",
+      "officialQuestionNumber": 44,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 11 頁，第 44 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn－Preprocessing data",
+          "url": "https://scikit-learn.org/stable/modules/preprocessing.html",
+          "locator": "非線性冪次與分位數轉換可使特徵分布更接近高斯、穩定變異數並降低偏態；對數轉換可壓縮右側長尾",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-045",
+      "officialQuestionNumber": 45,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 11 頁，第 45 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Fast and Accurate Deep Network Learning by Exponential Linear Units",
+          "url": "https://arxiv.org/abs/1511.07289",
+          "locator": "論文說明 ELU／ReLU 類啟動函數在正值區保留有效梯度，有助減輕深層網路梯度消失與學習停滯",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-046",
+      "officialQuestionNumber": 46,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 11 頁，第 46 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "NIST Big Data Interoperability Framework: Volume 1, Definitions",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1500-1r2.pdf",
+          "locator": "Variety 指需要分析來自多個儲存庫、領域或不同型態的資料，與異質格式整合挑戰相符",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-047",
+      "officialQuestionNumber": 47,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 11 頁，第 47 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Hugging Face－Token Classification",
+          "url": "https://huggingface.co/tasks/token-classification",
+          "locator": "Token classification 為序列中的每個 token 指派標籤，輸出是具相依結構的標籤序列",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-048",
+      "officialQuestionNumber": 48,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 11～12 頁，第 48 題跨頁題幹、A～D 選項與答案欄 C；頁面無附圖；sourcePage 11 為題目起始頁",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 CNN 以卷積層提取局部影像特徵，典型應用包含影像辨識、物件偵測與圖像分割",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-049",
+      "officialQuestionNumber": 49,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 12 頁，第 49 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Keras－Transfer learning & fine-tuning",
+          "url": "https://keras.io/guides/transfer_learning/",
+          "locator": "遷移學習重用先前模型學得的特徵，尤其適合新任務資料量不足以從頭訓練時進行微調",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-050",
+      "officialQuestionNumber": 50,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 12 頁，第 50 題題幹、A～D 選項與答案欄 B；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn－Metrics and scoring",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+          "locator": "Recall = TP / (TP + FN)，衡量分類器找出全部正樣本的能力，直接反映漏診風險",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    }
+  ]
+}

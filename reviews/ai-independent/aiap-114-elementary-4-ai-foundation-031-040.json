@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-elementary-4-ai-foundation",
+  "range": {
+    "start": 31,
+    "end": 40
+  },
+  "reviewedAt": "2026-08-13",
+  "reviewer": "Codex independent AI reviewer",
+  "counts": {
+    "pass": 7,
+    "corrected": 2,
+    "humanDecision": 1,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-031",
+      "officialQuestionNumber": 31,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 D 與反事實解釋必須具可行性、可操作性及符合領域約束的核心要求一致。",
+        "既有詳解把監管要求概括寫成「建議內容不得涉及受保護特徵，否則會觸法」，但題目未指定法域；臺灣金管會指引的表述是個人屬性作為決策因素應有合理理由，且不得造成不合理差別待遇，並非所有屬性在模型治理、檢測或決策流程中一律不得出現。",
+        "已在 guarded 修正草稿中改為依適用法域及使用情境判斷，並補入臺灣金管會一手來源；不變更官方答案或 draft 狀態。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 7 頁，第 31 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "金管會－金融業運用人工智慧（AI）指引",
+          "url": "https://law.fsc.gov.tw/LawContent.aspx?id=GL003920",
+          "locator": "第二章核心原則二：避免不合理歧視；個人屬性作為決策因素應有合理理由",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "FACE: Feasible and Actionable Counterfactual Explanations",
+          "url": "https://arxiv.org/abs/1909.09369",
+          "locator": "反事實解釋的可行性與可操作性要求",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-032",
+      "officialQuestionNumber": 32,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": false,
+      "result": "human-decision",
+      "findings": [
+        "B 是題目意圖下最合理的選項：增加樣本數降低標準誤，中位數或分位數可更穩健描述偏態分布的典型中心。",
+        "但題幹只寫「母體參數」而未指定平均數、中位數、分位數或其他參數；若目標是母體平均數，隨機樣本的樣本平均數即使母體偏態通常仍是不偏估計量，改用中位數則是在估計另一個參數。增加樣本數通常降低變異，不會自動降低估計量的偏誤。",
+        "既有詳解明確聲稱偏態使樣本平均數對母體參數產生系統性偏誤，混淆了偏誤、變異與穩健性。guarded 草稿已修正文義並保留官方答案 B，但題目估計目標不明仍需人工判定或官方說明。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 7～8 頁，第 32 題跨頁題幹、A～D 選項與答案欄 B；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "UC Berkeley Statistics－The Sample Mean",
+          "url": "https://www.stat.berkeley.edu/~stark/Java/Html/SampleMean.htm",
+          "locator": "樣本平均數是母體平均數的不偏估計量；增加樣本數降低其標準誤，且中央極限定理不要求母體本身近似常態",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－Measures of Location",
+          "url": "https://itl.nist.gov/div898/handbook/eda/section3/eda351.htm",
+          "locator": "偏態分布下 mean、median 或 mode 何者較能代表典型位置並非不證自明，須先界定估計目標",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-033",
+      "officialQuestionNumber": 33,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 D 合理：在異常樣本極少的時間序列情境，只用正常資料訓練序列自編碼器並以重建誤差偵測，可避免依賴稀少異常標籤。",
+        "既有詳解聲稱此方法「不會因異常型態改變而失效」且對未見新異常一定有反應，屬過度保證；自編碼器可能連異常也重建良好，效果取決於資料污染、代表性、模型容量、門檻與異常型態。",
+        "guarded 修正草稿已把保證改為有條件的能力描述並補入工業控制時間序列的一手研究來源。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 8 頁，第 33 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Anomaly Detection for Industrial Control Systems Using Sequence-to-Sequence Neural Networks",
+          "url": "https://arxiv.org/abs/1911.04831",
+          "locator": "摘要：僅以正常資料學習工業控制系統正常狀態，再偵測偏離正常狀態的序列",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-034",
+      "officialQuestionNumber": 34,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 8 頁，第 34 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-7：格式、資料類型及正規化等資料轉換，使資料一致且可比較",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-035",
+      "officialQuestionNumber": 35,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 8～9 頁，第 35 題跨頁題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn User Guide－Metrics and scoring",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+          "locator": "Precision、recall 與 F1 的定義及分類指標使用情境",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-036",
+      "officialQuestionNumber": 36,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 9 頁，第 36 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－Exploratory Data Analysis",
+          "url": "https://www.itl.nist.gov/div898/handbook/toolaids/pff/eda.pdf",
+          "locator": "EDA 以圖形與數值技術探索資料結構、關係、異常及形成後續假設",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-037",
+      "officialQuestionNumber": 37,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 9 頁，第 37 題題幹、A～D 選項與答案欄 B；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn User Guide－Cross validation of time series data",
+          "url": "https://scikit-learn.org/stable/modules/cross_validation.html#time-series-split",
+          "locator": "相鄰時間觀測具自相關；隨機切分會形成不合理的訓練測試相關性，應以時間順序評估",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-038",
+      "officialQuestionNumber": 38,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 9 頁，第 38 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Elastic Docs－Aliases",
+          "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/aliases.html",
+          "locator": "索引別名可即時切換實際索引，支援無停機重建；多個別名動作可原子執行",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Elastic Docs－Update a document",
+          "url": "https://www.elastic.co/docs/reference/elasticsearch/rest-apis/update-document",
+          "locator": "Update API 可更新、刪除、略過或 upsert 個別文件，不必每次全量重建",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-039",
+      "officialQuestionNumber": 39,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 9～10 頁，第 39 題跨頁題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "FDA－Good Machine Learning Practice Guiding Principles",
+          "url": "https://www.fda.gov/media/153486/download",
+          "locator": "臨床相關條件下測試需考量目標病人族群、重要子群與適當子群的模型效能",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn User Guide－Regression metrics",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics",
+          "locator": "MAE 與 R² 等迴歸評估指標的定義與解讀",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-040",
+      "officialQuestionNumber": 40,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 10 頁，第 40 題題幹、六項敘述、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn User Guide－Novelty and Outlier Detection",
+          "url": "https://scikit-learn.org/stable/modules/outlier_detection.html",
+          "locator": "異常偵測可依情境採監督式分類、離群值偵測或新奇偵測，並非監督式一概不適用",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn User Guide－Semi-supervised learning",
+          "url": "https://scikit-learn.org/stable/modules/semi_supervised.html",
+          "locator": "半監督式學習同時使用少量已標記資料與大量未標記資料，不是完全轉化為監督式學習",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-elementary-4-genai-planning",
+  "range": {
+    "start": 21,
+    "end": 30
+  },
+  "reviewedAt": "2026-08-13",
+  "reviewer": "Codex independent AI reviewer",
+  "counts": {
+    "pass": 6,
+    "corrected": 2,
+    "humanDecision": 2,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-021",
+      "officialQuestionNumber": 21,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "human-decision",
+      "findings": [
+        "A 仍是四個排序中最符合題幹優先提升準確性與品質者：先修上游 ASR，再改善 LLM／RAG，延遲既可接受則效能工作排後。",
+        "但步驟 3 把批次推論寫成『降低延遲』有技術疑義。NVIDIA Triton 官方文件把 dynamic batching 的典型效益寫為增加吞吐量，且排程器可為湊批次而延後請求；既有詳解的 C 選項分析其實也正確改稱吞吐量與單位成本。風險是讀者會把批次化誤學成必然降低單筆／尾端延遲。",
+        "建議人工決定是否在題目或詳解加註：批次推論主要改善吞吐量與資源利用率，對延遲的效果取決於負載與批次／佇列設定，並非無條件降低；官方答案 A 可保留。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 6 頁，第 21 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "NVIDIA Triton Inference Server－Batchers",
+          "url": "https://docs.nvidia.com/deeplearning/triton-inference-server/archives/triton-inference-server-2570/user-guide/docs/user_guide/batcher.html",
+          "locator": "Dynamic Batcher：合併請求通常增加 throughput；max_queue_delay_microseconds 可延後請求以形成較大批次",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+          "url": "https://arxiv.org/abs/2005.11401",
+          "locator": "摘要與方法：以可檢索的外部非參數記憶補充模型知識",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-022",
+      "officialQuestionNumber": 22,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 6 頁，第 22 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-17：生成式 AI 以深度學習及大型資料集訓練生成內容",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-023",
+      "officialQuestionNumber": 23,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": false,
+      "result": "human-decision",
+      "findings": [
+        "D 是合理的命題意圖：相較情感分類、摘要與翻譯，表格多筆抽取同時涉及欄列對應及結構化輸出，示範可能更有幫助。",
+        "但題幹問哪一類『最可能』因缺乏示範而失敗，沒有指定模型、表格格式、提示完整度或輸出 schema；GPT-3 原始論文只證明少樣本示範可改善多種任務，並未證明此四類任務存在題目宣稱的固定風險排序。既有詳解更把其餘三類寫成不會結構性失敗、表格格式決策都必須靠範例定錨，論斷過強。",
+        "風險是把受模型與提示條件影響的經驗判斷教成普遍定律。建議人工決定是否保留 D 為考綱式最佳答案，同時把詳解改成『在本題設定下相對較可能』，並刪除『不會失敗』『都靠範例』等絕對敘述。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 6 頁，第 23 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Language Models are Few-Shot Learners",
+          "url": "https://arxiv.org/abs/2005.14165",
+          "locator": "摘要、圖 1 與任務實驗：比較 zero-shot、one-shot 與 few-shot；未建立本題四種任務的固定失敗風險排序",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-024",
+      "officialQuestionNumber": 24,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 D 合理：在可接受較高資源投入且隱私合規優先的前提下，私有部署並同步建立風控，比把控制延後或把敏感資料直接送往一般外部 API 更符合要求。",
+        "既有詳解多次把私有部署寫成『確保資料不會外洩』或『讓資料不外洩』。部署邊界只能減少向第三方傳輸並增加控制權，不能消除權限濫用、提示注入、日誌／備份、模型反演或執行環境等洩漏途徑；OWASP 的敏感資訊揭露防護也要求資料清理、最小權限、來源限制、安全執行環境與監控等多層控制。",
+        "已新增 guarded 修正腳本，把絕對保證改成降低第三方傳輸與強化可控邊界，並明示仍需存取控制、加密、稽核與監控；不變更官方答案或 draft 狀態，且未執行。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 6～7 頁，第 24 題題幹、跨頁 A～D 選項與答案欄 D；兩頁均無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "OWASP GenAI Security Project－LLM02:2025 Sensitive Information Disclosure",
+          "url": "https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/",
+          "locator": "防護措施：資料清理、嚴格存取控制與最小權限、限制資料來源、安全執行環境及隱私技術",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "OWASP Cheat Sheet Series－Secure AI Model Ops",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secure_AI_Model_Ops_Cheat_Sheet.html",
+          "locator": "部署與基礎設施安全：隔離、模型反演／竊取風險、監控與日誌等生命週期控制",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-025",
+      "officialQuestionNumber": 25,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 7 頁，第 25 題題幹、A～D 選項與答案欄 B；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Show and Tell: A Neural Image Caption Generator",
+          "url": "https://arxiv.org/abs/1411.4555",
+          "locator": "摘要與方法：以影像編碼器取得視覺表徵，再由語言解碼器生成描述文字",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-026",
+      "officialQuestionNumber": 26,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 7 頁，第 26 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-18：低溫度值產出較保守，高溫度值產出較具創意",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-027",
+      "officialQuestionNumber": 27,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 C 合理：多人會議摘要除了 ASR 逐字稿，還需要說話者歸屬與主題結構，才能降低張冠李戴並依議題組織重點。",
+        "既有詳解引用的 pyannote.audio 只直接支撐 speaker diarization，沒有支撐主題邊界、語意分群與會議摘要的整條論證；trap 又概括宣稱摘要品質瓶頸『通常不在辨識準確度』，忽略 ASR 錯誤本身也可能破壞摘要。風險是引用涵蓋不足並形成錯誤二分。",
+        "已新增 guarded 修正腳本，補入 QMSum 一手論文以支撐長篇多人多主題會議的 topic segmentation／locate-then-summarize，並把 trap 限縮為『ASR 已達可用水準時』；不變更官方答案或 draft 狀態，且未執行。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 7 頁，第 27 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "pyannote.audio: neural building blocks for speaker diarization",
+          "url": "https://arxiv.org/abs/1911.01255",
+          "locator": "語音活動、說話者變換與嵌入等元件，用於判斷誰在何時說話",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "QMSum: A New Benchmark for Query-based Multi-domain Meeting Summarization",
+          "url": "https://aclanthology.org/2021.naacl-main.472/",
+          "locator": "摘要與方法：多人、多主題長會議摘要；資料標註含 topic segmentation，並評估 locate-then-summarize 方法",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-028",
+      "officialQuestionNumber": 28,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 7～8 頁，第 28 題題幹、跨頁 A～D 選項與答案欄 B；兩頁均無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Language Models are Few-Shot Learners",
+          "url": "https://arxiv.org/abs/2005.14165",
+          "locator": "摘要與圖 1：few-shot 是在推論脈絡中提供少量已完成示範，不做梯度更新",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-029",
+      "officialQuestionNumber": 29,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 8 頁，第 29 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+          "url": "https://arxiv.org/abs/2005.11401",
+          "locator": "摘要與方法：外部非參數記憶可更新，並讓生成結果取得可追溯依據",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-030",
+      "officialQuestionNumber": 30,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 8 頁，第 30 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-35～3-38：準備階段先訂目標、檢視資料與選擇方案；設計階段制定 KPI 與生成規格",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    }
+  ]
+}

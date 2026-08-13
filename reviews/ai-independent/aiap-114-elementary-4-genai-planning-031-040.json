@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-elementary-4-genai-planning",
+  "range": {
+    "start": 31,
+    "end": 40
+  },
+  "reviewedAt": "2026-08-13",
+  "reviewer": "Codex independent AI reviewer",
+  "counts": {
+    "pass": 7,
+    "corrected": 2,
+    "humanDecision": 1,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-031",
+      "officialQuestionNumber": 31,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 B 合理：個資法第 5 條要求蒐集、處理與利用不得逾越特定目的必要範圍，資料最小化直接對應此原則；適當去識別化也能降低暴露風險。",
+        "既有詳解宣稱模型若沒有敏感個資就『沒有在回覆中洩漏的可能』，並把移除姓名、身分證號與聯絡方式等同完成去識別化。NIST 指引明載去識別化後仍可能有再識別風險，單純遮罩直接識別碼也可能不足，尚須處理準識別碼並評估殘餘風險。",
+        "guarded 修正草稿已移除絕對保證、補充再識別風險與多層控制，並新增 NIST 一手來源；不變更官方答案或 draft 狀態。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 8～9 頁，第 31 題跨頁題幹、A～D 選項與答案欄 B；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "全國法規資料庫－個人資料保護法第 5 條",
+          "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=I0050021&flno=5",
+          "locator": "蒐集、處理或利用個人資料不得逾越特定目的必要範圍，並須與蒐集目的有正當合理關聯",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "NIST SP 800-188－De-Identifying Government Datasets",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-188.pdf",
+          "locator": "摘要、3.2 與 4.3.12：去識別化降低但不消除揭露與再識別風險，須量測殘餘風險並檢視可能失敗",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-032",
+      "officialQuestionNumber": 32,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 9 頁，第 32 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "模型準確性與可靠性，以及法律文件審閱、風險評估與法規檢索等專業化應用",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-033",
+      "officialQuestionNumber": 33,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 9 頁，第 33 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "No Code 平台以視覺化與拖放介面降低技術門檻，使非技術人員參與並促進跨部門協作",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-034",
+      "officialQuestionNumber": 34,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 9 頁，第 34 題題幹、A～D 選項與答案欄 B；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "WHO－Ethics and governance of artificial intelligence for health",
+          "url": "https://www.who.int/publications/i/item/9789240029200",
+          "locator": "醫療 AI 的安全、效能、透明、責任與人類監督原則；臨床使用須以病人福祉與可靠性為核心",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-035",
+      "officialQuestionNumber": 35,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 9～10 頁，第 35 題跨頁題幹、A～D 選項與答案欄 B；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "NVIDIA NIM Benchmarking Guide－LLM inference metrics",
+          "url": "https://docs.nvidia.com/nim/benchmarking/llm/latest/metrics.html",
+          "locator": "端到端請求延遲為送出查詢到收到完整回應，包含排隊、批次與網路延遲；並區分 TTFT 與吞吐量",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-036",
+      "officialQuestionNumber": 36,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "human-decision",
+      "findings": [
+        "A 是合理的最佳答案：輸入檢測加輸出審核提供兩個控制點，較單一主題約束完整。",
+        "但 B 的主題與資料範圍限制同樣是有效的最小權限／縮小攻擊面措施；既有詳解也已承認 OWASP 將其列為緩解措施，因此本題是在兩個有效策略間比較『最佳』，界線並非絕對。",
+        "既有詳解進一步假設 B 多半只寫在系統提示、A 則必由模型外程式邏輯執行且不受惡意提示影響；選項文字並未指定這些實作方式，輸入檢測與輸出審核也不是不可繞過。建議保留官方 A，但由人工決定是否弱化這段未明示假設。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 10 頁，第 36 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "OWASP Top 10 for LLM Applications－LLM01:2025 Prompt Injection",
+          "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+          "locator": "提示注入定義與多層緩解措施，包括輸入／輸出過濾、約束模型行為、限制權限及人工核准；不存在單一完全防護",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-037",
+      "officialQuestionNumber": 37,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 A 是唯一描述訓練資料與部署後輸入資料統計分布產生差異的選項，符合本題資料漂移的教學意圖。",
+        "既有詳解把『效能隨時間衰退』列為資料漂移的必要要素，並稱漂移必定是漸進現象。Google 官方監控文件將 training-serving skew 定義為正式環境分布偏離訓練分布，inference drift 定義為正式環境分布隨時間顯著改變；效能下降是可能後果，不是判定分布漂移的必要條件，變化也可能突然發生。",
+        "guarded 修正草稿已分開分布變化與效能影響，修正 concept、answerReason、A 選項分析與 trap，並補入 Google 一手來源；不變更官方答案或 draft 狀態。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 10 頁，第 37 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Google Cloud－Introduction to Model Monitoring",
+          "url": "https://cloud.google.com/vertex-ai/docs/model-monitoring/overview",
+          "locator": "training-serving skew 為正式環境特徵分布偏離訓練分布；inference drift 為正式環境特徵分布隨時間顯著改變",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-038",
+      "officialQuestionNumber": 38,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 10 頁，第 38 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "NIST SP 1270－Towards a Standard for Identifying and Managing Bias in Artificial Intelligence",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1270.pdf",
+          "locator": "AI 偏誤的量測、文件化、風險管理與持續治理；單純移除受保護屬性不足以消除代理變數或結果差異",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-039",
+      "officialQuestionNumber": 39,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 10～11 頁，第 39 題跨頁題幹、兩個情境、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+          "url": "https://arxiv.org/abs/2201.11903",
+          "locator": "以中間推理步驟示範引導線性逐步推理，提升算術、常識與符號推理表現",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+          "url": "https://arxiv.org/abs/2305.10601",
+          "locator": "探索、評估與回溯多條思考路徑，適用需規劃、搜尋及比較候選方案的任務",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-040",
+      "officialQuestionNumber": 40,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 11 頁，第 40 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Talk like a Graph: Encoding Graphs for Large Language Models",
+          "url": "https://arxiv.org/abs/2310.04560",
+          "locator": "系統性比較將節點與邊等圖結構編碼為語言模型輸入的方法，顯示結構表達顯著影響圖推理表現",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    }
+  ]
+}

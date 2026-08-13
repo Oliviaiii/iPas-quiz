@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-elementary-1-ai-foundation",
+  "range": {
+    "start": 21,
+    "end": 30
+  },
+  "reviewedAt": "2026-08-13",
+  "reviewer": "Codex independent AI reviewer",
+  "counts": {
+    "pass": 8,
+    "corrected": 2,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-021",
+      "officialQuestionNumber": 21,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 5 頁，第 21 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Diffusion Models Beat GANs on Image Synthesis",
+          "url": "https://arxiv.org/abs/2105.05233",
+          "locator": "摘要及研究結果：擴散模型可達到具競爭力的影像樣本品質及分布覆蓋",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-022",
+      "officialQuestionNumber": 22,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 C 合理：以正常資料訓練 VAE 並用重建機率、重建誤差或其他分布分數辨識偏離正常的狀態，不必事先標註完整的異常類別。",
+        "既有詳解聲稱未曾出現的新故障也會因重建誤差偏高而被抓出來，且不受未知異常型態限制，屬無條件保證；有些異常仍可能被模型良好重建，效果取決於資料代表性、模型容量、異常分數與門檻。",
+        "guarded 修正草稿已改為有條件的能力描述並補入 VAE 異常偵測原始技術報告，不變更官方答案或 draft 狀態。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 5 頁，第 22 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "VELC: A New Variational AutoEncoder Based Model for Time Series Anomaly Detection",
+          "url": "https://arxiv.org/abs/1907.01702",
+          "locator": "摘要明確指出原始 VAE 可能良好重建異常樣本，因而另加潛在空間約束以改善異常分數",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-023",
+      "officialQuestionNumber": 23,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 5 頁，第 23 題題幹、A～D 選項與答案欄 B；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Amazon SageMaker－Use Batch Transform",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html",
+          "locator": "批次轉換適用大量資料離線推論，作業完成後釋放運算資源且不需要常駐端點",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-024",
+      "officialQuestionNumber": 24,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 6 頁，第 24 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Training language models to follow instructions with human feedback",
+          "url": "https://arxiv.org/abs/2203.02155",
+          "locator": "方法：監督式示範微調、偏好排序的獎勵模型，以及以人類回饋強化學習；不是長時間未標記語料預訓練",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-025",
+      "officialQuestionNumber": 25,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 A 正確：batching 的核心效益是提高硬體資源利用率與整體吞吐量，但湊批等待也可能影響端到端延遲。",
+        "既有 B 選項解析寫成 batching 後回應時間「只會持平或變長」，同樣過度絕對；在高負載、較佳併行與佇列縮短的條件下，動態 batching 也可能降低觀測到的請求延遲。",
+        "guarded 修正草稿已將延遲描述改為依模型、負載、排隊與批次運算效率而定，並補入 NVIDIA Triton 官方概念指南；官方答案與 draft 狀態不變。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 6 頁，第 25 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "NVIDIA Triton－Dynamic Batching & Concurrent Model Execution",
+          "url": "https://docs.nvidia.com/deeplearning/triton-inference-server/archives/triton-inference-server-2600/user-guide/docs/tutorials/Conceptual_Guide/Part_2-improving_resource_utilization/README.html",
+          "locator": "動態 batching 與並行執行透過提高資源利用率增加吞吐量，並可在適當負載下減少佇列等待與延遲",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-026",
+      "officialQuestionNumber": 26,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 6 頁，第 26 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Why Should I Trust You? Explaining the Predictions of Any Classifier",
+          "url": "https://arxiv.org/abs/1602.04938",
+          "locator": "LIME 以局部可解釋模型近似任意分類器在特定預測附近的行為，屬模型訓練後解釋方法",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-027",
+      "officialQuestionNumber": 27,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 6 頁，第 27 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "A Unified Approach to Interpreting Model Predictions",
+          "url": "https://arxiv.org/abs/1705.07874",
+          "locator": "SHAP 為個別預測分配各特徵的重要性值，以加性特徵歸因統一多種局部解釋方法",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-028",
+      "officialQuestionNumber": 28,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 6～7 頁，第 28 題跨頁題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Counterfactual Explanations without Opening the Black Box",
+          "url": "https://arxiv.org/abs/1711.00399",
+          "locator": "反事實解釋在不改動既有模型下，尋找可使預測結果改變的最小輸入變化",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-029",
+      "officialQuestionNumber": 29,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 7 頁，第 29 題題幹、A～D 選項與答案欄 B；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps",
+          "url": "https://arxiv.org/abs/1312.6034",
+          "locator": "以單次反向傳播建立影像特定類別的顯著圖，指出影響該次分類的輸入區域",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-030",
+      "officialQuestionNumber": 30,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 7 頁，第 30 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn User Guide－Supervised learning",
+          "url": "https://scikit-learn.org/stable/supervised_learning.html",
+          "locator": "監督式分類以具目標標籤的樣本學習類別預測，符合以已標記郵件辨識垃圾郵件的情境",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    }
+  ]
+}

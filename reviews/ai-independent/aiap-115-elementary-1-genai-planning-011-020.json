@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-elementary-1-genai-planning",
+  "range": { "start": 11, "end": 20 },
+  "reviewedAt": "2026-08-13",
+  "reviewer": "Codex independent AI reviewer",
+  "counts": { "pass": 7, "corrected": 2, "humanDecision": 1, "blocked": 0 },
+  "items": [
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-011",
+      "officialQuestionNumber": 11,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        { "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題", "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf", "locator": "PDF 第 3 頁，第 11 題題幹、A～D 選項與答案欄 B；頁面無附圖", "checkedAt": "2026-08-13" },
+        { "title": "Microsoft Learn－What is automated machine learning?", "url": "https://learn.microsoft.com/en-us/azure/machine-learning/concept-automated-ml", "locator": "AutoML 自動化反覆的模型開發工作，降低程式與資料科學門檻", "checkedAt": "2026-08-13" }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-012",
+      "officialQuestionNumber": 12,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 B 正確：MCP 標準化 AI 應用與外部能力的連接，RAG 以外部檢索內容增強生成。",
+        "既有詳解反覆以『MCP 補動作、RAG 補知識』作絕對區分，但 MCP 官方架構除 Tools 外亦包含 Resources 與 Prompts；且 RAG 不必固定採文件切塊、向量化與向量索引。風險是把有助記憶的主要定位誤教成協定與技術的完整邊界。",
+        "已新增 guarded 草稿修正腳本，改為 MCP 可連接工具、資源與提示，B 聚焦其外部系統互動用途；RAG 則以檢索外部來源增強生成。維持 draft 且未執行。"
+      ],
+      "sourcesChecked": [
+        { "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題", "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf", "locator": "PDF 第 3 頁，第 12 題題幹、A～D 選項與答案欄 B；頁面無附圖", "checkedAt": "2026-08-13" },
+        { "title": "Model Context Protocol－Architecture overview", "url": "https://modelcontextprotocol.io/docs/learn/architecture", "locator": "MCP servers 可公開 Tools、Resources 與 Prompts", "checkedAt": "2026-08-13" },
+        { "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks", "url": "https://arxiv.org/abs/2005.11401", "locator": "原始論文以非參數化外部記憶與檢索補充生成模型", "checkedAt": "2026-08-13" }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-013",
+      "officialQuestionNumber": 13,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 B 是題幹情境下的最佳選項：適當切分可讓檢索單位更貼近查詢並減少整份長文件帶入的雜訊。",
+        "既有詳解把切塊後的每個片段一概寫成聚焦單一主題、向量比對必然更精準。研究顯示切分策略確實會顯著影響 RAG，但不當邊界或過小片段也會破壞上下文；效果不是切塊本身的無條件保證。",
+        "已新增 guarded 草稿修正腳本，補上片段大小、邊界與重疊需依文件及查詢調整，並移除必然提升的絕對敘述。維持 draft 且未執行。"
+      ],
+      "sourcesChecked": [
+        { "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題", "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf", "locator": "PDF 第 3 頁，第 13 題題幹、A～D 選項與答案欄 B；頁面無附圖", "checkedAt": "2026-08-13" },
+        { "title": "Document Segmentation Matters for Retrieval-Augmented Generation", "url": "https://aclanthology.org/2025.findings-acl.422/", "locator": "實驗顯示 segmentation strategy 顯著影響 RAG retrieval 與 generation 表現", "checkedAt": "2026-08-13" },
+        { "title": "Lost in the Middle: How Language Models Use Long Contexts", "url": "https://aclanthology.org/2024.tacl-1.9/", "locator": "模型對長上下文中段資訊的利用可能下降", "checkedAt": "2026-08-13" }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-014",
+      "officialQuestionNumber": 14,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        { "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題", "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf", "locator": "PDF 第 3～4 頁，第 14 題題幹、跨頁 A～D 選項與答案欄 A；兩頁均無附圖", "checkedAt": "2026-08-13" },
+        { "title": "Large Language Models are Versatile Decomposers: Decompose Evidence and Questions for Table-based Reasoning", "url": "https://arxiv.org/abs/2305.13062", "locator": "表格推理需保留結構並將表格轉為可供語言模型處理的表示", "checkedAt": "2026-08-13" }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-015",
+      "officialQuestionNumber": 15,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        { "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題", "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf", "locator": "PDF 第 4 頁，第 15 題題幹、A～D 選項與答案欄 D；頁面無附圖", "checkedAt": "2026-08-13" },
+        { "title": "Generative Agents: Interactive Simulacra of Human Behavior", "url": "https://arxiv.org/abs/2304.03442", "locator": "代理透過記憶、反思與規劃形成並執行行為", "checkedAt": "2026-08-13" }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-016",
+      "officialQuestionNumber": 16,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": false,
+      "result": "human-decision",
+      "findings": [
+        "D 符合題目想表達的圖式化拆解與呈現多條候選解法，且其餘三項明顯不是該用途。",
+        "但『Solution Graph』不是 Agentic AI 中有單一公認定義的標準術語；傳統 AI 的 solution graph／AND-OR graph 與近年的 Tree of Thoughts 等方法雖有相近概念，不能直接證明題目所指專有名詞必然等同 D。既有詳解也明示只是以類比來源佐證。",
+        "建議人工確認官方命題依據或學習指引中的原始定義；若無明確定義，題幹應交代此處 Solution Graph 的節點、邊與候選路徑語意。"
+      ],
+      "sourcesChecked": [
+        { "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題", "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf", "locator": "PDF 第 4 頁，第 16 題題幹、A～D 選項與答案欄 D；頁面無附圖", "checkedAt": "2026-08-13" },
+        { "title": "A formal basis for the heuristic determination of minimum cost paths", "url": "https://doi.org/10.1016/0004-3702(71)90006-3", "locator": "傳統 AI 以 AND/OR graph 表示問題分解與 solution graph；不足以界定題目中的現代 Agentic AI 用語", "checkedAt": "2026-08-13" },
+        { "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models", "url": "https://arxiv.org/abs/2305.10601", "locator": "探索多條 reasoning paths 的近代類比，但論文使用 Tree of Thoughts 而非題目所稱 Solution Graph", "checkedAt": "2026-08-13" }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-017",
+      "officialQuestionNumber": 17,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        { "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題", "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf", "locator": "PDF 第 4 頁，第 17 題題幹、A～D 選項與答案欄 B；頁面無附圖", "checkedAt": "2026-08-13" },
+        { "title": "AWS Well-Architected Framework－Reliability Pillar", "url": "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html", "locator": "可靠性涵蓋復原、動態取得資源與緩解中斷等能力", "checkedAt": "2026-08-13" }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-018",
+      "officialQuestionNumber": 18,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        { "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題", "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf", "locator": "PDF 第 4 頁，第 18 題題幹、A～D 選項與答案欄 A；頁面無附圖", "checkedAt": "2026-08-13" },
+        { "title": "GitHub Docs－Best practices for using GitHub Copilot", "url": "https://docs.github.com/en/copilot/get-started/best-practices", "locator": "Copilot 可能出錯，使用者應理解、審查並以測試、linting 與 code scanning 驗證建議", "checkedAt": "2026-08-13" },
+        { "title": "Evaluating Large Language Models Trained on Code", "url": "https://arxiv.org/abs/2107.03374", "locator": "Codex 為產生程式碼的語言模型，評估結果並非正確性保證", "checkedAt": "2026-08-13" }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-019",
+      "officialQuestionNumber": 19,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        { "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題", "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf", "locator": "PDF 第 5 頁，第 19 題題幹、A～D 選項與答案欄 C；頁面無附圖", "checkedAt": "2026-08-13" },
+        { "title": "NIST－Secure Software Development Framework", "url": "https://csrc.nist.gov/projects/ssdf", "locator": "SSDF 提供安全軟體開發實務；PW.7 審查程式碼、PW.8 測試可執行程式以識別弱點", "checkedAt": "2026-08-13" },
+        { "title": "GitHub Docs－Best practices for using GitHub Copilot", "url": "https://docs.github.com/en/copilot/get-started/best-practices", "locator": "AI 生成程式碼仍需人工審查、自動化測試、linting 與安全掃描", "checkedAt": "2026-08-13" }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-020",
+      "officialQuestionNumber": 20,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        { "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題", "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf", "locator": "PDF 第 5 頁，第 20 題題幹、A～D 選項與答案欄 C；頁面無附圖", "checkedAt": "2026-08-13" },
+        { "title": "OpenAI－Introducing gpt-realtime and Realtime API updates", "url": "https://openai.com/index/introducing-gpt-realtime/", "locator": "gpt-realtime 為低延遲 speech-to-speech 模型，適用正式環境 voice agents 與客服場景", "checkedAt": "2026-08-13" }
+      ]
+    }
+  ]
+}

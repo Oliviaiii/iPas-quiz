@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-elementary-1-ai-foundation",
+  "range": { "start": 31, "end": 40 },
+  "reviewedAt": "2026-08-13",
+  "reviewer": "Codex independent AI reviewer",
+  "counts": {
+    "pass": 5,
+    "corrected": 3,
+    "humanDecision": 2,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-031",
+      "officialQuestionNumber": 31,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 7 頁，第 31 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn－Semi-supervised learning",
+          "url": "https://scikit-learn.org/stable/modules/semi_supervised.html",
+          "locator": "半監督學習使用少量已標註資料與大量未標註資料",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-032",
+      "officialQuestionNumber": 32,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 C 正確：題目要求標示煙霧區域的位置與範圍，像素遮罩比只給矩形框更符合需求。",
+        "既有詳解為排除 B，宣稱物件偵測適合『外形接近方形』的目標。Object detection 的 bounding box 可為任意長寬比，目標不需要接近方形；Mask R-CNN 原始論文也明確區分 bounding-box detection 與 segmentation mask。風險是錯教物件偵測適用條件。",
+        "已新增 guarded 修正腳本，只把 B 選項分析改成『偵測適合輸出粗略外接框，但不能精確表示煙霧像素輪廓』；保留答案 C 與 draft 狀態，且未執行。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 7 頁，第 32 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Mask R-CNN",
+          "url": "https://arxiv.org/abs/1703.06870",
+          "locator": "方法與摘要：在既有 bounding-box recognition 分支外增加物件 mask 分支，區分偵測框與像素遮罩",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-033",
+      "officialQuestionNumber": 33,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 D 正確：題幹明確問傳統 RNN 長期記憶問題，LSTM 是四項中直接針對此問題的 RNN 改良。",
+        "既有詳解把 CNN 說成即使做一維卷積也『只能看固定長度鄰近時間窗』『無法解決長期記憶』。擴張卷積與 Temporal Convolutional Networks 可建立很大的 receptive field；實證研究甚至發現通用卷積架構在多個序列任務上有比 canonical LSTM 更長的有效記憶。風險是把本題的最佳選項誤教成 CNN 的普遍技術限制。",
+        "已新增 guarded 修正腳本，改為普通局部卷積描述本身未提供 LSTM 式記憶機制，因此 D 對題幹最直接；同時明示特殊時序 CNN 也能處理長期依賴。維持 draft 且未執行。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 7～8 頁，第 33 題題幹、跨頁 A～D 選項與答案欄 D；兩頁均無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Long Short-Term Memory",
+          "url": "https://www.bioinf.jku.at/publications/older/2604.pdf",
+          "locator": "原始論文：以 LSTM 處理 recurrent backpropagation 的衰減誤差與長時間依賴",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling",
+          "url": "https://arxiv.org/abs/1803.01271",
+          "locator": "跨多個序列任務比較 TCN 與 recurrent networks；卷積架構展現較長 effective memory",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-034",
+      "officialQuestionNumber": 34,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 C 是題目條件下的最佳選項：缺乏 AI 專業人力且需要快速驗證時，AutoML 可自動化多項模型開發工作。",
+        "既有詳解把雲端 AutoML 描述成『只要上傳資料、指定目標與指標，即可取得可用模型』，並宣稱開源客製化『長期效果通常最好』、現成套件做不到用自有資料學習。這些都不是平台類型本身保證：仍需資料品質、洩漏檢查、類別不平衡處理、驗證與治理；商用詐欺套件也可能支援客戶資料調校。風險是低估高風險金融模型所需專業與驗證。",
+        "已新增 guarded 修正腳本，將 C 改寫為降低模型選型與調參門檻、適合快速概念驗證，但仍需領域專家、資料治理與獨立驗證；並移除對 B、D 的無來源絕對比較。維持 draft 且未執行。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 8 頁，第 34 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Microsoft Learn－What is automated machine learning?",
+          "url": "https://learn.microsoft.com/en-us/azure/machine-learning/concept-automated-ml",
+          "locator": "AutoML 自動化耗時反覆的模型開發工作，降低程式門檻並節省時間；仍需設定任務、資料與評估",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-035",
+      "officialQuestionNumber": 35,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 8 頁，第 35 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "全國法規資料庫－個人資料保護法施行細則",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0050022",
+          "locator": "第 3 條間接識別；第 12 條技術與組織安全措施；第 17 條代碼、匿名、隱藏部分資料等無從辨識方式",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-036",
+      "officialQuestionNumber": 36,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 8 頁，第 36 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Levels of AGI for Operationalizing Progress on the Path to AGI",
+          "url": "https://arxiv.org/abs/2311.02462",
+          "locator": "通用性維度：Narrow AI 限於明確任務或任務集合；General AI 涵蓋廣泛任務與新技能學習",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-037",
+      "officialQuestionNumber": 37,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 8～9 頁，第 37 題題幹、跨頁 A～D 選項與答案欄 B；兩頁均無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "AWS SageMaker AI－Real-time inference",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html",
+          "locator": "即時端點適用低延遲互動工作負載，並可透過 autoscaling 因應負載變化",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-038",
+      "officialQuestionNumber": 38,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": false,
+      "result": "human-decision",
+      "findings": [
+        "若『果實特徵資訊』指果實影像中的顏色、形狀與紋理，B 電腦視覺是合理答案，且確有以 RGB 影像／機器視覺判定蘋果成熟度的研究。",
+        "但題幹沒有寫攝影機、影像或外觀，只說分析『果實特徵資訊』。成熟度也可由 VIS/NIR 多光譜感測器、光譜形狀特徵、氣味或其他數值感測資料分類；這些是機器學習應用，不會僅因對象是果實就必然屬電腦視覺。既有詳解自行補入『資料來源是拍攝到的果實影像』，超出題幹。",
+        "風險是答案依賴未明說的輸入模態。建議人工確認官方原始命題依據；若維持 B，題幹應補『透過攝影機影像分析果實外觀特徵』，或詳解明示這是依選項推定的命題意圖。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 9 頁，第 38 題題幹、A～D 選項與答案欄 B；題幹未指明影像輸入，頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Rapid Identification of Apple Maturity Based on Multispectral Sensor Combined with Spectral Shape Features",
+          "url": "https://doi.org/10.3390/horticulturae8050361",
+          "locator": "以 VIS/NIR 多光譜感測器與光譜形狀特徵建立成熟度分類模型，顯示果實特徵資訊不限於一般影像",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "New Progress in Intelligent Picking: Online Detection of Apple Maturity and Fruit Diameter Based on Machine Vision",
+          "url": "https://doi.org/10.3390/agronomy14040721",
+          "locator": "以 machine vision／YOLO 進行蘋果成熟度判定，支持影像前提下的電腦視覺答案",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-039",
+      "officialQuestionNumber": 39,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": false,
+      "result": "human-decision",
+      "findings": [
+        "D 的配對明確成立：未使用人工標註而把歷史價格模式分群，屬非監督式學習。",
+        "但 C 也可能成立。監督式分類模型正是以錯誤預測造成的 loss 作為回饋，透過梯度更新持續調整參數；選項沒有描述 agent、environment、action、reward、序列決策或累積報酬，不能僅因出現『回饋訊號』『調整策略』就必然判成強化學習。既有詳解自行把 C 補成與環境互動的獎勵懲罰，超出原文。",
+        "風險是題目至少有 C、D 兩個合理配對，且會把監督式 loss 與 RL reward 的區分教錯。建議人工修題：若要讓 C 錯，應明寫模型採取攔阻／放行動作後，依後續損失形成獎勵並最佳化累積報酬；否則官方 D 不具唯一性。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 9 頁，第 39 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Reinforcement Learning: An Introduction, second edition",
+          "url": "https://mitpress.mit.edu/9780262039246/reinforcement-learning/",
+          "locator": "MIT Press 第二版官方頁：reinforcement learning 是 agent 與複雜、不確定環境互動並嘗試最大化所得總 reward 的學習方法",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Deep Learning",
+          "url": "https://www.deeplearningbook.org/contents/ml.html",
+          "locator": "第 5 章：監督學習以訓練樣本的目標輸出與 cost／loss 最小化學習分類或迴歸函數",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-040",
+      "officialQuestionNumber": 40,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 9 頁，第 40 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn－Classification metrics",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics",
+          "locator": "F1 是 precision 與 recall 的調和平均；可指定少數正類評估分類辨識表現",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    }
+  ]
+}

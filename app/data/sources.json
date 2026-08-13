@@ -269,11 +269,11 @@
     "expectedCount": 50,
     "importedCount": 50,
     "answerVerifiedCount": 50,
-    "explanationDraftCount": 0,
+    "explanationDraftCount": 50,
     "explanationReviewedCount": 0,
     "availability": "published",
     "inclusion": "target",
-    "notes": "50 題已逐頁核對並匯入；官方答案已核對。全卷無圖片題。詳解留待第二階段撰寫。"
+    "notes": "50 題已逐頁核對並匯入；官方答案已核對。全卷無圖片題。50 題皆已有完整 A～D 詳解初稿，尚待獨立人工複核。"
   },
   {
     "sourceId": "aiap-114-intermediate-2-big-data",
@@ -292,11 +292,11 @@
     "expectedCount": 50,
     "importedCount": 50,
     "answerVerifiedCount": 50,
-    "explanationDraftCount": 0,
+    "explanationDraftCount": 50,
     "explanationReviewedCount": 0,
     "availability": "published",
     "inclusion": "target",
-    "notes": "50 題已逐頁核對並匯入；官方答案已核對。第 3、40、41、42、43、49、50 題含官方 PDF 附圖，第 43～47、48～50 題為共用題組。詳解留待第二階段撰寫。"
+    "notes": "50 題已逐頁核對並匯入；官方答案已核對。第 3、40、41、42、43、49、50 題含官方 PDF 附圖，第 43～47、48～50 題為共用題組。50 題皆已有完整 A～D 詳解初稿，尚待獨立人工複核。"
   },
   {
     "sourceId": "aiap-114-intermediate-2-machine-learning",
@@ -315,11 +315,11 @@
     "expectedCount": 50,
     "importedCount": 50,
     "answerVerifiedCount": 50,
-    "explanationDraftCount": 0,
+    "explanationDraftCount": 50,
     "explanationReviewedCount": 0,
     "availability": "published",
     "inclusion": "target",
-    "notes": "50 題已逐頁核對並匯入；官方答案已核對。第 38～41、45～50 題含官方 PDF 附圖（含選項為程式碼截圖者），第 42～45、46～47、48～50 題為共用題組。詳解留待第二階段撰寫。"
+    "notes": "50 題已逐頁核對並匯入；官方答案已核對。第 38～41、45～50 題含官方 PDF 附圖（含選項為程式碼截圖者），第 42～45、46～47、48～50 題為共用題組。50 題皆已有完整 A～D 詳解初稿，尚待獨立人工複核。"
   },
   {
     "sourceId": "aiap-115-elementary-1-ai-foundation",
@@ -522,11 +522,11 @@
     "expectedCount": 50,
     "importedCount": 50,
     "answerVerifiedCount": 50,
-    "explanationDraftCount": 0,
+    "explanationDraftCount": 50,
     "explanationReviewedCount": 0,
     "availability": "published",
     "inclusion": "target",
-    "notes": "50 題已逐頁核對並匯入；官方答案已核對。第 19 題含官方 PDF 附圖（評估指標表格）。全卷無共用題組。詳解留待第二階段撰寫。"
+    "notes": "50 題已逐頁核對並匯入；官方答案已核對。第 19 題含官方 PDF 附圖（評估指標表格）。全卷無共用題組。50 題皆已有完整 A～D 詳解初稿，尚待獨立人工複核。"
   },
   {
     "sourceId": "aiap-115-intermediate-1-big-data",
@@ -545,11 +545,11 @@
     "expectedCount": 50,
     "importedCount": 50,
     "answerVerifiedCount": 50,
-    "explanationDraftCount": 0,
+    "explanationDraftCount": 50,
     "explanationReviewedCount": 0,
     "availability": "published",
     "inclusion": "target",
-    "notes": "50 題已逐頁核對並匯入；官方答案已核對。第 2、8、19、23、39、40、41、43、50 題含官方 PDF 附圖，第 49 題 A～D 選項本身為程式碼截圖；第 41～44、45～47、48～50 題為共用題組。詳解留待第二階段撰寫。"
+    "notes": "50 題已逐頁核對並匯入；官方答案已核對。第 2、8、19、23、39、40、41、43、50 題含官方 PDF 附圖，第 49 題 A～D 選項本身為程式碼截圖；第 41～44、45～47、48～50 題為共用題組。50 題皆已有完整 A～D 詳解初稿，尚待獨立人工複核。第 2、8 題目前的 PNG 資產為全黑圖，詳解已改依官方 PDF 目視核對，圖片資產仍待修復。"
   },
   {
     "sourceId": "aiap-115-intermediate-1-machine-learning",
@@ -568,11 +568,11 @@
     "expectedCount": 50,
     "importedCount": 50,
     "answerVerifiedCount": 50,
-    "explanationDraftCount": 0,
+    "explanationDraftCount": 50,
     "explanationReviewedCount": 0,
     "availability": "published",
     "inclusion": "target",
-    "notes": "50 題已逐頁核對並匯入；官方答案已核對。第 40、41、44、45、46、47、48、50 題含官方 PDF 附圖；第 42～43、44～45、46～48、49～50 題為共用題組。詳解留待第二階段撰寫。"
+    "notes": "50 題已逐頁核對並匯入；官方答案已核對。第 40、41、44、45、46、47、48、50 題含官方 PDF 附圖；第 42～43、44～45、46～48、49～50 題為共用題組。50 題皆已有完整 A～D 詳解初稿，尚待獨立人工複核。"
   },
   {
     "sourceId": "aiap-115-intermediate-2-ai-tech-planning",

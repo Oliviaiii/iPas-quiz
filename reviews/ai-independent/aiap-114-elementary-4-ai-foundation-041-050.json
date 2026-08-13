@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-elementary-4-ai-foundation",
+  "range": {
+    "start": 41,
+    "end": 50
+  },
+  "reviewedAt": "2026-08-13",
+  "reviewer": "Codex independent AI reviewer",
+  "counts": {
+    "pass": 6,
+    "corrected": 0,
+    "humanDecision": 3,
+    "blocked": 1
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-041",
+      "officialQuestionNumber": 41,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 10 頁，第 41 題題幹、A～D 與官方答案 D；已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn User Guide－Preprocessing data",
+          "url": "https://scikit-learn.org/stable/modules/preprocessing.html",
+          "locator": "8.3.4：OrdinalEncoder 可能引入不需要的順序；OneHotEncoder 將每個類別轉為獨立二元特徵",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-042",
+      "officialQuestionNumber": 42,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 10～11 頁跨頁處，第 42 題題幹、A～D 與官方答案 C；兩頁均已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "TensorFlow Federated－Federated Learning",
+          "url": "https://www.tensorflow.org/federated/federated_learning",
+          "locator": "Federated aggregation：伺服器下發模型，各 client 以本地資料訓練，再跨 client 彙整模型參數",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-043",
+      "officialQuestionNumber": 43,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 11 頁，第 43 題題幹、A～D 與官方答案 D；已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn User Guide－Preprocessing data",
+          "url": "https://scikit-learn.org/stable/modules/preprocessing.html",
+          "locator": "8.3.1：特徵尺度差異過大可能主導目標函數；StandardScaler 與 LogisticRegression pipeline 範例",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Google Machine Learning Crash Course－Numerical data: Normalization",
+          "url": "https://developers.google.com/machine-learning/crash-course/numerical-data/normalization",
+          "locator": "不同特徵範圍會使梯度下降震盪、延緩收斂，正規化可改善",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-044",
+      "officialQuestionNumber": 44,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 11 頁，第 44 題題幹、A～D 與官方答案 C；已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn User Guide－Clustering",
+          "url": "https://scikit-learn.org/stable/modules/clustering.html",
+          "locator": "2.3：對未標記資料進行 clustering，依距離等結構產生群集標籤",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-045",
+      "officialQuestionNumber": 45,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 11～12 頁跨頁處，第 45 題題幹、A～D 與官方答案 C；兩頁均已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－Detection of Outliers",
+          "url": "https://itl.nist.gov/div898/handbook/eda/section3/eda35h.htm",
+          "locator": "近似常態資料的離群值檢測、Z-score 限制與 modified Z-score 建議",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－Histogram Interpretation: Symmetric with Outlier",
+          "url": "https://itl.nist.gov/div898/handbook/eda/section3/histogr8.htm",
+          "locator": "異常值應調查原因，自動刪除異常值可能造成重要資訊流失",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-046",
+      "officialQuestionNumber": 46,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": false,
+      "result": "human-decision",
+      "findings": [
+        "風險：B 與 C 都使用目標變數選擇特徵，均屬監督式特徵選擇。B 是以統計關聯進行單變量過濾；C 是訓練模型取得 feature_importances_、係數或 permutation importance 後篩選，屬嵌入式或包裝式監督方法。證據：scikit-learn 同時把接受 X、y 的 SelectKBest 與依外部 estimator 重要性遞迴剔除特徵的 RFE 列在 Feature selection 章節。建議：保留官方答案 B，由人工複核者決定是否將題目理解為尋找『定義性概念』足以排除 C，或記錄為官方選項非唯一。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 12 頁，第 46 題題幹、A～D 與官方答案 B；已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn User Guide－Feature selection",
+          "url": "https://scikit-learn.org/stable/modules/feature_selection.html",
+          "locator": "1.13.2 SelectKBest 使用 X、y；1.13.3 RFE 使用 estimator 權重或 feature_importances_ 選擇特徵",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn User Guide－Permutation feature importance",
+          "url": "https://scikit-learn.org/stable/modules/permutation_importance.html",
+          "locator": "衡量各特徵對已訓練模型統計效能的貢獻",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-047",
+      "officialQuestionNumber": 47,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "human-decision",
+      "findings": [
+        "風險：B 是四個選項中對梯度消失最直接的常見手段，故仍可確認為最佳選項；但題幹把『梯度消失或梯度爆炸』合併描述，而 ReLU 主要緩解梯度消失，並非防止梯度爆炸的通用方法。證據：Google 神經網路訓練文件分別指出 ReLU 可緩解 vanishing gradients，而 exploding gradients 通常以 batch normalization 或降低 learning rate 處理。D 的特徵標準化也能提升梯度下降收斂速度，但不是逐層梯度問題的完整解法。建議：保留官方答案 B，由人工複核者決定是否在詳解中更明確限定『主要針對梯度消失』並揭露題幹合併兩種問題的措辭限制。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 12 頁，第 47 題題幹、A～D 與官方答案 B；已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Google Machine Learning Crash Course－Neural Networks: Training using backpropagation",
+          "url": "https://developers.google.com/machine-learning/crash-course/neural-networks/backpropagation",
+          "locator": "Vanishing Gradients、Exploding Gradients 與 Dead ReLU Units 的不同對策",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Google Machine Learning Crash Course－Numerical data: Normalization",
+          "url": "https://developers.google.com/machine-learning/crash-course/numerical-data/normalization",
+          "locator": "特徵尺度一致化可改善梯度下降收斂速度與權重學習",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-048",
+      "officialQuestionNumber": 48,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 12 頁，第 48 題題幹、A～D 與官方答案 A；已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－Histogram",
+          "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/histogra.htm",
+          "locator": "Histogram 用於摘要單變量資料的中心、分散、偏態、離群與多峰",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-049",
+      "officialQuestionNumber": 49,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": false,
+      "result": "blocked",
+      "findings": [
+        "阻塞：已開啟數位產業署 AI 產品與系統評測中心啟動新聞稿，能確認語言模型的十項高階評測構面為安全性、可解釋性、彈性、公平性、準確性、透明性、當責性、可靠性、隱私與資安；但該一手來源沒有列出題目所稱安全性『常見使用指標』中的事實正確性、偏見與歧視、惡意與濫用可能性，也未找到評測中心正式文件逐項列出這組名稱。風險：現有詳解以通用安全評估概念支持 A，仍不足以核實『數位發展部 AI 產品與評測中心所指出』這項具體歸因。建議：由人工複核者取得出題依據、中心評測指引或原始簡報後再判定；目前保留官方答案 A，不修改共享題庫。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 12 頁，第 49 題題幹、A～D 與官方答案 A；已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "數位產業署－數位發展部 AI 產品與系統評測中心啟動",
+          "url": "https://moda.gov.tw/ADI/news/latest-news/9295",
+          "locator": "語言模型十項高階評測構面；未列題目所稱三項安全性常見使用指標",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "數位產業署－人工智慧產品與系統評測參考指引草案預告",
+          "url": "https://moda.gov.tw/ADI/news/bulletin-board/11896.html",
+          "locator": "評測參考指引草案公告及附件入口；未能定位題目所列指標的正式對照表",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-050",
+      "officialQuestionNumber": 50,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": false,
+      "result": "human-decision",
+      "findings": [
+        "風險：A 的訓練語料涵蓋性與標註品質確屬訓練階段而非批次推論部署難題；但 B 要求批次推論『保持即時回應能力』也不是批次推論的主要目標。證據：Google Cloud 將 batch inference 定義為離線、非同步處理，優先最佳化高吞吐與成本效率，並明確容許分鐘至小時的延遲；即時低延遲是 online inference 的特性。故 A 與 B 都可能回答『通常不會被視為批次推論階段的主要難題』。建議：保留官方答案 A，由人工複核者判斷是否把 B 解讀成批次作業完成時間而非單筆即時回應，或記錄為官方選項非唯一。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 12～13 頁跨頁處，第 50 題題幹、A～D 與官方答案 A；兩頁均已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Google Cloud－What is batch inference?",
+          "url": "https://cloud.google.com/discover/what-is-batch-inference",
+          "locator": "Batch inference 的離線非同步、高吞吐、延遲容忍特性，以及與 online inference 的比較",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    }
+  ]
+}

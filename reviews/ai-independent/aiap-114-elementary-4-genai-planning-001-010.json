@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-elementary-4-genai-planning",
+  "range": {
+    "start": 1,
+    "end": 10
+  },
+  "reviewedAt": "2026-08-13",
+  "reviewer": "Codex independent AI reviewer",
+  "counts": {
+    "pass": 4,
+    "corrected": 5,
+    "humanDecision": 1,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-001",
+      "officialQuestionNumber": 1,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "風險：既有學習指引引用只說明 No Code／Low Code 的一般差異，未直接支撐『模型』如何驅動資料、流程與介面。證據：Microsoft Power Apps 官方文件說明 model-driven app 從資料模型與核心業務流程出發，據此建立 forms、views 與其他元件。建議動作：以 guarded draft 腳本新增此一手來源；不改官方答案或詳解正文。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 1 頁，第 1 題題幹、A～D 選項與答案 B；頁面已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Microsoft Learn－Overview of creating apps in Power Apps",
+          "url": "https://learn.microsoft.com/en-us/power-apps/maker/",
+          "locator": "Model-driven apps：從資料模型與核心業務資料、流程建立 forms、views、business rules 與 process flows",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-002",
+      "officialQuestionNumber": 2,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "風險：既有詳解把聯邦學習描述成原始文本不外流即可『確保隱私』，未說明個別模型更新仍可能洩漏參與者資料。證據：NIST 明確指出基本 FedAvg 不提供 input privacy，聚合者可從個別模型更新發動攻擊，需以 secure aggregation 等措施補強。建議動作：以 guarded draft 腳本把敘述改為『降低原始資料集中與外洩風險，但不單獨保證隱私』並新增 NIST 來源；維持答案 D 與 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 1 頁，第 2 題題幹、A～D 選項與答案 D；頁面已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Communication-Efficient Learning of Deep Networks from Decentralized Data",
+          "url": "https://arxiv.org/abs/1602.05629",
+          "locator": "Federated optimization／FedAvg：客戶端以本地資料訓練並彙整模型更新",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "NIST－Protecting Model Updates in Privacy-Preserving Federated Learning",
+          "url": "https://www.nist.gov/blogs/cybersecurity-insights/protecting-model-updates-privacy-preserving-federated-learning",
+          "locator": "基本 FedAvg 不提供 input privacy；個別更新可能遭攻擊，secure aggregation 可隱藏個別更新",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-003",
+      "officialQuestionNumber": 3,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "風險：既有引用只說明 Low Code 可處理複雜整合，未直接支撐服務虛擬化如何提升可測試性。證據：IBM 官方 DevOps Test Virtualization 文件說明 virtual services／stubs 可模擬尚不可用、難以使用或成本高昂的真實服務，供整合測試使用。建議動作：以 guarded draft 腳本新增 IBM 一手來源；不改答案或正文。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 1 頁，第 3 題題幹、A～D 選項與答案 B；頁面已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "IBM DevOps Test Virtualization－Tester Guide",
+          "url": "https://www.ibm.com/docs/en/devops-testvirtualization/11.0.4?topic=guide-tester-service-virtualization",
+          "locator": "使用 virtual services 或 stubs 模擬尚不可用、難以使用或成本高昂的真實服務，供 integration testers 驗證",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-004",
+      "officialQuestionNumber": 4,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "風險：既有詳解稱圖轉文字『必然』取捨並容易遺失拓撲，但引用的 APE 論文只支撐候選提示生成與評分，未支撐圖序列化；『必然遺失』也比官方選項的『可能』更絕對。證據：TMLR 論文實驗指出 LLM 往往把自然語言圖結構提示當作上下文段落，而非真正理解圖結構。建議動作：以 guarded draft 腳本改為條件式表述，新增該圖提示研究；維持答案 A。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 1 頁，第 4 題題幹、A～D 選項與答案 A；頁面已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Large Language Models Are Human-Level Prompt Engineers",
+          "url": "https://arxiv.org/abs/2211.01910",
+          "locator": "APE：由模型產生候選指令，經評分函數選擇較佳提示",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Can LLMs Effectively Leverage Graph Structural Information through Prompts, and Why?",
+          "url": "https://openreview.net/forum?id=L2jRavXRxs",
+          "locator": "TMLR 2024：LLM 傾向把自然語言編碼的圖結構當作上下文段落，而非理解為圖結構",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-005",
+      "officialQuestionNumber": 5,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": false,
+      "result": "human-decision",
+      "findings": [
+        "風險：官方答案 D 把『回饋機制通常只針對局部片段』視為超長上下文 APE 的最大限制，但現有 APE 原始論文只說明以評分函數評估候選提示，沒有建立回饋必然或通常僅涵蓋局部片段的結論；評估器可否覆蓋完整輸出取決於任務、上下文窗口與評分設計。Automatic Engineering of Long Prompts 也證明長提示可被自動優化，未提供 B 與 D 的一般性排序。建議動作：保留官方答案 D，請人工確認命題依據或官方教材來源，並決定是否把詳解改為『在採局部評估時』的條件式說明。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 1～2 頁，第 5 題題幹、A～D 選項與答案 D；頁面已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Large Language Models Are Human-Level Prompt Engineers",
+          "url": "https://arxiv.org/abs/2211.01910",
+          "locator": "APE workflow：proposal、score function、selection；未主張評分通常只涵蓋局部片段",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Automatic Engineering of Long Prompts",
+          "url": "https://arxiv.org/abs/2311.10117",
+          "locator": "研究 greedy／genetic algorithms 的長提示自動工程及其任務成效；未建立選項 B、D 的一般性排序",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-006",
+      "officialQuestionNumber": 6,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 2 頁，第 6 題題幹、A～D 選項與答案 B；頁面已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-2：模板設計優化、自動化行銷文案生成與個人化 App 快速開發",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-007",
+      "officialQuestionNumber": 7,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 2 頁，第 7 題題幹、A～D 選項與答案 C；頁面已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Model Context Protocol－Architecture",
+          "url": "https://modelcontextprotocol.io/specification/2025-06-18/architecture",
+          "locator": "Host 建立與管理 Client；每個 Client 與特定 Server 建立 1:1 連線並雙向路由訊息",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-008",
+      "officialQuestionNumber": 8,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 2～3 頁，第 8 題題幹、A～D 選項與答案 C；頁面已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "A2A Protocol－Core Concepts",
+          "url": "https://a2a-protocol.org/latest/topics/key-concepts/",
+          "locator": "Client Agent 發起通訊；Remote Agent 接收請求、處理任務並回傳結果或狀態",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-009",
+      "officialQuestionNumber": 9,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "風險：既有學習指引定位只說明上下文理解與提示可控生成，未定義 Context Engineering，也不足以支撐『比提示工程更廣、管理整體推理輸入』的正文。證據：Anthropic 官方工程文章把 Context Engineering 定義為在推理時策展與維持最佳 token／資訊集合，包含 system instructions、tools、external data 與 message history。建議動作：以 guarded draft 腳本新增此來源；不改答案或正文。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 3 頁，第 9 題題幹、A～D 選項與答案 B；頁面已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Anthropic－Effective context engineering for AI agents",
+          "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+          "locator": "Context engineering：在推理時策展與維持最佳資訊集合，涵蓋 prompts 以外的 tools、外部資料與訊息歷史",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-010",
+      "officialQuestionNumber": 10,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 3 頁，第 10 題題幹、A～D 選項與答案 B；頁面已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-18：生成式 AI 的挑戰包含輸出準確性與 AI 幻覺防範",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Large Language Models Can Be Easily Distracted by Irrelevant Context",
+          "url": "https://proceedings.mlr.press/v202/shi23a.html",
+          "locator": "ICML 2023：語言模型可能被輸入上下文中的不相關資訊干擾；行為取決於提示與模型，並無固定採第一段的規則",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    }
+  ]
+}

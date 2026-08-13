@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-elementary-4-ai-foundation",
+  "range": {
+    "start": 1,
+    "end": 10
+  },
+  "reviewedAt": "2026-08-13",
+  "reviewer": "Codex independent AI reviewer",
+  "counts": {
+    "pass": 7,
+    "corrected": 0,
+    "humanDecision": 3,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-001",
+      "officialQuestionNumber": 1,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "human-decision",
+      "findings": [
+        "風險：B 最完整呈現人在迴圈上的日常監督與可立即介入，因此官方答案可獨立確認；但 C 的『平時不參與運作、異常時接手』仍可能被理解為系統自主運作、人在監看並於必要時接管，與 human-on-the-loop 的常見描述部分重疊。證據：歐盟可信賴 AI 指引將 HOTL 說明為監看系統運作並具備介入能力；加拿大交通部也定義為系統主要決策、操作員主動監看並準備在需要時接管。建議：保留官方答案 B，由人工複核者決定是否在選項 C 解析中避免把它絕對歸為 human-out-of-the-loop，改以『未明示日常主動監督，故不如 B 完整』說明區辨。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 1 頁，第 1 題題幹、A～D 與官方答案 B；已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "European Commission－Requirements of Trustworthy AI",
+          "url": "https://ec.europa.eu/futurium/en/ai-alliance-consultation/guidelines/1.html",
+          "locator": "Human oversight：HITL 與 HOTL 的介入、監看定義",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Transport Canada－Advisory Circular AC 922-001",
+          "url": "https://tc.canada.ca/en/aviation/reference-centre/advisory-circulars/advisory-circular-ac-no-922-001",
+          "locator": "Modes of Operation (3)(b)：Human-on-the-Loop 的主動監看與接管定義",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-002",
+      "officialQuestionNumber": 2,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 1 頁，第 2 題題幹、A～D 與官方答案 C；已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Google Machine Learning Crash Course－Categorical data: Feature crosses",
+          "url": "https://developers.google.com/machine-learning/crash-course/categorical-data/feature-crosses",
+          "locator": "Feature cross 結合兩個以上類別或分桶特徵以表達交互作用",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-003",
+      "officialQuestionNumber": 3,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 1 頁，第 3 題題幹、A～D 與官方答案 D；已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Microsoft Learn－Extract, transform, and load (ETL)",
+          "url": "https://learn.microsoft.com/en-us/azure/architecture/data-guide/relational-data/etl",
+          "locator": "ETL process：Transform 包含 filtering、sorting、cleaning 等作業",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-004",
+      "officialQuestionNumber": 4,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 1 頁，第 4 題題幹、A～D 與官方答案 C；已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn User Guide－Linear Models, Lasso",
+          "url": "https://scikit-learn.org/stable/modules/linear_model.html",
+          "locator": "1.1.3 Lasso：L1 目標函數、稀疏係數與特徵選擇",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-005",
+      "officialQuestionNumber": 5,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 1 頁，第 5 題題幹、A～D 與官方答案 D；已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn－Underfitting vs. Overfitting",
+          "url": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_underfitting_overfitting.html",
+          "locator": "模型複雜度不足造成欠擬合、過高造成學入雜訊而過度擬合",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-006",
+      "officialQuestionNumber": 6,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "human-decision",
+      "findings": [
+        "風險：C 是四個選項中唯一同時指向 L1 與稀疏解者，因此可確認官方選答 C；但『L1 對大係數懲罰較強』若是與 L2 比較並不精確，L2 的平方懲罰對大係數成長更快，L1 產生精確零值的關鍵是 L1 幾何與 soft-thresholding。證據：scikit-learn 的 Lasso 目標為 alpha‖w‖1，且座標下降解在 alpha 大於等於相關量絕對值時直接為零。建議：保留官方答案 C；既有詳解已指出此措辭限制，由人工複核者決定這項編輯說明是否足以處理官方選項的不精確性。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 1～2 頁跨頁處，第 6 題題幹、A～D 與官方答案 C；兩頁均已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn User Guide－Linear Models, Lasso",
+          "url": "https://scikit-learn.org/stable/modules/linear_model.html",
+          "locator": "1.1.3 與 1.1.3.1：L1 目標函數、稀疏係數及 soft-thresholding 的零值條件",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-007",
+      "officialQuestionNumber": 7,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 2 頁，第 7 題題幹、A～D 與官方答案 B；已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn User Guide－Naive Bayes",
+          "url": "https://scikit-learn.org/stable/modules/naive_bayes.html",
+          "locator": "貝氏定理、給定類別的特徵條件獨立假設，以及文字分類與垃圾郵件用途",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-008",
+      "officialQuestionNumber": 8,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 2 頁，第 8 題題幹、A～D 與官方答案 B；已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-17：模型依輸入提示詞與文字機率分布逐字生成回應",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-009",
+      "officialQuestionNumber": 9,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "human-decision",
+      "findings": [
+        "風險：官方題幹寫『2025 年 9 月行政院通過』，但行政院新聞稿與草案總說明均顯示通過日期為 2025-08-28；月份存在官方題幹事實錯誤。答案仍可獨立確認為 B，因草案總說明明載參考歐盟 Regulatory Sandbox，且歐盟 AI Act 第 57 條規範 AI regulatory sandboxes。建議：保留官方答案 B；既有 editorialNote 已揭露日期差異，由人工複核者決定是否維持原題並加註，或等待官方勘誤。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 2 頁，第 9 題題幹、A～D 與官方答案 B；已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "行政院－人工智慧基本法草案總說明",
+          "url": "https://www.ey.gov.tw/File/296C3DF8632829E5?A=C",
+          "locator": "草案總說明：參考歐盟 AI 實驗沙盒制度（Regulatory Sandbox）建立創新實驗環境",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "行政院－政院通過人工智慧基本法草案",
+          "url": "https://english.ey.gov.tw/Page/61BF20C3E89B856/89da216e-5741-43e4-aac8-af4551a21499",
+          "locator": "新聞稿日期 2025-08-28",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "EUR-Lex－Regulation (EU) 2024/1689",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=en",
+          "locator": "Article 57：AI regulatory sandboxes 的設立與受控測試環境",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-ai-foundation-010",
+      "officialQuestionNumber": 10,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第一科人工智慧基礎概論(當次試題公告114_20251226000442.pdf",
+          "locator": "PDF 第 2 頁，第 10 題題幹、A～D 與官方答案 C；已渲染目視",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "中華民國銀行商業同業公會全國聯合會－金融機構運用人工智慧技術作業規範",
+          "url": "https://www.ba.org.tw/memberStandard/details?id=68",
+          "locator": "附件 1141012 版第 3～4 頁第 9 條：高階監督、內部治理、人才培育及生成式 AI 人員理解義務；全文已下載並渲染目視",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    }
+  ]
+}

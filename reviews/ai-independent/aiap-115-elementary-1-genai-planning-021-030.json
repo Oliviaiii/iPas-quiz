@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-elementary-1-genai-planning",
+  "range": { "start": 21, "end": 30 },
+  "reviewedAt": "2026-08-13",
+  "reviewer": "Codex independent AI reviewer",
+  "counts": { "pass": 10, "corrected": 0, "humanDecision": 0, "blocked": 0 },
+  "items": [
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-021",
+      "officialQuestionNumber": 21,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        { "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題", "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf", "locator": "PDF 第 5 頁，第 21 題題幹、A～D 選項與答案欄 D；頁面無附圖", "checkedAt": "2026-08-13" },
+        { "title": "OpenAI－Introducing AgentKit", "url": "https://openai.com/index/introducing-agentkit/", "locator": "2025 原始公告將 AgentKit 定位為建構、部署與最佳化代理的工具組，含視覺化工作流程、工具連接與代理介面；2026 更新不改變題目所問的歷史用途", "checkedAt": "2026-08-13" }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-022",
+      "officialQuestionNumber": 22,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        { "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題", "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf", "locator": "PDF 第 5 頁，第 22 題題幹、A～D 選項與答案欄 D；頁面無附圖", "checkedAt": "2026-08-13" },
+        { "title": "Google DeepMind－Watermarking AI-generated text and video with SynthID", "url": "https://deepmind.google/blog/watermarking-ai-generated-text-and-video-with-synthid/", "locator": "影片浮水印段落明載 SynthID 將不可見浮水印嵌入每一影格像素，且 Veo 生成影片均使用 SynthID", "checkedAt": "2026-08-13" }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-023",
+      "officialQuestionNumber": 23,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        { "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題", "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf", "locator": "PDF 第 5 頁，第 23 題題幹、A～D 選項與答案欄 A；頁面無附圖", "checkedAt": "2026-08-13" },
+        { "title": "iPAS AI 應用規劃師（初級）學習指引－科目二", "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf", "locator": "生成式 AI 產生新文字等內容；詐欺／非詐欺判斷則是輸出類別的鑑別式分類任務", "checkedAt": "2026-08-13" }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-024",
+      "officialQuestionNumber": 24,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        { "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題", "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf", "locator": "PDF 第 5～6 頁，第 24 題跨頁題幹、A～D 選項與答案欄 D；頁面無附圖；sourcePage 5 為題目起始頁", "checkedAt": "2026-08-13" },
+        { "title": "AWS Prescriptive Guidance－Total cost of ownership", "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/saas-network-access-options/evaluating.html", "locator": "TCO 為基礎設施成本、營運負擔、專家依賴、變更與合規成本的複合指標，不能只計 API、人力與基建直接費用", "checkedAt": "2026-08-13" }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-025",
+      "officialQuestionNumber": 25,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        { "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題", "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf", "locator": "PDF 第 6 頁，第 25 題題幹、A～D 選項與答案欄 A；頁面無附圖；依題給單價重算 API 月費 960 元、淨節省 29,040 元、回收期約 6.9 個月", "checkedAt": "2026-08-13" },
+        { "title": "OpenAI API－Pricing", "url": "https://developers.openai.com/api/docs/pricing", "locator": "官方 API 定價表將模型使用量區分輸入與輸出 token 計價；本題則以題幹假設單價進行獨立算術核對", "checkedAt": "2026-08-13" }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-026",
+      "officialQuestionNumber": 26,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        { "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題", "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf", "locator": "PDF 第 6 頁，第 26 題題幹、A～D 選項與答案欄 C；頁面無附圖", "checkedAt": "2026-08-13" },
+        { "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks", "url": "https://arxiv.org/abs/2005.11401", "locator": "RAG 結合預訓練生成模型與可檢索的外部非參數化知識索引，適合利用歷史洗錢案例生成有依據的描述", "checkedAt": "2026-08-13" }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-027",
+      "officialQuestionNumber": 27,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        { "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題", "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf", "locator": "PDF 第 6 頁，第 27 題題幹、A～D 選項與答案欄 A；頁面無附圖", "checkedAt": "2026-08-13" },
+        { "title": "n8n Documentation", "url": "https://docs.n8n.io/", "locator": "官方文件首頁可正常存取；n8n 以節點式工作流程整合服務、API 與程式碼，符合快速建置且保留客製彈性的需求", "checkedAt": "2026-08-13" }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-028",
+      "officialQuestionNumber": 28,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        { "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題", "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf", "locator": "PDF 第 6 頁，第 28 題題幹、A～D 選項與答案欄 C；頁面無附圖", "checkedAt": "2026-08-13" },
+        { "title": "OpenAI API－Pricing", "url": "https://developers.openai.com/api/docs/pricing", "locator": "推論 API 依模型的 input 與 output token 費率計價；訓練階段 GPU 記憶體成本不是題幹所定義的推理／生成 Token Economics", "checkedAt": "2026-08-13" }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-029",
+      "officialQuestionNumber": 29,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        { "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題", "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf", "locator": "PDF 第 7 頁，第 29 題題幹、A～D 選項與答案欄 C；頁面無附圖", "checkedAt": "2026-08-13" },
+        { "title": "Microsoft Learn－Power Fx overview", "url": "https://learn.microsoft.com/en-us/power-platform/power-fx/overview", "locator": "Low-code 以簡潔公式與視覺工具降低門檻，同時保留程式碼與自訂連接器的擴充空間，適合具基礎程式能力的小型團隊", "checkedAt": "2026-08-13" }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-030",
+      "officialQuestionNumber": 30,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        { "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題", "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf", "locator": "PDF 第 7 頁，第 30 題題幹、A～D 選項與答案欄 B；頁面無附圖", "checkedAt": "2026-08-13" },
+        { "title": "Language Models are Few-Shot Learners", "url": "https://arxiv.org/abs/2005.14165", "locator": "論文以少量任務示例在不做梯度更新的情況下引導語言模型完成新任務，與選項 B 的定義一致", "checkedAt": "2026-08-13" }
+      ]
+    }
+  ]
+}

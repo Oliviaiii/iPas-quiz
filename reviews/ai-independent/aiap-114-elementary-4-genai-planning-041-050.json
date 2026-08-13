@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-elementary-4-genai-planning",
+  "range": { "start": 41, "end": 50 },
+  "reviewedAt": "2026-08-13",
+  "reviewer": "Codex independent AI reviewer",
+  "counts": {
+    "pass": 4,
+    "corrected": 4,
+    "humanDecision": 2,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-041",
+      "officialQuestionNumber": 41,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": false,
+      "result": "human-decision",
+      "findings": [
+        "A 是合理敘述：只有 1～2 個示範時，確實難以涵蓋新領域的多樣性，因而可能泛化不足。",
+        "但 A、C、D 都是在描述相同核心：範例稀少／覆蓋不足，使模型難以泛化到領域偏移後的輸入；B 也只是把同一問題表述為依賴少數樣本特性。題幹未提供能唯一排除 C 或 D 的操作性定義。既有詳解為區分選項，宣稱跨領域穩定模式只能在訓練階段抽取、少樣本提示本來不能歸納跨領域規律，這並無所引一手來源支持，且與 in-context learning 由示範適應任務的研究描述衝突。",
+        "風險是把四個近義選項間的人為文字差異教成技術定律。建議人工判定題目是否應註記選項重疊；若保留 A，詳解只能說 A 最直接重述『範例數量與新領域多樣性』，不宜宣稱 C 在技術層次上必然錯誤。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 11 頁，第 41 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Language Models are Few-Shot Learners",
+          "url": "https://arxiv.org/abs/2005.14165",
+          "locator": "圖 1 與方法：few-shot in-context learning 由提示中的示範指定任務，不更新模型權重",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Selective Annotation Makes Language Models Better Few-Shot Learners",
+          "url": "https://openreview.net/forum?id=qY1hlv7gwg",
+          "locator": "研究示範選擇與測試資料 domain shift 對 few-shot in-context learning 的影響",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-042",
+      "officialQuestionNumber": 42,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 11 頁，第 42 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Distilling the Knowledge in a Neural Network",
+          "url": "https://arxiv.org/abs/1503.02531",
+          "locator": "摘要與方法：把笨重教師／集成模型的知識壓縮到較容易部署的學生模型",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-043",
+      "officialQuestionNumber": 43,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 11～12 頁，第 43 題題幹、跨頁 A～D 選項與答案欄 D；兩頁均無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Training Compute-Optimal Large Language Models",
+          "url": "https://arxiv.org/abs/2203.15556",
+          "locator": "摘要與實驗：模型大小與訓練 token 應隨計算預算共同配置；70B Chinchilla 勝過多個更大但訓練不足的模型",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-044",
+      "officialQuestionNumber": 44,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 C 是最佳選項：RAG 的核心是檢索外部知識作為生成依據；MCP 的核心是以協定標準化 AI 應用與外部能力的連接，工具／API 呼叫是重要部分。",
+        "既有詳解把差異濃縮成 RAG『補知識』、MCP『補動作』，並把 RAG 寫成必然切分、向量化與建立向量索引。MCP 官方架構明載伺服器可提供 tools、resources、prompts，不只動作；RAG 的本質是 retrieval augmentation，並不要求唯一的向量資料庫實作。風險是讀者把選項 C 的相對描述誤學成兩技術互斥且各自只有一種實作。",
+        "已新增 guarded 修正腳本，保留 C，但改為『RAG 著重檢索外部內容；MCP 標準化 tools/resources/prompts 的連接，C 特別點出工具與 API』，並刪除 RAG 必然依賴向量流程的敘述；維持 draft 且未執行。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 12 頁，第 44 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Model Context Protocol－Architecture overview",
+          "url": "https://modelcontextprotocol.io/docs/learn/architecture",
+          "locator": "MCP client-server 架構與三項 server primitives：tools、resources、prompts",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+          "url": "https://arxiv.org/abs/2005.11401",
+          "locator": "摘要與方法：結合參數式生成模型與推論時檢索的非參數外部記憶",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-045",
+      "officialQuestionNumber": 45,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 12 頁，第 45 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Measuring Massive Multitask Language Understanding",
+          "url": "https://arxiv.org/abs/2009.03300",
+          "locator": "摘要與資料集：57 個任務，涵蓋人文、社會科學、STEM 等多領域",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "C-Eval: A Multi-Level Multi-Discipline Chinese Evaluation Suite for Foundation Models",
+          "url": "https://arxiv.org/abs/2305.08322",
+          "locator": "摘要：中文情境、52 個學科與四個難度層級的綜合評測",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-046",
+      "officialQuestionNumber": 46,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 D 正確：guardrails 的主要目的在執行安全與政策控制，不是完整重建模型全部內部推理。",
+        "既有詳解一方面正確列出 input、retrieval、dialog、execution、output rails，另一方面又宣稱護欄共同特徵是只作用於模型輸入與輸出兩端，前後矛盾。NVIDIA 官方文件明載護欄可介入檢索內容、對話流程與工具執行。風險是把 agentic／RAG 系統的中段控制點漏掉。",
+        "已新增 guarded 修正腳本，改寫為護欄在互動流程多個可控檢查點執行驗證、限制、修改或阻擋，並維持與完整內部推理解釋的區分；維持 draft 且未執行。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 12 頁，第 46 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "NVIDIA NeMo Guardrails－Guardrail Types",
+          "url": "https://docs.nvidia.com/nemo/guardrails/latest/about/rail-types.html",
+          "locator": "護欄可在 input、retrieval、dialog、execution、output 多階段驗證、限制或修改內容與動作",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-047",
+      "officialQuestionNumber": 47,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 B 正確：chunking 的主要目的之一是提供較合適的檢索粒度，避免把整份長文件及大量無關內容都送入上下文。",
+        "既有詳解把切分寫成會讓『每個片段主題單一』、相似度必然更銳利；固定長度或不當邊界也可能切斷語意，片段太小會失去必要上下文。研究顯示 segmentation strategy 與 chunk size 會顯著影響 retrieval／QA，並不存在切分後自然單一主題的保證。風險是讀者忽略 chunk size、overlap、邊界與評估的取捨。",
+        "已新增 guarded 修正腳本，把效果限定為『適當大小且邊界合理的切分』，並補充過小／不當切分的代價；保留答案 B、維持 draft 且未執行。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 12 頁，第 47 題題幹、A～D 選項與答案欄 B；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Document Segmentation Matters for Retrieval-Augmented Generation",
+          "url": "https://aclanthology.org/2025.findings-acl.422/",
+          "locator": "跨多資料集比較 fixed-size、sentence、paragraph、semantic 等切分策略對 retrieval 與 QA 的影響",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Lost in the Middle: How Language Models Use Long Contexts",
+          "url": "https://arxiv.org/abs/2307.03172",
+          "locator": "長上下文中關鍵資訊位置會顯著影響模型利用效果，支持控制無關上下文的必要性",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-048",
+      "officialQuestionNumber": 48,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 12～13 頁，第 48 題題幹、跨頁 A～D 選項與答案欄 A；兩頁均無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "LangChain－Multi-Vector Retriever for RAG on tables, text, and images",
+          "url": "https://blog.langchain.dev/semi-structured-multi-modal-rag/",
+          "locator": "以摘要等檢索表示建立索引，命中後取回完整原文；示例涵蓋文字、表格與圖片",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-049",
+      "officialQuestionNumber": 49,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": false,
+      "result": "human-decision",
+      "findings": [
+        "D 在四個選項中最合理：圖結構可作為多步驟任務規劃與推理的參考，而非完全取代 LLM、只做事後保存或必然鎖死流程。",
+        "但『Solution Graph』不是現有 Agentic AI 文獻中具有單一公認定義的標準術語；同名概念在傳統 AND/OR 搜尋中指代表解答的子圖，在 AI planning 亦有不同的因果行動圖定義。既有詳解沒有任何外部來源，卻自行斷言節點必然代表推理／工具呼叫、邊必然代表先後與依賴，證據不足。",
+        "風險是把出題者未定義的內部術語包裝成通用 Agentic AI 架構。建議人工向命題依據確認定義；在此之前可保留 D 為選項排除後的最佳答案，但詳解應明示『依本題所用語境』，不要聲稱業界統一定義。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 13 頁，第 49 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "An admissible and optimal algorithm for searching AND/OR graphs",
+          "url": "https://doi.org/10.1016/0004-3702(71)90006-3",
+          "locator": "傳統 AI 搜尋中的 solution graph：代表問題解答的 AND/OR graph 子圖，顯示同名術語另有既定但不同的技術意義",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-050",
+      "officialQuestionNumber": 50,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 C 是最精確的任務標籤：依前文自迴歸產生後續文字，正是 text generation。",
+        "既有詳解為排除 A，宣稱 sequence-to-sequence 必須有『完整來源』且續寫沒有待轉換的來源，因此不能完成續寫。Seq2seq 是把輸入序列映射到輸出序列的廣義模型族，技術上可把前綴當輸入、後續當輸出；它不是本題最具體的任務名稱，但不能說架構上無法實現。風險是混淆『最佳任務分類』與『可用模型架構』。",
+        "已新增 guarded 修正腳本，改為 C 比 A 更直接命名本題的開放式續寫任務，同時承認 seq2seq 模型廣義上可產生文字序列；維持 draft 且未執行。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 13 頁，第 50 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Sequence to Sequence Learning with Neural Networks",
+          "url": "https://arxiv.org/abs/1409.3215",
+          "locator": "方法：以輸入序列為條件，由編碼器／解碼器產生輸出序列；屬模型架構而非只限翻譯或摘要的任務標籤",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Language Models are Few-Shot Learners",
+          "url": "https://arxiv.org/abs/2005.14165",
+          "locator": "自迴歸語言模型依上下文逐 token 預測與生成後續文字",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    }
+  ]
+}

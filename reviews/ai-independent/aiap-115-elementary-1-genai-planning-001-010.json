@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-elementary-1-genai-planning",
+  "range": { "start": 1, "end": 10 },
+  "reviewedAt": "2026-08-13",
+  "reviewer": "Codex independent AI reviewer",
+  "counts": { "pass": 5, "corrected": 5, "humanDecision": 0, "blocked": 0 },
+  "items": [
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-001",
+      "officialQuestionNumber": 1,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 1 頁，第 1 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "NIST SP 1270－Towards a Standard for Identifying and Managing Bias in Artificial Intelligence",
+          "url": "https://doi.org/10.6028/NIST.SP.1270",
+          "locator": "AI 偏差可源自資料、演算法及人類／制度因素；資料代表性是偏差管理的重要檢查面向",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-002",
+      "officialQuestionNumber": 2,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 D 正確：LoRA 凍結預訓練權重，僅訓練低秩更新矩陣，可顯著減少可訓練參數。",
+        "既有 C 選項解析斷言分層凍結在參數縮減與維持效能上都遠不及 LoRA；這不是跨任務、模型及凍結策略都成立的普遍結論。",
+        "guarded 草稿已改為說明兩者結構差異及本題為何仍選 LoRA，不變更答案或 draft 狀態。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 1 頁，第 2 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+          "url": "https://arxiv.org/abs/2106.09685",
+          "locator": "凍結預訓練權重並注入可訓練低秩矩陣，降低可訓練參數與記憶體需求",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-003",
+      "officialQuestionNumber": 3,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 1 頁，第 3 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 No-Code／Low-Code 平台定位；即時儀表板可信度仍以穩定資料串接及更新為前提",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-004",
+      "officialQuestionNumber": 4,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 1 頁，第 4 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "NVIDIA NIM Benchmarking Guide－LLM inference metrics",
+          "url": "https://docs.nvidia.com/nim/benchmarking/llm/latest/metrics.html",
+          "locator": "區分端到端延遲、首詞元時間及吞吐量；卡頓應量測單次互動時間指標",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-005",
+      "officialQuestionNumber": 5,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 C 正確：Transformer 自注意力縮短序列位置間的資訊傳遞路徑，自迴歸模型依前文逐詞生成。",
+        "既有 C 解析稱長距離依賴「不隨距離衰減」，把架構上的常數路徑誤寫成實際資訊利用永不退化的保證。",
+        "guarded 草稿已限定為脈絡視窗內直接建立關聯，並補充實際表現仍受脈絡長度、注意力及模型能力影響。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 1～2 頁，第 5 題跨頁題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Attention Is All You Need",
+          "url": "https://arxiv.org/abs/1706.03762",
+          "locator": "Transformer 以注意力取代循環與卷積；自注意力提供位置間常數長度路徑，但未宣稱長距離資訊永不衰減",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-006",
+      "officialQuestionNumber": 6,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "以 2026-03-21 考試時點判讀，官方答案 D 正確；OpenAI 的 Sora 2 系統卡列有 C2PA、可見移動浮水印及內部影片／音訊辨識工具，未列對外即時來源驗證介面。",
+        "既有詳解明載尚缺 OpenAI 一手來源，只有官方試題與 C2PA 一般資料，證據鏈未完成。",
+        "guarded 草稿已補入考試前的 OpenAI 系統卡並移除待查狀態；另註明 Sora 產品其後於 2026-04-26 停止提供，避免現況與考試時點混淆。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 2 頁，第 6 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "OpenAI－Sora 2 System Card: Provenance and Transparency Initiatives",
+          "url": "https://deploymentsafety.openai.com/sora-2/provenance-and-transparency-initiatives",
+          "locator": "考試前列出 C2PA、可見移動浮水印及內部影片／音訊偵測工具，未列對外即時驗證介面",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-007",
+      "officialQuestionNumber": 7,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 2 頁，第 7 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Microsoft Learn－Security and governance considerations in Power Platform",
+          "url": "https://learn.microsoft.com/en-us/power-platform/admin/governance-considerations",
+          "locator": "企業級 Low-Code 平台具環境／資源／資料安全角色、資料政策及稽核紀錄，可支援治理落實",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-008",
+      "officialQuestionNumber": 8,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 D 正確：題目觀察為雲端順暢、邊緣端變慢，最能解釋的是邊緣裝置運算及記憶體資源受限。",
+        "既有 C 解析先正確指出邊緣部署可縮短網路往返，隨後卻說「雲端通常比邊緣更容易延遲」把相對關係講反，前後自相矛盾。",
+        "guarded 草稿已說明 C 在一般網路延遲語境可能成立，但不能解釋本題觀察；本題區分的是傳輸延遲與邊緣端運算延遲。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 2 頁，第 8 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Red Hat－What is edge computing?",
+          "url": "https://www.redhat.com/en/topics/edge-computing/what-is-edge-computing",
+          "locator": "邊緣運算在資料來源附近處理以減少傳輸；邊緣部署亦受硬體足跡、電力及成本限制",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-009",
+      "officialQuestionNumber": 9,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 2 頁，第 9 題題幹、A～D 選項與答案欄 B；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Language Models are Few-Shot Learners",
+          "url": "https://arxiv.org/abs/2005.14165",
+          "locator": "少樣本提示以少量文字示範指定任務，且論文承認若干資料集上的少樣本表現仍有限",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-010",
+      "officialQuestionNumber": 10,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 D 正確：知識蒸餾讓較小的學生模型學習大型教師模型的行為，以降低部署推論成本。",
+        "既有概念與陷阱把 RAG 成本結構概括成檢索便宜、生成昂貴且必須對生成端下手；成本占比其實取決於檢索、重排序、上下文長度、模型及部署設計。",
+        "guarded 草稿已將蒸餾效果限定於經量測確認的生成模型瓶頸，並保留品質仍須任務評估的前提。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 3 頁，第 10 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Distilling the Knowledge in a Neural Network",
+          "url": "https://arxiv.org/abs/1503.02531",
+          "locator": "以較小模型學習大型模型或集合模型的輸出行為，以便部署",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    }
+  ]
+}

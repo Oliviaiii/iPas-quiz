@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-elementary-4-genai-planning",
+  "range": {
+    "start": 11,
+    "end": 20
+  },
+  "reviewedAt": "2026-08-13",
+  "reviewer": "Codex independent AI reviewer",
+  "counts": {
+    "pass": 7,
+    "corrected": 1,
+    "humanDecision": 2,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-011",
+      "officialQuestionNumber": 11,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 3 頁，第 11 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+          "url": "https://arxiv.org/abs/2305.10601",
+          "locator": "摘要與方法：以樹狀思考狀態進行 lookahead，並採 breadth-first search 或 depth-first search",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-012",
+      "officialQuestionNumber": 12,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 3 頁，第 12 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "本地部署與雲端服務的資料隱私、自主控制、成本及資源需求取捨",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-013",
+      "officialQuestionNumber": 13,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": false,
+      "result": "human-decision",
+      "findings": [
+        "D 完整重現 GitHub 2021 年 Copilot 推出公告：當時由 OpenAI Codex 支援，並能建議整行或整個函式。",
+        "但 GitHub 已於 2024-10-29 公告 Copilot 採多模型，並明載 Copilot Chat 自 2023 年即使用 GPT-3.5、後續使用 GPT-4 等模型；本次考試在 2025 年，故 D 若按考試當時產品現況理解，『由 Codex 模型提供技術支援』已不是無條件正確的現況敘述。",
+        "既有詳解只把多模型標成截至 2026 的後續時效變化，未指出變化早於考試。官方答案仍保留 D，但題目究竟考歷史推出敘述或考試當時現況，需人工決定註記方式。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 3 頁，第 13 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "GitHub Blog－Introducing GitHub Copilot: your AI pair programmer",
+          "url": "https://github.blog/news-insights/product-news/introducing-github-copilot-ai-pair-programmer/",
+          "locator": "2021-06-29 推出公告：由 OpenAI Codex 支援，依當前程式碼建議整行或整個函式",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "GitHub Blog－Bringing developer choice to Copilot",
+          "url": "https://github.blog/news-insights/product-news/bringing-developer-choice-to-copilot/",
+          "locator": "2024-10-29 公告：首個公開版本使用 Codex，但 Copilot Chat 已使用 GPT-3.5、GPT-4，並引入 Anthropic、Google 與 OpenAI 多模型選擇",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-014",
+      "officialQuestionNumber": 14,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 4 頁，第 14 題題幹、A～D 選項與答案欄 B；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+          "url": "https://arxiv.org/abs/2005.11401",
+          "locator": "摘要與方法：以外部非參數記憶檢索支援知識密集型回答及知識更新",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "OpenAI API Docs－Function calling",
+          "url": "https://platform.openai.com/docs/guides/function-calling",
+          "locator": "模型透過工具／函式呼叫連接外部系統及執行應用程式動作",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-015",
+      "officialQuestionNumber": 15,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 4 頁，第 15 題題幹、A～D 選項與答案欄 B；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "CTRL: A Conditional Transformer Language Model for Controllable Generation",
+          "url": "https://arxiv.org/abs/1909.05858",
+          "locator": "摘要與方法：以 control codes 控制大型語言模型的風格、內容與任務特性",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-016",
+      "officialQuestionNumber": 16,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 4 頁，第 16 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "MetaGPT: Meta Programming for Multi-Agent Collaborative Framework",
+          "url": "https://arxiv.org/abs/2308.00352",
+          "locator": "摘要與方法：以明確角色、標準作業程序及結構化協作降低多代理工作重疊與錯誤串聯",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-017",
+      "officialQuestionNumber": 17,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 4 頁，第 17 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+          "url": "https://arxiv.org/abs/2005.11401",
+          "locator": "摘要與方法：外部非參數記憶可更新知識及提供來源，毋須把每日文件重新訓練進模型參數",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-018",
+      "officialQuestionNumber": 18,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 D 合理：題幹已直接觀察到檢索版本時新時舊，這會改變回答的事實依據，應比提示措辭、微調語料與生成參數更優先修正。",
+        "既有詳解把『溫度固定為 0.6』推論成變異不在解碼隨機性；但固定參數不等於固定取樣結果，Google 官方文件明載溫度用於取樣並控制 token 選擇隨機性，甚至溫度 0 也只大致確定、仍可能有少量變化。",
+        "已新增 guarded 修正腳本，只修正 concept、answerReason、A 選項分析與 trap 的錯誤推論；不變更官方答案、其他欄位或 draft 狀態，且未執行。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 5 頁，第 18 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Google Cloud－Content generation parameters",
+          "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/content-generation-parameters",
+          "locator": "Temperature：用於生成取樣並控制 token 選擇隨機性；較低溫度較可預測但不完全確定，溫度 0 仍可能有少量變化",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+          "url": "https://arxiv.org/abs/2005.11401",
+          "locator": "摘要與方法：生成器以檢索到的外部知識作為事實依據，外部記憶可更新",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-019",
+      "officialQuestionNumber": 19,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 5 頁，第 19 題題幹、A～D 選項與答案欄 B；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "提示工程：以清楚角色、任務、脈絡、格式與限制降低意圖誤解及輸出偏差",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-114-04-genai-planning-020",
+      "officialQuestionNumber": 20,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "human-decision",
+      "findings": [
+        "D 是四個選項中的最佳風險敘述：若模型產生與影像不符的診斷結論，確會造成病人安全、醫療責任與法規風險。",
+        "但題幹把生成式 AI 用於胸腔影像診斷直接稱為『誤用』，既有詳解更稱任務類型選錯是根本錯誤；FDA 資料明載生成式／多模態基礎模型可微調於醫療影像分析，關鍵是明確 intended use、嚴謹評估、風險管理、視覺 grounding 與人工監督，而非模型被歸類為生成式就必然不適用。",
+        "既有詳解另稱生成式輸出缺乏可驗證指標或分類模型有『答錯就被指標抓出來』的內建約束，屬過度簡化。建議人工決定是否保留 D 並重寫為『未經適當訓練、驗證與監督時的幻覺風險』，不要宣稱生成式模型先天不能做影像任務。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第四梯次初級AI應用規劃師第二科生成式AI應用與規劃(當次試題公告114_20251226000507.pdf",
+          "locator": "PDF 第 5 頁，第 20 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "FDA－Digital Health Advisory Committee Meeting Summary: Generative AI-enabled Medical Devices",
+          "url": "https://www.fda.gov/media/185617/download",
+          "locator": "PDF 第 5 頁：基礎模型可微調於醫療影像分析；安全導入需 intended use、風險管理、嚴謹上市前評估、生命週期管理，並以人工監督與視覺 grounding 降低幻覺",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    }
+  ]
+}

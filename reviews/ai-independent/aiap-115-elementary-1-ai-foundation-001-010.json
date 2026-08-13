@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-elementary-1-ai-foundation",
+  "range": {
+    "start": 1,
+    "end": 10
+  },
+  "reviewedAt": "2026-08-13",
+  "reviewer": "Codex independent AI reviewer",
+  "counts": {
+    "pass": 8,
+    "corrected": 2,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-001",
+      "officialQuestionNumber": 1,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 1 頁，第 1 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "資料處理包含清理、整合、儲存及分析；ETL 負責多來源資料的擷取、轉換與載入",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-002",
+      "officialQuestionNumber": 2,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 1 頁，第 2 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "智慧交通等應用由感測器取得即時環境資訊，再由 AI 與導航／決策系統處理",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-003",
+      "officialQuestionNumber": 3,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 1 頁，第 3 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "監督式學習以有標記資料學習輸入輸出映射；非監督式學習探索無標記資料的結構、聚類與降維",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-004",
+      "officialQuestionNumber": 4,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 C 明確：One-hot 編碼用於無序類別特徵，不能處理連續理賠金額的離群程度。",
+        "既有 B 選項分析把 trimming 說成可把極端值『截斷或剔除』，混淆 trimming 與 winsorization。NIST 將 trimmed mean 定義為移除兩端資料；winsorized mean 才是把尾端觀測改設為保留界限值。",
+        "guarded 修正草稿只重寫 B 選項分析並補入 NIST 一手來源；不改官方答案、其他解釋欄位或 draft 狀態。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 1 頁，第 4 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－Measures of Location",
+          "url": "https://itl.nist.gov/div898/handbook/eda/section3/eda351.htm",
+          "locator": "Trimmed mean 移除兩端一定比例資料；Winsorized mean 將尾端值改設為最低或最高保留界限",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn－Preprocessing data",
+          "url": "https://scikit-learn.org/stable/modules/preprocessing.html#encoding-categorical-features",
+          "locator": "OneHotEncoder 將具有 n 個可能值的類別特徵轉成 n 個二元特徵",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-005",
+      "officialQuestionNumber": 5,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 1～2 頁，第 5 題跨頁題幹、A～D 選項與答案欄 B；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Chawla et al.－SMOTE: Synthetic Minority Over-sampling Technique",
+          "url": "https://www.jair.org/index.php/jair/article/view/10302",
+          "locator": "SMOTE 在少數類樣本及其近鄰間插值，合成新的少數類樣本，而非刪除多數類或調整損失權重",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-006",
+      "officialQuestionNumber": 6,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 2 頁，第 6 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn－Common pitfalls and recommended practices",
+          "url": "https://scikit-learn.org/stable/common_pitfalls.html#data-leakage",
+          "locator": "先切分再前處理；僅在訓練資料 fit，測試資料只 transform，避免測試資訊洩漏",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-007",
+      "officialQuestionNumber": 7,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 2 頁，第 7 題題幹、A～D 選項與答案欄 C；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn－Preprocessing data",
+          "url": "https://scikit-learn.org/stable/modules/preprocessing.html#encoding-categorical-features",
+          "locator": "OneHotEncoder 將類別值轉成模型可用的二元數值欄位，避免引入不存在的序位",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-008",
+      "officialQuestionNumber": 8,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 2 頁，第 8 題題幹、A～D 選項與答案欄 D；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Wide & Deep Learning for Recommender Systems",
+          "url": "https://arxiv.org/abs/1606.07792",
+          "locator": "線性側以交叉特徵記憶已見組合，深度側以嵌入泛化至未見組合，兩者聯合訓練",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-009",
+      "officialQuestionNumber": 9,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 2 頁，第 9 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "scikit-learn－Neural network models (supervised)",
+          "url": "https://scikit-learn.org/stable/modules/neural_networks_supervised.html",
+          "locator": "多類別 MLPClassifier 以 Softmax 輸出跨類別正規化且總和為 1 的機率",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-ai-foundation-010",
+      "officialQuestionNumber": 10,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "官方答案 A 明確：VAE 學習連續隱變量分布並由生成模型取樣／解碼，直接符合產生具變化且風格一致之新圖像的需求。",
+        "既有 D 選項分析援引學習指引稱貝氏方法不擅長生成內容，容易被讀成貝氏網路沒有生成能力；貝氏網路建模聯合分布且能前向取樣生成樣本，只是傳統結構不適合本題的高維像素與風格控制。",
+        "guarded 修正草稿只重寫 D 選項分析，保留其為不適合本題的干擾項並補入貝氏網路取樣文件；不改官方答案、其他解釋欄位或 draft 狀態。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260410164304.pdf",
+          "locator": "PDF 第 3 頁，第 10 題題幹、A～D 選項與答案欄 A；頁面無附圖",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Auto-Encoding Variational Bayes",
+          "url": "https://arxiv.org/abs/1312.6114",
+          "locator": "以 recognition model 近似後驗分布，並在連續隱變量生成模型上進行可微分學習與取樣",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "pgmpy Documentation－Bayesian Model Sampling",
+          "url": "https://pgmpy.org/exact_infer/bn_sampling.html",
+          "locator": "BayesianModelSampling.forward_sample 依貝氏網路表示的聯合分布產生樣本",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    }
+  ]
+}
