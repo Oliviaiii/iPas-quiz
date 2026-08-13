@@ -1,0 +1,416 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-elementary-1-genai-planning",
+  "range": {
+    "start": 31,
+    "end": 40
+  },
+  "reviewedAt": "2026-08-13",
+  "reviewer": "Codex independent AI reviewer",
+  "counts": {
+    "pass": 7,
+    "corrected": 3,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-031",
+      "officialQuestionNumber": 31,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 7 頁（共 11 頁）第 31 題：題幹、(A)~(D) 選項文字與左欄官方答案 C 皆與題庫一致；本試卷採逐題左欄標示答案，第 11 頁末頁無另設答案總表，已目視確認",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "arXiv 2005.11401－Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+          "url": "https://arxiv.org/abs/2005.11401",
+          "locator": "摘要：non-parametric memory 為 dense vector index，由 pre-trained neural retriever 取回後交給 pre-trained seq2seq 生成模型；支持 explanation 對 RAG 架構與向量資料庫的敘述",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "arXiv 2307.03172－Lost in the Middle: How Language Models Use Long Contexts",
+          "url": "https://arxiv.org/abs/2307.03172",
+          "locator": "摘要：相關資訊位於長上下文中段時效能顯著下降（beginning/end 表現較佳）；支持選項 B 分析中「長上下文中段資訊利用變差」之敘述",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "arXiv 2005.14165－Language Models are Few-Shot Learners",
+          "url": "https://arxiv.org/abs/2005.14165",
+          "locator": "摘要：任務與少量示範純以文字提示指定，GPT-3 全程 without any gradient updates or fine-tuning；支持選項 D 對 few-shot 定位之敘述",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-032",
+      "officialQuestionNumber": 32,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        {
+          "field": "explanation.summary",
+          "severity": "minor",
+          "type": "precision/over-generalisation",
+          "risk": "summary 把 No-Code 與 Low-Code 合併敘述為「讓使用者不寫程式也能完成建模」。此敘述對 No Code 成立，對 Low Code 不成立——Low Code 的定義正是「結合視覺化工具與少量程式碼」。同一份考卷第 29 題（同為第 7 頁）官方答案為 (C)「使用 Low-Code 平台，結合視覺化拖拉與少量程式碼」，且官方明確把 (B)「使用純粹的 No-Code 平台，完全不需要任何程式技能」判為錯誤選項。學生若對照兩題，本題 summary 的絕對語氣會與第 29 題的官方判準衝突。",
+          "evidence": [
+            "官方學習指引（科目二）PDF 第 7 頁 3.1 節：「No Code 平台透過視覺化介面和拖放操作，讓使用者無需編寫程式碼即可快速開發」——限定主詞為 No Code 平台，未涵蓋 Low Code。",
+            "同一份學習指引章末解析第 1 題：「No Code 平台的核心特點是使用圖形化介面（UI）讓用戶無需撰寫任何程式碼即可完成開發，而 Low Code 平台則是結合了少量程式設計與圖形化工具」。",
+            "past-10.pdf 第 7 頁第 29 題官方答案 C，選項 (C) 為「使用 Low-Code 平台，結合視覺化拖拉與少量程式碼」，選項 (B)「使用純粹的 No-Code 平台，完全不需要任何程式技能」非答案。"
+          ],
+          "suggestedAction": "以最小幅度補上 Low-Code 的限定語，不動答案、不動 concept／optionAnalysis／trap。",
+          "patch": {
+            "path": "explanation.summary",
+            "matchIsUnique": true,
+            "old": "讓使用者不寫程式也能完成建模。",
+            "new": "讓使用者不寫程式（Low-Code 則只需少量程式）也能完成建模。"
+          }
+        }
+      ],
+      "notes": [
+        "官方答案 A 已獨立判定並與 PDF 一致：題目問的是『模型訓練機制上的典型特性』，只有 (A) 描述平台本身承擔訓練與調校；(B) 描述的是預訓練模型推論 API，(C) 描述的是 ETL／資料整備工具，(D) 錯誤地把適用範圍綁定 Spark。無複選疑義。",
+        "explanation 的 concept 一段引述官方指引時主詞正確寫為「No Code 平台」，與指引原文相符，不需修改；optionAnalysis.A 的「使用者不必手寫訓練程式」在 Low-Code 情境下亦成立，不需修改。",
+        "explanation.references 三筆的 URL、locator 與 checkedAt（2026-07-29／2026-07-31）皆經本次重新查證通過，無時效、法域或產品版本問題；Microsoft Learn AutoML 頁 ms.date 為 2025-11-24，引述內容仍在頁上。",
+        "既有 editorialNote 僅為通用聲明，非本次判為 corrected 的理由；本題 result 係基於上述已驗證之敘述精確度問題。",
+        "本次僅寫入 scratchpad，未修改 app/data/questions.json、reviews/、scripts/、docs/ 任一檔案；題目維持 explanationStatus: draft，未填 reviewer/reviewedAt。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題（官方 PDF）",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 7 頁（共 11 頁）第 32 題：以 150dpi 渲染頁面目視核對，題幹與 (A)~(D) 四個選項文字逐字與 q32.json 一致，左側「答案」欄為 A，sourcePage=7 正確。本卷答案採逐題內嵌於左欄，末頁（第 11 頁）為第 46～50 題，無獨立答案表亦無更正公告。線上原始 URL 於 2026-08-13 實測 HTTP 200 且回傳 %PDF。",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "PDF 第 7 頁（指引內頁碼 3-1）3.1 No code / Low code：「No Code 平台透過視覺化介面和拖放操作，讓使用者無需編寫程式碼即可快速開發」逐字相符；同頁另載「如 TensorFlow 及 Keras 等工具已推出視覺化介面，讓無程式設計經驗的使用者也能輕鬆建立機器學習模型」，直接支持選項 A 的『視覺化介面完成模型訓練』。章末解析第 1 題另界定 Low Code 為『結合了少量程式設計與圖形化工具』。URL 於 2026-08-13 實測 HTTP 200 且回傳 %PDF。",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Microsoft Learn－What is automated ML? AutoML (Azure Machine Learning)",
+          "url": "https://learn.microsoft.com/en-us/azure/machine-learning/concept-automated-ml",
+          "locator": "首段：「Automated machine learning, also known as automated ML or AutoML, automates the time-consuming, iterative tasks of machine learning model development.」；When to use AutoML 段：「Automated ML democratizes the machine learning model development process and empowers its users, regardless of their data science expertise, to identify an end-to-end machine learning pipeline for any problem.」；How does AutoML work 步驟 2 另列出「no-code studio web experience」選項，並說明訓練時平台會平行嘗試不同演算法與參數——支持選項 A 的『標準化流程完成訓練與調校』。頁面 ms.date 2025-11-24，2026-08-13 可正常存取。",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-033",
+      "officialQuestionNumber": 33,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        {
+          "field": "explanation.optionAnalysis.A",
+          "severity": "minor",
+          "type": "與官方教材定義衝突／概念混淆（Low-Code 誤植為 No-Code 的定位）",
+          "risk": "optionAnalysis.A 寫「Low-Code 平台讓非資訊背景的科室人員以視覺化方式建立表單」，把「非技術背景」這個官方教材明確歸給 No Code 的定位，安到 Low Code 身上。官方學習指引把兩者切得很清楚：No Code 面向「非技術使用者／非技術背景者」，Low Code 面向「具有技術背景的開發者」「具有一定技術背景的使用者」，需搭配少量程式碼。更關鍵的是，本題詳解自己在 concept 引用的 locator（3-2）正是說 Low Code「讓具有技術背景的開發者……特別適合中大型企業」，因此 optionAnalysis.A 與同一份詳解引用的證據自相矛盾。同一份考卷第 29 題（同在 PDF 第 7 頁）官方答案為 (C)「使用 Low-Code 平台，結合視覺化拖拉與少量程式碼」，而 (B)「使用純粹的 No-Code 平台，完全不需要任何程式技能」為錯誤選項，可見官方定義即為此。學生若把「Low-Code＝完全不需程式能力」記下來，會在第 29 題這類考點答錯。此為敘述精確度問題，不影響本題正確答案仍為 A。",
+          "evidence": [
+            "iPAS 學習指引（科目二）PDF 第 8 頁（內頁頁碼 3-2）第 2 節「Low Code 平台」：「Low Code 平台結合視覺化開發工具與程式碼擴充功能，讓具有技術背景的開發者能在視覺化設計的基礎上，透過少量程式碼實現深度整合、客製化與複雜邏輯，特別適合中大型企業，以及需要高彈性功能的應用開發」——以 140dpi 渲染頁面目視確認。",
+            "同指引同頁上方第 1 節「No Code」：「No Code 平台透過視覺化介面和拖放操作，讓使用者無需編寫程式碼即可快速開發應用，特別適合非技術背景者用於快速原型設計或小型應用開發」——「非技術背景」明確歸屬 No Code。",
+            "同指引「選擇與評估 No Code / Low Code 平台的 6 個關鍵因素」之（1）目標用戶與技術需求：「No Code 平台：主要面向非技術使用者……Low Code 平台：針對具有一定技術背景的使用者，提供視覺化開發工具，同時允許編寫少量程式碼」。",
+            "past-10.pdf 第 7 頁第 29 題官方答案 C，選項 (C) 為「使用 Low-Code 平台，結合視覺化拖拉與少量程式碼」，選項 (B)「使用純粹的 No-Code 平台，完全不需要任何程式技能」為錯誤選項——同一份考卷即以「少量程式碼」界定 Low-Code。"
+          ],
+          "suggestedAction": "以最小幅度修掉「非資訊背景」這個與官方定義相反的措辭，改回「視覺化拖拉＋少量程式碼」的官方框架。不動答案，不動 summary／concept／answerReason／trap（該四段敘述經查均與官方教材相符）。",
+          "patch": {
+            "path": "explanation.optionAnalysis.A",
+            "matchIsUnique": true,
+            "old": "Low-Code 平台讓非資訊背景的科室人員以視覺化方式建立表單、之後自行調整流程；",
+            "new": "Low-Code 平台以視覺化拖拉為主、必要時搭配少量程式碼，科室人員可自行建立表單並在既有範本上調整流程；"
+          }
+        }
+      ],
+      "notes": [
+        "官方答案 A 已先獨立判定再與 PDF 核對，兩者一致。題幹三個條件逐項比對：（1）各科室自行建表單、流程要有彈性 →Low-Code 的視覺化開發滿足；（2）以 AI 自動判讀與分類自由文字（問題類型、需求性質）→預訓練語言模型 API 的語意分類即取即用；（3）降低開發維運負擔 →以 API 介接取代自建模型。B 的規則式自動化不具語意判讀能力，C 自建深度學習模型與「降低開發維運負擔」直接衝突，D 完全無自動化成分。單選無爭議，無複選疑義。",
+        "題幹、A～D 四個選項逐字元比對：以 150dpi 渲染 past-10.pdf 第 7、8 頁目視確認。第 33 題題幹起於第 7 頁最末列（答案欄標示 A），四個選項續排於第 8 頁頂端，文字與 q33.json 完全一致（含 (B) 的「規則式自動化（Rule-based Automation）」括號標註）。本卷答案採逐題左欄標示制，無末頁答案表，故以第 7 頁答案欄為準。sourcePage=7 正確（題目起始頁）。",
+        "explanation.references 三筆的 URL、locator、checkedAt 全部逐一查證：兩個 ipas.org.tw URL 於 2026-08-13 以 UTF-8 百分比編碼請求均回 HTTP 200、Content-Type application/pdf、回應開頭為 %PDF；且 Content-Length 與本機快取檔完全相同（試題 465458 bytes = tmp/pdfs/past-10.pdf；學習指引 5041118 bytes = tmp/pdfs/guide-elementary-s2.pdf），可確認本機核對對象即為線上現行版本。注意：直接以 Git Bash curl 帶原始中文路徑會被轉成本機碼頁而誤報 404，需先做 UTF-8 percent-encoding。",
+        "references[1] locator「第三章 3-2：Low Code 平台適合需要深度整合與複雜邏輯的中大型企業應用」與 references[2] locator「第三章 3-23 AI 即服務（AIaaS）：API 介接與外掛程式讓企業能輕鬆整合 AI 工具至現有流程中」皆定位正確、可逐字支持詳解敘述（3-23 原文為「API 介接與外掛程式讓企業能輕鬆整合 AI 工具至現有流程中」）。checkedAt（2026-07-29／2026-07-31）早於 authoredAt（2026-08-03）且距今兩週內，日期合理。",
+        "concept、answerReason、optionAnalysis.B／C／D、trap 經查無誤：概念層無時效、法域、產品版本或前提條件問題（未綁定任何具版本號的產品），亦無過度絕對語氣。concept 引用 3-2 時用字為「Low Code 平台」且說「必要時用少量程式碼做深度整合」，與官方定義相符，不需修改——問題只出在 optionAnalysis.A 這一句。",
+        "未因原文帶有 editorialNote 而逕判 human-decision；該 editorialNote 僅為通用免責聲明，經自行驗證後不構成疑義。本題判 corrected 的唯一理由是上述 optionAnalysis.A 的定義衝突，修正後仍屬 AI 初稿，維持 explanationStatus: draft，不填 reviewer/reviewedAt。",
+        "本次僅寫入 scratchpad，未修改 app/data/questions.json、reviews/、scripts/、docs/ 任何共用檔案；修正腳本請由主 session 依上方 patch 的 old→new 片段產生。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題（官方 PDF）",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 7 頁（共 11 頁）第 33 題：以 150dpi 渲染頁面目視，題幹與 q33.json 逐字相符，左側答案欄標示 A；四個選項續排於第 8 頁頂端，(A) Low-Code 平台 × 預訓練語言模型 API、(B) No-Code 平台 × 規則式自動化（Rule-based Automation）、(C) 傳統程式開發 × 自建深度學習模型、(D) 試算表工具 × 手動資料標記分析，均逐字相符。同第 7 頁第 29 題（答案 C）佐證官方對 Low-Code 的定義。線上 URL 於 2026-08-13 回應 HTTP 200、application/pdf、Content-Length 465458 與本機 tmp/pdfs/past-10.pdf 相同。",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "PDF 第 8 頁（內頁頁碼 3-2）第三章「No code / Low code 概念」第 1、2 節，以 140dpi 渲染目視：No Code「讓使用者無需編寫程式碼……特別適合非技術背景者」；Low Code「讓具有技術背景的開發者……透過少量程式碼實現深度整合、客製化與複雜邏輯，特別適合中大型企業，以及需要高彈性功能的應用開發」。此頁同時（a）證實 references[1] locator 定位正確，（b）構成 optionAnalysis.A「非資訊背景」錯誤的直接證據。URL 於 2026-08-13 回應 HTTP 200、application/pdf、Content-Length 5041118 與本機 tmp/pdfs/guide-elementary-s2.pdf 相同。",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "內頁頁碼 3-23「（3）AI 即服務（AI as a Service, AIaaS）」：「雲端運算與 API 服務的普及降低了生成式 AI 的使用門檻」「用戶無需高階硬體或專業知識，即可透過雲端平台（如 OpenAI API、Hugging Face Spaces）存取高效能 AI 工具」「API 介接與外掛程式讓企業能輕鬆整合 AI 工具至現有流程中」——逐字支持 references[2] locator 及詳解「預訓練語言模型 API 屬於 AIaaS、以 API 介接即可整合、不必自行訓練與維運模型」之敘述。",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二：No Code / Low Code 平台選擇與評估的 6 個關鍵因素",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章「（1）目標用戶與技術需求」：「No Code 平台：主要面向非技術使用者，允許透過直觀的拖放介面構建應用程式，適用於快速原型設計或解決簡單業務問題的場景」／「Low Code 平台：針對具有一定技術背景的使用者，提供視覺化開發工具，同時允許編寫少量程式碼以實現更高的自訂性，適合需要開發具有複雜邏輯或功能的應用程式，特別是在企業級應用場景中」——第二筆獨立證據，佐證 optionAnalysis.A 的「非資訊背景」措辭與官方定義相反。",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-034",
+      "officialQuestionNumber": 34,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】第二科：生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 8 頁（共 11 頁）第 34 題：題幹「某企業導入 No-Code/Low-Code 平台開放各部門自行開發應用……下列何者最可能為根本問題？」與 (A)~(D) 四個選項文字逐字相符；該題左側「答案」欄印為 A。本卷答案採逐題內嵌於左欄格式，已渲染第 11 頁（末頁，止於第 50 題）確認全卷無另設答案表，故無互相牴觸之答案來源。",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "PDF 第 15 頁＝內頁編碼 3-9，第三章第 8 節「AI 發展趨勢中的 No Code / Low Code」之（1）市場發展與效益第一點：「企業應用滲透率提升：No Code 平台降低了技術門檻，使非技術人員也能參與應用開發，促進跨部門協作；Low Code 平台則兼具圖形化界面與程式碼靈活性，滿足複雜業務需求，適用於多元產業。」渲染頁面目視確認，與詳解 references 所載 locator 逐字相符。另第 7 頁（3-1）3.1 節亦載「No Code 與 Low Code 平台皆為推動 AI 民主化（AI Democratization）的重要力量。這些平台透過簡化開發流程，使更多非技術背景的人員能夠參與 AI 的創建與應用」，支持詳解 concept 將「降低技術門檻」合併敘述於 No-Code/Low-Code 之寫法。",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "來源網址可用性與同一性驗證（WebFetch 實際下載）",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "2026-08-13 實際抓取兩個 references 網址皆回傳 200 與有效 PDF：試題卷 465,458 bytes、SHA-256 前綴 b5b26f049ae187f8；學習指引 5,041,118 bytes、SHA-256 前綴 142d9dadbbfd3502。兩者與本機 tmp/pdfs/past-10.pdf、tmp/pdfs/guide-elementary-s2.pdf 逐位元組雜湊相同，證明目視核對的檔案即為 references 所指之線上文件，網址現仍可用。",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-035",
+      "officialQuestionNumber": 35,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 8 頁（共 11 頁）第 35 題：題幹「在生成式 AI 文字生成模型設計中，Encoder–Decoder 與 Decoder-only 為常見架構。下列何者最能正確說明兩者在資訊處理與生成機制上的核心差異？」與 A～D 選項文字，經渲染頁面目視逐字比對與 q35.json 完全一致；同頁左側「答案」欄標示為 B，sourcePage=8 正確。另目視第 11 頁（末頁）確認本卷答案採逐題左欄標示，卷末無獨立答案表。線上原始 PDF 以 HTTP 200 回應（application/pdf，465458 bytes，與本機 tmp/pdfs/past-10.pdf 同大小）",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Vaswani et al., Attention Is All You Need（arXiv:1706.03762）",
+          "url": "https://arxiv.org/abs/1706.03762",
+          "locator": "摘要：主流序列轉換模型建立在含編碼器與解碼器（encoder-decoder）的複雜循環或卷積網路上，最佳模型並以注意力機制連接編碼器與解碼器；本文提出的 Transformer 僅以注意力機制構成，完全捨棄循環與卷積。可支持詳解中 Encoder–Decoder 為原始 Transformer 配置、編碼器負責輸入表示／解碼器負責生成的敘述",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Brown et al., Language Models are Few-Shot Learners（arXiv:2005.14165）",
+          "url": "https://arxiv.org/abs/2005.14165",
+          "locator": "摘要：訓練 GPT-3，一個 1,750 億參數的自迴歸（autoregressive）語言模型；所有任務皆不經梯度更新或微調，任務與少量示範純粹以文字互動方式指定。可支持詳解中 Decoder-only（GPT 系列）為單一自迴歸模型、於同一序列上同時處理上下文與生成的敘述",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-036",
+      "officialQuestionNumber": 36,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 8 頁（共 11 頁）第 36 題：題幹、(A)~(D) 選項逐字相符，左側「答案」欄為 C；已渲染頁面目視核對，非僅文字擷取。題目為獨立單題，無附圖、無共用題組。原始網址仍可下載（11 頁、約 454.5 KB，與本機副本一致）。",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "arXiv－Talk like a Graph: Encoding Graphs for Large Language Models",
+          "url": "https://arxiv.org/abs/2310.04560",
+          "locator": "摘要：\"Using these insights we illustrate how the correct choice of encoders can boost performance on graph reasoning tasks inside LLMs by 4.8% to 61.8%, depending on the task.\" 網址可用、標題與 references 所列一致，支持「圖結構的文字編碼方式會顯著影響 LLM 圖推理表現」之敘述。",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "arXiv－Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+          "url": "https://arxiv.org/abs/2201.11903",
+          "locator": "摘要：以少量 chain-of-thought 示範作為 exemplars 引導逐步推理，提升 arithmetic、commonsense、symbolic reasoning 表現；支持詳解對 CoT（選項 A）的定位。",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "arXiv－Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+          "url": "https://arxiv.org/abs/2305.10601",
+          "locator": "摘要：以 thoughts 為中間步驟節點，探索多條推理路徑並自我評估、前瞻與回溯，適用需 non-trivial planning or search 的任務；支持詳解對 ToT（選項 B）的定位。",
+          "checkedAt": "2026-08-13"
+        }
+      ],
+      "reviewNotes": "獨立作答（未先看原詳解結論）：題幹明示模型「已能逐步說明推論過程」，故缺口不在逐步推理（排除 A）；缺口是「多條件之間的相互影響」未被掌握，屬網狀關聯的表達問題，ToT 增加的是路徑數而非關聯表達（排除 B），Zero-shot 處理的是「給不給範例」維度且會減少可用資訊（排除 D）；選項 C 自述「以結構化方式呈現條件與關聯」正對應題幹缺口。獨立結論為 C，與官方答案一致。既有 explanation 的 summary / concept / answerReason / optionAnalysis / trap 經逐項檢視均無事實錯誤，無時效性、法域、產品版本或前提條件問題；本題不涉法規或產品版本。無複選疑義：C 為唯一直接處理「條件間關聯表達」的選項。四筆 references 網址皆可用、locator 定位確實支持敘述、查核日期（2026-07-29 / 2026-07-31）早於 authoredAt 且合理。原文 editorialNote 僅為通用免責聲明，非具體疑義，經自行驗證不構成 human-decision 事由。"
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-037",
+      "officialQuestionNumber": 37,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 8 頁：第 37 題題幹、選項 (A) 與答案欄「C」；PDF 第 9 頁續列選項 (B)(C)(D)。渲染頁面目視核對，題幹與四個選項文字與題庫完全一致，sourcePage=8 正確",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "arXiv－Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks (Lewis et al., 2005.11401)",
+          "url": "https://arxiv.org/abs/2005.11401",
+          "locator": "摘要：「the parametric memory is a pre-trained seq2seq model and the non-parametric memory is a dense vector index of Wikipedia」；同段亦載「updating their world knowledge remain open research problems」與「Pre-trained models with a differentiable access mechanism to explicit non-parametric memory can overcome this issue」，支持詳解「非參數記憶可獨立於模型權重更新」之敘述。網址回應 200",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 頁碼 3-23，（4）個人化生成與可控性提升：「模型微調（Fine-tuning）與提示工程（Prompt Engineering），讓用戶能根據特定需求調整生成結果。」與詳解 locator 敘述相符。網址回應 200（application/pdf）",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-038",
+      "officialQuestionNumber": 38,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        {
+          "type": "over-absolute-wording",
+          "severity": "minor",
+          "field": "explanation.optionAnalysis.C",
+          "risk": "既有敘述把「跨部門使用規範與長期治理框架」寫成必須等 PoC 通過後才展開，語氣過度絕對，且與主流 AI 治理指引相牴觸。NIST AI RMF 明確把 GOVERN 定位為貫穿整個 AI 生命週期、跨領域（cross-cutting）且「continual and intrinsic」的功能，並非等到決定全面部署才啟動。讀者若照字面理解，可能誤以為 PoC 階段完全不需要任何使用規範或風險控管，這在生成式 AI 導入實務上是有害的建議。本題答案本身不受影響：題目問的是「最不適合作為此階段的『主要工作』」，全組織層級的規範建置確實不是 PoC 的主要工作，C 仍為正解。",
+          "evidence": "NIST AI Risk Management Framework (AI RMF 1.0) Core：「govern is a cross-cutting function that is infused throughout AI risk management and enables the other functions of the process」、「Attention to governance is a continual and intrinsic requirement for effective AI risk management over an AI system's lifespan」（https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF/Core_And_Profiles/5-sec-core ，查核日 2026-08-13）。",
+          "suggestedAction": "修飾語氣，保留階段歸屬的判準，但補上「PoC 期間仍需基本規範」的但書。",
+          "oldText": "這類工作應在 PoC 通過、決定擴大部署後展開。",
+          "newText": "這類工作宜在 PoC 通過、決定擴大部署後才全面展開；PoC 期間並非完全不談治理（NIST AI RMF 把治理視為貫穿整個 AI 生命週期的跨領域功能，小範圍試用仍應有基本的資料使用與風險控管約束），但建立全組織的使用規範與長期治理框架並不是本階段的「主要工作」。",
+          "scriptGuard": "腳本套用前應確認 explanation.optionAnalysis.C 完整字串仍為：「正確（本題要選的「最不適合」）。使用規範與治理框架是全組織層級的制度建置：定義誰能用、怎麼用、出問題誰負責，需要跨部門協調且以「確定導入」為前提。PoC 的結論都還沒出來，先建長期治理等於把後段工作前置，既拖慢驗證節奏，也可能白做；這類工作應在 PoC 通過、決定擴大部署後展開。」"
+        },
+        {
+          "type": "references-gap-resolved",
+          "severity": "minor",
+          "field": "explanation.references / explanation.editorialNote",
+          "risk": "原 editorialNote 記載「除公告試題外尚缺可引用的外部一手出處，待複核補查」。本次複核已補到可引用來源，該待查項目可結案；若不更新，會讓後續人工複核重複查同一件事。references 目前僅有官方試題一筆，且 locator 未標頁碼。",
+          "evidence": "Wikipedia「Proof of concept」：PoC 為「an inchoate realization of a certain idea or method in order to demonstrate its feasibility or viability」，通常規模小且不完整，用途在建立可行性、隔離技術問題、指出整體方向並提供預算判斷依據（https://en.wikipedia.org/wiki/Proof_of_concept ，查核日 2026-08-13）；NIST AI RMF Core 之 GOVERN 說明其為組織層級、涉及政策、流程與 accountability structures 的跨領域功能（同上網址，查核日 2026-08-13）。兩者合起來即可支撐「A/B/D 屬 PoC 可行性驗證、C 屬全組織治理建置」的區辨。",
+          "suggestedAction": "在 explanation.references 追加上述兩筆（checkedAt 2026-08-13），並改寫 editorialNote 移除「尚缺可引用的外部一手出處」的待查敘述；同時建議把官方試題那筆的 locator 補上頁碼。",
+          "oldText": "\"locator\": \"第 38 題題幹、選項與官方答案\"",
+          "newText": "\"locator\": \"PDF 第 9 頁（共 11 頁）：第 38 題題幹、(A)～(D) 選項與左欄官方答案 C\""
+        }
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 9 頁（共 11 頁），第 38 題：題幹「某企業規劃導入生成式 AI 助理，在正式全面部署前進行概念驗證（PoC），下列何者最不適合作為此階段的主要工作？」與 (A)~(D) 四選項逐字相符；同頁最左「答案」欄標示 C。本 PDF 採逐題左欄標答，非末頁答案表。已渲染頁面目視核對，並確認本機 tmp/pdfs/past-10.pdf 與官方 URL 下載檔 SHA-256 相同（b5b26f049ae187f8921b4f2639725e7a8f18eedcf2459344416aa647b5b232b2），網址現仍可用（454.5KB、11 頁）。",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Proof of concept - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Proof_of_concept",
+          "locator": "定義段：PoC 為「an inchoate realization of a certain idea or method in order to demonstrate its feasibility or viability」，規模小、可不完整；用於建立可行性（viability）、隔離技術問題、指出整體方向並提供預算回饋。支持 A（品質穩定性驗證）、B（需求匹配測試）、D（整合可行性與技術限制）屬 PoC 主要工作。",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "NIST AI Risk Management Framework (AI RMF 1.0) — Core：GOVERN",
+          "url": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF/Core_And_Profiles/5-sec-core",
+          "locator": "GOVERN 功能說明：「govern is a cross-cutting function that is infused throughout AI risk management」；治理涵蓋組織層級的政策、流程與 accountability structures，並為「a continual and intrinsic requirement ... over an AI system's lifespan」。支持 C 屬全組織制度建置（非 PoC 主要工作），同時構成 finding 1 對「過度絕對語氣」的修正依據。",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-039",
+      "officialQuestionNumber": 39,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 9 頁（共 11 頁）第 39 題：題幹與 (A)~(D) 四選項文字逐字相符，左側「答案」欄標示 D；本卷答案直接標於各題左欄，末頁（第 11 頁）無另附答案表或答案更正說明",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "全國法規資料庫－個人資料保護法",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0050021",
+          "locator": "第 5 條「個人資料之蒐集、處理或利用……不得逾越特定目的之必要範圍，並應與蒐集之目的具有正當合理之關聯」；第 6 條特種個資原則不得蒐集處理利用。頁面顯示最新修正日期為民國 114 年 11 月 11 日，第 5 條文字與詳解引述一致",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章頁碼 3-6（PDF 第 12 頁）「(2) 資料隱私與安全性」：敏感資料洩漏風險、需遵循個資法（GDPR、CCPA）合規風險，解方為資料加密、匿名化與權限控管；線上網址可下載（約 4.8MB，為掃描影像 PDF，內容以本機同版檔 tmp/pdfs/guide-elementary-s2.pdf 文字層核對）",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-040",
+      "officialQuestionNumber": 40,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [
+        {
+          "severity": "low",
+          "type": "text-fidelity",
+          "field": "prompt",
+          "issue": "題幹在「Reinforcement Fine-tuning」與「（RFT）」之間多出一個半形空格，官方 PDF 該處為換行（第 40 題第 3～4 行），並非空格。屬純排版差異，不影響作答與詳解正確性，供人工複核決定是否正規化。",
+          "evidence": "PDF 第 9 頁第 40 題：「…因此技術團隊建議再導入 Reinforcement Fine-tuning\\n（RFT）機制進行優化，其主要目的為何？」",
+          "suggestedOld": "再導入 Reinforcement Fine-tuning （RFT）機制進行優化",
+          "suggestedNew": "再導入 Reinforcement Fine-tuning（RFT）機制進行優化",
+          "blocking": false
+        },
+        {
+          "severity": "low",
+          "type": "precision",
+          "field": "explanation.optionAnalysis.A",
+          "issue": "「RFT 的獎勵訊號只評價『回應方式好不好』」語氣略為窄化。OpenAI RFT 文件的 grader 亦常評分最終答案正確性（可驗證答案任務），不僅止於回應方式。惟該選項要否定的是「擴展知識涵蓋範圍與資料記憶能力」，「不會注入新知識」的結論仍成立，故不影響答案與判斷，僅為用語精確度建議。",
+          "evidence": "OpenAI API Docs – Reinforcement fine-tuning：「it relies on a programmable grader that scores every candidate response」；grader 可對答案正確性評分，與純風格評價不同。",
+          "suggestedOld": "RFT 的獎勵訊號只評價「回應方式好不好」，不會注入新知識",
+          "suggestedNew": "RFT 的獎勵訊號評價的是「產生的回應好不好」，用來校正既有能力的使用方式，不會為模型注入新知識",
+          "blocking": false
+        }
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次 AI 應用規劃師－初級能力鑑定【公告試題】第二科：生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 9 頁（共 11 頁）第 40 題：題幹、(A)～(D) 選項逐字相符；同列左側「答案」欄為 B。本卷答案採逐題內嵌於左欄，卷末第 11 頁無獨立答案表，已目視確認至第 50 題。sourcePage=9 正確。",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Ouyang et al., Training language models to follow instructions with human feedback (arXiv:2203.02155)",
+          "url": "https://arxiv.org/abs/2203.02155",
+          "locator": "摘要：以標註人員示範資料做監督式微調 →「collect a dataset of rankings of model outputs」訓練獎勵模型 →「using reinforcement learning from human feedback」進一步微調。支持詳解 concept 對三階段流程的敘述。",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "OpenAI API 文件－Reinforcement fine-tuning",
+          "url": "https://developers.openai.com/api/docs/guides/reinforcement-fine-tuning",
+          "locator": "網址現仍可用。文中「samples several responses per prompt, scores them with the grader」「applies policy-gradient updates based on those rewards」「high-scoring outputs become more likely and low-scoring ones fade」，逐項支持詳解 concept 引述的「取樣多個回應、評分、依獎勵做 policy-gradient 更新」。",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    }
+  ]
+}

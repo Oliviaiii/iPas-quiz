@@ -858,16 +858,39 @@
 - 已建立 `docs/AI_REVIEW_GUIDE.md`、`docs/AI_REVIEW_PROGRESS.md` 與
   `scripts/validate-ai-review-reports.py`。AI 複核不是人工複核，所有題目仍為
   `draft`，`reviewed: 0`。
-- 已完成 18 個十題批次，共 180／600 題：114 年第四次初級兩科 100 題、
-  115 年第一次初級第一科 50 題、115 年第一次初級第二科第 1～30 題。
-- 累計結果：pass 128、corrected 33、human-decision 18、blocked 1。已確認的
+- 已完成 19 個十題批次，共 190／600 題：114 年第四次初級兩科 100 題、
+  115 年第一次初級第一科 50 題、115 年第一次初級第二科第 1～40 題。
+- 累計結果：pass 135、corrected 36、human-decision 18、blocked 1。已確認的
   詳解修正已透過 guarded 腳本套用，沒有改動官方題目、選項或答案。
 - 複核報告位於 `reviews/ai-independent/`；修正腳本命名為
   `scripts/fix-ai-review-<場次>-<科目>-<題號>.py`，均可追溯修正前內容。
-- 下一批固定為 115 年第一次初級第二科第 31～40 題，再做第 41～50 題；
-  後續依 115 年第二次初級、114 年第二次中級、115 年第一次中級順序接續。
+- 下一批固定為 115 年第一次初級第二科第 41～50 題；後續依 115 年第二次初級、
+  114 年第二次中級、115 年第一次中級順序接續。
 - 優先人工項目可從報告的 `human-decision`／`blocked` 篩選。唯一 blocked 為
   114 年第四次初級第一科第 49 題：尚未找到數發部正式文件列出題目所稱三項
   安全性常見指標。
 - 本次仍保留既有素材缺陷：115 年第一次中級第二科第 2、8 題 PNG 為全黑圖；
   詳解已依官方 PDF 核對，但圖片資產尚待修復。
+
+## 2026-08-13 獨立 AI 複核：115-1 初級第二科第 31～40 題
+
+- 本批以 10 個獨立複核 agent 平行作業，每人單題，先自行判答再對照官方 PDF
+  `tmp/pdfs/past-10.pdf`（115-1 初級第二科，11 頁），逐題目視渲染頁面核對題幹、
+  A～D、左欄官方答案與頁碼，並實測詳解引用網址。
+- 結果：pass 7（31、34、35、36、37、39、40）、corrected 3（32、33、38）、
+  human-decision 0、blocked 0。10 題官方答案全部獨立確認無誤，未動官方題目、
+  選項或答案。
+- 修正經 `scripts/fix-ai-review-115-1-s2-031-040.py` 套用（含 sha256 快照與
+  逐字原文防護），三題仍維持 `draft`，未填 `reviewer`／`reviewedAt`：
+  - Q32 `summary`：「讓使用者不寫程式也能完成建模」把 No-Code 與 Low-Code 混用，
+    補上「Low-Code 則只需少量程式」。
+  - Q33 `optionAnalysis.A`：原寫 Low-Code 面向「非資訊背景」人員，與官方學習
+    指引 3-2（Low Code 面向具技術背景者、搭配少量程式碼）及同卷第 29 題定義相反，
+    已改為「以視覺化拖拉為主、必要時搭配少量程式碼」。
+  - Q38 `optionAnalysis.C`：原句「應在 PoC 通過後展開」語氣過度絕對，與 NIST
+    AI RMF 把 GOVERN 定位為貫穿生命週期的跨領域功能相牴觸，改為保留階段判準並
+    加註 PoC 期間仍需基本治理；同時補上 PoC 定義與 NIST AI RMF 兩筆外部來源、
+    官方試題 locator 補頁碼，並結案 `editorialNote` 的「缺外部一手出處」待查項。
+- 驗證：`validate-ai-review-reports.py` 19 份報告 190 題全通過；`npm test` 9／9；
+  manifest 重生後仍為 `draft: 600`／`missing: 0`／`reviewed: 0`。
+- 環境備註：本機無 pdftoppm，PDF 目視改用 PyMuPDF 渲染 PNG，後續批次可沿用。
