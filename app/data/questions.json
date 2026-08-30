@@ -34750,10 +34750,10 @@
           "checkedAt": "2026-08-12"
         },
         {
-          "title": "Kohavi et al., Online Controlled Experiments: Lessons from Running A/B/n Tests for 12 Years（2016）",
-          "url": "https://arxiv.org/abs/1606.07659",
-          "locator": "摘要與實務經驗：以線上隨機對照實驗評估產品變更對關鍵指標的因果影響",
-          "checkedAt": "2026-08-12"
+          "title": "Online Controlled Experiments at Large Scale（Kohavi et al., KDD 2013）",
+          "url": "https://exp-platform.com/Documents/2013%20controlledExperimentsAtScale.pdf",
+          "locator": "§2 案例：使用者被隨機分派至各變體並量測 key metrics；該例的 Overall Evaluation Criterion (OEC) 為 increasing average revenue per user without degrading key user engagement metrics，示範營收上升但使用者互動指標下降時不可逕判成功",
+          "checkedAt": "2026-08-30"
         }
       ],
       "editorialNote": "本站依官方答案 A 判定。附圖只有導入前後摘要，未提供同期對照組、樣本量、CTR／訂單金額的信賴區間或總營收，因此不能從圖中判定模型一定成功或失敗；需補做因果與統計驗證。",

@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-intermediate-1-ai-tech-planning",
+  "range": {
+    "start": 11,
+    "end": 20
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 9,
+    "corrected": 1,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-011",
+      "officialQuestionNumber": 11,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 3 頁：第 11 題題幹、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Attention Is All You Need（Vaswani et al., 2017）",
+          "url": "https://arxiv.org/abs/1706.03762",
+          "locator": "摘要：based solely on attention mechanisms, dispensing with recurrence and convolutions entirely；§3.2.1 Scaled Dot-Product Attention 以 Query-Key 相似度 softmax 後加權 Value",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-012",
+      "officialQuestionNumber": 12,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 3～4 頁：第 12 題題幹與 (A)(B) 選項、左欄官方答案 B（第 3 頁）、(C)(D) 選項（第 4 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch Docs－torch.nn.Sigmoid",
+          "url": "https://docs.pytorch.org/docs/stable/generated/torch.nn.Sigmoid.html",
+          "locator": "類別說明：逐元素套用 Sigmoid(x) = 1/(1 + exp(-x))，輸出落在 (0, 1)",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch Docs－torch.nn.BCEWithLogitsLoss",
+          "url": "https://docs.pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html",
+          "locator": "說明：將 Sigmoid 層與 BCELoss 合併為單一類別，利用 log-sum-exp trick 取得比分開使用更佳的數值穩定性",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-013",
+      "officialQuestionNumber": 13,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 4 頁：第 13 題題幹、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "The Power of Scale for Parameter-Efficient Prompt Tuning（Lester, Al-Rfou & Constant, EMNLP 2021）",
+          "url": "https://arxiv.org/abs/2104.08691",
+          "locator": "摘要：learning soft prompts to condition frozen language models to perform specific downstream tasks…soft prompts are learned through backpropagation，主模型凍結、只更新輸入端提示向量",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-014",
+      "officialQuestionNumber": 14,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 4 頁：第 14 題題幹、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "LoRA: Low-Rank Adaptation of Large Language Models（Hu et al., 2021）",
+          "url": "https://arxiv.org/abs/2106.09685",
+          "locator": "摘要：LoRA…freezes the pre-trained model weights and injects trainable rank decomposition matrices into each layer of the Transformer architecture, greatly reducing the number of trainable parameters",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Overcoming catastrophic forgetting in neural networks（Kirkpatrick et al., 2017）",
+          "url": "https://arxiv.org/abs/1612.00796",
+          "locator": "摘要：以 slowing down learning on the weights important for those tasks 的方式緩解序列學習造成的災難性遺忘，說明限制重要參數更新範圍是抗遺忘的核心手段",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-015",
+      "officialQuestionNumber": 15,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 4 頁：第 15 題題幹、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Google Cloud Workflows－Best practices",
+          "url": "https://cloud.google.com/workflows/docs/best-practice",
+          "locator": "Apply retries and the saga pattern 段：Design workflows that are resilient and can handle both transient and permanent service failures",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Google Cloud Storage－Retry strategy",
+          "url": "https://cloud.google.com/storage/docs/retry-strategy",
+          "locator": "說明重試前須判斷操作是否具冪等性（idempotency），否則重試可能造成重複副作用",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-016",
+      "officialQuestionNumber": 16,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 4～5 頁：第 16 題題幹（第 4 頁）、工具清單、System Prompt、第一輪 Agent 輸出與 (A)～(D) 選項、左欄官方答案 A（第 5 頁）；本題題幹以純文字排版，無獨立附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "ReAct: Synergizing Reasoning and Acting in Language Models（Yao et al., 2022）",
+          "url": "https://arxiv.org/abs/2210.03629",
+          "locator": "摘要：generate both reasoning traces and task-specific actions in an interleaved manner…actions allow it to interface with external sources, such as knowledge bases or environments, to gather additional information",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-017",
+      "officialQuestionNumber": 17,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 5～6 頁：第 17 題題幹與 (A)～(D) 選項、左欄官方答案 D（第 5 頁）、(D) 選項末尾「Temporal CNN」（第 6 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Deep Residual Learning for Image Recognition（He et al., 2015）",
+          "url": "https://arxiv.org/abs/1512.03385",
+          "locator": "摘要：present a residual learning framework to ease the training of networks that are substantially deeper than those used previously，代表影像模態的深層 CNN 架構",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+          "url": "https://arxiv.org/abs/1810.04805",
+          "locator": "摘要：pre-train deep bidirectional representations from unlabeled text，為文字模態的 Transformer encoder 代表",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling（Bai, Kolter & Koltun, 2018）",
+          "url": "https://arxiv.org/abs/1803.01271",
+          "locator": "摘要：a simple convolutional architecture outperforms canonical recurrent networks such as LSTMs across a diverse range of tasks and datasets, while demonstrating longer effective memory，說明時序資料可用 TCN 或 LSTM",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-018",
+      "officialQuestionNumber": 18,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 6 頁：第 18 題題幹、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Learning Transferable Visual Models From Natural Language Supervision（CLIP, Radford et al., 2021）",
+          "url": "https://arxiv.org/abs/2103.00020",
+          "locator": "摘要：the simple pre-training task of predicting which caption goes with which image is an efficient and scalable way to learn SOTA image representations，示範以配對資料把影像與文字表示對齊至共同空間",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-019",
+      "officialQuestionNumber": 19,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源標題寫為「Kohavi et al., Online Controlled Experiments: Lessons from Running A/B/n Tests for 12 Years（2016）」，但所附網址 https://arxiv.org/abs/1606.07659 實為 Strub 等人的 Hybrid Recommender System based on Autoencoders，標題、作者與定位皆與該網址不符，屬引用錯置。已改引 Kohavi 等人 KDD 2013 的 Online Controlled Experiments at Large Scale（scripts/fix-ai-review-115-1-m1-011-020.py），該文的 OEC 案例（營收上升但使用者互動指標下降）正好對應本題情境。",
+        "已渲染 PDF 第 6 頁並與站內圖檔 aiap-115-intermediate-1-ai-tech-planning-p06-1.png 逐列目視比對：離線 AUC 0.91、CTR 3.2%→3.1%、平均訂單金額 $850→$1,020、延遲 85ms、每月推論費 $12,000，數值完全一致。獨立作答為 A；draft 的 editorialNote 已如實說明附圖缺對照組與信賴區間，保留意見恰當。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 6 頁：第 19 題題幹、指標比較表附圖、(A)～(D) 選項與左欄官方答案 A",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Receiver operating characteristic (ROC)",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html#roc-metrics",
+          "locator": "ROC 段：以 TPR 對 FPR 在 various threshold settings 作圖，屬離線模型區辨能力指標",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Online Controlled Experiments at Large Scale（Kohavi et al., KDD 2013）",
+          "url": "https://exp-platform.com/Documents/2013%20controlledExperimentsAtScale.pdf",
+          "locator": "§2 案例：使用者被 randomly split between the variants…key metrics computed；該例 Overall Evaluation Criterion (OEC) 為 increasing average revenue per user without degrading key user engagement metrics",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-020",
+      "officialQuestionNumber": 20,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 6～7 頁：第 20 題題幹與左欄官方答案 A（第 6 頁）、規劃項目 (1)～(5) 與 (A)～(D) 選項（第 7 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Apache Kafka－Introduction",
+          "url": "https://kafka.apache.org/intro",
+          "locator": "What is event streaming? 段：capturing data in real-time from event sources…storing these event streams durably for later retrieval; manipulating, processing, and reacting to the event streams in real-time",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Feast Documentation－Online store",
+          "url": "https://docs.feast.dev/v0.57-branch/getting-started/components/online-store",
+          "locator": "開頭：Feast uses online stores to serve features at low latency…for each entity key, only the latest feature values are stored（頁面為 JS 渲染，內容以官方 repo 之 docs/getting-started/components/online-store.md 原文核對）",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Redis Docs－Client-side caching",
+          "url": "https://redis.io/docs/latest/develop/clients/client-side-caching/",
+          "locator": "說明以快取讓應用程式低延遲存取常用資料，並須處理失效（invalidation）與一致性",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
