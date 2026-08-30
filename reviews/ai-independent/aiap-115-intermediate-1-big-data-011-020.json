@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-intermediate-1-big-data",
+  "range": {
+    "start": 11,
+    "end": 20
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 9,
+    "corrected": 1,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-011",
+      "officialQuestionNumber": 11,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 3～4 頁：第 11 題題幹與 (A) 選項、左欄官方答案 C（第 3 頁）、(B)～(D) 選項（第 4 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Encoding categorical features",
+          "url": "https://scikit-learn.org/stable/modules/preprocessing.html#encoding-categorical-features",
+          "locator": "OrdinalEncoder 將類別特徵轉為整數（0 到 n_categories-1）；OneHotEncoder 為每個類別建立二元欄位，並可用 drop='first' 避免共線",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "XGBoost Documentation－Categorical Data",
+          "url": "https://xgboost.readthedocs.io/en/stable/tutorials/categorical.html",
+          "locator": "說明將 DataFrame 欄位設為 category dtype 並以 enable_categorical=True 傳入，XGBoost 即可對無序類別做原生類別切分，不需人為虛構順序",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-012",
+      "officialQuestionNumber": 12,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 3～4 頁：第 12 題題幹（50GB CSV、pd.read_csv 發生 OOM）與左欄官方答案 C（第 3 頁）、(A)～(D) 選項（第 4 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "pandas API－pandas.read_csv",
+          "url": "https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html",
+          "locator": "chunksize 參數說明：Number of lines to read from the file per chunk，回傳可迭代的 TextFileReader；另見 nrows（只讀前 N 列）、usecols（欄名／索引／可呼叫物件）與 dtype 定義",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "pandas User Guide－Scaling to large datasets",
+          "url": "https://pandas.pydata.org/docs/user_guide/scale.html",
+          "locator": "說明以 chunking 逐批處理大於記憶體的資料集，並指出僅適用可分塊（embarrassingly parallel）的運算",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-013",
+      "officialQuestionNumber": 13,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源 https://milvus.io/docs/index-explained.md 無法存取：一般請求回 403，加上瀏覽器 User-Agent 後陷入無限轉址（curl 用盡 50 次 redirect），整個 docs 站點在本環境不可達，定位無法核實。已改引 FAISS 論文 arXiv:1702.08734（scripts/fix-ai-review-115-1-m2-011-020.py），其摘要逐字說明高維特徵需要專用索引結構，並比較 brute-force、approximate 與壓縮域搜尋的取捨。",
+        "獨立作答為 B；依工作負載分別選用文件型、向量與關聯式資料庫的 polyglot persistence 敘述正確，draft 亦已如實指出其代價（跨庫同步與一致性設計）。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 3～4 頁：第 13 題題幹（巢狀商品資料、1,536 維向量高 QPS、庫存需 ACID 且延遲 <10ms）與左欄官方答案 B、(A)～(D) 選項（第 4 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "MongoDB Manual－Data Modeling",
+          "url": "https://www.mongodb.com/docs/manual/data-modeling/",
+          "locator": "說明文件模型可嵌入相關資料、支援彈性 schema 與不同文件擁有不同欄位",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PostgreSQL Documentation－Transactions",
+          "url": "https://www.postgresql.org/docs/current/tutorial-transactions.html",
+          "locator": "說明交易將多個步驟包成 all-or-nothing 操作，並在並行更新下維持資料庫一致狀態",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Billion-scale similarity search with GPUs（FAISS, Johnson et al., 2017）",
+          "url": "https://arxiv.org/abs/1702.08734",
+          "locator": "摘要：high-dimensional features…require specific indexing structures，並提出 brute-force、approximate 與 compressed-domain search 的最佳化設計",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-014",
+      "officialQuestionNumber": 14,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 4 頁：第 14 題題幹、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "MongoDB Manual－Sharding",
+          "url": "https://www.mongodb.com/docs/manual/sharding/",
+          "locator": "Sharding is a method for distributing data across multiple machines；說明以水平擴展支援大型資料集與高吞吐量操作，並由 shard key 決定資料分布",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-015",
+      "officialQuestionNumber": 15,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 4 頁：第 15 題題幹（訓練 99%／驗證 72%，問「最無法改善甚至可能惡化」）、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "TensorFlow Tutorials－Data augmentation",
+          "url": "https://www.tensorflow.org/tutorials/images/data_augmentation",
+          "locator": "導言：以產生可信影像的隨機轉換增加訓練集多樣性，藉此協助對抗過擬合，且增強僅在訓練時套用",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "TensorFlow Guide－Better performance with the tf.data API",
+          "url": "https://www.tensorflow.org/guide/data_performance",
+          "locator": "Caching 段：cache 會在第一個 epoch 之後重複使用相同元素；並提醒隨機轉換應置於 cache 之後，否則每個 epoch 都重播同一批已轉換資料",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-016",
+      "officialQuestionNumber": 16,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 4～5 頁：第 16 題題幹與左欄官方答案 A（第 4 頁）、(A)～(D) 選項（第 5 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NumPy API－numpy.linalg.svd",
+          "url": "https://numpy.org/doc/stable/reference/generated/numpy.linalg.svd.html",
+          "locator": "函式說明對形狀 (..., M, N) 的一般矩陣做奇異值分解 a = U @ diag(S) @ Vh，並說明 full_matrices 對 U、Vh 尺寸的影響；不要求 M=N",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.decomposition.TruncatedSVD",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.TruncatedSVD.html",
+          "locator": "類別說明：Dimensionality reduction using truncated SVD (aka LSA)；並註明套用於 term count／TF-IDF 矩陣時即為 latent semantic analysis",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-017",
+      "officialQuestionNumber": 17,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 5 頁：第 17 題題幹（120 位病患、每 5 分鐘一筆、敗血症樣本 3.2%、血氧連續缺失、感測器漂移、標註 ±2 小時誤差）、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.model_selection.GroupKFold",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GroupKFold.html",
+          "locator": "類別說明：K-fold iterator variant with non-overlapping groups，同一 group（此處為病患 ID）不會同時出現在訓練與測試折",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn Examples－Precision-Recall",
+          "url": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html",
+          "locator": "導言：Precision-Recall is a useful measure of success of prediction when the classes are very imbalanced",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Learning to Diagnose with LSTM Recurrent Neural Networks（Lipton et al., 2016）",
+          "url": "https://arxiv.org/abs/1511.03677",
+          "locator": "摘要與方法：以 ICU 多變量臨床時序（不規則取樣、缺失值）建模診斷，說明缺失樣態本身可能帶有資訊",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-018",
+      "officialQuestionNumber": 18,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 5 頁：第 18 題題幹、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "mlxtend User Guide－Association rules generation from frequent itemsets",
+          "url": "https://rasbt.github.io/mlxtend/user_guide/frequent_patterns/association_rules/",
+          "locator": "公式表：support(A→C)=support(A∪C)、confidence(A→C)=support(A→C)/support(A)、lift(A→C)=confidence(A→C)/support(C)；並說明 lift=1 代表前後件獨立，範圍為 [0, ∞)",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-019",
+      "officialQuestionNumber": 19,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 5～6 頁：第 19 題題幹與左欄官方答案 D（第 5 頁）、交易紀錄表附圖與 (A)～(D) 選項（第 6 頁）。已渲染第 6 頁並與站內圖檔 aiap-115-intermediate-1-big-data-p06-1.png 逐列目視比對：8 筆訂單依序為 {A,B,E}、{C,D}、{B,D,E}、{A,B,E}、{B,C,E}、{A,D}、{A}、{A,D}。已依此獨立跑一次 Apriori（最低支援計數 3）：L1={A:5, B:4, D:4, E:4}，候選 2-itemset 僅 {B,E}:4 達標（{A,B}:2、{A,D}:2、{A,E}:2、{B,D}:1、{D,E}:1），L3 為空，故最大頻繁項目集為 {B,E}，與官方答案 D 一致。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "mlxtend User Guide－Apriori",
+          "url": "https://rasbt.github.io/mlxtend/user_guide/frequent_patterns/apriori/",
+          "locator": "說明 apriori(df, min_support=…) 依最低支援度產生頻繁項目集，並回傳 support 與 itemsets 欄位",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Fast Algorithms for Mining Association Rules（Agrawal & Srikant, VLDB 1994）",
+          "url": "https://www.vldb.org/conf/1994/P487.PDF",
+          "locator": "提出 Apriori 與 AprioriTid 演算法，利用「頻繁項目集的任一子集亦為頻繁」的性質產生並剪除候選集合（該網址需瀏覽器 User-Agent 才回應 200，已以此方式取得 PDF 核對）",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-020",
+      "officialQuestionNumber": 20,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 6 頁：第 20 題題幹（正常 99.5%、詐欺 0.5%）、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Classification metrics",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics",
+          "locator": "accuracy_score 定義為正確預測的比例；並列出 precision、recall、F-measure 與 balanced accuracy 等針對不平衡資料的替代指標",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn Examples－Precision-Recall",
+          "url": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html",
+          "locator": "導言：Precision-Recall is a useful measure of success of prediction when the classes are very imbalanced",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}

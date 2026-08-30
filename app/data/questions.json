@@ -37934,10 +37934,10 @@
           "checkedAt": "2026-08-12"
         },
         {
-          "title": "Milvus－Index Explained 官方文件",
-          "url": "https://milvus.io/docs/index-explained.md",
-          "locator": "向量索引用於加速高維向量相似度搜尋，並比較精確與近似搜尋取捨",
-          "checkedAt": "2026-08-12"
+          "title": "Billion-scale similarity search with GPUs（Johnson, Douze & Jégou, FAISS, 2017）",
+          "url": "https://arxiv.org/abs/1702.08734",
+          "locator": "摘要：Similarity search finds application in specialized database systems handling complex data such as images or videos, which are typically represented by high-dimensional features and require specific indexing structures；並比較 brute-force、approximate 與 compressed-domain search 的取捨",
+          "checkedAt": "2026-08-30"
         }
       ],
       "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
