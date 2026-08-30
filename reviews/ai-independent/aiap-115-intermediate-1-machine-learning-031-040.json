@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-intermediate-1-machine-learning",
+  "range": {
+    "start": 31,
+    "end": 40
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 9,
+    "corrected": 1,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-031",
+      "officialQuestionNumber": 31,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 8 頁：第 31 題題幹（獎勵為每成功抓取一個貨品 +1 分，機器手臂反覆放開再抓取）、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Google DeepMind Blog－Specification gaming: the flip side of AI ingenuity",
+          "url": "https://deepmind.google/blog/specification-gaming-the-flip-side-of-ai-ingenuity/",
+          "locator": "開頭定義：Specification gaming is a behaviour that satisfies the literal specification of an objective without achieving the intended outcome",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-032",
+      "officialQuestionNumber": 32,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 8 頁：第 32 題題幹（Precision-Recall Tradeoff）、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.metrics.f1_score",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html",
+          "locator": "函式說明：The F1 score can be interpreted as a harmonic mean of the precision and recall；公式 F1 = 2 * (precision * recall) / (precision + recall)",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-033",
+      "officialQuestionNumber": 33,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 8～9 頁：第 33 題題幹（150 個特徵、部分高度相關、須控制過擬合且不讓任何係數歸零）與左欄官方答案 B、(A) 選項（第 8 頁）、(B)～(D) 選項（第 9 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Ridge regression and classification",
+          "url": "https://scikit-learn.org/stable/modules/linear_model.html#ridge-regression-and-classification",
+          "locator": "說明 Ridge 以係數平方和的 L2 penalty 控制係數大小（The complexity parameter α ≥ 0 controls the amount of shrinkage），可在共線性下使估計更穩定",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-034",
+      "officialQuestionNumber": 34,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 9 頁：第 34 題題幹（learning_rate 3、max_depth 4、n_estimators 5、subsample 3、colsample_bytree 3，每組 5-Fold）、(A)～(D) 選項與左欄官方答案 D；本題無附圖。已獨立重算：3×4×5×3×3 = 540 組參數，×5 folds = 2,700 次模型擬合，與官方答案一致。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.model_selection.GridSearchCV",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html",
+          "locator": "類別說明：Exhaustive search over specified parameter values for an estimator，即對 param_grid 的所有組合逐一以交叉驗證評估",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-035",
+      "officialQuestionNumber": 35,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 9 頁：第 35 題題幹（LoRA 微調、複雜條款摘要遺漏、GPU 顯存接近上限）、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "LoRA: Low-Rank Adaptation of Large Language Models（Hu et al., 2021）",
+          "url": "https://arxiv.org/abs/2106.09685",
+          "locator": "摘要：freezes the pre-trained model weights and injects trainable rank decomposition matrices into each layer of the Transformer architecture；可訓練參數量隨 rank 與注入層數變化",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-036",
+      "officialQuestionNumber": 36,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源 https://github.com/microsoft/SEAL 對一般與瀏覽器 User-Agent 皆回傳 HTTP 403（本環境無法存取 GitHub 網頁），定位無法核實。已改引 HomomorphicEncryption.org 的 Introduction（scripts/fix-ai-review-115-1-m3-031-040.py），其定義段逐字支持「無須祕密金鑰即可對密文運算、結果仍為密文」的敘述。",
+        "獨立作答為 B；題幹三個條件（單一服務商、不解密、直接對加密資料運算）正好對應同態加密，draft 亦正確區分聯邦學習、差分隱私與安全多方計算。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 9 頁：第 36 題題幹（單一雲端服務商、不解密、直接對加密資料運算）、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "HomomorphicEncryption.org－Introduction to Homomorphic Encryption",
+          "url": "https://homomorphicencryption.org/introduction/",
+          "locator": "定義段：同態加密允許對加密資料運算 without requiring access to a secret key；The result of such a computation remains in encrypted form, and can at a later point be revealed by the owner of the secret key",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-037",
+      "officialQuestionNumber": 37,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 9～10 頁：第 37 題題幹（每筆被拒申請須提供可理解理由、要求 Local Explainability）與 (A)～(C) 選項、左欄官方答案 A（第 9 頁）、(C) 續行與 (D) 選項（第 10 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "A Unified Approach to Interpreting Model Predictions（Lundberg & Lee, NeurIPS 2017）",
+          "url": "https://papers.nips.cc/paper/7062-a-unified-approach-to-interpreting-model-predictions",
+          "locator": "摘要：提出 SHAP (SHapley Additive exPlanations) 框架，為每個特徵指派某一筆預測的 importance value，統一各種 additive feature attribution methods",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-038",
+      "officialQuestionNumber": 38,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 10 頁：第 38 題題幹（男性通過率 55%、女性 30%）、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Fairlearn User Guide－Common fairness metrics（Demographic parity）",
+          "url": "https://fairlearn.org/main/user_guide/assessment/common_fairness_metrics.html",
+          "locator": "Demographic parity is a fairness metric whose goal is to ensure a machine learning model's predictions are independent of membership in a sensitive group…achieved when the probability of a certain prediction is not dependent on sensitive group membership",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-039",
+      "officialQuestionNumber": 39,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 10 頁：第 39 題題幹（女性錯誤拒絕比例偏高，法務限制推論階段不得使用性別欄位）、(A)～(D) 選項與左欄官方答案 A；本題無附圖。註：選項 B 的敘述本身即載明「無法直接修正既有模型在推論階段的偏誤」，故 A 為四選項中唯一可執行的去偏策略。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Fairlearn User Guide－Reductions（in-processing mitigation）",
+          "url": "https://fairlearn.org/main/user_guide/mitigation/reductions.html",
+          "locator": "說明 reduction 演算法以 group-fairness constraints 進行約束最佳化；API 為 reduction.fit(X_train, y_train, sensitive_features=…)，敏感特徵用於訓練時的約束而非部署時的預測輸入",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "A Reductions Approach to Fair Classification（Agarwal et al., ICML 2018）",
+          "url": "https://proceedings.mlr.press/v80/agarwal18a.html",
+          "locator": "摘要：將公平分類化約為一系列成本敏感分類問題，可涵蓋 demographic parity 與 equalized odds 等錯誤率均等約束",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-040",
+      "officialQuestionNumber": 40,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 11 頁：第 40 題題幹（784 維輸入、10 類單標籤、標籤已 One-Hot）、Keras 程式碼附圖、(A)～(D) 選項與左欄官方答案 B。已與站內圖檔 aiap-115-intermediate-1-machine-learning-p11-1.png 目視比對：Sequential([Dense(64, activation='relu', input_shape=(784,)), Dense(10, activation='___(A)___')]) 與 model.compile(loss='___(B)___', optimizer='adam')。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Keras API－Dense layer",
+          "url": "https://keras.io/api/layers/core_layers/dense/",
+          "locator": "Dense(units, activation=…) 說明輸出維度由 units 決定、activation 為逐元素套用的激活函數；附圖 Dense(10) 對應 10 類輸出",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Keras API－Probabilistic losses",
+          "url": "https://keras.io/api/losses/probabilistic_losses/",
+          "locator": "CategoricalCrossentropy 說明標籤須為 one-hot representation；若標籤為 integers, please use SparseCategoricalCrossentropy loss",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}

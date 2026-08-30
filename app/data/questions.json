@@ -43487,10 +43487,10 @@
           "checkedAt": "2026-08-13"
         },
         {
-          "title": "Microsoft SEAL－Homomorphic Encryption Library",
-          "url": "https://github.com/microsoft/SEAL",
-          "locator": "同態加密可由雲端直接對加密資料運算，資料擁有者解密結果",
-          "checkedAt": "2026-08-13"
+          "title": "HomomorphicEncryption.org－Introduction to Homomorphic Encryption",
+          "url": "https://homomorphicencryption.org/introduction/",
+          "locator": "定義段：同態加密允許直接對加密資料進行運算 without requiring access to a secret key；The result of such a computation remains in encrypted form, and can at a later point be revealed by the owner of the secret key",
+          "checkedAt": "2026-08-30"
         }
       ],
       "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
