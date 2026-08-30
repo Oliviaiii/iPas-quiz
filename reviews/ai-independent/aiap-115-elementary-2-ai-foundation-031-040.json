@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-elementary-2-ai-foundation",
+  "range": {
+    "start": 31,
+    "end": 40
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 6,
+    "corrected": 4,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-031",
+      "officialQuestionNumber": 31,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 8 頁（共 13 頁）第 31 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Partial Dependence and Individual Conditional Expectation plots",
+          "url": "https://scikit-learn.org/stable/modules/partial_dependence.html",
+          "locator": "5.1.1 節：PDP 顯示目標回應與所關注輸入特徵間的依賴關係，對其餘特徵邊際化後呈現平均效果；5.1.2 節：ICE 逐樣本各畫一條線，PDP 的平均可能掩蓋交互作用造成的異質關係",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-032",
+      "officialQuestionNumber": 32,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 9 頁（共 13 頁）第 32 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Ribeiro, Singh & Guestrin, \"Why Should I Trust You?\": Explaining the Predictions of Any Classifier（arXiv:1602.04938）",
+          "url": "https://arxiv.org/abs/1602.04938",
+          "locator": "摘要：LIME 以在預測附近學習可解釋模型的方式，對任何分類器的預測提供可解釋且忠實的說明",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-033",
+      "officialQuestionNumber": 33,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 以「待查項目：」起頭，內容卻是已定案的適用範圍聲明——題幹未指名特定產品、商用模型是否採 MoE 屬未公開實作、本詳解僅依選項的架構特性作答。既無待辦事項，掛著待查字樣會讓人工複核者誤以為還有東西要查；已改標為「適用範圍說明（非待查）」，語意不動。",
+        "官方答案 B 不受影響：稀疏 MoE 讓總參數量與單次啟用參數量脫鉤，是四個選項中唯一同時回應「規模大」與「有效率」者。",
+        "修正以 scripts/fix-ai-review-115-2-s1-031-040.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 9 頁（共 13 頁）第 33 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Shazeer et al., Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer（arXiv:1701.06538）",
+          "url": "https://arxiv.org/abs/1701.06538",
+          "locator": "摘要：稀疏閘控 MoE 層可由上千個前饋子網路組成，閘控網路為每個樣本選出稀疏的專家組合，以條件計算在計算效率僅小幅損失下實現逾千倍的模型容量提升",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-034",
+      "officialQuestionNumber": 34,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 以「待查項目：」起頭，內容是對題幹把 CLIP 稱作自監督學習的名詞界定，並已自行結論「分類名稱的歧義不影響作答」，並無待辦。本次核對 CLIP 論文摘要（400 million (image, text) pairs collected from the internet；predicting which caption goes with which image），確認資料型態敘述無誤，已改標為「名詞界定說明（非待查）」並補記已核對事實。",
+        "官方答案 C 不受影響：CLIP 需圖文配對、DINO 只需未標註影像，兩篇論文摘要均可直接佐證。",
+        "修正以 scripts/fix-ai-review-115-2-s1-031-040.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 9 頁（共 13 頁）第 34 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Radford et al., Learning Transferable Visual Models From Natural Language Supervision（arXiv:2103.00020）",
+          "url": "https://arxiv.org/abs/2103.00020",
+          "locator": "摘要逐字核對：pre-training task of predicting which caption goes with which image……on a dataset of 400 million (image, text) pairs collected from the internet",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Caron et al., Emerging Properties in Self-Supervised Vision Transformers（arXiv:2104.14294）",
+          "url": "https://arxiv.org/abs/2104.14294",
+          "locator": "摘要：DINO 為無標籤自蒸餾（self-distillation with no labels）方法，以自監督方式訓練 Vision Transformer，不使用人工標籤",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-035",
+      "officialQuestionNumber": 35,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 9 頁（共 13 頁）第 35 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Claude Developer Platform 文件－Context windows",
+          "url": "https://platform.claude.com/docs/en/docs/build-with-claude/context-windows",
+          "locator": "How the context window works：上下文窗口指模型生成回應時所能參照的全部文本，相當於模型的工作記憶；隨 token 數增加，準確率與召回率會逐步下降",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Lost in the Middle: How Language Models Use Long Contexts（arXiv:2307.03172）",
+          "url": "https://arxiv.org/abs/2307.03172",
+          "locator": "摘要：關鍵資訊位於長上下文中段時模型表現顯著下降，支持「即使塞得進窗口，分散資訊的利用效率仍下降」之敘述",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-036",
+      "officialQuestionNumber": 36,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 9～10 頁（共 13 頁）第 36 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch 官方文件－torch.optim",
+          "url": "https://docs.pytorch.org/docs/2.13/optim.html",
+          "locator": "套件說明：優化器物件保存當前狀態並依據計算出的梯度更新參數；以 loss.backward() 計算梯度後呼叫 optimizer.step() 執行更新",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Keras 官方文件－Optimizers",
+          "url": "https://keras.io/api/optimizers/",
+          "locator": "優化器為編譯 Keras 模型的兩個必要引數之一（另一為損失函數），列出 SGD、Adam、RMSprop 等",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-037",
+      "officialQuestionNumber": 37,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 請複核者確認「最能直接」的判準是否恰當。本次逐項比對後確認成立：顯著性圖直接以類別分數對輸入影像求梯度，輸出即為與原圖逐像素對齊的熱圖；LIME 與 SHAP 是與資料型態無關的通用歸因框架，用於影像須先超像素分割或遮蔽取樣，得到區塊層級的近似解釋。題幹既寫明「最能直接」，D 的判定成立；原敘述已表達為程度比較而非絕對排除，用語恰當。待查項目結案。",
+        "修正以 scripts/fix-ai-review-115-2-s1-031-040.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 10 頁（共 13 頁）第 37 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Simonyan, Vedaldi & Zisserman, Deep Inside Convolutional Networks（arXiv:1312.6034）",
+          "url": "https://arxiv.org/abs/1312.6034",
+          "locator": "摘要：以類別分數對輸入影像的梯度計算類別顯著性圖，該圖針對給定的影像與類別逐筆產生",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Ribeiro, Singh & Guestrin, \"Why Should I Trust You?\": Explaining the Predictions of Any Classifier（arXiv:1602.04938）",
+          "url": "https://arxiv.org/abs/1602.04938",
+          "locator": "摘要：LIME 以在預測附近學習可解釋模型的方式，對任何分類器的預測提供可解釋且忠實的說明",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Lundberg & Lee, A Unified Approach to Interpreting Model Predictions（arXiv:1705.07874）",
+          "url": "https://arxiv.org/abs/1705.07874",
+          "locator": "摘要：SHAP 為每個特徵指派對應於特定預測的重要性數值，屬加法式特徵歸因；用於影像須先把像素群當成特徵處理",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-038",
+      "officialQuestionNumber": 38,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 把「半監督式異常偵測」的名詞用法列為待查（文獻另有 novelty detection、單類分類等稱呼）。本次已找到文獻依據：Chalapathy & Chawla 深度異常偵測綜述第 8.2.2 節即以 semi-supervised deep anomaly detection 稱呼「以無異常樣本訓練」的設定，說明正常樣本的標籤遠比異常容易取得，故半監督式做法應用更廣。官方答案的用語有文獻支持，待查項目結案。",
+        "修正以 scripts/fix-ai-review-115-2-s1-031-040.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 10 頁（共 13 頁）第 38 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Novelty and Outlier Detection",
+          "url": "https://scikit-learn.org/stable/modules/outlier_detection.html",
+          "locator": "Novelty detection：以未受污染的訓練資料建模，判斷新觀測是否偏離該分布",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Chalapathy & Chawla, Deep Learning for Anomaly Detection: A Survey（arXiv:1901.03407）",
+          "url": "https://arxiv.org/abs/1901.03407",
+          "locator": "第 8.2.2 節逐字核對：The labels of normal instances are far more easy to obtain than anomalies, as a result, semi-supervised DAD techniques are more widely adopted；本次新增為 Q38 第五筆來源",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-13（PDF 第 19 頁）：監督式學習需帶標記資料；非監督式學習自未標記資料發掘模式與分群；強化學習基於回饋機制",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-039",
+      "officialQuestionNumber": 39,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 10 頁（共 13 頁）第 39 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Sutton & McCallum, An Introduction to Conditional Random Fields（arXiv:1011.4088）",
+          "url": "https://ar5iv.labs.arxiv.org/html/1011.4088",
+          "locator": "第 2.3 節：CRF 直接對條件分佈 p(y|x) 建模，是 HMM 的鑑別式對應，關係如同 naive Bayes 之於 logistic regression；第 5 節列出 NER、詞性標註等序列標註應用",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-48（PDF 第 54 頁）逐字核對：生成式模型「學習數據的聯合分佈 P（x,y）或邊際分佈 P（x），並能生成具有創新性的新數據樣本」，並列 GAN、VAE 與擴散模型",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-040",
+      "officialQuestionNumber": 40,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 10～11 頁（共 13 頁）第 40 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Goodfellow et al., Generative Adversarial Networks（arXiv:1406.2661）",
+          "url": "https://arxiv.org/abs/1406.2661",
+          "locator": "摘要：生成模型 G 捕捉資料分佈，鑑別模型 D 估計樣本來自訓練資料的機率；G 的目標是最大化 D 犯錯的機率，兩者構成極小極大雙人賽局",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-48（PDF 第 54 頁）逐字核對：生成式模型「學習數據的聯合分佈 P（x,y）或邊際分佈 P（x），並能生成具有創新性的新數據樣本」，並列 GAN、VAE 與擴散模型",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
