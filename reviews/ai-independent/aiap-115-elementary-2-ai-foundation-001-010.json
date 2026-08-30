@@ -1,0 +1,305 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-elementary-2-ai-foundation",
+  "range": {
+    "start": 1,
+    "end": 10
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 6,
+    "corrected": 4,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-001",
+      "officialQuestionNumber": 1,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 1 頁（共 13 頁）第 1 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致；本試卷逐題於左欄標示答案，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "全國法規資料庫－個人資料保護法",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0050021",
+          "locator": "第 2 條第 1 款個人資料之定義含特徵及其他得以直接或間接方式識別該個人之資料；第 5 條蒐集、處理或利用不得逾越特定目的之必要範圍",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Hugging Face Tasks－Text Classification",
+          "url": "https://huggingface.co/tasks/text-classification",
+          "locator": "任務定義與變體：情感分析（Sentiment Analysis）將文本分為正面、負面或中立等極性",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章（PDF 第 39 頁附近）：深度學習於自然語言處理、電腦視覺與語音辨識等領域之應用",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-002",
+      "officialQuestionNumber": 2,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 1 頁（共 13 頁）第 2 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致；本試卷逐題於左欄標示答案，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章（PDF 第 43、45 頁）核對：非監督式學習在異常檢測中以聚類模型識別異常數據；強化學習透過不斷試驗與環境回饋逐步掌握最佳策略",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Novelty and Outlier Detection",
+          "url": "https://scikit-learn.org/stable/modules/outlier_detection.html",
+          "locator": "Novelty detection 以未受污染的訓練資料建模，判斷新觀測是否偏離該分布；支持「無標註只能判偏離、無法指派特定異常類別」之敘述",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-003",
+      "officialQuestionNumber": 3,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 1 頁（共 13 頁）第 3 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致；本試卷逐題於左欄標示答案，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章（PDF 第 16 頁）逐字核對：「異常檢測（Anomaly Detection）特點與用途：識別數據集中不符合預期的異常點，如離群值或罕見模式」；原 locator 為此句之忠實摘述",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章（PDF 第 16 頁）逐字核對：「預測性分析（Predictive Analysis）預測性分析使用歷史數據來預測未來可能發生的事件或趨勢」，同節並列診斷性分析",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-004",
+      "officialQuestionNumber": 4,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 把「高頻交易特性之一手外部來源」列為待查，理由是當日 investopedia.com 無法以自動化方式開啟。本次複核改採美國證券交易委員會（SEC）Concept Release on Equity Market Structure 之聯邦公報全文，其 HFT 特徵列舉含「使用極高速且精密的電腦程式產生、遞送與執行委託」與「建立及平倉部位的時間極短」，正是選項 B 所述能力，待查項目結案。",
+        "修正以 scripts/fix-ai-review-115-2-s1-001-010.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 1～2 頁（共 13 頁）第 4 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本試卷逐題於左欄標示答案，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "U.S. SEC — Concept Release on Equity Market Structure（Release No. 34-61358，75 FR 3594）",
+          "url": "https://www.federalregister.gov/documents/full_text/text/2010/01/21/2010-1045.txt",
+          "locator": "逐字核對：Other characteristics often attributed to proprietary firms engaged in HFT are: (1) The use of extraordinarily high-speed and sophisticated computer programs for generating, routing, and executing orders；(3) very short time-frames for establishing and liquidating positions",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章（PDF 第 59～60 頁）：生成對抗網路由生成器與判別器組成，用於資料生成；支持選項 C 分析",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-005",
+      "officialQuestionNumber": 5,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 2 頁（共 13 頁）第 5 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致；本試卷逐題於左欄標示答案，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "全國法規資料庫－人工智慧基本法",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0160093",
+          "locator": "第 4 條逐字核對：五、透明與可解釋「人工智慧之產出應做適當資訊揭露或標記」；六、公平與不歧視「應盡可能避免演算法產生偏差及歧視等風險，不應對特定群體造成歧視之結果」；三、隱私保護與資料治理；七、問責「包含內部治理責任及外部社會責任」。第 17 條「政府應就高風險人工智慧之應用，明確其責任歸屬及歸責條件，並建立其救濟、補償或保險機制」；第 19 條「政府使用人工智慧執行業務或提供服務，應進行風險評估，規劃風險因應措施」",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-006",
+      "officialQuestionNumber": 6,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 2 頁（共 13 頁）第 6 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致；本試卷逐題於左欄標示答案，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "數位發展部－「AI 產品與系統評測中心」啟動新聞發布",
+          "url": "https://moda.gov.tw/ADI/news/latest-news/9295",
+          "locator": "逐字核對：「建立語言模型（Large Language Model, LLM）的初步評測項目，涵蓋安全性(Safety)、可解釋性(Explainable)、彈性(Resilient)、公平性(Fair)、準確性(Accuracy)、透明性(Transparency)、當責性(Accountable)、可靠性(Reliability)、隱私(Privacy)及資安(Secure)等 10 項」；名單中無效率性（Efficiency）",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-007",
+      "officialQuestionNumber": 7,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 2 頁（共 13 頁）第 7 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致；本試卷逐題於左欄標示答案，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章（PDF 第 23 頁）逐字核對：「（1）訓練階段：模型會在大量的文本數據上進行訓練，學習語言的規律和模式」；原 locator 為此句之忠實摘述",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章（PDF 第 25 頁）逐字核對：「影響生成模型效果的因素包括：數據品質：數據的數量、品質和多樣性對模型的效能有決定性的影響」",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章（PDF 第 41 頁）逐字核對：「開發去偏演算法以減少數據中的隱性偏見，確保模型的公平性」",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-008",
+      "officialQuestionNumber": 8,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 因無法讀取銀行公會規範全文，把 B、C、D 對應的確切條號列為待查。本次已自公會規範專頁下載規範 PDF（本會 114 年 5 月 29 日第 14 屆第 25 次理監事聯席會議核議通過、金管會 114 年 10 月 2 日金管銀國字第 1140219072 號函洽悉）並逐條核對：第十一條要求「告知該互動或服務係利用上開技術自動完成，或揭露該互動或自動化金融服務適用的人群、場合、用途」，並「宜由消費者自行選擇是否使用，並提醒消費者該項服務有無替代方案」，分別對應選項 D、B、C；第十條把模型與演算法紀錄定位為「保存必要技術文件……以確保其在必要時可被查驗」，屬留存備查而非對外公開，佐證選項 A 不在揭露義務之列。待查項目結案，並把第二筆來源 locator 由「專頁與下載連結」改為實際條號。",
+        "修正以 scripts/fix-ai-review-115-2-s1-001-010.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 2～3 頁（共 13 頁）第 8 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致；本試卷逐題於左欄標示答案，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "中華民國銀行商業同業公會全國聯合會－「金融機構運用人工智慧技術作業規範」",
+          "url": "https://www.ba.org.tw/memberStandard/details?id=68",
+          "locator": "規範全文 PDF 第十一條（與消費者互動之告知與揭露：自動完成之告知、適用人群／場合／用途、選擇權與替代方案）；第十條（技術文件與紀錄之保存以備查驗，未要求對外公開模型架構或訓練資料）",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "金融監督管理委員會－發布「金融業運用人工智慧（AI）指引」新聞稿",
+          "url": "https://www.fsc.gov.tw/ch/home.jsp?id=96&parentpath=0,2&mcustomize=news_view.jsp&dataserno=202406200001&dtable=News",
+          "locator": "金管會 113 年 6 月發布 AI 指引，核心原則含落實透明性與可解釋性、尊重客戶選擇權與替代方案",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-009",
+      "officialQuestionNumber": 9,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 因當日未能連線 ipas.org.tw，把「AI 倫理五大核心原則」的學習指引章節與頁碼列為待查。本次已下載科目一學習指引全文檢索：全文並無「五大核心原則」一節，也未逐項定義透明性、公平性、隱私性、安全性與問責性，該組用語出自試題本身。待查項目以此否定結果結案，本題維持以《人工智慧基本法》第 4 條所列原則為對照基礎（該條文已逐字核對）。",
+        "修正以 scripts/fix-ai-review-115-2-s1-001-010.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 3 頁（共 13 頁）第 9 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致；本試卷逐題於左欄標示答案，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "全國法規資料庫－人工智慧基本法",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0160093",
+          "locator": "第 4 條逐字核對：五、透明與可解釋「人工智慧之產出應做適當資訊揭露或標記」；六、公平與不歧視「應盡可能避免演算法產生偏差及歧視等風險，不應對特定群體造成歧視之結果」；三、隱私保護與資料治理；七、問責「包含內部治理責任及外部社會責任」。第 17 條「政府應就高風險人工智慧之應用，明確其責任歸屬及歸責條件，並建立其救濟、補償或保險機制」；第 19 條「政府使用人工智慧執行業務或提供服務，應進行風險評估，規劃風險因應措施」",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "數位發展部－「AI 產品與系統評測中心」啟動新聞發布",
+          "url": "https://moda.gov.tw/ADI/news/latest-news/9295",
+          "locator": "逐字核對：「建立語言模型（Large Language Model, LLM）的初步評測項目，涵蓋安全性(Safety)、可解釋性(Explainable)、彈性(Resilient)、公平性(Fair)、準確性(Accuracy)、透明性(Transparency)、當責性(Accountable)、可靠性(Reliability)、隱私(Privacy)及資安(Secure)等 10 項」；名單中無效率性（Efficiency）",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-010",
+      "officialQuestionNumber": 10,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 記載「veracity 與 value 屬業界常見 5V 用語……未宣稱出自 NIST」，並把是否需補正式出處列為待查。核對 NIST SP 1500-1r2 全文後發現此敘述不夠精確：該文件詞彙表對兩者都有正式定義（Value refers to the inherent wealth, economic and social, embedded in any dataset；Veracity refers to the accuracy of the data），veracity 另設 5.4.1 專節。已更正 editorialNote 並把第二筆來源 locator 補上各節與頁碼，待查項目結案。",
+        "修正以 scripts/fix-ai-review-115-2-s1-001-010.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 3 頁（共 13 頁）第 10 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致；本試卷逐題於左欄標示答案，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST Big Data Interoperability Framework: Volume 1, Definitions（NIST SP 1500-1r2）",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1500-1r2.pdf",
+          "locator": "第 3.2.1 Volume、3.2.2 Velocity、3.2.3 Variety（PDF 第 21 頁）；第 5.4.1 Veracity「Veracity refers to the accuracy of the data」（PDF 第 40 頁）；詞彙表「Value refers to the inherent wealth, economic and social, embedded in any dataset」（PDF 第 17 頁）",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
