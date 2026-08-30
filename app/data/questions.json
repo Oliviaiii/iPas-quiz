@@ -700,8 +700,8 @@
         {
           "title": "中華民國銀行商業同業公會全國聯合會－「金融機構運用人工智慧技術作業規範」",
           "url": "https://www.ba.org.tw/memberStandard/details?id=68",
-          "locator": "規範全文下載頁（銀行公會訂定，經金管會同意備查）",
-          "checkedAt": "2026-07-31"
+          "locator": "規範全文（本會 114 年 5 月 29 日第 14 屆第 25 次理監事聯席會議核議通過、金管會 114 年 10 月 2 日金管銀國字第 1140219072 號函洽悉）：第九條「金融機構應指定高階主管或委員會負責人工智慧相關監督管理並建立內部治理架構，指派單位或人員負責人工智慧之推動及管理，落實辦理人才培育，提供適當之培訓資源。負責運用生成式人工智慧技術之人員，應清楚了解生成式人工智慧技術運作方式以及如何做出回應」；第十三條要求以風險基礎為導向建立「適當之風險管理及定期檢視機制」，必要時得由具人工智慧專業之獨立第三人出具評估報告",
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
@@ -710,7 +710,7 @@
           "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：撰寫時銀行公會網站的規範全文下載連結回傳空檔案，本題的條文內容依規範公開說明與 iPAS 學習指引參考書目記載整理，尚未逐條比對規範全文。複核者請自銀行公會規範頁開啟 PDF，確認四個選項對應條文的實際用語後再改為 reviewed。查核日期 2026-07-31。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。原稿把「尚未逐條比對規範全文」列為待查，獨立 AI 複核已下載規範 PDF 並逐條核對：第九條一條之內同時涵蓋選項 D（指定高階主管或委員會負責監督管理並建立內部治理架構）、選項 A（落實辦理人才培育，提供適當之培訓資源）與選項 B（負責運用生成式人工智慧技術之人員，應清楚了解生成式人工智慧技術運作方式以及如何做出回應）；第十三條要求的是「適當之風險管理及定期檢視機制」，規範全文十六條並無任何每日對外公布系統運作狀況的義務，佐證選項 C 不在明訂措施之列。另註：規範現行版本為 114 年 5 月修正版，學習指引參考書目所載的 113 年 3 月版為前一版本，本題涉及的治理條文在兩版之間並無實質差異。待查項目結案。查核日期 2026-08-30。",
       "author": "Claude Code（AI 輔助初稿）",
       "authoredAt": "2026-07-31"
     }
@@ -3438,9 +3438,21 @@
           "url": "https://moda.gov.tw/ADI/news/latest-news/9295",
           "locator": "評測中心參考 ISO/IEC、NIST AI RMF 與歐盟 AI Act，訂定語言模型評測構面",
           "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "AI 產品與系統評測中心（AIEC）－成立背景",
+          "url": "https://www.aiec.org.tw/web/guest/background",
+          "locator": "AI 評測中心目標段：研析 NIST、ISO 及歐盟等國際 AI 規範後「擬建立下列 10 項評測項目」——安全性(Safety)、可解釋性(Explainability)、韌性(Resiliency)、公平性(Fairness)、準確性(Accuracy)、透明性(Transparency)、當責性(Accountability)、可靠性(Reliability)、隱私(Privacy)、資安(Security)，各項均附定義；清單中無「資料複雜性」",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "AI 產品與系統評測中心（AIEC）－主要評測項目",
+          "url": "https://www.aiec.org.tw/service",
+          "locator": "現行主要評測項目頁列出準確性、可靠性、公平性、隱私、資安五項及其評測說明；公平性說明「要求系統避免偏見、歧視或不公正對待」，資安說明「面對外部攻擊、未授權訪問或不當使用」",
+          "checkedAt": "2026-08-30"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：撰寫時可查得數位發展部 AI 產品與系統評測中心的成立宗旨與語言模型十項評測構面，但未能取得該中心逐項列舉「大型語言模型安全性常見使用指標」的原始文件。本題選項分析依安全性評估的通用構面說明，選項 A 與其餘三項的性質差異明確。複核者宜再查證評測中心是否有正式文件列出這組指標名稱，並補上精確出處。查核日期 2026-07-31。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。原稿把「評測中心逐項列舉大型語言模型安全性常見使用指標的原始文件」列為待查，獨立 AI 複核已查核 AI 產品與系統評測中心（AIEC）官網：成立背景頁列出 10 項評測項目並逐項給出定義（安全性、可解釋性、韌性、公平性、準確性、透明性、當責性、可靠性、隱私、資安），主要評測項目頁另列準確性、可靠性、公平性、隱私、資安五項的評測說明；兩處都沒有把「事實正確性、偏見與歧視、惡意與濫用可能性」列成一組具名的安全性指標，該組措辭應出自試題本身，此方向查無官方逐項清單。惟本題答案不依賴該具名清單：對照官方 10 項評測項目，事實正確性對應準確性、偏見與歧視對應公平性（其定義明載「避免偏見、歧視或不公正對待」）、惡意與濫用可能性對應安全性與資安（資安定義明載「面對外部攻擊、未授權訪問或不當使用」），只有「資料複雜性」在 10 項中找不到任何對應。待查項目以此結案。查核日期 2026-08-30。",
       "author": "Claude Code（AI 輔助初稿）",
       "authoredAt": "2026-07-31"
     }
@@ -8118,8 +8130,8 @@
         {
           "title": "中華民國銀行商業同業公會全國聯合會－「金融機構運用人工智慧技術作業規範」",
           "url": "https://www.ba.org.tw/memberStandard/details?id=68",
-          "locator": "規範專頁：訂定機關、最新版本與全文 PDF 下載連結",
-          "checkedAt": "2026-07-31"
+          "locator": "規範全文（本會 114 年 5 月 29 日核議通過、金管會 114 年 10 月 2 日金管銀國字第 1140219072 號函洽悉）：第十一條「金融機構運用人工智慧技術與消費者互動時，應告知該互動或服務係利用上開技術自動完成，或揭露該互動或自動化金融服務適用的人群、場合、用途。另宜由消費者自行選擇是否使用，並提醒消費者該項服務有無替代方案」，分別對應選項 C、B、D；第十條把模型與演算法紀錄定位為「保存必要技術文件及相關紀錄……以確保其在必要時可被查驗」，屬留存備查而非對外公開，佐證選項 A 不在揭露義務之列",
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "金融監督管理委員會－發布「金融業運用人工智慧（AI）指引」新聞稿",
@@ -8128,7 +8140,7 @@
           "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：《金融機構運用人工智慧技術作業規範》全文須自銀行公會頁面下載 PDF，撰寫時未能以自動化方式讀取其條號，本題所述揭露事項係綜合該規範公開說明與金管會「金融業運用人工智慧（AI）指引」（透明性與可解釋性、尊重客戶選擇的權利及替代方案）整理。複核者宜下載規範全文，補上確切條號並確認現行版本用語。查核日期 2026-07-31。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。原稿因未能讀取規範全文而把條號列為待查，獨立 AI 複核已下載規範 PDF 並逐條核對：第十一條一條之內即涵蓋選項 C（告知該互動或服務係利用上開技術自動完成）、選項 B（揭露適用的人群、場合、用途）與選項 D（提醒消費者該項服務有無替代方案）；第十條要求保存技術文件與模型、演算法紀錄「以確保其在必要時可被查驗」，是留存備查，並未要求對外公開模型架構或原始程式碼，佐證選項 A 為非必要揭露事項。待查項目結案。查核日期 2026-08-30。",
       "author": "Claude Code（AI 輔助初稿）",
       "authoredAt": "2026-07-31"
     }
@@ -10302,7 +10314,7 @@
           "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：選項 B 區間化在實務上同樣可削弱極端值影響，本題判定 A 較佳的理由是「保留數值連續性且直接針對偏態」，屬於程度比較而非絕對排除；官方學習指引在資料前處理章節僅提到偏態分佈以中位數填補遺缺值，未直接討論對數轉換，故改引 scikit-learn 前處理文件。複核者宜確認此比較說法的表述是否足夠明確。查核日期 2026-07-31。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。原稿把「A 相對 B 的程度比較表述是否夠明確」列為待查，獨立 AI 複核確認表述已就位：選項 B 的解析開頭即寫「確實能把極端值收進最高一箱而削弱其影響」，承認區間化同樣有效，只以「會把連續特徵離散化、同一箱內差異全部消失、箱數與切點需另行決定」說明代價較大，並未謊稱 B 為錯；題幹問「最適合」，以代價高低作為區辨忠實反映題目設定。另已全文檢索官方學習指引科目一：「偏態」僅出現在資料清洗段（3-39「中位數或眾數填補：針對偏態分佈或類別型特徵」）與第三章練習題，全書未討論對數轉換或冪次轉換，故改引 scikit-learn 前處理文件的作法維持不變，該頁 8.3.2 節逐字寫明冪次轉換為 parametric, monotonic transformations，目的是 map data ... to as close to a Gaussian distribution as possible in order to stabilize variance and minimize skewness。待查項目結案。查核日期 2026-08-30。",
       "author": "Claude Code（AI 輔助初稿）",
       "authoredAt": "2026-07-31"
     }
@@ -10440,11 +10452,11 @@
         {
           "title": "NIST Big Data Interoperability Framework: Volume 1, Definitions（NIST SP 1500-1r2）",
           "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1500-1r2.pdf",
-          "locator": "第 3.2.3 節 Variety：需要分析來自多個儲存庫、領域或型態的資料；第 3.2.1、3.2.2 節分別界定 Volume 與 Velocity",
-          "checkedAt": "2026-07-31"
+          "locator": "第 3.2.3 節 Variety：Variety refers to data from multiple repositories, domains, or types；第 3.2.1、3.2.2 節分別界定 Volume 與 Velocity（Velocity refers to the rate of data flow）；詞彙表（PDF 第 17 頁）與第 5.4.1 節 VERACITY（PDF 第 40 頁）另正式定義 Veracity refers to the accuracy of the data",
+          "checkedAt": "2026-08-30"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：NIST 大數據互通性框架第一冊列出的四項基本特性為 volume、velocity、variety 與 variability，並未把 veracity 列入該四項；veracity 屬於業界常見的 5V／6V 版本用語，本題選項 D 的說明依通用定義撰寫，未宣稱出自 NIST。官方學習指引亦未見大數據 V 特性的專節。複核者宜確認是否需要補上採用 veracity 一詞的正式出處。查核日期 2026-07-31。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。原稿把 veracity 記為業界常見的 5V／6V 用語、未宣稱出自 NIST，獨立 AI 複核核對 NIST SP 1500-1r2 全文後更正：該文件的詞彙表逐字定義 Veracity refers to the accuracy of the data，第 5.4.1 節另有 VERACITY 專節（並與 5.4.2 VALIDITY 對比），因此選項 D 的說明同樣有一手出處可徵，只是 veracity 被歸在「data characteristics important to data science」而非第 3.2 節的基本特性。官方學習指引科目一則確認查無大數據 V 特性的專節（全文檢索 Variety、Velocity 均為零筆）。待查項目結案。查核日期 2026-08-30。",
       "author": "Claude Code（AI 輔助初稿）",
       "authoredAt": "2026-07-31"
     }
@@ -10516,9 +10528,15 @@
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
           "locator": "第三章 3-11：分類模型用於將數據分為不同類別；時間序列模型用於分析時間相關數據並預測數值",
           "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "Goodfellow, Bengio & Courville－Deep Learning, Chapter 5: Machine Learning Basics",
+          "url": "https://www.deeplearningbook.org/contents/ml.html",
+          "locator": "5.1.1 The Task, T 的 Structured output 條目：Structured output tasks involve any task where the output is a vector (or other data structure containing multiple values) with important relationships between the different elements；例子包含 parsing—mapping a natural language sentence into a tree ... by tagging nodes of the trees as being verbs, nouns, adverbs 與影像逐像素分割",
+          "checkedAt": "2026-08-30"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：官方學習指引未見「結構化預測」一詞的定義段落，本題觀念說明改依 Hugging Face token classification 任務文件與一般教科書用法撰寫。複核者宜再確認是否有更貼近命題出處的一手定義可引用。查核日期 2026-07-31。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。原稿把「結構化預測」缺一手定義列為待查，獨立 AI 複核已補入 Goodfellow 等人《Deep Learning》第 5.1.1 節的Structured output 定義，該處逐字寫明輸出是「a vector (or other data structure containing multiple values) with important relationships between the different elements」，並以句法剖析（為樹節點標註動詞、名詞、副詞）與影像逐像素分割為例，正對應本題選項 D 的逐詞標註。官方學習指引科目一則確認未收錄「結構化預測」一詞（全文檢索僅見結構化數據 Structured Data 的資料型態分類），此方向查無官方定義。待查項目結案。查核日期 2026-08-30。",
       "author": "Claude Code（AI 輔助初稿）",
       "authoredAt": "2026-07-31"
     }
@@ -11930,7 +11948,7 @@
           "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：Solution Graph（解決方案圖譜）並非業界有統一定義的標準術語，官方學習指引科目二亦未收錄，本題解析依題幹用語與圖狀推理框架（如 Tree of Thoughts）的一般用法推得，建議複核者查證命題是否另有指定出處。查核日期 2026-08-03。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。原稿指出 Solution Graph 非統一標準術語、請複核者查證命題是否另有指定出處。獨立 AI 複核已全文檢索官方學習指引兩科：「解決方案圖」「Solution Graph」「有向無環」皆為零筆，確認官方教材未收錄此詞，命題依據未經公布、無從再查證。惟本題答案不依賴該出處：四個選項中只有 D 描述任務分解與決策路徑的結構，A（以圖形搜尋取代語言模型推理）、B（案例知識庫，是事後檢索而非執行當下參照的規劃結構）、C（限制代理僅能依固定流程執行，與「圖譜」作為可參考框架的定位相反）在類別上即不成立，由選項文字本身即可判定。待查項目以此結案。查核日期 2026-08-30。",
       "author": "Claude Code（AI 輔助初稿）",
       "authoredAt": "2026-08-03"
     }
@@ -12146,13 +12164,19 @@
           "checkedAt": "2026-08-03"
         },
         {
+          "title": "Merriam-Webster－vibe coding（Slang & Trending）",
+          "url": "https://www.merriam-webster.com/slang/vibe-coding",
+          "locator": "詞條定義逐字核對：writing computer code in a somewhat careless fashion, with AI assistance；說明段：In vibe coding the coder does not need to understand how or why the code works, and often will have to accept that a certain number of bugs and glitches will be present",
+          "checkedAt": "2026-08-30"
+        },
+        {
           "title": "Wikipedia－Vibe coding",
           "url": "https://en.wikipedia.org/wiki/Vibe_coding",
           "locator": "詞條：Andrej Karpathy 於 2025 年 2 月提出此詞；開發者可能在未理解程式碼的情況下提交 AI 生成內容，帶入未察覺的錯誤與安全弱點",
           "checkedAt": "2026-08-03"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：Vibe Coding 為 2025 年才普及的新詞，官方學習指引未收錄；本題以 GitHub 官方最佳實務佐證審查與測試主張，術語起源暫以維基百科詞條佐證，建議複核者確認是否有更權威的一手出處可替換。查核日期 2026-08-03。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。原稿問 Vibe Coding 是否有比維基詞條更權威的出處可替換，獨立 AI 複核已補入 Merriam-Webster 的詞典條目：「writing computer code in a somewhat careless fashion, with AI assistance」，並載明「In vibe coding the coder does not need to understand how or why the code works, and often will have to accept that a certain number of bugs and glitches will be present」——正是本題「品質與安全風險」的來源。官方學習指引兩科則確認查無此詞（全文檢索 Vibe／vibe 零筆），該方向無資料可查。待查項目結案。查核日期 2026-08-30。",
       "author": "Claude Code（AI 輔助初稿）",
       "authoredAt": "2026-08-03"
     }
@@ -12296,8 +12320,14 @@
         {
           "title": "OpenAI 開發者文件－Agent Builder",
           "url": "https://developers.openai.com/api/docs/guides/agent-builder",
-          "locator": "Agent Builder：以拖放節點的視覺化畫布建構多步驟代理工作流程，工作流程由代理、工具與控制流程邏輯組成，可經 ChatKit 或 SDK 程式碼部署",
-          "checkedAt": "2026-08-03"
+          "locator": "Agent Builder is a visual canvas for building multi-step agent workflows；You can start from templates, drag and drop nodes for each step in your workflow, provide typed inputs and outputs, and preview runs using live data；When you're ready to deploy, embed the workflow into your site with ChatKit, or download the SDK code to run it yourself。頁首另載停用公告：Agent Builder 排定於 2026 年 11 月 30 日關閉",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "OpenAI 開發者文件－ChatKit",
+          "url": "https://developers.openai.com/api/docs/guides/chatkit",
+          "locator": "ChatKit is the best way to build agentic chat experiences；提供 embeddable UI widgets, customizable prompts, tool-invocation support, file attachments, and chain-of-thought visualizations，並可連接 Agent Builder 建立的工作流程或以自有 Python SDK 執行——對應選項 D 的工具整合與任務流程開發",
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "A2A Protocol－官方文件",
@@ -12306,7 +12336,7 @@
           "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：OpenAI AgentKit 官方公告頁（openai.com/index/introducing-agentkit）本日回應 HTTP 403 無法開啟，AgentKit 完整元件清單（如 Connector Registry、Evals）未能逐項核對，僅以可開啟的 OpenAI 開發者文件（Agents 指南與 Agent Builder 頁）佐證代理建構與工作流程開發功能；Agent Builder 文件頁另標示該工具已排定停用時程，產品組成變動快，宜由複核者確認最新狀態。查核日期 2026-08-03。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。原稿記載 AgentKit 官方公告頁 403、元件清單無法逐項核對。獨立 AI 複核重試後 openai.com/index/introducing-agentkit 對一般請求與瀏覽器 User-Agent 皆仍為 403（該站阻擋自動化存取），AgentKit 傘狀公告仍無法逐字查核；改以兩份可開啟的 OpenAI 開發者文件佐證選項 D 的三項功能：Agent Builder 頁支持「建構」與「任務流程開發」（視覺化畫布、拖放節點、typed inputs/outputs、可部署），ChatKit 頁支持「工具整合」（tool-invocation support）並說明可連接 Agent Builder 的工作流程。**時效性提醒（本次新增）**：Agent Builder 文件頁現已載明該產品排定於 2026 年 11 月 30 日關閉，AgentKit 的元件組成自 2025 年出題時起已有變動；本題屬考當年產品定位的題目，作答判準（四選項中只有 D 描述代理建構與工作流程開發）不受影響，但引用時應注意產品現況。待查項目結案。查核日期 2026-08-30。",
       "author": "Claude Code（AI 輔助初稿）",
       "authoredAt": "2026-08-03"
     }
@@ -12368,10 +12398,16 @@
           "checkedAt": "2026-07-29"
         },
         {
+          "title": "Google DeepMind－Watermarking AI-generated text and video with SynthID",
+          "url": "https://deepmind.google/blog/watermarking-ai-generated-text-and-video-with-synthid/",
+          "locator": "影片浮水印段逐字核對：This technique embeds a watermark directly into the pixels of every video frame, making it imperceptible to the human eye, but detectable for identification；並說明 SynthID for video builds upon our image and audio watermarking method to include all frames in generated videos，以及 all videos generated by Veo on VideoFX will be watermarked by SynthID",
+          "checkedAt": "2026-08-30"
+        },
+        {
           "title": "Google DeepMind－SynthID",
-          "url": "https://deepmind.google/science/synthid/",
+          "url": "https://deepmind.google/models/synthid/",
           "locator": "SynthID 將數位浮水印直接嵌入 AI 生成的圖像、音訊、文字或影片，浮水印人眼不可察覺、不改變影像或影片品質，並設計為可抵抗裁切、濾鏡、變更影格率與失真壓縮等修改",
-          "checkedAt": "2026-08-03"
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "Google DeepMind－Veo",
@@ -12380,7 +12416,7 @@
           "checkedAt": "2026-08-03"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：已驗證的 DeepMind SynthID 與 Veo 頁面確認「Veo 影片以 SynthID 嵌入不可見浮水印、不影響品質、可抵抗變更影格率等修改」，但頁面未逐字寫出題幹選項所稱『每一幀（frame）』的嵌入粒度，該細節依官方公告試題選項文字保留，宜由複核者向 Google 官方說明補查。查核日期 2026-08-03。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。原稿把選項所稱『每一幀（frame）』的嵌入粒度列為待查——已驗證的 SynthID 與 Veo 產品頁只寫到「video segment」而未說明粒度。獨立 AI 複核已找到 Google DeepMind 官方部落格逐字支持該粒度：This technique embeds a watermark directly into the pixels of every video frame，並明載 include all frames in generated videos 與 Veo 生成影片皆加上 SynthID 浮水印，選項 D 的敘述因此完全有官方一手出處可徵。另本次一併更新 SynthID 產品頁網址（deepmind.google/science/synthid 已轉址至 deepmind.google/models/synthid）。待查項目結案。查核日期 2026-08-30。",
       "author": "Claude Code（AI 輔助初稿）",
       "authoredAt": "2026-08-03"
     }
@@ -12510,13 +12546,25 @@
           "checkedAt": "2026-07-29"
         },
         {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-5「（4）成本與效益」：總擁有成本（Total Cost of Ownership, TCO）——考量平台的購買、維護、培訓等相關成本，評估其對企業的整體財務影響，避免隱性費用；同段並列投資回報率（Return On Investment, ROI）",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "IBM Think－What is total cost of ownership (TCO)?",
+          "url": "https://www.ibm.com/think/topics/total-cost-of-ownership",
+          "locator": "逐字核對：It accounts for direct costs (such as the initial purchase price) and indirect costs (such as time spent adjusting to new systems)；Direct costs are relatively easy to see, but TCO also incorporates indirect and hidden costs",
+          "checkedAt": "2026-08-30"
+        },
+        {
           "title": "Wikipedia－Total cost of ownership",
           "url": "https://en.wikipedia.org/wiki/Total_cost_of_ownership",
           "locator": "TCO 定義：協助買方與擁有者估算產品或服務直接與間接成本的財務估算，涵蓋採購、安裝與訓練、整合、資安、維運乃至汰換升級等生命週期成本",
           "checkedAt": "2026-08-03"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：TCO 的一手定義來源（Gartner 詞彙表與 IBM 主題頁）本日均回應 HTTP 403 無法開啟，暫以維基百科條目作為輔助參考；官方學習指引既有已驗證段落中亦未見 TCO 專節，宜由複核者補查更權威的一手出處。查核日期 2026-08-03。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。原稿記載 TCO 的一手定義來源（Gartner 詞彙表與 IBM 主題頁）皆 403、僅以維基條目輔助，並稱官方學習指引未見 TCO 專節。獨立 AI 複核已全文檢索學習指引並更正後者：科目二 3-5 的「成本與效益」段即定義總擁有成本（Total Cost of Ownership, TCO）為「考量平台的購買、維護、培訓等相關成本，評估其對企業的整體財務影響，避免隱性費用」，「避免隱性費用」正是本題判準的官方依據，已補為第一筆一手出處。IBM Think 的 TCO 主題頁本次重試亦已可開啟（直接／間接成本的分野），一併補入；Gartner 詞彙表仍為 403。待查項目結案。查核日期 2026-08-30。",
       "author": "Claude Code（AI 輔助初稿）",
       "authoredAt": "2026-08-03"
     }
@@ -13318,7 +13366,7 @@
           "checkedAt": "2026-08-03"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：選項 A 的敘述本身無明顯錯誤，本站判定 B 較佳的依據是題幹限定「資訊處理與生成機制上的核心差異」，A 僅描述模組結構而未觸及機制分工，屬程度比較而非絕對對錯；建議複核者確認此區辨理由與官方命題意旨相符。查核日期 2026-08-03。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。原稿請複核者確認 B 相對 A 的區辨理由是否恰當，獨立 AI 複核確認恰當且已就位：選項 A 的解析已明白承認其敘述本身沒有錯，只指出它停在「有幾個模組、由誰處理」的結構層次；題幹限定要問的是「資訊處理與生成機制上的核心差異」，B 才寫出機制分工（Encoder–Decoder 區分輸入理解與內容生成兩階段，Decoder-only 以單一模型同時處理上下文與生成），判準取自題幹的限定語而非否定 A。惟本題確有兩個敘述皆無明顯錯誤，仍屬選項區辨偏鬆的題型，此點保留供人工複核者知悉。待查項目結案。查核日期 2026-08-30。",
       "author": "Claude Code（AI 輔助初稿）",
       "authoredAt": "2026-08-03"
     }
@@ -21180,7 +21228,7 @@
           "checkedAt": "2026-08-03"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：題幹「解決方案圖（Solution Graph）」一詞未見於已驗證的官方學習指引段落，也不是文獻中的統一標準術語；本題以 LLM 代理規劃綜述（任務分解與計畫表示）、思維樹論文與 OpenAI 代理文件佐證其概念，宜由複核者補查該詞在 Agentic AI 教材中的一手出處。查核日期 2026-08-07。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。原稿把「解決方案圖（Solution Graph）」缺一手出處列為待查。獨立 AI 複核已全文檢索官方學習指引兩科：「解決方案圖」「Solution Graph」「有向無環」皆為零筆，確認官方教材未收錄此詞，命題依據未經公布、無從再查證；同卷第 40 題與 115 年第一次第二科第 16 題的同一疑義亦以相同的否定結果結案。惟本題答案不依賴該詞的精確定義：題幹已明說「由大型語言模型（LLM）負責推理與行動生成」，而 B、C、D 三個選項的共同前提都是「LLM 不參與結構建構或任務規劃」，與題幹自述正面衝突，只有 A 與題幹前提相容，由題幹與選項文字本身即可判定。待查項目以此結案。查核日期 2026-08-30。",
       "author": "Claude Code（AI 輔助初稿）",
       "authoredAt": "2026-08-07"
     }

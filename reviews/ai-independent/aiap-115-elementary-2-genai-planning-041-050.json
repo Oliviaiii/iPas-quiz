@@ -9,8 +9,8 @@
   "reviewedAt": "2026-08-30",
   "reviewer": "Claude Code independent AI reviewer",
   "counts": {
-    "pass": 8,
-    "corrected": 2,
+    "pass": 7,
+    "corrected": 3,
     "humanDecision": 0,
     "blocked": 0
   },
@@ -20,8 +20,12 @@
       "officialQuestionNumber": 41,
       "officialAnswer": "A",
       "answerIndependentlyConfirmed": true,
-      "result": "pass",
-      "findings": [],
+      "result": "corrected",
+      "findings": [
+        "原稿把「解決方案圖（Solution Graph）」缺一手出處列為待查。本次已全文檢索官方學習指引兩科：「解決方案圖」「Solution Graph」「有向無環」皆為零筆，確認官方教材未收錄此詞、命題依據未經公布，此方向以否定結果結案（同卷第 40 題與 115 年第一次第二科第 16 題的同一疑義亦同此結論）。",
+        "官方答案不依賴該詞的精確定義：題幹已明說「由大型語言模型（LLM）負責推理與行動生成」，而 B、C、D 三個選項的共同前提都是「LLM 不參與結構建構或任務規劃」，與題幹自述正面衝突，只有 A 與題幹前提相容。官方答案 A 確認無誤。",
+        "修正以 scripts/fix-ai-review-cleanup-115-2-s2.py 套用（改寫 editorialNote）；狀態維持 draft。"
+      ],
       "sourcesChecked": [
         {
           "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
@@ -39,6 +43,12 @@
           "title": "Tree of Thoughts（arXiv:2305.10601）",
           "url": "https://arxiv.org/abs/2305.10601",
           "locator": "以想法為節點探索多條推理路徑並自我評估、前瞻與回溯",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "全文檢索結果：「解決方案圖」「Solution Graph」「有向無環」在科目一、科目二學習指引皆為零筆，官方教材未收錄此術語",
           "checkedAt": "2026-08-30"
         }
       ]

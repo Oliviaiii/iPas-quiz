@@ -1,0 +1,227 @@
+"""Close the six residual open 待查 items in 115-1 初級第二科 (Q16, Q19, Q21, Q22, Q24, Q35).
+
+Follow-up cleanup pass after all 600 questions completed independent AI review.
+Guards on the exact reviewed snapshot and preserves explanationStatus ``draft``.
+"""
+
+from __future__ import annotations
+
+import hashlib
+import json
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+QUESTIONS = ROOT / "app" / "data" / "questions.json"
+SOURCE_ID = "aiap-115-elementary-1-genai-planning"
+TARGETS = {
+    16: ("aiap-elementary-115-01-genai-planning-016", ["D"], "6f89f9e10766be1aaa9bd8b42552e5f30b7bfe55101c46434ceb027f3551a64f", 2),
+    19: ("aiap-elementary-115-01-genai-planning-019", ["C"], "9dae9597372de489a1fc7ba8d7987d13bb85cdccef2069357c73cdcbe3806746", 3),
+    21: ("aiap-elementary-115-01-genai-planning-021", ["D"], "89165a7e0a069f20ec0906b7fe55da61eb14eb24f4680363b25d8ef1af104ee1", 4),
+    22: ("aiap-elementary-115-01-genai-planning-022", ["D"], "16712199f2b8c3dc804fe8b599575e5391e8b375faa14aad2cdfb6847abdab7e", 3),
+    24: ("aiap-elementary-115-01-genai-planning-024", ["D"], "ef854bbe398a1a28343f932674b5ea1602a917582796bdce0286560341709f8a", 2),
+    35: ("aiap-elementary-115-01-genai-planning-035", ["B"], "b911b77591fe18e9351cac1f72c4c14fa55e037a93b579ec4acf83265ffe1030", 3),
+}
+
+GUIDE_S2_URL = (
+    "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/"
+    "AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf"
+)
+
+NEW_NOTE_16 = (
+    "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。"
+    "原稿指出 Solution Graph 非統一標準術語、請複核者查證命題是否另有指定出處。"
+    "獨立 AI 複核已全文檢索官方學習指引兩科：「解決方案圖」「Solution Graph」「有向無環」皆為零筆，"
+    "確認官方教材未收錄此詞，命題依據未經公布、無從再查證。"
+    "惟本題答案不依賴該出處：四個選項中只有 D 描述任務分解與決策路徑的結構，"
+    "A（以圖形搜尋取代語言模型推理）、B（案例知識庫，是事後檢索而非執行當下參照的規劃結構）、"
+    "C（限制代理僅能依固定流程執行，與「圖譜」作為可參考框架的定位相反）在類別上即不成立，"
+    "由選項文字本身即可判定。待查項目以此結案。查核日期 2026-08-30。"
+)
+
+NEW_NOTE_19 = (
+    "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。"
+    "原稿問 Vibe Coding 是否有比維基詞條更權威的出處可替換，獨立 AI 複核已補入 Merriam-Webster 的詞典條目："
+    "「writing computer code in a somewhat careless fashion, with AI assistance」，並載明"
+    "「In vibe coding the coder does not need to understand how or why the code works, and often will have to "
+    "accept that a certain number of bugs and glitches will be present」——正是本題「品質與安全風險」的來源。"
+    "官方學習指引兩科則確認查無此詞（全文檢索 Vibe／vibe 零筆），該方向無資料可查。"
+    "待查項目結案。查核日期 2026-08-30。"
+)
+
+NEW_REF_19 = {
+    "title": "Merriam-Webster－vibe coding（Slang & Trending）",
+    "url": "https://www.merriam-webster.com/slang/vibe-coding",
+    "locator": (
+        "詞條定義逐字核對：writing computer code in a somewhat careless fashion, with AI assistance；"
+        "說明段：In vibe coding the coder does not need to understand how or why the code works, and often will "
+        "have to accept that a certain number of bugs and glitches will be present"
+    ),
+    "checkedAt": "2026-08-30",
+}
+
+NEW_LOCATOR_21_BUILDER = (
+    "Agent Builder is a visual canvas for building multi-step agent workflows；"
+    "You can start from templates, drag and drop nodes for each step in your workflow, provide typed inputs and "
+    "outputs, and preview runs using live data；When you're ready to deploy, embed the workflow into your site "
+    "with ChatKit, or download the SDK code to run it yourself。"
+    "頁首另載停用公告：Agent Builder 排定於 2026 年 11 月 30 日關閉"
+)
+
+NEW_REF_21_CHATKIT = {
+    "title": "OpenAI 開發者文件－ChatKit",
+    "url": "https://developers.openai.com/api/docs/guides/chatkit",
+    "locator": (
+        "ChatKit is the best way to build agentic chat experiences；提供 embeddable UI widgets, customizable "
+        "prompts, tool-invocation support, file attachments, and chain-of-thought visualizations，"
+        "並可連接 Agent Builder 建立的工作流程或以自有 Python SDK 執行——對應選項 D 的工具整合與任務流程開發"
+    ),
+    "checkedAt": "2026-08-30",
+}
+
+NEW_NOTE_21 = (
+    "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。"
+    "原稿記載 AgentKit 官方公告頁 403、元件清單無法逐項核對。獨立 AI 複核重試後 openai.com/index/"
+    "introducing-agentkit 對一般請求與瀏覽器 User-Agent 皆仍為 403（該站阻擋自動化存取），"
+    "AgentKit 傘狀公告仍無法逐字查核；改以兩份可開啟的 OpenAI 開發者文件佐證選項 D 的三項功能："
+    "Agent Builder 頁支持「建構」與「任務流程開發」（視覺化畫布、拖放節點、typed inputs/outputs、可部署），"
+    "ChatKit 頁支持「工具整合」（tool-invocation support）並說明可連接 Agent Builder 的工作流程。"
+    "**時效性提醒（本次新增）**：Agent Builder 文件頁現已載明該產品排定於 2026 年 11 月 30 日關閉，"
+    "AgentKit 的元件組成自 2025 年出題時起已有變動；本題屬考當年產品定位的題目，"
+    "作答判準（四選項中只有 D 描述代理建構與工作流程開發）不受影響，但引用時應注意產品現況。"
+    "待查項目結案。查核日期 2026-08-30。"
+)
+
+NEW_REF_22_BLOG = {
+    "title": "Google DeepMind－Watermarking AI-generated text and video with SynthID",
+    "url": "https://deepmind.google/blog/watermarking-ai-generated-text-and-video-with-synthid/",
+    "locator": (
+        "影片浮水印段逐字核對：This technique embeds a watermark directly into the pixels of every video frame, "
+        "making it imperceptible to the human eye, but detectable for identification；"
+        "並說明 SynthID for video builds upon our image and audio watermarking method to include all frames in "
+        "generated videos，以及 all videos generated by Veo on VideoFX will be watermarked by SynthID"
+    ),
+    "checkedAt": "2026-08-30",
+}
+
+NEW_NOTE_22 = (
+    "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。"
+    "原稿把選項所稱『每一幀（frame）』的嵌入粒度列為待查——已驗證的 SynthID 與 Veo 產品頁只寫到"
+    "「video segment」而未說明粒度。獨立 AI 複核已找到 Google DeepMind 官方部落格逐字支持該粒度："
+    "This technique embeds a watermark directly into the pixels of every video frame，"
+    "並明載 include all frames in generated videos 與 Veo 生成影片皆加上 SynthID 浮水印，"
+    "選項 D 的敘述因此完全有官方一手出處可徵。"
+    "另本次一併更新 SynthID 產品頁網址（deepmind.google/science/synthid 已轉址至 deepmind.google/models/synthid）。"
+    "待查項目結案。查核日期 2026-08-30。"
+)
+
+NEW_REFS_24 = [
+    {
+        "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+        "url": GUIDE_S2_URL,
+        "locator": (
+            "第三章 3-5「（4）成本與效益」：總擁有成本（Total Cost of Ownership, TCO）——"
+            "考量平台的購買、維護、培訓等相關成本，評估其對企業的整體財務影響，避免隱性費用；"
+            "同段並列投資回報率（Return On Investment, ROI）"
+        ),
+        "checkedAt": "2026-08-30",
+    },
+    {
+        "title": "IBM Think－What is total cost of ownership (TCO)?",
+        "url": "https://www.ibm.com/think/topics/total-cost-of-ownership",
+        "locator": (
+            "逐字核對：It accounts for direct costs (such as the initial purchase price) and indirect costs "
+            "(such as time spent adjusting to new systems)；Direct costs are relatively easy to see, but TCO also "
+            "incorporates indirect and hidden costs"
+        ),
+        "checkedAt": "2026-08-30",
+    },
+]
+
+NEW_NOTE_24 = (
+    "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。"
+    "原稿記載 TCO 的一手定義來源（Gartner 詞彙表與 IBM 主題頁）皆 403、僅以維基條目輔助，"
+    "並稱官方學習指引未見 TCO 專節。獨立 AI 複核已全文檢索學習指引並更正後者："
+    "科目二 3-5 的「成本與效益」段即定義總擁有成本（Total Cost of Ownership, TCO）為"
+    "「考量平台的購買、維護、培訓等相關成本，評估其對企業的整體財務影響，避免隱性費用」，"
+    "「避免隱性費用」正是本題判準的官方依據，已補為第一筆一手出處。"
+    "IBM Think 的 TCO 主題頁本次重試亦已可開啟（直接／間接成本的分野），一併補入；"
+    "Gartner 詞彙表仍為 403。待查項目結案。查核日期 2026-08-30。"
+)
+
+NEW_NOTE_35 = (
+    "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。"
+    "原稿請複核者確認 B 相對 A 的區辨理由是否恰當，獨立 AI 複核確認恰當且已就位："
+    "選項 A 的解析已明白承認其敘述本身沒有錯，只指出它停在「有幾個模組、由誰處理」的結構層次；"
+    "題幹限定要問的是「資訊處理與生成機制上的核心差異」，B 才寫出機制分工"
+    "（Encoder–Decoder 區分輸入理解與內容生成兩階段，Decoder-only 以單一模型同時處理上下文與生成），"
+    "判準取自題幹的限定語而非否定 A。惟本題確有兩個敘述皆無明顯錯誤，"
+    "仍屬選項區辨偏鬆的題型，此點保留供人工複核者知悉。待查項目結案。查核日期 2026-08-30。"
+)
+
+
+def snapshot_hash(question: dict) -> str:
+    snapshot = {key: question[key] for key in ("id", "officialAnswer", "explanationStatus", "explanation")}
+    payload = json.dumps(snapshot, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    return hashlib.sha256(payload).hexdigest()
+
+
+def main() -> None:
+    questions = json.loads(QUESTIONS.read_text(encoding="utf-8"))
+    selected = {
+        q["officialQuestionNumber"]: q
+        for q in questions
+        if q.get("sourceId") == SOURCE_ID and q.get("officialQuestionNumber") in TARGETS
+    }
+    if set(selected) != set(TARGETS):
+        raise RuntimeError(f"Expected targets {sorted(TARGETS)}, found {sorted(selected)}")
+    for number, (question_id, answer, digest, ref_count) in TARGETS.items():
+        question = selected[number]
+        if question.get("id") != question_id or question.get("officialAnswer") != answer:
+            raise RuntimeError(f"Guard failed for Q{number} identity or answer")
+        if question.get("explanationStatus") != "draft" or snapshot_hash(question) != digest:
+            raise RuntimeError(f"Guard failed for Q{number} status or reviewed snapshot")
+        if len(question["explanation"]["references"]) != ref_count:
+            raise RuntimeError(f"Guard failed for Q{number} reference count")
+        if "待查項目：" not in question["explanation"].get("editorialNote", ""):
+            raise RuntimeError(f"Guard failed for Q{number}: editorialNote is not an open 待查 item")
+
+    selected[16]["explanation"]["editorialNote"] = NEW_NOTE_16
+
+    e19 = selected[19]["explanation"]
+    if "wikipedia.org/wiki/Vibe_coding" not in e19["references"][2]["url"]:
+        raise RuntimeError("Guard failed for Q19 reference 2 target")
+    e19["references"].insert(2, NEW_REF_19)
+    e19["editorialNote"] = NEW_NOTE_19
+
+    e21 = selected[21]["explanation"]
+    if "agent-builder" not in e21["references"][2]["url"]:
+        raise RuntimeError("Guard failed for Q21 reference 2 target")
+    e21["references"][2]["locator"] = NEW_LOCATOR_21_BUILDER
+    e21["references"][2]["checkedAt"] = "2026-08-30"
+    e21["references"].insert(3, NEW_REF_21_CHATKIT)
+    e21["editorialNote"] = NEW_NOTE_21
+
+    e22 = selected[22]["explanation"]
+    if e22["references"][1]["url"] != "https://deepmind.google/science/synthid/":
+        raise RuntimeError("Guard failed for Q22 reference 1 target")
+    e22["references"][1]["url"] = "https://deepmind.google/models/synthid/"
+    e22["references"][1]["checkedAt"] = "2026-08-30"
+    e22["references"].insert(1, NEW_REF_22_BLOG)
+    e22["editorialNote"] = NEW_NOTE_22
+
+    e24 = selected[24]["explanation"]
+    if "wikipedia.org/wiki/Total_cost_of_ownership" not in e24["references"][1]["url"]:
+        raise RuntimeError("Guard failed for Q24 reference 1 target")
+    e24["references"][1:1] = NEW_REFS_24
+    e24["editorialNote"] = NEW_NOTE_24
+
+    selected[35]["explanation"]["editorialNote"] = NEW_NOTE_35
+
+    for question in selected.values():
+        question["explanationStatus"] = "draft"
+    QUESTIONS.write_text(json.dumps(questions, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+if __name__ == "__main__":
+    main()

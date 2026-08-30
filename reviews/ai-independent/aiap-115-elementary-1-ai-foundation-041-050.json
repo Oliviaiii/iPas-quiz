@@ -9,8 +9,8 @@
   "reviewedAt": "2026-08-13",
   "reviewer": "Codex independent AI reviewer",
   "counts": {
-    "pass": 10,
-    "corrected": 0,
+    "pass": 7,
+    "corrected": 3,
     "humanDecision": 0,
     "blocked": 0
   },
@@ -92,8 +92,12 @@
       "officialQuestionNumber": 44,
       "officialAnswer": "A",
       "answerIndependentlyConfirmed": true,
-      "result": "pass",
-      "findings": [],
+      "result": "corrected",
+      "findings": [
+        "原稿請複核者確認「A 相對 B 屬程度比較」的表述是否夠明確。本次逐字核對確認表述已就位：選項 B 的解析開頭即寫「確實能把極端值收進最高一箱而削弱其影響」，承認區間化同樣有效，只以離散化的代價說明其不如對數轉換，並未謊稱 B 為錯；題幹問「最適合」，以代價高低作區辨忠實反映題目設定。",
+        "另已全文檢索官方學習指引科目一：「偏態」僅出現在資料清洗段（3-39「中位數或眾數填補：針對偏態分佈或類別型特徵」）與第三章練習題，全書未討論對數或冪次轉換，故改引 scikit-learn 的作法維持不變；該頁 8.3.2 節逐字寫明冪次轉換為 parametric, monotonic transformations，目的是 stabilize variance and minimize skewness，原 locator 完全可查證。待查項目結案。",
+        "修正以 scripts/fix-ai-review-cleanup-115-1-s1.py 套用（僅改寫 editorialNote）；狀態維持 draft。"
+      ],
       "sourcesChecked": [
         {
           "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -102,10 +106,16 @@
           "checkedAt": "2026-08-13"
         },
         {
-          "title": "scikit-learn－Preprocessing data",
+          "title": "scikit-learn－8.3. Preprocessing data",
           "url": "https://scikit-learn.org/stable/modules/preprocessing.html",
-          "locator": "非線性冪次與分位數轉換可使特徵分布更接近高斯、穩定變異數並降低偏態；對數轉換可壓縮右側長尾",
-          "checkedAt": "2026-08-13"
+          "locator": "8.3.2 Non-linear transformation：Both quantile and power transforms are based on monotonic transformations of the features and thus preserve the rank of the values；Power transforms are a family of parametric, monotonic transformations that aim to map data from any distribution to as close to a Gaussian distribution as possible in order to stabilize variance and minimize skewness",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "全文檢索結果：「偏態」僅見於 3-39 資料清洗段的「中位數或眾數填補：針對偏態分佈或類別型特徵」與第三章練習題，全書未見對數轉換或冪次轉換的討論",
+          "checkedAt": "2026-08-30"
         }
       ]
     },
@@ -136,8 +146,12 @@
       "officialQuestionNumber": 46,
       "officialAnswer": "C",
       "answerIndependentlyConfirmed": true,
-      "result": "pass",
-      "findings": [],
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 稱 veracity「屬於業界常見的 5V／6V 版本用語」、未宣稱出自 NIST。本次核對 NIST SP 1500-1r2 全文後更正此敘述：該文件詞彙表（PDF 第 17 頁）逐字定義 Veracity refers to the accuracy of the data，第 5.4.1 節另有 VERACITY 專節（PDF 第 40 頁，並與 5.4.2 VALIDITY 對比）。veracity 確有 NIST 一手定義，只是被歸在 data characteristics important to data science 而非第 3.2 節的基本特性，選項 D 的說明因此有出處可徵。",
+        "官方學習指引科目一則確認查無大數據 V 特性的專節（全文檢索 Variety、Velocity 均為零筆），此方向維持否定結果。官方答案 C 確認無誤。",
+        "修正以 scripts/fix-ai-review-cleanup-115-1-s1.py 套用，擴充 NIST 來源 locator 並改寫 editorialNote；狀態維持 draft。"
+      ],
       "sourcesChecked": [
         {
           "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -146,10 +160,10 @@
           "checkedAt": "2026-08-13"
         },
         {
-          "title": "NIST Big Data Interoperability Framework: Volume 1, Definitions",
+          "title": "NIST Big Data Interoperability Framework: Volume 1, Definitions（NIST SP 1500-1r2）",
           "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1500-1r2.pdf",
-          "locator": "Variety 指需要分析來自多個儲存庫、領域或不同型態的資料，與異質格式整合挑戰相符",
-          "checkedAt": "2026-08-13"
+          "locator": "詞彙表（PDF 第 17 頁）：Variety refers to data from multiple repositories, domains, or types；Velocity refers to the rate of data flow；Veracity refers to the accuracy of the data。第 5.4.1 節 VERACITY（PDF 第 40 頁）另有專節說明",
+          "checkedAt": "2026-08-30"
         }
       ]
     },
@@ -158,8 +172,12 @@
       "officialQuestionNumber": 47,
       "officialAnswer": "D",
       "answerIndependentlyConfirmed": true,
-      "result": "pass",
-      "findings": [],
+      "result": "corrected",
+      "findings": [
+        "原稿把「結構化預測」缺一手定義列為待查、暫以 Hugging Face 任務頁替代。本次已補入 Goodfellow 等人《Deep Learning》第 5 章 5.1.1 節的 Structured output 定義：輸出是 a vector (or other data structure containing multiple values) with important relationships between the different elements，並以句法剖析（為樹節點標註動詞、名詞、副詞）與影像逐像素分割為例，正對應本題選項 D 的逐詞標註。",
+        "官方學習指引科目一則確認未收錄「結構化預測」一詞（全文檢索僅見資料型態分類的結構化數據 Structured Data），此方向以否定結果結案。官方答案 D 確認無誤。",
+        "修正以 scripts/fix-ai-review-cleanup-115-1-s1.py 套用，補入第四筆來源並改寫 editorialNote；狀態維持 draft。"
+      ],
       "sourcesChecked": [
         {
           "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -172,6 +190,12 @@
           "url": "https://huggingface.co/tasks/token-classification",
           "locator": "Token classification 為序列中的每個 token 指派標籤，輸出是具相依結構的標籤序列",
           "checkedAt": "2026-08-13"
+        },
+        {
+          "title": "Goodfellow, Bengio & Courville－Deep Learning, Chapter 5: Machine Learning Basics",
+          "url": "https://www.deeplearningbook.org/contents/ml.html",
+          "locator": "5.1.1 The Task, T 的 Structured output 條目：Structured output tasks involve any task where the output is a vector (or other data structure containing multiple values) with important relationships between the different elements；例子含 parsing—mapping a natural language sentence into a tree ... by tagging nodes of the trees as being verbs, nouns, adverbs 與影像逐像素分割",
+          "checkedAt": "2026-08-30"
         }
       ]
     },

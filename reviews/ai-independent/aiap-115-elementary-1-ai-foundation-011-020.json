@@ -9,8 +9,8 @@
   "reviewedAt": "2026-08-13",
   "reviewer": "Codex independent AI reviewer",
   "counts": {
-    "pass": 10,
-    "corrected": 0,
+    "pass": 9,
+    "corrected": 1,
     "humanDecision": 0,
     "blocked": 0
   },
@@ -64,8 +64,11 @@
       "officialQuestionNumber": 13,
       "officialAnswer": "A",
       "answerIndependentlyConfirmed": true,
-      "result": "pass",
-      "findings": [],
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 記載未能以自動化方式讀取規範條號、揭露事項係綜合公開說明整理。本次已下載規範 PDF 逐條核對：第十一條一條之內即涵蓋選項 C（應告知該互動或服務係利用上開技術自動完成）、選項 B（揭露該互動或自動化金融服務適用的人群、場合、用途）與選項 D（宜由消費者自行選擇是否使用，並提醒消費者該項服務有無替代方案）；第十條把模型與演算法紀錄定位為「保存必要技術文件及相關紀錄……以確保其在必要時可被查驗」，屬留存備查而非對外公開，佐證選項 A 為非必要揭露事項。官方答案 A 確認無誤。",
+        "修正以 scripts/fix-ai-review-cleanup-115-1-s1.py 套用，補上條號與版本資訊至來源 locator 並改寫 editorialNote；狀態維持 draft。"
+      ],
       "sourcesChecked": [
         {
           "title": "115 年第一次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -74,10 +77,10 @@
           "checkedAt": "2026-08-13"
         },
         {
-          "title": "中華民國銀行商業同業公會全國聯合會－金融機構運用人工智慧技術作業規範",
+          "title": "中華民國銀行商業同業公會全國聯合會－「金融機構運用人工智慧技術作業規範」",
           "url": "https://www.ba.org.tw/memberStandard/details?id=68",
-          "locator": "114-10-12 版規範附件：直接與消費者互動時的 AI 自動完成、適用對象／用途及替代方案等揭露要求",
-          "checkedAt": "2026-08-13"
+          "locator": "規範全文第十一條（與消費者互動之告知與揭露：自動完成之告知、適用人群／場合／用途、選擇權與替代方案）與第十條（技術文件與模型、演算法紀錄之保存以備查驗，未要求對外公開）",
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "金融監督管理委員會－金融業運用人工智慧（AI）指引",

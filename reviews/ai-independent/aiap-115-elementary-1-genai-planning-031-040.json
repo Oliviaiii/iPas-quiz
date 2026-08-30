@@ -9,8 +9,8 @@
   "reviewedAt": "2026-08-13",
   "reviewer": "Codex independent AI reviewer",
   "counts": {
-    "pass": 7,
-    "corrected": 3,
+    "pass": 6,
+    "corrected": 4,
     "humanDecision": 0,
     "blocked": 0
   },
@@ -199,14 +199,18 @@
       "officialQuestionNumber": 35,
       "officialAnswer": "B",
       "answerIndependentlyConfirmed": true,
-      "result": "pass",
-      "findings": [],
+      "result": "corrected",
+      "findings": [
+        "原稿請複核者確認 B 相對 A 的區辨理由是否恰當。本次逐字核對確認恰當且已就位：選項 A 的解析已明白承認其敘述本身沒有錯，只指出它停在「有幾個模組、由誰處理」的結構層次；題幹限定要問「資訊處理與生成機制上的核心差異」，B 才寫出機制分工（Encoder–Decoder 區分輸入理解與內容生成兩階段，Decoder-only 以單一模型同時處理上下文與生成），判準取自題幹的限定語而非否定 A。",
+        "惟本題確有兩個敘述皆無明顯錯誤，仍屬選項區辨偏鬆的題型，此點已保留於 editorialNote 供人工複核者知悉。官方答案 B 確認無誤，待查項目結案。",
+        "修正以 scripts/fix-ai-review-cleanup-115-1-s2.py 套用（僅改寫 editorialNote）；狀態維持 draft。"
+      ],
       "sourcesChecked": [
         {
-          "title": "115 年第一次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
-          "locator": "PDF 第 8 頁（共 11 頁）第 35 題：題幹「在生成式 AI 文字生成模型設計中，Encoder–Decoder 與 Decoder-only 為常見架構。下列何者最能正確說明兩者在資訊處理與生成機制上的核心差異？」與 A～D 選項文字，經渲染頁面目視逐字比對與 q35.json 完全一致；同頁左側「答案」欄標示為 B，sourcePage=8 正確。另目視第 11 頁（末頁）確認本卷答案採逐題左欄標示，卷末無獨立答案表。線上原始 PDF 以 HTTP 200 回應（application/pdf，465458 bytes，與本機 tmp/pdfs/past-10.pdf 同大小）",
-          "checkedAt": "2026-08-13"
+          "locator": "PDF 第 8 頁：第 35 題題幹限定語「在資訊處理與生成機制上的核心差異」、(A)～(D) 選項與答案欄 B",
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "Vaswani et al., Attention Is All You Need（arXiv:1706.03762）",

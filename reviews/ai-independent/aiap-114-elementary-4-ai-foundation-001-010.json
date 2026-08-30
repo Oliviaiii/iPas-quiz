@@ -9,8 +9,8 @@
   "reviewedAt": "2026-08-13",
   "reviewer": "Codex independent AI reviewer",
   "counts": {
-    "pass": 7,
-    "corrected": 0,
+    "pass": 6,
+    "corrected": 1,
     "humanDecision": 3,
     "blocked": 0
   },
@@ -242,8 +242,12 @@
       "officialQuestionNumber": 10,
       "officialAnswer": "C",
       "answerIndependentlyConfirmed": true,
-      "result": "pass",
-      "findings": [],
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 記載銀行公會網站的規範全文下載連結回傳空檔案、尚未逐條比對規範全文。本次已成功下載規範 PDF（5 頁、十六條）並逐條核對：第九條一條之內即涵蓋選項 D（指定高階主管或委員會負責人工智慧相關監督管理並建立內部治理架構）、選項 A（落實辦理人才培育，提供適當之培訓資源）與選項 B（負責運用生成式人工智慧技術之人員，應清楚了解生成式人工智慧技術運作方式以及如何做出回應）；第十三條要求的是「適當之風險管理及定期檢視機制」，全文並無任何每日對外公布系統運作狀況的義務，佐證選項 C 不在明訂措施之列。官方答案 C 確認無誤。",
+        "版本註記：現行版本為本會 114 年 5 月 29 日核議通過、金管會 114 年 10 月 2 日金管銀國字第 1140219072 號函洽悉的修正版；學習指引參考書目所載 113 年 3 月版為前一版本，本題涉及的治理條文在兩版之間無實質差異。已把條號與版本寫入來源 locator 與 editorialNote，待查項目結案。",
+        "修正以 scripts/fix-ai-review-cleanup-114-4-s1.py 套用，含 sha256 快照防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
       "sourcesChecked": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－人工智慧基礎概論公告試題",
@@ -252,10 +256,10 @@
           "checkedAt": "2026-08-13"
         },
         {
-          "title": "中華民國銀行商業同業公會全國聯合會－金融機構運用人工智慧技術作業規範",
+          "title": "中華民國銀行商業同業公會全國聯合會－「金融機構運用人工智慧技術作業規範」",
           "url": "https://www.ba.org.tw/memberStandard/details?id=68",
-          "locator": "附件 1141012 版第 3～4 頁第 9 條：高階監督、內部治理、人才培育及生成式 AI 人員理解義務；全文已下載並渲染目視",
-          "checkedAt": "2026-08-13"
+          "locator": "規範全文第九條（治理架構、專責單位、人才培育、生成式 AI 使用者應了解運作方式）與第十三條（以風險基礎為導向建立適當之風險管理及定期檢視機制）；全文十六條無每日對外公布系統運作狀況之義務",
+          "checkedAt": "2026-08-30"
         }
       ]
     }
