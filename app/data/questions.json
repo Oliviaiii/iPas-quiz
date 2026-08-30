@@ -43853,10 +43853,10 @@
           "checkedAt": "2026-08-13"
         },
         {
-          "title": "PyTorch－Transforms v2 end-to-end example",
-          "url": "https://docs.pytorch.org/vision/stable/auto_examples/transforms/plot_transforms_e2e.html",
-          "locator": "訓練增強與驗證確定性前處理分開配置的官方範例",
-          "checkedAt": "2026-08-13"
+          "title": "PyTorch－Transfer Learning for Computer Vision Tutorial",
+          "url": "https://docs.pytorch.org/tutorials/beginner/transfer_learning_tutorial.html",
+          "locator": "Load Data 段 data_transforms 字典：註解 Data augmentation and normalization for training / Just normalization for validation，'train' 使用 RandomResizedCrop 與 RandomHorizontalFlip，'val' 只有 Resize、CenterCrop 與 Normalize",
+          "checkedAt": "2026-08-30"
         }
       ],
       "editorialNote": "本站已於 2026-08-13 目視核對 Q41 附圖全部四個 transforms。驗證 loss 持續下降不代表部署分布正確；仍需確認 validation transform 是否誤用了隨機增強，正式驗證通常只做確定性必要前處理。",
@@ -44789,7 +44789,7 @@
         {
           "title": "He et al.－Deep Residual Learning for Image Recognition",
           "url": "https://openaccess.thecvf.com/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html",
-          "locator": "以 residual learning 與 identity shortcut 訓練 50、101、152 層網路",
+          "locator": "摘要：We explicitly reformulate the layers as learning residual functions with reference to the layer inputs；these residual networks are easier to optimize, and can gain accuracy from considerably increased depth；on the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers",
           "checkedAt": "2026-08-13"
         }
       ],

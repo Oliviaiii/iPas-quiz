@@ -1,0 +1,311 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-intermediate-1-machine-learning",
+  "range": {
+    "start": 41,
+    "end": 50
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 8,
+    "corrected": 2,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-041",
+      "officialQuestionNumber": 41,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原第三筆來源 https://docs.pytorch.org/vision/stable/auto_examples/transforms/plot_transforms_e2e.html 定位寫「訓練增強與驗證確定性前處理分開配置的官方範例」，但該頁是物件偵測的 end-to-end 範例，全頁只有單一 transforms = v2.Compose([ToImage, RandomPhotometricDistort, RandomZoomOut, RandomIoUCrop, RandomHorizontalFlip, SanitizeBoundingBoxes, ToDtype]) 訓練管線，並未另外配置驗證用的確定性前處理，定位無法在該頁查證。已以 scripts/fix-ai-review-115-1-m3-041-050.py 改引 PyTorch Transfer Learning 教學的 data_transforms 字典（'train' 做 RandomResizedCrop/RandomHorizontalFlip 增強、'val' 只做 Resize/CenterCrop/Normalize），該頁註解即為 Data augmentation and normalization for training / Just normalization for validation。",
+        "已目視核對第 11 頁附圖 transforms.Compose([RandomHorizontalFlip(p=0.5), RandomRotation(15), ColorJitter(brightness=0.3), ToTensor()])，與 concept 段所述順序一致；b/d/p/q 為鏡像敏感字母，答案 B 獨立判斷後與官方一致。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 11 頁（共 18 頁）：第 41 題題幹、Transform 附圖、(A)～(D) 選項與右欄官方答案 B",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "torchvision－RandomHorizontalFlip",
+          "url": "https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.RandomHorizontalFlip.html",
+          "locator": "class torchvision.transforms.RandomHorizontalFlip(p=0.5)：Horizontally flip the given image randomly with a given probability；p 預設 0.5",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch－Transfer Learning for Computer Vision Tutorial",
+          "url": "https://docs.pytorch.org/tutorials/beginner/transfer_learning_tutorial.html",
+          "locator": "Load Data 段 data_transforms：# Data augmentation and normalization for training / # Just normalization for validation，'train' 用 RandomResizedCrop(224) 與 RandomHorizontalFlip()，'val' 只有 Resize(256)、CenterCrop(224)、Normalize",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-042",
+      "officialQuestionNumber": 42,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 12 頁（共 18 頁）：第 42～43 題共用 ResNet 遷移學習程式附圖（含 param.requires_grad = False # 行(A)、model.fc = nn.Linear(2048, 2)、Adam(model.fc.parameters(), lr=1e-4)）、第 42 題選項與右欄官方答案 C",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch－Transfer Learning for Computer Vision Tutorial",
+          "url": "https://docs.pytorch.org/tutorials/beginner/transfer_learning_tutorial.html",
+          "locator": "ConvNet as fixed feature extractor：Here, we need to freeze all the network except the final layer. We need to set requires_grad = False to freeze the parameters so that the gradients are not computed in backward()；並與前一節 Finetuning the ConvNet 對比",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-043",
+      "officialQuestionNumber": 43,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 12 頁（共 18 頁）：第 42～43 題共用程式附圖、第 43 題題幹（學習率設為 1e-4）、(A)～(D) 選項與右欄官方答案 D",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch－Transfer Learning for Computer Vision Tutorial",
+          "url": "https://docs.pytorch.org/tutorials/beginner/transfer_learning_tutorial.html",
+          "locator": "Finetuning the ConvNet 與 ConvNet as fixed feature extractor 兩節：前者載入預訓練權重後重訓整個網路，後者凍結 backbone 只訓練新的最終全連接層",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-044",
+      "officialQuestionNumber": 44,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 13～14 頁（共 18 頁）：第 44～45 題 Iris 題組敘述與 fetch_ucirepo(id=53)、X.head()、y.head() 四張附圖，第 44 題 LDA/KNN 程式附圖（lda.fit_transform(X,y) 後才 cross_val_score(model, X_new, y, cv=5)，輸出 0.9733333333333334）、(A)～(D) 選項與答案欄 Ｂ",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Common pitfalls: data leakage",
+          "url": "https://scikit-learn.org/stable/common_pitfalls.html#data-leakage",
+          "locator": "Data leakage 段：The general rule is to never call fit on the test data；Data leakage during pre-processing 小節結語 we recommend using a Pipeline to chain together the feature selection and model estimators. The pipeline ensures that only the training data is used when performing fit",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Pipeline",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html",
+          "locator": "A sequence of data transformers with an optional final predictor；The purpose of the pipeline is to assemble several steps that can be cross-validated together while setting different parameters",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-045",
+      "officialQuestionNumber": 45,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 14 頁（共 18 頁）：第 45 題題幹、cross_val_score 骨架附圖（cv=[#填入程式碼]）與候選程式 A=KFold(n_splits=5, shuffle=True)、B=StratifiedKFold(n_splits=5, shuffle=True)、C=cv = 5、D=RepeatedStratifiedKFold(n_splits=5, n_repeats=2) 附圖、(A)～(D) 選項與答案欄 Ａ",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－cross_val_score",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html",
+          "locator": "cv 參數說明：For int/None inputs, if the estimator is a classifier and y is either binary or multiclass, StratifiedKFold is used. In all other cases, KFold is used",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－StratifiedKFold",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html",
+          "locator": "Notes：Generate test sets such that all contain the same distribution of classes, or as close as possible",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－RepeatedStratifiedKFold",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedStratifiedKFold.html",
+          "locator": "Repeated class-wise stratified K-Fold cross validator：Repeats Stratified K-Fold n times with different randomization in each repetition",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-046",
+      "officialQuestionNumber": 46,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 15～16 頁（共 18 頁）：第 46～48 題 CIFAR-10 題組敘述與 x_train[0]、y_train[0] 附圖，第 46 題處理程式附圖（x_train/255.0、to_categorical(y_train, 10)）與描述 A～F 附圖（A 稱壓縮到 0~31、C 稱等同 z-score 標準化）、(A)～(D) 選項與答案欄 B",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Keras－CIFAR10 small images classification dataset",
+          "url": "https://keras.io/api/datasets/cifar10/",
+          "locator": "load_data function：a dataset of 50,000 32x32 color training images and 10,000 test images, labeled over 10 categories；x_train shape (50000, 32, 32, 3)，Pixel values range from 0 to 255",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "TensorFlow－to_categorical",
+          "url": "https://www.tensorflow.org/api_docs/python/tf/keras/utils/to_categorical",
+          "locator": "Converts a class vector (integers) to binary class matrix；簽名 tf.keras.utils.to_categorical(x, num_classes=None)",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Keras－Rescaling layer",
+          "url": "https://keras.io/api/layers/preprocessing_layers/image_preprocessing/rescaling/",
+          "locator": "To rescale an input in the [0, 255] range to be in the [0, 1] range, you would pass scale=1./255",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-047",
+      "officialQuestionNumber": 47,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 16 頁（共 18 頁）：第 47 題 Sequential CNN 模型附圖（Input(32,32,3)；區塊 1 兩層 Conv2D(32,(3,3),same,relu)+BN、區塊 2 為 64、區塊 3 為 128，各接 MaxPooling2D((2,2)) 與 Dropout(0.25)；區塊 4 Flatten+Dense(256,relu)+BN+Dropout(0.5)+Dense(10,softmax)）與描述 A～F 附圖、(A)～(D) 選項與答案欄 B",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Keras－Conv2D",
+          "url": "https://keras.io/api/layers/convolution_layers/convolution2d/",
+          "locator": "Arguments：filters: int, the dimension of the output space (the number of filters in the convolution)；padding 說明 When padding=\"same\" and strides=1, the output has the same size as the input",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Keras－Dropout",
+          "url": "https://keras.io/api/layers/regularization_layers/dropout/",
+          "locator": "The Dropout layer randomly sets input units to 0 with a frequency of rate at each step during training time, which helps prevent overfitting；Inputs not set to 0 are scaled up by 1/(1 - rate)",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Keras－Flatten",
+          "url": "https://keras.io/api/layers/reshaping_layers/flatten/",
+          "locator": "Flatten class：Flattens the input. Does not affect the batch size",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Keras－BatchNormalization",
+          "url": "https://keras.io/api/layers/normalization_layers/batch_normalization/",
+          "locator": "Layer that normalizes its inputs：Batch normalization applies a transformation that maintains the mean output close to 0 and the output standard deviation close to 1；並說明 training 與 inference 行為不同",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-048",
+      "officialQuestionNumber": 48,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 16～17 頁（共 18 頁）：第 48 題題幹（Epochs=6 時訓練 0.81、驗證 0.72）、Training and Validation Accuracy for CIFAR-10 with CNN 曲線附圖（藍線由約 0.47 升至 0.84，紅線於 x=6 由約 0.80 掉到 0.72 後回升）、(A)～(D) 選項與答案欄 D",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "TensorFlow－Overfit and underfit",
+          "url": "https://www.tensorflow.org/tutorials/keras/overfit_and_underfit",
+          "locator": "開頭段落：Underfitting occurs when there is still room for improvement on the train data；If you train for too long though, the model will start to overfit and learn patterns from the training data that don't generalize to the test data",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Keras－EarlyStopping",
+          "url": "https://keras.io/api/callbacks/early_stopping/",
+          "locator": "EarlyStopping class：Stop training when a monitored metric has stopped improving；monitor 預設 \"val_loss\"，並有 patience 與 restore_best_weights 參數",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-049",
+      "officialQuestionNumber": 49,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原第二筆來源 CVPR Open Access 頁面的定位寫「以 residual learning 與 identity shortcut 訓練 50、101、152 層網路」，但該頁只提供摘要，摘要並未出現 identity shortcut，也未列出 50／101／152 三種深度（僅寫 a depth of up to 152 layers）；定位超出該頁可查證範圍。已以 scripts/fix-ai-review-115-1-m3-041-050.py 改為摘要原文可對照的敘述。",
+        "explanation 內文所述「原始 ResNet 論文展示 50、101、152 層網路可有效訓練」在論文全文（該頁 [pdf] 連結）成立，故僅修正來源定位，未更動解析內容。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 17～18 頁（共 18 頁）：第 49～50 題 AOI 情境敘述、第 49 題題幹（超過 50 層、梯度消失）、(A)VGG～(D)ViT 選項與答案欄 C",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "He et al.－Deep Residual Learning for Image Recognition",
+          "url": "https://openaccess.thecvf.com/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html",
+          "locator": "摘要：We explicitly reformulate the layers as learning residual functions with reference to the layer inputs；these residual networks are easier to optimize, and can gain accuracy from considerably increased depth；we evaluate residual nets with a depth of up to 152 layers",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-050",
+      "officialQuestionNumber": 50,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 18 頁（共 18 頁）：第 50 題題幹（clip_grad_norm_）、訓練迴圈附圖（位置 1 optimizer.zero_grad()、2 outputs = model(images)、3 loss = criterion(...)、4 loss.backward()、5 optimizer.step()）、(A)～(D) 選項與答案欄 B",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch－clip_grad_norm_",
+          "url": "https://docs.pytorch.org/docs/stable/generated/torch.nn.utils.clip_grad_norm_.html",
+          "locator": "Clip the gradient norm of an iterable of parameters. The norm is computed over the norms of the individual gradients of all parameters, as if the norms of the individual gradients were concatenated into a single vector. Gradients are modified in-place",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch－Automatic Mixed Precision examples",
+          "url": "https://docs.pytorch.org/docs/stable/notes/amp_examples.html#gradient-clipping",
+          "locator": "Gradient clipping 小節：scaler.scale(loss).backward() → scaler.unscale_(optimizer) → torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm) → scaler.step(optimizer)",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
