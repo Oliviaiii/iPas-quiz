@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-intermediate-1-machine-learning",
+  "range": {
+    "start": 11,
+    "end": 20
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 10,
+    "corrected": 0,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-011",
+      "officialQuestionNumber": 11,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 3 頁：第 11 題題幹（全批次每次更新 45 秒、SGD 每次 0.01 秒但震盪）、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NVIDIA Deep Learning Performance Guide－Fully-Connected Layers（Mini-batches）",
+          "url": "https://docs.nvidia.com/deeplearning/performance/dl-performance-fully-connected/index.html#mini-batches",
+          "locator": "說明 batch size 與輸入／輸出維度需可被 Tensor Core 的倍數整除才有效率；Larger values for batch size and the number of inputs and outputs improve…parallelism 與硬體使用率",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch Docs－torch.utils.data.DataLoader",
+          "url": "https://docs.pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader",
+          "locator": "batch_size 參數說明：how many samples per batch to load，為小批次訓練的標準介面",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-012",
+      "officialQuestionNumber": 12,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 3 頁：第 12 題題幹（正常 99%、陽性 1%、Accuracy 99.1%）、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Classification metrics",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics",
+          "locator": "accuracy_score 定義為正確預測比例；同章節列出 balanced_accuracy_score、precision、recall 與 confusion_matrix 作為不平衡資料的補充指標",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn Examples－Precision-Recall",
+          "url": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html",
+          "locator": "導言：Precision-Recall is a useful measure of success of prediction when the classes are very imbalanced",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-013",
+      "officialQuestionNumber": 13,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 3～4 頁：第 13 題題幹（訓練 F1=0.96、驗證 F1=0.71）與左欄官方答案 C（第 3 頁）、(A)～(D) 選項（第 4 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch Docs－torch.optim.AdamW",
+          "url": "https://docs.pytorch.org/docs/stable/generated/torch.optim.AdamW.html",
+          "locator": "weight_decay 參數與 decoupled weight decay 更新式，說明以權重衰減限制參數大小",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "TensorFlow API－tf.keras.regularizers",
+          "url": "https://www.tensorflow.org/api_docs/python/tf/keras/regularizers",
+          "locator": "L2 regularizer 說明：將 l2 * reduce_sum(square(x)) 加入層的損失，以懲罰過大的權重",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-014",
+      "officialQuestionNumber": 14,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 4 頁：第 14 題題幹（促銷關鍵字在訓練資料多出現於垃圾郵件）、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Multinomial Naive Bayes",
+          "url": "https://scikit-learn.org/stable/modules/naive_bayes.html#multinomial-naive-bayes",
+          "locator": "說明以訓練資料的相對頻率估計各類別的詞彙條件機率 θ_yi，並以平滑先驗避免零機率",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.naive_bayes.MultinomialNB",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html",
+          "locator": "屬性說明：class_log_prior_ 為各類別的對數先驗機率，feature_log_prob_ 為 Empirical log probability of features given a class；兩者分屬不同機率項",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-015",
+      "officialQuestionNumber": 15,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 4 頁：第 15 題題幹（K=5、半月形非凸群集、有離群值、每次執行結果略異）、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－2.3.2. K-means",
+          "url": "https://scikit-learn.org/stable/modules/clustering.html#k-means",
+          "locator": "說明 K-means 需指定群數、最小化 inertia（群內平方距離）、假設群集為 convex and isotropic，並指出結果依賴初始化故以 n_init 多次執行取最佳",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn Examples－Comparing different clustering algorithms on toy datasets",
+          "url": "https://scikit-learn.org/stable/auto_examples/cluster/plot_cluster_comparison.html",
+          "locator": "以 noisy moons、noisy circles 等資料集比較各演算法，顯示 K-means 無法切出非凸的半月形群集",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-016",
+      "officialQuestionNumber": 16,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 4～5 頁：第 16 題題幹與 (A)～(C) 選項、左欄官方答案 A（第 4 頁）、(D) 選項（第 5 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "XGBoost: A Scalable Tree Boosting System（Chen & Guestrin, 2016）",
+          "url": "https://arxiv.org/abs/1603.02754",
+          "locator": "§2.1 提出 regularized learning objective，於訓練損失外加入每棵樹的複雜度項",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "XGBoost Documentation－Introduction to Boosted Trees",
+          "url": "https://xgboost.readthedocs.io/en/stable/tutorials/model.html",
+          "locator": "Model Complexity 段逐字給出 obj(θ) = L(θ) + Ω(θ)，並定義 ω(f) = γT + (1/2)λ Σ_{j=1}^T w_j²，其中 T 為葉節點數、w_j 為葉分數",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-017",
+      "officialQuestionNumber": 17,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 5 頁：第 17 題題幹（3 層升級為 16 層後訓練損失反而更高）、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Deep Residual Learning for Image Recognition（He et al., 2015）",
+          "url": "https://arxiv.org/abs/1512.03385",
+          "locator": "摘要：Deeper neural networks are more difficult to train…We explicitly reformulate the layers as learning residual functions with reference to the layer inputs…these residual networks are easier to optimize",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-018",
+      "officialQuestionNumber": 18,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 5 頁：第 18 題題幹（卷積後直接接全連結導致 5,000 萬參數）、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch Docs－torch.nn.MaxPool2d",
+          "url": "https://docs.pytorch.org/docs/stable/generated/torch.nn.MaxPool2d.html",
+          "locator": "類別說明對二維輸入取局部視窗最大值，並給出 H_out、W_out 依 kernel_size、stride、padding 縮小的計算式",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "TensorFlow API－tf.keras.layers.MaxPool2D",
+          "url": "https://www.tensorflow.org/api_docs/python/tf/keras/layers/MaxPool2D",
+          "locator": "類別說明：Downsamples the input along its spatial dimensions (height and width) by taking the maximum value over an input window",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-019",
+      "officialQuestionNumber": 19,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 5 頁：第 19 題題幹（首頁定義條款與第 20 頁責任條款比對）、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Attention Is All You Need（Vaswani et al., 2017）",
+          "url": "https://arxiv.org/abs/1706.03762",
+          "locator": "§4 Why Self-Attention 與 Table 1：比較 self-attention 與 recurrent layer 的每層複雜度、可平行化的循序操作數（self-attention 為 O(1)，recurrent 為 O(n)）與最長依賴路徑長度",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-020",
+      "officialQuestionNumber": 20,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 5～6 頁：第 20 題題幹與 (A) 選項、左欄官方答案 C（第 5 頁）、(B)～(D) 選項（第 6 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch Docs－torch.nn.CrossEntropyLoss",
+          "url": "https://docs.pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html",
+          "locator": "Shape 說明：The input is expected to contain the unnormalized logits for each class (which do not need to be positive or sum to 1, in general)；輸入形狀為 (minibatch, C)",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
