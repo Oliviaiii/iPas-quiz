@@ -5,12 +5,16 @@
 ## 目前狀態
 
 - 固定題庫：600 題。
-- 獨立 AI 複核：220／600。
+- 獨立 AI 複核：230／600。
 - 獨立人工複核：0／600。
-- 已完成：114 年第四次初級兩科 100 題、115 年第一次初級兩科 100 題、
-  115 年第二次初級第一科第 1～20 題。
-- 下一批：115 年第二次初級第一科第 21～30 題。
-- 累計分類：`pass 158`、`corrected 43`、`human-decision 18`、`blocked 1`。
+- 已完成整份試卷：
+  - 114 年第四次初級－人工智慧基礎概論（50 題）
+  - 114 年第四次初級－生成式 AI 應用與規劃（50 題）
+  - 115 年第一次初級－人工智慧基礎概論（50 題）
+  - 115 年第一次初級－生成式 AI 應用與規劃（50 題）
+- 進行中：115 年第二次初級－人工智慧基礎概論 第 1～30 題。
+- 下一批：115 年第二次初級－人工智慧基礎概論 第 31～40 題。
+- 累計分類：`pass 167`、`corrected 44`、`human-decision 18`、`blocked 1`。
 
 AI 複核通過不等於人工複核完成；所有題目在人工簽核前維持 `draft`。
 
@@ -18,14 +22,29 @@ AI 複核通過不等於人工複核完成；所有題目在人工簽核前維�
 
 | 試卷／科目 | 題號 | AI 複核結果 | 人工簽核 |
 | --- | --- | --- | --- |
-| 114 年第四次初級－人工智慧基礎概論 | 1～50 | 完成（pass 37／corrected 5／human-decision 7／blocked 1） | 未開始 |
-| 114 年第四次初級－生成式 AI 應用與規劃 | 1～50 | 完成（pass 28／corrected 14／human-decision 8） | 未開始 |
-| 115 年第一次初級－人工智慧基礎概論 | 1～50 | 完成（pass 41／corrected 7／human-decision 2） | 未開始 |
-| 115 年第一次初級－生成式 AI 應用與規劃 | 1～30 | 完成（pass 22／corrected 7／human-decision 1） | 未開始 |
+| 114 年第四次初級－人工智慧基礎概論 | 1～10 | 完成（pass 7／human-decision 3） | 未開始 |
+| 114 年第四次初級－人工智慧基礎概論 | 11～20 | 完成（pass 7／corrected 3） | 未開始 |
+| 114 年第四次初級－人工智慧基礎概論 | 21～30 | 完成（pass 10） | 未開始 |
+| 114 年第四次初級－人工智慧基礎概論 | 31～40 | 完成（pass 7／corrected 2／human-decision 1） | 未開始 |
+| 114 年第四次初級－人工智慧基礎概論 | 41～50 | 完成（pass 6／human-decision 3／blocked 1） | 未開始 |
+| 114 年第四次初級－生成式 AI 應用與規劃 | 1～10 | 完成（pass 4／corrected 5／human-decision 1） | 未開始 |
+| 114 年第四次初級－生成式 AI 應用與規劃 | 11～20 | 完成（pass 7／corrected 1／human-decision 2） | 未開始 |
+| 114 年第四次初級－生成式 AI 應用與規劃 | 21～30 | 完成（pass 6／corrected 2／human-decision 2） | 未開始 |
+| 114 年第四次初級－生成式 AI 應用與規劃 | 31～40 | 完成（pass 7／corrected 2／human-decision 1） | 未開始 |
+| 114 年第四次初級－生成式 AI 應用與規劃 | 41～50 | 完成（pass 4／corrected 4／human-decision 2） | 未開始 |
+| 115 年第一次初級－人工智慧基礎概論 | 1～10 | 完成（pass 8／corrected 2） | 未開始 |
+| 115 年第一次初級－人工智慧基礎概論 | 11～20 | 完成（pass 10） | 未開始 |
+| 115 年第一次初級－人工智慧基礎概論 | 21～30 | 完成（pass 8／corrected 2） | 未開始 |
+| 115 年第一次初級－人工智慧基礎概論 | 31～40 | 完成（pass 5／corrected 3／human-decision 2） | 未開始 |
+| 115 年第一次初級－人工智慧基礎概論 | 41～50 | 完成（pass 10） | 未開始 |
+| 115 年第一次初級－生成式 AI 應用與規劃 | 1～10 | 完成（pass 5／corrected 5） | 未開始 |
+| 115 年第一次初級－生成式 AI 應用與規劃 | 11～20 | 完成（pass 7／corrected 2／human-decision 1） | 未開始 |
+| 115 年第一次初級－生成式 AI 應用與規劃 | 21～30 | 完成（pass 10） | 未開始 |
 | 115 年第一次初級－生成式 AI 應用與規劃 | 31～40 | 完成（pass 7／corrected 3） | 未開始 |
 | 115 年第一次初級－生成式 AI 應用與規劃 | 41～50 | 完成（pass 9／corrected 1） | 未開始 |
 | 115 年第二次初級－人工智慧基礎概論 | 1～10 | 完成（pass 6／corrected 4） | 未開始 |
 | 115 年第二次初級－人工智慧基礎概論 | 11～20 | 完成（pass 8／corrected 2） | 未開始 |
+| 115 年第二次初級－人工智慧基礎概論 | 21～30 | 完成（pass 9／corrected 1） | 未開始 |
 
 ## 複核工具與環境
 
@@ -49,7 +68,8 @@ python scripts/ai-review-context.py <sourceId> --render 7,8   # 需目視的頁�
 
 ## 接手注意事項
 
-- 每批仍固定 10 題，完成後使用 `scripts/validate-ai-review-reports.py` 驗證。
+- 每批仍固定 10 題，完成後使用 `scripts/validate-ai-review-reports.py` 驗證，
+  再執行 `scripts/update-ai-review-progress.py` 由報告重生本文件的狀態與批次表。
 - `corrected` 的修正只能保持 `draft`；不得填入 `reviewer`／`reviewedAt`。
 - `human-decision` 與 `blocked` 應集中交給人工複核者，不可算入人工完成數。
 - 所有報告位於 `reviews/ai-independent/`；流程規則見 `AI_REVIEW_GUIDE.md`。

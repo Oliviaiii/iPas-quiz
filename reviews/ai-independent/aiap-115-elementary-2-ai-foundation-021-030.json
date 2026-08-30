@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-elementary-2-ai-foundation",
+  "range": {
+    "start": 21,
+    "end": 30
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 9,
+    "corrected": 1,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-021",
+      "officialQuestionNumber": 21,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 6 頁（共 13 頁）第 21 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章（PDF 第 39 頁附近）：深度學習於自然語言處理、電腦視覺與語音辨識等領域之應用",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Bengio, Courville & Vincent, Representation Learning: A Review and New Perspectives（arXiv:1206.5538）",
+          "url": "https://arxiv.org/abs/1206.5538",
+          "locator": "摘要：機器學習的成效普遍取決於資料表徵；除以領域知識協助設計表徵外，亦可直接學習表徵",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-022",
+      "officialQuestionNumber": 22,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 6 頁（共 13 頁）第 22 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-13（PDF 第 19 頁）逐字核對：監督式學習「透過帶有標記（Labeled Data）的訓練數據來訓練模型」；非監督式學習「無需使用事先標記好的訓練數據……自動從未標記的數據中發掘潛在的模式、結構或分群（Clustering）」；強化學習「是一種基於『回饋（反饋）機制』的學習方法」",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Semi-supervised learning",
+          "url": "https://scikit-learn.org/stable/modules/semi_supervised.html",
+          "locator": "1.14 節：半監督式學習指訓練資料中僅部分樣本有標註，估計器可利用未標註資料改善泛化；支持選項 A 應歸為半監督式之判定",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-023",
+      "officialQuestionNumber": 23,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 6 頁（共 13 頁）第 23 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-11（PDF 第 17 頁）逐字核對：迴歸模型「應用場景：預測房地產價格、銷售額、天氣變化等」",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－sklearn.metrics.mean_squared_error",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html",
+          "locator": "Mean squared error regression loss，回傳非負浮點值，最佳值為 0.0",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章（PDF 第 48 頁）逐字核對：「F1 分數（F1 Score）：綜合考慮精確率（Precision）和召回率（Recall），適合處理數據不平衡的問題」",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-024",
+      "officialQuestionNumber": 24,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 6～7 頁（共 13 頁）第 24 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章（PDF 第 19 頁）：強化學習為基於回饋機制的學習方法，透過評分與獎勵讓 AI 自我評估並更新策略",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Bubeck & Cesa-Bianchi, Regret Analysis of Stochastic and Nonstochastic Multi-armed Bandit Problems（arXiv:1204.5721）",
+          "url": "https://arxiv.org/abs/1204.5721",
+          "locator": "摘要：多臂拉霸機是具探索—利用權衡的循序決策問題最基本範例，即在過去報酬最高的選項與未來可能報酬更高的新選項之間取得平衡",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-025",
+      "officialQuestionNumber": 25,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 7 頁（共 13 頁）第 25 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章（PDF 第 21 頁）逐字核對：「長短期記憶網路（Long Short-Term Memory, LSTM）：透過引入遺忘門（forget gate）、輸入門（input gate）和輸出門（output gate），有效解決了梯度消失問題」",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-026",
+      "officialQuestionNumber": 26,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 7 頁（共 13 頁）第 26 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Semi-supervised learning",
+          "url": "https://scikit-learn.org/stable/modules/semi_supervised.html",
+          "locator": "1.14 節：標註樣本極少、未標註樣本很多時，半監督式演算法能有良好表現，與本題 8 萬／112 萬的資料結構相符",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-13（PDF 第 19 頁）逐字核對：監督式學習「透過帶有標記（Labeled Data）的訓練數據來訓練模型」；非監督式學習「無需使用事先標記好的訓練數據……自動從未標記的數據中發掘潛在的模式、結構或分群（Clustering）」；強化學習「是一種基於『回饋（反饋）機制』的學習方法」",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-027",
+      "officialQuestionNumber": 27,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 指出官方學習指引的異常檢測應用段落（PDF 第 59 頁）係寫在變分自編碼器之下，而本題選項僅稱自編碼器，並問是否需補一般自編碼器的專門出處。本次判斷需要，已補入 Chalapathy & Chawla 深度異常偵測綜述：第 10.5 節逐字為「Autoencoders are the fundamental unsupervised deep architectures used in anomaly detection」，第 8.5.2 節說明以重建誤差（residual vector 的大小）作為異常分數，正是詳解所述原理。待查項目結案。",
+        "官方答案 A 不受影響：（乙）情緒判斷與（丙）瑕疵分類都需要類別輸出與標籤，自編碼器輸出的是重建後的輸入，不適合擔任主架構。",
+        "修正以 scripts/fix-ai-review-115-2-s1-021-030.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 7 頁（共 13 頁）第 27 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章（PDF 第 59 頁）逐字核對：變分自編碼器之「b. 異常檢測：透過學習正常數據的分佈，能夠識別異常樣本，廣泛應用於網路安全、工業故障檢測等領域」",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Bank, Koenigstein & Giryes, Autoencoders（arXiv:2003.05991）",
+          "url": "https://arxiv.org/abs/2003.05991",
+          "locator": "摘要：自編碼器把輸入編碼為壓縮且有意義的表示、再解碼重建使其盡量接近原輸入",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Chalapathy & Chawla, Deep Learning for Anomaly Detection: A Survey（arXiv:1901.03407）",
+          "url": "https://arxiv.org/abs/1901.03407",
+          "locator": "第 10.5 節：Autoencoders are the fundamental unsupervised deep architectures used in anomaly detection；第 8.5.2 節：以 reconstruction error 的大小取得異常分數；本次新增為 Q27 第五筆來源",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-028",
+      "officialQuestionNumber": 28,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 8 頁（共 13 頁）第 28 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Ioffe & Szegedy, Batch Normalization（arXiv:1502.03167）",
+          "url": "https://arxiv.org/abs/1502.03167",
+          "locator": "摘要：各層輸入分布隨前層參數更新而改變（internal covariate shift），迫使使用較小學習率並對初始化敏感；以標準化層輸入處理後可用更高學習率、對初始化較不敏感，並具正則化效果",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-029",
+      "officialQuestionNumber": 29,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 8 頁（共 13 頁）第 29 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models（arXiv:2402.03300）",
+          "url": "https://arxiv.org/abs/2402.03300",
+          "locator": "摘要與第 4.1.1 節：GRPO 為 PPO 之變形，用以增強數學推理能力並優化 PPO 的記憶體使用；捨棄評價模型，改以同一問題多個抽樣輸出的平均獎勵估計基準線",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-030",
+      "officialQuestionNumber": 30,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 8 頁（共 13 頁）第 30 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Simonyan, Vedaldi & Zisserman, Deep Inside Convolutional Networks（arXiv:1312.6034）",
+          "url": "https://arxiv.org/abs/1312.6034",
+          "locator": "摘要：以類別分數對輸入的梯度計算類別顯著性圖，該圖針對給定的輸入與類別逐筆產生（局部解釋）",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Li, Chen, Hovy & Jurafsky, Visualizing and Understanding Neural Models in NLP（arXiv:1506.01066）",
+          "url": "https://arxiv.org/abs/1506.01066",
+          "locator": "摘要：以梯度反向傳播等方法視覺化單元的顯著性（salience），衡量各單元對最終結果的貢獻；為顯著性圖在 NLP 的對應作法",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
