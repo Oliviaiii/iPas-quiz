@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-intermediate-2-ai-tech-planning",
+  "range": {
+    "start": 11,
+    "end": 20
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 8,
+    "corrected": 2,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-011",
+      "officialQuestionNumber": 11,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 3 頁（共 14 頁）第 11 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－DBSCAN",
+          "url": "https://scikit-learn.org/stable/modules/clustering.html#dbscan",
+          "locator": "eps、min_samples、核心樣本、群集與雜訊的定義",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-012",
+      "officialQuestionNumber": 12,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 3～4 頁（共 14 頁）第 12 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－PCA",
+          "url": "https://scikit-learn.org/stable/modules/decomposition.html#pca",
+          "locator": "以 SVD 將中心化輸入投影到互相正交的成分，並可依成分數降維",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-013",
+      "officialQuestionNumber": 13,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 4 頁（共 14 頁）第 13 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Kubernetes Documentation－Overview",
+          "url": "https://kubernetes.io/docs/concepts/overview/",
+          "locator": "Kubernetes 為管理容器化工作負載與服務的可攜、可擴展平台",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Kubernetes Documentation－Deployments",
+          "url": "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/",
+          "locator": "Deployment 管理 Pod 與 ReplicaSet，提供宣告式更新",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-014",
+      "officialQuestionNumber": 14,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 4 頁（共 14 頁）第 14 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Cross-validation",
+          "url": "https://scikit-learn.org/stable/modules/cross_validation.html",
+          "locator": "以多次訓練／驗證切分評估泛化能力，測試資料應保留到最後",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn Example－Nested versus non-nested cross-validation",
+          "url": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_nested_cross_validation_iris.html",
+          "locator": "以同一資料調參與評估會造成偏樂觀，巢狀交叉驗證可分離選參與估計",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-015",
+      "officialQuestionNumber": 15,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 4 頁（共 14 頁）第 15 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "MLflow Documentation－Model Registry Workflows",
+          "url": "https://mlflow.org/docs/latest/ml/model-registry/workflow",
+          "locator": "註冊模型、模型版本、來源 run、alias、tags 與部署組織流程",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-016",
+      "officialQuestionNumber": 16,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 4 頁（共 14 頁）第 16 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Sutskever et al., Sequence to Sequence Learning with Neural Networks（arXiv:1409.3215）",
+          "url": "https://arxiv.org/abs/1409.3215",
+          "locator": "摘要與方法：以多層 LSTM 將輸入序列映射成固定維向量，再由另一 LSTM 解碼目標序列，應用於機器翻譯",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-017",
+      "officialQuestionNumber": 17,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 4～5 頁（共 14 頁）第 17 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks（arXiv:2005.11401）",
+          "url": "https://arxiv.org/abs/2005.11401",
+          "locator": "RAG 結合預訓練 seq2seq 的參數記憶與 dense retriever 存取的非參數文件索引",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Dense Passage Retrieval for Open-Domain Question Answering（arXiv:2004.04906）",
+          "url": "https://arxiv.org/abs/2004.04906",
+          "locator": "以雙編碼器進行 passage retrieval，檢索器目標是為問題找出包含答案的相關段落——即相關性而非僅相似性",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-018",
+      "officialQuestionNumber": 18,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 指出 Attention Collapse 在文獻中有多種用法，並把「官方學習材料是否採相同術語」列為待查。本次一併查證：官方僅出版初級兩科學習指引，中級並無對應學習指引——學習資源頁的中級區塊只列 6 份試題公告，全站 600 題亦無任何中級學習指引引用，以既有命名規則推測的網址均回 404。凡以官方中級教材為對象的用語查證，方向上皆無資料可查。惟本題答案不受術語出處影響：題幹已自帶定義（注意力分布過於平均），四個選項中只有 D 的稀疏化約束會使權重集中；A 依縮放點積的原理（除以 √d_k）反而使分布更平均、B 的雜訊不保證強化關鍵位置、C 的 ReLU 缺乏正規化定義。已改寫 editorialNote 記錄此查證結果與判定基礎，待查項目結案。",
+        "修正以 scripts/fix-ai-review-114-2-m1-011-020.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 5 頁（共 14 頁）第 18 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Attention Is All You Need（arXiv:1706.03762）",
+          "url": "https://arxiv.org/abs/1706.03762",
+          "locator": "第 3.2.1 節：scaled dot-product attention 除以 √d_k，避免大點積將 softmax 推入極小梯度區",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Sparse Sequence-to-Sequence Models（arXiv:1905.05702）",
+          "url": "https://arxiv.org/abs/1905.05702",
+          "locator": "摘要與方法：softmax 形成稠密 alignment；entmax 系列可產生稀疏注意力",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-019",
+      "officialQuestionNumber": 19,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 5 頁（共 14 頁）第 19 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Sennrich et al., Improving Neural Machine Translation Models with Monolingual Data（arXiv:1511.06709）",
+          "url": "https://arxiv.org/abs/1511.06709",
+          "locator": "摘要與方法：以反向翻譯將單語目標句轉成合成來源句，加入平行訓練資料",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-020",
+      "officialQuestionNumber": 20,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 指出 A 的梯度懲罰若特指 WGAN-GP 也是常見有效的方法、題目存在解釋空間，並把「題目所依教材的用語與層級」列為待查。本次一併查證：官方僅出版初級兩科學習指引，中級並無對應學習指引——學習資源頁的中級區塊只列 6 份試題公告，全站 600 題亦無任何中級學習指引引用，以既有命名規則推測的網址均回 404。凡以官方中級教材為對象的用語查證，方向上皆無資料可查。獨立 AI 複核就選項文字本身比較後仍支持官方答案 B：選項 A 只寫到「加入梯度懲罰以穩定訓練過程」、未提 Wasserstein critic 目標，而梯度懲罰在 WGAN-GP 中的作用是施加 Lipschitz 約束、取代 weight clipping；選項 B 的 Wasserstein 損失替換才是 WGAN 論文用以改善訓練穩定並討論 mode collapse 的核心變更。已改寫 editorialNote 記錄此判定，並保留「題目存在解釋空間」一句供人工複核者知悉，待查項目結案。",
+        "修正以 scripts/fix-ai-review-114-2-m1-011-020.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 5 頁（共 14 頁）第 20 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Arjovsky et al., Wasserstein GAN（arXiv:1701.07875）",
+          "url": "https://arxiv.org/abs/1701.07875",
+          "locator": "摘要與理論：以較有意義且平滑的距離改善 GAN 學習穩定，並討論 mode collapse",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Gulrajani et al., Improved Training of Wasserstein GANs（arXiv:1704.00028）",
+          "url": "https://arxiv.org/abs/1704.00028",
+          "locator": "摘要與第 4 節：以 gradient penalty 取代 weight clipping 來施加 Lipschitz 約束——佐證選項 A 的定位為約束手段而非損失替換",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
