@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-elementary-2-genai-planning",
+  "range": {
+    "start": 11,
+    "end": 20
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 8,
+    "corrected": 2,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-011",
+      "officialQuestionNumber": 11,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 3 頁（共 13 頁）第 11 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Microsoft Learn－What is automated ML? AutoML（Azure Machine Learning）",
+          "url": "https://learn.microsoft.com/en-us/azure/machine-learning/concept-automated-ml",
+          "locator": "AutoML 自動化模型開發中耗時且重複的步驟，讓不具資料科學專長者也能建立端到端機器學習流程",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章（PDF 第 15 頁）逐字核對：「No Code 平台降低了技術門檻，使非技術人員也能參與應用開發，促進跨部門協作」",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-012",
+      "officialQuestionNumber": 12,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 指出該批僅核對 CLIP 論文摘要，方法節（含溫度縮放）未逐段查證，請複核者對照確認。本次已下載論文全文逐字核對：第 2.2 節訓練目標即為最大化正配對的餘弦相似度、最小化錯配對的餘弦相似度，並「optimize a symmetric cross entropy loss over these similarity scores」；第 2.5 節零樣本推論亦是先算餘弦相似度，再以溫度參數 τ 縮放後經 softmax 正規化。可見餘弦相似度是打分量尺、交叉熵是套在相似度分數之上的訓練損失，溫度僅為縮放參數——選項 A 與選項 C 的立論皆成立。待查項目結案。",
+        "修正以 scripts/fix-ai-review-115-2-s2-011-020.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 3～4 頁（共 13 頁）第 12 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Radford et al., Learning Transferable Visual Models From Natural Language Supervision（arXiv:2103.00020）",
+          "url": "https://arxiv.org/abs/2103.00020",
+          "locator": "第 2.2 節逐字核對：maximize the cosine similarity of the image and text embeddings of the N real pairs in the batch……We optimize a symmetric cross entropy loss over these similarity scores；第 2.5 節：The cosine similarity of these embeddings is then calculated, scaled by a temperature parameter τ, and normalized into a probability distribution via a softmax",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Wikipedia－Cosine similarity",
+          "url": "https://en.wikipedia.org/wiki/Cosine_similarity",
+          "locator": "定義：餘弦相似度為兩向量夾角的餘弦值，即內積除以兩向量長度的乘積；數值只取決於方向，與向量大小無關",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-013",
+      "officialQuestionNumber": 13,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 指出 Vibe Coding 為 2025 年新詞、官方學習指引未收錄，僅以維基詞條佐證，並問是否有更權威的出處。本次已全文檢索科目二學習指引確認確實未收錄該詞，並找到 Merriam-Webster 的詞典條目補入：定義為 writing computer code in a somewhat careless fashion, with AI assistance，並載明「the coder does not need to understand how or why the code works, and often will have to accept that a certain number of bugs and glitches will be present」，正可佐證選項 B、D 對審查必要性與品質依賴的敘述。維基詞條保留作為起源與時間點的補充。待查項目結案。",
+        "修正以 scripts/fix-ai-review-115-2-s2-011-020.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 4 頁（共 13 頁）第 13 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Merriam-Webster－vibe coding（Slang & Trending）",
+          "url": "https://www.merriam-webster.com/slang/vibe-coding",
+          "locator": "詞條定義：writing computer code in a somewhat careless fashion, with AI assistance；說明段載明編碼者不需理解程式碼如何運作、須接受一定數量的錯誤。本次新增為 Q13 第二筆來源",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Wikipedia－Vibe coding",
+          "url": "https://en.wikipedia.org/wiki/Vibe_coding",
+          "locator": "詞條：Andrej Karpathy 於 2025 年 2 月提出此詞；開發者可能在未理解程式碼的情況下提交 AI 生成內容",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章（PDF 第 8 頁）逐字核對：「Low Code 平台結合視覺化開發工具與程式碼擴充功能……透過少量程式碼實現深度整合、客製化與複雜邏輯，特別適合中大型企業」",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-014",
+      "officialQuestionNumber": 14,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 4 頁（共 13 頁）第 14 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Claude Code 官方文件－Overview",
+          "url": "https://code.claude.com/docs/en/overview",
+          "locator": "Overview：Claude Code 為代理式編碼工具，讀取程式碼庫、編輯檔案、執行指令並整合開發工具；可撰寫並執行測試、修正失敗，並直接操作 git（暫存變更、撰寫 commit 訊息、建立分支、開啟 pull request）",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-015",
+      "officialQuestionNumber": 15,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 4～5 頁（共 13 頁）第 15 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "OpenAI API 文件－Reinforcement fine-tuning",
+          "url": "https://developers.openai.com/api/docs/guides/reinforcement-fine-tuning",
+          "locator": "RFT 不以固定正解訓練，而以可程式化評分器（grader）為每個候選回應評分；資料量建議自數十到數百筆範例起步",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Ouyang et al., Training language models to follow instructions with human feedback（arXiv:2203.02155）",
+          "url": "https://arxiv.org/abs/2203.02155",
+          "locator": "摘要：先以標註人員示範資料做監督式微調，再蒐集模型輸出排序，並以強化學習依人類回饋微調模型；支持詳解「SFT 與 RFT 為互補關係」之敘述",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-016",
+      "officialQuestionNumber": 16,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 5 頁（共 13 頁）第 16 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "OpenAI 開發者文件－Agents",
+          "url": "https://developers.openai.com/api/docs/guides/agents",
+          "locator": "Agents 指南：代理是能規劃、呼叫工具、跨專家協作並保持狀態以完成多步驟工作的應用程式",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-017",
+      "officialQuestionNumber": 17,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 5 頁（共 13 頁）第 17 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-22：生成式 AI 工具的專業化與垂直整合，法律領域應用含法律文件自動化撰寫與審閱、風險評估與法規檢索",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-018",
+      "officialQuestionNumber": 18,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 5 頁（共 13 頁）第 18 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Claude Developer Platform 文件－Context windows",
+          "url": "https://platform.claude.com/docs/en/docs/build-with-claude/context-windows",
+          "locator": "How the context window works：上下文窗口指模型生成回應時所能參照的全部文本，相當於模型的工作記憶",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-18：生成式 AI 具備上下文理解能力，並可透過提示詞進行可控生成",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-019",
+      "officialQuestionNumber": 19,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 5～6 頁（共 13 頁）第 19 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks（arXiv:2005.11401）",
+          "url": "https://arxiv.org/abs/2005.11401",
+          "locator": "摘要：以可檢索的非參數化記憶補充模型參數中的知識；檢索供料、生成出口，支持「仍屬生成式 AI 應用範疇」之判定",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-020",
+      "officialQuestionNumber": 20,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 6 頁（共 13 頁）第 20 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Model Context Protocol－Architecture overview",
+          "url": "https://modelcontextprotocol.io/docs/learn/architecture",
+          "locator": "MCP 採主從式架構，Server 對外提供 Tools（可執行動作，如 API 呼叫、資料庫查詢）、Resources 與 Prompts 三類基本能力，模型於推理時透過 Client 呼叫",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Distilling the Knowledge in a Neural Network（arXiv:1503.02531）",
+          "url": "https://arxiv.org/abs/1503.02531",
+          "locator": "摘要：把笨重、部署成本高的模型壓縮成單一輕量模型；支持選項 B 為模型壓縮而非知識更新之分析",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}

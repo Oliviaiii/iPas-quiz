@@ -19022,7 +19022,7 @@
           "checkedAt": "2026-08-07"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：CLIP 訓練時的對比式損失以圖文嵌入的餘弦相似度作為打分基礎，再以交叉熵形式優化；本批僅重新核對論文摘要與餘弦相似度定義，論文方法節細節（如溫度縮放）未逐段查證，選項 C 解析因此僅就「推論時衡量相符程度的量尺」立論，建議複核者對照 CLIP 論文方法節確認表述。查核日期 2026-08-07。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。原稿把 CLIP 論文方法節列為待查，獨立 AI 複核已逐字核對：第 2.2 節「jointly training an image encoder and text encoder to maximize the cosine similarity of the image and text embeddings of the N real pairs in the batch……We optimize a symmetric cross entropy loss over these similarity scores」，第 2.5 節「The cosine similarity of these embeddings is then calculated, scaled by a temperature parameter τ, and normalized into a probability distribution via a softmax」。可見餘弦相似度是打分的量尺、交叉熵是套在相似度分數之上的訓練損失，溫度僅為縮放參數；選項 A 與選項 C 的立論皆成立。待查項目結案。查核日期 2026-08-30。",
       "author": "Claude Code（AI 輔助初稿）",
       "authoredAt": "2026-08-07"
     }
@@ -19084,6 +19084,12 @@
           "checkedAt": "2026-07-29"
         },
         {
+          "title": "Merriam-Webster－vibe coding（Slang & Trending）",
+          "url": "https://www.merriam-webster.com/slang/vibe-coding",
+          "locator": "詞條定義逐字核對：writing computer code in a somewhat careless fashion, with AI assistance；說明段：In vibe coding the coder does not need to understand how or why the code works, and often will have to accept that a certain number of bugs and glitches will be present；並記載該詞自 2025 年初開始廣為使用",
+          "checkedAt": "2026-08-30"
+        },
+        {
           "title": "Wikipedia－Vibe coding",
           "url": "https://en.wikipedia.org/wiki/Vibe_coding",
           "locator": "詞條：Andrej Karpathy 於 2025 年 2 月提出此詞；開發者可能在未理解程式碼的情況下提交 AI 生成內容，帶入未察覺的錯誤與安全弱點",
@@ -19102,7 +19108,7 @@
           "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：Vibe Coding 為 2025 年出現的新詞，官方學習指引未收錄，術語起源沿用維基百科詞條佐證，建議複核者確認是否有更權威的一手出處可替換。查核日期 2026-08-07。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。原稿問 Vibe Coding 是否有更權威的出處可替換維基詞條，獨立 AI 複核已找到並補入 Merriam-Webster 的詞典條目：「writing computer code in a somewhat careless fashion, with AI assistance」，並載明「the coder does not need to understand how or why the code works, and often will have to accept that a certain number of bugs and glitches will be present」，正可佐證選項 B、D 對審查必要性與品質依賴的敘述。官方學習指引確實未收錄此詞（已全文檢索確認），維基詞條保留作為起源與時間點的補充。待查項目結案。查核日期 2026-08-30。",
       "author": "Claude Code（AI 輔助初稿）",
       "authoredAt": "2026-08-07"
     }
