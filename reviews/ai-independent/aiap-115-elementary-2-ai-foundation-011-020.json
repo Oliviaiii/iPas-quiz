@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-elementary-2-ai-foundation",
+  "range": {
+    "start": 11,
+    "end": 20
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 8,
+    "corrected": 2,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-011",
+      "officialQuestionNumber": 11,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 3 頁（共 13 頁）第 11 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章（PDF 第 41 頁）逐字核對：「開發去偏演算法以減少數據中的隱性偏見，確保模型的公平性」",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "A Survey on Bias and Fairness in Machine Learning（arXiv:1908.09635）",
+          "url": "https://arxiv.org/abs/1908.09635",
+          "locator": "摘要：整理 AI 應用中的偏差來源與公平性定義分類，指出應避免自動化決策對特定群體產生歧視性行為",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-012",
+      "officialQuestionNumber": 12,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 3 頁（共 13 頁）第 12 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章（PDF 第 10 頁）逐字核對：「結構化數據（Structured Data）：具有清晰且固定結構的數據，通常以行列形式儲存……常見於關聯式資料庫（如 MySQL、PostgreSQL）」，同節並列半結構化與非結構化",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-013",
+      "officialQuestionNumber": 13,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 4 頁（共 13 頁）第 13 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Preprocessing data",
+          "url": "https://scikit-learn.org/stable/modules/preprocessing.html",
+          "locator": "Encoding categorical features：OrdinalEncoder 將類別轉為 0 至 n_categories−1 的整數，此整數表示不能直接用於期望連續輸入的估計器，會被解讀為有順序",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-014",
+      "officialQuestionNumber": 14,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 4 頁（共 13 頁）第 14 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Cross-validation: evaluating estimator performance",
+          "url": "https://scikit-learn.org/stable/modules/cross_validation.html",
+          "locator": "Cross validation of time series data：KFold 與 ShuffleSplit 假設樣本 i.i.d.，用於時間序列會造成訓練與測試樣本間不合理的相關、高估泛化能力；TimeSeriesSplit 以前 k 折訓練、第 k+1 折測試",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-015",
+      "officialQuestionNumber": 15,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 把「線性迴歸若以普通最小平方閉式解求解且不含正則化，標準化只改變係數尺度、不影響預測結果」列為待查，請複核者判斷選項 A 的表述是否恰當。本次確認該敘述成立，且正是讀者最容易誤解的邊界，因此把此限制寫進選項 A 解析本體（並說明實務上多帶正則化或以梯度求解、係數也不再能跨特徵比較），再結案 editorialNote。",
+        "官方答案 D 不受影響：決策樹的分裂只依各特徵內部排序，對任何單調變換都不變，仍是四者中對尺度最不敏感者。",
+        "修正以 scripts/fix-ai-review-115-2-s1-011-020.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 4 頁（共 13 頁）第 15 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Decision Trees",
+          "url": "https://scikit-learn.org/stable/modules/tree.html",
+          "locator": "1.10 優點清單逐字核對：Requires little data preparation——其他技術常需要資料正規化、建立虛擬變數與移除空白值",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章（PDF 第 46 頁）逐字核對：「數據標準化旨在將不同量級的數據轉換到統一的範圍，從而消除特徵間的尺度差異」",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-016",
+      "officialQuestionNumber": 16,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 4 頁（共 13 頁）第 16 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章（PDF 第 16 頁）逐字核對：「異常檢測（Anomaly Detection）特點與用途：識別數據集中不符合預期的異常點，如離群值或罕見模式」",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Novelty and Outlier Detection",
+          "url": "https://scikit-learn.org/stable/modules/outlier_detection.html",
+          "locator": "Novelty detection：以未受污染的訓練資料建模，判斷新觀測是否偏離該分布",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-017",
+      "officialQuestionNumber": 17,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 指出保留個體軌跡的假名化資料仍可能被時空交叉比對重新識別，並問是否需補此限制的說明或權威來源。本次已補入經同儕審查的一手研究（de Montjoye et al., Unique in the Crowd, Scientific Reports 2013：僅四個時空點即可唯一辨識 95% 的個人），並把該限制與實務配套（粗化時間地點、限制釋出對象與用途）寫入選項 D 解析，再結案 editorialNote。",
+        "官方答案 D 不受影響：四個選項中仍只有 D 同時滿足題幹的跨時間追蹤需求與去識別化要求。",
+        "修正以 scripts/fix-ai-review-115-2-s1-011-020.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 5 頁（共 13 頁）第 17 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "全國法規資料庫－個人資料保護法施行細則",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0050022",
+          "locator": "第 17 條逐字核對：「所稱無從識別特定當事人，指個人資料以代碼、匿名、隱藏部分資料或其他方式，無從辨識該特定個人者」",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Unique in the Crowd: The privacy bounds of human mobility（Scientific Reports 3, 1376, 2013）",
+          "url": "https://www.nature.com/articles/srep01376",
+          "locator": "摘要：一年 150 萬人的行動資料中，僅四個時空點即可唯一辨識 95% 的個人；本次新增為 Q17 第三筆來源",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-018",
+      "officialQuestionNumber": 18,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 5 頁（共 13 頁）第 18 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "pandas API 文件－DataFrame.interpolate",
+          "url": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.interpolate.html",
+          "locator": "方法說明：Fill NaN values using an interpolation method；預設 method='linear' 將數值視為等距內插，另有 'time' 方法依時間間隔內插",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-019",
+      "officialQuestionNumber": 19,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 5 頁（共 13 頁）第 19 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Metrics and scoring",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+          "locator": "Precision, recall and F-measures：recall = tp/(tp+fn) 為分類器找出所有正樣本的能力；precision = tp/(tp+fp)。以題目數據 TP=80、FP=20、FN=10 代入，recall≈88.9%、precision=80%，與詳解一致",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章（PDF 第 48 頁）逐字核對：「F1 分數（F1 Score）：綜合考慮精確率（Precision）和召回率（Recall），適合處理數據不平衡的問題」",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-020",
+      "officialQuestionNumber": 20,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 5～6 頁（共 13 頁）第 20 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "IETF RFC 8446－The Transport Layer Security (TLS) Protocol Version 1.3",
+          "url": "https://datatracker.ietf.org/doc/html/rfc8446",
+          "locator": "第 1 節：TLS 的主要目標是在兩通訊端之間提供安全通道，性質含身分驗證、機密性與完整性，且即使攻擊者完全控制網路仍須成立",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
