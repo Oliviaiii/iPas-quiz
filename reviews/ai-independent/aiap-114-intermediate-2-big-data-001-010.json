@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-intermediate-2-big-data",
+  "range": {
+    "start": 1,
+    "end": 10
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 10,
+    "corrected": 0,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-001",
+      "officialQuestionNumber": 1,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 1 頁（共 17 頁）第 1 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－Detection of Outliers",
+          "url": "https://itl.nist.gov/div898/handbook/eda/section3/eda35h.htm",
+          "locator": "Z_i=(Y_i−平均值)/標準差；資料以距平均值幾個標準差為單位表示，並提醒以 Z 分數判異常的限制",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-002",
+      "officialQuestionNumber": 2,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 1 頁（共 17 頁）第 2 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "pandas User Guide－Essential basic functionality: Summarizing data",
+          "url": "https://pandas.pydata.org/pandas-docs/stable/user_guide/basics",
+          "locator": "describe() 對 Series／DataFrame 計算 count、mean、std、min、四分位數與 max",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-003",
+      "officialQuestionNumber": 3,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 1 頁（共 17 頁）第 3 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認；本題附圖已渲染 PDF 第 1 頁與題庫 figures 所指 /images/questions/aiap-114-intermediate-2-big-data-p01-1.png 逐一目視比對，兩者一致：峰值約在 40、右側於 60 前結束、左尾稀疏延伸至約 −20，為左長尾之負偏態",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－Measures of Skewness and Kurtosis",
+          "url": "https://itl.nist.gov/div898/handbook/eda/section3/eda35b.htm",
+          "locator": "負偏態表示左尾相對較長，正偏態表示右尾相對較長；偏態為對稱性的量度",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-004",
+      "officialQuestionNumber": 4,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 1～2 頁（共 17 頁）第 4 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－CDF of the Standard Normal Distribution",
+          "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda3671.htm",
+          "locator": "以曲線下累積面積說明 CDF，並示範 P[X≤a] 的計算",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-005",
+      "officialQuestionNumber": 5,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 2 頁（共 17 頁）第 5 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Preprocessing data",
+          "url": "https://scikit-learn.org/stable/modules/preprocessing.html",
+          "locator": "StandardScaler 的均值／變異數縮放、MinMaxScaler 的固定範圍映射，以及 OneHotEncoder／OrdinalEncoder 的類別編碼與未知類別處理",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-006",
+      "officialQuestionNumber": 6,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 2 頁（共 17 頁）第 6 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Preprocessing data",
+          "url": "https://scikit-learn.org/stable/modules/preprocessing.html",
+          "locator": "StandardScaler 的均值／變異數縮放、MinMaxScaler 的固定範圍映射，以及 OneHotEncoder／OrdinalEncoder 的類別編碼與未知類別處理",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-007",
+      "officialQuestionNumber": 7,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 2 頁（共 17 頁）第 7 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PostgreSQL Documentation－Transactions",
+          "url": "https://www.postgresql.org/docs/current/tutorial-transactions.html",
+          "locator": "交易把多個步驟包成 all-or-nothing 操作；中途失敗時所有步驟都不影響資料庫",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-008",
+      "officialQuestionNumber": 8,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 2～3 頁（共 17 頁）第 8 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Google Machine Learning Crash Course－Numerical data: Feature vectors",
+          "url": "https://developers.google.com/machine-learning/crash-course/numerical-data/feature-vectors",
+          "locator": "模型使用由資料欄位衍生、處理或轉換而成的 feature vectors；建立合適表示屬於 feature engineering",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-009",
+      "officialQuestionNumber": 9,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 3 頁（共 17 頁）第 9 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－RobustScaler",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.RobustScaler.html",
+          "locator": "以訓練集 median 移除中心、依 quantile range（預設 IQR）縮放，避免 outliers 影響 mean／variance",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-010",
+      "officialQuestionNumber": 10,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 3 頁（共 17 頁）第 10 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Novelty and Outlier Detection",
+          "url": "https://scikit-learn.org/stable/modules/outlier_detection.html",
+          "locator": "異常偵測用於判斷新觀測是否屬於既有分佈，或是否為 abnormal／unusual observation",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}

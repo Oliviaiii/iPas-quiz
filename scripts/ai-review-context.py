@@ -112,10 +112,10 @@ def print_batch(questions: list[dict], start: int, end: int, answers: dict[int, 
         flag = "" if extracted in (None, *official) else "   <<< MISMATCH"
         print(f"bank answer: {official}  pdf answer: {extracted}{flag}")
         print(f"source page: {question.get('sourcePage')}  scoring: {question['scoring']}")
-        if question.get("images"):
-            print(f"images: {json.dumps(question['images'], ensure_ascii=False)}")
-        if question.get("sharedContextId"):
-            print(f"sharedContextId: {question['sharedContextId']}")
+        if question.get("figures"):
+            print(f"figures: {json.dumps(question['figures'], ensure_ascii=False)}")
+        if question.get("passage"):
+            print(f"passage: {question['passage']}")
         print(f"\n[prompt]\n{question['prompt']}")
         for option in question["options"]:
             print(f"  ({option['label']}) {option['text']}")
