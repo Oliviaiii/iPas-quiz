@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-intermediate-1-ai-tech-planning",
+  "range": {
+    "start": 41,
+    "end": 50
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 7,
+    "corrected": 3,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-041",
+      "officialQuestionNumber": 41,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 12～13 頁：第 41 題題幹與左欄官方答案 A（第 12 頁）、其餘題幹與 (A)～(D) 選項（第 13 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NVIDIA Triton Inference Server－Dynamic Batcher",
+          "url": "https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/user_guide/batcher.html",
+          "locator": "Dynamic batching is a feature of Triton that allows inference requests to be combined by the server, so that a batch is created dynamically. Creating a batch of requests typically results in increased throughput",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-042",
+      "officialQuestionNumber": 42,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 13 頁：第 42 題題幹（高額理賠僅約 5%、整體 RMSE 無明顯變化）、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "TensorFlow Model Analysis－Metrics and Plots",
+          "url": "https://www.tensorflow.org/tfx/model_analysis/metrics",
+          "locator": "說明 TFMA 可在整體資料與指定 slices（切片）上分別計算模型指標，以檢視不同資料子群的表現",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Mean squared error",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html#mean-squared-error",
+          "locator": "MSE 定義為殘差平方後取平均；RMSE 為其平方根，與 MAE 對誤差的權重不同",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-043",
+      "officialQuestionNumber": 43,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源重複出現與第 19 題相同的引用錯置：標題掛 Kohavi 線上對照實驗論文，網址卻是 https://arxiv.org/abs/1606.07659（Strub 等人的 Hybrid Recommender System based on Autoencoders）。已改引 Kohavi 等人 KDD 2013 的 Online Controlled Experiments at Large Scale（scripts/fix-ai-review-115-1-m1-041-050.py）。",
+        "獨立作答為 C；金絲雀發布以少量真實流量量測 CTR／CVR 再逐步擴量的敘述正確，並正確區分 Shadow Mode（不呈現給使用者故無法量測互動）、Backtesting 與 Load Testing。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 13 頁：第 43 題題幹、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Google Cloud Deploy－Use a canary deployment strategy",
+          "url": "https://cloud.google.com/deploy/docs/deployment-strategies/canary",
+          "locator": "What is a canary deployment? 段：A canary deployment is a progressive rollout of an application that splits traffic between an already-deployed version and a new version, rolling it out to a subset of users before rolling out fully",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Online Controlled Experiments at Large Scale（Kohavi et al., KDD 2013）",
+          "url": "https://exp-platform.com/Documents/2013%20controlledExperimentsAtScale.pdf",
+          "locator": "§2：使用者被 randomly split between the variants…Their interactions with the site are instrumented and key metrics computed",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-044",
+      "officialQuestionNumber": 44,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 13～14 頁：第 44 題題幹與 (A)(B) 選項、左欄官方答案 B（第 13 頁）、(B) 選項續行與 (C)(D) 選項（第 14 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "RFC 9110－HTTP Semantics",
+          "url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+          "locator": "§9.3.3 POST：The POST method requests that the target resource process the representation enclosed in the request according to the resource's own specific semantics；另見 §9.3.1 GET 與 §9.3.4 PUT 的方法語意",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "RFC 7578－Returning Values from Forms: multipart/form-data",
+          "url": "https://www.rfc-editor.org/rfc/rfc7578.html",
+          "locator": "定義 multipart/form-data 媒體類型與各 part 的欄位名稱、檔名及 Content-Type 規則，適用於檔案上傳",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-045",
+      "officialQuestionNumber": 45,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 14 頁：第 45 題題幹、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Microsoft Azure Architecture Center－Circuit Breaker pattern",
+          "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker",
+          "locator": "以狀態機描述三種狀態：Closed（統計失敗次數，超過門檻轉為 Open 並啟動 time-out）、Open（The request from the application fails immediately and an exception is returned）、Half-Open（少量探測判斷是否恢復）",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-046",
+      "officialQuestionNumber": 46,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源 https://www.hhs.gov/hipaa/for-professionals/special-topics/health-information-technology/cloud-computing/index.html 對一般與瀏覽器 User-Agent 皆回傳 HTTP 403，無法核實其定位。已改引 govinfo 上的 45 CFR §160.103 Business associate 定義原文（scripts/fix-ai-review-115-1-m1-041-050.py），可直接支持「雲端服務商保存 PHI 即屬 business associate、須簽 BAA」的敘述。",
+        "獨立作答為 C；draft 既有的 editorialNote 已如實說明 HIPAA 並非概括禁止使用合規雲端服務、以及標準聯邦學習下讀取原始影像的計算發生於院內，保留意見恰當且與本次補查一致。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 14 頁：第 46 題題幹、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Communication-Efficient Learning of Deep Networks from Decentralized Data（McMahan et al., 2017）",
+          "url": "https://arxiv.org/abs/1602.05629",
+          "locator": "摘要：leaves the training data distributed on the mobile devices, and learns a shared model by aggregating locally-computed updates. We term this decentralized approach Federated Learning",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "45 CFR §160.103－Definitions（Business associate）",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2023-title45-vol2/pdf/CFR-2023-title45-vol2-sec160-103.pdf",
+          "locator": "Business associate 定義 (1)(i)：代表 covered entity 而 creates, receives, maintains, or transmits protected health information 之人",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-047",
+      "officialQuestionNumber": 47,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 14 頁：第 47 題題幹（流量 5%→30% 時延遲明顯上升）、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Google Cloud Deploy－Use a canary deployment strategy",
+          "url": "https://cloud.google.com/deploy/docs/deployment-strategies/canary",
+          "locator": "What is a canary deployment? 段：A canary deployment is a progressive rollout of an application that splits traffic between an already-deployed version and a new version, rolling it out to a subset of users before rolling out fully",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-048",
+      "officialQuestionNumber": 48,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源 https://dl.acm.org/doi/10.1145/2523813 對一般與瀏覽器 User-Agent 皆回傳 HTTP 403，無法核實定位。已改引同一篇論文由作者機構公開的 accepted 版 PDF（scripts/fix-ai-review-115-1-m1-041-050.py），其第 1 節逐字定義 real concept drift 為「條件分布 p(y|X) 改變而輸入分布可能維持不變」，正是本題情境。",
+        "獨立作答為 C；題幹明示交易金額、地區與裝置分布未明顯變化而風險意義改變，屬概念漂移而非資料漂移；四個選項判讀無誤。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 15 頁：第 48 題題幹、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "A Survey on Concept Drift Adaptation（Gama et al., ACM Computing Surveys 2014）",
+          "url": "https://www.win.tue.nl/~mpechen/publications/pubs/Gama_ACMCS_AdaptationCD_accepted.pdf",
+          "locator": "§1：The real concept drift refers to changes in the conditional distribution of the output (i.e., target variable) given the input (input features), while the distribution of the input may stay unchanged；§2 定義 Virtual drift 為 p(X) 改變而不影響 p(y|X)",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-049",
+      "officialQuestionNumber": 49,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 15 頁：第 49 題題幹、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "MLflow Documentation－Tracking",
+          "url": "https://mlflow.org/docs/latest/ml/tracking/",
+          "locator": "說明 Tracking 以 run 為單位記錄 parameters、metrics、artifacts 與 model，供實驗比較與重現",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Google Cloud Vertex AI－Introduction to model monitoring",
+          "url": "https://cloud.google.com/vertex-ai/docs/model-monitoring/overview",
+          "locator": "說明部署後監控訓練／服務偏移與預測偏移（feature skew and drift、prediction drift），並可設定警示門檻",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-050",
+      "officialQuestionNumber": 50,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 15 頁：第 50 題題幹（晚期融合、問診品質不佳時效能僅小幅下降，問「最不可能」）、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Multimodal Machine Learning: A Survey and Taxonomy（Baltrušaitis, Ahuja & Morency, 2017）",
+          "url": "https://arxiv.org/abs/1705.09406",
+          "locator": "摘要提出 representation, translation, alignment, fusion, and co-learning 五大挑戰的分類；Fusion 節區分 early（特徵層）與 late（決策層，以各模態預測結果 averaging、voting 等整合）",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}

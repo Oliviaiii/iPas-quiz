@@ -36498,10 +36498,10 @@
           "checkedAt": "2026-08-12"
         },
         {
-          "title": "Kohavi et al., Online Controlled Experiments: Lessons from Running A/B/n Tests for 12 Years（2016）",
-          "url": "https://arxiv.org/abs/1606.07659",
-          "locator": "以線上隨機對照實驗量測產品變更對使用者與業務指標的因果影響",
-          "checkedAt": "2026-08-12"
+          "title": "Online Controlled Experiments at Large Scale（Kohavi et al., KDD 2013）",
+          "url": "https://exp-platform.com/Documents/2013%20controlledExperimentsAtScale.pdf",
+          "locator": "§2：使用者被 randomly split between the variants…Their interactions with the site are instrumented and key metrics computed，說明以線上隨機對照實驗量測真實業務指標",
+          "checkedAt": "2026-08-30"
         }
       ],
       "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
@@ -36714,10 +36714,10 @@
           "checkedAt": "2026-08-12"
         },
         {
-          "title": "HHS－Guidance on HIPAA & Cloud Computing",
-          "url": "https://www.hhs.gov/hipaa/for-professionals/special-topics/health-information-technology/cloud-computing/index.html",
-          "locator": "受管制實體可使用符合 HIPAA 的雲端服務，但須與 CSP 建立適當 BAA 並遵守 Privacy、Security 與 Breach Notification Rules",
-          "checkedAt": "2026-08-12"
+          "title": "45 CFR §160.103－Definitions（Business associate）",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2023-title45-vol2/pdf/CFR-2023-title45-vol2-sec160-103.pdf",
+          "locator": "Business associate 定義 (1)(i)：代表 covered entity 而 creates, receives, maintains, or transmits protected health information 之人；雲端服務商保存 PHI 即落入此定義，須簽訂 business associate contract",
+          "checkedAt": "2026-08-30"
         }
       ],
       "editorialNote": "本站依題目明定的『原始資料不得離開院內』限制選 C。HIPAA 本身並非概括禁止受保護健康資訊使用合規雲端服務；是否可上雲仍涉及適用實體、Business Associate Agreement、風險分析與安全控制。另依標準聯邦學習流程，直接讀取原始影像的訓練計算發生在院內，公有雲主要負責協調與聚合。查核日期 2026-08-12。",
@@ -36850,10 +36850,10 @@
           "checkedAt": "2026-08-12"
         },
         {
-          "title": "Gama et al., A Survey on Concept Drift Adaptation（2014）",
-          "url": "https://dl.acm.org/doi/10.1145/2523813",
-          "locator": "第 2 節：concept drift 描述資料生成分布隨時間改變，並區分輸入分布與條件關係的變化",
-          "checkedAt": "2026-08-12"
+          "title": "A Survey on Concept Drift Adaptation（Gama, Žliobaitė, Bifet, Pechenizkiy & Bouchachia, ACM Computing Surveys 2014）",
+          "url": "https://www.win.tue.nl/~mpechen/publications/pubs/Gama_ACMCS_AdaptationCD_accepted.pdf",
+          "locator": "§1：The real concept drift refers to changes in the conditional distribution of the output (i.e., target variable) given the input (input features), while the distribution of the input may stay unchanged；§2 另定義 virtual drift 為 p(X) 改變而 p(y|X) 不變",
+          "checkedAt": "2026-08-30"
         }
       ],
       "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
