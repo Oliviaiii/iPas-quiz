@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-intermediate-1-machine-learning",
+  "range": {
+    "start": 1,
+    "end": 10
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 10,
+    "corrected": 0,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-001",
+      "officialQuestionNumber": 1,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 1 頁：第 1 題題幹（無解析解、以大量隨機模擬估計損失分布）、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST News－New Tool to Account for Uncertainty",
+          "url": "https://www.nist.gov/news-events/news/2020/01/new-tool-account-uncertainty",
+          "locator": "說明 Monte Carlo analysis 對輸入變數反覆隨機取樣、逐次執行模型，再由眾多輸出結果彙整不確定性分布",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-002",
+      "officialQuestionNumber": 2,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 1 頁：第 2 題題幹（希望對極端高價物件誤差更敏感、產生較大梯度）、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Mean squared error",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html#mean-squared-error",
+          "locator": "MSE 定義為殘差平方後取平均，故大殘差被平方放大；同章節另列 mean_absolute_error 與 Huber 類損失作為對離群值較穩健的替代",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-003",
+      "officialQuestionNumber": 3,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 1 頁：第 3 題題幹（Q 形狀 (1, 10)、WQ 形狀 (10, 64)）、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NumPy API－numpy.matmul",
+          "url": "https://numpy.org/doc/stable/reference/generated/numpy.matmul.html",
+          "locator": "說明：If both arguments are 2-D they are multiplied like conventional matrices，即 (n,k)×(k,m) → (n,m)；內維度須相符",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-004",
+      "officialQuestionNumber": 4,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 1 頁：第 4 題題幹（隨機水平翻轉造成語意不一致）、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "torchvision－RandomHorizontalFlip",
+          "url": "https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.RandomHorizontalFlip.html",
+          "locator": "類別說明：Horizontally flip the given image randomly with a given probability；轉換只作用於影像，標籤不會隨之調整",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "TensorFlow Tutorials－Data augmentation",
+          "url": "https://www.tensorflow.org/tutorials/images/data_augmentation",
+          "locator": "導言說明資料擴增以產生可信（plausible-looking）影像的隨機轉換增加訓練多樣性，轉換須對該資料集有意義",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-005",
+      "officialQuestionNumber": 5,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 1～2 頁：第 5 題題幹（殘差隨預測值增大而擴散）與左欄官方答案 C（第 1 頁）、(A)～(D) 選項（第 2 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－5.2.4. Are the model residuals well-behaved?",
+          "url": "https://www.itl.nist.gov/div898/handbook/pri/section2/pri24.htm",
+          "locator": "說明殘差為觀測值與預測值之差、是實驗誤差的估計；檢視殘差可判斷模型假設（含固定變異數）是否合理與模型形式是否適當",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-006",
+      "officialQuestionNumber": 6,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 2 頁：第 6 題題幹（512 維詞嵌入視覺化 vs. 200 個製程特徵作 XGBoost 輸入）、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Visualizing Data using t-SNE（van der Maaten & Hinton, JMLR 2008）",
+          "url": "https://www.jmlr.org/papers/v9/vandermaaten08a.html",
+          "locator": "論文摘要說明 t-SNE 將高維資料映射到二至三維以供視覺化，透過鄰近點的機率相似度保存局部結構",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.decomposition.PCA",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html",
+          "locator": "類別說明 PCA 為 Linear dimensionality reduction using Singular Value Decomposition；fit 後可用 transform 將新資料投影到同一組主成分",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-007",
+      "officialQuestionNumber": 7,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 2 頁：第 7 題題幹（月／年／季收入高度相關，重要特徵清單反覆變動）、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Lasso",
+          "url": "https://scikit-learn.org/stable/modules/linear_model.html#lasso",
+          "locator": "The Lasso is a linear model that estimates sparse coefficients, i.e., it is able to set coefficients exactly to zero…tendency to prefer solutions with fewer non-zero coefficients",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.linear_model.Lasso",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html",
+          "locator": "selection 參數說明：設為 'random' 時每次迭代隨機更新係數，通常收斂較快；顯示在相關特徵間保留哪一個可受最佳化細節影響",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-008",
+      "officialQuestionNumber": 8,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 2 頁：第 8 題題幹（第 15 epoch 後驗證損失上升；調高學習率後訓練損失震盪）、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Dive into Deep Learning－12.3 Gradient Descent",
+          "url": "https://d2l.ai/chapter_optimization/gd.html",
+          "locator": "§12.3 說明學習率過大時 |ηf'(x)| 可能使一階泰勒展開的高階項變得顯著，we cannot guarantee that the iteration of x will be able to lower the value of f(x)，並示範 diverge due to an overly large learning rate",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-009",
+      "officialQuestionNumber": 9,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 2～3 頁：第 9 題題幹與左欄官方答案 A（第 2 頁）、(A)～(D) 選項（第 3 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Adam: A Method for Stochastic Optimization（Kingma & Ba, 2015）",
+          "url": "https://arxiv.org/abs/1412.6980",
+          "locator": "摘要：an algorithm for first-order gradient-based optimization of stochastic objective functions, based on adaptive estimates of lower-order moments；Algorithm 1 以一階、二階動差指數移動平均與偏差校正逐參數更新",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-010",
+      "officialQuestionNumber": 10,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 3 頁：第 10 題題幹（使用時長為連續值、是否流失為二元）、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "TensorFlow API－tf.keras.losses.MeanSquaredError",
+          "url": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/MeanSquaredError",
+          "locator": "類別說明：Computes the mean of squares of errors between labels and predictions，適用於連續數值迴歸",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "TensorFlow API－tf.keras.losses.BinaryCrossentropy",
+          "url": "https://www.tensorflow.org/api_docs/python/tf/keras/losses/BinaryCrossentropy",
+          "locator": "類別說明：Computes the cross-entropy loss between true labels and predicted labels；Use this cross-entropy loss for binary (0 or 1) classification applications",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
