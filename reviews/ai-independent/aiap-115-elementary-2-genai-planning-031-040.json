@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-elementary-2-genai-planning",
+  "range": {
+    "start": 31,
+    "end": 40
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 6,
+    "corrected": 4,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-031",
+      "officialQuestionNumber": 31,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 記載 docs.midjourney.com 與 perplexity.ai 於撰稿當日回應 HTTP 403，產品定位缺可開啟的來源。本次重試仍為 403（兩站阻擋自動化存取），已改補兩筆可開啟的百科來源：Midjourney「generates images from natural language descriptions, called prompts」、Perplexity「offering a web search engine that processes user queries and synthesizes responses……citing sources used」，均與詳解對兩者產品定位的敘述一致。待查項目結案。",
+        "修正以 scripts/fix-ai-review-115-2-s2-031-040.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 8 頁（共 13 頁）第 31 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Wikipedia－Midjourney",
+          "url": "https://en.wikipedia.org/wiki/Midjourney",
+          "locator": "首段：Midjourney generates images from natural language descriptions, called prompts；本次新增",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Wikipedia－Perplexity AI",
+          "url": "https://en.wikipedia.org/wiki/Perplexity_AI",
+          "locator": "首段：offering a web search engine that processes user queries and synthesizes responses……citing sources used；本次新增",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "High-Resolution Image Synthesis with Latent Diffusion Models（arXiv:2112.10752）",
+          "url": "https://arxiv.org/abs/2112.10752",
+          "locator": "Stable Diffusion 原始論文：潛在擴散模型以交叉注意力支援文字條件輸入，應用於文字生成圖像",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-032",
+      "officialQuestionNumber": 32,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 請複核者確認 C 相對 B、D 的區辨理由是否恰當。本次確認恰當：B、D 的解析都已明白承認其事實基礎（B 的跨模組理解限制、D 的雲端依賴），只指出 B 對能力面描述過度限縮、D 僅涵蓋部署形態單一面向，並未謊稱兩者為錯；題幹問「最正確」，以涵蓋完整度作區辨忠實反映題目設定。已改寫 editorialNote 記錄此判定，並保留「本題三個敘述皆具事實基礎、選項區辨偏鬆」一句供人工複核者知悉。",
+        "修正以 scripts/fix-ai-review-115-2-s2-031-040.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 9 頁（共 13 頁）第 32 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "GitHub Docs－Best practices for using GitHub Copilot",
+          "url": "https://docs.github.com/en/copilot/get-started/best-practices",
+          "locator": "官方最佳實務：Copilot 可能犯錯，應先理解並仔細審查建議的程式碼（含功能與安全性），並以自動化測試、linting 與 code scanning 驗證",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "GitHub Blog－Introducing GitHub Copilot: AI pair programmer",
+          "url": "https://github.blog/news-insights/product-news/introducing-github-copilot-ai-pair-programmer/",
+          "locator": "推出公告：Copilot 依當前程式碼脈絡建議整行或整個函式",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-033",
+      "officialQuestionNumber": 33,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 9 頁（共 13 頁）第 33 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Brown et al., Language Models are Few-Shot Learners（arXiv:2005.14165）",
+          "url": "https://arxiv.org/abs/2005.14165",
+          "locator": "摘要：以提示中的少量示範讓模型執行新任務，不需梯度更新或微調",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-21 預訓練與模型微調技術：少樣本學習和提示工程提升了模型的適應性與精準度",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks（arXiv:2005.11401）",
+          "url": "https://arxiv.org/abs/2005.11401",
+          "locator": "以外部非參數化記憶補充模型參數知識；支持選項 D 需檢索步驟之排除理由",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-034",
+      "officialQuestionNumber": 34,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 9 頁（共 13 頁）第 34 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Brown et al., Language Models are Few-Shot Learners（arXiv:2005.14165）",
+          "url": "https://arxiv.org/abs/2005.14165",
+          "locator": "摘要：以提示中的少量示範讓模型執行新任務，不需梯度更新或微調",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-40：為防止過擬合（Overfitting）或欠擬合，可採用正則化技術、Dropout 與早停策略；支持選項 A「必然過擬合」過度絕對之判定",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-23（四）：模型微調與提示工程讓用戶依特定需求調整生成結果",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-035",
+      "officialQuestionNumber": 35,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 9～10 頁（共 13 頁）第 35 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "A2A Protocol－官方文件",
+          "url": "https://a2a-protocol.org/latest/",
+          "locator": "Client Agent 與 Remote Agent 的角色定義與任務委派流程；支持代理間需有標準化通訊與狀態傳遞之敘述",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework（arXiv:2308.00352）",
+          "url": "https://arxiv.org/abs/2308.00352",
+          "locator": "摘要：以流水線範式指派不同角色給多個代理，並將標準作業程序編入提示序列以協調分工",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-036",
+      "officialQuestionNumber": 36,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 10 頁（共 13 頁）第 36 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "OpenAI 開發者文件－Agents",
+          "url": "https://developers.openai.com/api/docs/guides/agents",
+          "locator": "代理是能規劃、呼叫工具、跨專家協作並保持狀態以完成多步驟工作的應用程式",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-037",
+      "officialQuestionNumber": 37,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 請複核者確認 A 相對 D（語意解析）的區辨是否恰當。本次確認恰當：題幹把系統流程明確寫到「呼叫外部外送服務 API 完成下單，最後回傳訂單狀態與預計送達時間」，終點在執行與回收結果；語意解析止於產生形式化表示，涵蓋不到宣告工具、執行呼叫與回收結果的環節。判準取自題幹敘述的終點，且選項 D 的解析已說明它是函數呼叫流程的前半段、未謊稱其為錯。已改寫 editorialNote 記錄此判定，待查項目結案。",
+        "修正以 scripts/fix-ai-review-115-2-s2-031-040.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 10 頁（共 13 頁）第 37 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "OpenAI 開發者文件－Function calling",
+          "url": "https://developers.openai.com/api/docs/guides/function-calling",
+          "locator": "Function calling（tool calling）讓模型介接外部系統：模型輸出帶結構化 JSON 參數的工具呼叫，由應用程式執行外部 API 後把結果回傳模型組成回覆",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-23 AI 即服務（AIaaS）：API 介接與外掛程式讓企業能輕鬆整合 AI 工具至現有流程中",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-038",
+      "officialQuestionNumber": 38,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 10 頁（共 13 頁）第 38 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Mermaid 官方文件－About Mermaid",
+          "url": "https://mermaid.js.org/intro/",
+          "locator": "Mermaid 以 Markdown 風格文字定義搭配渲染器建立與修改圖表，讓使用者以文字與程式碼建立視覺化圖表",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Evaluating Large Language Models Trained on Code（arXiv:2107.03374）",
+          "url": "https://arxiv.org/abs/2107.03374",
+          "locator": "摘要：Codex 為在 GitHub 公開程式碼上微調的 GPT 語言模型；支持「程式碼語料造就結構化語法生成能力」之敘述",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-039",
+      "officialQuestionNumber": 39,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 10～11 頁（共 13 頁）第 39 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Measuring Massive Multitask Language Understanding（arXiv:2009.03300）",
+          "url": "https://arxiv.org/abs/2009.03300",
+          "locator": "MMLU 涵蓋 57 項任務，包含初等數學、美國歷史、電腦科學、法律等領域，測試模型的廣泛世界知識與問題解決能力",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-040",
+      "officialQuestionNumber": 40,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 指出 Solution Graph 並非有統一定義的標準術語、官方教材未收錄，請複核者查證命題是否另有指定出處。本次已全文檢索科目二學習指引：「解決方案圖」「Solution Graph」「有向無環」皆為零筆，確認官方教材確實未收錄；命題依據未經官方公布，無從再查證。惟本題答案不依賴該出處——四個選項中只有 D 描述任務規劃的表示結構，A（模型權重）、B（知識圖譜並誇大為自動解題）、C（強化學習模型）在類別上即不成立，由選項文字本身即可判定。已改寫 editorialNote 記錄此查證結果與判定基礎，待查項目結案。",
+        "修正以 scripts/fix-ai-review-115-2-s2-031-040.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 11 頁（共 13 頁）第 40 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models（arXiv:2305.10601）",
+          "url": "https://arxiv.org/abs/2305.10601",
+          "locator": "摘要：以想法為節點探索多條推理路徑，並自我評估、前瞻與回溯，適用需要規劃或搜尋的問題；支持「把推理展開為節點結構供模型逐步推進」之敘述",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "全文檢索結果：「解決方案圖」「Solution Graph」「有向無環」皆為零筆，官方教材未收錄此術語",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
