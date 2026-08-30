@@ -35332,10 +35332,10 @@
           "checkedAt": "2026-08-12"
         },
         {
-          "title": "FDA, Health Canada and MHRA－Good Machine Learning Practice Guiding Principles",
-          "url": "https://www.fda.gov/medical-devices/software-medical-device-samd/good-machine-learning-practice-medical-device-development-guiding-principles",
-          "locator": "Human-AI team performance 原則：在預定使用環境重視人因與人機團隊整體表現",
-          "checkedAt": "2026-08-12"
+          "title": "FDA、Health Canada 與 MHRA－Good Machine Learning Practice for Medical Device Development: Guiding Principles（2021 年 10 月，PDF）",
+          "url": "https://www.fda.gov/media/153486/download",
+          "locator": "原則 7 Focus Is Placed on the Performance of the Human-AI Team：Where the model has a \"human in the loop,\" human factors considerations and the human interpretability of the model outputs are addressed with emphasis on the performance of the Human-AI team, rather than just the performance of the model in isolation",
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "NIST AI Risk Management Framework 1.0",

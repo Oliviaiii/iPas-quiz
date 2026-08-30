@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-intermediate-1-ai-tech-planning",
+  "range": {
+    "start": 21,
+    "end": 30
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 9,
+    "corrected": 1,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-021",
+      "officialQuestionNumber": 21,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 7 頁：第 21 題題幹（GPT-4o 價格、10×600 tokens 檢索區塊、500 tokens System Prompt、8,000 tokens 對話歷史、每日 5,000 次、平均輸出 300 tokens）、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "OpenAI Platform Docs－Prompt caching",
+          "url": "https://platform.openai.com/docs/guides/prompt-caching",
+          "locator": "說明快取以相同提示前綴為條件、命中後降低重複前綴成本，並於 usage 回傳 cached_tokens",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "OpenAI Platform Docs－Batch API",
+          "url": "https://platform.openai.com/docs/guides/batch",
+          "locator": "說明 Batch API 為非同步處理、具完成時間窗口與費率優惠，適用可等待的大量離線工作",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-022",
+      "officialQuestionNumber": 22,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 7～8 頁：第 22 題題幹與左欄官方答案 C（第 7 頁）、(A)～(D) 選項（第 8 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Google Cloud Architecture－MLOps: Continuous delivery and automation pipelines in machine learning",
+          "url": "https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning",
+          "locator": "導言與各級成熟度：說明 continuous integration、continuous delivery 與 continuous training (CT) for ML systems；By deploying an ML training pipeline, you can enable CT, and you can set up a CI/CD system to rapidly test, build, and deploy new implementations of the ML pipeline",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-023",
+      "officialQuestionNumber": 23,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 8 頁：第 23 題題幹（瑕疵 800 張／正常 15,000 張、地端無 GPU、100 毫秒、中等預算）、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch Tutorials－Transfer Learning for Computer Vision",
+          "url": "https://docs.pytorch.org/tutorials/beginner/transfer_learning_tutorial.html",
+          "locator": "導言列出兩種主要作法：Finetuning the ConvNet（以預訓練權重初始化再微調）與 ConvNet as fixed feature extractor（凍結前段、只訓練分類層）",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch Docs－Quantization",
+          "url": "https://docs.pytorch.org/docs/stable/quantization.html",
+          "locator": "導言：quantization 以較低精度（如 int8）執行運算與儲存張量，可降低模型大小與記憶體頻寬並加速推論",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-024",
+      "officialQuestionNumber": 24,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 8 頁：第 24 題題幹、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Google SRE Book－Monitoring Distributed Systems（The Four Golden Signals）",
+          "url": "https://sre.google/sre-book/monitoring-distributed-systems/",
+          "locator": "Latency 定義：The time it takes to service a request. It's important to distinguish between the latency of successful requests and the latency of failed requests",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-025",
+      "officialQuestionNumber": 25,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 8 頁：第 25 題題幹、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST AI 100-1－Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+          "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+          "locator": "MEASURE 功能段：After completing the MEASURE function, objective, repeatable, or scalable test, evaluation, verification, and validation (TEVV) processes including metrics, methods, and methodologies are in place, followed, and documented；MEASURE 2.1 亦要求 Test sets, metrics, and details about the tools used during TEVV are documented",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-026",
+      "officialQuestionNumber": 26,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 8～9 頁：第 26 題題幹（第 8 頁）、(A)～(D) 選項與左欄官方答案 D（第 9 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NISTIR 8312－Four Principles of Explainable Artificial Intelligence",
+          "url": "https://nvlpubs.nist.gov/nistpubs/ir/2021/NIST.IR.8312.pdf",
+          "locator": "四原則：Explanation（A system delivers or contains accompanying evidence or reason(s) for outputs and/or processes）、Meaningful（understandable to the intended consumer(s)）、Explanation Accuracy、Knowledge Limits",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST AI 100-1－Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+          "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+          "locator": "可信任 AI 特性段落列出 Explainable and Interpretable，並置於治理與文件化脈絡中",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-027",
+      "officialQuestionNumber": 27,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源網址 https://www.fda.gov/medical-devices/software-medical-device-samd/good-machine-learning-practice-medical-device-development-guiding-principles 對一般請求回傳 HTTP 401（需瀏覽器 User-Agent 才給 200），且即使取得回應也無法取出正文，原定位所述的 Human-AI team 原則無法在該網址核實。已改引 FDA 官方託管的同一份文件 PDF（scripts/fix-ai-review-115-1-m1-021-030.py），其原則 7 逐字載明該內容。",
+        "獨立作答為 A；HITL 保留醫師最終審核的敘述正確，draft 亦已聲明非醫療器材法規意見、實際系統仍須依風險與法規完成驗證，保留意見恰當。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 9 頁：第 27 題題幹、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "FDA、Health Canada 與 MHRA－Good Machine Learning Practice for Medical Device Development: Guiding Principles（2021 年 10 月，PDF）",
+          "url": "https://www.fda.gov/media/153486/download",
+          "locator": "原則 7 Focus Is Placed on the Performance of the Human-AI Team：Where the model has a \"human in the loop,\" human factors considerations and the human interpretability of the model outputs are addressed with emphasis on the performance of the Human-AI team, rather than just the performance of the model in isolation",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST AI 100-1－Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+          "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+          "locator": "GOVERN 1：Policies, processes, procedures, and practices across the organization related to the mapping, measuring, and managing of AI risks are in place, transparent, and implemented effectively，涵蓋角色責任與人類監督之治理要求",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-028",
+      "officialQuestionNumber": 28,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 9 頁：第 28 題題幹（月收入 SHAP -2.3、負債比率 +1.8）、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "SHAP Documentation－shap.TreeExplainer",
+          "url": "https://shap.readthedocs.io/en/latest/generated/shap.TreeExplainer.html",
+          "locator": "model_output 參數：If \"raw\", then we explain the raw output of the trees, which varies by model…For binary classification in XGBoost, this is the log odds ratio. If \"probability\", then we explain the output of the model transformed into probability space",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-029",
+      "officialQuestionNumber": 29,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 9～10 頁：第 29 題題幹與 (A)～(C) 選項（第 9 頁）、(D) 選項與左欄官方答案 C（第 10 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization（Selvaraju et al., ICCV 2017）",
+          "url": "https://openaccess.thecvf.com/content_iccv_2017/html/Selvaraju_Grad-CAM_Visual_Explanations_ICCV_2017_paper.html",
+          "locator": "摘要：uses the gradients of any target concept…flowing into the final convolutional layer to produce a coarse localization map highlighting the important regions in the image for predicting the concept",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-030",
+      "officialQuestionNumber": 30,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 10 頁：第 30 題題幹（200 個感測器特徵、先標準化再 PCA）、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－2.5.1. Principal component analysis (PCA)",
+          "url": "https://scikit-learn.org/stable/modules/decomposition.html#principal-component-analysis-pca",
+          "locator": "§2.5.1.1：PCA is used to decompose a multivariate dataset in a set of successive orthogonal components that explain a maximum amount of the variance；並說明 PCA centers but does not scale the input data before applying the SVD",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
