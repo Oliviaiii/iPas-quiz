@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-intermediate-2-big-data",
+  "range": {
+    "start": 41,
+    "end": 50
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 8,
+    "corrected": 2,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-041",
+      "officialQuestionNumber": 41,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "answerReason 與 optionAnalysis.D 原寫「隨機選 K 個資料點當中心」「附圖要求輸入 K」，但官方虛擬碼把要分成的群數命名為 X（Input：X：要分成的群數；Algorithm 1. 隨機選擇 X 個資料點作為初始中心）。已改為依附圖用語敘述並註明圖中的 X 即一般寫法的 K（scripts/fix-ai-review-114-2-m2-041-050.py）。",
+        "參考來源定位原寫「共用題組附圖」，但第 41 題並不屬於第 43～47 題的共用題組，其附圖是自己的題幹附圖；已改寫為 PDF 第 12 頁的精確定位。",
+        "已渲染 PDF 第 12 頁並與站內圖檔 public/images/questions/aiap-114-intermediate-2-big-data-p12-1.png 逐行目視比對，內容完全一致；獨立作答為 A（最近中心硬指派＋群內平均更新＝K-means），與官方答案相同。summary／concept／trap 內容正確。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 12 頁：第 41 題題幹、虛擬碼題幹附圖（Input 含 data_points 與 X：要分成的群數；Algorithm 為隨機選 X 個初始中心、指派最近中心、以群內平均更新中心、中心不再變動時停止）、(A)～(D) 選項與左欄官方答案 A",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－2.3.2. K-means",
+          "url": "https://scikit-learn.org/stable/modules/clustering.html#k-means",
+          "locator": "K-means 演算法段：The first step assigns each sample to its nearest centroid. The second step creates new centroids by taking the mean value of all of the samples assigned to each previous centroid…repeats until the centroids do not move significantly",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-042",
+      "officialQuestionNumber": 42,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源定位原寫「共用題組附圖」，但第 42 題不屬於第 43～47 題的共用題組，其程式碼圖是自己的題幹附圖；已改寫為 PDF 第 12～13 頁的精確定位（scripts/fix-ai-review-114-2-m2-041-050.py）。",
+        "已渲染 PDF 第 13 頁並與站內圖檔 aiap-114-intermediate-2-big-data-p13-1.png 目視比對：lambda_poisson = 5 與 print(poisson.pmf(5, lambda_poisson)) 一致。獨立作答為 C；(A) 誤把平均當上限、(B) 把 PMF 當累積、(D) 把 CDF 方向寫反，四項判讀與 draft 相符，內容無誤。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 12～13 頁：第 42 題題幹與左欄官方答案 C（第 12 頁）、SciPy 程式碼題幹附圖與 (A)～(D) 選項（第 13 頁）",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "SciPy API－scipy.stats.poisson",
+          "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.poisson.html",
+          "locator": "probability mass function 定義 poisson.pmf(k, mu)=exp(-mu) mu^k / k!，Methods 表列 pmf、cdf（Cumulative distribution function）、sf（Survival function）等",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-043",
+      "officialQuestionNumber": 43,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 13～14 頁：第 43～47 題共用題組敘述與 vgsales.csv 欄位說明、head() 附圖（第 13 頁）；第 43 題題幹、data['Year'] 輸出附圖（Name: Year, Length: 16598, dtype: float64）、(A)～(D) 選項與左欄官方答案 B（第 14 頁）。已渲染兩頁與站內 p13-2、p14-1 圖檔目視比對，內容一致。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "pandas User Guide－Nullable integer data type",
+          "url": "https://pandas.pydata.org/pandas-docs/stable/user_guide/integer_na.html",
+          "locator": "開頭段說明 Int64 為 pandas extension dtype，字串別名 \"Int64\"（note the capital \"I\"）用以與 NumPy 的 'int64' 區分，且 All NA-like values are replaced with pandas.NA",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-044",
+      "officialQuestionNumber": 44,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 14 頁：第 44 題題幹、(A)～(D) 四種轉型寫法與左欄官方答案 D",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "pandas User Guide－Nullable integer data type",
+          "url": "https://pandas.pydata.org/pandas-docs/stable/user_guide/integer_na.html",
+          "locator": "pd.array([1, 2, np.nan], dtype=\"Int64\") 範例輸出 [1, 2, <NA>]，並說明字串別名 Int64 的大寫 I 與 NumPy int64 之別",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-045",
+      "officialQuestionNumber": 45,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 14～15 頁：第 45 題題幹與左欄官方答案 A（第 14 頁）、(C)(D) 選項（第 15 頁）",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "pandas API－DataFrameGroupBy.sum",
+          "url": "https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.api.typing.DataFrameGroupBy.sum.html",
+          "locator": "方法說明：Compute sum of group values，回傳各群組的數值總和",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-046",
+      "officialQuestionNumber": 46,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 15 頁：第 46 題題幹、(A)～(D) 選項與左欄官方答案 C",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "pandas API－pandas.melt",
+          "url": "https://pandas.pydata.org/docs/reference/api/pandas.melt.html",
+          "locator": "函式說明：Unpivot a DataFrame from wide to long format；var_name 參數為 Name to use for the 'variable' column（None 時使用 'variable'），value_name 預設為 'value'",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "seaborn API－seaborn.barplot",
+          "url": "https://seaborn.pydata.org/generated/seaborn.barplot.html",
+          "locator": "estimator 參數：Statistical function to estimate within each categorical bin（預設 mean），可指定其他彙總函式如 sum",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-047",
+      "officialQuestionNumber": 47,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 15 頁：第 47 題題幹、(A)～(D) 選項與左欄官方答案 B",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "pandas API－DataFrame.nlargest",
+          "url": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.nlargest.html",
+          "locator": "方法說明：Return the first n rows with the largest values in columns, in descending order. The columns that are not specified are returned as well, but not used for ordering；See also 段對照 DataFrame.head 為 Return the first n rows without re-ordering",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-048",
+      "officialQuestionNumber": 48,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 15～16 頁：第 48～50 題共用題組（marketing.csv 載入程式碼與 df.head()／df.describe() 輸出）與第 48 題題幹、(A)～(D) 選項、左欄官方答案 D。已渲染第 16 頁目視核對 describe() 表：youtube 25%=89.250000、facebook 75%=43.680000、sales mean=16.827000 而 50%=15.480000、facebook count=199 其餘欄 count=200。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "pandas API－DataFrame.describe",
+          "url": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html",
+          "locator": "方法說明：Generate descriptive statistics…summarize the central tendency, dispersion and shape of a dataset's distribution, excluding NaN values；percentiles 參數說明 The default, None, will automatically return the 25th, 50th, and 75th percentiles",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-049",
+      "officialQuestionNumber": 49,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 16～17 頁：第 49 題題幹、缺失值計數輸出附圖（youtube 0、facebook 1、newspaper 0、sales 0，dtype: int64）、選項 A～D 四種寫法與 (A)～(D) 組合、左欄官方答案 C。已渲染第 16 頁與站內 p16-2 圖檔目視比對，數值一致，且與共用 head() 圖中 facebook 第 1 列為 NaN 相符。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "pandas API－DataFrame.isna",
+          "url": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isna.html",
+          "locator": "方法說明：Detect missing values；回傳與原物件同尺寸、以 True 標記 NA 的布林物件",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "pandas API－DataFrame.isnull",
+          "url": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.isnull.html",
+          "locator": "頁面標示 DataFrame.isnull 為 DataFrame.isna 的別名（alias of isna）",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-050",
+      "officialQuestionNumber": 50,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 17 頁：第 50 題題幹、程式碼與 OLS Regression Results 附圖、A～F 六項敘述與 (A)～(D) 組合、左欄官方答案 B。已渲染該頁與站內 p17-1 圖檔目視比對：const coef=3.5561、youtube 與 facebook 的 P>|t| 為 0.000、newspaper coef=-0.0006 且 P>|t|=0.914、No. Observations=200、Df Model=3，可據以判定 E（所有係數皆顯著）不成立、C（coef_ 含截距共 4 個）不成立。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－1.1.1 Ordinary Least Squares",
+          "url": "https://scikit-learn.org/stable/modules/linear_model.html",
+          "locator": "LinearRegression 段說明 fit 以 X、y 為引數，並將係數存於 coef_、截距存於 intercept_",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "statsmodels API－statsmodels.regression.linear_model.OLS",
+          "url": "https://www.statsmodels.org/stable/generated/statsmodels.regression.linear_model.OLS.html",
+          "locator": "類別簽章 OLS(endog, exog=None, ...)：endog 為依變數、exog 為自變數，且說明 An intercept is not included by default and should be added by the user",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
