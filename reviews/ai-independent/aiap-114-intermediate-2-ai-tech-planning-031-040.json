@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-intermediate-2-ai-tech-planning",
+  "range": {
+    "start": 31,
+    "end": 40
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 9,
+    "corrected": 1,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-031",
+      "officialQuestionNumber": 31,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 8 頁（共 14 頁）第 31 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Kubernetes Documentation－Horizontal Pod Autoscaling",
+          "url": "https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/",
+          "locator": "HPA 依觀測指標調整工作負載副本數；水平擴展是增加 Pod 以配合需求",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-032",
+      "officialQuestionNumber": 32,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "來源可及性問題：第三筆來源（MDPI, The Population Accuracy Index）對自動化存取回應 HTTP 403，文章頁與 doi.org 轉址皆無法以程式開啟（已以瀏覽器 UA 重試）。引用本身正確、論文確實存在，但下一位複核者若以自動化方式查核會撞到同樣的死巷。已把此限制寫入該筆 locator 與 editorialNote，並指明 PSI 的定義另有可自動存取的 SAS Model Manager 使用手冊（第二筆來源）佐證，不影響本題論據。",
+        "官方答案 D 不受影響。修正以 scripts/fix-ai-review-114-2-m1-031-040.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 8～9 頁（共 14 頁）第 32 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "SAS Model Manager User's Guide－Population Stability",
+          "url": "https://documentation.sas.com/api/docsets/mdlmgrug/v_026/content/mdlmgrug.pdf?locale=en",
+          "locator": "Performance Monitoring 章：PSI 衡量特徵分布相對基準隨時間改變的程度",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "The Population Accuracy Index: A New Measure of Population Stability for Model Monitoring（Risks 7(2):53）",
+          "url": "https://www.mdpi.com/2227-9091/7/2/53",
+          "locator": "第 1.2 節：PSI 用於監控目前資料相對模型開發資料的分布位移並討論其限制；註：MDPI 阻擋自動化存取（403），需以瀏覽器人工開啟",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-033",
+      "officialQuestionNumber": 33,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 9 頁（共 14 頁）第 33 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Efficient Estimation of Word Representations in Vector Space（arXiv:1301.3781）",
+          "url": "https://arxiv.org/abs/1301.3781",
+          "locator": "第 3 節：CBOW 由上下文預測目前詞；Skip-gram 由目前詞預測前後詞",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Distributed Representations of Words and Phrases and their Compositionality（arXiv:1310.4546）",
+          "url": "https://arxiv.org/abs/1310.4546",
+          "locator": "negative sampling 與高頻詞 subsampling 改善 Skip-gram 訓練效率與表示品質",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-034",
+      "officialQuestionNumber": 34,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 9 頁（共 14 頁）第 34 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Kirillov et al., Panoptic Segmentation（arXiv:1801.00868）",
+          "url": "https://arxiv.org/abs/1801.00868",
+          "locator": "摘要與任務定義：統一每像素類別的 semantic segmentation 與逐物件的 instance segmentation",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-035",
+      "officialQuestionNumber": 35,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 9 頁（共 14 頁）第 35 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Learning Transferable Visual Models From Natural Language Supervision（arXiv:2103.00020）",
+          "url": "https://arxiv.org/abs/2103.00020",
+          "locator": "摘要、第 2.3 節與圖 1：圖文對比預訓練，利用文字類別提示進行零樣本預測",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-036",
+      "officialQuestionNumber": 36,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 9～10 頁（共 14 頁）第 36 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－GridSearchCV",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html",
+          "locator": "以交叉驗證對指定參數值進行 exhaustive search，最佳化 estimator 超參數",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-037",
+      "officialQuestionNumber": 37,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 10 頁（共 14 頁）第 37 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch－DistributedDataParallel",
+          "url": "https://docs.pytorch.org/docs/stable/generated/torch.nn.parallel.DistributedDataParallel.html",
+          "locator": "DDP 同步多個模型副本；不會自動切分輸入，需搭配 DistributedSampler 等方式分片資料",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch－DistributedSampler",
+          "url": "https://docs.pytorch.org/docs/stable/data.html#torch.utils.data.distributed.DistributedSampler",
+          "locator": "限制每個分散式程序只載入資料集的互斥子集",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-038",
+      "officialQuestionNumber": 38,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 10 頁（共 14 頁）第 38 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Hugging Face Diffusers－Stable Diffusion 3 Pipeline",
+          "url": "https://huggingface.co/docs/diffusers/api/pipelines/stable_diffusion/stable_diffusion_3",
+          "locator": "num_inference_steps 通常越多品質越高但推論更慢；guidance_scale 過高通常犧牲影像品質",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Hugging Face Diffusers－Schedulers",
+          "url": "https://huggingface.co/docs/diffusers/main/using-diffusers/schedulers",
+          "locator": "scheduler、timestep spacing 與 solver 設定會影響少步推論的品質與細節",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-039",
+      "officialQuestionNumber": 39,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 10～11 頁（共 14 頁）第 39 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－Autocorrelation",
+          "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda35c.htm",
+          "locator": "自相關圖用於檢查時間序列中不同 lag 的相關性及隨機性——殘差多個 lag 顯著即非白噪音",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "statsmodels－STL decomposition",
+          "url": "https://www.statsmodels.org/stable/examples/notebooks/generated/stl_decomposition.html",
+          "locator": "時間序列分解與季節成分；週期性結構需在模型中處理",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-040",
+      "officialQuestionNumber": 40,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 11 頁（共 14 頁）第 40 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Auto-Encoding Variational Bayes（arXiv:1312.6114）",
+          "url": "https://arxiv.org/abs/1312.6114",
+          "locator": "變分下界、重參數化與顯式潛在變數生成模型的訓練方法",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Generative Adversarial Nets（arXiv:1406.2661）",
+          "url": "https://arxiv.org/abs/1406.2661",
+          "locator": "以生成器與鑑別器進行 minimax 對抗訓練的生成模型框架",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Denoising Diffusion Probabilistic Models（arXiv:2006.11239）",
+          "url": "https://arxiv.org/abs/2006.11239",
+          "locator": "前向加噪 Markov chain 與學習反向去噪過程的生成方法",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}

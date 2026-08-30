@@ -24102,11 +24102,11 @@
         {
           "title": "The Population Accuracy Index: A New Measure of Population Stability for Model Monitoring",
           "url": "https://www.mdpi.com/2227-9091/7/2/53",
-          "locator": "第 1.2 節：PSI 用於監控目前資料相對模型開發資料的分布位移，並討論其限制",
-          "checkedAt": "2026-08-12"
+          "locator": "第 1.2 節：PSI 用於監控目前資料相對模型開發資料的分布位移，並討論其限制。註：MDPI 對自動化存取回應 HTTP 403（文章頁與 doi.org 轉址皆同），需以瀏覽器人工開啟；本題所依據的 PSI 定義另有可自動存取的 SAS Model Manager 使用手冊佐證",
+          "checkedAt": "2026-08-30"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。PSI 是風險指標而非效能因果證明，且常見 0.1／0.25 門檻只是經驗值；本題依「提早發現風險」與官方答案 D 解讀。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。PSI 是風險指標而非效能因果證明，且常見 0.1／0.25 門檻只是經驗值；本題依「提早發現風險」與官方答案 D 解讀。來源可及性（獨立 AI 複核 2026-08-30 查核）：第三筆 MDPI 文章對自動化存取回應 HTTP 403，文章頁與 doi.org 轉址皆無法以程式開啟，需以瀏覽器人工檢視；引用本身正確，且 PSI 的定義另有可自動存取的 SAS Model Manager 使用手冊（第二筆來源）佐證，不影響本題論據。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-08-12"
     }
