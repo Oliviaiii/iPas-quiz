@@ -42407,10 +42407,10 @@
           "checkedAt": "2026-08-13"
         },
         {
-          "title": "PyTorch－Quantization Recipe",
-          "url": "https://docs.pytorch.org/tutorials/recipes/quantization.html",
-          "locator": "Dynamic quantization 將模型權重由 32-bit 浮點轉為 8-bit 整數的範例",
-          "checkedAt": "2026-08-13"
+          "title": "ONNX Runtime Documentation－Quantization",
+          "url": "https://onnxruntime.ai/docs/performance/model-optimizations/quantization.html",
+          "locator": "Quantization Overview：Quantization in ONNX Runtime refers to 8 bit linear quantization of an ONNX model. During quantization, the floating point values are mapped to an 8 bit quantization space；並區分 post-training quantization 與 quantization-aware training",
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "PyTorch－INT8 Quantization for x86 CPU",

@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-intermediate-1-machine-learning",
+  "range": {
+    "start": 21,
+    "end": 30
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 8,
+    "corrected": 1,
+    "humanDecision": 1,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-021",
+      "officialQuestionNumber": 21,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源 https://docs.pytorch.org/tutorials/recipes/quantization.html 已回傳 HTTP 404（PyTorch tutorials 改版後該頁移除；stable 版 quantization 文件頁的正文為前端動態渲染，亦無法取得文字核實）。已改引 ONNX Runtime 量化文件（scripts/fix-ai-review-115-1-m3-021-030.py），其 Quantization Overview 逐字說明浮點值映射到 8 bit 量化空間。",
+        "獨立作答為 D；FP32→INT8 且不重新訓練即為（訓練後）量化，draft 亦正確區分蒸餾、剪枝與張量分解，並如實限定題目僅提及權重量化。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 6 頁：第 21 題題幹（32-bit 浮點權重轉 8-bit 整數、不重新訓練）、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "ONNX Runtime Documentation－Quantization",
+          "url": "https://onnxruntime.ai/docs/performance/model-optimizations/quantization.html",
+          "locator": "Quantization Overview：Quantization in ONNX Runtime refers to 8 bit linear quantization of an ONNX model. During quantization, the floating point values are mapped to an 8 bit quantization space of the form: val_fp32 = scale * (val_quantized - zero_point)",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch Blog－INT8 Quantization for x86 CPU in PyTorch",
+          "url": "https://pytorch.org/blog/int8-quantization/",
+          "locator": "文中示範 PyTorch static post-training quantization 流程（prepare_fx／convert_fx），說明模型訓練完成後才進行 INT8 量化",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-022",
+      "officialQuestionNumber": 22,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 6 頁：第 22 題題幹（RAG 向量搜尋語意匹配不準）、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Microsoft Learn－Hybrid search overview（Azure AI Search）",
+          "url": "https://learn.microsoft.com/en-us/azure/search/hybrid-search-overview",
+          "locator": "說明 hybrid query 會平行執行全文（BM25）與向量搜尋，再把兩組結果合併成單一排序回應",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Microsoft Learn－Relevance scoring in hybrid search using RRF",
+          "url": "https://learn.microsoft.com/en-us/azure/search/hybrid-search-ranking",
+          "locator": "說明 Reciprocal Rank Fusion 依各查詢結果中文件的排名倒數加總，融合來自不同檢索法的排序",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-023",
+      "officialQuestionNumber": 23,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 6 頁：第 23 題題幹（以合約前半段生成後半段條款，BERT 明顯較差）、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding（NAACL 2019）",
+          "url": "https://aclanthology.org/N19-1423/",
+          "locator": "摘要：BERT is designed to pre-train deep bidirectional representations…by jointly conditioning on both left and right context in all layers，屬 encoder-only 的遮罩語言模型",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Language Models are Unsupervised Multitask Learners（GPT-2, Radford et al.）",
+          "url": "https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf",
+          "locator": "§2 說明語言模型以 p(x)=Π p(sₙ | s₁,…,sₙ₋₁) 的自回歸分解建模，逐 token 依前文預測下一個 token",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-024",
+      "officialQuestionNumber": 24,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 6 頁：第 24 題題幹（約 3,000 個商品類別）、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.preprocessing.OneHotEncoder",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html",
+          "locator": "類別說明：Encode categorical features as a one-hot numeric array，為每個類別建立一個二元欄位，輸出可為稀疏矩陣",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.preprocessing.TargetEncoder",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.TargetEncoder.html",
+          "locator": "類別說明：以各類別的目標條件平均（含 shrinkage 與 cross fitting）取代類別值，輸出維度不隨類別數膨脹",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-025",
+      "officialQuestionNumber": 25,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 7 頁：第 25 題題幹（距捷運站距離右偏、Log 後改善；屋齡 Log 後反而變差）、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "SciPy API－scipy.stats.boxcox",
+          "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.boxcox.html",
+          "locator": "Box-Cox 轉換式說明：lmbda = 0 時為 log(x)，且輸入須為正值，可見 Log 與 Box-Cox 同屬冪轉換家族",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.preprocessing.PowerTransformer",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PowerTransformer.html",
+          "locator": "類別說明：Apply a power transform featurewise to make data more Gaussian-like…useful for modeling issues related to heteroscedasticity；轉換係逐特徵套用，可各自選擇",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-026",
+      "officialQuestionNumber": 26,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 7 頁：第 26 題題幹（滑動窗口把過去多個時間點組合為輸入）、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn Examples－Lagged features for time series forecasting",
+          "url": "https://scikit-learn.org/stable/auto_examples/applications/plot_time_series_lagged_features.html",
+          "locator": "示範以 shift 產生過去時間點的 lagged features 作為輸入，將時間序列預測轉為監督式學習問題",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-027",
+      "officialQuestionNumber": 27,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 7 頁：第 27 題題幹（原以第 1～52 週訓練、第 53 週測試，對第 80 週衰退）、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.model_selection.TimeSeriesSplit",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html",
+          "locator": "類別說明依時間順序切分（訓練集在前、測試集在後）；max_train_size 參數可限制單一訓練集的最大樣本數，即固定長度的滾動窗口",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn Examples－Time-based cross-validation",
+          "url": "https://scikit-learn.org/stable/auto_examples/applications/plot_cyclical_feature_engineering.html#time-based-cross-validation",
+          "locator": "說明時間序列須採 time-based cross-validation，避免以未來資料訓練、過去資料評估",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-028",
+      "officialQuestionNumber": 28,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 7 頁：第 28 題題幹（50 個特徵、部分非線性、須提供整體特徵重要性供稽核）、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.ensemble.RandomForestRegressor",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html",
+          "locator": "類別說明：以多棵決策樹迴歸器在資料子樣本上擬合並取平均以提升預測準確度與抑制過擬合；feature_importances_ 提供 impurity-based 特徵重要性",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Permutation feature importance",
+          "url": "https://scikit-learn.org/stable/modules/permutation_importance.html",
+          "locator": "說明 impurity-based feature importance 對高基數（cardinality）特徵有偏誤，建議另以 permutation importance 於保留資料上評估",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-029",
+      "officialQuestionNumber": 29,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 7～8 頁：第 29 題題幹（僅有大量正常振動資料、無故障標註）與左欄官方答案 B（第 7 頁）、(A)～(D) 選項（第 8 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Novelty and Outlier Detection",
+          "url": "https://scikit-learn.org/stable/modules/outlier_detection.html",
+          "locator": "區分 outlier detection（訓練資料含離群點，屬 unsupervised）與 novelty detection（訓練資料未受污染，屬 semi-supervised），後者判斷新觀測是否為 novelty",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.ensemble.IsolationForest",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.IsolationForest.html",
+          "locator": "類別說明：以隨機選特徵與切分值隔離觀測，路徑長度較短者異常分數較高，屬非監督異常偵測",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-030",
+      "officialQuestionNumber": 30,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "human-decision",
+      "findings": [
+        "獨立複核確認 draft 既有 editorialNote 的疑義成立：官方答案 B「高變異」與選項 C「過擬合」在本題描述下高度重疊——訓練 AUC 0.97 對驗證 0.72 正是過擬合的定義性現象，而高變異則是其偏差—變異分解下的機制說法，兩者並非互斥概念，題目卻同時列為可選項。",
+        "題幹另給的「少數違約樣本預測波動極大」與「不同 K-fold 切分結果差異明顯」較偏向 variance（對抽樣擾動敏感）的辨識線索，可支持官方答案 B；但仍需命題單位或人工複核裁量是否應改寫選項以避免概念重疊。依規則不擅改官方答案，保留 B 並記為 human-decision。",
+        "題幹、四個選項與官方答案 B 均與 PDF 第 8 頁一致；draft 的 optionAnalysis 已如實指出 C 也能描述該現象，敘述未誤導。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+          "locator": "PDF 第 8 頁：第 30 題題幹（訓練 AUC=0.97、驗證 AUC=0.72、少數違約樣本預測波動大、K-fold 差異明顯）、(A) 高偏差～(D) 資料漂移選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn Examples－Underfitting vs. Overfitting",
+          "url": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_underfitting_overfitting.html",
+          "locator": "示例說明模型複雜度過高時 learns the noise of the training data，訓練誤差低但對未見資料泛化差，即過擬合",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Validation curves: plotting scores to evaluate models",
+          "url": "https://scikit-learn.org/stable/modules/learning_curve.html",
+          "locator": "說明以交叉驗證的訓練／驗證分數及其變異診斷 bias 與 variance：high variance 表現為兩者落差大且分數隨切分波動",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.model_selection.StratifiedKFold",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html",
+          "locator": "以保留各類別比例的分層折切分，可降低少數類在各折數量差異造成的評估波動",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
