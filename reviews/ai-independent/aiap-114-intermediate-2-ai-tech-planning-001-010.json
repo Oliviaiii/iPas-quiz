@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-intermediate-2-ai-tech-planning",
+  "range": {
+    "start": 1,
+    "end": 10
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 8,
+    "corrected": 2,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-001",
+      "officialQuestionNumber": 1,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 1 頁（共 14 頁）第 1 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Hugging Face Transformers－Text classification",
+          "url": "https://huggingface.co/docs/transformers/tasks/sequence_classification",
+          "locator": "情感分析為文字分類的一種，將正向、負向或中立標籤指派給文字序列",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-002",
+      "officialQuestionNumber": 2,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 1 頁（共 14 頁）第 2 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Vaswani et al., Attention Is All You Need（arXiv:1706.03762）",
+          "url": "https://arxiv.org/abs/1706.03762",
+          "locator": "摘要與第 3 節：Transformer 僅以注意力機制建構序列轉換模型；第 4 節比較各層型態連結任意兩位置的最大路徑長度，自注意力為 O(1)",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-003",
+      "officialQuestionNumber": 3,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 1 頁（共 14 頁）第 3 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Devlin et al., BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding（arXiv:1810.04805）",
+          "url": "https://arxiv.org/abs/1810.04805",
+          "locator": "摘要與第 3.1 節：MLM 隨機遮罩輸入 token，利用左右上下文預測原 token；遮罩策略為 80% [MASK]、10% 隨機詞、10% 保留原詞",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-004",
+      "officialQuestionNumber": 4,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 1～2 頁（共 14 頁）第 4 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Mikolov et al., Efficient Estimation of Word Representations in Vector Space（arXiv:1301.3781）",
+          "url": "https://arxiv.org/abs/1301.3781",
+          "locator": "第 2 節：CBOW 由上下文預測當前詞，Skip-gram 由當前詞預測上下文——即預測式模型",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Pennington, Socher & Manning, GloVe: Global Vectors for Word Representation",
+          "url": "https://nlp.stanford.edu/pubs/glove.pdf",
+          "locator": "摘要與第 3 節：模型直接使用全域 word-word co-occurrence counts，並以加權最小平方法學習——即共現統計式模型",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-005",
+      "officialQuestionNumber": 5,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 保留一項正確的限定（TF-IDF 並非必然放大長文本常見詞的權重，端視 TF 定義與是否正規化），並把「題目預設的 TF 計算方式」列為待查。本次已逐字核對試題全文：題幹與四個選項均未指明 TF 的計算方式，此點無從查證。惟本題答案不受影響——選項 B（TF-IDF 需要句子邊界）、C（無法同時處理多份文件）、D（文件長度改變 IDF）在計算定義上均為錯誤，A 是唯一可選者。已改寫 editorialNote 記錄此查證結果與判定基礎；限定本身維持在選項 A 解析與解題提醒中，不移除。",
+        "修正以 scripts/fix-ai-review-114-2-m1-001-010.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 2 頁（共 14 頁）第 5 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－TfidfTransformer",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html",
+          "locator": "公式與參數：tf-idf 為 tf × idf；norm 預設 'l2'，sublinear_tf 可以 1 + log(tf) 取代原始詞頻——佐證 editorialNote 所保留的限定",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-006",
+      "officialQuestionNumber": 6,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 2 頁（共 14 頁）第 6 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Jurafsky & Martin, Speech and Language Processing（3rd ed. draft）－N-gram Language Models",
+          "url": "https://web.stanford.edu/~jurafsky/slp3/3.pdf",
+          "locator": "第 3.2 節：以 Markov assumption 將下一詞機率近似為只依賴固定數量的前詞；佐證選項 D「假設所有詞相互獨立」為錯誤敘述",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-007",
+      "officialQuestionNumber": 7,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 保留一項正確的解讀限定（高 IoU 門檻要求通過者定位更精準，而非調高門檻會讓模型輸出改善），並把「是否需在前端用語中特別保留此限定」列為待查。本次確認限定必要且已就位：選項 A 解析以「正確（就評估條件而言）」開頭並說明其意，選項 B、C 的解析也各自點出調高門檻不會使 mAP 上升、recall 也不會自然上升，讀者在選項層即可看到此界線，無須另加前端標示。已改寫 editorialNote 記錄此判定，待查項目結案。",
+        "修正以 scripts/fix-ai-review-114-2-m1-001-010.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 2 頁（共 14 頁）第 7 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Torchvision－box_iou",
+          "url": "https://docs.pytorch.org/vision/stable/generated/torchvision.ops.box_iou.html",
+          "locator": "IoU 定義：area of intersection / area of union",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "COCO－Detection Evaluation",
+          "url": "https://cocodataset.org/#detection-eval",
+          "locator": "AP 以 IoU=.50:.05:.95 等門檻回報，並區分 AP at IoU=.50 與 .75；門檻越高代表定位要求越嚴",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-008",
+      "officialQuestionNumber": 8,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 2～3 頁（共 14 頁）第 8 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch－Softmax",
+          "url": "https://docs.pytorch.org/docs/stable/generated/torch.nn.Softmax.html",
+          "locator": "定義：以指數重新縮放指定維度的元素，使其落在 [0,1] 且總和為 1",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch－MaxPool2d",
+          "url": "https://docs.pytorch.org/docs/stable/generated/torch.nn.MaxPool2d.html",
+          "locator": "定義與公式：對每個滑動 kernel 視窗取最大值",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-009",
+      "officialQuestionNumber": 9,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 3 頁（共 14 頁）第 9 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "TensorFlow－Data augmentation 官方教學",
+          "url": "https://www.tensorflow.org/tutorials/images/data_augmentation",
+          "locator": "Overview：以會產生可信（believable）影像的隨機轉換增加訓練資料多樣性；佐證增強須維持語意一致",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Cubuk et al., RandAugment（arXiv:1909.13719）",
+          "url": "https://arxiv.org/abs/1909.13719",
+          "locator": "摘要與方法：增強策略的轉換種類、強度與數量會影響模型表現，需在目標資料集上選擇",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-010",
+      "officialQuestionNumber": 10,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 3 頁（共 14 頁）第 10 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Metrics and scoring：Precision, recall and F-measures",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html#precision-recall-f-measure-metrics",
+          "locator": "precision、recall 定義；F-beta 為兩者的加權調和平均，beta=1 即 F1",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
