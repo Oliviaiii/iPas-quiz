@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-intermediate-2-machine-learning",
+  "range": {
+    "start": 31,
+    "end": 40
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 3,
+    "corrected": 6,
+    "humanDecision": 1,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-031",
+      "officialQuestionNumber": 31,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源定位原寫「第 31 題題幹、選項、附圖與官方答案」，但本題在官方 PDF 與題庫皆無附圖，屬誤植；已改為逐頁精確定位並註明無附圖（scripts/fix-ai-review-114-2-m3-031-040.py）。",
+        "獨立作答為 B；summary／concept／answerReason／optionAnalysis／trap 內容正確，並正確指出測試集不可用於早停決策。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 7～8 頁：第 31 題題幹與左欄官方答案 B（第 7 頁）、(A)～(D) 選項（第 8 頁）。本題無附圖，已與 PDF 逐頁比對確認。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Keras API－EarlyStopping callback",
+          "url": "https://keras.io/api/callbacks/early_stopping/",
+          "locator": "EarlyStopping(monitor=\"val_loss\", min_delta=0, patience=0, …, restore_best_weights=False, …)；patience 定義為 Number of epochs with no improvement after which training will be stopped",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-032",
+      "officialQuestionNumber": 32,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源定位原寫「第 32 題題幹、選項、附圖與官方答案」，但本題在官方 PDF 與題庫皆無附圖，屬誤植；已改為逐頁精確定位並註明無附圖（scripts/fix-ai-review-114-2-m3-031-040.py）。",
+        "獨立作答為 D；詳解正確區分 L1 可將係數壓為 0 的嵌入式特徵選擇與 L2 僅縮小權重，內容無誤。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 8 頁：第 32 題題幹、(A)～(D) 選項與左欄官方答案 D。本題無附圖，已與 PDF 逐頁比對確認。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.linear_model.Lasso",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html",
+          "locator": "類別說明：Linear Model trained with L1 prior as regularizer (aka the Lasso)，目標函數為 ||y - Xw||²/(2n) + alpha * ||w||₁",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-033",
+      "officialQuestionNumber": 33,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源定位原寫「第 33 題題幹、選項、附圖與官方答案」，但本題在官方 PDF 與題庫皆無附圖，屬誤植；已改為逐頁精確定位並註明無附圖（scripts/fix-ai-review-114-2-m3-031-040.py）。",
+        "獨立作答為 B；全成對比較數 n(n-1)/2 的最高次項為 n²，詳解推導與 Big-O 說明正確。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 8 頁：第 33 題題幹、(A)～(D) 選項與左欄官方答案 B。本題無附圖，已與 PDF 逐頁比對確認。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.metrics.pairwise.cosine_similarity",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html",
+          "locator": "Returns 說明：回傳形狀為 (n_samples_X, n_samples_Y) 的相似度矩陣，全成對比較即 n×n 規模",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-034",
+      "officialQuestionNumber": 34,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "human-decision",
+      "findings": [
+        "獨立複核確認 draft 既有 editorialNote 的疑義仍成立：選項 (D)「分層留一法交叉驗證（Stratified Leave-One-Out Cross Validation）」並非 scikit-learn 所列的標準切分器，且 LeaveOneOut 每個驗證折僅含一筆樣本，單折不可能同時含正負類、無法維持約 8% 的陽性比例，因此該名稱在定義上自相矛盾。",
+        "官方答案 D 的命題意圖（分層＝類別比例一致、留一＝資料利用率最大）可以理解，但術語本身需要命題單位或人工複核裁量。依規則不擅改官方答案，保留 D 並記為 human-decision；draft 已如實揭露此矛盾並建議實務改用 StratifiedKFold 或 repeated stratified CV，敘述無誤導。",
+        "同時修正本題參考來源定位誤植的「附圖」（本題無附圖），改為 PDF 第 8～9 頁的精確定位。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 8～9 頁：第 34 題題幹（150 筆、陽性不到 8%）與左欄官方答案 D（第 8 頁）、(A) 5-Fold～(D) Stratified Leave-One-Out 選項（第 9 頁）。本題無附圖，已與 PDF 逐頁比對確認。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.model_selection.LeaveOneOut",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.LeaveOneOut.html",
+          "locator": "類別說明：Each sample is used once as a test set (singleton) while the remaining samples form the training set，可證單一驗證折僅一筆樣本",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.model_selection.StratifiedKFold",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html",
+          "locator": "類別說明：The folds are made by preserving the percentage of samples for each class；scikit-learn 未提供 Stratified Leave-One-Out 切分器",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-035",
+      "officialQuestionNumber": 35,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源定位原寫「第 35 題題幹、選項、附圖與官方答案」，但本題在官方 PDF 與題庫皆無附圖，屬誤植；已改為逐頁精確定位並註明無附圖（scripts/fix-ai-review-114-2-m3-031-040.py）。",
+        "獨立作答為 A；(6+3)/(6+3+1)=90% 已達 80% 門檻，詳解的累積解釋變異計算與四個選項判讀均正確。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 9 頁：第 35 題題幹（λ1=6.0、λ2=3.0、λ3=1.0）、(A)～(D) 選項與左欄官方答案 A。本題無附圖，已與 PDF 逐頁比對確認。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.decomposition.PCA",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html",
+          "locator": "屬性說明：explained_variance_ 為各主成分解釋的變異量，explained_variance_ratio_ 為其占總變異的比例",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-036",
+      "officialQuestionNumber": 36,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源定位原寫「第 36 題題幹、選項、附圖與官方答案」，但本題在官方 PDF 與題庫皆無附圖，屬誤植；已改為逐頁精確定位並註明無附圖（scripts/fix-ai-review-114-2-m3-031-040.py）。",
+        "獨立作答為 D；詳解正確區分同態加密（密文上運算）與差分隱私（加噪音），並提醒實務受方案支援運算與效能限制，未過度宣稱。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 9 頁：第 36 題題幹、(A)～(D) 選項與左欄官方答案 D。本題無附圖，已與 PDF 逐頁比對確認。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "HomomorphicEncryption.org－Introduction",
+          "url": "https://homomorphicencryption.org/introduction/",
+          "locator": "定義段：同態加密允許在加密資料上進行運算 without requiring access to a secret key；The result of such a computation remains in encrypted form, and can at a later point be revealed by the owner of the secret key",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-037",
+      "officialQuestionNumber": 37,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源定位原寫「第 37 題題幹、選項、附圖與官方答案」，但本題在官方 PDF 與題庫皆無附圖，屬誤植；已改為逐頁精確定位並註明無附圖（scripts/fix-ai-review-114-2-m3-031-040.py）。",
+        "獨立作答為 B：四個組合中只有 B 同時具備密文運算（同態加密）與典型安全通訊三件組（非對稱做金鑰協商／身分、對稱做大量資料加密、雜湊做完整性摘要）；(A) 缺同態加密，(C) 以差分隱私取代通訊元件，(D) 缺非對稱金鑰機制。",
+        "draft 既有的 editorialNote 保留意見（單純 hash 無法自證來源、亦不能防重放，實作應採 MAC／AEAD 與 nonce／序號）經查核屬實且措辭恰當，屬正確的專業限定而非答案爭議，故仍判 pass 級的 corrected（本次只更動定位）。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 9～10 頁：第 37 題題幹與 (A)(B) 選項、左欄官方答案 B（第 9 頁）、(C)(D) 選項（第 10 頁）。本題無附圖，已與 PDF 逐頁比對確認。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "HomomorphicEncryption.org－Introduction",
+          "url": "https://homomorphicencryption.org/introduction/",
+          "locator": "同態加密允許計算方在 without requiring access to a secret key 的情況下對密文運算",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST SP 800-38D－Recommendation for Block Cipher Modes of Operation: GCM and GMAC",
+          "url": "https://csrc.nist.gov/pubs/sp/800/38/d/final",
+          "locator": "摘要：GCM 提供 authenticated encryption with associated data，其特化 GMAC 為未加密資料產生 message authentication code (MAC)",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-038",
+      "officialQuestionNumber": 38,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 10 頁：第 38 題題幹、程式碼附圖、(A)～(D) 選項與左欄官方答案 B。已渲染該頁與站內圖檔 aiap-114-intermediate-2-machine-learning-p10-1.png 目視比對：def metric(y_true, y_pred): return sum((y_true - y_pred) ** 2) / len(y_true)，無 abs 亦無 sqrt，確為 MSE。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.metrics.mean_squared_error",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html",
+          "locator": "函式說明：Mean squared error regression loss，即 (1/n)Σ(yᵢ-ŷᵢ)²",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-039",
+      "officialQuestionNumber": 39,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 10 頁：第 39 題題幹、程式碼附圖、(A)～(D) 選項與左欄官方答案 C。已渲染該頁與站內圖檔 aiap-114-intermediate-2-machine-learning-p10-2.png 目視比對：training 時 mask = np.random.binomial(1, p, size=x.shape)、return x * mask / p，否則 return x，確為 inverted Dropout。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch Docs－torch.nn.Dropout",
+          "url": "https://docs.pytorch.org/docs/stable/generated/torch.nn.Dropout.html",
+          "locator": "類別說明：During training, randomly zeroes some of the elements of the input tensor with probability p…sampled from a Bernoulli distribution…the outputs are scaled by a factor of 1/(1-p) during training；evaluation 時模組為 identity",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-040",
+      "officialQuestionNumber": 40,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 10 頁：第 40 題題幹、程式碼附圖、(A)～(D) 選項與左欄官方答案 C。已渲染該頁與站內圖檔 aiap-114-intermediate-2-machine-learning-p10-3.png 目視比對：v1=np.array([1,2,3])、v2=np.array([4,5,6])、A=np.array([[1,2],[3,4]])，故 np.dot(v1,v2)=32、v1*v2=[4,10,18]。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NumPy API－numpy.dot",
+          "url": "https://numpy.org/doc/stable/reference/generated/numpy.dot.html",
+          "locator": "Notes：If both a and b are 1-D arrays, it is inner product of vectors (without complex conjugation)",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NumPy API－numpy.linalg.inv",
+          "url": "https://numpy.org/doc/stable/reference/generated/numpy.linalg.inv.html",
+          "locator": "函式說明：Compute the inverse of a matrix，並非行列式（行列式為 numpy.linalg.det）",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NumPy API－numpy.linalg.eig",
+          "url": "https://numpy.org/doc/stable/reference/generated/numpy.linalg.eig.html",
+          "locator": "函式說明：Compute the eigenvalues and right eigenvectors of a square array，回傳特徵值與特徵向量而非反矩陣",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
