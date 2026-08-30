@@ -33954,10 +33954,10 @@
           "checkedAt": "2026-08-12"
         },
         {
-          "title": "NIST－Sensitivity and Specificity 官方手冊",
-          "url": "https://www.itl.nist.gov/div898/software/dataplot/refman2/auxillar/sensitiv.htm",
-          "locator": "Sensitivity = true positive rate；specificity = true negative rate，並列出混淆矩陣公式",
-          "checkedAt": "2026-08-12"
+          "title": "scikit-learn API－sklearn.metrics.roc_curve",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_curve.html",
+          "locator": "Returns 段：fpr 為 Increasing false positive rates…、tpr 為 Increasing true positive rates…，各元素對應 thresholds[i]，說明 ROC 由多個判定門檻的 FPR／TPR 組成",
+          "checkedAt": "2026-08-30"
         }
       ],
       "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",

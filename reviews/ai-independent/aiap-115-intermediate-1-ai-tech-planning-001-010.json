@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-intermediate-1-ai-tech-planning",
+  "range": {
+    "start": 1,
+    "end": 10
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 9,
+    "corrected": 1,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-001",
+      "officialQuestionNumber": 1,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 1 頁：第 1 題題幹、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "spaCy Usage－Linguistic Features",
+          "url": "https://spacy.io/usage/linguistic-features",
+          "locator": "Part-of-speech tagging 段：After tokenization, spaCy can parse and tag a given Doc…make predictions of which tag or label most likely applies in this context，並以 Token.pos_／Token.tag_ 取得詞性標籤",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-002",
+      "officialQuestionNumber": 2,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 1 頁：第 2 題題幹、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "LoRA: Low-Rank Adaptation of Large Language Models（Hu et al., 2021）",
+          "url": "https://arxiv.org/abs/2106.09685",
+          "locator": "摘要：LoRA…freezes the pre-trained model weights and injects trainable rank decomposition matrices into each layer of the Transformer architecture, greatly reducing the number of trainable parameters for downstream tasks",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-003",
+      "officialQuestionNumber": 3,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 1 頁：第 3 題題幹、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Efficient Estimation of Word Representations in Vector Space（Mikolov et al., 2013）",
+          "url": "https://arxiv.org/abs/1301.3781",
+          "locator": "摘要：We propose two novel model architectures for computing continuous vector representations of words from very large data sets；§3 定義 CBOW 由上下文預測當前詞、Skip-gram 由當前詞預測上下文",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Distributed Representations of Words and Phrases and their Compositionality（Mikolov et al., 2013）",
+          "url": "https://arxiv.org/abs/1310.4546",
+          "locator": "摘要：The recently introduced continuous Skip-gram model is an efficient method for learning high-quality distributed vector representations…By subsampling of the frequent words we obtain significant speedup and also learn more regular word representations；並提出 negative sampling",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-004",
+      "officialQuestionNumber": 4,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 1～2 頁：第 4 題題幹與 (A)(B) 選項、左欄官方答案 C（第 1 頁）、(C)(D) 選項（第 2 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+          "url": "https://arxiv.org/abs/1810.04805",
+          "locator": "摘要：BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers；§3.1 說明 MLM 隨機遮蔽部分 token 並預測其原始內容",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-005",
+      "officialQuestionNumber": 5,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 2 頁：第 5 題題幹、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Efficient Estimation of Word Representations in Vector Space（Mikolov et al., 2013）",
+          "url": "https://arxiv.org/abs/1301.3781",
+          "locator": "摘要：We propose two novel model architectures for computing continuous vector representations of words from very large data sets；§3 定義 CBOW 由上下文預測當前詞、Skip-gram 由當前詞預測上下文",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-006",
+      "officialQuestionNumber": 6,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 2 頁：第 6 題題幹（道路／建築／行人逐像素分類並區分行人#1、#2）、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Mask R-CNN（He et al., 2017）",
+          "url": "https://arxiv.org/abs/1703.06870",
+          "locator": "摘要：efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance…adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "U-Net: Convolutional Networks for Biomedical Image Segmentation（Ronneberger et al., 2015）",
+          "url": "https://arxiv.org/abs/1505.04597",
+          "locator": "摘要：a contracting path to capture context and a symmetric expanding path that enables precise localization，代表逐像素語義分割的典型 encoder-decoder 架構",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-007",
+      "officialQuestionNumber": 7,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 2 頁：第 7 題題幹（需 pixel-level mask 且區分同類個體）、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Mask R-CNN（He et al., 2017）",
+          "url": "https://arxiv.org/abs/1703.06870",
+          "locator": "摘要：efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance…adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-008",
+      "officialQuestionNumber": 8,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源 https://www.itl.nist.gov/div898/software/dataplot/refman2/auxillar/sensitiv.htm 雖回傳 200，實際卻 301 轉址到 https://www.nist.gov/itl（NIST ITL 首頁），原定位所述的 sensitivity／specificity 與混淆矩陣公式已不存在該網址。已改引 scikit-learn roc_curve API 頁（scripts/fix-ai-review-115-1-m1-001-010.py），其 Returns 段明列 fpr 與 tpr 及對應門檻。",
+        "獨立作答為 B；ROC 橫軸 FPR、縱軸 TPR 及其醫療語義（誤診健康者的風險／檢出病患的能力）敘述正確，四個選項判讀無誤。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 2～3 頁：第 8 題題幹與左欄官方答案 B（第 2 頁）、(A)～(D) 選項（第 3 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Receiver operating characteristic (ROC)",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html#roc-metrics",
+          "locator": "ROC 段引述定義：It is created by plotting the fraction of true positives out of the positives (TPR = true positive rate) vs. the fraction of false positives out of the negatives (FPR = false positive rate), at various threshold settings. TPR is also known as sensitivity, and FPR is one minus the specificity",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.metrics.roc_curve",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_curve.html",
+          "locator": "Returns 段：fpr 為 Increasing false positive rates such that element i is the false positive rate of predictions with score >= thresholds[i]；tpr 同理為 true positive rates",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-009",
+      "officialQuestionNumber": 9,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 3 頁：第 9 題題幹、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.metrics.confusion_matrix",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html",
+          "locator": "函式說明：C(i, j) 為 the number of observations known to be in group i and predicted to be in group j；二元情況可 ravel 為 tn, fp, fn, tp",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Receiver operating characteristic (ROC)",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html#roc-metrics",
+          "locator": "ROC 需 at various threshold settings 的 FPR／TPR；roc_curve 要求 target scores（probability estimates 或 non-thresholded decision values），非單一門檻的類別預測",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-010",
+      "officialQuestionNumber": 10,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 3 頁：第 10 題題幹、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "You Only Look Once: Unified, Real-Time Object Detection（Redmon et al., 2016）",
+          "url": "https://arxiv.org/abs/1506.02640",
+          "locator": "摘要：We frame object detection as a regression problem to spatially separated bounding boxes and associated class probabilities. A single neural network predicts bounding boxes and class probabilities directly from full images in one evaluation",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks（Ren et al., 2015）",
+          "url": "https://arxiv.org/abs/1506.01497",
+          "locator": "摘要：we introduce a Region Proposal Network (RPN) that shares full-image convolutional features with the detection network…An RPN is a fully convolutional network that simultaneously predicts object bounds and objectness scores，再由 Fast R-CNN 對候選區域分類",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
