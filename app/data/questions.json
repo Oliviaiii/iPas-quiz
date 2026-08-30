@@ -30977,10 +30977,16 @@
           "checkedAt": "2026-08-12"
         },
         {
-          "title": "SAS－Credit Risk Modeling Using SAS",
-          "url": "https://support.sas.com/resources/papers/proceedings16/2340-2016.pdf",
-          "locator": "信用風險建模流程中的 binning、WOE、Information Value、變數選擇與 logistic regression",
-          "checkedAt": "2026-08-12"
+          "title": "OptBinning Documentation－Binning tables",
+          "url": "https://gnpalencia.org/optbinning/binning_tables.html",
+          "locator": "analysis() 說明 Statistical analysis of the binning table, computing the statistics Gini index, Information Value (IV), Jensen-Shannon divergence；property iv 為 The Information Value (IV) or Jeffrey's divergence measure；plot() 的 metric=\"woe\" 顯示 Weight of Evidence",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "OptBinning Documentation－Scorecard",
+          "url": "https://gnpalencia.org/optbinning/scorecard.html",
+          "locator": "Scorecard(binning_process, estimator, scaling_method…) 說明 Scorecard development given a binary or continuous target dtype，範例以 BinningProcess 搭配 LogisticRegression 建卡；ScorecardMonitoring 另以 psi_method 監控分數分布",
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "SAS Model Manager User's Guide",

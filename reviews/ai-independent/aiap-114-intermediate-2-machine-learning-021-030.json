@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-intermediate-2-machine-learning",
+  "range": {
+    "start": 21,
+    "end": 30
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 9,
+    "corrected": 1,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-021",
+      "officialQuestionNumber": 21,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 5 頁：第 21 題題幹、(A)～(D) 選項與左欄官方答案 C",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Attention Is All You Need（Vaswani et al., 2017）",
+          "url": "https://arxiv.org/abs/1706.03762",
+          "locator": "§3.2.2 Multi-Head Attention：Multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-022",
+      "officialQuestionNumber": 22,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 5 頁：第 22 題題幹、(A)～(D) 選項與左欄官方答案 B",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－1.9. Naive Bayes",
+          "url": "https://scikit-learn.org/stable/modules/naive_bayes.html",
+          "locator": "開頭：Bayes' theorem states the following relationship, given class variable y and dependent feature vector…P(y|x₁…xₙ) 由先驗 P(y) 與似然計算後驗",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-023",
+      "officialQuestionNumber": 23,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 5～6 頁：第 23 題題幹與 (A) 選項、左欄官方答案 A（第 5 頁）、(B)～(D) 選項（第 6 頁）",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST Special Publication 1214－Economic Decision Guide Software (EDGeS) Tool User Guidance",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1214.pdf",
+          "locator": "Monte Carlo Simulation 節：Monte Carlo simulations fall under a broad class of computational algorithms that rely on repeated random sampling to obtain numerical results…varies a set of key parameters…according to the uncertainty defined around these parameters",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-024",
+      "officialQuestionNumber": 24,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 6 頁：第 24 題題幹、(A)～(D) 選項與左欄官方答案 C",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－4.4.4.1. How can I tell if a model fits my data?",
+          "url": "https://www.itl.nist.gov/div898/handbook/pmd/section6/pmd614.htm",
+          "locator": "殘差圖檢查段：殘差對擬合值若呈現曲線等結構，代表函數形式（functional part of the model）規格錯置，需重新設定模型",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST Dataplot Reference－Regression Diagnostics",
+          "url": "https://itl.nist.gov/div898/software/dataplot/refman1/auxillar/regrdiag.htm",
+          "locator": "以殘差與診斷統計（leverage、Cook's distance 等）辨識 outlier、high leverage 與 influential points",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-025",
+      "officialQuestionNumber": 25,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源 https://support.sas.com/resources/papers/proceedings16/2340-2016.pdf 已失效（HTTP 404）。已改引 OptBinning 官方文件兩頁（scripts/fix-ai-review-114-2-m3-021-030.py）：Binning tables 頁載明 analysis() 計算 Gini index 與 Information Value (IV)、property iv 為 Information Value (IV) or Jeffrey's divergence、plot(metric=\"woe\") 顯示 Weight of Evidence；Scorecard 頁載明以 BinningProcess 搭配 LogisticRegression 建卡，並由 ScorecardMonitoring 以 psi_method 監控分布。兩頁合起來可支持詳解所述的傳統評分卡流程。",
+        "獨立作答為 A（生成式模型特徵學習不是傳統評分卡步驟）；draft 既有的 editorialNote 已如實聲明題幹未指定主管機關、各地監理要求不同，該保留意見仍然成立且不影響作答。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 6 頁：第 25 題題幹、(A)～(D) 選項與左欄官方答案 A",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "OptBinning Documentation－Binning tables",
+          "url": "https://gnpalencia.org/optbinning/binning_tables.html",
+          "locator": "analysis()：Statistical analysis of the binning table, computing the statistics Gini index, Information Value (IV), Jensen-Shannon divergence；property iv：The Information Value (IV) or Jeffrey's divergence measure；plot() 的 metric=\"woe\" 顯示 Weight of Evidence (WoE)",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "OptBinning Documentation－Scorecard",
+          "url": "https://gnpalencia.org/optbinning/scorecard.html",
+          "locator": "Scorecard(binning_process, estimator, scaling_method…)：Scorecard development given a binary or continuous target dtype；範例以 BinningProcess + LogisticRegression 建卡；ScorecardMonitoring(scorecard, psi_method='cart'…) 監控分數分布",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-026",
+      "officialQuestionNumber": 26,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 6 頁：第 26 題題幹、(A)～(D) 選項與左欄官方答案 D",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Deep Learning（Goodfellow, Bengio, Courville）－Chapter 7 Regularization for Deep Learning",
+          "url": "https://www.deeplearningbook.org/contents/regularization.html",
+          "locator": "章節目次涵蓋 §7.1 Parameter Norm Penalties（L1、L2）、§7.8 Early Stopping、§7.12 Dropout，均列為限制模型容量或學習能力的正則化策略",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-027",
+      "officialQuestionNumber": 27,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 6～7 頁：第 27 題題幹與 (A)～(C) 選項、左欄官方答案 D（第 6 頁）、(D) 選項（第 7 頁）",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Deep Sparse Rectifier Neural Networks（Glorot, Bordes & Bengio, AISTATS 2011, PMLR v15）",
+          "url": "https://proceedings.mlr.press/v15/glorot11a.html",
+          "locator": "摘要：rectifying neurons（max(0,x)）作為深層網路的非線性單元，可在無監督預訓練之外達到更好或相當的效能並產生稀疏表示",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-028",
+      "officialQuestionNumber": 28,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 7 頁：第 28 題題幹、(A)～(D) 選項與左欄官方答案 C",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST Special Publication 1270－Towards a Standard for Identifying and Managing Bias in Artificial Intelligence",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1270.pdf",
+          "locator": "Statistical and Computational Biases 段：偏差源自樣本不能代表母體（Underrepresentation of marginalized groups 等），Fig. 2 亦將 selection bias 歸於此類",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－2.1.5. How is measurement process variability controlled?（抽樣代表性）",
+          "url": "https://www.itl.nist.gov/div898/handbook/pmd/section2/pmd215.htm",
+          "locator": "說明樣本必須反映實際 process 的變異來源，非代表性的資料蒐集無法藉後續統計處理修正",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-029",
+      "officialQuestionNumber": 29,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 7 頁：第 29 題題幹、(A)～(D) 選項與左欄官方答案 D",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.model_selection.TimeSeriesSplit",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html",
+          "locator": "類別說明：Provides train/test indices to split time-ordered data, where other cross-validation methods are inappropriate, as they would lead to training on future data and evaluating on past data；max_train_size 可實作 rolling window",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-030",
+      "officialQuestionNumber": 30,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 7 頁：第 30 題題幹、(A)～(D) 選項與左欄官方答案 C",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.metrics.f1_score",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html",
+          "locator": "F1 = 2 * (precision * recall) / (precision + recall)；average='macro' 說明為 Calculate metrics for each label, and find their unweighted mean",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+          "url": "https://arxiv.org/abs/1810.04805",
+          "locator": "摘要：模型以特定語料預訓練後再微調；跨語言部署需相應的詞彙與預訓練表示支持，說明語言轉移對下游任務表現的依賴",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
