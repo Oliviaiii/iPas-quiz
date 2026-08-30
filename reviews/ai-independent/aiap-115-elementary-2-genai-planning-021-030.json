@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-elementary-2-genai-planning",
+  "range": {
+    "start": 21,
+    "end": 30
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 8,
+    "corrected": 2,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-021",
+      "officialQuestionNumber": 21,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 6 頁（共 13 頁）第 21 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-17：生成式 AI 的核心特徵在於透過模型的學習能力生成新內容，而非僅僅分析或辨識現有數據",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-21 多模態生成：將文本、圖像、音訊等多種模態結合，開創了更多應用場景",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-022",
+      "officialQuestionNumber": 22,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 指出所引 Anthropic 延伸推理文件的參數名稱與行為隨版本演進快，請複核者確認最新文件。本次確認確實已變：budget_tokens 在現行模型上已被取代（部分版本棄用、部分版本直接回傳錯誤），改由 adaptive thinking 搭配 effort 等級（low／medium／high／xhigh／max）與代理任務的 task budget 控制思考資源上限。已改寫概念段與選項 C，改以「為單次推理設定思考資源上限」這個不隨版本改變的設計概念立論，並於括號中列出目前的具體介面；來源 locator 一併更新。這是時效性修正，非內容錯誤。",
+        "官方答案 C 不受影響：四個選項中仍只有 C 描述「調整推理深度」本身，A 是取樣隨機性、B 是換模型、D 是提示工程。",
+        "修正以 scripts/fix-ai-review-115-2-s2-021-030.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 6 頁（共 13 頁）第 22 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Anthropic 平台文件－Extended thinking",
+          "url": "https://platform.claude.com/docs/en/docs/build-with-claude/extended-thinking",
+          "locator": "Extended thinking：模型在最終回應前先產生內部推理內容，思考 Token 一併計費並增加延遲；早期以 budget_tokens 設定思考預算，現行模型改採 adaptive thinking 並以 output_config.effort 與 task_budget 設定思考資源上限",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-023",
+      "officialQuestionNumber": 23,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 指出 arXiv 摘要未列出 Memory as Context 的名稱與細部流程，請複核者查論文正文逐一核對三種變體。本次已下載 Titans 論文全文核對圖說：Figure 2「Memory as a Context (MAC) Architecture……The core branch concatenates the corresponding long-term and persistent memories with the input sequence」對應選項 C；Figure 4「Memory as a Gate (MAG)……combine memory with the core branch using a gating mechanism」對應選項 B；Figure 5「Memory as a Layer (MAL)……the memory layer is responsible to compress the past and current context before the attention module」對應選項 A。三者與三個選項一一對應，原詳解的區辨成立；locator 已改為正文出處。",
+        "另記：論文原文寫作 Memory as a Context，題幹作 Memory as Context，僅冠詞差異，指涉同一變體，已寫入 editorialNote。",
+        "修正以 scripts/fix-ai-review-115-2-s2-021-030.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 7 頁（共 13 頁）第 23 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Titans: Learning to Memorize at Test Time（arXiv:2501.00663）",
+          "url": "https://arxiv.org/abs/2501.00663",
+          "locator": "正文 Figure 2／4／5 圖說逐字核對 MAC、MAG、MAL 三種記憶整合變體；MAC 的核心分支把長期記憶與持久記憶串接到輸入序列上",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-024",
+      "officialQuestionNumber": 24,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 7 頁（共 13 頁）第 24 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "OpenAI 開發者文件－Agents",
+          "url": "https://developers.openai.com/api/docs/guides/agents",
+          "locator": "代理是能規劃、呼叫工具、跨專家協作並保持狀態以完成多步驟工作的應用程式",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "ReAct: Synergizing Reasoning and Acting in Language Models（arXiv:2210.03629）",
+          "url": "https://arxiv.org/abs/2210.03629",
+          "locator": "摘要：推理軌跡協助模型擬定、追蹤與更新行動計畫並處理例外，行動則介接外部資訊來源補足資訊並減少幻覺",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-17：生成式 AI 的核心特徵在於透過模型的學習能力生成新內容，而非僅僅分析或辨識現有數據",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-025",
+      "officialQuestionNumber": 25,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 7 頁（共 13 頁）第 25 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "ReAct: Synergizing Reasoning and Acting in Language Models（arXiv:2210.03629）",
+          "url": "https://arxiv.org/abs/2210.03629",
+          "locator": "摘要：推理軌跡協助模型擬定、追蹤與更新行動計畫並處理例外，行動則介接外部資訊來源補足資訊並減少幻覺",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-026",
+      "officialQuestionNumber": 26,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 7 頁（共 13 頁）第 26 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models（arXiv:2201.11903）",
+          "url": "https://arxiv.org/abs/2201.11903",
+          "locator": "以少量推理步驟示範引導模型逐步推理，提升算術、常識與符號推理表現",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models（arXiv:2203.11171）",
+          "url": "https://arxiv.org/abs/2203.11171",
+          "locator": "摘要：取樣多條推理路徑取代單一貪婪解碼、邊際化選出最一致答案，標題即點名用於改進 Chain-of-Thought",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models（arXiv:2305.10601）",
+          "url": "https://arxiv.org/abs/2305.10601",
+          "locator": "摘要：明確定位為對 Chain of Thought 提示法的推廣（generalizes over Chain of Thought）",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "ReAct: Synergizing Reasoning and Acting in Language Models（arXiv:2210.03629）",
+          "url": "https://arxiv.org/abs/2210.03629",
+          "locator": "摘要：推理軌跡協助模型擬定、追蹤與更新行動計畫並處理例外，行動則介接外部資訊來源補足資訊並減少幻覺",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Brown et al., Language Models are Few-Shot Learners（arXiv:2005.14165）",
+          "url": "https://arxiv.org/abs/2005.14165",
+          "locator": "摘要以提示中的示範數量區分 zero-shot／one-shot／few-shot，與逐步推理無關，支持 D 不屬 CoT 家族之判定",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-027",
+      "officialQuestionNumber": 27,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 7 頁（共 13 頁）第 27 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Vaswani et al., Attention Is All You Need（arXiv:1706.03762）",
+          "url": "https://arxiv.org/abs/1706.03762",
+          "locator": "摘要：主流序列轉換模型採編碼器－解碼器配置",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Brown et al., Language Models are Few-Shot Learners（arXiv:2005.14165）",
+          "url": "https://arxiv.org/abs/2005.14165",
+          "locator": "摘要：GPT-3 為自迴歸（autoregressive）語言模型；支持解碼器以前文為條件逐詞生成之敘述",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-028",
+      "officialQuestionNumber": 28,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 8 頁（共 13 頁）第 28 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "OWASP Top 10 for LLM Applications－LLM01: Prompt Injection",
+          "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+          "locator": "提示注入定義及緩解措施：過濾輸入與輸出、驗證輸出格式、約束模型行為、限制模型權限與對高風險操作保留人工審核，明示需多項措施並用",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-7：安全防護與風險控管－建立多層次防護措施，防止模型遭惡意攻擊或生成有害內容",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-029",
+      "officialQuestionNumber": 29,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 8 頁（共 13 頁）第 29 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Video Diffusion Models（arXiv:2204.03458）",
+          "url": "https://arxiv.org/abs/2204.03458",
+          "locator": "摘要：以標準影像擴散架構的自然延伸生成影片，支援影像與影片聯合訓練，並展示大規模文字條件影片生成",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-54：擴散模型基於逐步添加與去除雜訊生成資料，適合高維度資料並支援文本到圖像生成",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Generative Adversarial Networks（arXiv:1406.2661）",
+          "url": "https://arxiv.org/abs/1406.2661",
+          "locator": "摘要：G 捕捉資料分佈、D 估計樣本來自訓練資料的機率；支持選項 D 之排除理由",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-030",
+      "officialQuestionNumber": 30,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 8 頁（共 13 頁）第 30 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks（arXiv:2005.11401）",
+          "url": "https://arxiv.org/abs/2005.11401",
+          "locator": "摘要：以可檢索的非參數化記憶補充模型參數中的知識",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Ouyang et al., Training language models to follow instructions with human feedback（arXiv:2203.02155）",
+          "url": "https://arxiv.org/abs/2203.02155",
+          "locator": "摘要：蒐集人類對模型輸出的排序回饋建立獎勵，再以強化學習微調模型；與選項 A 的回饋—獎勵—更新迴路同構",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
