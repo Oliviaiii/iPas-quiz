@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-intermediate-1-big-data",
+  "range": {
+    "start": 41,
+    "end": 50
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 9,
+    "corrected": 1,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-041",
+      "officialQuestionNumber": 41,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 13 頁：第 41～44 題共用題組（driver_daily_stats.csv 欄位說明）、第 41 題題幹、程式碼附圖與統計輸出（mean 223.411306、50% 128.552462、max 4500.000000）、(A)～(D) 選項與左欄官方答案 B。已與站內圖檔 aiap-115-intermediate-1-big-data-p13-1.png 目視比對，程式為 pd.read_csv('driver_daily_stats.csv') 後 print(df['daily_earnings'].describe()[['mean', '50%', 'max']])。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "pandas API－Series.median",
+          "url": "https://pandas.pydata.org/docs/reference/api/pandas.Series.median.html",
+          "locator": "方法說明：Return the median of the values over the requested axis；skipna 預設為 True，計算時排除缺失值",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "pandas 2.2.0 Release Notes－Chained assignment 棄用",
+          "url": "https://pandas.pydata.org/pandas-docs/version/2.2.3/whatsnew/v2.2.0.html",
+          "locator": "Deprecated 段說明以 chained assignment 搭配 inplace=True（如 df[col].fillna(..., inplace=True)）已棄用，建議改為指定回欄位或對 DataFrame 呼叫",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-042",
+      "officialQuestionNumber": 42,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 14 頁：第 42 題題幹（region 已 Label Encoding 為 1、2、3，且不得修改編碼）、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.ensemble.RandomForestRegressor",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html",
+          "locator": "類別說明：A random forest is a meta estimator that fits a number of decision tree regressors on various sub-samples of the dataset and uses averaging to improve the predictive accuracy",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Encoding categorical features",
+          "url": "https://scikit-learn.org/stable/modules/preprocessing.html#encoding-categorical-features",
+          "locator": "說明 OrdinalEncoder 產生的整數會被部分估計器解讀為有序且等距，因此無序類別通常改用 OneHotEncoder",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-043",
+      "officialQuestionNumber": 43,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 14 頁：第 43 題題幹（作弊者約占 0.05%、Accuracy 99.95%，問「不是合理理由」）、classification report 附圖、(A)～(D) 選項與左欄官方答案 C。已與站內圖檔 aiap-115-intermediate-1-big-data-p14-1.png 目視比對：類別 0、1 與 macro／weighted avg 的 precision、recall、f1-score 皆顯示 1.00，且圖中未列 support 欄。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Metrics and scoring",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+          "locator": "分類指標章節列出 accuracy、balanced accuracy、precision、recall、F-measure 與 precision-recall curve，說明不平衡資料下應採用適合的替代指標",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.metrics.classification_report",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html",
+          "locator": "函式說明：Build a text report showing the main classification metrics，逐類輸出 precision、recall、f1-score 與 support，並附 macro avg 與 weighted avg",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-044",
+      "officialQuestionNumber": 44,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 14 頁：第 44 題題幹（作弊零容忍、可接受誤凍結後人工覆核）、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.metrics.recall_score",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.recall_score.html",
+          "locator": "函式說明：The recall is the ratio tp / (tp + fn)…intuitively the ability of the classifier to find all the positive samples",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn Examples－Precision-Recall",
+          "url": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html",
+          "locator": "說明調整決策閾值時 precision 與 recall 的取捨，並指出 Precision-Recall 適用於類別高度不平衡的情形",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-045",
+      "officialQuestionNumber": 45,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源 https://pandas.pydata.org/docs/reference/api/pandas.core.groupby.DataFrameGroupBy.sum.html 已回傳 HTTP 404（pandas 文件已將該頁移至 pandas.api.typing 路徑）。已改引仍可存取且更貼合本題的 SeriesGroupBy.sum 頁（scripts/fix-ai-review-115-1-m2-041-050.py）——題目的 df.groupby('CustomerID')['Revenue'] 取得的正是 SeriesGroupBy。",
+        "獨立作答為 C；先以 sum() 聚合各客戶總營收再用 nlargest(3) 取前三名的推導正確，四個選項判讀無誤。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 15 頁：第 45～47 題共用電商資料情境（df 含 OrderID、CustomerID、Category、Revenue；customers 含 CustomerID、Region）、第 45 題題幹、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "pandas API－SeriesGroupBy.sum",
+          "url": "https://pandas.pydata.org/docs/reference/api/pandas.api.typing.SeriesGroupBy.sum.html",
+          "locator": "方法說明：Compute sum of group values",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "pandas API－Series.nlargest",
+          "url": "https://pandas.pydata.org/docs/reference/api/pandas.Series.nlargest.html",
+          "locator": "方法說明：Return the largest n elements（回傳前 n 大的元素，依值遞減排序）",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-046",
+      "officialQuestionNumber": 46,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 15 頁：第 46 題題幹、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "pandas User Guide－Boolean indexing",
+          "url": "https://pandas.pydata.org/docs/user_guide/indexing.html#boolean-indexing",
+          "locator": "說明以布林向量（如 df['A'] > 0）選取 DataFrame 的列，布林運算須逐元素作用於 Series 上",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "pandas API－Series.mean",
+          "url": "https://pandas.pydata.org/docs/reference/api/pandas.Series.mean.html",
+          "locator": "方法說明：Return the mean of the values over the requested axis；skipna 預設 True",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-047",
+      "officialQuestionNumber": 47,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 15 頁：第 47 題題幹（只保留在 customers 有對應資料的交易）、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "pandas API－pandas.merge",
+          "url": "https://pandas.pydata.org/docs/reference/api/pandas.merge.html",
+          "locator": "how 參數：'inner' 為 use intersection of keys from both frames；'outer' 為 use union of keys；on 指定兩表共同欄位",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "pandas API－DataFrame.join",
+          "url": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.join.html",
+          "locator": "on 參數說明：以呼叫端的欄位對齊另一 DataFrame 的 index；how 預設為 'left'",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-048",
+      "officialQuestionNumber": 48,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 16 頁：第 48～50 題共用 iris 程式附圖（load_iris、StandardScaler、train_test_split、LogisticRegression 匯入；X, y = iris.data, iris.target；target_names 為 setosa／versicolor／virginica 三類）、第 48 題題幹、(A)～(D) 選項與左欄官方答案 C。已與站內圖檔 aiap-115-intermediate-1-big-data-p16-1.png 目視比對。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.preprocessing.StandardScaler",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html",
+          "locator": "方法列表：fit(X) 計算後續縮放所需的 mean 與 std；transform(X) 以已學得的參數標準化；fit_transform(X) 先 fit 再 transform 並回傳轉換後資料",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Common pitfalls：Data leakage",
+          "url": "https://scikit-learn.org/stable/common_pitfalls.html#data-leakage",
+          "locator": "說明前處理應在切分後只以訓練資料 fit，再 transform 測試資料，以免測試資訊進入模型建立流程",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-049",
+      "officialQuestionNumber": 49,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 16～17 頁：第 49 題題幹（第 16 頁）、(A)～(D) 四張程式碼選項圖（第 17 頁）與左欄官方答案 B。已逐張與站內選項圖檔 p17-1～p17-4 目視比對：A 與 B 皆為 train_test_split(X_norm, y, train_size=0.2, random_state=123)，差別在 solver 分別為 \"liblinear\" 與 \"lbfgs\"；C 與 D 則把引數順序寫成 (y, X_norm)。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.model_selection.train_test_split",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html",
+          "locator": "說明依輸入 *arrays 的順序回傳各自的 train／test 子集，故傳入順序決定四個回傳值的意義；train_size 為訓練集比例",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.linear_model.LogisticRegression",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html",
+          "locator": "solver 說明逐字載明：For multiclass problems (whenever n_classes >= 3), all solvers except 'liblinear' optimize the (penalized) multinomial loss. 'liblinear' only handles binary classification but can be extended to handle multiclass by using OneVsRestClassifier；本題組 iris 為三類，故選項 A 的 liblinear 不適用而 B 的 lbfgs 正確",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-050",
+      "officialQuestionNumber": 50,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 17 頁：第 50 題程式與輸出附圖、(A)～(D) 選項與左欄官方答案 D。已與站內圖檔 aiap-115-intermediate-1-big-data-p17-5.png 目視比對：cm = confusion_matrix(y_test, y_pred) 輸出 [[13,0,0],[0,6,0],[0,1,10]]，f1_score(..., average=\"weighted\") 輸出 0.9671550671550672，classification report 的 support 為 13／6／11。已依該混淆矩陣獨立重算逐類 F1（1.0、0.923077、0.952381）並以 support 加權，得 0.9671550671550672，與圖示數值完全一致。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.metrics.confusion_matrix",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html",
+          "locator": "函式說明：C[i, j] 為 the number of observations known to be in group i and predicted to be in group j，即橫列為真實類別、直欄為預測類別",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.metrics.f1_score",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html",
+          "locator": "F1 = 2 * (precision * recall) / (precision + recall)；average='weighted' 為 Calculate metrics for each label, and find their average weighted by support",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.metrics.classification_report",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html",
+          "locator": "函式說明：Build a text report showing the main classification metrics，逐類輸出 precision、recall、f1-score 與 support，並附 macro avg 與 weighted avg",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}

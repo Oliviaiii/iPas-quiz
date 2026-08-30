@@ -40368,10 +40368,10 @@
           "checkedAt": "2026-08-13"
         },
         {
-          "title": "pandas GroupBy sum",
-          "url": "https://pandas.pydata.org/docs/reference/api/pandas.core.groupby.DataFrameGroupBy.sum.html",
-          "locator": "依群組計算數值總和",
-          "checkedAt": "2026-08-13"
+          "title": "pandas API－SeriesGroupBy.sum",
+          "url": "https://pandas.pydata.org/docs/reference/api/pandas.api.typing.SeriesGroupBy.sum.html",
+          "locator": "方法說明：Compute sum of group values；df.groupby('CustomerID')['Revenue'] 取得 SeriesGroupBy 後呼叫 sum() 即得各客戶營收總和",
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "pandas.Series.nlargest",
