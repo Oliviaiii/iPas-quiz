@@ -980,3 +980,120 @@
   `npm test` 9／9；manifest 重生後仍為 `draft: 600`／`missing: 0`／`reviewed: 0`。
 - 下一步：114 年第二次中級第二科「大數據處理分析與應用」第 1～10 題。該卷含 7 張
   官方附圖（第 3、40～43、49、50 題）共 10 張，每批需以 `--render` 目視確認。
+
+## 2026-08-30 獨立 AI 複核：114-2 中級第二科 50 題完成
+
+- 處理範圍：114 年第二次中級第二科「大數據處理分析與應用」第 1～50 題，共 5 批。
+- 結果：pass 45、corrected 5、human-decision 0、blocked 0。50 題官方答案先獨立判定
+  再對照 PDF 答案欄，全數一致；題目、選項與官方答案未動。
+- 本卷含官方附圖（含第 41、42 題的 K-means 虛擬碼與流程圖），每批以 `--render`
+  渲染頁面目視核對。corrected 的性質分三類：
+  - **定位與附圖歸屬誤植（Q42）**：原稿把第 42 題的程式碼圖寫成「共用題組附圖」，
+    但該圖是它自己的題幹附圖，第 42 題不屬於第 43～47 題的共用題組。
+  - **與附圖用語不符（Q41）**：原稿寫「隨機選 K 個資料點」，官方虛擬碼把群數命名為
+    **X**（Input：X：要分成的群數）。已改依附圖用語敘述並註明 X 即一般寫法的 K。
+  - **定位與原文用語不符（Q31）**：NIST/SEMATECH e-Handbook 二項分佈頁全文並無
+    Bernoulli 字樣，原定位改寫為該頁實際字句（two mutually exclusive outcomes、
+    x successes in N trials）。
+  - 另有來源可及性（Q21，edwardtufte.com 403，須人工以書籍查核）與中級教材查無
+    （Q14，見前一份交接所述中級來源限制）。
+- 執行測試：`scripts/validate-ai-review-reports.py`、`npm test` 9／9；manifest 重生後
+  仍為 `draft: 600`／`missing: 0`／`reviewed: 0`。
+- 下一步：114 年第二次中級第三科「機器學習技術與應用」第 1～10 題。
+
+## 2026-08-30 獨立 AI 複核：114-2 中級第三科 50 題完成（114 年第二次中級 150 題完成）
+
+- 處理範圍：114 年第二次中級第三科「機器學習技術與應用」第 1～50 題，共 5 批。
+- 結果：pass 39、corrected 9、human-decision 2、blocked 0。
+- **兩題判為 human-decision，且都不是沿用原稿疑義，而是複核者自行驗證後確認成立：**
+  - **Q17**：題幹問「哪一種優化演算法內建動量的設計機制」，(A) SGD+Momentum 依 Keras
+    官方文件即為 Gradient descent (with momentum) optimizer，(B) Adam 亦內建一階動量
+    估計，兩者字面與公式都符合題幹，屬明確的複選歧義。
+  - **Q34**：選項 (D)「分層留一法交叉驗證」並非 scikit-learn 所列切分器，且 LeaveOneOut
+    每折僅一筆樣本，單折不可能同時含正負類、無法維持約 8% 陽性比例，名稱在定義上
+    自相矛盾。
+- corrected 以引用錯置與失效連結為主：
+  - **引用錯置（Q5、Q6）**：`proceedings.mlr.press/v9/le-cun10a.html` 404，該論文根本不在
+    PMLR v9（AISTATS 2010）目錄中。改引 Deep Learning 第 9 章 §9.2（sparse interactions、
+    parameter sharing、equivariant representations，並給出參數量由 m×n 降為 k×n）。
+  - **失效連結（Q25）**：SAS proceedings PDF 404，改引 OptBinning 官方文件。
+  - **附圖誤植（Q31～Q37 共 7 題）**：定位寫「題幹、選項、附圖與官方答案」，但這些題在
+    官方 PDF 與題庫皆無附圖；已改為逐頁精確定位並註明無附圖。
+- 執行測試：`scripts/validate-ai-review-reports.py`、`npm test` 9／9。
+- 下一步：115 年第一次中級第一科「人工智慧技術應用與規劃」第 1～10 題。
+
+## 2026-08-30 獨立 AI 複核：115-1 中級第一科 50 題完成
+
+- 處理範圍：115 年第一次中級第一科「人工智慧技術應用與規劃」第 1～50 題，共 5 批。
+- 結果：pass 41、corrected 9、human-decision 0、blocked 0。
+- **本批 corrected 幾乎全部是來源問題，且出現一種比 404 更難察覺的型態——
+  網址回 200 但內容已不在**：
+  - **假 200（Q8）**：`itl.nist.gov/div898/software/dataplot/refman2/auxillar/sensitiv.htm`
+    回傳 200，實際 301 轉址到 NIST ITL 首頁，原定位所述的 sensitivity／specificity 公式
+    已不存在。改引 scikit-learn `roc_curve`。**日後查核不能只看狀態碼，必須追轉址並
+    比對正文。**
+  - **引用錯置（Q19、Q43，同一筆錯誤出現兩次）**：標題掛 Kohavi 的線上對照實驗論文，
+    網址卻是 `arxiv.org/abs/1606.07659`（Strub 等人的 Hybrid Recommender System based on
+    Autoencoders）。改引 Kohavi et al., KDD 2013 Online Controlled Experiments at Large Scale。
+  - **需瀏覽器 UA 或封鎖自動化（Q27 FDA GMLP 401、Q35 Oxford Bioinformatics 403、
+    Q46 HHS HIPAA 403、Q48 ACM DOI 403）**：分別改引 FDA 自行託管的 PDF、
+    arXiv:1901.08746（BioBERT）、govinfo 上的 45 CFR §160.103、作者機構公開的
+    accepted 版 PDF。
+  - **頁面移除或更名（Q32 torch.nn.Flatten 404、Q40 TensorRT 頁更名）**：改引 `torch.flatten`
+    與現行的 work-with-quantized-types.html。
+- 執行測試：`scripts/validate-ai-review-reports.py`、`npm test` 9／9。
+- 下一步：115 年第一次中級第二科「大數據處理分析與應用」第 1～10 題。
+
+## 2026-08-30 獨立 AI 複核：115-1 中級第二科 50 題完成（含兩張損毀附圖修復）
+
+- 處理範圍：115 年第一次中級第二科「大數據處理分析與應用」第 1～50 題，共 5 批。
+- 結果：pass 38、corrected 12、human-decision 0、blocked 0。
+- **最重要的發現：兩張官方公式附圖在站上是純黑影像**（Q2 的
+  `G = 1 − Σ pᵢ²`、Q8 的 `Z = (x̄ − μ₀)/(σ/√n)`）。原因是匯入時只取 PDF 的內嵌影像
+  而遺漏其 soft mask（alpha 遮罩），合成後整張變黑，前端顯示為黑色方塊。已以
+  `scripts/fix-ai-review-115-1-m2-figures.py` 依 xref 影像與 SMask 重新 alpha 合成覆蓋，
+  腳本本身帶有「原檔 sha256 相符」「原檔確為單一色」「合成後必須非單色」三重防護。
+  **並對全庫 72 張圖檔（含選項附圖與共用題組附圖）做同類掃描，確認僅此兩檔受影響。**
+- 其餘 corrected：Q1、Q3～Q7、Q9、Q10 的定位誤植（寫有附圖但實際無附圖）；
+  Q13（milvus.io 一般請求 403、加瀏覽器 UA 後無限轉址，改引 FAISS 論文
+  arXiv:1702.08734）；Q45（pandas 已把 `DataFrameGroupBy.sum` 頁移到 `pandas.api.typing`
+  路徑，原網址 404，改引 `SeriesGroupBy.sum`）。
+- 執行測試：`scripts/validate-ai-review-reports.py`、`npm test` 9／9。
+- 下一步：115 年第一次中級第三科「機器學習技術與應用」第 1～10 題。
+
+## 2026-08-30 獨立 AI 複核：115-1 中級第三科 50 題完成——**600／600 全部完成**
+
+- 處理範圍：115 年第一次中級第三科「機器學習技術與應用」第 1～50 題，共 5 批。
+- 結果：pass 45、corrected 4、human-decision 1、blocked 0。
+- **human-decision（Q30）**：官方答案 B「高變異」與選項 C「過擬合」在本題描述下高度
+  重疊——訓練 AUC 0.97 對驗證 0.72 正是過擬合的定義性現象，高變異則是其在偏差—變異
+  分解下的機制說法，兩者並非互斥，題目卻同時列為可選項。
+- corrected：Q21（PyTorch quantization recipe 404，且 stable 版文件頁正文為前端動態
+  渲染而無法取得文字，改引 ONNX Runtime 量化文件）、Q36（github.com/microsoft/SEAL
+  對所有 UA 皆 403，改引 HomomorphicEncryption.org）、Q41 與 Q49（見下）。
+- 最後一批（Q41～50）的兩筆修正都屬「定位超出該頁可查證範圍」：
+  - **Q41**：原引 torchvision 的 detection end-to-end 範例並稱其示範「訓練增強與驗證
+    確定性前處理分開配置」，但該頁全篇只有單一訓練用 `v2.Compose`，沒有驗證管線。
+    改引 PyTorch 遷移學習教學的 `data_transforms`（'train' 做 RandomResizedCrop／
+    RandomHorizontalFlip，'val' 只做 Resize／CenterCrop／Normalize）。
+  - **Q49**：CVPR Open Access 頁只有摘要，摘要未出現 identity shortcut，也未列出
+    50／101／152 三種深度（僅寫 up to 152 layers）。定位改為摘要可逐字對照的敘述。
+- 本卷附圖密集（Q41 Transform、Q42/43 ResNet 遷移學習程式、Q44 LDA+KNN 程式與輸出、
+  Q45 cross_val_score 骨架與 A～D 候選、Q46 前處理與描述 A～F、Q47 Sequential CNN 與
+  描述 A～F、Q48 訓練／驗證準確率曲線、Q50 訓練迴圈位置 1～5），全部逐張目視核對。
+- **至此 600 題全部完成獨立 AI 複核**：`pass 468`、`corrected 110`、`human-decision 21`、
+  `blocked 1`。600 題官方答案皆先獨立判定再對照 PDF，無一題需要改動官方答案。
+- 執行測試：`scripts/validate-ai-review-reports.py`（60 份報告 600 題全通過）、
+  `npm test` 9／9；manifest 重生後仍為 `draft: 600`／`missing: 0`／`reviewed: 0`。
+- **獨立 AI 複核不等於人工複核**：全部 600 題仍為 `explanationStatus: draft`，
+  `reviewer`／`reviewedAt` 皆未填，`explanationReviewedCount` 仍為 0。
+- 未解問題（建議下一位優先處理）：
+  1. **13 題 `editorialNote` 仍為開放待查**，全部出自初級批次：114-4 第一科 Q10、Q49；
+     115-1 第一科 Q13、Q44、Q46、Q47；115-1 第二科 Q16、Q19、Q21、Q22、Q24、Q35；
+     115-2 第二科 Q41。其中 114-4 第一科 Q10、Q49 與 115-1 第一科 Q13 所缺的來源
+     （銀行公會規範全文、數位部評測中心新聞稿）本輪已確認可下載，可直接結案；
+     清理時須同步更新對應的批次報告。
+  2. **21 題 human-decision 需人類裁決**，清單見
+     `docs/AI_REVIEW_PROGRESS.md` 與各批次報告的 `findings`。
+  3. 跨題排版瑕疵（中英文之間漏空格，例如「只有 A直接對應」）待一次掃過。
+- 下一步：第二階段 B 的人工複核，或先執行上述三項清理。
