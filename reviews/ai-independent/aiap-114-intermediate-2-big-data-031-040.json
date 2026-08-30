@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-intermediate-2-big-data",
+  "range": {
+    "start": 31,
+    "end": 40
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 9,
+    "corrected": 1,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-031",
+      "officialQuestionNumber": 31,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源 NIST/SEMATECH e-Handbook 二項分佈頁的定位原寫「二項分佈由 n 次 Bernoulli trials 與成功機率 p 定義」，但該頁全文並未出現 Bernoulli 字樣，僅寫 two mutually exclusive outcomes、x successes in N trials 與 p is fixed for all trials。定位敘述與原文用語不符，已改寫為該頁實際段落與字句（scripts/fix-ai-review-114-2-m2-031-040.py），題幹既有的伯努利試驗說法出自官方題目本身，未更動。",
+        "題幹、四個選項與官方答案 B 均與 PDF 第 9 頁一致；獨立作答亦得 B（np=2000、n(1-p)=3000 同時檢核）。summary／concept／answerReason／optionAnalysis／trap 內容正確，trap 已註明不同教材採 >5、≥5 或 ≥10 之差異，未見過度絕對語氣。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "checkedAt": "2026-08-30",
+          "locator": "PDF 第 9 頁：第 31 題題幹（p=0.4、5,000 位顧客）、(A)～(D) 選項與左欄官方答案 B"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook of Statistical Methods 1.3.6.6.18. Binomial Distribution",
+          "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda366i.htm",
+          "locator": "Probability Mass Function 段：two mutually exclusive outcomes of a trial、probability of observing x successes in N trials、p is fixed for all trials；Common Statistics 表：Mean 為 np、Standard Deviation 為 sqrt(np(1-p))。全頁未出現 Bernoulli 字樣。",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-032",
+      "officialQuestionNumber": 32,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "checkedAt": "2026-08-30",
+          "locator": "PDF 第 9 頁：第 32 題題幹、(A)～(D) 選項與左欄官方答案 A"
+        },
+        {
+          "title": "全國法規資料庫－個人資料保護法",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0050021",
+          "locator": "第 5 條：「個人資料之蒐集、處理或利用，應尊重當事人之權益，依誠實及信用方法為之，不得逾越特定目的之必要範圍」；第 2 條個人資料與蒐集、處理、利用之定義",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NISTIR 8053－De-Identification of Personal Information",
+          "url": "https://www.nist.gov/publications/de-identification-personal-information",
+          "locator": "Abstract：De-identification can reduce the privacy risk associated with collecting, processing, archiving, distributing or publishing information；並載明 some de-identified data can sometimes be re-identified",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-033",
+      "officialQuestionNumber": 33,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "checkedAt": "2026-08-30",
+          "locator": "PDF 第 9 頁：第 33 題題幹、(A)～(D) 選項與左欄官方答案 D"
+        },
+        {
+          "title": "statsmodels API－statsmodels.regression.quantile_regression.QuantReg",
+          "url": "https://www.statsmodels.org/stable/generated/statsmodels.regression.quantile_regression.QuantReg.html",
+          "locator": "類別說明：Estimate a quantile regression model using iterative reweighted least squares；References 列 Koenker, R.《Quantile Regression》",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-034",
+      "officialQuestionNumber": 34,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "checkedAt": "2026-08-30",
+          "locator": "PDF 第 10 頁：第 34 題題幹、(A)～(D) 選項與左欄官方答案 B"
+        },
+        {
+          "title": "Neo4j Documentation－What is a graph database",
+          "url": "https://neo4j.com/docs/getting-started/graph-database/",
+          "locator": "開頭段：A Neo4j graph database stores data as nodes, relationships, and properties；詞彙段：A node represents an entity or discrete object…Nodes can be connected by relationships, hold data in properties；relationship 亦可帶 properties",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-035",
+      "officialQuestionNumber": 35,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "checkedAt": "2026-08-30",
+          "locator": "PDF 第 10 頁：第 35 題題幹、(A)～(D) 選項與左欄官方答案 B"
+        },
+        {
+          "title": "W3C Recommendation－RDF 1.1 Concepts and Abstract Syntax",
+          "url": "https://www.w3.org/TR/rdf11-concepts/",
+          "locator": "§3.1 Triples：An RDF triple consists of three components: the subject, which is an IRI or a blank node; the predicate, which is an IRI; the object, which is an IRI, a literal or a blank node",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-036",
+      "officialQuestionNumber": 36,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "checkedAt": "2026-08-30",
+          "locator": "PDF 第 10 頁：第 36 題題幹、(A)～(D) 選項與左欄官方答案 B"
+        },
+        {
+          "title": "SciPy API－scipy.stats.boxcox",
+          "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.boxcox.html",
+          "locator": "參數說明：If lmbda is None, array must be positive, 1-dimensional, and non-constant；並說明 lmbda 為 None 時以最大化 log-likelihood 求解",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-037",
+      "officialQuestionNumber": 37,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "checkedAt": "2026-08-30",
+          "locator": "PDF 第 10 頁：第 37 題題幹、(A)～(D) 選項與左欄官方答案 C"
+        },
+        {
+          "title": "imbalanced-learn API－imblearn.over_sampling.SMOTE",
+          "url": "https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html",
+          "locator": "類別說明：Class to perform over-sampling using SMOTE…Synthetic Minority Over-sampling Technique；參數 sampling_strategy、k_neighbors；References 引 Chawla 等 2002 原始論文",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-038",
+      "officialQuestionNumber": 38,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "checkedAt": "2026-08-30",
+          "locator": "PDF 第 11 頁：第 38 題題幹、(A)～(D) 選項與左欄官方答案 B"
+        },
+        {
+          "title": "statsmodels API－statsmodels.stats.proportion.proportions_ztest",
+          "url": "https://www.statsmodels.org/stable/generated/statsmodels.stats.proportion.proportions_ztest.html",
+          "locator": "函式說明：Test for proportions based on normal (z) test；count 為 the number of successes in nobs trials；value 說明兩樣本虛無假設為 prop[0] - prop[1] = value",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-039",
+      "officialQuestionNumber": 39,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "checkedAt": "2026-08-30",
+          "locator": "PDF 第 11 頁：第 39 題題幹、(A)～(D) 選項與左欄官方答案 D（已渲染該頁目視確認）"
+        },
+        {
+          "title": "scikit-learn API－sklearn.model_selection.StratifiedKFold",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html",
+          "locator": "類別說明：a variation of KFold that returns stratified folds. The folds are made by preserving the percentage of samples for each class",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-040",
+      "officialQuestionNumber": 40,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "checkedAt": "2026-08-30",
+          "locator": "PDF 第 11 頁：第 40 題題幹、虛擬碼附圖、(A)～(D) 選項與左欄官方答案 B。已渲染 PDF 第 11 頁與站內圖檔 public/images/questions/aiap-114-intermediate-2-big-data-p11-1.png 逐行目視比對：Input/Output/Algorithm 內容一致（對 i = 1 到 N，取第 i 列為 test_data、其餘 N-1 列為 train_data，最後平均 metrics），確為留一交叉驗證。"
+        },
+        {
+          "title": "scikit-learn API－sklearn.model_selection.LeaveOneOut",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.LeaveOneOut.html",
+          "locator": "類別說明：Each sample is used once as a test set (singleton) while the remaining samples form the training set；並註明 LeaveOneOut() is equivalent to KFold(n_splits=n)",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}

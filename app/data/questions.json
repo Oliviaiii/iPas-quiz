@@ -27562,8 +27562,8 @@
         {
           "title": "NIST/SEMATECH e-Handbook－Binomial Distribution",
           "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda366i.htm",
-          "locator": "二項分佈由 n 次 Bernoulli trials 與成功機率 p 定義，平均數 np、標準差 sqrt(np(1-p))",
-          "checkedAt": "2026-08-12"
+          "locator": "Probability Mass Function 段：two mutually exclusive outcomes、x successes in N trials、p is fixed for all trials；Common Statistics 表：Mean 為 np、Standard Deviation 為 sqrt(np(1-p))",
+          "checkedAt": "2026-08-30"
         }
       ],
       "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。常態近似門檻是經驗法則而非數學上的唯一必要充分條件；實際尾端機率計算可使用連續性修正或直接算二項機率。",

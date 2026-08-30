@@ -34,8 +34,12 @@ PDF_DIR = Path("tmp/pdfs")
 ANSWER_COLUMN_RATIO = 0.17
 # 題號在不同年度的試卷上有「12.」與「12 」兩種寫法。
 QUESTION_NUMBER_RE = re.compile(r"^\s*(\d{1,2})\s*(?:\.|(?=\s))")
-# 一列的兩個儲存格常被合併成同一個 block，例如 "C \n12. \n題幹"。
-ROW_RE = re.compile(r"^([A-D])\s*\n\s*(\d{1,2})\s*(?:\.|(?=\s))")
+# 一列的兩個儲存格常被合併成同一個 block，例如 "C \n12. \n題幹"；
+# 部分頁面的答案欄改用全形字母（Ａ～Ｄ），需一併接受並正規化。
+ANSWER_LETTERS = {"A": "A", "B": "B", "C": "C", "D": "D",
+                  "\uff21": "A", "\uff22": "B", "\uff23": "C", "\uff24": "D"}
+# 字母與題號之間可能是換行，也可能只隔一個空白（如 "Ｂ 40 請參考附圖"）。
+ROW_RE = re.compile(r"^([A-D\uff21-\uff24])\s+(\d{1,2})\s*(?:\.|(?=\s))")
 
 
 def load_questions(source_id: str) -> list[dict]:
@@ -76,13 +80,13 @@ def extract_answer_key(doc: pymupdf.Document) -> dict[int, str]:
                 continue
             joined = ROW_RE.match(body)
             if joined:
-                answers[int(joined.group(2))] = joined.group(1)
+                answers[int(joined.group(2))] = ANSWER_LETTERS[joined.group(1)]
                 continue
             if x0 < cutoff:
                 for line in body.splitlines():
                     token = line.strip()
-                    if token in {"A", "B", "C", "D"}:
-                        letters.append((y0, token))
+                    if token in ANSWER_LETTERS:
+                        letters.append((y0, ANSWER_LETTERS[token]))
                 continue
             match = QUESTION_NUMBER_RE.match(body)
             if match:
