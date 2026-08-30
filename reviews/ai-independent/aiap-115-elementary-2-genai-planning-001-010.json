@@ -1,0 +1,311 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-elementary-2-genai-planning",
+  "range": {
+    "start": 1,
+    "end": 10
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 8,
+    "corrected": 2,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-001",
+      "officialQuestionNumber": 1,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 1 頁（共 13 頁）第 1 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks（arXiv:2005.11401）",
+          "url": "https://arxiv.org/abs/2005.11401",
+          "locator": "摘要：以可檢索的非參數化記憶補充模型參數中的知識；支持「企業內部分類慣例不在預訓練語料，須以檢索提供」之敘述",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章（PDF 第 8 頁）：生成式 AI 強化 No Code／Low Code 的應用，含模板設計優化與個人化 App 快速開發",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-002",
+      "officialQuestionNumber": 2,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 1 頁（共 13 頁）第 2 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "n8n 官方文件－If 節點",
+          "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.if/",
+          "locator": "If 節點依比較運算結果將工作流程做條件分岔，可設定多重條件並以 AND／OR 方式組合",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章（PDF 第 7 頁）逐字核對：「No Code 平台透過視覺化介面和拖放操作，讓使用者無需編寫程式碼即可快速開發應用」",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-003",
+      "officialQuestionNumber": 3,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 把「Dify 內建的對話記憶是否即為代為將歷史對話併入請求」列為待查，並註明該批未查核 Dify 官方文件。本次已查核：LLM 節點文件的 Memory and File Processing 段逐字為「Enable Memory to maintain context across multiple LLM calls within a Chatflow conversation. When enabled, previous interactions will be included in subsequent prompts as formatted user-assistant outputs」，並註明 Memory is node-specific and doesn't persist between different conversations。平台內建記憶的實作正是把先前互動併入後續提示，與選項 B 所述原理一致；已補為第四筆來源，待查項目結案。",
+        "修正以 scripts/fix-ai-review-115-2-s2-001-010.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 1 頁（共 13 頁）第 3 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Claude Developer Platform 文件－Context windows",
+          "url": "https://platform.claude.com/docs/en/docs/build-with-claude/context-windows",
+          "locator": "How the context window works：上下文窗口為模型生成回應時所能參照的全部文本；多輪對話中每一輪的輸入包含先前所有對話歷史加上本次使用者訊息",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Dify 官方文件－LLM 節點",
+          "url": "https://docs.dify.ai/en/guides/workflow/node/llm",
+          "locator": "Memory and File Processing 段：啟用 Memory 後，先前互動會被納入後續提示；Memory 為節點層級且不跨對話保存。本次新增為 Q3 第四筆來源",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-18：生成式 AI 具備上下文理解能力，並可透過提示詞進行可控生成",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-004",
+      "officialQuestionNumber": 4,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 請複核者確認 A 與 C 的比較說法是否恰當。本次確認恰當：選項 A 的解析已明白寫出「此敘述本身正確」，只指出它未觸及題幹點名的計費與上下文長度上限，並未謊稱 A 有錯；題幹以「Token 會影響模型的計費」起句再問「最正確」，此程度比較忠實反映題目設定。已改寫 editorialNote 記錄此判定，並保留「本題確有兩個正確敘述並存、屬選項區辨偏鬆之題型」一句供人工複核者知悉。待查項目結案。",
+        "修正以 scripts/fix-ai-review-115-2-s2-001-010.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 1～2 頁（共 13 頁）第 4 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Anthropic Claude 平台文件－Pricing",
+          "url": "https://platform.claude.com/docs/en/docs/about-claude/pricing",
+          "locator": "模型定價表：API 依輸入與輸出 token 分別以每百萬 token（MTok）計價，輸出單價高於輸入",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Claude Developer Platform 文件－Context windows",
+          "url": "https://platform.claude.com/docs/en/docs/build-with-claude/context-windows",
+          "locator": "Context window capacity：上下文窗口容納對話歷史加上新生成的輸出，以模型的最大 token 數為上限",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章（PDF 第 23 頁）逐字核對：「標記化處理（Tokenization）：將文本數據拆分為基本單元（例如詞或子詞）」",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-005",
+      "officialQuestionNumber": 5,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 2 頁（共 13 頁）第 5 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Wikipedia－Vendor lock-in",
+          "url": "https://en.wikipedia.org/wiki/Vendor_lock-in",
+          "locator": "定義：供應商鎖定使客戶依賴特定供應商，若不承擔可觀的轉換成本便無法改用其他供應商；專有檔案格式為常見機制",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章（PDF 第 7 頁）逐字核對：「No Code 平台透過視覺化介面和拖放操作，讓使用者無需編寫程式碼即可快速開發應用」",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-006",
+      "officialQuestionNumber": 6,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 2 頁（共 13 頁）第 6 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章（PDF 第 29 頁）逐字核對：AIaaS「API 介接與外掛程式讓企業能輕鬆整合 AI 工具至現有流程中」",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "n8n 官方文件－Webhook 節點",
+          "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/",
+          "locator": "Webhook 節點於事件發生時接收外部應用與服務傳來的資料，作為觸發節點啟動工作流程",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-007",
+      "officialQuestionNumber": 7,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 2 頁（共 13 頁）第 7 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章（PDF 第 15 頁）逐字核對：「No Code 平台降低了技術門檻，使非技術人員也能參與應用開發，促進跨部門協作」",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章（PDF 第 7 頁）逐字核對：「No Code 平台透過視覺化介面和拖放操作，讓使用者無需編寫程式碼即可快速開發應用」",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-008",
+      "officialQuestionNumber": 8,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 2～3 頁（共 13 頁）第 8 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "n8n 官方文件－Webhook 節點",
+          "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/",
+          "locator": "Webhook 節點於事件發生時接收外部應用與服務傳來的資料，作為觸發節點啟動工作流程",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-009",
+      "officialQuestionNumber": 9,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 3 頁（共 13 頁）第 9 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章（PDF 第 7 頁）逐字核對：「No Code 平台透過視覺化介面和拖放操作，讓使用者無需編寫程式碼即可快速開發應用」",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章（PDF 第 8 頁）：Low Code 結合視覺化開發與程式碼擴充，No Code 以拖曳元件設計介面與流程",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-010",
+      "officialQuestionNumber": 10,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 3 頁（共 13 頁）第 10 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NVIDIA NIM Benchmarking Guide－LLM inference metrics",
+          "url": "https://docs.nvidia.com/nim/benchmarking/llm/latest/metrics.html",
+          "locator": "端到端請求延遲定義為從送出查詢到收到完整回應的時間；吞吐量以單位時間輸出量計算。支持詳解對延遲與吞吐量的定義",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章（PDF 第 8 頁）：Low Code 平台結合視覺化開發工具與程式碼擴充功能，適合中大型企業應用",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}

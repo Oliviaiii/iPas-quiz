@@ -18348,9 +18348,15 @@
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
           "locator": "第三章 3-18：生成式 AI 具備上下文理解能力，並可透過提示詞進行可控生成",
           "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "Dify 官方文件－LLM 節點",
+          "url": "https://docs.dify.ai/en/guides/workflow/node/llm",
+          "locator": "Memory and File Processing 段逐字核對：Enable Memory to maintain context across multiple LLM calls within a Chatflow conversation. When enabled, previous interactions will be included in subsequent prompts as formatted user-assistant outputs；並註明 Memory is node-specific and doesn't persist between different conversations",
+          "checkedAt": "2026-08-30"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：實務上 Dify 這類平台通常以內建的對話記憶（Memory）設定代為將歷史對話併入請求，選項 B 所述「手動打包」為其底層原理的直接實作；本批未查核 Dify 官方文件，複核者宜確認此補充說明與平台現行功能是否相符。查核日期 2026-08-07。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。原稿把「Dify 內建記憶是否即為代為併入歷史對話」列為待查，獨立 AI 複核已查核 Dify 官方文件：LLM 節點的 Memory 說明為「Enable Memory to maintain context across multiple LLM calls within a Chatflow conversation. When enabled, previous interactions will be included in subsequent prompts」——平台內建記憶的實作正是把先前互動併入後續提示，與選項 B 所述原理一致（另註明 Memory is node-specific，不跨對話保存）。待查項目結案。查核日期 2026-08-30。",
       "author": "Claude Code（AI 輔助初稿）",
       "authoredAt": "2026-08-07"
     }
@@ -18430,7 +18436,7 @@
           "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：選項 A 的敘述本身亦為正確定義，本題判 C 較佳係因題幹聚焦計費與應用意涵、C 同時涵蓋計費與上下文長度限制而資訊較完整，屬「最正確」的程度比較而非 A 有明確錯誤；複核者宜確認此比較說法的表述是否恰當。查核日期 2026-08-07。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。原稿請複核者確認 A 與 C 的比較說法是否恰當，獨立 AI 複核確認恰當：選項 A 的解析已明白寫出「此敘述本身正確」，只指出它未觸及題幹點名的計費與上下文長度上限，資訊完整度低於 C，並未謊稱 A 有錯。題幹以「Token 會影響模型的計費」起句、再問「最正確」，此一程度比較的表述方式忠實反映題目設定。惟本題確有兩個正確敘述並存，仍屬選項區辨偏鬆的題型，此點保留供人工複核者知悉。待查項目結案。查核日期 2026-08-30。",
       "author": "Claude Code（AI 輔助初稿）",
       "authoredAt": "2026-08-07"
     }
