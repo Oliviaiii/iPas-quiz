@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-intermediate-2-ai-tech-planning",
+  "range": {
+    "start": 41,
+    "end": 50
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 7,
+    "corrected": 3,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-041",
+      "officialQuestionNumber": 41,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 11 頁（共 14 頁）第 41 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Nested versus non-nested cross-validation",
+          "url": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_nested_cross_validation_iris.html",
+          "locator": "非巢狀 CV 以同一資料調參與評估會洩漏資訊、對資料過擬合並產生 overly optimistic score；巢狀 CV 以內圈選參數、外圈估計誤差",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-042",
+      "officialQuestionNumber": 42,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 已載明一項正確且有來源的限定（深度生成模型的似然可能對分佈外資料給較高分，不能單憑潛在空間保證 OOD 偵測），並把「是否需調整對『最適合』的表述」列為待查。本次確認相對框架已就位：選項 D 的解析即以「正確（就選項比較而言）」開頭，摘要與作答理由也以「四個選項中」限定，讀者不會誤讀為絕對推薦。已改寫 editorialNote 記錄此判定，限定與來源維持不變。",
+        "修正以 scripts/fix-ai-review-114-2-m1-041-050.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 11～12 頁（共 14 頁）第 42 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Nalisnick et al., Do Deep Generative Models Know What They Don't Know?（arXiv:1810.09136）",
+          "url": "https://arxiv.org/abs/1810.09136",
+          "locator": "摘要：VAE、flow 與 PixelCNN 的密度估計可能無法區分訓練分佈與分佈外影像，提醒不可未驗證即用於 OOD 偵測",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-043",
+      "officialQuestionNumber": 43,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 12 頁（共 14 頁）第 43 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Kingma et al., Semi-Supervised Learning with Deep Generative Models（arXiv:1406.5298）",
+          "url": "https://arxiv.org/abs/1406.5298",
+          "locator": "摘要：深度生成模型與變分推論可利用少量標註及大量未標註資料，改善半監督泛化",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Devlin et al., BERT（arXiv:1810.04805）",
+          "url": "https://arxiv.org/abs/1810.04805",
+          "locator": "摘要：預訓練 BERT 可加入輸出層後針對多種 NLP 任務微調",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-044",
+      "officialQuestionNumber": 44,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 已載明一項正確的限定（僅靠觀察性資料生成不同促銷條件，不保證得到可信的顧客因果反應），並把「是否需進一步標示 A/B 測試與離線模擬的差別」列為待查。本次確認此區別已在正文中說明：選項 D 的解析指出強化學習「必須先有可信的環境或使用者反應模型」，選項 C 也寫明條件式生成後仍「搭配分類器評估流失預測」，合起來已點出合成樣本屬離線模擬、不等於真實 A/B 測試的因果證據。已改寫 editorialNote 記錄此判定並保留該限定。",
+        "修正以 scripts/fix-ai-review-114-2-m1-041-050.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 12 頁（共 14 頁）第 44 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Kingma & Welling, Auto-Encoding Variational Bayes（arXiv:1312.6114）",
+          "url": "https://arxiv.org/abs/1312.6114",
+          "locator": "以變分推論學習連續潛在變數的生成模型並進行取樣",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Goodfellow et al., Generative Adversarial Nets（arXiv:1406.2661）",
+          "url": "https://arxiv.org/abs/1406.2661",
+          "locator": "生成器捕捉資料分佈，鑑別器估計樣本來自訓練資料而非生成器的機率",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-045",
+      "officialQuestionNumber": 45,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 12～13 頁（共 14 頁）第 45 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－PCA",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html",
+          "locator": "以 SVD 將置中資料投影到較低維空間；components 依 explained variance 排序（不使用類別標籤）",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Faces recognition example using eigenfaces and SVMs",
+          "url": "https://scikit-learn.org/stable/auto_examples/applications/plot_face_recognition.html",
+          "locator": "以 PCA 將高維人臉資料降維後再用 SVM 分類，並以交叉驗證搜尋參數",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-046",
+      "officialQuestionNumber": 46,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 13 頁（共 14 頁）第 46 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST AI RMF Playbook－MEASURE 2.4、MANAGE 4.1",
+          "url": "https://airc.nist.gov/airmf-resources/playbook/",
+          "locator": "MEASURE 2.4 建議在部署與運作中監測效能與風險；MANAGE 4.1 要求部署後持續監測、處理新風險與回應機制",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-047",
+      "officialQuestionNumber": 47,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 13 頁（共 14 頁）第 47 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Chen et al., GradNorm（arXiv:1711.02257）",
+          "url": "https://arxiv.org/abs/1711.02257",
+          "locator": "摘要與第 2 節：多任務損失權重影響共享網路訓練；GradNorm 以梯度大小動態平衡各任務訓練速率",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-048",
+      "officialQuestionNumber": 48,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 13～14 頁（共 14 頁）第 48 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－DBSCAN",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html",
+          "locator": "參數 algorithm 支援 ball_tree、kd_tree、brute；文件並提醒某些 eps／min_samples 情況可達 O(n²) 記憶體複雜度",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Nearest Neighbor Algorithms",
+          "url": "https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbor-algorithms",
+          "locator": "KD tree、Ball tree 與 brute force 的選擇受樣本數、維度與鄰居數影響，高維時樹方法效率可能降低——佐證 editorialNote 的高維限定",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-049",
+      "officialQuestionNumber": 49,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 14 頁（共 14 頁）第 49 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST SP 1270－Towards a Standard for Identifying and Managing Bias in Artificial Intelligence",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1270.pdf",
+          "locator": "Executive Summary 與第 3、4 節：資料集代表性、測試評估及人類與系統因素都是 AI 偏誤來源，治理需超越單一計算修正",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-050",
+      "officialQuestionNumber": 50,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 已載明一項正確的限定（把品牌顏色與手部失真統一歸因於 CLIP 編碼器未對齊屬過度簡化，細節失真還可能來自訓練資料、條件注入、生成器表示能力與取樣），並把「是否需標示為四個選項中的相對最佳解」列為待查。本次確認該標示已就位：摘要寫「四個選項中」、作答理由寫「在四項中最接近合理機制」、選項 C 解析以「正確（依官方選項比較）」開頭，三處都已限定為相對比較。已改寫 editorialNote 記錄此判定，過度簡化的提醒與 Rombach 等人的來源均維持不變。",
+        "修正以 scripts/fix-ai-review-114-2-m1-041-050.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 14 頁（共 14 頁）第 50 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Radford et al., Learning Transferable Visual Models From Natural Language Supervision（arXiv:2103.00020）",
+          "url": "https://arxiv.org/abs/2103.00020",
+          "locator": "摘要與第 2.2 節：CLIP 以自然語言監督及對比目標，預測批次中哪個文字與哪張影像配對",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Rombach et al., High-Resolution Image Synthesis with Latent Diffusion Models（arXiv:2112.10752）",
+          "url": "https://arxiv.org/abs/2112.10752",
+          "locator": "摘要與第 3.3 節：以 cross-attention 將文字等條件注入潛在擴散模型，說明文字到影像管線不只是單一 CLIP 對齊步驟",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
