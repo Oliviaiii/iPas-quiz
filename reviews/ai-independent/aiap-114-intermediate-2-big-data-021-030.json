@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-intermediate-2-big-data",
+  "range": {
+    "start": 21,
+    "end": 30
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 9,
+    "corrected": 1,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-021",
+      "officialQuestionNumber": 21,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "來源可及性問題：本題第二筆來源為 Tufte《The Visual Display of Quantitative Information》之紙本頁碼引用，出版者網站 edwardtufte.com 對自動化存取回應 HTTP 403，無法以程式驗證頁面內容。引用本身正確，已把此限制寫入 locator 與 editorialNote（須以書籍或瀏覽器人工查核），並註明本題判準由四個選項的相對比較即可成立。",
+        "官方答案 B 不受影響。修正以 scripts/fix-ai-review-114-2-m2-021-030.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 6 頁（共 17 頁）第 21 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認；本題無附圖與共用題組",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Edward Tufte－The Visual Display of Quantitative Information",
+          "url": "https://www.edwardtufte.com/book/the-visual-display-of-quantitative-information/",
+          "locator": "第 2 版第 161–168 頁 Data Density and Small Multiples；註：出版者網站阻擋自動化存取（403），需以書籍或瀏覽器人工查核",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-022",
+      "officialQuestionNumber": 22,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 6 頁（共 17 頁）第 22 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認；本題無附圖與共用題組",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "pandas－DataFrame.corr",
+          "url": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html",
+          "locator": "計算欄位間成對相關係數，預設方法為 Pearson，輸出 correlation matrix",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "seaborn－heatmap",
+          "url": "https://seaborn.pydata.org/generated/seaborn.heatmap.html",
+          "locator": "以顏色編碼矩形資料集，適合呈現二維相關矩陣並可註記數值",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-023",
+      "officialQuestionNumber": 23,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 6 頁（共 17 頁）第 23 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認；本題無附圖與共用題組",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "SciPy－ttest_1samp",
+          "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_1samp.html",
+          "locator": "單樣本 t 檢定檢查樣本平均是否等於指定母體平均；結果含 p-value 與指定信賴水準的 confidence interval",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－Confidence Limits for the Mean",
+          "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm",
+          "locator": "母體標準差未知時，平均數信賴區間以 t 分佈、樣本標準差與樣本數計算——佐證選項 D「僅與顯著水準有關」為錯誤",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-024",
+      "officialQuestionNumber": 24,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 6～7 頁（共 17 頁）第 24 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認；本題無附圖與共用題組",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Apache Spark－Overview",
+          "url": "https://spark.apache.org/docs/latest/",
+          "locator": "Spark 為大規模資料分析的多語言引擎，提供 SQL／DataFrame、串流與機器學習等分散式處理能力",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Ray Data－Loading and Preprocessing Data",
+          "url": "https://docs.ray.io/en/latest/data/data.html",
+          "locator": "Ray Data 提供分散式資料載入、轉換與串流執行，可串接機器學習訓練工作負載",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-025",
+      "officialQuestionNumber": 25,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 7 頁（共 17 頁）第 25 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認；本題無附圖與共用題組",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Matplotlib－log scale 範例",
+          "url": "https://matplotlib.org/stable/gallery/scales/log_demo.html",
+          "locator": "以 set_yscale('log') 等方式在對數座標呈現跨數量級資料",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－Box Plot",
+          "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/boxplot.htm",
+          "locator": "箱型圖呈現位置、尺度、偏態與離群點，可用於比較多組分佈差異",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-026",
+      "officialQuestionNumber": 26,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 7 頁（共 17 頁）第 26 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認；本題無附圖與共用題組",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "mlxtend－Association Rules",
+          "url": "https://rasbt.github.io/mlxtend/user_guide/frequent_patterns/association_rules/",
+          "locator": "定義 support、confidence 與 lift；lift=1 代表獨立，lift>1 表示 antecedent 出現會提高 consequent 的機率",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-027",
+      "officialQuestionNumber": 27,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 7～8 頁（共 17 頁）第 27 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認；本題無附圖與共用題組",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Apache Spark－DataFrameStatFunctions.approxQuantile",
+          "url": "https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrameStatFunctions.approxQuantile.html",
+          "locator": "以 probabilistic algorithm 計算 approximate quantiles，並以 relativeError 控制目標分位的排名誤差界線",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-028",
+      "officialQuestionNumber": 28,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 8 頁（共 17 頁）第 28 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認；本題無附圖與共用題組",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Clustering: DBSCAN",
+          "url": "https://scikit-learn.org/stable/modules/clustering.html#dbscan",
+          "locator": "DBSCAN 將核心樣本的高密度區擴張為群集，eps 控制鄰域距離、min_samples 控制核心點的鄰域樣本數",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Nearest Neighbor Algorithms",
+          "url": "https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbor-algorithms",
+          "locator": "Curse of dimensionality：維度增加使資料在空間中更稀疏，距離方法可能退化",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-029",
+      "officialQuestionNumber": 29,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 8 頁（共 17 頁）第 29 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認；本題無附圖與共用題組",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Importance of Feature Scaling",
+          "url": "https://scikit-learn.org/stable/auto_examples/preprocessing/plot_scaling_importance.html",
+          "locator": "PCA 段：未縮放時尺度較大的特徵會主導主成分；先以 StandardScaler 縮放會使各特徵貢獻更平衡",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－PCA",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html",
+          "locator": "PCA 執行前會置中但不會自動逐特徵縮放",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-030",
+      "officialQuestionNumber": 30,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 8 頁（共 17 頁）第 30 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認；本題無附圖與共用題組",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "SciPy－pearsonr",
+          "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html",
+          "locator": "Pearson correlation coefficient 衡量兩資料集的線性關係，範圍 [−1,1]，為以標準差正規化的共變異量",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}

@@ -26846,11 +26846,11 @@
         {
           "title": "Edward Tufte－The Visual Display of Quantitative Information",
           "url": "https://www.edwardtufte.com/book/the-visual-display-of-quantitative-information/",
-          "locator": "第 2 版第 161–168 頁 Data Density and Small Multiples：在合理圖面空間呈現大量可比較數據，同時維持清楚與效率",
-          "checkedAt": "2026-08-12"
+          "locator": "第 2 版第 161–168 頁 Data Density and Small Multiples：在合理圖面空間呈現大量可比較數據，同時維持清楚與效率。註：本筆為紙本書之頁碼引用，出版者網站 edwardtufte.com 對自動化存取回應 HTTP 403，無法以程式驗證頁面內容，需以書籍或瀏覽器人工查核",
+          "checkedAt": "2026-08-30"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。來源可及性（獨立 AI 複核 2026-08-30 查核）：本題的 Tufte 來源是紙本書之頁碼引用，出版者網站 edwardtufte.com 對自動化存取回應 HTTP 403，無法以程式驗證，需以書籍或瀏覽器人工查核；引用本身正確，且本題判準（同一版面承載更多可比較資料且維持標註清楚）由四個選項的相對比較即可成立。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-08-12"
     }
