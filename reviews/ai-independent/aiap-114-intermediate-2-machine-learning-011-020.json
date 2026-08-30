@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-intermediate-2-machine-learning",
+  "range": {
+    "start": 11,
+    "end": 20
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 9,
+    "corrected": 0,
+    "humanDecision": 1,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-011",
+      "officialQuestionNumber": 11,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 3 頁：第 11 題題幹、(A)～(D) 選項與左欄官方答案 D",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Random Search for Hyper-Parameter Optimization（Bergstra & Bengio, JMLR 13, 2012）",
+          "url": "https://jmlr.org/papers/v13/bergstra12a.html",
+          "locator": "摘要：random search over the same domain is able to find models that are as good or better within a small fraction of the computation time…random search finds better models by effectively searching a larger, less promising configuration space",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-012",
+      "officialQuestionNumber": 12,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 3 頁：第 12 題題幹、(A)～(D) 選項與左欄官方答案 C",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Keras API－SGD optimizer",
+          "url": "https://keras.io/api/optimizers/sgd/",
+          "locator": "Update rule for parameter w with gradient g when momentum is 0: w = w - learning_rate * g，說明 learning_rate 直接縮放每步更新幅度",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-013",
+      "officialQuestionNumber": 13,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 3 頁：第 13 題題幹、(A)～(D) 選項與左欄官方答案 B",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST Special Publication 1270－Towards a Standard for Identifying and Managing Bias in Artificial Intelligence",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1270.pdf",
+          "locator": "Fig. 2 Categories of AI Bias 將 annotator reporting、human reporting、selective adherence 等列為 Human Biases；系統驗證段亦指出 noisy labeling and other annotation factors 造成缺乏 ground truth",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-014",
+      "officialQuestionNumber": 14,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 3～4 頁：第 14 題題幹與 (A)(B) 選項、左欄官方答案 C（第 3 頁）、(C)(D) 選項（第 4 頁）",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "FDA－Transparency for Machine Learning-Enabled Medical Devices: Guiding Principles",
+          "url": "https://www.fda.gov/medical-devices/software-medical-device-samd/transparency-machine-learning-enabled-medical-devices-guiding-principles",
+          "locator": "Why: Motivation：Transparency is essential to patient-centered care and for the safety and effectiveness of a device；What: Relevant information：It's valuable to provide the basis of a device output…(the \"logic\" of the model)…helps one critically assess the device and its output when patient care decisions are being made",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-015",
+      "officialQuestionNumber": 15,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 4 頁：第 15 題題幹、(A)～(D) 選項與左欄官方答案 B",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.metrics.r2_score",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html",
+          "locator": "R² (coefficient of determination) regression score function 說明：Best possible score is 1.0 and it can be negative；a constant model that always predicts the average y…would get a R² score of 0.0",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-016",
+      "officialQuestionNumber": 16,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 4 頁：第 16 題題幹（Precision 0.8、Recall 0.6）、(A)～(D) 選項與左欄官方答案 A",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Precision, recall and F-measures",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html#precision-recall-f-measure-metrics",
+          "locator": "F-measure 定義：harmonic mean of precision and recall, with precision's contribution to the mean weighted by some parameter β；β=1 時 F_β 等同 F₁，代入 P=0.8、R=0.6 得 0.96/1.4≈0.6857",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-017",
+      "officialQuestionNumber": 17,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "human-decision",
+      "findings": [
+        "本題存在明確的複選歧義，獨立複核確認 draft 既有的 editorialNote 疑義仍成立：題幹問「下列哪一種優化演算法內建動量（Momentum）的設計機制」，而選項 (A) SGD+Momentum 依 Keras 官方文件即為 Gradient descent (with momentum) optimizer，momentum>0 時使用 velocity = momentum * velocity - learning_rate * g，字面與公式都內建動量；(B) Adam 亦為 adaptive estimation of first-order and second-order moments，一階動差即動量式機制。兩者皆可成立。",
+        "官方答案 B 的合理命題意圖應是「不必另行加掛 momentum 模組、演算法本身即同時估計一階與二階動差」，但題幹未寫出此排他條件。依複核規則不擅改官方答案，保留 B 並記為 human-decision，建議人工複核決定是否加註或改寫題幹。",
+        "題幹、四個選項與官方答案 B 均與 PDF 第 4 頁一致；draft 的 optionAnalysis 已如實指出 A 在技術事實上也含動量，敘述未誤導。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 4 頁：第 17 題題幹、(A) SGD+Momentum～(D) Adagrad 選項與左欄官方答案 B",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Keras API－SGD optimizer",
+          "url": "https://keras.io/api/optimizers/sgd/",
+          "locator": "頁首標題即 Gradient descent (with momentum) optimizer；Update rule when momentum is larger than 0：velocity = momentum * velocity - learning_rate * g，w = w + velocity",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Keras API－Adam optimizer",
+          "url": "https://keras.io/api/optimizers/adam/",
+          "locator": "Adam optimization is a stochastic gradient descent method that is based on adaptive estimation of first-order and second-order moments",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Adam: A Method for Stochastic Optimization（Kingma & Ba, 2014）",
+          "url": "https://arxiv.org/abs/1412.6980",
+          "locator": "摘要：an algorithm for first-order gradient-based optimization of stochastic objective functions, based on adaptive estimates of lower-order moments",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-018",
+      "officialQuestionNumber": 18,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 4 頁：第 18 題題幹、(A)～(D) 選項與左欄官方答案 A",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "XGBoost: A Scalable Tree Boosting System（Chen & Guestrin, 2016）",
+          "url": "https://arxiv.org/abs/1603.02754",
+          "locator": "摘要：end-to-end tree boosting system called XGBoost…We propose a novel sparsity-aware algorithm for sparse data and weighted quantile sketch…insights on cache access patterns, data compression and sharding to build a scalable tree boosting system",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-019",
+      "officialQuestionNumber": 19,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 4～5 頁：第 19 題題幹與 (A)～(C) 選項、左欄官方答案 C（第 4 頁）、(D) 選項（第 5 頁）",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Classification metrics",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics",
+          "locator": "章節列出 accuracy_score、balanced_accuracy_score、precision/recall/F-measure 與 precision_recall_curve 等指標，並說明 balanced accuracy 用於處理不平衡資料集",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "imbalanced-learn API－imblearn.over_sampling.SMOTE",
+          "url": "https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html",
+          "locator": "類別說明：Class to perform over-sampling using SMOTE；sampling_strategy 控制重採樣後少數／多數類的比例",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-020",
+      "officialQuestionNumber": 20,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 5 頁：第 20 題題幹、(A)～(D) 選項與左欄官方答案 C",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.preprocessing.PolynomialFeatures",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PolynomialFeatures.html",
+          "locator": "類別說明：Generate polynomial and interaction features；interaction_only 參數：If True, only interaction features are produced: features that are products of at most degree distinct input features",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
