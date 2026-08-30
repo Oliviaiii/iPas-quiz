@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-elementary-2-genai-planning",
+  "range": {
+    "start": 41,
+    "end": 50
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 8,
+    "corrected": 2,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-041",
+      "officialQuestionNumber": 41,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 11～12 頁（共 13 頁）第 41 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Understanding the planning of LLM agents: A survey（arXiv:2402.02716）",
+          "url": "https://arxiv.org/abs/2402.02716",
+          "locator": "將 LLM 作為自主代理規劃模組的研究綜述，歸納為任務分解、計畫選擇、外部規劃模組、反思與記憶五類",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Tree of Thoughts（arXiv:2305.10601）",
+          "url": "https://arxiv.org/abs/2305.10601",
+          "locator": "以想法為節點探索多條推理路徑並自我評估、前瞻與回溯",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-042",
+      "officialQuestionNumber": 42,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 11～12 頁（共 13 頁）第 42 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "OWASP Top 10 for LLM Applications－LLM01: Prompt Injection",
+          "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+          "locator": "提示注入定義與直接／間接注入之區分，及過濾輸入輸出、約束模型行為、限制權限等緩解措施",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-7：安全防護與風險控管－建立多層次防護措施，防止模型遭惡意攻擊或生成有害內容",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-043",
+      "officialQuestionNumber": 43,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 指出無形效益與隱性成本僅以維基條目佐證，請複核者補查更權威出處。本次已補入 IBM Think 的 TCO 主題頁（先前批次查核時為 403，本次重試可開啟）：「Direct costs are relatively easy to see, but TCO also incorporates indirect and hidden costs」，並明載「there will also always be intangible costs, whether that's employee satisfaction, learning curve」，正可佐證選項 B 主張的整體評估應納入無形效益與隱性成本。另全文檢索確認官方學習指引確無 ROI 專節。待查項目結案。",
+        "修正以 scripts/fix-ai-review-115-2-s2-041-050.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 12 頁（共 13 頁）第 43 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Wikipedia－Return on investment",
+          "url": "https://en.wikipedia.org/wiki/Return_on_investment",
+          "locator": "ROI 定義與其作為單一比率指標的限制",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "IBM Think－What is total cost of ownership (TCO)?",
+          "url": "https://www.ibm.com/think/topics/total-cost-of-ownership",
+          "locator": "逐字核對：It accounts for direct costs (such as the initial purchase price) and indirect costs (such as time spent adjusting to new systems)；Direct costs are relatively easy to see, but TCO also incorporates indirect and hidden costs；there will also always be intangible costs",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-044",
+      "officialQuestionNumber": 44,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 12 頁（共 13 頁）第 44 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-6：資料隱私與安全性——敏感資料洩漏風險與合規風險，解方含資料加密、匿名化與權限控管",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-2：Low Code 平台適合需要深度整合與複雜邏輯的中大型企業應用；地端／隔離部署為資料不出邊界之作法",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-045",
+      "officialQuestionNumber": 45,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 12 頁（共 13 頁）第 45 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection（arXiv:2302.12173）",
+          "url": "https://arxiv.org/abs/2302.12173",
+          "locator": "摘要：攻擊者可在模型可能取用的外部資料中植入提示，遠端操控 LLM 整合應用，即間接提示注入",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "OWASP Top 10 for LLM Applications－LLM01: Prompt Injection",
+          "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+          "locator": "提示注入定義與直接／間接注入之區分，及過濾輸入輸出、約束模型行為、限制權限等緩解措施",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-046",
+      "officialQuestionNumber": 46,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 12 頁（共 13 頁）第 46 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Wikipedia－Differential privacy",
+          "url": "https://en.wikipedia.org/wiki/Differential_privacy",
+          "locator": "定義：以校準的隨機雜訊保護個體資料，同時保留整體統計效用",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST SP 800-226－Guidelines for Evaluating Differential Privacy Guarantees",
+          "url": "https://csrc.nist.gov/pubs/sp/800/226/final",
+          "locator": "NIST 差分隱私評估指引；以雜訊注入提供可量化的個體隱私保證",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-047",
+      "officialQuestionNumber": 47,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 記載 Gartner 與 IBM 的 TCO 頁面於先前批次回應 403、待補一手出處。本次重試：Gartner 詞彙表仍為 403，IBM Think 的 TCO 主題頁已可開啟並補為第四筆來源，逐字為「It accounts for direct costs (such as the initial purchase price) and indirect costs (such as time spent adjusting to new systems)」，直接／間接成本的分野與本題判準一致。",
+        "另記一項界定：該頁提到 TCO 亦涵蓋 cost savings，指的是擁有週期內的節省（如殘值），與選項 C 所述「導入後配送效率提升帶來的燃油與維運成本下降」不同——後者是系統效益而非擁有系統所需的支出；本題問「直接成本考量」，C 仍為正解。此界定已寫入 editorialNote 供人工複核者參考。待查項目結案。",
+        "修正以 scripts/fix-ai-review-115-2-s2-041-050.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 12～13 頁（共 13 頁）第 47 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Wikipedia－Total cost of ownership",
+          "url": "https://en.wikipedia.org/wiki/Total_cost_of_ownership",
+          "locator": "TCO 定義：涵蓋購置與整個生命週期的直接與間接成本",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "IBM Think－What is total cost of ownership (TCO)?",
+          "url": "https://www.ibm.com/think/topics/total-cost-of-ownership",
+          "locator": "逐字核對：It accounts for direct costs (such as the initial purchase price) and indirect costs (such as time spent adjusting to new systems)；Direct costs are relatively easy to see, but TCO also incorporates indirect and hidden costs；there will also always be intangible costs",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Anthropic Claude 平台文件－Pricing",
+          "url": "https://platform.claude.com/docs/en/docs/about-claude/pricing",
+          "locator": "API 依輸入與輸出 token 分別計價；佐證選項 A 的 Token 使用費為直接成本",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-048",
+      "officialQuestionNumber": 48,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 13 頁（共 13 頁）第 48 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks（arXiv:2005.11401）",
+          "url": "https://arxiv.org/abs/2005.11401",
+          "locator": "以可檢索的非參數化記憶補充模型參數知識，知識可隨時更新且生成結果有出處可追溯",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-18：微調階段是在預訓練模型的基礎上，使用特定領域或任務的數據進一步訓練；佐證選項 A 需重訓之排除理由",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-049",
+      "officialQuestionNumber": 49,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 13 頁（共 13 頁）第 49 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Extracting Training Data from Large Language Models（arXiv:2012.07805）",
+          "url": "https://arxiv.org/abs/2012.07805",
+          "locator": "摘要：可對語言模型執行訓練資料擷取攻擊，還原逐字記憶的訓練文本（含個人可識別資訊）；支持「訓練階段過度記憶導致資訊重新輸出」之判定",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-6：資料隱私與安全性——敏感資料洩漏風險與個資法合規風險",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-genai-planning-050",
+      "officialQuestionNumber": 50,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260604212719.pdf",
+          "locator": "PDF 第 13 頁（共 13 頁）第 50 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "全國法規資料庫－人工智慧基本法",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0160093",
+          "locator": "第 4 條五、透明與可解釋「人工智慧之產出應做適當資訊揭露或標記，以利評估可能風險」；七、問責；第 17 條：政府應就高風險人工智慧之應用，明確其責任歸屬及歸責條件，並建立救濟、補償或保險機制",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-6：模型準確性與可靠性——輸出結果錯誤風險與驗證機制不足，解方為建立多層次驗證機制",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
