@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-intermediate-1-big-data",
+  "range": {
+    "start": 21,
+    "end": 30
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 10,
+    "corrected": 0,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-021",
+      "officialQuestionNumber": 21,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 6～7 頁：第 21 題題幹與 (A)～(D) 選項、左欄官方答案 D（第 6 頁）、(D) 選項續行（第 7 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PySpark API－pyspark.sql.functions.stddev_samp",
+          "url": "https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.functions.stddev_samp.html",
+          "locator": "Aggregate function: returns the unbiased sample standard deviation of the expression in a group；屬 Spark 聚合函數，由執行引擎規劃 partial 與 final aggregation",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Apache Spark－RDD Programming Guide",
+          "url": "https://spark.apache.org/docs/latest/rdd-programming-guide.html",
+          "locator": "Actions 段說明 reduce/aggregate 等動作在叢集上彙總元素後才把結果回傳 driver；並提醒 collect() 會將整個資料集取回 driver，僅適用結果夠小的情形",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-022",
+      "officialQuestionNumber": 22,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 7 頁：第 22 題題幹（500 間門市、3 年資料、預測未來 14 天）、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.model_selection.TimeSeriesSplit",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html",
+          "locator": "類別說明：Provides train/test indices to split time-ordered data…they would lead to training on future data and evaluating on past data",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Forecasting: Principles and Practice (3rd ed.)－§5.10 Time series cross-validation",
+          "url": "https://otexts.com/fpp3/tscv.html",
+          "locator": "以 rolling forecasting origin 逐步向前移動訓練集與預測起點，對每個原點計算預測誤差後平均，為前進式驗證的標準作法",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-023",
+      "officialQuestionNumber": 23,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 7 頁：第 23 題題幹、四條曲線附圖、(A)～(D) 選項與左欄官方答案 C。已渲染該頁並與站內圖檔 aiap-115-intermediate-1-big-data-p07-1.png 目視比對：A 為 TPR=1 的頂端水平線、B 為單調上升的凹曲線、D 為 (0,0) 到 (1,1) 的對角線、C 在 FPR 增加期間出現明顯下凹回落，確為四者中唯一非單調者。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.metrics.roc_curve",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_curve.html",
+          "locator": "Returns 段：fpr 與 tpr 皆為 Increasing…rates；thresholds 為 Decreasing thresholds on the decision function used to compute fpr and tpr，可證放寬門檻時兩座標只會非遞減",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-024",
+      "officialQuestionNumber": 24,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 7～8 頁：第 24 題題幹與 (A) 選項、左欄官方答案 C（第 7 頁）、(A) 續行與 (B)～(D) 選項（第 8 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "SciPy API－scipy.stats.pearsonr",
+          "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html",
+          "locator": "函式說明：Pearson correlation coefficient…measures the linear relationship between two datasets，數值介於 -1 與 +1",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "SciPy API－scipy.stats.spearmanr",
+          "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.spearmanr.html",
+          "locator": "函式說明：The Spearman rank-order correlation coefficient is a nonparametric measure of the monotonicity of the relationship…varies between -1 and +1",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "SciPy API－scipy.stats.kendalltau",
+          "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.kendalltau.html",
+          "locator": "函式說明：Calculate Kendall's tau, a correlation measure for ordinal data…a measure of the correspondence between two rankings；tau-b 與 tau-c 皆正規化至 -1 到 1",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-025",
+      "officialQuestionNumber": 25,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 8 頁：第 25 題題幹（詐欺約 0.3%、Accuracy 99.6%）、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.utils.class_weight.compute_class_weight",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.utils.class_weight.compute_class_weight.html",
+          "locator": "class_weight='balanced' 時權重為 n_samples / (n_classes * np.bincount(y))，即依類別頻率反比加權，使少數類在損失中取得較高權重",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn Examples－Precision-Recall",
+          "url": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html",
+          "locator": "導言：Precision-Recall is a useful measure of success of prediction when the classes are very imbalanced",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-026",
+      "officialQuestionNumber": 26,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 8 頁：第 26 題題幹（UNIX 時間戳記轉早晨／下午／夜晚三區間）、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Discretization",
+          "url": "https://scikit-learn.org/stable/modules/preprocessing.html#discretization",
+          "locator": "Discretization (otherwise known as quantization or binning) provides a way to partition continuous features into discrete values",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-027",
+      "officialQuestionNumber": 27,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 8 頁：第 27 題題幹（1,000 位使用者、三項指標、單一頁面）、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Edward Tufte－The Visual Display of Quantitative Information",
+          "url": "https://www.edwardtufte.com/book/the-visual-display-of-quantitative-information/",
+          "locator": "官方書籍頁的章節目次列出 Graphical Integrity（含 Lie Factor）、Data-Ink and Graphical Redesign、Chartjunk 與 Data Density and Small Multiples 等節",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-028",
+      "officialQuestionNumber": 28,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 8～9 頁：第 28 題題幹（A 3.2%、B 3.8%、C 4.0%，y 軸刻意截斷）與左欄官方答案 C（第 8 頁）、(A)～(D) 選項（第 9 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Edward Tufte－The Visual Display of Quantitative Information",
+          "url": "https://www.edwardtufte.com/book/the-visual-display-of-quantitative-information/",
+          "locator": "官方書籍頁的章節目次列出 Graphical Integrity（含 Lie Factor）、Data-Ink and Graphical Redesign、Chartjunk 與 Data Density and Small Multiples 等節",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-029",
+      "officialQuestionNumber": 29,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 9 頁：第 29 題題幹（推論延遲隨時間變化、P99<200ms）、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Grafana Documentation－Time series visualization",
+          "url": "https://grafana.com/docs/grafana/latest/panels-visualizations/visualizations/time-series/",
+          "locator": "說明 time series 為預設的時間序列視覺化，以時間為 x 軸繪製數值走勢，並支援 thresholds 標示門檻與多序列比較",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-030",
+      "officialQuestionNumber": 30,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 9 頁：第 30 題題幹（Batch Size 32 vs 4096）、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima（Keskar et al., ICLR 2017）",
+          "url": "https://arxiv.org/abs/1609.04836",
+          "locator": "摘要：when using a larger batch there is a degradation in the quality of the model, as measured by its ability to generalize…large-batch methods tend to converge to sharp minimizers…In contrast, small-batch methods consistently converge to flat minimizers",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
