@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-elementary-2-ai-foundation",
+  "range": {
+    "start": 41,
+    "end": 50
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 7,
+    "corrected": 3,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-041",
+      "officialQuestionNumber": 41,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 11 頁（共 13 頁）第 41 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Support Vector Machines",
+          "url": "https://scikit-learn.org/stable/modules/svm.html",
+          "locator": "1.4 優點：Effective in high dimensional spaces、Still effective in cases where number of dimensions is greater than the number of samples；1.4.4 Complexity：訓練複雜度介於 O(n_features×n_samples²) 與 O(n_features×n_samples³) 之間",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-36：支援向量機透過建立最佳的分類邊界（超平面）將數據劃分為不同類別，特別適合二元分類",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-042",
+      "officialQuestionNumber": 42,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 11 頁（共 13 頁）第 42 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Ribeiro, Singh & Guestrin, \"Why Should I Trust You?\"（arXiv:1602.04938）",
+          "url": "https://arxiv.org/abs/1602.04938",
+          "locator": "摘要：LIME 以在預測附近學習可解釋模型的方式，對任何分類器的預測提供可解釋且忠實的說明",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-35：模型可解釋性與人為監督是醫療、法律等高風險領域的應用前提",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-043",
+      "officialQuestionNumber": 43,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 11 頁（共 13 頁）第 43 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Lundberg & Lee, A Unified Approach to Interpreting Model Predictions（arXiv:1705.07874）",
+          "url": "https://arxiv.org/abs/1705.07874",
+          "locator": "摘要：SHAP 為每個特徵指派對應於特定預測的重要性數值，屬加法式特徵歸因",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-044",
+      "officialQuestionNumber": 44,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 11～12 頁（共 13 頁）第 44 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Efficient Large Language Models: A Survey（arXiv:2312.03863）",
+          "url": "https://arxiv.org/abs/2312.03863",
+          "locator": "摘要：大型語言模型的卓越能力伴隨可觀的資源需求，凸顯發展效率技術的必要；支持詳解把推理成本列為部署首要考量",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-045",
+      "officialQuestionNumber": 45,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 12 頁（共 13 頁）第 45 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-14～3-15：CNN 以卷積層提取局部特徵、池化層降維，應用場景為影像辨識、物件偵測與圖像分割；RNN 專為序列數據設計",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章（PDF 第 21 頁）逐字核對：LSTM「透過引入遺忘門（forget gate）、輸入門（input gate）和輸出門（output gate），有效解決了梯度消失問題」",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-046",
+      "officialQuestionNumber": 46,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 請複核者確認命題是否另有所指。本次重新開啟 arXiv:2603.01145 逐字核對，確認論文確實存在且標題為 AutoSkill: Experience-Driven Lifelong Learning via Skill Self-Evolution；摘要末句「AutoSkill turns ephemeral interaction experience into explicit, reusable, and composable capabilities」與官方答案 C 幾乎逐字對應，摘要並明載 without retraining the underlying model 與 model-agnostic plugin layer，可逐一對上選項 B、A 的排除理由。命題依據未經官方公布、無從再查證，惟此對應已足以定案，待查項目結案。",
+        "修正以 scripts/fix-ai-review-115-2-s1-041-050.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 12 頁（共 13 頁）第 46 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "AutoSkill: Experience-Driven Lifelong Learning via Skill Self-Evolution（arXiv:2603.01145）",
+          "url": "https://arxiv.org/abs/2603.01145",
+          "locator": "摘要逐字核對：such interaction experience is seldom consolidated into reusable knowledge；enables LLM agents to automatically derive, maintain, and reuse skills from dialogue and interaction traces；dynamically injects relevant skills into future requests without retraining the underlying model；Designed as a model-agnostic plugin layer；turns ephemeral interaction experience into explicit, reusable, and composable capabilities",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-047",
+      "officialQuestionNumber": 47,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 指出 Mode Collapse 的系統性討論出自 GAN 文獻，並問官方教材是否另有對應段落。本次全文檢索科目一學習指引，找到三處：PDF 第 23 頁 GAN 缺點「訓練過程不穩定，可能出現模式崩潰（Mode Collapse）」、第 54 頁「生成式 AI 的訓練過程往往伴隨著模式崩潰、梯度消失等挑戰」、第 65 頁「生成式 AI 的訓練過程經常面臨模式崩潰和梯度消失等問題，這會影響生成數據的多樣性與品質」。最後一處直接把模式崩潰連到輸出多樣性，正是本題症狀；已補為第四筆來源，待查項目結案。",
+        "修正以 scripts/fix-ai-review-115-2-s1-041-050.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 12 頁（共 13 頁）第 47 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Unrolled Generative Adversarial Networks（arXiv:1611.02163）",
+          "url": "https://arxiv.org/abs/1611.02163",
+          "locator": "摘要：此技術解決 GAN 常見的 mode collapse 問題，並提升生成器對資料分布的多樣性與涵蓋度",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章（PDF 第 23、65 頁）逐字核對：GAN 缺點「可能出現模式崩潰（Mode Collapse）」；「生成式 AI 的訓練過程經常面臨模式崩潰和梯度消失等問題，這會影響生成數據的多樣性與品質」；本次新增為 Q47 第四筆來源",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-048",
+      "officialQuestionNumber": 48,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 問科目一學習指引是否另有漂移對應章節可補引。本次全文檢索科目一學習指引，「漂移」零筆——該科教材未涵蓋此主題，因此引科目二 3-44 的數據漂移段落是目前唯一的官方出處，概念漂移以 arXiv 綜述佐證的作法維持不變。待查項目以此否定結果結案，引用不變。",
+        "修正以 scripts/fix-ai-review-115-2-s1-041-050.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 12～13 頁（共 13 頁）第 48 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Learning under Concept Drift: A Review（arXiv:2004.05785）",
+          "url": "https://arxiv.org/abs/2004.05785",
+          "locator": "摘要：概念漂移指串流資料的底層分布隨時間發生不可預見的變化；綜述並整理漂移偵測、理解與適應的方法",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-44（PDF 第 50 頁）逐字核對：「定期檢查數據漂移（Data Drift），分析輸入數據的分佈變化，特別是當業務場景或用戶行為改變時，數據漂移可能會導致模型預測準確性降低」",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-049",
+      "officialQuestionNumber": 49,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 13 頁（共 13 頁）第 49 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-48（PDF 第 54 頁）逐字核對：生成式模型「學習數據的聯合分佈 P（x,y）或邊際分佈 P（x），並能生成具有創新性的新數據樣本」",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-02-ai-foundation-050",
+      "officialQuestionNumber": 50,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第二次初級 AI 應用規劃師－第一科 人工智慧基礎概論 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第二次初級AI應用規劃師_第一科_人工智慧基礎概論_公告試題_20260604212644.pdf",
+          "locator": "PDF 第 13 頁（共 13 頁）第 50 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks（arXiv:2005.11401）",
+          "url": "https://ar5iv.labs.arxiv.org/html/2005.11401",
+          "locator": "第 4.5 節 Index hot-swapping：非參數化記憶可在測試時直接更新，替換索引即可反映新資訊，不需重新訓練",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章 3-18：微調階段是在預訓練模型的基礎上，使用特定領域或任務的數據進一步訓練，以提升特定任務表現",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}

@@ -17832,7 +17832,7 @@
           "checkedAt": "2026-08-06"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：本題所稱 AutoSkill 依 arXiv:2603.01145（AutoSkill: Experience-Driven Lifelong Learning via Skill Self-Evolution）摘要撰寫，與官方答案 C 的描述一致；命題實際依據的文獻未經官方公布，複核時請確認是否另有所指。查核日期 2026-08-06。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。原稿請複核者確認命題是否另有所指。獨立 AI 複核重新開啟 arXiv:2603.01145 逐字核對：摘要末句「AutoSkill turns ephemeral interaction experience into explicit, reusable, and composable capabilities」與官方答案 C「將重複的互動經驗轉化為可重複使用的明確技能模組」幾乎逐字對應，摘要並明載 without retraining the underlying model 與 model-agnostic plugin layer，可逐一對上選項 B、A 的排除理由。命題依據未經官方公布，無從再查證，惟此對應已足以支持本題詳解。待查項目結案。查核日期 2026-08-30。",
       "author": "Claude Code（AI 輔助初稿）",
       "authoredAt": "2026-08-06"
     }
@@ -17904,9 +17904,15 @@
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
           "locator": "第三章 3-16：循環神經網路的缺點包含訓練過程容易出現梯度消失或梯度爆炸問題",
           "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目一 人工智慧基礎概論",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目1_人工智慧基礎概論1141203_20251222172144.pdf",
+          "locator": "第三章（PDF 第 23 頁）：GAN 缺點「訓練過程不穩定，可能出現模式崩潰（Mode Collapse）」；（PDF 第 65 頁）「生成式 AI 的訓練過程經常面臨模式崩潰和梯度消失等問題，這會影響生成數據的多樣性與品質」，支持本題把輸出多樣性喪失歸為模式崩潰",
+          "checkedAt": "2026-08-30"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：Mode Collapse 的系統性討論出自 GAN 文獻，本題將其延伸用於大型語言模型輸出多樣性的描述；已引用 Unrolled GAN 論文作為術語出處，官方教材是否另有 LLM 語境的對應段落，待複核確認。查核日期 2026-08-06。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。原稿問官方教材是否另有對應段落，獨立 AI 複核已全文檢索科目一學習指引，找到三處：GAN 缺點「訓練過程不穩定，可能出現模式崩潰（Mode Collapse）」、「生成式 AI 的訓練過程往往伴隨著模式崩潰、梯度消失等挑戰」，以及「生成式 AI 的訓練過程經常面臨模式崩潰和梯度消失等問題，這會影響生成數據的多樣性與品質」——最後一處直接把模式崩潰連到輸出多樣性，正是本題描述的症狀。已補為第四筆來源，待查項目結案。查核日期 2026-08-30。",
       "author": "Claude Code（AI 輔助初稿）",
       "authoredAt": "2026-08-06"
     }
@@ -17980,7 +17986,7 @@
           "checkedAt": "2026-07-31"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：資料漂移定義所引學習指引段落出自科目二（生成式 AI 應用與規劃）3-44，科目一學習指引是否另有漂移對應章節，複核時可再確認補引；概念漂移定義另引 arXiv 綜述佐證。查核日期 2026-08-06。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。原稿問科目一學習指引是否另有漂移對應章節，獨立 AI 複核已全文檢索科目一學習指引：「漂移」零筆，該科教材未涵蓋此主題。因此引科目二 3-44 的數據漂移段落是目前唯一的官方出處，概念漂移則以 arXiv 綜述佐證，引用方式維持不變。待查項目以此否定結果結案。查核日期 2026-08-30。",
       "author": "Claude Code（AI 輔助初稿）",
       "authoredAt": "2026-08-06"
     }
