@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-intermediate-2-big-data",
+  "range": {
+    "start": 11,
+    "end": 20
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 9,
+    "corrected": 1,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-011",
+      "officialQuestionNumber": 11,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 3 頁（共 17 頁）第 11 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認；本題無附圖與共用題組",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Apache Flink Documentation－Stateful Stream Processing",
+          "url": "https://nightlies.apache.org/flink/flink-docs-stable/docs/concepts/stateful-stream-processing/",
+          "locator": "事件驅動應用與資料管線對無界資料流持續進行具狀態、可容錯且可擴展的處理",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-012",
+      "officialQuestionNumber": 12,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 3 頁（共 17 頁）第 12 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認；本題無附圖與共用題組",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "imbalanced-learn User Guide－Random over-sampling",
+          "url": "https://imbalanced-learn.org/stable/over_sampling.html#naive-random-over-sampling",
+          "locator": "RandomOverSampler 以有放回抽樣方式複製少數類樣本，並討論 smoothed bootstrap 變體",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-013",
+      "officialQuestionNumber": 13,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 3 頁（共 17 頁）第 13 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認；本題無附圖與共用題組",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Homomorphic Encryption Standardization－Introduction",
+          "url": "https://homomorphicencryption.org/introduction/",
+          "locator": "同態加密允許無私鑰者直接對加密資料運算，結果維持加密並由私鑰持有者解密",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-014",
+      "officialQuestionNumber": 14,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 指出 Normalized Gini impurity 命名不一，並把「官方學習材料的明確公式」列為待查。本次查證：官方僅出版初級兩科學習指引，中級並無對應學習指引（學習資源頁中級區塊只列 6 份試題公告、全站 600 題零引用、推測網址均 404），此方向查無資料。",
+        "惟本題答案不依賴該公式的命名：二元類別各半時原始 Gini 為 1−0.5²−0.5²=0.5，恰為二元的最大值，無論以 1−1/K 或以該情境的最大不純度正規化，結果都是 1；選項 A（0）、B（0.42，對應 0.7／0.3 之比例）、C（0.84）在任一慣例下都算不出來。已改寫 editorialNote 記錄此查證與判定，待查項目結案。",
+        "修正以 scripts/fix-ai-review-114-2-m2-011-020.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 4 頁（共 17 頁）第 14 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認；本題無附圖與共用題組",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Mathematical formulation of decision trees",
+          "url": "https://scikit-learn.org/stable/modules/tree.html#mathematical-formulation",
+          "locator": "Gini impurity 定義為 Σ p_mk(1−p_mk)，等價於 1−Σp²",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-015",
+      "officialQuestionNumber": 15,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 4 頁（共 17 頁）第 15 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認；本題無附圖與共用題組",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－Poisson Distribution",
+          "url": "https://itl.nist.gov/div898/handbook/eda/section3/eda366j.htm",
+          "locator": "Poisson 分布用於固定時間區間內的事件次數，λ 為該區間平均事件數",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-016",
+      "officialQuestionNumber": 16,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 4 頁（共 17 頁）第 16 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認；本題無附圖與共用題組",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－Location and Scale",
+          "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda353.htm",
+          "locator": "標準化以觀測值減去位置參數再除以尺度參數；(3200−2000)/400=3，符合 |Z|≥3 之門檻",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-017",
+      "officialQuestionNumber": 17,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 4～5 頁（共 17 頁）第 17 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致，已渲染頁面目視確認；本題無附圖與共用題組",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Categorical Feature Support in Gradient Boosting",
+          "url": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_gradient_boosting_categorical.html",
+          "locator": "比較 dropping、one-hot、ordinal 與原生 categorical encoding；原生類別處理避免任意排序限制",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－Target Encoder's Internal Cross fitting",
+          "url": "https://scikit-learn.org/stable/auto_examples/preprocessing/plot_target_encoder_cross_val.html",
+          "locator": "Target encoding 若不交叉擬合容易資料洩漏與過擬合，佐證選項 C 之排除",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-018",
+      "officialQuestionNumber": 18,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 5 頁（共 17 頁）第 18 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致，已渲染頁面目視確認；本題無附圖與共用題組",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PostgreSQL Documentation－Transactions",
+          "url": "https://www.postgresql.org/docs/current/tutorial-transactions.html",
+          "locator": "交易把多個步驟包成 all-or-nothing 操作；中途失敗時所有步驟都不影響資料庫",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-019",
+      "officialQuestionNumber": 19,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 5 頁（共 17 頁）第 19 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致，已渲染頁面目視確認；本題無附圖與共用題組",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Apache Flink Documentation－Stateful Stream Processing",
+          "url": "https://nightlies.apache.org/flink/flink-docs-stable/docs/concepts/stateful-stream-processing/",
+          "locator": "事件驅動應用與資料管線對無界資料流持續進行具狀態、可容錯且可擴展的處理",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "AWS IoT Greengrass－What is AWS IoT Greengrass?",
+          "url": "https://docs.aws.amazon.com/greengrass/v2/developerguide/what-is-iot-greengrass.html",
+          "locator": "Edge runtime 可在裝置端處理、管理與回應資料，並與雲端安全通訊",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-020",
+      "officialQuestionNumber": 20,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第二科 大數據處理分析與應用 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+          "locator": "PDF 第 5～6 頁（共 17 頁）第 20 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致，已渲染頁面目視確認；本題無附圖與共用題組",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Homomorphic Encryption Standardization－Introduction",
+          "url": "https://homomorphicencryption.org/introduction/",
+          "locator": "同態加密允許無私鑰者直接對加密資料運算，結果維持加密並由私鑰持有者解密",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Homomorphic Encryption Standardization－Security Guidelines",
+          "url": "https://homomorphicencryption.org/security-guidelines/",
+          "locator": "同態加密方案的安全參數與實作指引，涵蓋常見 FHE schemes",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
