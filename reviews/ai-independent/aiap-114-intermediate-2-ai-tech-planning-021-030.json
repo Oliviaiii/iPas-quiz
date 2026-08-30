@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-intermediate-2-ai-tech-planning",
+  "range": {
+    "start": 21,
+    "end": 30
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 10,
+    "corrected": 0,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-021",
+      "officialQuestionNumber": 21,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 6 頁（共 14 頁）第 21 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Lee et al., Multimodal Prompting With Missing Modalities for Visual Recognition（CVPR 2023）",
+          "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Lee_Multimodal_Prompting_With_Missing_Modalities_for_Visual_Recognition_CVPR_2023_paper.html",
+          "locator": "摘要與方法：以 modality-missing-aware prompts 處理訓練或測試時的多種缺失模態情境",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-022",
+      "officialQuestionNumber": 22,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 6 頁（共 14 頁）第 22 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "SciPy API Reference－scipy.stats.entropy",
+          "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.entropy.html",
+          "locator": "當 qk 提供時計算相對熵即 Kullback-Leibler divergence，並列出計算公式",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-023",
+      "officialQuestionNumber": 23,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 6 頁（共 14 頁）第 23 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Google Cloud Deploy－Use a canary deployment strategy",
+          "url": "https://docs.cloud.google.com/deploy/docs/deployment-strategies/canary",
+          "locator": "canary deployment 先向部分使用者發布，確認可靠後再完整推出",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "FDA／Health Canada／MHRA－PCCP Guiding Principles for ML-enabled Medical Devices",
+          "url": "https://www.fda.gov/medical-devices/software-medical-device-samd/predetermined-change-control-plans-machine-learning-enabled-medical-devices-guiding-principles",
+          "locator": "部署後模型應監測效能，並管理偏離與再訓練風險",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-024",
+      "officialQuestionNumber": 24,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 6 頁（共 14 頁）第 24 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST AI 100-2 E2025－Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations",
+          "url": "https://csrc.nist.gov/pubs/ai/100/2/e2025/final",
+          "locator": "Predictive AI 的 evasion attacks、攻擊生命週期與相應緩解方法分類",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-025",
+      "officialQuestionNumber": 25,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 6～7 頁（共 14 頁）第 25 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "U.S. Copyright Office－Copyright and Artificial Intelligence, Part 3: Generative AI Training",
+          "url": "https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-3-Generative-AI-Training-Report-Pre-Publication-Version.pdf",
+          "locator": "訓練資料集建立、訓練複製與模型利用是不同活動；報告討論授權市場及潛在責任配置，支持「源頭授權治理」之判定",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-026",
+      "officialQuestionNumber": 26,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 7 頁（共 14 頁）第 26 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Tibshirani－Regression Shrinkage and Selection via the Lasso",
+          "url": "https://statistics.stanford.edu/technical-reports/regression-shrinkage-and-selection-lasso",
+          "locator": "原始技術報告：LASSO 以係數絕對值總和約束達成收縮與變數選擇",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-027",
+      "officialQuestionNumber": 27,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 7 頁（共 14 頁）第 27 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Apache Spark 3.5.8－Structured Streaming Programming Guide",
+          "url": "https://spark.apache.org/docs/3.5.8/structured-streaming-programming-guide.html",
+          "locator": "支援 JSON 串流來源、事件時間聚合，以及 tumbling／sliding／session 三類時間窗口",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-028",
+      "officialQuestionNumber": 28,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 7 頁（共 14 頁）第 28 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－Preprocessing data",
+          "url": "https://scikit-learn.org/stable/api/sklearn.preprocessing.html",
+          "locator": "StandardScaler、TargetEncoder 與 PolynomialFeatures（含 interaction features）的官方 API 索引",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn－TargetEncoder",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.TargetEncoder.html",
+          "locator": "目標編碼定義、平滑，以及 fit_transform 以 cross fitting 防止過度擬合",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-029",
+      "officialQuestionNumber": 29,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 8 頁（共 14 頁）第 29 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "GitHub Docs－Continuous integration",
+          "url": "https://docs.github.com/en/actions/get-started/continuous-integration",
+          "locator": "頻繁提交降低除錯與合併成本；commit 後持續建置與測試，並可加入 lint 與安全檢查",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-ai-tech-planning-030",
+      "officialQuestionNumber": 30,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－第一科 人工智慧技術應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+          "locator": "PDF 第 8 頁（共 14 頁）第 30 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致；本卷無附圖與共用題組，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST FIPS 186-5－Digital Signature Standard",
+          "url": "https://csrc.nist.gov/pubs/fips/186-5/final",
+          "locator": "數位簽章用於偵測未授權修改、驗證簽署者身分，並可向第三方證明簽署來源以支援不可否認性",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
