@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-intermediate-2-machine-learning",
+  "range": {
+    "start": 41,
+    "end": 50
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 10,
+    "corrected": 0,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-041",
+      "officialQuestionNumber": 41,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 10～11 頁：第 41 題題幹（第 10 頁）、程式碼附圖與事件 A／B 定義、(A)～(D) 選項（第 11 頁）、左欄官方答案 D。已渲染第 11 頁與站內圖檔 aiap-114-intermediate-2-machine-learning-p11-1.png 逐行目視比對：np.random.seed(123)、n = 100000、dice_rolls = np.random.randint(1, 7, size=n)、A = (dice_rolls % 2 == 0)、B = (dice_rolls > 3)、A_and_B = A & B，與詳解敘述完全一致。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－1.3.6.1. What is a Probability Distribution?",
+          "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda361.htm",
+          "locator": "機率與相對頻率段：以事件發生的相對次數估計機率，為 Monte Carlo 估計條件機率的基礎",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-042",
+      "officialQuestionNumber": 42,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 11～13 頁：第 42～45 題共用題組 VGG16 summary 附表（第 11～13 頁，含 Total params: 138,357,544）、第 42 題題幹、(A)～(D) 選項與左欄官方答案 B（第 13 頁）。已逐列核對：三個 Linear 的 Param # 為 102,764,544、16,781,312、4,097,000（合計約 123.64M），ReLU 與 MaxPool2d／AdaptiveAvgPool2d 皆為 0。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "torchvision 原始碼－torchvision.models.vgg",
+          "url": "https://docs.pytorch.org/vision/stable/_modules/torchvision/models/vgg.html",
+          "locator": "VGG.__init__：self.avgpool = nn.AdaptiveAvgPool2d((7, 7))；self.classifier = nn.Sequential(nn.Linear(512 * 7 * 7, 4096), nn.ReLU(True), nn.Dropout(...), nn.Linear(4096, 4096), …)",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Very Deep Convolutional Networks for Large-Scale Image Recognition（Simonyan & Zisserman, 2014）",
+          "url": "https://arxiv.org/abs/1409.1556",
+          "locator": "摘要：using an architecture with very small (3x3) convolution filters…pushing the depth to 16-19 weight layers",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-043",
+      "officialQuestionNumber": 43,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 11～13 頁：第 42～45 題共用 VGG16 summary 附表與第 43 題題幹、(A)～(D) 選項、左欄官方答案 A（第 13 頁）。附表的 Output Shape 欄可見早期卷積特徵圖達 150×150、75×75，為卷積 FLOPs 遠高於單次矩陣乘法的全連接層之依據。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Very Deep Convolutional Networks for Large-Scale Image Recognition（Simonyan & Zisserman, 2014）",
+          "url": "https://arxiv.org/abs/1409.1556",
+          "locator": "摘要與架構說明：以堆疊的 3×3 卷積構成 16-19 weight layers，卷積特徵抽取為主要計算",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-044",
+      "officialQuestionNumber": 44,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 11～13 頁：第 42～45 題共用 VGG16 summary 附表與第 44 題題幹、(A)～(D) 選項、左欄官方答案 D。已逐列點算 Conv2d 編號 1/3/6/8/11/13/15/18/20/22/25/27/29 共 13 層、Linear-33/36/39 共 3 層；MaxPool2d-31 輸出 512×4×4 但 AdaptiveAvgPool2d-32 輸出 512×7×7；Total params 行為 138,357,544。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "torchvision 原始碼－torchvision.models.vgg",
+          "url": "https://docs.pytorch.org/vision/stable/_modules/torchvision/models/vgg.html",
+          "locator": "VGG.__init__：self.avgpool = nn.AdaptiveAvgPool2d((7, 7))；self.classifier = nn.Sequential(nn.Linear(512 * 7 * 7, 4096), nn.ReLU(True), nn.Dropout(...), nn.Linear(4096, 4096), …)",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-045",
+      "officialQuestionNumber": 45,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 13～14 頁：第 45 題題幹與左欄官方答案 B（第 13 頁）、(A)～(D) 四段程式碼附圖（第 14 頁）。已渲染第 14 頁目視比對四段程式：(A) 迭代 model.parameters()、(B) 迭代 model.features.parameters()、(C) 迭代 model.classifier.parameters()、(D) 只寫 model.requires_grad = False，四段最後均替換 model.classifier[6] = torch.nn.Linear(4096, 10)。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch Tutorials－Transfer Learning for Computer Vision",
+          "url": "https://docs.pytorch.org/tutorials/beginner/transfer_learning_tutorial.html",
+          "locator": "ConvNet as fixed feature extractor 段：以 for param in model.parameters(): param.requires_grad = False 凍結網路，再替換最後 fc 層（新層的參數預設 requires_grad=True）",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "torchvision 原始碼－torchvision.models.vgg",
+          "url": "https://docs.pytorch.org/vision/stable/_modules/torchvision/models/vgg.html",
+          "locator": "VGG.__init__：self.avgpool = nn.AdaptiveAvgPool2d((7, 7))；self.classifier = nn.Sequential(nn.Linear(512 * 7 * 7, 4096), nn.ReLU(True), nn.Dropout(...), nn.Linear(4096, 4096), …)",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-046",
+      "officialQuestionNumber": 46,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 14～15 頁：第 46～47 題共用題組（digits 8×8 手寫數字、load_digits 輸出 (1797, 64)、樣本影像）與第 46 題題幹、noisy = np.random.normal(digits.data, 4)、五行標記為程式碼 A～E 的 PCA 程式附圖、(A)～(D) 選項與左欄官方答案 B（第 15 頁）。已渲染第 15 頁目視確認程式碼 B 為 pca = PCA()（未指定 n_components）。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.decomposition.PCA",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html",
+          "locator": "n_components 參數：if n_components is not set all components are kept: n_components == min(n_samples, n_features)；inverse_transform：Transform data back to its original space",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn Examples－Faces recognition example using eigenfaces and SVMs",
+          "url": "https://scikit-learn.org/stable/auto_examples/applications/plot_face_recognition.html",
+          "locator": "以固定的 n_components（eigenfaces）建立影像低維表示，示範保留有限主成分的降維作法",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-047",
+      "officialQuestionNumber": 47,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 15～16 頁：第 47 題題幹與程式碼 A（第 15 頁）、程式碼 B／C／D 與 (A)～(D) 選項（第 16 頁）、左欄官方答案 B。已渲染兩頁目視比對：A 為 StratifiedKFold(n_splits=5, shuffle=True)+scoring=\"accuracy\"，B 同 A 但 scoring=\"f1\"，C 為 cv=5+scoring=\"accuracy\"，D 為 cv=5+scoring=\"f1\"。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.model_selection.cross_val_score",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html",
+          "locator": "cv 參數說明：對 classifier 且 y 為 binary 或 multiclass 時 StratifiedKFold is used. In all other cases, KFold is used",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－String name scorers",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html#string-name-scorers",
+          "locator": "scorer 名稱表：'accuracy' 對應 accuracy_score；'f1' 僅適用二元目標，多類需改用 'f1_macro'／'f1_micro'／'f1_weighted'",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-048",
+      "officialQuestionNumber": 48,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 16～17 頁：第 48～50 題共用題組（Titanic 載入程式、df_train/df_test.head() 輸出、X_train = dataset_train[:, 0:9]）與第 48 題題幹、標準化程式附圖、敘述 A～F 與 (A) 選項（第 17 頁）、(B)～(D) 選項與左欄官方答案 C（第 18 頁）。已渲染兩頁目視比對程式為 X_train -= X_train.mean(axis=0)、X_train /= X_train.std(axis=0)、X_test 亦以自身統計處理。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.preprocessing.StandardScaler",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html",
+          "locator": "標準分數 z = (x - u) / s，其中 u 為訓練樣本平均、s 為訓練樣本標準差；標準化後平均為 0、標準差為 1（非 0，亦非壓縮至 [0,1]）",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Common pitfalls：Data leakage",
+          "url": "https://scikit-learn.org/stable/common_pitfalls.html#data-leakage",
+          "locator": "前處理只應以訓練資料 fit，再對測試資料 transform；以測試資料自行 fit scaler 會造成資訊洩漏",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-049",
+      "officialQuestionNumber": 49,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 18 頁：第 49 題題幹、Keras 模型與 summary 附圖（dense 空格1、dense_1 空格2、dense_2 = 11）、(A)～(D) 選項與左欄官方答案 C。已渲染該頁與站內圖檔 aiap-114-intermediate-2-machine-learning-p18-1.png 目視比對；配合共用題組 X_train = dataset_train[:, 0:9] 的 9 個特徵，(9+1)×10=100、(10+1)×10=110、(10+1)×1=11 與附表的 11 一致。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Keras API－Dense layer",
+          "url": "https://keras.io/api/layers/core_layers/dense/",
+          "locator": "Dense 實作 output = activation(dot(input, kernel) + bias)，kernel 形狀由 input 最後一維與 units 決定，並每個 unit 一個 bias",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Keras API－Layer activation functions",
+          "url": "https://keras.io/api/layers/activations/",
+          "locator": "relu 定義為 max(x, 0)；sigmoid 定義為 1/(1+exp(-x)) 且說明適用於二元分類／多標籤，互斥多類使用 softmax",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-050",
+      "officialQuestionNumber": 50,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 18～19 頁：第 50 題題幹與繪圖程式附圖（plt.plot(epochs, loss, 空格1, label=\"Training Loss\")、plt.plot(epochs, val_loss, 空格2, label=\"Validation Loss\")）（第 18 頁）、損失曲線圖與敘述 A～E、(A)～(D) 選項、左欄官方答案 C（第 19 頁）。已渲染第 19 頁與站內圖檔 aiap-114-intermediate-2-machine-learning-p19-1.png 目視比對：Training Loss 為藍色實線由約 0.66 降至 0.40，Validation Loss 為紅色虛線降至約 0.46 後震盪停滯，故 A（b-）與 D（r--）成立、E 不成立。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Matplotlib API－matplotlib.pyplot.plot",
+          "url": "https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html",
+          "locator": "Format Strings 段：fmt = '[marker][line][color]'；顏色字碼表列 'b' blue、'r' red，線型 '-' 為 solid、'--' 為 dashed",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Keras Guides－Training & evaluation with the built-in methods",
+          "url": "https://keras.io/guides/training_with_built_in_methods/",
+          "locator": "fit 的 validation_split 參數與回傳 History 物件，history.history 內含 loss 與 val_loss 逐輪記錄",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
