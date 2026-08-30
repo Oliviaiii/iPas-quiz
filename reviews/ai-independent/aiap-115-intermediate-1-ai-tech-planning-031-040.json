@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-intermediate-1-ai-tech-planning",
+  "range": {
+    "start": 31,
+    "end": 40
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 7,
+    "corrected": 3,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-031",
+      "officialQuestionNumber": 31,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 10 頁：第 31 題題幹（300 個特徵、幾乎全被判為雜訊點）、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－2.3.7. DBSCAN",
+          "url": "https://scikit-learn.org/stable/modules/clustering.html#dbscan",
+          "locator": "以 eps 與 min_samples 定義 core sample 與密度相連群集；Any sample that is not a core sample, and is at least eps in distance from any core sample, is considered an outlier",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "When Is \"Nearest Neighbor\" Meaningful?（Beyer et al., ICDT 1999）",
+          "url": "https://doi.org/10.1007/3-540-49257-7_15",
+          "locator": "論文題旨（Springer Nature Link 條目 Database Theory — ICDT'99）：在一般條件下，維度增加時最近鄰與最遠鄰距離的對比趨於消失，使距離式方法失去區辨力",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-032",
+      "officialQuestionNumber": 32,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源 https://docs.pytorch.org/docs/stable/generated/torch.nn.Flatten.html 已回傳 HTTP 404（PyTorch 文件改版後該頁不存在，/2.13/ 版本亦同）。已改引仍可存取的 torch.flatten 說明頁（scripts/fix-ai-review-115-1-m1-031-040.py），其內容同樣支持「保留 batch 維度、將其餘維度展平成一維」的敘述。",
+        "獨立作答為 B；draft 既有 editorialNote 已如實指出全域平均池化並非無效架構、本題應理解為保留卷積輸出全部元素銜接一般全連結層時的形狀轉換，該保留意見恰當。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 10 頁：第 32 題題幹、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch Docs－torch.flatten",
+          "url": "https://docs.pytorch.org/docs/stable/generated/torch.flatten.html",
+          "locator": "torch.flatten(input, start_dim=0, end_dim=-1)：Flattens input by reshaping it into a one-dimensional tensor…The order of elements in input is unchanged；以 start_dim=1 保留 batch 維度",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch Docs－torch.nn.Linear",
+          "url": "https://docs.pytorch.org/docs/stable/generated/torch.nn.Linear.html",
+          "locator": "Linear(in_features, out_features, bias=True…)：Applies an affine linear transformation to the incoming data: y = xA^T + b，輸入最後一維須等於 in_features",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-033",
+      "officialQuestionNumber": 33,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 10～11 頁：第 33 題題幹與 (A)～(D) 選項、左欄官方答案 D（第 10 頁）、(D) 選項末尾「泛化能力」（第 11 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NVIDIA Omniverse Documentation－Replicator",
+          "url": "https://docs.omniverse.nvidia.com/extensions/latest/ext_replicator.html",
+          "locator": "說明以 domain randomization 產生具標註的合成資料集，供電腦視覺模型訓練",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Training Deep Networks with Synthetic Data: Bridging the Reality Gap by Domain Randomization（Tremblay et al., 2018）",
+          "url": "https://arxiv.org/abs/1804.06516",
+          "locator": "摘要：以 domain randomization 產生的合成資料訓練，再以少量真實資料微調，可在真實場景物件偵測上超越僅用真實資料訓練的結果",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-034",
+      "officialQuestionNumber": 34,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 11 頁：第 34 題題幹、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Incremental learning（Strategies to scale computationally）",
+          "url": "https://scikit-learn.org/stable/computing/scaling_strategies.html#incremental-learning",
+          "locator": "說明支援 partial_fit 的估計器可以 mini-batch 方式增量學習，不需一次載入完整資料集",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.feature_extraction.FeatureHasher",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.FeatureHasher.html",
+          "locator": "以 hashing trick 將特徵名稱直接映射到固定維度矩陣，不需先建立完整詞彙表，適合線上或記憶體受限情境",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-035",
+      "officialQuestionNumber": 35,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源 https://doi.org/10.1093/bioinformatics/btz682（BioBERT，Oxford Bioinformatics）回傳 HTTP 403，出版社封鎖非瀏覽器請求，無法核實定位。已改引同一篇論文的 arXiv 版本 arXiv:1901.08746（scripts/fix-ai-review-115-1-m1-031-040.py），其摘要逐字支持「以生醫語料預訓練的領域語言表示可改善生醫文本探勘任務」。",
+        "獨立作答為 B；先分別處理基因與文本特徵再融合的分層策略敘述正確，四個選項判讀無誤。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 11 頁：第 35 題題幹、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Multimodal Machine Learning: A Survey and Taxonomy（Baltrušaitis, Ahuja & Morency, IEEE TPAMI 2019）",
+          "url": "https://doi.org/10.1109/TPAMI.2018.2798607",
+          "locator": "綜述將多模態研究分為 representation、translation、alignment、fusion、co-learning 五大挑戰，說明各模態先取得表示後再於不同階段融合（DOI 轉址至 IEEE Xplore 條目 8269806）",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "BioBERT: a pre-trained biomedical language representation model for biomedical text mining（Lee et al., 2019）",
+          "url": "https://arxiv.org/abs/1901.08746",
+          "locator": "摘要：domain-specific language representation model pre-trained on large-scale biomedical corpora…largely outperforms BERT and previous state-of-the-art models in a variety of biomedical text mining tasks",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-036",
+      "officialQuestionNumber": 36,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 11 頁：第 36 題題幹（10 類、每類約 50 張、共約 500 張）、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch Tutorials－Transfer Learning for Computer Vision",
+          "url": "https://docs.pytorch.org/tutorials/beginner/transfer_learning_tutorial.html",
+          "locator": "導言的兩種主要作法：Finetuning the ConvNet 與 ConvNet as fixed feature extractor，皆以預訓練權重取代隨機初始化",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "How transferable are features in deep neural networks?（Yosinski et al., NIPS 2014）",
+          "url": "https://arxiv.org/abs/1411.1792",
+          "locator": "摘要與實驗：分析深層網路各層特徵由一般（general）過渡到專屬（specific）的程度，並量化遷移後微調對目標任務效能的影響",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-037",
+      "officialQuestionNumber": 37,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 11～12 頁：第 37 題題幹（良品 99%、瑕疵 1%，限定僅以資料前處理改善）與左欄官方答案 A（第 11 頁）、(A)～(D) 選項（第 12 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "SMOTE: Synthetic Minority Over-sampling Technique（Chawla et al., JAIR 2002）",
+          "url": "https://doi.org/10.1613/jair.953",
+          "locator": "論文提出以少數類樣本與其近鄰之間插值產生合成樣本（DOI 轉址至 JAIR 條目 10302），屬訓練資料層級的過採樣",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "imbalanced-learn API－imblearn.over_sampling.SMOTE",
+          "url": "https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html",
+          "locator": "類別說明：Class to perform over-sampling using SMOTE；sampling_strategy 與 k_neighbors 參數，並以 fit_resample 介面重採樣",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-038",
+      "officialQuestionNumber": 38,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 12 頁：第 38 題題幹（常態分佈均值 25°C、標準差 2°C，出現 999°C 通訊錯誤）、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.preprocessing.StandardScaler",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html",
+          "locator": "z = (x - u) / s 的標準化公式；並明示 StandardScaler is sensitive to outliers，標準化不會裁切極端值",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.impute.SimpleImputer",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.impute.SimpleImputer.html",
+          "locator": "strategy 參數：\"median\" 以各欄訓練資料的中位數填補缺失值，對極端值較穩健",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-039",
+      "officialQuestionNumber": 39,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 12 頁：第 39 題題幹、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "AWS－What is a Data Lake?",
+          "url": "https://aws.amazon.com/what-is/data-lake/",
+          "locator": "定義：a centralized repository that allows you to store all your structured and unstructured data at any scale. You can store your data as-is, without having to first structure the data",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Google Cloud－What is a data lake?",
+          "url": "https://cloud.google.com/learn/what-is-a-data-lake",
+          "locator": "對照說明：資料湖保存原始、未經處理的多型態資料，資料倉儲則保存已處理、結構化且供分析查詢的資料",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-040",
+      "officialQuestionNumber": 40,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源 https://docs.nvidia.com/deeplearning/tensorrt/latest/inference-library/work-quantized-types.html 已回傳 HTTP 404（頁面更名）。已改引現行網址 work-with-quantized-types.html（scripts/fix-ai-review-115-1-m1-031-040.py），其 Supported Data Types 段逐字載明 INT8 與低精度格式可在資源受限環境維持準確率並提升推論效率。",
+        "獨立作答為 D；draft 已如實聲明 INT8 的實際延遲收益取決於硬體 kernel、算子覆蓋率與資料搬移瓶頸，部署前須以目標裝置實測，保留意見恰當。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－人工智慧技術應用與規劃公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+          "locator": "PDF 第 12 頁：第 40 題題幹（需低於 200ms、不更換硬體）、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NVIDIA TensorRT Documentation－Working with Quantized Types",
+          "url": "https://docs.nvidia.com/deeplearning/tensorrt/latest/inference-library/work-with-quantized-types.html",
+          "locator": "Supported Data Types：INT8 (signed 8-bit integer)…These low-precision formats allow TensorRT to deliver efficient inference while maintaining accuracy, making it suitable for deployment in resource-constrained environments",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PyTorch Docs－Quantization",
+          "url": "https://docs.pytorch.org/docs/stable/quantization.html",
+          "locator": "導言：quantization 以較低精度（如 int8）執行計算與儲存張量；並列出 post-training quantization 與 quantization-aware training 兩種流程",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}

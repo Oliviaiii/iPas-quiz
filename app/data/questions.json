@@ -35684,10 +35684,10 @@
           "checkedAt": "2026-08-12"
         },
         {
-          "title": "PyTorch－nn.Flatten 官方文件",
-          "url": "https://docs.pytorch.org/docs/stable/generated/torch.nn.Flatten.html",
-          "locator": "將連續維度展平；預設保留第 0 維 batch，將其餘維度相乘",
-          "checkedAt": "2026-08-12"
+          "title": "PyTorch Docs－torch.flatten",
+          "url": "https://docs.pytorch.org/docs/stable/generated/torch.flatten.html",
+          "locator": "torch.flatten(input, start_dim=0, end_dim=-1)：Flattens input by reshaping it into a one-dimensional tensor. If start_dim or end_dim are passed, only dimensions starting with start_dim and ending with end_dim are flattened；以 start_dim=1 即可保留 batch 維度",
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "PyTorch－nn.Linear 官方文件",
@@ -35912,10 +35912,10 @@
           "checkedAt": "2026-08-12"
         },
         {
-          "title": "Lee et al., BioBERT: a pre-trained biomedical language representation model（2020）",
-          "url": "https://doi.org/10.1093/bioinformatics/btz682",
-          "locator": "摘要與方法：以生醫語料預訓練語言表示，改善生醫文本探勘任務",
-          "checkedAt": "2026-08-12"
+          "title": "BioBERT: a pre-trained biomedical language representation model for biomedical text mining（Lee et al., 2019）",
+          "url": "https://arxiv.org/abs/1901.08746",
+          "locator": "摘要：以大規模生醫語料預訓練的領域專用語言表示模型，在生醫命名實體辨識、關係擷取與問答等文本探勘任務上顯著優於一般領域模型",
+          "checkedAt": "2026-08-30"
         }
       ],
       "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
@@ -36276,10 +36276,10 @@
           "checkedAt": "2026-08-12"
         },
         {
-          "title": "NVIDIA TensorRT－Working with Quantized Types 官方文件",
-          "url": "https://docs.nvidia.com/deeplearning/tensorrt/latest/inference-library/work-quantized-types.html",
-          "locator": "INT8 顯式與隱式量化、scale、校正與量化算子執行方式",
-          "checkedAt": "2026-08-12"
+          "title": "NVIDIA TensorRT Documentation－Working with Quantized Types",
+          "url": "https://docs.nvidia.com/deeplearning/tensorrt/latest/inference-library/work-with-quantized-types.html",
+          "locator": "Supported Data Types：INT8 (signed 8-bit integer)…These low-precision formats allow TensorRT to deliver efficient inference while maintaining accuracy, making it suitable for deployment in resource-constrained environments；並說明量化與浮點表示之間僅需 scaling factor 轉換",
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "PyTorch－Quantization 官方文件",
