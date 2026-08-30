@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-elementary-1-genai-planning",
+  "range": {
+    "start": 41,
+    "end": 50
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 9,
+    "corrected": 1,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-041",
+      "officialQuestionNumber": 41,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 9 頁（共 11 頁）第 41 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致；本試卷逐題於左欄標示答案，末頁無另設答案總表，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-42（PDF 第 48 頁）逐字核對：「敏感性與公平性檢查　分析模型對輸入資料的敏感程度，檢測可能的偏見與歧視」；支持詳解把「量測比較」歸為偵測",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-7（PDF 第 13 頁）逐字核對：偏見與歧視「解方：建立倫理準則與使用規範，導入公平性檢測工具」",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Fairlearn User Guide — Fairness assessment",
+          "url": "https://fairlearn.org/main/user_guide/assessment/index.html",
+          "locator": "Assessment 章以 MetricFrame 做分群（disaggregated）指標比較，Mitigation 另立專章涵蓋前處理、後處理與 Reductions；支持詳解「只量測是偵測、動手改是緩解」的分界",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-042",
+      "officialQuestionNumber": 42,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 9 頁（共 11 頁）第 42 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本試卷逐題於左欄標示答案，末頁無另設答案總表，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "HomomorphicEncryption.org — Introduction",
+          "url": "https://homomorphicencryption.org/introduction/",
+          "locator": "定義段：可在不存取私鑰的情況下直接對密文運算，結果仍為密文；支持選項 B「加密狀態下完成計算」之敘述",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "arXiv 1602.05629 — Communication-Efficient Learning of Deep Networks from Decentralized Data",
+          "url": "https://arxiv.org/abs/1602.05629",
+          "locator": "摘要：訓練資料留在各裝置端、只交換模型更新；支持選項 A 分析中「聯邦學習以不集中資料為前提」之敘述",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-6（PDF 第 12 頁）逐字核對：「敏感資料洩漏風險」與個資法（GDPR、CCPA）合規風險",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-043",
+      "officialQuestionNumber": 43,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 10 頁（共 11 頁）第 43 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本試卷逐題於左欄標示答案，末頁無另設答案總表，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-6（PDF 第 12 頁）逐字核對：資料隱私與安全性——敏感資料洩漏風險與合規風險",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-18（PDF 第 24 頁）逐字核對：「溫度參數（Temperature Parameter）：控制生成內容的隨機性，低溫度值會生成較保守的內容，高溫度值則生成更具創意的內容」；支持選項 A 分析把隨機性歸因於取樣設定而非部署位置",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-044",
+      "officialQuestionNumber": 44,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 10 頁（共 11 頁）第 44 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本試卷逐題於左欄標示答案，末頁無另設答案總表，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-22（PDF 第 28 頁）逐字核對：「語音與文字轉換：如 Whisper 與 ChatGPT 語音模式」",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "arXiv 2005.11401 — Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+          "url": "https://arxiv.org/abs/2005.11401",
+          "locator": "摘要：以可檢索的非參數化記憶補充參數化知識；支持詳解第二順位「知識補充」之敘述",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-18（PDF 第 24 頁）逐字核對：溫度參數控制生成隨機性；支持把生成參數列為模型與知識到位後的細調",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-045",
+      "officialQuestionNumber": 45,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 10 頁（共 11 頁）第 45 題：題幹、(A)～(D) 選項與左欄官方答案 D 皆與題庫一致；本試卷逐題於左欄標示答案，末頁無另設答案總表，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "arXiv 2201.11903 — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+          "url": "https://arxiv.org/abs/2201.11903",
+          "locator": "摘要：以一連串中間推理步驟（a chain of thought）提示，顯著提升算術、常識與符號推理表現；支持詳解把「逐步說明推理過程」認定為 CoT 的定義動作",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-18（PDF 第 24 頁）逐字核對：生成式 AI 具備強大的上下文理解能力，並可透過提示詞進行可控生成",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-046",
+      "officialQuestionNumber": 46,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "原稿 editorialNote 把「選項 B 與 C 的取捨表述是否恰當」列為待查項目，指名交由人工複核者確認。本次獨立複核逐字比對兩個選項：B 自述效益為「兼顧成本彈性與模型可控性」，正落在題幹明文後置的成本考量上；C 只談安全與治理，並多出存取控管與稽核。判準取自選項文字本身，不需人工政策判斷，因此結案並改寫為判準說明，避免把已查證事項留給人工複核。",
+        "第一筆來源 locator 原為「第 46 題題幹、選項與官方答案」，未載頁碼；已補為「PDF 第 10～11 頁（共 11 頁）」，與本批其餘題目一致。",
+        "監理情境的可課責性是 B、C 的分野，原稿僅引學習指引權限控管一句；已補入 NIST AI RMF GOVERN 一手出處，讓「存取控管與稽核為法遵必要配套」的敘述有官方標準可徵。",
+        "修正以 scripts/fix-ai-review-115-1-s2-041-050.py 套用，含 sha256 快照與逐字原文防護；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 10～11 頁（共 11 頁）第 46 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致；本試卷逐題於左欄標示答案，末頁無另設答案總表，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-6（PDF 第 12 頁）逐字核對：資料隱私與安全性——敏感資料洩漏風險與個資法合規風險，解方含權限控管",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST AI Risk Management Framework (AI RMF 1.0) — Core：GOVERN",
+          "url": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF/Core_And_Profiles/5-sec-core",
+          "locator": "GOVERN 要求就 AI 風險建立可課責（accountability）結構、政策與流程，並將透明度與稽核納入既有治理；本次新增為 Q46 第三筆來源",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-047",
+      "officialQuestionNumber": 47,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 11 頁（共 11 頁）第 47 題：題幹、(A)～(D) 選項與左欄官方答案 A 皆與題庫一致；本試卷逐題於左欄標示答案，末頁無另設答案總表，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-6（PDF 第 12 頁）逐字核對：「解方：建立多層次驗證機制，結合自動化檢測與人工審核，確保生成內容的準確性與一致性」",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-048",
+      "officialQuestionNumber": 48,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 11 頁（共 11 頁）第 48 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致；本試卷逐題於左欄標示答案，末頁無另設答案總表，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-44（PDF 第 50 頁）逐字核對：「定期檢查數據漂移（Data Drift），分析輸入數據的分佈變化，特別是當業務場景或用戶行為改變時，數據漂移可能會導致模型預測準確性降低」",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-40（PDF 第 46 頁）逐字核對：「為防止過擬合（Overfitting）或欠擬合（Underfitting），可以採用正則化技術（Regularization），如 L2 正則化與 Dropout，以及早停策略（Early Stopping）」；支持選項 A 分析",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-049",
+      "officialQuestionNumber": 49,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 11 頁（共 11 頁）第 49 題：題幹、(A)～(D) 選項與左欄官方答案 B 皆與題庫一致；本試卷逐題於左欄標示答案，末頁無另設答案總表，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-2（PDF 第 8 頁）核對：「Low Code 平台結合視覺化開發工具與程式碼擴充功能……透過少量程式碼實現深度整合、客製化與複雜邏輯，特別適合中大型企業」；原 locator 為此段的忠實摘述，語意相符",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-2（PDF 第 8 頁）逐字核對：No Code「可透過拖曳元件來設計網頁或行動應用介面，並設定邏輯與流程」；Low Code 結合視覺化開發與程式碼擴充",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-elementary-115-01-genai-planning-050",
+      "officialQuestionNumber": 50,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次初級 AI 應用規劃師－第二科 生成式 AI 應用與規劃 公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
+          "locator": "PDF 第 11 頁（共 11 頁）第 50 題：題幹、(A)～(D) 選項與左欄官方答案 C 皆與題庫一致；本試卷逐題於左欄標示答案，末頁無另設答案總表，已渲染頁面目視確認",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-7（PDF 第 13 頁）逐字核對：偏見與歧視「解方：建立倫理準則與使用規範，導入公平性檢測工具」",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-42（PDF 第 48 頁）逐字核對：敏感性與公平性檢查——檢測可能的偏見與歧視，確保生成內容符合道德與法律要求",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "iPAS AI 應用規劃師（初級）學習指引－科目二 生成式 AI 應用與規劃",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
+          "locator": "第三章 3-6（PDF 第 12 頁）逐字核對：建立多層次驗證機制，結合自動化檢測與人工審核",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}

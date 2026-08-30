@@ -14146,7 +14146,7 @@
         {
           "title": "115 年第一次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次初級AI應用規劃師_第二科_生成式AI應用與規劃_公告試題_20260410164328.pdf",
-          "locator": "第 46 題題幹、選項與官方答案",
+          "locator": "PDF 第 10～11 頁（共 11 頁）：第 46 題題幹、(A)～(D) 選項與左欄官方答案 C",
           "checkedAt": "2026-07-29"
         },
         {
@@ -14154,9 +14154,15 @@
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/AI應用規劃師(初級)-學習指引-科目2_生成式AI應用與規劃114123_20251222172159.pdf",
           "locator": "第三章 3-6：資料隱私與安全性——敏感資料洩漏風險與個資法（GDPR、CCPA）合規風險，解方為資料加密、匿名化與權限控管",
           "checkedAt": "2026-07-31"
+        },
+        {
+          "title": "NIST AI Risk Management Framework (AI RMF 1.0) — Core：GOVERN",
+          "url": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF/Core_And_Profiles/5-sec-core",
+          "locator": "GOVERN 1.2、GOVERN 4.1：組織須就 AI 風險建立可課責（accountability）結構、政策與流程，並將透明度與稽核納入既有治理；支持本題把存取控管與稽核列為法遵情境必要配套之敘述",
+          "checkedAt": "2026-08-30"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。待查項目：選項 B 的開源模型私有化部署同樣能讓資料留在機構內部，本題判 C 較佳係基於題幹將成本考量明確後置、且 C 額外具備存取控管與稽核之治理配套，屬程度比較而非絕對排除；複核者宜確認此比較說法的表述是否恰當。查核日期 2026-08-03。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。選項 B 的開源模型私有化部署同樣能讓資料留在機構內部，本題判 C 較佳屬程度比較而非絕對排除；獨立 AI 複核已逐字核對兩個選項：B 自述的效益為「兼顧成本彈性與模型可控性」，而題幹明文要求安全與法遵優先於成本，C 則另含存取控管與稽核之治理配套，判準取自選項文字本身，此比較說法成立。查核日期 2026-08-30。",
       "author": "Claude Code（AI 輔助初稿）",
       "authoredAt": "2026-08-03"
     }
