@@ -29581,10 +29581,10 @@
           "checkedAt": "2026-08-12"
         },
         {
-          "title": "Convolutional Networks and Applications in Vision",
-          "url": "https://proceedings.mlr.press/v9/le-cun10a.html",
-          "locator": "卷積網路以 local connections 與 shared weights 擷取多層次影像特徵",
-          "checkedAt": "2026-08-12"
+          "title": "Deep Learning（Goodfellow, Bengio, Courville）－Chapter 9 Convolutional Networks",
+          "url": "https://www.deeplearningbook.org/contents/convnets.html",
+          "locator": "§9.2 Motivation：Convolution leverages three important ideas…sparse interactions, parameter sharing and equivariant representations；並說明 kernel 遠小於輸入時可偵測邊緣等有意義的小型特徵",
+          "checkedAt": "2026-08-30"
         }
       ],
       "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",
@@ -29649,10 +29649,10 @@
           "checkedAt": "2026-08-12"
         },
         {
-          "title": "Convolutional Networks and Applications in Vision",
-          "url": "https://proceedings.mlr.press/v9/le-cun10a.html",
-          "locator": "卷積架構利用局部連接、共享權重與 pooling 建立高效率階層式影像表示",
-          "checkedAt": "2026-08-12"
+          "title": "Deep Learning（Goodfellow, Bengio, Courville）－Chapter 9 Convolutional Networks",
+          "url": "https://www.deeplearningbook.org/contents/convnets.html",
+          "locator": "§9.2 Motivation：sparse interactions 使參數量與執行時間由 m×n 降為 k×n 與 O(k×n)，parameter sharing 讓同一組權重用於輸入的每個位置",
+          "checkedAt": "2026-08-30"
         }
       ],
       "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。",

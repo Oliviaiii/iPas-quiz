@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-114-intermediate-2-machine-learning",
+  "range": {
+    "start": 1,
+    "end": 10
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 8,
+    "corrected": 2,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-001",
+      "officialQuestionNumber": 1,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 1 頁：第 1 題題幹、(A)～(D) 選項與左欄官方答案 B",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－3.1. Cross-validation: evaluating estimator performance",
+          "url": "https://scikit-learn.org/stable/modules/cross_validation.html",
+          "locator": "開頭段落說明保留 validation set 評估、以及 k-fold CV 將訓練集切為 k 份輪流作驗證的基本流程",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.model_selection.TimeSeriesSplit",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html",
+          "locator": "類別說明：Provides train/test indices to split time-ordered data, where other cross-validation methods are inappropriate, as they would lead to training on future data and evaluating on past data",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-002",
+      "officialQuestionNumber": 2,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 1 頁：第 2 題題幹、(A)～(D) 選項與左欄官方答案 C",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－1.1.3. Lasso",
+          "url": "https://scikit-learn.org/stable/modules/linear_model.html#lasso",
+          "locator": "The Lasso is a linear model that estimates sparse coefficients, i.e., it is able to set coefficients exactly to zero…tendency to prefer solutions with fewer non-zero coefficients",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-003",
+      "officialQuestionNumber": 3,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 1 頁：第 3 題題幹、(A)～(D) 選項與左欄官方答案 C",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Deep Learning（Goodfellow, Bengio, Courville）－Chapter 8 Optimization for Training Deep Models",
+          "url": "https://www.deeplearningbook.org/contents/optimization.html",
+          "locator": "§8.2.2 Local Minima：Any local minimum is guaranteed to be a global minimum（凸問題）；§8.2.3 Plateaus, Saddle Points and Other Flat Regions 則說明高維非凸函數常見鞍點與平坦區",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-004",
+      "officialQuestionNumber": 4,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 1 頁：第 4 題題幹、(A)～(D) 選項與左欄官方答案 B",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－2.3.7. DBSCAN",
+          "url": "https://scikit-learn.org/stable/modules/clustering.html#dbscan",
+          "locator": "A cluster also has a set of non-core samples, which are samples that are neighbors of a core sample in the cluster but are not themselves core samples（即 border point）；Any sample that is not a core sample, and is at least eps in distance from any core sample, is considered an outlier by the algorithm（標為 -1 noise）",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-005",
+      "officialQuestionNumber": 5,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源網址 https://proceedings.mlr.press/v9/le-cun10a.html 已失效（HTTP 404），該論文並不在 PMLR v9（AISTATS 2010）目錄中，屬引用錯置。已換為 Deep Learning 第 9 章（scripts/fix-ai-review-114-2-m3-001-010.py），其 §9.2 明列 sparse interactions、parameter sharing 與 equivariant representations，可直接支持詳解敘述。",
+        "獨立作答為 A；summary／concept／answerReason／optionAnalysis／trap 內容正確，並已註明降維主要由 stride 或 pooling 完成，未見過度絕對語氣。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 1～2 頁：第 5 題題幹與左欄官方答案 A（第 1 頁）、(A)～(D) 選項（第 2 頁）",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Deep Learning（Goodfellow, Bengio, Courville）－Chapter 9 Convolutional Networks",
+          "url": "https://www.deeplearningbook.org/contents/convnets.html",
+          "locator": "§9.2 Motivation：Convolution leverages three important ideas that can help improve a machine learning system: sparse interactions, parameter sharing and equivariant representations",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-006",
+      "officialQuestionNumber": 6,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "與第 5 題相同的失效引用（PMLR 404），已改引 Deep Learning 第 9 章 §9.2，該節明確給出 sparse interactions 使參數量由 m×n 降為 k×n、執行時間降為 O(k×n)，正是本題「降低參數量與運算複雜度」的一手依據。",
+        "獨立作答為 C；四個選項的判讀與 draft 一致，且 optionAnalysis.A 正確指出 CNN 只有平移等變性、旋轉與尺度不變性需額外設計，敘述未過度宣稱。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 2 頁：第 6 題題幹、(A)～(D) 選項與左欄官方答案 C",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Deep Learning（Goodfellow, Bengio, Courville）－Chapter 9 Convolutional Networks",
+          "url": "https://www.deeplearningbook.org/contents/convnets.html",
+          "locator": "§9.2 Motivation：稀疏連接使原本 m×n 個參數與 O(m×n) 執行時間降為 k×n 個參數與 O(k×n)；parameter sharing 說明同一組權重用於輸入的多個位置",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-007",
+      "officialQuestionNumber": 7,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 2 頁：第 7 題題幹、(A)～(D) 選項與左欄官方答案 A",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Long Short-Term Memory（Hochreiter & Schmidhuber, 1997）",
+          "url": "https://www.bioinf.jku.at/publications/older/2604.pdf",
+          "locator": "Abstract：LSTM can learn to bridge minimal time lags in excess of 1000 discrete time steps by enforcing constant error flow through constant error carrousels within special units. Multiplicative gate units learn to open and close access to the constant error flow",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-008",
+      "officialQuestionNumber": 8,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 2 頁：第 8 題題幹、(A)～(D) 選項與左欄官方答案 D",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－1.10.7. Mathematical formulation（Decision Trees）",
+          "url": "https://scikit-learn.org/stable/modules/tree.html#mathematical-formulation",
+          "locator": "開頭：a decision tree recursively partitions the feature space；Classification criteria 之 Shannon entropy 段：The entropy criterion computes the Shannon entropy of the possible classes，以到達節點的類別頻率作為機率",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-009",
+      "officialQuestionNumber": 9,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 2～3 頁：第 9 題題幹與 (A)～(C) 選項、左欄官方答案 A（第 2 頁）、(D) 選項（第 3 頁）",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.preprocessing.StandardScaler",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html",
+          "locator": "說明段：許多 estimator（如 SVM 的 RBF kernel 與線性模型的 L1、L2 regularizer）assume that all features are centered around 0 and have variance in the same order；If a feature has a variance that is orders of magnitude larger than others, it might dominate the objective function",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn Examples－Importance of Feature Scaling",
+          "url": "https://scikit-learn.org/stable/auto_examples/preprocessing/plot_scaling_importance.html",
+          "locator": "導言：Even if tree based models are (almost) not affected by scaling, many other algorithms require features to be normalized…to create a completely different model fit compared to the fit with unscaled data (such as KNeighbors models)",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-010",
+      "officialQuestionNumber": 10,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "114 年第二次中級 AI 應用規劃師－機器學習技術與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+          "locator": "PDF 第 3 頁：第 10 題題幹、(A)～(D) 選項與左欄官方答案 C",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Google Cloud Vertex AI－Training methods",
+          "url": "https://cloud.google.com/vertex-ai/docs/start/training-methods",
+          "locator": "With AutoML, you create and train a model with minimal technical effort. You can use AutoML to quickly prototype models and explore new datasets before investing in development；相對地 With custom training you can create a training application optimized for your targeted outcome…complete control",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Google Cloud Vertex AI－Introduction to Vertex AI",
+          "url": "https://cloud.google.com/vertex-ai/docs/start/introduction-unified-platform",
+          "locator": "訓練方式比較段：AutoML 可在不撰寫訓練程式的情況下訓練 tabular、image、text、video 模型；custom training 則由使用者自行提供訓練程式與完整流程控制",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
