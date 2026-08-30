@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-intermediate-1-big-data",
+  "range": {
+    "start": 31,
+    "end": 40
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 10,
+    "corrected": 0,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-031",
+      "officialQuestionNumber": 31,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 9 頁：第 31 題題幹（A、B 兩團隊都需要「使用者過去 30 天交易行為」）、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Feast Documentation",
+          "url": "https://docs.feast.dev/",
+          "locator": "首頁說明 Feast 為開源 feature store，集中定義、管理與提供特徵，讓多個團隊與模型重用同一份特徵定義並維持訓練／服務一致",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-032",
+      "officialQuestionNumber": 32,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 9～10 頁：第 32 題題幹（50,000 筆、違約 800 筆、先對整體資料 SMOTE 再切分、AUC-ROC 0.91）與左欄官方答案 B（第 9 頁）、(A)～(D) 選項（第 10 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "imbalanced-learn－Common pitfalls and recommended practices",
+          "url": "https://imbalanced-learn.org/stable/common_pitfalls.html",
+          "locator": "§9.1 Data leakage：data leakage occurs when information that would not be available at prediction time is used when building the model；並指出在切分前重採樣會使回報效能 over-optimistic，建議把重採樣包進 pipeline",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "imbalanced-learn API－imblearn.over_sampling.SMOTE",
+          "url": "https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html",
+          "locator": "類別說明與 k_neighbors 參數：以少數類樣本的 k 近鄰插值產生合成樣本，故近鄰計算會受同一資料集中其他樣本影響",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-033",
+      "officialQuestionNumber": 33,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 10 頁：第 33 題題幹（8 類、數十萬筆、需快速訓練與線上部署）、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.linear_model.LogisticRegression",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html",
+          "locator": "說明多類別情況下以 multinomial loss 擬合整個機率分布，並列出各 solver 對大型資料集的適用性",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Multiclass and multioutput algorithms",
+          "url": "https://scikit-learn.org/stable/modules/multiclass.html",
+          "locator": "One-Vs-One 段：需建立 n_classes * (n_classes - 1) / 2 classifiers，this method is usually slower than one-vs-the-rest, due to its O(n_classes^2) complexity",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-034",
+      "officialQuestionNumber": 34,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 10 頁：第 34 題題幹（二元分類且需可解釋機率輸出）、(A)～(D) 選項與左欄官方答案 C；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Logistic regression",
+          "url": "https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression",
+          "locator": "說明 logistic regression 以 logistic function 建模單次試驗的可能結果機率，屬分類而非迴歸模型",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Probability calibration",
+          "url": "https://scikit-learn.org/stable/modules/calibration.html",
+          "locator": "導言：well calibrated classifiers 的 predict_proba 應可直接解讀為信心水準，例如給出 0.8 的樣本中約有 80% 實際屬於正類",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-035",
+      "officialQuestionNumber": 35,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 10 頁：第 35 題題幹、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Attention Is All You Need（Vaswani et al., 2017）",
+          "url": "https://arxiv.org/abs/1706.03762",
+          "locator": "§3.5 Positional Encoding：Since our model contains no recurrence and no convolution, in order for the model to make use of the order of the sequence, we must inject some information about the relative or absolute position of the tokens",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-036",
+      "officialQuestionNumber": 36,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 10～11 頁：第 36 題題幹與左欄官方答案 D（第 10 頁）、(A)～(D) 選項（第 11 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "AWS Prescriptive Guidance－Generate SQL queries by using generative AI",
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/generate-sql-queries-for-amazon-redshift-by-using-generative-ai.html",
+          "locator": "架構說明：以 LLM 將自然語言問題依 schema 轉為 SQL，再交由資料倉儲執行查詢並回傳結果，兼顧自然語言介面與資料庫的精確計算",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "PostgreSQL Documentation－Privileges",
+          "url": "https://www.postgresql.org/docs/current/ddl-priv.html",
+          "locator": "說明以資料庫角色與 SELECT、INSERT 等物件權限控制存取，可實作最小權限的只讀查詢帳號",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-037",
+      "officialQuestionNumber": 37,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 11 頁：第 37 題題幹、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Membership Inference Attacks against Machine Learning Models（Shokri et al., 2017）",
+          "url": "https://arxiv.org/abs/1610.05820",
+          "locator": "摘要：given a data record and black-box access to a model, determine if the record was in the model's training dataset；並以 shadow models 訓練攻擊模型辨識目標模型輸出的差異",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Deep Learning with Differential Privacy（Abadi et al., 2016）",
+          "url": "https://arxiv.org/abs/1607.00133",
+          "locator": "摘要：以 differentially private SGD（逐樣本梯度裁切加雜訊）與 moments accountant 追蹤隱私損失，限制單筆訓練樣本對模型的影響",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-038",
+      "officialQuestionNumber": 38,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 11 頁：第 38 題題幹（K 匿名、差分隱私合成資料、亂數回應）、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST SP 800-226－Guidelines for Evaluating Differential Privacy Guarantees",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-226.pdf",
+          "locator": "§3.6 Synthetic Data：A differentially private synthetic dataset is a synthetic dataset built with differential privacy…it consists of algorithmically generated data associated with \"fake\" individuals；§2 亦載明 Differential privacy is compositional，可累加 ε 為隱私預算",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST SP 800-226（DOI 版）",
+          "url": "https://doi.org/10.6028/NIST.SP.800-226",
+          "locator": "DOI 轉址至同一份 NIST SP 800-226；§4.2.2 Local Model 說明 Each individual adds noise to their own data before sending it to the data curator，即亂數回應所屬的本地模型",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-039",
+      "officialQuestionNumber": 39,
+      "officialAnswer": "C",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 12 頁：第 39 題題幹、Python 程式碼附圖、(A)～(D) 選項與左欄官方答案 C。已與站內圖檔 aiap-115-intermediate-1-big-data-p12-1.png 目視比對，程式為 def process_record(record, tags=[]): tags.append(\"checked\"); record['tags'] = tags; return record，並依序呼叫 row1 = process_record({\"id\": 1})、row2 = process_record({\"id\": 2})。已在本機實際執行該程式，row2['tags'] 輸出為 ['checked', 'checked']，與官方答案 C 一致。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "Python 官方教學－Default Argument Values",
+          "url": "https://docs.python.org/3/tutorial/controlflow.html#default-argument-values",
+          "locator": "Important warning：The default value is evaluated only once. This makes a difference when the default is a mutable object such as a list…並以 def f(a, L=[]) 範例示範跨呼叫累積",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-040",
+      "officialQuestionNumber": 40,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "pass",
+      "findings": [],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 12 頁：第 40 題題幹、虛擬碼附圖、(A)～(D) 選項與左欄官方答案 A。已與站內圖檔 aiap-115-intermediate-1-big-data-p12-2.png 目視比對：Input 為含標籤的 train_data、test_point 與最近鄰個數 X；流程為計算每筆 sample 與 test_point 的距離、依距離升序排序、取前 X 個並統計標籤眾數，確為 KNN 分類。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Nearest Neighbors Classification",
+          "url": "https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-classification",
+          "locator": "說明分類由 simple majority vote of the nearest neighbors of each point 決定：a query point is assigned the data class which has the most representatives within the nearest neighbors of the point",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}
