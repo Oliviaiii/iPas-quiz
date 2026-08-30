@@ -1,0 +1,289 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-ai",
+  "sourceId": "aiap-115-intermediate-1-big-data",
+  "range": {
+    "start": 1,
+    "end": 10
+  },
+  "reviewedAt": "2026-08-30",
+  "reviewer": "Claude Code independent AI reviewer",
+  "counts": {
+    "pass": 0,
+    "corrected": 10,
+    "humanDecision": 0,
+    "blocked": 0
+  },
+  "items": [
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-001",
+      "officialQuestionNumber": 1,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源定位原寫「第 1 題題幹、附圖、選項與官方答案」，但本題在官方 PDF 與題庫皆無附圖，屬誤植；已改為逐頁精確定位並註明無附圖（scripts/fix-ai-review-115-1-m2-001-010.py）。",
+        "獨立作答為 A；盒短鬚長＝中段集中但尾端延伸、中位數偏下＝右偏跡象的判讀正確，draft 的 editorialNote 亦已註明不同軟體對鬚的定義差異。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 1 頁：第 1 題題幹、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－1.3.3.7. Box Plot",
+          "url": "https://itl.nist.gov/div898/handbook/eda/section3/boxplot.htm",
+          "locator": "Purpose: Check location and variation shifts；說明盒表示中間 50%（Q1 至 Q3）、盒內橫線為中位數，並以鬚與另標點呈現尾端與極端值",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-002",
+      "officialQuestionNumber": 2,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "已發現本題所引的站內圖檔為單一純黑影像（匯入時遺漏 PDF 的 soft mask／alpha 遮罩），前端會顯示為黑色方塊而非公式。已以 scripts/fix-ai-review-115-1-m2-figures.py 依 PDF 內嵌影像與其 alpha 遮罩重新合成並覆蓋，並對全庫 63 個圖檔做同類掃描，確認僅此兩檔（Q2、Q8）有此問題。",
+        "修復後已目視確認站內圖檔與 PDF 第 1 頁一致，公式為 G = 1 − Σ(i=1…k) pᵢ²；同時更新 editorialNote 中「本機 PNG 為全黑影像、待修復」的過時敘述。",
+        "獨立作答為 A（pᵢ 是比例而非樣本數，故 (A) 為不正確敘述）；概念、四個選項與 trap 內容皆正確。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 1 頁：第 2 題題幹、吉尼不純度公式附圖 G = 1 − Σ(i=1…k) pᵢ²、(A)～(D) 選項與左欄官方答案 A。已渲染該頁並與修復後的站內圖檔 aiap-115-intermediate-1-big-data-p01-1.png 目視比對，公式一致。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Classification criteria（Decision Trees）",
+          "url": "https://scikit-learn.org/stable/modules/tree.html#classification-criteria",
+          "locator": "定義 p_mk 為 the proportion of class k observations in node m；Gini 為 H(Q_m) = Σ_k p_mk (1 - p_mk)，即 1 − Σ p²，代入的是比例而非計數",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-003",
+      "officialQuestionNumber": 3,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源定位原寫「第 3 題題幹、附圖、選項與官方答案」，但本題在官方 PDF 與題庫皆無附圖，屬誤植；已改為逐頁精確定位並註明無附圖（scripts/fix-ai-review-115-1-m2-001-010.py）。",
+        "獨立作答為 B；Poisson 的 equidispersion 假設與過度離散改用負二項的敘述正確，並正確指出增加樣本數無法修正資料生成過程的變異結構。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 1 頁：第 3 題題幹（平均每小時 12 通）、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "SciPy API－scipy.stats.poisson",
+          "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.poisson.html",
+          "locator": "pmf 為 exp(-mu) mu^k / k!，單一參數 mu 同時決定平均數與變異數",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "SciPy API－scipy.stats.nbinom",
+          "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.nbinom.html",
+          "locator": "Negative binomial distribution describes a sequence of i.i.d. Bernoulli trials, repeated until a predefined, non-random number of successes occurs；具額外參數可容納高於平均數的變異",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-004",
+      "officialQuestionNumber": 4,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源定位原寫「第 4 題題幹、附圖、選項與官方答案」，但本題在官方 PDF 與題庫皆無附圖，屬誤植；已改為逐頁精確定位並註明無附圖（scripts/fix-ai-review-115-1-m2-001-010.py）。",
+        "獨立作答為 A；單因子三水準、每水準 10 次觀測、近似常態且變異數相近，正合 one-way ANOVA 條件，且能避免多次兩兩 t 檢定膨脹第一類錯誤率。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 1～2 頁：第 4 題題幹與 (A)～(C) 選項、左欄官方答案 A（第 1 頁）、(D) 選項（第 2 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－3.2.3.1. One-Way ANOVA",
+          "url": "https://www.itl.nist.gov/div898/handbook/ppc/section2/ppc231.htm",
+          "locator": "Description：A one-way layout consists of a single factor with several levels and multiple observations at each level；並說明適用於比較單一因子多水準的效果",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-005",
+      "officialQuestionNumber": 5,
+      "officialAnswer": "A",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源定位原寫「第 5 題題幹、附圖、選項與官方答案」，但本題在官方 PDF 與題庫皆無附圖，屬誤植；已改為逐頁精確定位並註明無附圖（scripts/fix-ai-review-115-1-m2-001-010.py）。",
+        "獨立作答為 A；z=(x−μ)/σ 的負號代表低於平均、絕對值代表距離，敘述正確，且 draft 正確指出負 z 值並非落在常態分布之外。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 2 頁：第 5 題題幹（|Z| ≥ 2 觸發警示、某特徵 Z = -2）、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "SciPy API－scipy.stats.zscore",
+          "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.zscore.html",
+          "locator": "函式說明：Compute the z score of each value in the sample, relative to the sample mean and standard deviation",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-006",
+      "officialQuestionNumber": 6,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源定位原寫「第 6 題題幹、附圖、選項與官方答案」，但本題在官方 PDF 與題庫皆無附圖，屬誤植；已改為逐頁精確定位並註明無附圖（scripts/fix-ai-review-115-1-m2-001-010.py）。",
+        "獨立作答為 D；「不拒絕 H₀」不等於「接受並確認無能力」，忽略型二錯誤與檢定力，確為不正確敘述。另已核算 C(8,4)=70，故全對之單尾 p 值為 1/70≈0.0143，draft 的 (B) 分析正確。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 2 頁：第 6 題題幹（女士品茶、α=0.05）、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－7.1.3. What are statistical tests?",
+          "url": "https://www.itl.nist.gov/div898/handbook/prc/section1/prc13.htm",
+          "locator": "定義 H₀、Hₐ、顯著水準 α（型一錯誤率）與型二錯誤 β，並說明檢定結論為 reject 或 fail to reject H₀",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－1.3.5.2 / 7.1.3.1 假設檢定的臨界值與 p 值",
+          "url": "https://itl.nist.gov/div898/handbook/prc/section1/prc131.htm",
+          "locator": "說明檢定統計量落入由臨界值界定的拒絕域時才拒絕 H₀；p 值為 H₀ 為真時取得至少同樣極端結果的機率",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-007",
+      "officialQuestionNumber": 7,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源定位原寫「第 7 題題幹、附圖、選項與官方答案」，但本題在官方 PDF 與題庫皆無附圖，屬誤植；已改為逐頁精確定位並註明無附圖（scripts/fix-ai-review-115-1-m2-001-010.py）。",
+        "獨立作答為 B；同一批 40 名患者前後各測一次即為配對設計，應以個人差值做成對 t 檢定，draft 亦正確指出常態假設應檢查差值分布。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 2 頁：第 7 題題幹（40 名患者前後各測一次）、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "SciPy API－scipy.stats.ttest_rel",
+          "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_rel.html",
+          "locator": "函式說明：Calculate the t-test on TWO RELATED samples of scores；用於相關或重複量測樣本，檢定平均差是否為 0",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-008",
+      "officialQuestionNumber": 8,
+      "officialAnswer": "D",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "已發現本題所引的站內圖檔為單一純黑影像（匯入時遺漏 PDF 的 soft mask／alpha 遮罩），前端會顯示為黑色方塊而非公式。已以 scripts/fix-ai-review-115-1-m2-figures.py 依 PDF 內嵌影像與其 alpha 遮罩重新合成並覆蓋，並對全庫 63 個圖檔做同類掃描，確認僅此兩檔（Q2、Q8）有此問題。",
+        "修復後已目視確認站內圖檔與 PDF 第 2 頁一致，公式為 Z=(x̄−μ₀)/(σ/√n)；同時更新 editorialNote 中「本機 PNG 為全黑影像、待修復」的過時敘述。",
+        "已獨立複算：σ/√n = 16/√9 = 16/3 ≈ 5.333，Z = (40−36)/5.333 = 0.75 < 1.645，故不拒絕 H₀，與官方答案 D 一致。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 2～3 頁：第 8 題題幹（μ₀=36、σ=16、n=9、x̄=40、Z₀.₀₅=1.645）、Z 檢定公式附圖 Z=(x̄−μ₀)/(σ/√n) 與 (A)(B) 選項、左欄官方答案 D（第 2 頁）、(C)(D) 選項（第 3 頁）。已渲染該頁並與修復後的站內圖檔 aiap-115-intermediate-1-big-data-p02-1.png 目視比對，公式一致。",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－1.3.5.2 / 7.1.3.1 假設檢定的臨界值與 p 值",
+          "url": "https://itl.nist.gov/div898/handbook/prc/section1/prc131.htm",
+          "locator": "說明檢定統計量落入由臨界值界定的拒絕域時才拒絕 H₀；p 值為 H₀ 為真時取得至少同樣極端結果的機率",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-009",
+      "officialQuestionNumber": 9,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源定位原寫「第 9 題題幹、附圖、選項與官方答案」，但本題在官方 PDF 與題庫皆無附圖，屬誤植；已改為逐頁精確定位並註明無附圖（scripts/fix-ai-review-115-1-m2-001-010.py）。",
+        "獨立作答為 B；α 即型一錯誤率上限，由 0.05 降至 0.01 直接降低偽陽性，draft 亦正確指出在樣本與效果固定時 β 通常上升、增加樣本是另一項設計決策。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 3 頁：第 9 題題幹（α 由 0.05 降至 0.01）、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "NIST/SEMATECH e-Handbook－1.3.5. Quantitative Techniques（顯著水準與錯誤型態）",
+          "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda35.htm",
+          "locator": "說明顯著水準 α 為型一錯誤（拒絕為真的 H₀）機率、型二錯誤 β 為未拒絕為假的 H₀，以及檢定力 1−β",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-010",
+      "officialQuestionNumber": 10,
+      "officialAnswer": "B",
+      "answerIndependentlyConfirmed": true,
+      "result": "corrected",
+      "findings": [
+        "參考來源定位原寫「第 10 題題幹、附圖、選項與官方答案」，但本題在官方 PDF 與題庫皆無附圖，屬誤植；已改為逐頁精確定位並註明無附圖（scripts/fix-ai-review-115-1-m2-001-010.py）。",
+        "獨立作答為 B；在含測試集的全體資料上做特徵篩選確為資料洩漏，且 Pearson 線性相關無法捕捉非線性依賴。draft 的 editorialNote 已恰當補充「僅用未標記測試特徵的洩漏程度較弱、但仍違反測試集隔離」。"
+      ],
+      "sourcesChecked": [
+        {
+          "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
+          "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+          "locator": "PDF 第 3 頁：第 10 題題幹（280 個特徵、訓練 AUC 0.94／測試 0.68）、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn User Guide－Common pitfalls：Data leakage",
+          "url": "https://scikit-learn.org/stable/common_pitfalls.html#data-leakage",
+          "locator": "說明測試資料不得參與模型或特徵選擇決策；所有需由資料學得的 transformation 只能在訓練資料上 fit",
+          "checkedAt": "2026-08-30"
+        },
+        {
+          "title": "scikit-learn API－sklearn.feature_selection.mutual_info_classif",
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.mutual_info_classif.html",
+          "locator": "函式說明：互資訊為非負值，等於 0 表示兩變數獨立，數值越高代表依賴程度越高；可量化任意（含非線性）依賴關係",
+          "checkedAt": "2026-08-30"
+        }
+      ]
+    }
+  ]
+}

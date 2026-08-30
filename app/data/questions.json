@@ -37056,8 +37056,8 @@
         {
           "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
-          "locator": "第 1 題題幹、附圖、選項與官方答案",
-          "checkedAt": "2026-08-12"
+          "locator": "PDF 第 1 頁：第 1 題題幹、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "NIST/SEMATECH e-Handbook－Box Plot",
@@ -37124,8 +37124,8 @@
         {
           "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
-          "locator": "第 2 題題幹、附圖、選項與官方答案",
-          "checkedAt": "2026-08-12"
+          "locator": "PDF 第 1 頁：第 2 題題幹、吉尼不純度公式附圖 G = 1 − Σ(i=1…k) pᵢ²、(A)～(D) 選項與左欄官方答案 A",
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "scikit-learn User Guide－Decision tree classification criteria",
@@ -37134,7 +37134,7 @@
           "checkedAt": "2026-08-12"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。已於 2026-08-12目視官方 PDF 第 1 頁，附圖確為 G = 1 − Σ(i=1…k) pᵢ²；資料庫現有本機 PNG 為全黑影像，需另行修復素材後再確認前端顯示。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。附圖確為 G = 1 − Σ(i=1…k) pᵢ²，已於 2026-08-30 目視官方 PDF 第 1 頁核對；原本機 PNG 因匯入時遺漏 PDF 軟遮罩而呈全黑，已由 scripts/fix-ai-review-115-1-m2-figures.py 依原圖與 alpha 遮罩重新合成修復。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-08-12"
     },
@@ -37200,8 +37200,8 @@
         {
           "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
-          "locator": "第 3 題題幹、附圖、選項與官方答案",
-          "checkedAt": "2026-08-12"
+          "locator": "PDF 第 1 頁：第 3 題題幹（平均每小時 12 通）、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "SciPy API－scipy.stats.poisson",
@@ -37274,8 +37274,8 @@
         {
           "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
-          "locator": "第 4 題題幹、附圖、選項與官方答案",
-          "checkedAt": "2026-08-12"
+          "locator": "PDF 第 1～2 頁：第 4 題題幹與 (A)～(C) 選項、左欄官方答案 A（第 1 頁）、(D) 選項（第 2 頁）；本題無附圖",
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "NIST/SEMATECH e-Handbook－One-Way ANOVA",
@@ -37342,8 +37342,8 @@
         {
           "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
-          "locator": "第 5 題題幹、附圖、選項與官方答案",
-          "checkedAt": "2026-08-12"
+          "locator": "PDF 第 2 頁：第 5 題題幹（|Z| ≥ 2 觸發警示、某特徵 Z = -2）、(A)～(D) 選項與左欄官方答案 A；本題無附圖",
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "SciPy API－scipy.stats.zscore",
@@ -37410,8 +37410,8 @@
         {
           "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
-          "locator": "第 6 題題幹、附圖、選項與官方答案",
-          "checkedAt": "2026-08-12"
+          "locator": "PDF 第 2 頁：第 6 題題幹（女士品茶、α=0.05）、(A)～(D) 選項與左欄官方答案 D；本題無附圖",
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "NIST/SEMATECH e-Handbook－What are statistical tests?",
@@ -37484,8 +37484,8 @@
         {
           "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
-          "locator": "第 7 題題幹、附圖、選項與官方答案",
-          "checkedAt": "2026-08-12"
+          "locator": "PDF 第 2 頁：第 7 題題幹（40 名患者前後各測一次）、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "SciPy API－scipy.stats.ttest_rel",
@@ -37552,8 +37552,8 @@
         {
           "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
-          "locator": "第 8 題題幹、附圖、選項與官方答案",
-          "checkedAt": "2026-08-12"
+          "locator": "PDF 第 2～3 頁：第 8 題題幹（μ₀=36、σ=16、n=9、x̄=40、Z₀.₀₅=1.645）、Z 檢定公式附圖 Z=(x̄−μ₀)/(σ/√n) 與 (A)(B) 選項、左欄官方答案 D（第 2 頁）、(C)(D) 選項（第 3 頁）",
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "NIST/SEMATECH e-Handbook－Critical values and p values",
@@ -37562,7 +37562,7 @@
           "checkedAt": "2026-08-12"
         }
       ],
-      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。已於 2026-08-12目視官方 PDF 第 2 頁，附圖公式確為 Z=(x̄−μ₀)/(σ/√n)；資料庫現有本機 PNG 為全黑影像，需另行修復素材後再確認前端顯示。",
+      "editorialNote": "本站自編的 AI 輔助詳解初稿，並非官方詳解；尚待獨立人工複核。附圖公式確為 Z=(x̄−μ₀)/(σ/√n)，已於 2026-08-30 目視官方 PDF 第 2 頁核對；原本機 PNG 因匯入時遺漏 PDF 軟遮罩而呈全黑，已由 scripts/fix-ai-review-115-1-m2-figures.py 依原圖與 alpha 遮罩重新合成修復。",
       "author": "Codex（AI 輔助初稿）",
       "authoredAt": "2026-08-12"
     },
@@ -37628,8 +37628,8 @@
         {
           "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
-          "locator": "第 9 題題幹、附圖、選項與官方答案",
-          "checkedAt": "2026-08-12"
+          "locator": "PDF 第 3 頁：第 9 題題幹（α 由 0.05 降至 0.01）、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "NIST/SEMATECH e-Handbook－Quantitative Techniques",
@@ -37696,8 +37696,8 @@
         {
           "title": "115 年第一次中級 AI 應用規劃師－大數據處理分析與應用公告試題",
           "url": "https://www.ipas.org.tw/api/proxy/uploads/certification_resource/bf93f438f7be48d295c1b40a34d79f3d/115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
-          "locator": "第 10 題題幹、附圖、選項與官方答案",
-          "checkedAt": "2026-08-12"
+          "locator": "PDF 第 3 頁：第 10 題題幹（280 個特徵、訓練 AUC 0.94／測試 0.68）、(A)～(D) 選項與左欄官方答案 B；本題無附圖",
+          "checkedAt": "2026-08-30"
         },
         {
           "title": "scikit-learn User Guide－Common pitfalls: Data leakage",
