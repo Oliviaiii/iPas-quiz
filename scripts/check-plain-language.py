@@ -68,8 +68,10 @@ def main() -> None:
             if question is None:
                 problems.append(f"{path.name} Q{number}: questionId not found")
                 continue
-            analysis = question["explanation"]["optionAnalysis"]
-            for letter, entry in item["optionAnalysis"].items():
+            prose = "prose" in item
+            explanation = question["explanation"]
+            analysis = explanation if prose else explanation["optionAnalysis"]
+            for letter, entry in item["prose" if prose else "optionAnalysis"].items():
                 checked += 1
                 tag = f"{path.name} Q{number}{letter}"
                 if "old" not in entry:

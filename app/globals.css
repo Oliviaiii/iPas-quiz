@@ -446,6 +446,11 @@ main {
   line-height: 1.7;
 }
 
+/* 核心觀念常以換行分段；預設 HTML 會把換行摺成空格，段落結構會整個消失。 */
+.analysis-grid p {
+  white-space: pre-line;
+}
+
 .option-analysis {
   margin-top: 24px;
 }

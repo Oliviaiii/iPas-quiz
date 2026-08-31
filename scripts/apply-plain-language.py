@@ -1,9 +1,13 @@
-"""Apply plain-language rewrites of the option analyses from a payload file.
+"""Apply plain-language rewrites from a payload file.
 
-The option analyses were written for readers who already know the vocabulary.
-This applies a rewrite that keeps every technical term and every technical claim
-but adds the plain-language explanation a non-specialist needs, so the analysis
+The explanations were written for readers who already know the vocabulary. This
+applies a rewrite that keeps every technical term and every technical claim but
+adds the plain-language explanation a non-specialist needs, so the explanation
 can be read and remembered without a background in the field.
+
+A payload item carries either ``optionAnalysis`` (keyed by option letter) or
+``prose`` (keyed by ``concept`` / ``answerReason``); the two passes live in
+separate files so they never contend for the same text.
 
 Usage::
 
@@ -21,7 +25,7 @@ Guards, per option:
 * the rewrite is longer than 80% of the original (a plain-language pass adds
   explanation; a large shrink means content was dropped, not reworded).
 
-Nothing outside ``explanation.optionAnalysis`` is touched: the official stem,
+Nothing outside the named explanation fields is touched: the official stem,
 options, answer and the review status all stay exactly as they are.
 """
 
@@ -36,6 +40,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 QUESTIONS = ROOT / "app" / "data" / "questions.json"
 LETTERS = ("A", "B", "C", "D")
+PROSE_FIELDS = ("concept", "answerReason")
 
 
 def sha256(text: str) -> str:
@@ -73,13 +78,20 @@ def main() -> None:
             if question.get("explanationStatus") != "draft":
                 raise RuntimeError(f"{tag}: question is not draft")
 
-            analysis = question["explanation"]["optionAnalysis"]
-            for letter, entry in item["optionAnalysis"].items():
-                if letter not in LETTERS:
+            if ("optionAnalysis" in item) == ("prose" in item):
+                raise RuntimeError(f"{tag}: item must carry exactly one of optionAnalysis / prose")
+            prose = "prose" in item
+            explanation = question["explanation"]
+            target = explanation if prose else explanation["optionAnalysis"]
+            for letter, entry in item["prose" if prose else "optionAnalysis"].items():
+                if prose:
+                    if letter not in PROSE_FIELDS:
+                        raise RuntimeError(f"{tag}: bad prose field {letter}")
+                elif letter not in LETTERS:
                     raise RuntimeError(f"{tag}: bad option letter {letter}")
-                old = analysis.get(letter)
+                old = target.get(letter)
                 if not old:
-                    raise RuntimeError(f"{tag} {letter}: no existing analysis")
+                    raise RuntimeError(f"{tag} {letter}: no existing text")
                 if "old" in entry and entry["old"] != old:
                     raise RuntimeError(f"{tag} {letter}: payload's recorded old text does not match")
                 if sha256(old) != entry["oldSha256"]:
@@ -104,12 +116,12 @@ def main() -> None:
                     raise RuntimeError(
                         f"{tag} {letter}: rewrite is {len(new)} chars against {len(old)} — too short"
                     )
-                analysis[letter] = new
+                target[letter] = new
                 applied += 1
             touched_questions += 1
 
     QUESTIONS.write_text(json.dumps(questions, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"rewrote {applied} option analyses across {touched_questions} questions")
+    print(f"rewrote {applied} explanation fields across {touched_questions} questions")
 
 
 if __name__ == "__main__":

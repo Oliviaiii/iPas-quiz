@@ -88,12 +88,37 @@
 
 技術判斷一字未改，只是把「欠擬合」「過度擬合」講成人話。
 
+## 5.1 「核心觀念」與「解題理由」兩欄
+
+除選項分析外，`concept`（核心觀念）與 `answerReason`（解題理由）同樣要白話化，
+規則完全相同，但有兩點差異：
+
+- **`concept` 用換行分段，而且要善用它。** 前端已設定 `white-space: pre-line`，
+  換行會真的顯示成分段。像「三種層級」「兩種路線」這類並列說明，一行一項最好讀：
+
+  ```
+  人在迴圈內（Human-in-the-loop）：AI 每做一個決定都要人點頭才算數。
+  人在迴圈上（Human-over-the-loop）：AI 自己跑，人在旁邊一直盯著。
+  人在迴圈外（Human-out-of-the-loop）：平常沒人在看，壞掉了才有人去收拾。
+  ```
+
+  原文平均 225 字，比選項分析長一倍，白話版通常 250～450 字。
+
+- **`answerReason` 是單一段落，不換行。** 原文平均 110 字，白話版約 120～200 字。
+  它只回答一件事：為什麼是這個選項。不要在這裡重講一次四個選項的分析。
+
+改寫時把公式與代號留著並就地翻成白話，例如 `P(y|x)` 寫成
+「P(y|x)——看到這些特徵時、是哪一類的機率」。
+
 ## 6. 流程
 
 1. 讀該批題目的題幹、選項與現有分析。
 2. 逐題逐選項改寫，存成 `{"11": {"A": "…", "B": "…", "C": "…", "D": "…"}}` 的草稿 JSON。
 3. `python3 scripts/build-plain-language-payload.py <sourceId> <start> <end> <草稿.json>`
    產生 `content/plain-language/<sourceId>-<start>-<end>.json`。
+   改寫 `concept`／`answerReason` 時加上 `--prose`，草稿格式改為
+   `{"11": {"concept": "…", "answerReason": "…"}}`，輸出檔名多一個 `-prose` 尾綴，
+   兩種改寫因此不會互相覆蓋。
 4. 由主流程統一以 `scripts/apply-plain-language.py` 套用；**改寫者不得直接改
    `app/data/questions.json`**。
 5. 套用後以 `scripts/check-plain-language.py` 驗收。它逐項比對改寫前後：原文出現過的

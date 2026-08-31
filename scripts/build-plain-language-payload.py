@@ -3,11 +3,16 @@
 Usage::
 
     python scripts/build-plain-language-payload.py <sourceId> <start> <end> <draft.json>
+    python scripts/build-plain-language-payload.py <sourceId> <start> <end> <draft.json> --prose
 
-``draft.json`` is a flat mapping of question number to option letter to the
-rewritten text::
+Without ``--prose`` the draft maps question number to option letter::
 
     {"11": {"A": "…", "B": "…", "C": "…", "D": "…"}, "12": {…}}
+
+With ``--prose`` it maps question number to the two prose fields instead, and
+the payload is written to ``…-prose.json`` so the two passes never collide::
+
+    {"11": {"concept": "…", "answerReason": "…"}, "12": {…}}
 
 The script looks up each current option analysis, records it verbatim with its
 sha256 and writes
@@ -30,10 +35,27 @@ QUESTIONS = ROOT / "app" / "data" / "questions.json"
 OUT_DIR = ROOT / "content" / "plain-language"
 
 
+PROSE_FIELDS = ("concept", "answerReason")
+
+
+def check(number: str, field: str, old: str, new: str, answer: list[str]) -> None:
+    """Shared guards for one rewritten string."""
+    if new == old:
+        raise SystemExit(f"Q{number} {field}: rewrite is identical to the original")
+    if old.startswith("正確") and not new.startswith("正確"):
+        raise SystemExit(f"Q{number} {field}: 正確 marker dropped")
+    if new.startswith("正確") and not old.startswith("正確") and field not in answer:
+        raise SystemExit(f"Q{number} {field}: 正確 marker added to a non-answer option")
+    if len(new) < len(old) * 0.8:
+        raise SystemExit(f"Q{number} {field}: rewrite is {len(new)} chars against {len(old)} — too short")
+
+
 def main() -> None:
-    if len(sys.argv) != 5:
+    argv = [a for a in sys.argv[1:] if a != "--prose"]
+    prose = "--prose" in sys.argv
+    if len(argv) != 4:
         raise SystemExit(__doc__)
-    source_id, start, end, draft_path = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), Path(sys.argv[4])
+    source_id, start, end, draft_path = argv[0], int(argv[1]), int(argv[2]), Path(argv[3])
 
     questions = json.loads(QUESTIONS.read_text(encoding="utf-8"))
     selected = {
@@ -53,38 +75,36 @@ def main() -> None:
     total = 0
     for number in numbers:
         question = selected[number]
-        analysis = question["explanation"]["optionAnalysis"]
+        explanation = question["explanation"]
+        source = explanation if prose else explanation["optionAnalysis"]
         entry = {}
-        for letter, new in draft[str(number)].items():
-            old = analysis.get(letter)
+        for field, new in draft[str(number)].items():
+            if prose and field not in PROSE_FIELDS:
+                raise SystemExit(f"Q{number}: {field} is not a prose field {PROSE_FIELDS}")
+            old = source.get(field)
             if not old:
-                raise SystemExit(f"Q{number} {letter}: no existing analysis to replace")
-            if new == old:
-                raise SystemExit(f"Q{number} {letter}: rewrite is identical to the original")
-            if old.startswith("正確") and not new.startswith("正確"):
-                raise SystemExit(f"Q{number} {letter}: 正確 marker dropped")
-            if new.startswith("正確") and not old.startswith("正確") and letter not in question["officialAnswer"]:
-                raise SystemExit(f"Q{number} {letter}: 正確 marker added to a non-answer option")
-            if len(new) < len(old) * 0.8:
-                raise SystemExit(f"Q{number} {letter}: rewrite is {len(new)} chars against {len(old)} — too short")
-            entry[letter] = {
+                raise SystemExit(f"Q{number} {field}: no existing text to replace")
+            check(str(number), field, old, new, question["officialAnswer"])
+            entry[field] = {
                 "oldSha256": hashlib.sha256(old.encode("utf-8")).hexdigest(),
                 "old": old,
                 "new": new,
             }
             total += 1
-        if set(entry) != set(analysis):
-            raise SystemExit(f"Q{number}: rewrote {sorted(entry)} but the question has {sorted(analysis)}")
+        expected = set(PROSE_FIELDS) if prose else set(source)
+        if set(entry) != expected:
+            raise SystemExit(f"Q{number}: rewrote {sorted(entry)} but expected {sorted(expected)}")
         items.append(
             {
                 "questionId": question["id"],
                 "officialQuestionNumber": number,
-                "optionAnalysis": entry,
+                ("prose" if prose else "optionAnalysis"): entry,
             }
         )
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    path = OUT_DIR / f"{source_id}-{start:03d}-{end:03d}.json"
+    suffix = "-prose" if prose else ""
+    path = OUT_DIR / f"{source_id}-{start:03d}-{end:03d}{suffix}.json"
     payload = {
         "schemaVersion": 1,
         "sourceId": source_id,
@@ -93,7 +113,8 @@ def main() -> None:
         "items": items,
     }
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"wrote {path.relative_to(ROOT)} — {total} option analyses across {len(items)} questions")
+    kind = "prose fields" if prose else "option analyses"
+    print(f"wrote {path.relative_to(ROOT)} — {total} {kind} across {len(items)} questions")
 
 
 if __name__ == "__main__":
