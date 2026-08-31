@@ -1,6 +1,6 @@
 # 獨立 AI 複核進度
 
-最後更新：2026-08-30
+最後更新：2026-08-31
 
 ## 目前狀態
 
@@ -127,5 +127,7 @@ python scripts/ai-review-context.py <sourceId> --render 7,8   # 需目視的頁�
 - `corrected` 的修正只能保持 `draft`；不得填入 `reviewer`／`reviewedAt`。
 - `human-decision` 與 `blocked` 應集中交給人工複核者，不可算入人工完成數。
 - 所有報告位於 `reviews/ai-independent/`；流程規則見 `AI_REVIEW_GUIDE.md`。
-- 已知跨題全站項目：部分詳解內文的英數字與中文之間漏空格（例如「只有 A直接對應」），
-  屬排版瑕疵而非內容錯誤，宜另案一次掃過，不逐批計入 `corrected`。
+- 跨題全站排版：詳解內文的中英數字之間統一以半形空格分隔。全庫已於 2026-08-31 掃過一次
+  （`scripts/fix-typography-cjk-latin-spacing.py`，246 處補空格、161 題），僅保留三處刻意
+  不加空格的例外：兩個混入中文的識別字字面值與一處下標式公式。此為排版瑕疵而非內容錯誤，
+  未計入任何批次的 `corrected`。
