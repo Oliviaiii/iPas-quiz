@@ -4000,7 +4000,7 @@
       "concept": "Model Context Protocol 採用主從式架構，三個角色的關係是固定的：\nAI Host 是使用模型的應用程式本體，需要外部資料或工具時由它發動；MCP Client 存在於 Host 之中，負責與伺服器建立並維持連線，一個 Client 對應一個 Server；MCP Server 則是實際提供資料或工具能力的一方，例如連接 GitHub 程式碼庫的伺服器。\n因此請求一定是由內而外：Host 發起，Client 傳遞，Server 執行，結果再沿原路回到 Host 交給模型使用。",
       "answerReason": "題目描述 AI 先發出請求、再經 MCP 架構逐步完成查詢與回傳。依照上述角色關係，順序是 AI Host → MCP Client → MCP Server → 資料查詢 →結果回傳 AI Host，與 C 完全一致。",
       "optionAnalysis": {
-        "A": "以 MCP Server 作為起點並不成立。Server 是被動提供能力的一方，等待來自 Client 的請求，不會主動去驅動 Host；而且此順序把 Host 排在 Client 之前之外，也顛倒了 Client 內嵌於 Host 的從屬關係。",
+        "A": "以 MCP Server 作為起點並不成立。Server 是被動提供能力的一方，等待來自 Client 的請求，不會主動去驅動 Host；而且此順序讓請求由外往內跑（先 Server、再 Host、才到 Client），與 Client 內嵌於 Host、請求必須由內往外送出的架構正好相反。",
         "B": "把 MCP Client 排在 AI Host 之前，顛倒了兩者的包含關係。Client 是由 Host 建立並管理的連線元件，不會先於 Host 存在或自行發起流程。",
         "C": "正確。Host 因任務需要而發起請求，交由其內部的 MCP Client 送往對應的 MCP Server，Server 完成資料查詢後將結果沿原路回傳給 Host，再由模型據以生成摘要。",
         "D": "順序中把 MCP Server 排在 MCP Client 之前，等於讓 Host 先接觸 Server 再經過 Client，與架構定義不符。Client 的角色正是 Host 與 Server 之間的連線代理，不能被跳過或後置。"

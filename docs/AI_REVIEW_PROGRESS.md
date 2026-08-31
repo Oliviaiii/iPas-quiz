@@ -21,7 +21,7 @@
   - 115 年第一次中級－大數據處理分析與應用（50 題）
   - 115 年第一次中級－機器學習技術與應用（50 題）
 - 下一批：全部 600 題已完成獨立 AI 複核。
-- 累計分類：`pass 457`、`corrected 123`、`human-decision 20`、`blocked 0`。
+- 累計分類：`pass 456`、`corrected 124`、`human-decision 20`、`blocked 0`。
 
 AI 複核通過不等於人工複核完成；所有題目在人工簽核前維持 `draft`。
 
@@ -34,7 +34,7 @@ AI 複核通過不等於人工複核完成；所有題目在人工簽核前維�
 | 114 年第四次初級－人工智慧基礎概論 | 21～30 | 完成（pass 10） | 未開始 |
 | 114 年第四次初級－人工智慧基礎概論 | 31～40 | 完成（pass 7／corrected 2／human-decision 1） | 未開始 |
 | 114 年第四次初級－人工智慧基礎概論 | 41～50 | 完成（pass 6／corrected 1／human-decision 3） | 未開始 |
-| 114 年第四次初級－生成式 AI 應用與規劃 | 1～10 | 完成（pass 4／corrected 5／human-decision 1） | 未開始 |
+| 114 年第四次初級－生成式 AI 應用與規劃 | 1～10 | 完成（pass 3／corrected 6／human-decision 1） | 未開始 |
 | 114 年第四次初級－生成式 AI 應用與規劃 | 11～20 | 完成（pass 7／corrected 1／human-decision 2） | 未開始 |
 | 114 年第四次初級－生成式 AI 應用與規劃 | 21～30 | 完成（pass 6／corrected 2／human-decision 2） | 未開始 |
 | 114 年第四次初級－生成式 AI 應用與規劃 | 31～40 | 完成（pass 7／corrected 2／human-decision 1） | 未開始 |

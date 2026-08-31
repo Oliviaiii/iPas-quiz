@@ -9,8 +9,8 @@
   "reviewedAt": "2026-08-13",
   "reviewer": "Codex independent AI reviewer",
   "counts": {
-    "pass": 4,
-    "corrected": 5,
+    "pass": 3,
+    "corrected": 6,
     "humanDecision": 1,
     "blocked": 0
   },
@@ -180,8 +180,11 @@
       "officialQuestionNumber": 7,
       "officialAnswer": "C",
       "answerIndependentlyConfirmed": true,
-      "result": "pass",
-      "findings": [],
+      "result": "corrected",
+      "findings": [
+        "選項 A 解析的第二個理由寫錯：原文以「此順序把 Host 排在 Client 之前」作為 A 的缺失，但 A 的順序是 Server → Host → Client，而官方答案 C 是 Host → Client → Server——兩者都把 Host 排在 Client 之前，這不可能是 A 的錯處。A 真正的問題是請求的行進方向：它從 Server 起算、由外往內走到 Client，與「Client 內嵌於 Host、請求必須由內往外送出」的架構相反。已以 scripts/fix-ai-review-114-4-s2-007.py 改寫該理由；官方答案 C 不受影響，第一個理由（Server 是被動提供能力的一方）本來就成立。",
+        "本項於選項分析白話化改寫時發現，非原批次複核所見；題目、選項與官方答案未動，狀態維持 draft。"
+      ],
       "sourcesChecked": [
         {
           "title": "114 年第四次初級 AI 應用規劃師－生成式 AI 應用與規劃公告試題",
