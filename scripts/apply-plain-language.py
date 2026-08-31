@@ -80,6 +80,8 @@ def main() -> None:
                 old = analysis.get(letter)
                 if not old:
                     raise RuntimeError(f"{tag} {letter}: no existing analysis")
+                if "old" in entry and entry["old"] != old:
+                    raise RuntimeError(f"{tag} {letter}: payload's recorded old text does not match")
                 if sha256(old) != entry["oldSha256"]:
                     raise RuntimeError(
                         f"{tag} {letter}: current text hashes to {sha256(old)}, "

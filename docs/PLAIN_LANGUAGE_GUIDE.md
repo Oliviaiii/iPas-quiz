@@ -75,6 +75,11 @@
    產生 `content/plain-language/<sourceId>-<start>-<end>.json`。
 4. 由主流程統一以 `scripts/apply-plain-language.py` 套用；**改寫者不得直接改
    `app/data/questions.json`**。
+5. 套用後以 `scripts/check-plain-language.py` 驗收。它逐項比對改寫前後：原文出現過的
+   英文名詞與數字，改寫後必須全部還在。少了任何一個，代表那不是「講白話」而是「刪內容」。
+
+payload 會把被取代的原文與其 sha256 一併存下來，所以改寫前後的對照在 commit 之後
+仍然查得到。
 
 題幹、選項與官方答案是官方原文，任何情況下都不更動。
 所有題目維持 `explanationStatus: draft`。

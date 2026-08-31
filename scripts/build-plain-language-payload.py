@@ -9,7 +9,8 @@ rewritten text::
 
     {"11": {"A": "…", "B": "…", "C": "…", "D": "…"}, "12": {…}}
 
-The script looks up each current option analysis, records its sha256 and writes
+The script looks up each current option analysis, records it verbatim with its
+sha256 and writes
 ``content/plain-language/<sourceId>-<start>-<end>.json``. It refuses a draft
 that drops the "正確" marker, moves it onto an option the official answer does
 not name, leaves the text unchanged, or shrinks it below 80% of the original —
@@ -68,6 +69,7 @@ def main() -> None:
                 raise SystemExit(f"Q{number} {letter}: rewrite is {len(new)} chars against {len(old)} — too short")
             entry[letter] = {
                 "oldSha256": hashlib.sha256(old.encode("utf-8")).hexdigest(),
+                "old": old,
                 "new": new,
             }
             total += 1
