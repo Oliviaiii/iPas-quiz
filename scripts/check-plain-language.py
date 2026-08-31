@@ -19,7 +19,9 @@ Three checks per rewritten option:
     numbers are claims — article numbers, thresholds, percentages, layer counts.
 
 ``applied``
-    The text now in the bank is the text the payload says it should be.
+    The bank holds either the payload's rewrite (already applied) or exactly the
+    text the payload recorded as the original (not yet applied). Anything else
+    means the payload and the bank have diverged.
 
 Usage::
 
@@ -56,7 +58,7 @@ def main() -> None:
 
     questions = {q["id"]: q for q in json.loads(QUESTIONS.read_text(encoding="utf-8"))}
     problems: list[str] = []
-    checked = 0
+    checked = applied = pending = 0
 
     for path in payloads:
         payload = json.loads(path.read_text(encoding="utf-8"))
@@ -74,8 +76,13 @@ def main() -> None:
                     problems.append(f"{tag}: payload has no recorded old text")
                     continue
                 old, new = entry["old"], entry["new"]
-                if analysis.get(letter) != new:
-                    problems.append(f"{tag}: bank text differs from the payload's rewrite")
+                current = analysis.get(letter)
+                if current == new:
+                    applied += 1
+                elif current == old:
+                    pending += 1
+                else:
+                    problems.append(f"{tag}: bank text matches neither the payload's old nor its new text")
                 lost_terms = {t for t in tokens(old, TERM) if t.lower() not in NOISE} - tokens(new, TERM)
                 if lost_terms:
                     problems.append(f"{tag}: dropped term(s) {sorted(lost_terms)}")
@@ -83,7 +90,10 @@ def main() -> None:
                 if lost_numbers:
                     problems.append(f"{tag}: dropped number(s) {sorted(lost_numbers)}")
 
-    print(f"checked {checked} rewritten option analyses across {len(payloads)} payload(s)")
+    print(
+        f"checked {checked} rewritten option analyses across {len(payloads)} payload(s) "
+        f"— {applied} applied, {pending} pending"
+    )
     if problems:
         print(f"{len(problems)} problem(s):")
         for problem in problems:
