@@ -1273,3 +1273,49 @@ payload 存於 `content/plain-language/`，每筆都含被取代原文與其 sha
 1. **20 題 human-decision 待人類裁決**（不變）。
 2. 白話化剩 3,360 欄。
 3. `trap`（容易混淆，600 則、平均 92 字）同樣是專業口吻，使用者未指定，本次未動。
+
+## 2026-09-07 中級白話化（進行中，刻意停在「已收稿、未套用」）
+
+- 範圍：中級 6 份試卷 300 題的 `optionAnalysis`／`concept`／`answerReason`，共 1,800 欄。
+  初級 6 份 1,800 欄已於 2026-09-03 完成並上線。
+- **本次刻意不套用、不部署**（使用者額度考量）。payload 設計本來就把「改寫」與
+  「套用」分成兩步，所以停在這裡是完整可續的半成品，沒有任何成果遺失：
+  - 改寫結果全部存在 `content/plain-language/*.json`，每筆含被取代原文與其 sha256。
+  - `app/data/questions.json` 未動，線上站台維持 2026-09-03 的版本。
+  - `scripts/check-plain-language.py` 會把它們標為 PENDING。
+
+### 恢復時只要三步
+
+```
+python3 scripts/check-plain-language.py            # 應為 all clear
+python3 scripts/apply-plain-language.py <所有 PENDING 的 payload>
+npm run prebuild && npm test && npm run lint && npm run build
+```
+
+**只傳 PENDING 的 payload**，已套用的會被 sha256 防護擋下（這不是錯誤，是防護生效）。
+取得 PENDING 清單的方法見下方一行 Python，或直接看 check 的輸出。
+
+套用後再推分支、推 main 觸發部署，並跑 `docs/DEPLOYMENT.md` 第 5 節的驗證清單。
+
+### 中級材料的注意事項
+
+密度遠高於初級（統計、深度學習、程式碼判讀），且有四題帶著**刻意保留的爭議**，
+改寫時最容易被「順掉」成其中一個明顯錯——務必確認這些歧義在白話版裡仍然看得見：
+
+| 題目 | 必須保留的張力 |
+| --- | --- |
+| 114-2 中級三 Q17 | SGD+Momentum 與 Adam **兩者都內建動量**，官方答案 B |
+| 114-2 中級三 Q34 | 「分層留一法」名稱自相矛盾（每折只有一筆，不可能同時含正負類） |
+| 115-1 中級二 Q30 | 官方寫「局部極小值」，更精確的是 sharp minima |
+| 115-1 中級三 Q30 | 「高變異」與「過擬合」高度重疊，是同一件事的兩種說法 |
+
+另有一批先前修正過的引用必須照現況重現，不可退回舊版：FAISS arXiv:1702.08734、
+ONNX Runtime 量化文件、govinfo 45 CFR §160.103、BioBERT arXiv:1901.08746、
+torch.flatten、pandas SeriesGroupBy.sum、HomomorphicEncryption.org、
+Kohavi et al. KDD 2013、scikit-learn roc_curve。
+
+### 未解問題（不變）
+
+1. 20 題 human-decision 待人類裁決。
+2. `trap`（容易混淆，600 則）尚未白話化，使用者未指定。
+3. 人工複核仍為 0／600，全站維持 `draft`。
