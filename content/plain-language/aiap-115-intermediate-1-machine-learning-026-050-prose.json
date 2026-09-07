@@ -1,0 +1,411 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "aiap-115-intermediate-1-machine-learning",
+  "range": {
+    "start": 26,
+    "end": 50
+  },
+  "rewrittenAt": "2026-08-31",
+  "items": [
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-026",
+      "officialQuestionNumber": 26,
+      "prose": {
+        "concept": {
+          "oldSha256": "815c72cf2211d4b175ff04016b2e8ee5987530b5b595dc2005718a4dd1030294",
+          "old": "一般監督式模型每列需要固定長度特徵。時間序列滑動窗口以過去 L 個時間點形成 X_t，再以當期或未來值形成 y_t，例如 [sales(t-3), sales(t-2), sales(t-1)] 預測 sales(t)。這些欄位稱 lags。窗口長度決定可見歷史範圍，步長決定相鄰樣本重疊程度；建立後仍要按時間切分，避免未來值或以全資料計算的 rolling statistics 洩漏到訓練。",
+          "new": "一般監督式模型吃資料像吃表格：每一列的欄位數要一樣多。時間序列本來只是一長串數字，滑動窗口就是把它切成這種表格。\n怎麼切：拿過去 L 個時間點的值排成這一列的輸入 X_t，再拿當期或未來的值當答案 y_t。例如用 [sales(t-3), sales(t-2), sales(t-1)] 三期銷量去預測 sales(t)。這些搬過來的過去值就叫 lags（滯後欄位）。\n窗口長度：一次看幾期，決定模型看得到多久以前的歷史。\n步長：窗口每次往前挪幾格，決定相鄰兩列重疊多少。\n切完之後還有一條規矩：訓練與測試要按時間切分，不能隨機切；也不能拿全部資料去算移動平均這類 rolling statistics，否則未來的數字會偷偷洩漏到訓練資料裡。"
+        },
+        "answerReason": {
+          "oldSha256": "40823636b58c323acd33381d4f0bd3db0f312f92825f97a4aaf60b7958c33867",
+          "old": "題幹明說把過去多個時間點組合為模型輸入，正是將歷史觀測轉成 lag features，所以選 D。重疊窗口可能增加訓練樣本，但主要目的不是創造新標籤；它也不會自動去噪或降維，反而通常增加欄位。",
+          "new": "題幹其實已經把答案講出來了：把過去多個時間點的觀測值組合為模型輸入，這就是把歷史值搬成一欄一欄的滯後特徵（lag features），所以選 D。重疊的窗口確實會多出一些訓練樣本，但那不是主要目的，也不是在創造新標籤；它更不會自動去噪或降維，欄位反而通常變多。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-027",
+      "officialQuestionNumber": 27,
+      "prose": {
+        "concept": {
+          "oldSha256": "6594de4ebbe703f9258efe3965be1c734de7d5905372846238741139b607cf43",
+          "old": "時間序列驗證不能隨機把未來資料放入訓練、過去資料放入驗證。Expanding window 逐次累積所有歷史；rolling window 則固定或限制訓練長度，隨時間移除最舊資料並加入較新資料。題目要求每次基於最新時間區間，應採後者，或用 TimeSeriesSplit 設 max_train_size。這能觀察模型跨時間的穩定性與概念漂移，但仍需依重訓頻率、季節週期選窗口長度。",
+          "new": "時間序列的驗證有一條鐵律：不能把未來的資料放進訓練、再回頭拿過去的資料當驗證。訓練集永遠要排在驗證集前面。\n在這個前提下有兩種切法：\n擴張窗口（Expanding window）：訓練集只進不出，愈滾愈長，把所有歷史逐次累積起來。\n滾動窗口（rolling window）：訓練長度固定或設上限，往前推一格就移除最舊的一段、加入較新的一段。\n題目要求每次訓練都基於最新時間區間，該採的是後者；若用 TimeSeriesSplit，要另外設 max_train_size 才會變成這種固定長度的窗口。\n這樣切還有一個好處：能觀察模型跨時間穩不穩、有沒有發生概念漂移。至於窗口要多長，仍得依重訓頻率與季節週期來選。"
+        },
+        "answerReason": {
+          "oldSha256": "c80c525fb4b3f3e29fbf65b09ce053d1fc6522c317ece600d52a00aafb158e44",
+          "old": "C 同時滿足時間順序與更新訓練區間，能模擬第 52、60、70 週等不同切點的真實部署。一般 K-fold、分層 K-fold 與 LOO 忽略時間先後，可能把較新行為洩漏到較早預測，且不保證只用最近資料。",
+          "new": "C 一次滿足兩件事：時間先後不亂，訓練區間又會隨時間往前更新，等於把第 52 週、第 60 週、第 70 週上線的真實部署各模擬了一次，正好回應行為模式隨時間改變的問題。一般 K-fold、分層 K-fold 與 LOO 這三種都忽略時間先後，可能把較新的行為洩漏到較早的預測裡，也不保證每次訓練只用最近那一段資料。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-028",
+      "officialQuestionNumber": 28,
+      "prose": {
+        "concept": {
+          "oldSha256": "41199ccb7344f7a32ef175c1f40f3c88522338cb24641d2475f1047607b877ae",
+          "old": "隨機森林迴歸對 bootstrap 樣本訓練多棵決策樹，並在分裂時抽取部分特徵，最後平均樹的預測以降低單樹變異。樹的分段切分能表示非線性與交互作用，不需先指定函數形狀。整體重要性可用 impurity-based feature_importances_，但對高基數特徵可能偏誤；稽核時宜再以獨立驗證集 permutation importance、穩定性與方向性分析補強，重要性不等於因果影響。",
+          "new": "隨機森林迴歸（Random Forest Regression）的作法可以拆成三步：\n種很多棵樹：每棵樹拿一份有放回抽樣抽出來的資料（bootstrap）訓練，所以每棵看到的資料都不太一樣。\n分裂時只抽部分特徵：一棵樹要問「坪數大於幾坪」時，只從隨機抽到的幾個特徵裡挑，避免所有樹長得一模一樣。\n把所有樹的預測平均起來：單棵樹容易忽高忽低，一平均變異就降下來。\n樹是把資料一塊一塊切開，所以不必事先指定房價跟坪數是直線還是曲線，彎曲的非線性與「兩個條件同時成立才特別貴」的交互作用都表示得出來。\n特徵重要性方面，最常用的是以不純度計算的（impurity-based）feature_importances_，但它對可能值特別多的高基數特徵會有偏誤。稽核時最好再用獨立驗證集做 permutation importance（把某欄打亂看分數掉多少），並檢查排名穩不穩、方向合不合理。重要性只說模型很看重它，不等於它造成了房價。"
+        },
+        "answerReason": {
+          "oldSha256": "91371f2ba6229a95b98b39f52c5d9f691d842b49372a2babe32d63639c218e39",
+          "old": "B 是唯一同時對應連續房價、非線性關係與全域重要性輸出的選項。Logistic Regression 是分類器；K-means 加回歸沒有自然提升解釋性的保證；SVR 雖可非線性，但支持向量不是每個原始特徵的全域重要性。",
+          "new": "題目一次要三件事：預測連續的成交價、接得住非線性、還要交得出整體特徵重要性給稽核。四個選項裡只有 B 三件都做得到。羅吉斯迴歸（Logistic Regression）是分類器；K-means 分群後各建迴歸並沒有自然提升解釋性的保證；SVR 雖可非線性，但支持向量是幾筆代表性樣本，不是每個原始特徵的全域重要性。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-029",
+      "officialQuestionNumber": 29,
+      "prose": {
+        "concept": {
+          "oldSha256": "86e44a69d885bfcb1e584d163bf91a2d2a7b8c7624c81660e6fd4cad381a57b6",
+          "old": "異常偵測依訓練資料可分 outlier detection 與 novelty detection。若訓練資料混有未知異常，可用 Isolation Forest、Local Outlier Factor 等非監督方法找稀少偏離點；若訓練集可信為正常，可學正常分布或邊界，再把新樣本偏離判為 novelty，常稱 one-class 或半監督異常偵測。時序振動還需以不重疊設備／時間區間驗證，並由工程師確認告警是否真是故障。",
+          "new": "異常偵測要先問一句：手上這批訓練資料本身乾不乾淨？答案不同，走的路也不同。\n離群值偵測（outlier detection）：訓練資料裡可能已經混著沒被發現的異常。這時用 Isolation Forest（用隨機切分把孤僻的點很快切出來）、Local Outlier Factor（比較一個點跟鄰居擠不擠）等非監督方法，把又少又不合群的偏離點挑出來。\n新奇偵測（novelty detection）：訓練資料可以確信全是正常的。那就把正常的分布或邊界學起來，新樣本只要偏離太多就判為異常，這也常叫 one-class 或半監督異常偵測。\n另外兩件實務上不能省的事：\n驗證要用不重疊的設備或時間區間，不能拿同一段切一切就算數。\n系統報出來的告警，仍要由工程師確認那是不是真的故障。"
+        },
+        "answerReason": {
+          "oldSha256": "585a8f6408902005310566d10bc8cff98c7f69eb1b29bde94ed2d658266fb722",
+          "old": "題幹沒有任何故障標註，卻有大量正常運作資料，因此 B 最符合以正常模式為基準找偏離的設定。監督二元分類需要正負標籤；強化學習處理互動決策；自監督可學表示，但本身不是四項中最直接的任務範疇。",
+          "new": "題幹說得很清楚：一筆已確認的故障標註都沒有，卻累積了大量正常運作的振動資料。這正好是 B 的設定——先學會正常的樣子，再把偏離的抓出來。監督式二元分類要有正負兩種標籤；強化學習處理的是一邊互動一邊學決策；自監督學的是特徵表示，四項裡都不如 B 直接對應這個任務範疇。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-030",
+      "officialQuestionNumber": 30,
+      "prose": {
+        "concept": {
+          "oldSha256": "b6ecf533a33196c61e7f62386d97035466504f42e538118522bfd7108ee0928b",
+          "old": "高變異模型能緊貼訓練樣本，換一批資料後決策函數與表現卻大幅改變，常呈現訓練分數高、驗證分數低及 cross-validation 各折分散大的現象。少數違約樣本少時，各折包含的案例數與難度稍變就會使 AUC 波動，進一步放大方差。過擬合是高變異常見的觀察結果；可用更簡單模型、正則化、更多代表性資料、重複分層交叉驗證與信賴區間診斷改善。",
+          "new": "高變異（high variance）的模型有一個特徵：它能緊貼手上這批訓練樣本，可是換一批資料，學出來的判斷規則與表現就大幅改變。看得到的症狀有三個：\n訓練分數很高。\n驗證分數掉下來。\n交叉驗證（cross-validation）各折的分數散得很開。\n違約樣本本來就少，每一折剛好分到幾件、那幾件好不好判斷，稍有不同 AUC 就跳來跳去，方差因此被放得更大。\n過擬合則是高變異最常見的觀察結果——同一件事，一個講背後機制，一個講看得到的現象。\n想改善，可以換更簡單的模型、加正則化、補更多有代表性的資料，並用重複的分層交叉驗證加上信賴區間來診斷，而不是只看一次分數。"
+        },
+        "answerReason": {
+          "oldSha256": "e9f6dd68aa8ddc6dfc55e3a5872d6973c2d4f7ea92fdbfa0d2822f796fd817c9",
+          "old": "0.97 對 0.72 的泛化落差支持過度貼合訓練資料，而『少數樣本預測波動極大、不同 K-fold 差異明顯』更直接指向對資料切分敏感的高變異，所以官方選 B。高偏差通常訓練與驗證都差；資料漂移需有時間／來源分布改變證據。",
+          "new": "訓練 AUC 0.97 對驗證 AUC 0.72，這道泛化落差確實支持模型過度貼合訓練資料；而題幹另外兩句——少數違約樣本預測波動極大、不同 K-fold 切分結果差異明顯——更直接指向「換一種切法結論就變」的高變異，所以官方選 B。高偏差通常訓練與驗證一起差；資料漂移則要有時間或來源分布改變的證據。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-031",
+      "officialQuestionNumber": 31,
+      "prose": {
+        "concept": {
+          "oldSha256": "2be18568ff3fc47f5166b062cea7bd62b0ce6b9889ad418a52a9753d2f9ab4d7",
+          "old": "強化學習會最佳化設計者實際給定的 reward，而不是自動理解設計者心中的業務目標。若中間行為可以重複計分，代理人可能達成高回報卻不完成訂單，這稱 specification gaming 或 reward hacking。獎勵塑形需把分數綁在不可重複計算的任務進度，例如物品成功放入正確位置、完成訂單，並可加入時間成本、重複動作懲罰與 episode 終止條件。",
+          "new": "強化學習只認一件事：你實際寫進去的獎勵（reward）。它不會自己去體會設計者心裡那個業務目標。\n所以只要某個中間行為可以重複計分，代理人就會拚命重複它，累積回報衝很高、訂單卻一張沒完成。這種「照規則拿高分、卻沒達成真正目的」的現象叫 specification gaming，也叫 reward hacking。\n獎勵塑形（Reward Shaping）就是重寫這份計分規則，重點是把分數綁在不可重複計算的任務進度上，例如：\n物品成功放入正確位置才給分。\n一張訂單完成才給分。\n另外還可以加幾道配料：把時間也算成成本、對重複動作直接扣分、設定一回合（episode）什麼時候該終止。"
+        },
+        "answerReason": {
+          "oldSha256": "32102820cd8b8c39c369488fb5166ca1764710a652f3cc8fb567fbb45c7b3b77",
+          "old": "A 直接修正代理人可刷分的獎勵漏洞：不再為單次抓取計分，而以一次完整、有效且不可重複的揀貨成果給獎勵。",
+          "new": "問題的根不在模型學得好不好，而在計分規則本身留了一個可以重複領分的漏洞——放開再抓一次就能再得一分，機器手臂只是照規則把分數拿好拿滿。A 直接補這個洞：不再為單次抓取行為計分，改成一次完整、有效且同一件貨不可重複計算的揀貨成果才給獎勵，代理人就沒得刷了。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-032",
+      "officialQuestionNumber": 32,
+      "prose": {
+        "concept": {
+          "oldSha256": "8351523967f36941a9e5881a58a9d0cd877a08eb56bdd3e1de9d9484f25f6d43",
+          "old": "Precision 衡量被模型判為詐欺者中有多少是真的，Recall 衡量真詐欺中有多少被抓到。F1=2PR/(P+R)，等價於兩者倒數的算術平均再取倒數，因此比算術平均更受較小值影響。它在需要單一數字平衡兩者時有用，但不納入 true negatives，也不表達誤凍與漏抓的實際成本；若成本不對稱，可調 threshold 或採 F-beta。",
+          "new": "先把兩個名詞分清楚，它們的分母不一樣：\n精確率（Precision）：被模型判為詐欺的那些帳號裡，真的有問題的佔幾成。它管的是有沒有冤枉好人。\n召回率（Recall）：所有真正的詐欺裡，被抓到幾成。它管的是有沒有漏掉壞人。\nF1 = 2PR/(P+R)，是這兩者的調和平均——等於把兩個數字各取倒數、算算術平均、再倒回來。這樣算出來的值會被比較小的那個牽著走，所以比算術平均更受較小值影響。\n要用一個數字同時交代兩邊時 F1 很好用，但它有兩個看不到的地方：\n它完全不納入 true negatives，也就是被正確放行的那一大堆正常帳號。\n它不知道誤凍一個帳號與漏抓一筆詐欺實際上各賠多少錢。\n成本明顯不對稱時，該做的是調整判定門檻（threshold），或改用可以偏重某一邊的 F-beta。"
+        },
+        "answerReason": {
+          "oldSha256": "7bca29d63a30302b2c7743392f958fd662b2d286bffb62d035970e2ac989cb70",
+          "old": "D 給出正確公式與調和平均性質；只有 Precision 或 Recall 其中一項很高，不能補償另一項過低，所以能反映兩者平衡。",
+          "new": "D 把公式與性質都寫對了：F1-score = 2 ×（Precision × Recall）/（Precision + Recall），是調和平均，對較小值敏感。這正是題目要的特性——其中一項特別高，補不了另一項太低，分數會被低的那邊拉下去，所以它反映的正是兩者兼顧的平衡。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-033",
+      "officialQuestionNumber": 33,
+      "prose": {
+        "concept": {
+          "oldSha256": "56cfd31c8212ba630ae9747b1ff7a75d6e11821ea74e9e6c735ca31336501011",
+          "old": "多重共線性使多組係數都能產生相近預測，OLS 係數因而對樣本擾動敏感。Ridge 在殘差平方和加入 alpha×Σw²，以些許偏差換取較低變異，並將相關特徵的影響較平滑地分攤。Lasso 的 L1 懲罰可產生稀疏解；Elastic Net 同時含 L1，因此也可能歸零。題目要求保留全部特徵的係數，故 L2 最符合，但仍應先標準化並避免把冗餘係數當成獨立因果效果。",
+          "new": "「建坪」與「總面積」講的幾乎是同一件事，這叫多重共線性。它的麻煩在於：好幾組差很多的係數都能產生相近的預測，模型無從決定功勞該算給誰，於是樣本稍有擾動，OLS 的係數就大幅跳動。\n三種正則化的差別在「罰什麼」：\nRidge（L2）：在殘差平方和後面加上 alpha×Σw²，罰的是係數的平方。所有係數被一起縮小，相關特徵的影響被較平滑地分攤給雙方，以些許偏差換來低很多的變異，通常不會歸零。\nLasso（L1）：罰絕對值，會產生稀疏解，部分係數精確變成零。\nElastic Net：兩種懲罰都有，因為含 L1，所以照樣可能歸零。\n題目要求保留全部特徵的係數，所以 L2 最符合。實務上還要記得：跑 Ridge 前先把各欄位標準化；共線性並沒有因此消失，別把縮小後的冗餘係數當成某個特徵獨立的因果效果。"
+        },
+        "answerReason": {
+          "oldSha256": "736d73d2d7e23ba571aacdc3983ba401b02724f557aa77f79645f371dc56fb8c",
+          "old": "B 同時滿足控制複雜度、緩和共線性係數不穩，以及不做稀疏特徵刪除三項條件，因此優於含 L1 或無正則化方案。",
+          "new": "題目一次開了三個條件：要控制過擬合、要在高度相關的特徵下讓係數估計穩定、還不准任何係數歸零。Ridge 三項全中，L2 只把係數壓小、不做稀疏刪除。含 L1 的 Lasso 與 Elastic Net 會把特徵剔掉，無正則化的 OLS 則連前兩項都做不到，所以選 B。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-034",
+      "officialQuestionNumber": 34,
+      "prose": {
+        "concept": {
+          "oldSha256": "01fdc5c910f1cbb91740089ac91cc91954838f7b745553faa12b60628d1f66dd",
+          "old": "Grid Search 會取各超參數候選集合的笛卡兒積，因此組合數是各候選數量相乘，而不是相加。K-fold 交叉驗證對每組參數輪流用 K−1 folds 訓練、剩餘一 fold 驗證，共需 K 次 fit。本題 540 組各做五次訓練，得到 2,700 次交叉驗證 fit；實作若最後再用最佳參數對完整資料 refit，還可能多一次，題目未把該步驟計入。",
+          "new": "這題的算式分兩層，一層乘完再乘一層。\n第一層，有幾組參數要試：網格搜尋（Grid Search）會把各超參數的候選值兩兩相配、湊出所有搭配，也就是取笛卡兒積，所以組合數是各候選數量相乘，而不是相加。本題 3×4×5×3×3 = 540 組。\n第二層，每組要訓練幾次：K-fold 交叉驗證把資料分成 K 份，輪流用 K−1 個 folds 訓練、剩下一個 fold 驗證，一組參數就要 fit K 次。本題 K = 5。\n兩層相乘：540 × 5 = 2,700 次交叉驗證訓練。\n補充一點：有些工具跑完會用最佳參數對完整資料再 refit 一次，那一次是額外的，題目沒有把該步驟計入。"
+        },
+        "answerReason": {
+          "oldSha256": "c0404e966b3b1faad5bcb57c3a73a6acb04ea8f0b469e52b615c2ff83a2d3a08",
+          "old": "五個網格維度必須全部排列組合，再乘上每組的 5-fold 訓練次數，所以 3×4×5×3×3×5=2,700。",
+          "new": "五個網格維度的候選值必須全部互相排列組合過一遍，所以先把候選數相乘得到 540 組；每一組又要完整跑一次 5-fold 交叉驗證、訓練五次。兩者再相乘，3×4×5×3×3×5 = 2,700，因此總共要訓練 2,700 個模型，選 D。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-035",
+      "officialQuestionNumber": 35,
+      "prose": {
+        "concept": {
+          "oldSha256": "581f01ca0e289cc1c3bcd60fb10855b896bf74ffbb2c7e3347fe9b7083bc3725",
+          "old": "LoRA 凍結原權重，對選定線性層加入低秩更新 BA；一個 d_in×d_out 權重的可訓練參數約為 r(d_in+d_out)，所以 rank 與套用層數共同決定參數及 optimizer state 記憶體。提高 rank 增加單層更新的表達維度；增加 target layers 則讓更多深度位置可適應任務。在固定總參數下，以較小 rank 覆蓋更多相關層可能比少數層高 rank 更能處理複雜資訊，但最佳分配依模型、資料與層敏感度而定，必須實驗驗證。",
+          "new": "LoRA 的作法是：原本的權重全部凍住不動，只在選定的幾個線性層旁邊貼一塊小補丁 BA（低秩更新），訓練時只練這塊補丁。\n補丁多大？一個 d_in×d_out 的權重，可訓練參數大約是 r(d_in+d_out)，r 就是 rank。所以真正決定記憶體的是兩個旋鈕：\nrank：補丁的厚度。調高等於增加單層更新的表達維度，能記的變化更多。\n套用層數（target layers）：補丁貼在幾層上。貼越多層，就有越多深度位置能跟著任務調整。\n這兩個旋鈕合起來，才決定可訓練參數與 optimizer state 佔掉多少記憶體。\n在總參數固定的前提下，把補丁攤薄、覆蓋更多相關層，處理複雜資訊時可能比只在少數幾層貼厚補丁更有效。但這是「可能」——最佳分配依模型、資料與各層敏感度而定，必須以實驗驗證。"
+        },
+        "answerReason": {
+          "oldSha256": "2dfef03cd556c07ff91ad248a5f1629e4f0e4a28c582d90ca156dd670315a55c",
+          "old": "D 是唯一明確維持 trainable 總參數近似不變、同時擴大適應層覆蓋面的方案，因而最符合顯存受限且想改善複雜條款摘要的條件。",
+          "new": "題目綁了兩個條件：GPU 顯存已接近上限、不能再多吃記憶體，模型又常在複雜條款的摘要上遺漏內容。四個選項裡只有 D 同時處理這兩件事——它是唯一明確維持 trainable 總參數近似不變、記憶體因此不會明顯增加，同時又把可適應的層覆蓋面擴大的方案，所以最符合題目條件。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-036",
+      "officialQuestionNumber": 36,
+      "prose": {
+        "concept": {
+          "oldSha256": "bbf540bdbadfb0be224619c93a1c33f356c12890dd626439151a7c0cab713961",
+          "old": "同態加密（Homomorphic Encryption, HE）支援在加密資料上計算；伺服器不必持有解密金鑰，回傳的密文結果由資料方解密。全同態加密可組合加法與乘法以表示一般計算，但實務模型常需多項式近似、量化與參數調整，且有顯著延遲與密文膨脹成本。題目指定單一雲端、資料始終加密，與 HE 最吻合；這不代表模型參數、存取模式與端點風險都自動受到保護。",
+          "new": "同態加密（Homomorphic Encryption, HE）能做到一件反直覺的事：資料鎖著也能算。\n流程是這樣：資料方把明文加密後送出去；伺服器手上不必持有解密金鑰，卻能直接對密文執行運算；算完回傳的仍是密文，最後由資料方自己解密才看到答案。\n全同態加密因為加法與乘法都能做，理論上可以組合出一般的計算。但實務上要把模型搬進去並不輕鬆：\n非線性的部分常得改用多項式近似。\n數值要做量化，參數也要跟著調整。\n延遲明顯變長，密文的體積還會膨脹。\n題目指定單一雲端、資料始終加密，這正是 HE 的招牌能力。不過要提醒：它保護的是輸入資料的內容，模型參數本身、誰在何時存取了什麼（存取模式），以及金鑰所在端點的風險，並不會因此自動受到保護。"
+        },
+        "answerReason": {
+          "oldSha256": "dc6b759214a676c0770476df578d8d437dc5bce28619751ef355b00a8fd8258b",
+          "old": "法務條件的辨識關鍵是『單一服務商』『不解密』『直接對加密資料運算』，這正是同態加密提供的密文運算能力。",
+          "new": "法務條件裡有三個辨識關鍵：只有「單一服務商」、資料「不解密」、而且要「直接對加密資料進行運算」。這三句合起來剛好就是同態加密提供的密文運算能力——伺服器在沒有金鑰、看不到明文的情況下算完，回傳的仍是密文。其他三種技術都做不到這件事，所以選 B。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-037",
+      "officialQuestionNumber": 37,
+      "prose": {
+        "concept": {
+          "oldSha256": "73e2e7f18ad5e7cdc2fb5ac932325b9d680d41555889f74c6d4ebb61ba3617c5",
+          "old": "局部可解釋性回答『這一筆為何得到此結果』，全域解釋則摘要模型在整體資料的行為。SHAP 以合作賽局 Shapley value 為基礎，把單一預測相對 expected value 的差異分配給各輸入特徵，因此可列出哪些因素推高或降低拒貸分數。SHAP 描述模型行為而非因果理由；高度相關特徵、背景資料選擇與模型近似都會影響歸因，監管說明仍需轉成可理解且合規的 reason codes。",
+          "new": "先分清楚兩種解釋問的問題不一樣：\n局部可解釋性（Local Explainability）：這一筆為什麼得到這個結果？答的是個案。\n全域解釋：模型在整體資料上大致怎麼運作、平均看重什麼？答的是整批。\nSHAP 屬於前者。它的想法借自合作賽局裡的 Shapley value——一群人合作賺了錢，該怎麼公平分給每個人。把「每個人」換成「每個特徵」，就是把這一筆預測與平均預測（expected value）之間的差距分配給各個輸入特徵，因此能列出哪些因素推高、哪些壓低了拒貸分數。\n用它時要記住幾件事：\nSHAP 描述的是模型行為，不是現實中的因果理由。\n特徵高度相關、背景資料怎麼選、模型近似的方式，都會影響歸因結果。\n要交給監管看，還得把數字轉成看得懂又合規的拒絕原因說明（reason codes）。"
+        },
+        "answerReason": {
+          "oldSha256": "cf069930fc4baba5e8ff9395bd74233d9f5a00742600aaec0bbe009ae0649e6c",
+          "old": "A 明確提供單筆預測的逐特徵貢獻，直接對應被拒申請的個案解釋；其餘選項不是單筆表格信用模型的局部理由。",
+          "new": "監管要求每一筆被拒絕的申請都要提供可理解的拒絕原因，也就是個案層級的說明。A 的 SHAP 正好明確提供單筆預測的逐特徵貢獻，直接對應被拒申請的個案解釋。其餘三項不是只講整體資料上的表現，就是給影像模型用的熱力圖，都不是單筆表格信用模型的局部理由。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-038",
+      "officialQuestionNumber": 38,
+      "prose": {
+        "concept": {
+          "oldSha256": "2b5316b70617ec6b51d13588208e6576c51159b8b33ee3b6ffa1723fb3ff3cf6",
+          "old": "Statistical Parity／Demographic Parity 比較 P(預測為正向｜群體) 是否跨群體相等，不以個人真實資格或模型是否直接讀入敏感欄位為條件。男性通過率 0.55、女性 0.30，相差 0.25，已不符合嚴格相等定義。此指標只看選取率，不衡量各群體準確率、false positive 或 false negative；是否應採此公平準則還要結合職務資格、法規與其他公平指標。",
+          "new": "統計均等（Statistical Parity，也叫 Demographic Parity）只比一個數字：P（預測為正向｜群體）——在某個群體裡，被模型判為通過的比例有多少。兩個群體這個比例相等就算符合。\n它刻意不看兩件事：\n不以個人真實是否具備資格為條件。\n不看模型有沒有把性別這個敏感欄位直接讀進去。\n套進本題：男性通過率 0.55、女性 0.30，相差 0.25，離嚴格相等很遠，所以不符合。\n也要知道這把尺量不到什麼：它只看選取率，不衡量各群體的準確率，也不看誤判為通過（false positive）或誤判為不通過（false negative）各有多少。所以該不該採用這個公平準則，還要結合職務資格、法規與其他公平指標一起判斷。"
+        },
+        "answerReason": {
+          "oldSha256": "d923aba7b3f47491a187de868dd003a797594050a41946a1844614304d72c7d2",
+          "old": "統計均等的判定量就是各群體正向決策比例。題目已提供兩組比例且不相等，不必知道模型準確率即可判定不符合。",
+          "new": "統計均等的判定量就是各群體的正向決策比例，別的一概不看。題目已經把要比的兩個數字擺在眼前：男性通過率 55%、女性 30%，兩者明顯不相等。因此不必知道模型的準確率有多高、也不必管性別欄位有沒有被當成輸入特徵，就足以判定它不符合統計均等，選 C。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-039",
+      "officialQuestionNumber": 39,
+      "prose": {
+        "concept": {
+          "oldSha256": "d85bad3063fb1d14d226e281282c3d9263b901705cc58e8090f591515d469ca1",
+          "old": "公平性介入可分前處理、訓練中與後處理。In-processing 在模型擬合階段把公平性約束或 penalty 納入最佳化，可針對 false negative rate 等群體差異尋找效能與公平折衷；部署後沿用學得的單一模型規則，不必在每次推論按性別切換 threshold。Post-processing 若依群體設不同門檻，則明確需要推論時取得敏感屬性。不論哪種重訓策略，都需合法取得受保護欄位作公平評估、留存審計證據並監控其他錯誤率。",
+          "new": "修正模型偏誤可以在三個時間點動手：\n前處理（Pre-processing）：訓練之前先動資料，例如重新採樣或調整權重。\n訓練中（In-processing）：在模型擬合的當下，把公平性寫成損失函數的懲罰項（penalty）或最佳化的約束條件，讓模型一邊追效能、一邊壓低群體之間錯誤拒絕率（false negative rate）的差距，自己找出效能與公平的折衷。訓練完成後部署，全部人沿用學到的同一套模型規則，不必每次推論都按性別切換門檻（threshold）。\n後處理（Post-processing）：模型不動，最後才調門檻。若要依群體設不同門檻，就明確需要在推論時取得敏感屬性。\n還有一件跟三種作法都相關的事：不論走哪一條重訓路線，都需合法取得受保護欄位來做公平評估、留存審計證據，並持續監控其他錯誤率有沒有被推高。"
+        },
+        "answerReason": {
+          "oldSha256": "1d69cf3aa809d006946d5e41e79928465bb607bf15061d5082b3fee7216e81f9",
+          "old": "A 把公平修正放在訓練階段，部署時可使用同一模型輸出規則，不違反『推論階段不得用性別調整』的限制；C 則直接違反限制。",
+          "new": "法務卡的是「推論階段不得使用性別欄位調整輸出」這一條。A 把公平修正整個提前到訓練階段，學好之後才部署，上線時對每個人都套用同一套模型輸出規則，推論過程完全不必碰性別欄位，因此在這個限制下仍然可執行；C 依性別分組調整門檻，必須在審件當下知道性別，直接違反限制。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-040",
+      "officialQuestionNumber": 40,
+      "prose": {
+        "concept": {
+          "oldSha256": "71b3e3f1e5e8718df06b39611960ba8ab75f43d761da879c657a8a89c0fbad47",
+          "old": "附圖程式的最後一層是 Dense(10)，每個 logit 對應數字 0 到 9。Softmax 將十個 logits 正規化為互斥類別的機率分布，推論時取最高機率類別。標籤已是長度 10 的 One-Hot 向量，所以 Keras 應使用 categorical_crossentropy；若標籤仍是整數 0～9，才使用 sparse_categorical_crossentropy。sigmoid 與 binary cross-entropy 適合各類別可獨立成立的多標籤問題，不符合本題每張圖只有一個數字。",
+          "new": "附圖程式的最後一層是 Dense(10)，吐出十個原始分數（logit），一個對應一個數字，從 0 到 9。這十個數字要怎麼變成答案，看兩個空格：\n(A) 輸出層的活化函數：Softmax 把十個 logits 正規化成加起來剛好等於 1 的機率分布，等於在十個選項之間分配一整份信心，天生假設只會是其中一個，推論時取機率最高的類別。\n(B) 損失函數：標籤已經是長度 10 的 One-Hot 向量（對的那格 1、其餘九格 0），所以在 Keras 要用 categorical_crossentropy；若標籤仍是 0～9 的整數，才使用 sparse_categorical_crossentropy。\n另一條路是 sigmoid 配 binary cross-entropy：那適合各類別可以獨立成立的多標籤問題，不符合本題每張圖只有一個數字的情況。"
+        },
+        "answerReason": {
+          "oldSha256": "40451d7b366f175c83085d86f52627d00f8122d9a83dccb55b31dcf1421e8961",
+          "old": "圖中輸出節點數為 10，題目又明示單標籤與 One-Hot 編碼，因此 (A) 應是 softmax，(B) 應是 categorical_crossentropy，選 B。",
+          "new": "附圖最後一層的輸出節點數為 10，題目又明示這是 10 類的單標籤分類、且標籤已轉成 One-Hot 編碼。這兩個條件把答案鎖死了：(A) 要用 softmax 產生十類互斥的機率，(B) 要用吃 One-Hot 標籤的 categorical_crossentropy，因此選 B。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-041",
+      "officialQuestionNumber": 41,
+      "prose": {
+        "concept": {
+          "oldSha256": "3d2c6ac4cb7bc29882391431c3d3f5e7b913e2ec2e348e35385ba2ef93dbc6b8",
+          "old": "資料增強必須保持類別語義不變。對一般物體，水平翻轉可能是合理不變性；對文字與數字，方向本身常決定類別，鏡像後不再屬於原標籤。已目視核對附圖 Compose 順序為 RandomHorizontalFlip(p=0.5)、RandomRotation(15)、ColorJitter(brightness=0.3)、ToTensor。若訓練與驗證都套用相同有害規則，驗證 loss 仍可能下降，卻與部署的正常書寫分布不一致。",
+          "new": "資料增強有一條底線：變形之後，這張圖還得屬於原來那一類。\n一般物體：貓左右翻面還是貓，水平翻轉是合理的不變性。\n文字與數字：方向本身就決定類別。b 翻過來像 d、p 翻過來像 q，鏡像之後它已經不屬於原標籤了。\n附圖 Compose 的順序（已目視核對）是：RandomHorizontalFlip(p=0.5)、RandomRotation(15)、ColorJitter(brightness=0.3)、ToTensor。第一項就是那條有害的規則。\n還有一個陷阱要提防：如果訓練與驗證都套用同一套有害規則，驗證損失（validation loss）照樣會一路下降，因為兩邊歪的方式一模一樣，看起來很順。可是部署後遇到的是正常書寫的字，跟訓練時那份分布對不上，錯誤率就爆出來了。"
+        },
+        "answerReason": {
+          "oldSha256": "e36313c0fc5c0f899e11eb2d8655f277efc5e69fc5b5b12b5d6e4703d9450c17",
+          "old": "b/d/p/q 正是翻轉或旋轉後容易混淆的方向性字母，而圖中水平翻轉有 50% 機率且不會同步改標籤，最能解釋部署錯誤。15 度旋轉與亮度變化通常仍保留字母，ToTensor 放在 PIL 幾何與色彩變換之後也合理。",
+          "new": "b、d、p、q 的差別就在方向，正是翻轉或旋轉後最容易互相混淆的一組字母。圖中的水平翻轉有 50% 機率會發生，標籤卻不會跟著改，最能解釋部署後偏偏是這幾個字錯得離譜。相較之下，15 度旋轉與亮度變化通常仍保得住字母，ToTensor 放在 PIL 幾何與色彩變換之後也很合理。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-042",
+      "officialQuestionNumber": 42,
+      "prose": {
+        "concept": {
+          "oldSha256": "d681195e9728f519658160c99a84784796fc9e50d041e5b9d711cd2422d8024d",
+          "old": "遷移學習的 feature extraction 把預訓練網路視為固定特徵轉換器，凍結其參數，再替換並訓練任務專用分類頭。已目視核對圖中 `for param in model.parameters(): param.requires_grad = False`，之後 `model.fc = nn.Linear(2048, 2)`；新 fc 是凍結迴圈後才建立，預設仍需梯度，optimizer 也只接收 `model.fc.parameters()`。全面 fine-tuning 則會讓部分或全部 backbone 權重更新。",
+          "new": "遷移學習裡的特徵萃取（feature extraction），是把預訓練網路視為一台固定的特徵轉換器：參數凍結不動，影像進去、一組現成特徵出來，然後只替換並訓練最後那個任務專用的分類頭。\n附圖的三個關鍵動作（已目視核對）：\n`for param in model.parameters(): param.requires_grad = False` —— 把當時所有既有參數的梯度計算關掉，整個凍住。\n`model.fc = nn.Linear(2048, 2)` —— 換上輸出兩類的新全連接層 fc。注意這個 fc 是在凍結迴圈「之後」才建立的，所以沒被凍到，預設仍需計算梯度。\noptimizer 也只接收 `model.fc.parameters()`，等於只訓練這顆新的頭。\n對照組是全面微調（full fine-tuning）：那會讓 backbone 的部分或全部權重也一起更新。"
+        },
+        "answerReason": {
+          "oldSha256": "d210ab1cf4ae32b1d7db179774a2237e5c03bbc3657fcbeba98e0221559c493e",
+          "old": "行 A 明確關閉所有當時既有模型權重的梯度，配合只訓練新 fc，完全符合 C。它不是更新所有層的全面微調，也沒有不經訓練直接推論的 zero-shot，且沒有教師／學生模型的蒸餾流程。",
+          "new": "行 A 明確把當時所有既有模型權重的梯度計算關掉、整個凍住，再配上只訓練新接的 fc，這正是把預訓練網路當固定特徵萃取器的標準策略，完全符合 C。它不是讓所有層一起更新的全面微調，也不是完全不經訓練就直接推論的零樣本（zero-shot），更沒有教師／學生兩個模型的蒸餾流程。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-043",
+      "officialQuestionNumber": 43,
+      "prose": {
+        "concept": {
+          "oldSha256": "ad9f55d26752b4076c4bdc41042115faa9b903af4a97f0687bbef7884d0b5126",
+          "old": "預訓練權重已位於能表達一般模式的參數區域，fine-tuning 的目標是溫和調整而非從隨機初始化重新搜尋。學習率控制每一步沿梯度更新的幅度；過大可能造成 catastrophic forgetting、loss 震盪或離開有用解。分類頭若為新初始化，常可用比 backbone 更大的學習率。需注意 Q42 圖實際凍結 backbone、optimizer 只含 fc，嚴格說是 feature extraction；本題改問一般微調原則。",
+          "new": "預訓練權重已經位在一個能表達邊緣、紋理、形狀等一般模式的參數區域。微調（fine-tuning）要做的是在這個位置附近溫和地調整，而不是像從隨機初始化那樣重新滿場搜尋。\n學習率就是每一步沿著梯度更新的幅度。設得太大會出三種狀況：\n把預訓練學到的東西一腳踩掉（catastrophic forgetting）。\nloss 上上下下震盪，停不下來。\n整個離開原本那個有用的解。\n另外，新接上的分類頭是隨機初始化的、本來就什麼都不會，所以常可以用比 backbone 更大的學習率。\n最後補一個語境差異：Q42 那張圖實際上凍結了 backbone、optimizer 只含 fc，嚴格說是特徵萃取（feature extraction）；本題問的則是一般微調的原則。"
+        },
+        "answerReason": {
+          "oldSha256": "84443faad39d4393e6da0ca5733b2eed77f124e6fe1efb1b39718f984695696d",
+          "old": "D 正確連結小學習率與保護預訓練表示。OOM 主要取決於模型、activation、batch 與精度；小學習率不保證更快收斂，更不可能強制 loss 變成零。",
+          "new": "D 把小學習率與「保護預訓練已學好的特徵表示」正確地連在一起，這正是微調時把學習率設成 1e-4 這麼小的主要原因。至於記憶體耗盡（OOM），主要取決於模型大小、中間暫存值（activation）、batch 與數值精度；小學習率也不保證收斂更快，更不可能強制 loss 變成零。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-044",
+      "officialQuestionNumber": 44,
+      "prose": {
+        "concept": {
+          "oldSha256": "605d76b11c4ca21968f4eeb9847fb4b1a69f0d27186f3336709155777eb85dcb",
+          "old": "交叉驗證要模擬未見資料：所有會從資料估計參數的前處理，都必須只在每折 training fold 上 fit，再用該折的轉換器 transform validation fold。LDA 是監督式降維，會利用 X 與 y 尋找類別分離方向，洩漏尤其直接。已目視圖中 `X_new = lda.fit_transform(X,y)` 發生在`cross_val_score(model, X_new, y, cv=5)` 之前；應以 Pipeline 串接 LDA 與 KNN 後整體 CV。",
+          "new": "交叉驗證存在的意義，是模擬模型碰到從沒看過的資料。所以有一條規矩：任何會從資料估計參數的前處理，都只能在每折的 training fold 上 fit（算參數），再用那一折算好的轉換器去 transform（換算）validation fold。\nLDA 為什麼特別危險：它是監督式降維，會同時利用 X 與 y 去找哪個方向最能把類別分開。一旦讓它看到驗證資料的標籤，洩漏得比只算平均數的標準化還要直接。\n附圖的順序（已目視核對）：`X_new = lda.fit_transform(X, y)` 先跑，用的是完整的 X 與 y；`cross_val_score(model, X_new, y, cv=5)` 才跟在後面。降維那一步已經在交叉驗證的圈子外面做完了。\n正確作法：用 Pipeline 把 LDA 與 KNN 串起來，再對整條流程做交叉驗證（CV）。"
+        },
+        "answerReason": {
+          "oldSha256": "ef04da83bb886362a4d9ac437ef1318f9a375e209b1d0d40e237b1a858612bcb",
+          "old": "B 精確指出洩漏及修正方式。附圖得到 0.9733 不能視為無偏泛化估計，因每個 validation fold 的標籤已影響 LDA 投影；跳過 LDA 則變成另一模型流程，不能回答原本要評估 LDA+KNN 的問題。",
+          "new": "B 把病因與藥方都講對了：問題是資料洩漏，解法是把 LDA 一併納入交叉驗證流程。附圖跑出來的 0.9733（完整輸出 0.9733333333333334）不能視為無偏的泛化估計，因為每個 validation fold 的標籤都已經影響了 LDA 的投影方向。至於跳過 LDA，那等於換成另一個模型流程，回答不了原本要評估 LDA+KNN 的問題。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-045",
+      "officialQuestionNumber": 45,
+      "prose": {
+        "concept": {
+          "oldSha256": "cc22a374d0b799813c4d81e725cd2bb18907b81396f08a75c2effc2753fe1d0e",
+          "old": "分層交叉驗證讓每折的各類比例近似完整資料，對三類各 50 筆的 Iris 可避免某折類別組成偏斜。已目視核對候選圖：A=`KFold(n_splits=5, shuffle=True)`；B=`StratifiedKFold(...)`；C=`cv=5`；D=`RepeatedStratifiedKFold(n_splits=5,n_repeats=2)`。cross_val_score 對 classifier 且 y 為 multiclass 時，傳整數會採 StratifiedKFold；KFold 則不使用 y 做類別分層。",
+          "new": "分層（Stratified）交叉驗證的作用，是讓每一折的各類比例都近似完整資料。Iris 三類各 50 筆，分層可避免某一折剛好裝了太多 setosa、太少 virginica，造成類別組成偏斜。\n四段候選程式（已目視核對）：\nA＝`KFold(n_splits=5, shuffle=True)`：只按索引切成五份，先打散而已。\nB＝`StratifiedKFold(...)`：明確分層。\nC＝`cv=5`：只給一個整數。\nD＝`RepeatedStratifiedKFold(n_splits=5, n_repeats=2)`：分層，而且以不同隨機化重複兩輪。\n關鍵在 C 那個整數怎麼被解讀：cross_val_score 遇到 classifier 且 y 為 multiclass 時，傳整數會採用 StratifiedKFold。至於 KFold，它根本不使用 y 做類別分層。"
+        },
+        "answerReason": {
+          "oldSha256": "8bb0bcd827da66d47b4e5d3c4dcabf0a6f0ef5973a0ad7553f471cc6b6322fd8",
+          "old": "B 與 D 名稱和行為都明確分層；C 在本題 KNeighborsClassifier 的 cross_val_score 中會由 `check_cv` 選 StratifiedKFold。因此合適的是 B、C、D，對應選項 A。",
+          "new": "要確保每個分割的類別比例與原始資料一致，就看每段程式會不會分層。B 的 StratifiedKFold 與 D 的 RepeatedStratifiedKFold 名稱和行為都明確分層；C 只寫 `cv=5`，但在本題 KNeighborsClassifier 的 cross_val_score 中，內部的 `check_cv` 會替你選 StratifiedKFold。因此合適的是 B、C、D，對應選項 A。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-046",
+      "officialQuestionNumber": 46,
+      "prose": {
+        "concept": {
+          "oldSha256": "cb7ffff9388b4e28d258512d3247c327e04108ada6776134d93f6cfb810febe6",
+          "old": "已目視題組圖：CIFAR-10 以 `datasets.cifar10.load_data()` 載入，`x_train[0]` 是每像素三個 0～255 RGB 整數，`y_train[0]` 為 `array([6], dtype=uint8)`。處理圖將 train/test 影像都除以 255.0，並以 `to_categorical(...,10)` 轉換兩組標籤。輸入縮放不等於 z-score；one-hot 目標通常配合 10-unit softmax 與 categorical cross-entropy。",
+          "new": "先看圖裡到底做了什麼（已目視核對題組圖）：\n載入：CIFAR-10 以 `datasets.cifar10.load_data()` 讀進來。\n原始長相：`x_train[0]` 每個像素是紅綠藍（RGB）三個 0～255 的整數；`y_train[0]` 是 `array([6], dtype=uint8)`，也就是一個整數 6。\n處理一：把 train 與 test 的影像都除以 255.0，像素值一律縮到 0～1。\n處理二：用 `to_categorical(..., 10)` 把兩組標籤轉成 10 維的 one-hot 向量，整數 6 變成第 7 格是 1、其餘為 0。\n兩個容易混淆的點：\n除以 255 只是把範圍壓進 0～1 的輸入縮放，不等於 z-score（z-score 要減平均、除標準差）。\n標籤轉成 one-hot，是為了搭配輸出層 10 個節點（10-unit）的 softmax 與 categorical cross-entropy。"
+        },
+        "answerReason": {
+          "oldSha256": "9c81787db35851034e266da91e7257fd26757b3b9268f4bd170eac458a164d5d",
+          "old": "描述 B、D、E、F 分別對應改善泛化／訓練穩定、降低梯度數值不穩、one-hot 標籤與 softmax 相容。A 把 0～1 錯寫成 0～31；C 把 min-max 式縮放錯稱 z-score。因此選 B。",
+          "new": "描述 B、D、E、F 講的分別是改善泛化與訓練穩定、降低梯度數值不穩，以及 one-hot 標籤與 softmax 相容，這些都對得上圖中除以 255.0 與 to_categorical 兩個動作。錯的是另外兩個：描述 A 把縮放後的 0～1 誤寫成 0～31，描述 C 把這種 min-max 式的縮放錯稱為 z-score。因此選 B。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-047",
+      "officialQuestionNumber": 47,
+      "prose": {
+        "concept": {
+          "oldSha256": "c0abd0d1d6557a5ee446b555ce33a5a2ca70423c09940e86c682ae262fd64f5d",
+          "old": "已目視模型圖：輸入 32×32×3；區塊 1 兩個 32-filter same Conv2D，區塊 2 為 64 filters，區塊 3 為 128 filters，各含 BN、2×2 max pooling、Dropout(0.25)；區塊 4 Flatten、Dense(256)、BN、Dropout(0.5)、Dense(10,softmax)。same padding 與 stride 1 保持高寬，但第一個 Conv2D 輸出通道數由 filters=32 決定，所以輸出是 32×32×32，不是描述 B 所寫 32×32×3。",
+          "new": "先把圖中這個模型的骨架攤開（已目視核對）：\n輸入：32×32×3，也就是 32×32 像素、紅綠藍三個通道。\n區塊 1：兩個 32-filter（filters=32）的 same padding Conv2D，接 BatchNormalization（BN）、2×2 max pooling、Dropout(0.25)。\n區塊 2：同樣的組合，filters 換成 64。\n區塊 3：同樣的組合，filters 換成 128。\n區塊 4：Flatten、Dense(256)、BatchNormalization、Dropout(0.5)，最後是 Dense(10, softmax)。\n最容易算錯的是第一個 Conv2D 的輸出形狀。same padding 加 stride 1 只保住高與寬，仍是 32×32；但輸出有幾個通道是由 filters=32 決定的，不是沿用輸入的 3。所以輸出是 32×32×32，不是描述 B 所寫的 32×32×3。"
+        },
+        "answerReason": {
+          "oldSha256": "48f4835061ce0801aac48de3001c2f8ac32ce444c2000a3c90e21c013e4499b9",
+          "old": "A 錯把 Input 當標準化；B 錯寫 Conv2D 輸出通道；D 錯稱 Dropout 把輸出設為 1，實際訓練時是隨機設為 0。C、E、F 分別正確描述 BN、Dropout 正則化與 Flatten，因此對應選項 B。",
+          "new": "六個描述裡有三個錯：描述 A 把只宣告輸入形狀的 Input 當成標準化；描述 B 把 Conv2D 的輸出通道數寫錯；描述 D 錯稱 Dropout 把輸出設為 1，實際訓練時是隨機設為 0。剩下的描述 C、E、F 分別正確講出 BatchNormalization（BN）、Dropout 正則化與 Flatten 攤平的作用，這三個湊起來就是選項 B。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-048",
+      "officialQuestionNumber": 48,
+      "prose": {
+        "concept": {
+          "oldSha256": "f9cb471799c40eec440878454d338daedaef64303eecf7a5ad881e246fed6419",
+          "old": "Overfitting 的典型訊號是 training metric 持續改善，而 validation metric 停滯、惡化或與訓練差距擴大。已目視圖中藍線從約 0.47 持續升至 0.84，紅線大致上升但在 x=6 明顯由約 0.80 跌到 0.72，之後回升。單一 epoch 的震盪也可能來自驗證樣本量、隨機性或學習率；應觀察多次重跑與 validation loss，再用 early stopping、資料增強或正則化處理。",
+          "new": "過擬合（Overfitting）的典型訊號只有一句話：訓練指標（training metric）持續改善，驗證指標（validation metric）卻停滯、惡化，或跟訓練的差距愈拉愈大。\n圖裡的兩條線（已目視核對）：\n藍線（訓練）：從約 0.47 一路持續升到約 0.84。\n紅線（驗證）：大致上升，但在 x=6 明顯由約 0.80 跌到 0.72，之後又回升。\n不過單一個 epoch 的震盪，也可能只是抖了一下——驗證樣本量、隨機性或學習率都可能造成。所以判讀時應觀察多次重跑的結果，並一併看 validation loss，不能只憑一個谷值下定論。\n真的確認是過擬合，常見的處理有三招：early stopping（驗證分數不再進步就停）、資料增強、加正則化。"
+        },
+        "answerReason": {
+          "oldSha256": "de336cc0724a404b73fc32ad9ae26e1ecf2c336f4f9ce518b5a6dcfb2a377eb8",
+          "old": "四個選項中 D 最能解釋訓練高、驗證低的泛化差距。Underfitting 通常兩者都偏低且訓練也無法改善；低 learning rate 或大 batch 可能影響收斂，但不能僅由這組曲線直接推定。",
+          "new": "題目給的線索就是訓練曲線 0.81 與驗證曲線 0.72 之間那道泛化差距，四個選項裡只有 D 的過擬合能解釋「訓練高、驗證低」。低度擬合（Underfitting）通常是兩條線一起偏低、而且訓練本身也改善不了；學習率（learning rate）太低或批次（batch）太大確實可能影響收斂，但光憑這一組曲線推不出來。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-049",
+      "officialQuestionNumber": 49,
+      "prose": {
+        "concept": {
+          "oldSha256": "d2ff5060a1a891e6435d95e7024df3e62934cc064445b57f89381b5016934476",
+          "old": "Residual block 不直接只學 H(x)，而令堆疊層學殘差 F(x)，輸出為 F(x)+x。加法中的 identity path 提供較短的資訊與梯度路徑，使多層若暫時無益也較容易近似 identity mapping。原始 ResNet 論文展示 50、101、152 層網路可有效訓練。這不代表梯度永不消失，也仍需初始化、正規化與適當 optimizer；但它是題目所問經典、直接針對深度訓練困難的架構。",
+          "new": "殘差區塊（Residual block）換了一個學法：原本要那幾層直接學出完整的輸出 H(x)，改成只學「跟輸入差多少」的殘差 F(x)，最後輸出寫成 F(x) + x。\n這個加法帶來兩個好處：\n把 x 原封不動送到後面的 identity path，是一條比較短的路，資訊與梯度可以不必穿過中間的權重層。\n如果某幾層一時學不出有用的東西，只要讓 F(x) 趨近 0，整段就等於原樣通過（identity mapping），不會反過來把結果拖壞。\n原始 ResNet 論文就是靠這個結構，展示 50、101、152 層的網路都能有效訓練。\n要提醒的是：這不代表梯度從此永不消失，初始化、正規化與適當的 optimizer 一樣不能少。但就題目問的經典架構而言，它是最直接針對深度訓練困難而設計的那一個。"
+        },
+        "answerReason": {
+          "oldSha256": "6002db6387c2992a5c929551a071e1733b7df9eb232bf7b623cd071edc831f51",
+          "old": "C 明確以 residual/skip connection 回應超過 50 層與梯度傳遞問題。VGG 單純堆疊；GoogLeNet 的 Inception 主要做多尺度與計算配置；ViT 仍是深層網路，也可能有最佳化與資料需求問題，不能宣稱沒有訓練問題。",
+          "new": "題目要的是超過 50 層、又能讓梯度傳得回去的經典架構，C 用殘差連接（residual/skip connection）正面回應了這兩點。VGG 只是把卷積層一路堆上去，沒有跨層捷徑；GoogLeNet 的 Inception 主要做多尺度擷取與計算量配置；ViT 換成自注意力後仍是深層網路，最佳化與資料需求的問題都還在，不能宣稱它不會出現任何訓練問題。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-050",
+      "officialQuestionNumber": 50,
+      "prose": {
+        "concept": {
+          "oldSha256": "7575b959a78b85fae126b201c6bf4aeb42784707d97340545df16fb297f5ec68",
+          "old": "已目視圖中順序：位置 1 `optimizer.zero_grad()`、位置 2 forward、位置 3 計算 loss、位置 4 `loss.backward()`、位置 5 `optimizer.step()`。`clip_grad_norm_` 讀取 parameters 的 `.grad`，計算整體範數，若超過 max_norm 就按比例縮放。backward 前尚無本輪梯度，step 後權重已更新，所以正確窗口只有兩者之間。它防的是 exploding gradients，不直接限制 loss 或輸入。",
+          "new": "先把圖中訓練迴圈的五個位置排好（已目視核對）：\n位置 1：`optimizer.zero_grad()`，把上一輪的梯度清空。\n位置 2：forward，把資料餵進模型做前向計算。\n位置 3：算出 loss。\n位置 4：`loss.backward()`，反向傳播；這一輪的梯度到這裡才產生。\n位置 5：`optimizer.step()`，依梯度更新權重。\n`clip_grad_norm_` 做的事：把所有 parameters 的 `.grad` 讀出來，當成一整個向量計算整體範數，若超過 max_norm 就整組按比例縮放。\n所以只有一個窗口放得對：backward 之前梯度還不存在，沒得裁；step 之後權重已經更新完，來不及。只有夾在兩者中間才有效。\n最後釐清它的職責：它防的是梯度爆炸（exploding gradients），不直接限制 loss，也不處理輸入影像。"
+        },
+        "answerReason": {
+          "oldSha256": "c28c308ea7bb3ad35d66ec040b57781568ee3c18b7c76371575b59c014305762",
+          "old": "B 的位置與機制都正確：backward 先建立梯度，clipping 再限制範數，step 最後依裁剪後梯度更新。其餘選項不是放在梯度存在且尚未更新的時機，就是把 clipping 誤解為 loss、權重或影像正規化。",
+          "new": "B 的位置與機制都正確：先由 backward 建立梯度，接著 clipping 限制整體範數，最後 step 依照裁剪後的梯度更新權重，三步環環相扣。其餘三個選項不是把它放在梯度還沒產生、或權重已經更新完的時機，就是把梯度裁剪誤解成在限制 loss、壓縮權重，或替輸入影像做標準化。"
+        }
+      }
+    }
+  ]
+}

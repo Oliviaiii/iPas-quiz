@@ -1337,3 +1337,27 @@ Kohavi et al. KDD 2013、scikit-learn roc_curve。
    115-1 中級二 Q22 concept 的 `rollingfeatures`、Q24 concept 的 `rankcorrelations`，
    以及 114-2 中級二 Q50 B 的 `constrow`。建議另做一次校對統一修正，
    不要夾在白話化裡改。
+
+### 目前的半成品狀態（2026-09-07 收工）
+
+中級 1,800 欄裡已收下 **1,750 欄**，全部是 PENDING、尚未套用：
+
+| 檔案 | 狀態 |
+| --- | --- |
+| 114-2 三科 × 選項／散文（6 檔） | 已收，PENDING |
+| 115-1 中級三（ai-tech-planning）× 選項／散文（4 檔） | 已收，PENDING |
+| 115-1 中級二（big-data）× 選項／散文（4 檔） | 已收，PENDING |
+| 115-1 中級一（machine-learning）001–025 選項 | 已收，PENDING |
+| 115-1 中級一（machine-learning）026–050 選項／散文 | 已重做並收下，PENDING |
+| **115-1 中級一（machine-learning）001–025 散文** | **唯一缺口，50 欄未做** |
+
+`content/plain-language/rejected/` 裡那兩個舊檔是 026–050 的第一版（英文名詞被換掉），
+已被上表最後第二列的重做版取代，**不要套用、也不要拿來比對**，留著只是紀錄。
+
+補完缺口的指令（沿用同一條流程）：
+
+```
+python3 scripts/build-plain-language-payload.py \
+    aiap-115-intermediate-1-machine-learning 1 25 <草稿.json> --prose
+python3 scripts/check-plain-language.py
+```
