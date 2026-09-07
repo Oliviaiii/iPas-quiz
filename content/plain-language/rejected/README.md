@@ -18,3 +18,12 @@
 換成中文而沒有保留原文。規則要的是「名詞（English）＋白話」並存，不是二選一。
 
 重做時整份重跑即可，payload 會依題庫現況重新產生 sha256。
+
+## aiap-115-intermediate-1-machine-learning-026-050-prose.json
+
+同一份試卷、同一個 agent 的散文欄，退回原因與上面那份完全相同：英文術語被
+換成中文而未並存。名詞保留檢查列出 BN、metric、training、Underfitting、
+batch、learning rate、residual、skip connection 等多項。
+
+兩份一起重做即可——這不是零星失誤，是那一輪整份的寫法沒有照
+`docs/PLAIN_LANGUAGE_GUIDE.md` 的「名詞（English）＋白話」並存規則。

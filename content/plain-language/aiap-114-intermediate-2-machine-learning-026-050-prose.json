@@ -46,7 +46,7 @@
         "concept": {
           "oldSha256": "ccac41c0fd7d69bdad55f30d2386973b5ffa960bd48b13234eb581730fc807c1",
           "old": "Sampling Bias 發生在資料蒐集或納入條件系統性排除目標族群的一部分，使訓練樣本不能代表實際推論 population。本題 selection criterion 本身依活躍程度篩人，新會員與低消費會員幾乎不在訓練 support 中；模型因此沒學到這些人的特徵與流失關係，部署到全會員便 out-of-distribution。修正需重新定義 cohort、納入各客群並按時間切分，分析 coverage 與 subgroup metrics；若無法重抽樣，可做 reweighting，但不能創造完全缺失族群的資訊。",
-          "new": "取樣偏差（Sampling Bias）就是「抽樣本的時候，有一群人被規則整批擋在門外」，訓練資料因此代表不了上線後真正要預測的那群人（population，母體）。\n本題的 selection criterion（納入條件）寫著「買過三次以上」，等於照活躍度篩人。新註冊、低消費的會員幾乎沒被抽進來，模型手上根本沒有這些人可以學（不在訓練資料的 support，也就是資料實際覆蓋到的範圍），自然學不會他們為什麼會流失；等到要對全體會員預測，這些人對模型來說就是沒見過的樣子，這叫 out-of-distribution（落在訓練資料的分布之外）。\n要修正，得重新定義 cohort（要收哪一批人），把各種客群都放進來、再按時間切分，並檢查 coverage（各族群有沒有被涵蓋到）與 subgroup metrics（分開看每個族群的成績）。真的補不到樣本時可用 reweighting（把少見族群的樣本加重計分）補救，但完全沒收到的族群，資訊變不出來。"
+          "new": "取樣偏差（Sampling Bias）就是「抽樣本的時候，有一群人被規則整批擋在門外」，訓練資料因此代表不了上線後真正要預測的那群人（population，母體）。\n本題的 selection criterion（納入條件）寫著「買過三次以上」，等於照活躍度篩人。新註冊、低消費的會員幾乎沒被抽進來，模型手上根本沒有這些人可以學（不在訓練資料的 support，也就是資料實際覆蓋到的範圍），自然學不會他們為什麼會流失；等到要對全體會員預測，這些人對模型來說就是沒見過的樣子，這叫 out-of-distribution（落在訓練資料的分布之外）。\n要修正，得重新定義 cohort（要收哪一批人），把各種客群都放進來、再按時間切分，並檢查 coverage（每個客群有沒有被收進來）與 subgroup metrics（分開看每個族群的成績）。真的補不到樣本時可用 reweighting（把少見族群的樣本加重計分）補救，但完全沒收到的族群，資訊變不出來。"
         },
         "answerReason": {
           "oldSha256": "a45c0b65f1b2df3751d85dac3f6035b467111ea9fb40a339e139374f2a3a143c",
