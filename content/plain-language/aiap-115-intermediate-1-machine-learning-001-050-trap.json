@@ -1,0 +1,561 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "aiap-115-intermediate-1-machine-learning",
+  "range": {
+    "start": 1,
+    "end": 50
+  },
+  "rewrittenAt": "2026-08-31",
+  "items": [
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-001",
+      "officialQuestionNumber": 1,
+      "prose": {
+        "trap": {
+          "oldSha256": "3b046d909b609fda6080fa3c20c16b90492e2dde3025d1cd7a55b9edb3cdea0d",
+          "old": "蒙地卡羅是廣泛的隨機數值方法；馬可夫鏈只是特定隨機過程，MCMC 才是兩者的組合。不要看到『隨機』就直接選馬可夫鏈。",
+          "new": "三個名詞的層次不同：蒙地卡羅是一大類「用隨機抽樣去逼近答案」的數值方法，範圍很廣；馬可夫鏈只是一種特定的隨機過程（下一步只跟現在有關）；把兩者組合起來才是 MCMC。所以不要一看到「隨機」兩個字就直接選馬可夫鏈——隨機不等於馬可夫。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-002",
+      "officialQuestionNumber": 2,
+      "prose": {
+        "trap": {
+          "oldSha256": "d0ccca0de16f0f8f94b0ddc06647007b6a37683aafa2756b5453739932259347",
+          "old": "題目不是問『如何降低離群值影響』，而是反過來要求對極端值更敏感。MSE 放大大誤差；MAE 與 Huber 則較具穩健性。",
+          "new": "先看清題目的方向：它不是問「怎麼降低離群值的影響」，而是反過來，要求模型對極端值「更敏感」。方向搞反，答案就完全相反。記住 MSE 會把大誤差平方放大，而 MAE 和 Huber 的設計目的正好是壓住極端值、比較穩健。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-003",
+      "officialQuestionNumber": 3,
+      "prose": {
+        "trap": {
+          "oldSha256": "d658bc646538e4ca566c945e83080137aa7e1f06f146db783dda86cef35b6fe7",
+          "old": "只比對相乘處的『內維度』，相同就能乘；輸出寫『外維度』。不要把數字倒過來，也不要套用逐元素相乘的同形狀規則。",
+          "new": "矩陣相乘只要比對「相乘處的內維度」——兩個數字一樣就乘得起來；輸出的形狀則寫「外維度」。兩個常見錯誤要避開：一是把數字順序倒過來寫，二是誤套逐元素相乘那套「必須同形狀」的規則——那是另一種運算。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-004",
+      "officialQuestionNumber": 4,
+      "prose": {
+        "trap": {
+          "oldSha256": "bb65bb98db331b5711c6a5fc9f2dc385444409e14fccae963f0fa045f1913a5f",
+          "old": "不是所有影像都可套相同增強。先問轉換後『答案是否仍相同』；若方向本身承載標籤語意，水平翻轉就不是安全的標籤保留操作。",
+          "new": "不是所有影像都可以套同一種增強。動手之前先問一句：轉換之後，這張圖的「答案還是同一個嗎」？如果方向本身就承載了標籤的意義（數字、文字、交通號誌、醫學影像的左右側），那水平翻轉就不是一個安全的、能保留標籤的操作。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-005",
+      "officialQuestionNumber": 5,
+      "prose": {
+        "trap": {
+          "oldSha256": "fe086e2f55afdbe5fb339c523cd2d26783aa69dbee86c21901ee0eb0d2dd0594",
+          "old": "殘差圖的『寬度隨擬合值改變』看變異數；殘差隨順序呈週期看自相關；Q-Q 圖偏離直線才主要看常態性。",
+          "new": "三種圖看三件事，不要串線：殘差圖的「寬度會不會隨擬合值改變」看的是變異數齊不齊（漏斗形就是不齊）；殘差隨著順序呈現週期起伏看的是自相關；而 Q-Q 圖偏離直線，才主要是在看常態性。看錯圖，診斷就錯了。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-006",
+      "officialQuestionNumber": 6,
+      "prose": {
+        "trap": {
+          "oldSha256": "7e5fe803fc5baba54a21174559683a5a9e785762d95c7d75cffbe4437895e8fb",
+          "old": "t-SNE 圖上『群內近』較可解讀，『群間多遠、群多大』不可直接當成原資料的全局結構；PCA 才有明確線性投影與新資料 transform。",
+          "new": "讀 t-SNE 圖有個界線：「同一群裡的點靠得近」這件事比較可解讀；但「群跟群之間隔多遠、每一群多大」都不可以直接當成原始資料的全局結構——那些會隨參數和隨機性改變。要有明確的線性投影公式、而且能對新資料直接做 transform 的，是 PCA，不是 t-SNE。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-007",
+      "officialQuestionNumber": 7,
+      "prose": {
+        "trap": {
+          "oldSha256": "7f3da2dbac49be3a857fd467bbd5c099c597373b12b3b1bf793b4cc9564b6b95",
+          "old": "預測表現穩定不等於特徵重要性穩定。當特徵高度相關，L1 的『稀疏』可能只是任選代表，不可把被歸零者解讀成毫無業務影響。",
+          "new": "預測表現穩定，不等於特徵重要性也穩定——這是兩回事。當幾個特徵高度相關時，L1 產生的「稀疏」可能只是在幾個可互相取代的候選裡隨便挑了一個代表。所以千萬不要把被歸零的那些特徵，解讀成「它們對業務毫無影響」。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-008",
+      "officialQuestionNumber": 8,
+      "prose": {
+        "trap": {
+          "oldSha256": "4157f274af22f35f645f01915a29273075455bf09138ac73fa773c25d5b3b4bd",
+          "old": "本題同時放了兩個症狀：第 15 epoch 後的 train／validation 分岔是過擬合；調高學習率後的 training loss 震盪才是步幅過大的結果。",
+          "new": "這題同時放了兩個症狀，要分開看，不要混在一起診斷：第 15 個 epoch 之後 train 和 validation 開始分岔，那是過擬合；而調高學習率之後 training loss 開始震盪，那才是步幅過大造成的。一個是泛化問題，一個是最佳化問題。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-009",
+      "officialQuestionNumber": 9,
+      "prose": {
+        "trap": {
+          "oldSha256": "3487becc35293322b62742e24ce2c9390c29f9810f1eaf8bc349fd95c68a694b",
+          "old": "Adam 的 adaptive learning rate 來自梯度矩估計，不是 BatchNorm，也不是 gradient clipping。這些技術可以同時使用，但作用層次不同。",
+          "new": "Adam 的 adaptive learning rate（自適應學習率）是從梯度的矩估計算出來的，不是來自 BatchNorm，也不是來自 gradient clipping。這幾種技術完全可以同時使用，而且實務上也常一起用，但它們作用的層次不同——不要把別人的功勞算到 Adam 頭上。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-010",
+      "officialQuestionNumber": 10,
+      "prose": {
+        "trap": {
+          "oldSha256": "4507be269c98b1682ba025409efdfbae70bcb2ffda6f6acb43936ce6f81b495c",
+          "old": "先看標籤型態：連續數值是 regression，類別是 classification。MSE 與 BCE 的分界不是『有沒有不確定性』，而是輸出空間與機率模型。",
+          "new": "先看標籤的型態：標籤是連續數值就是 regression，是類別就是 classification。另外要澄清一個常見誤解：MSE 和 BCE 的分界不是「有沒有不確定性」（迴歸的輸出一樣有不確定性），而是輸出空間長什麼樣、以及背後假設的是哪一種機率模型。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-011",
+      "officialQuestionNumber": 11,
+      "prose": {
+        "trap": {
+          "oldSha256": "6d0aa21e2811f54ff8eb35f67ec61469c79fc4cddd43344130eb851e88124d90",
+          "old": "GPU utilization 100% 只表示裝置忙碌，不代表整體訓練最有效率。要同時看 samples/sec、每次更新時間、通訊成本與收斂所需步數。",
+          "new": "GPU utilization 到 100% 只表示這個裝置一直很忙，不代表整體訓練效率最高——它可能一直在忙著做低效率的事。要同時看幾個數字才準：samples/sec（每秒處理幾筆）、每一次更新花多久、多卡之間的通訊成本，以及總共要幾步才收斂。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-012",
+      "officialQuestionNumber": 12,
+      "prose": {
+        "trap": {
+          "oldSha256": "4dd55e2a1f9e5f711f1b1308c95c510f267e25cc3ebb9510d88099455982f4bc",
+          "old": "遇到極端類別比例，先算『全猜多數類』的基準。本題基準已達 99%，所以 99.1% 不應直接被稱為優秀，還要看少數類召回與誤報。",
+          "new": "遇到極端的類別比例，第一件事永遠是先算「全部都猜多數類」能拿到多少分——那是基準線。這一題的基準已經有 99%，所以 99.1% 根本不該被稱為優秀，它只比什麼都不做多了零點一個百分點。接著還要去看少數類的召回率和誤報狀況。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-013",
+      "officialQuestionNumber": 13,
+      "prose": {
+        "trap": {
+          "oldSha256": "8827fc76bfad26e4861e5cffdc2ffdcc0955c54ddc83896c1db118aa22a252f3",
+          "old": "題目限定『從降低模型複雜度』切入，因此要選正則化。更多資料有時能改善泛化，但把驗證集吞掉不是正確驗證流程，也不等於正則化。",
+          "new": "題目已經限定要「從降低模型複雜度」這個角度切入，所以要選正則化——限定條件就是在幫你縮小範圍。另外提醒：增加資料有時確實能改善泛化，但把驗證集也吞進去用掉，那不是正確的驗證流程，而且它跟正則化根本是兩回事。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-014",
+      "officialQuestionNumber": 14,
+      "prose": {
+        "trap": {
+          "oldSha256": "2955ae9a85428825c2a73bfbf8911e550fd04c299cadb9174efa208f56568618",
+          "old": "要分清 P(class) 與 P(word|class)：調整先驗只改類別基準率；題目描述的促銷詞偏誤主要要靠更具代表性的標註語料重估條件機率。",
+          "new": "要分清 P(class) 和 P(word|class) 這兩件事：調整先驗（P(class)）只改變類別的基準率，也就是整體偏向垃圾信還是正常信。而題目描述的「促銷詞被算歪」是條件機率的問題，主要得靠更具代表性的標註語料，重新估一次那些詞的機率才救得回來。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-015",
+      "officialQuestionNumber": 15,
+      "prose": {
+        "trap": {
+          "oldSha256": "f12d12983a1ef78740e71d2e557e9a2eebd931f41244b7f3ffa14eaf3dbcf2d8",
+          "old": "K-means 的 K 與 k-nearest neighbors 的 K 無關。判斷限制時抓住 centroid、平方距離與局部最小值三件事，就能連到非凸、離群點與初始化。",
+          "new": "K-means 的 K 和 k-nearest neighbors 的 K 完全無關，只是剛好都用同一個字母——一個是「分幾群」，一個是「參考幾個鄰居」。判斷 K-means 的限制時，抓住三件事就好：centroid（群心）、平方距離、局部最小值。從這三件事就能連到非凸形狀切不好、怕離群點、以及對初始化敏感。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-016",
+      "officialQuestionNumber": 16,
+      "prose": {
+        "trap": {
+          "oldSha256": "1bfde3a46dcaabbf08ec4325c780af7d424d03709a0f69f4374acabac5c8c0d1",
+          "old": "不要把 XGBoost 名稱中的『gradient boosting』只理解為學習率。題目問核心 objective，關鍵公式是資料 loss 加上每棵樹的 Ω(f)。",
+          "new": "不要把 XGBoost 名稱裡的 gradient boosting 只理解成「有學習率」——那只是其中一個參數。題目問的是核心的 objective（目標函數），關鍵公式是「資料的 loss 加上每一棵樹的 Ω(f)」，後面那一項才是它跟傳統 GBDT 最大的差別。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-017",
+      "officialQuestionNumber": 17,
+      "prose": {
+        "trap": {
+          "oldSha256": "63547fa6cbb1927f48c05ee6c34e0ca0827ef8310e8d45ff3e097beb49444265",
+          "old": "訓練損失高與驗證損失高要分開判斷：更深模型連訓練集都學不好，是 optimization degradation，不是單純參數太多造成的過擬合。",
+          "new": "訓練損失高和驗證損失高要分開判斷，處方完全不同。這題的狀況是：更深的模型連訓練集都學不好——那是 optimization degradation（最佳化退化），訊號傳不下去；不是「參數太多所以過擬合」。過擬合的長相是訓練很好、驗證很差，跟這裡剛好相反。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-018",
+      "officialQuestionNumber": 18,
+      "prose": {
+        "trap": {
+          "oldSha256": "5570e3b55cbc923023095012831e35c530cdd0da0316ae31d84b99dd0264dcfd",
+          "old": "池化通常沒有權重，但仍能間接大幅減少下一個 dense layer 的權重。計算參數時，要看池化前後 flatten 尺寸如何改變全連結輸入。",
+          "new": "池化層本身通常沒有權重，但它仍然能間接大幅減少下一個 dense layer 的權重數量——省的不是它自己，是後面那一層。計算參數時，要去看池化前後 flatten 出來的尺寸怎麼變化，那個長度直接決定了全連結層的輸入有多寬。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-019",
+      "officialQuestionNumber": 19,
+      "prose": {
+        "trap": {
+          "oldSha256": "c5e0e1ee156aadacde82a27c3476affdf1c7ea64b01f56f249ca87c81607dbb1",
+          "old": "Transformer 的長距關聯優勢不是『無長度限制』。它縮短 token 間的網路路徑並支援平行運算，但上下文視窗和 O(n²) attention 仍是實際限制。",
+          "new": "Transformer 在長距關聯上的優勢，不是「沒有長度限制」——這句話說得太滿了。它真正做到的是把 token 之間的網路路徑縮短（任兩點一步可達）並支援平行運算。但上下文視窗的大小、以及 O(n²) 的 attention 成本，仍然是實際存在的限制。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-020",
+      "officialQuestionNumber": 20,
+      "prose": {
+        "trap": {
+          "oldSha256": "49b569e299e85825bdaa838564ee4019a8f114479aa36958f53e010135d138b6",
+          "old": "記住 PyTorch 損失輸入契約：CrossEntropyLoss 吃 logits，不吃預先 Softmax 的機率；BCEWithLogitsLoss 同樣把 sigmoid 與 BCE 合併。",
+          "new": "記住 PyTorch 的損失函數輸入契約：CrossEntropyLoss 吃的是 logits（原始分數），不吃你預先做過 Softmax 的機率——先做就重複了。同樣的道理，BCEWithLogitsLoss 也已經把 sigmoid 和 BCE 合併在一起算，你不必也不該自己先做一次 sigmoid。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-021",
+      "officialQuestionNumber": 21,
+      "prose": {
+        "trap": {
+          "oldSha256": "9431f030fd4c63f2947e65f903c74bf8350942fee2d3c515c575c91fa4c5f2d5",
+          "old": "模型壓縮方法都可能縮小體積，但辨識動作即可：降位元是量化、設零或刪結構是剪枝、訓練小模型模仿大模型是蒸餾、低秩近似是分解。",
+          "new": "各種模型壓縮方法都能把體積縮小，所以不能靠「有沒有變小」來分辨——要看它的動作是什麼：降低位元數的是量化，把權重設成零或直接刪掉結構的是剪枝，另外訓練一個小模型去模仿大模型的是蒸餾，用低秩去近似原本矩陣的是分解。四個動作，四個名字。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-022",
+      "officialQuestionNumber": 22,
+      "prose": {
+        "trap": {
+          "oldSha256": "e81a123615293ca4376c42da431002084aa02c92b5bb9a81454f98ef5c5410d1",
+          "old": "Threshold 只能過濾已有候選，不能補回漏檢；chunk size 影響索引單位，也不保證更小更好。題目明示向量匹配不足時，加入互補的詞彙檢索最直接。",
+          "new": "Threshold（門檻）只能從已經撈回來的候選裡過濾，它補不回那些一開始就漏檢的東西——沒撈到就是沒撈到。另外 chunk size 影響的是索引的單位，也不保證切越小越好。題目既然明說是向量匹配不夠準，那加入一個互補的詞彙檢索最直接。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-023",
+      "officialQuestionNumber": 23,
+      "prose": {
+        "trap": {
+          "oldSha256": "7b61013a83a16f378ab11363c6abf7c261b868f41248bd82d154dc9fb1729eb2",
+          "old": "『理解模型』不是完全不能參與生成，而是原始 BERT 缺少自回歸 decoder。若加入 decoder 或改成 BART、T5 等 seq2seq 架構，便是不同模型設計。",
+          "new": "「理解型模型」不是完全不能參與生成，講法要精確一點：原始的 BERT 缺少的是自回歸的 decoder，所以它沒辦法自己一個字一個字往下寫。如果另外接上 decoder、或改成 BART、T5 這類 seq2seq 架構，那就是不同的模型設計了——問題出在架構，不是資料多寡。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-024",
+      "officialQuestionNumber": 24,
+      "prose": {
+        "trap": {
+          "oldSha256": "d4dd1a9b4a0fa1c46e689a6dd515890500c9027cf9e0f802589c92fe30ff8907",
+          "old": "稀疏儲存降低記憶體，不等於降低維度；embedding table 參數也會隨類別數增加，但題目問的是編碼後特徵維度，答案仍是 one-hot。",
+          "new": "稀疏儲存降低的是記憶體佔用，不等於降低了維度——特徵空間還是那麼寬，模型要學的參數一個都沒少。另外 embedding table 的參數量也會隨類別數增加，這是真的；但題目問的是「編碼之後的特徵維度」，那個答案仍然是 one-hot。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-025",
+      "officialQuestionNumber": 25,
+      "prose": {
+        "trap": {
+          "oldSha256": "6f2e38a395c8031b0632e84777ebdde8a753290e6860d4e793c39c716aa4ad19",
+          "old": "分布右偏只是考慮 Log 的線索，不是命令。應看轉換是否使特徵與目標更符合模型假設；Log 也不同於 StandardScaler，前者改變關係形狀，後者主要改尺度。",
+          "new": "分布右偏只是「可以考慮用 Log」的線索，不是一道非做不可的命令。真正的判準是：轉換之後，這個特徵跟目標之間的關係，有沒有更符合模型的假設？另外 Log 和 StandardScaler 是不同的東西——前者會改變關係的形狀（把曲線拉直），後者主要只是改尺度。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-026",
+      "officialQuestionNumber": 26,
+      "prose": {
+        "trap": {
+          "oldSha256": "460da416e1370cc2af2b3a85e9e03121c844ceedd762ddedb91e4cbb0e7e3f16",
+          "old": "『窗口』有時用於平滑，有時用於造 lag；本題明確說把過去多點組成模型輸入，因此是 supervised lag features，而不是把窗口取平均來去噪。",
+          "new": "「窗口」這個詞有兩種用法：有時候是拿來平滑去噪，有時候是拿來造 lag（落後項）特徵。這題明確說是把過去多個時間點組成模型的輸入，所以是 supervised lag features，不是把窗口內的值取平均來去噪。同一個詞，先看它在句子裡做什麼。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-027",
+      "officialQuestionNumber": 27,
+      "prose": {
+        "trap": {
+          "oldSha256": "b4a319798584035c7dbf25071eee761da37bb9baffd2ebb6a8fe17b92462409f",
+          "old": "TimeSeriesSplit 預設常是 expanding window；題目特別要求『最新時間區間』，實作時要再設定固定窗口或 max_train_size，才是真正 rolling window。",
+          "new": "TimeSeriesSplit 的預設行為常常是 expanding window（訓練集一路往外長，把之前的都留著）。但題目特別要求只用「最新的時間區間」，那就得再自己設定固定窗口或 max_train_size，才是真正的 rolling window（滾動窗口，舊的要丟掉）。預設值不會自動符合你的需求。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-028",
+      "officialQuestionNumber": 28,
+      "prose": {
+        "trap": {
+          "oldSha256": "cdf05b2001205f6a22103ef4e31855975ec8231c9620bef3b17c93a6de3acb91",
+          "old": "能列 feature importance 不等於完整可解釋或因果。隨機森林符合題目選擇，但稽核應交代 importance 方法、資料切分、相關特徵分攤與重抽樣穩定性。",
+          "new": "能列出 feature importance，不等於這個模型就完整可解釋，更不等於那是因果關係。隨機森林符合題目的選擇沒有錯，但要通過稽核，還必須交代清楚幾件事：importance 是用哪一種方法算的、資料怎麼切分、高度相關的特徵之間功勞怎麼分攤、以及重抽樣之後結果穩不穩定。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-029",
+      "officialQuestionNumber": 29,
+      "prose": {
+        "trap": {
+          "oldSha256": "194709a8c52934367c0543006656e0fe978d831775f89828f246db079cf4f2d6",
+          "old": "『只有正常標註』常稱 novelty detection 或 one-class／半監督異常偵測；『連正常標籤也沒有、資料混雜』更接近非監督 outlier detection。題目把兩者合併為 B。",
+          "new": "兩種情境要分清楚：「只有正常資料的標註」通常稱為 novelty detection，或 one-class／半監督式的異常偵測；而「連正常的標籤也沒有、資料本身就正常異常混雜」，那比較接近非監督的 outlier detection。題目把這兩種情況合併寫進了 B。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-030",
+      "officialQuestionNumber": 30,
+      "prose": {
+        "trap": {
+          "oldSha256": "89a0f4c5adfb997ce342fc024fd800fba5e7f1fb9675254824964611bcd8cc66",
+          "old": "高變異與過擬合高度相關：前者強調換資料就不穩，後者強調訓練好但泛化差。題目同時出現兩者線索時，用 K-fold 波動辨認官方想問的更具體問題。",
+          "new": "高變異和過擬合高度相關，很難完全切開：高變異強調的是「換一批資料結果就不穩」，過擬合強調的是「訓練學得很好但泛化很差」——同一件事的兩種講法。題目如果同時出現兩者的線索，就用「K-fold 各折之間的波動」這個更具體的訊號，去辨認官方想問的到底是哪一個。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-031",
+      "officialQuestionNumber": 31,
+      "prose": {
+        "trap": {
+          "oldSha256": "3852697bdaa255d861207d749531e2d0de969b0e91d9a9d22462ed6977bf4583",
+          "old": "先分清楚『學不會目標』與『把錯誤目標學得很好』。代理人高分但任務失敗時，應優先檢查 reward specification，而非只調 optimizer。",
+          "new": "先分清楚兩種失敗：「學不會目標」和「把一個錯的目標學得很好」。代理人拿到高分但任務其實失敗了，那屬於後者——它很努力，只是努力錯方向。這時應該優先檢查 reward specification（獎勵到底是怎麼定義的），而不是一直去調 optimizer。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-032",
+      "officialQuestionNumber": 32,
+      "prose": {
+        "trap": {
+          "oldSha256": "306418e4361acff23e96713de5f1966a006c4b6684ca853a54511cef88ac911d",
+          "old": "F1 不是算術平均，也不是把兩種錯誤成本自動設成業務成本。題目若特別要求偏重漏抓，應考慮 F-beta 或直接以成本選 threshold。",
+          "new": "F1 不是算術平均（它是調和平均），而且它預設把兩種錯誤看得一樣重，不會自動反映你實際的業務成本。所以如果題目特別強調「漏抓的代價比較高」，就應該考慮用 F-beta（可以調整偏重哪一邊），或乾脆直接依成本去選 threshold。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-033",
+      "officialQuestionNumber": 33,
+      "prose": {
+        "trap": {
+          "oldSha256": "2c4569ca514c170c6fa2b187520b2a19c6a78a7968814ed11787294a95bf5c67",
+          "old": "L1 的關鍵是 sparse／可歸零，L2 是 shrinkage／通常保留全部。『保留解釋能力』不代表 Ridge 係數就是因果效果，共線性仍會限制個別解讀。",
+          "new": "兩者的關鍵字各一個：L1 是 sparse（稀疏、可以真的歸零），L2 是 shrinkage（整體收縮、通常全部保留）。另外要提醒：「保留解釋能力」不代表 Ridge 算出來的係數就是因果效果——特徵之間的共線性仍然會限制你對個別係數的解讀。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-034",
+      "officialQuestionNumber": 34,
+      "prose": {
+        "trap": {
+          "oldSha256": "bb0188a0131868ff8e2884ba065c9e0277b9b10509716d8e5ce8de36970f0a0a",
+          "old": "Grid Search 的組合數用乘法；Randomized Search 才是直接指定抽樣次數。工具預設的最佳參數 refit 是否另計，要看題目是否問全部 fit calls。",
+          "new": "Grid Search 的組合數要用乘法算（各參數的候選數相乘）；而 Randomized Search 則是你直接指定要抽幾次，不用乘。另外工具預設在找到最佳參數之後會再 refit 一次，這一次算不算進去，要看題目問的是不是「全部的 fit calls」——問法不同，答案就差一次。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-035",
+      "officialQuestionNumber": 35,
+      "prose": {
+        "trap": {
+          "oldSha256": "73491189395c980960ddef6bf68c9b8687fb80b68f09b2597c66a1ac3fc3e0ff",
+          "old": "rank 與 target modules 是兩個資源分配旋鈕，不是越大越好。固定參數量只控制部分顯存，activation、序列長度與 batch size 仍會影響總峰值。",
+          "new": "rank 和 target modules 是兩個不同的資源分配旋鈕，都不是調越大越好——調大就吃更多顯存。另外要注意：固定住可訓練參數量，只控制了顯存的一部分；activation（中間輸出）、序列長度、batch size 這些仍然會影響到總峰值。省了一邊，另一邊還是可能爆掉。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-036",
+      "officialQuestionNumber": 36,
+      "prose": {
+        "trap": {
+          "oldSha256": "ad9afa0e24bc7001a991cccc0cc8abda008e31be18c62f2089f8a88c22b56075",
+          "old": "『資料不離開本地』常指 federated learning；『加入可證明噪音』是 differential privacy；『密文仍可運算』才是 homomorphic encryption。",
+          "new": "三組關鍵字直接對應三種技術：「資料不離開本地」常指 federated learning（聯邦學習）；「加入可證明的噪音」是 differential privacy（差分隱私）；「密文狀態下仍然可以運算」才是 homomorphic encryption（同態加密）。看關鍵字，不要看哪個名字比較常聽到。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-037",
+      "officialQuestionNumber": 37,
+      "prose": {
+        "trap": {
+          "oldSha256": "32a4e28f2f777073dbe16c8f6eff3577ddbede2fff391ae688734c252644077e",
+          "old": "Local explanation 解釋個案，global importance 解釋整體。SHAP 的 feature contribution 是模型歸因，不可直接寫成『此特徵造成違約』的因果結論。",
+          "new": "Local explanation 解釋的是單一個案（這一筆為什麼），global importance 解釋的是整體（平均而言誰重要），層級不同。另外要特別小心措辭：SHAP 的 feature contribution 是「模型的歸因」——它說的是模型怎麼算的，不能直接寫成「這個特徵造成了違約」這種因果結論。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-038",
+      "officialQuestionNumber": 38,
+      "prose": {
+        "trap": {
+          "oldSha256": "d0d2e35fa408c55d78ee85dc1369d93ad1b64901524bd19b573ce4b29d4fffe6",
+          "old": "Demographic parity 看 selection rate；equal opportunity 看真實正類中的 true positive rate。題目只有通過率，不能自行推論準確率或錯誤率。",
+          "new": "兩個公平指標看的東西不同：Demographic parity 看的是 selection rate（各群體的通過率一不一樣）；equal opportunity 看的是「真正屬於正類的人裡面，被抓出來的比例」，也就是 true positive rate。這題只給了通過率，所以不能自行推論準確率或錯誤率——資料不夠就別多說。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-039",
+      "officialQuestionNumber": 39,
+      "prose": {
+        "trap": {
+          "oldSha256": "74c5165f99840c8f52cf354742358e00b4d2764d86d0edd8e45a72adbae53dba",
+          "old": "公平指標不會自己修模型；要有實際 mitigation。另要分清推論時按群體改 threshold 的 post-processing，與訓練時使用群體資料學出共同規則。",
+          "new": "公平指標只負責「量出來」，它不會自己去修模型——要真的改善，必須有實際的 mitigation（緩解措施）。另外要分清兩種做法：在推論時依群體去調整 threshold，那是 post-processing（事後處理）；而在訓練時使用群體資訊、學出一套共同規則，那是另一條路。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-040",
+      "officialQuestionNumber": 40,
+      "prose": {
+        "trap": {
+          "oldSha256": "65c3e3ee1f9c2132ca0f690f606dda823caf1caedf1a20018d37af617f923d3a",
+          "old": "先分單標籤或多標籤，再看標籤格式。單標籤＋one-hot 用 softmax＋categorical；單標籤＋整數用 softmax＋sparse categorical。",
+          "new": "兩步驟判斷：先分是單標籤還是多標籤，再看標籤的格式長什麼樣。單標籤加上 one-hot 格式，用 softmax 配 categorical；單標籤但標籤是整數編號，就用 softmax 配 sparse categorical。差別只在標籤的表示法，模型輸出端是一樣的。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-041",
+      "officialQuestionNumber": 41,
+      "prose": {
+        "trap": {
+          "oldSha256": "8eb36ed13e3e37b0a5ab66f05cd9efbe8636aa366d56e5b2e22b833780a26105",
+          "old": "不是所有常見增強都適合所有領域。先問轉換是否真的 label-preserving；文字、交通方向、醫學左右側等任務尤其不能照搬自然影像的水平翻轉。",
+          "new": "不是所有常見的增強手法都適合所有領域。動手之前先問：這個轉換真的是 label-preserving（保留標籤）的嗎？文字、交通號誌的方向、醫學影像的左右側這幾類任務尤其危險——不能把處理自然影像那一套水平翻轉直接照搬過來，那會製造矛盾的教材。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-042",
+      "officialQuestionNumber": 42,
+      "prose": {
+        "trap": {
+          "oldSha256": "1065d0f4cbea006b6c005cf949905bd4ff4efd7c537551c174937457bd8a1f8f",
+          "old": "凍結 backbone、只訓練 head 是 feature extraction；解凍部分或全部層再小步更新才是 fine-tuning。要注意新 fc 在凍結迴圈之後建立，所以沒有被一起凍結。",
+          "new": "兩個名詞的分界很明確：凍結 backbone、只訓練 head，那叫 feature extraction（特徵萃取）；解凍一部分或全部的層、再用小的步伐更新，才叫 fine-tuning（微調）。另外這題有個容易漏看的細節：新的 fc 層是在凍結迴圈「之後」才建立的，所以它並沒有被一起凍住。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-043",
+      "officialQuestionNumber": 43,
+      "prose": {
+        "trap": {
+          "oldSha256": "b2c90b97067aa51acbe0ea389c10f5563f0d163252a127f981ea99715cbee94f",
+          "old": "先分清圖中『只訓練新 head』與題目問的『fine-tuning』。若 backbone 被凍結，其學習率沒有作用；只有解凍的參數才會被 optimizer 更新。",
+          "new": "先分清圖中實際在做的「只訓練新的 head」和題目問的「fine-tuning」是不是同一件事。另外有一個實作上的重點：如果 backbone 已經被凍結了，那麼替它設定的學習率完全不會發生作用——optimizer 只會更新那些沒被凍結的參數，凍住的怎麼設都沒差。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-044",
+      "officialQuestionNumber": 44,
+      "prose": {
+        "trap": {
+          "oldSha256": "47c74022eb561ff0a7f1131b89623f5b4e4bd6aa3d830d20933e9fb2d43feea6",
+          "old": "資料洩漏不只發生在 scaling。特徵選擇、補值、PCA，以及本題使用標籤的 LDA，都必須放進每個 fold 裡 fit；可用 Pipeline 自動維持邊界。",
+          "new": "資料洩漏不是只發生在 scaling 那一步。特徵選擇、補值、PCA，還有這一題用到標籤的 LDA，全部都必須放進每一個 fold 裡面各自 fit——只要它會從資料學參數，就得受這條規矩管。實務上可以用 Pipeline 把整串包起來，讓它自動維持這條邊界。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-045",
+      "officialQuestionNumber": 45,
+      "prose": {
+        "trap": {
+          "oldSha256": "8ff2a15a6cdb4995567d0f24cf9903867931fe5d977a4304bc6499647bb0f2f8",
+          "old": "`cv=5` 的具體 splitter 取決於 estimator 與 y：分類器搭配 binary/multiclass 會分層；迴歸器則使用 KFold。不能脫離 cross_val_score 語境死背整數 cv。",
+          "new": "`cv=5` 這個整數實際會變成哪一種 splitter，取決於 estimator 和 y 的型態：分類器搭配 binary 或 multiclass 的標籤時會自動分層（保持各類比例）；迴歸器則使用一般的 KFold。所以不能脫離 cross_val_score 的語境去死背「整數 cv 等於某某」，它是會變的。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-046",
+      "officialQuestionNumber": 46,
+      "prose": {
+        "trap": {
+          "oldSha256": "c2e86660565c04f43feca64cb78cc5c91131f1218461a81772ab187f681e976c",
+          "old": "除以 255 是 rescaling，不是 z-score。另 one-hot 是否必要取決於 loss：categorical_crossentropy 用 one-hot；sparse_categorical_crossentropy 可直接用整數標籤。",
+          "new": "除以 255 是 rescaling（把數值壓進 0 到 1），不是 z-score 標準化——後者要減平均、除標準差，是不同的東西。另外要不要做 one-hot，取決於你用哪一個 loss：categorical_crossentropy 需要 one-hot 格式；sparse_categorical_crossentropy 則可以直接吃整數標籤。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-047",
+      "officialQuestionNumber": 47,
+      "prose": {
+        "trap": {
+          "oldSha256": "75ac1caaf816cc51fbb9eaf5e98c71a1e55f70c192b9b0fc39287718258917eb",
+          "old": "卷積輸出 shape 看四件事：batch、高寬、filters。same 只保持高寬，不保持 channels；Dropout 是設零，不是設一；Input 只聲明形狀。",
+          "new": "看卷積的輸出 shape 要對四件事：batch、高、寬、filters。要注意 same 這個設定只保持高和寬，不保持 channels——通道數是由 filters 決定的。另外兩個細節：Dropout 是把部分數值設成零（不是設成一），Input 則只是宣告形狀、不做任何運算。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-048",
+      "officialQuestionNumber": 48,
+      "prose": {
+        "trap": {
+          "oldSha256": "eee82748cb4ee24f72096f7da289dbe1a6995f1199de8f0b8c0da918efc8eff1",
+          "old": "圖的 y 軸是 Accuracy，雖題幹前文稱『曲線值』，不是 validation loss。還要注意單點下跌不足以證明長期過擬合，應看後續趨勢與多次實驗。",
+          "new": "看清楚圖的 y 軸標的是 Accuracy，雖然題幹前文說的是「曲線值」，但它不是 validation loss——軸標看錯，整個判讀就歪了。另外還要注意：單一個點的下跌不足以證明長期過擬合，應該看後續的趨勢，而且最好有多次實驗佐證。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-049",
+      "officialQuestionNumber": 49,
+      "prose": {
+        "trap": {
+          "oldSha256": "982b132fc87f39db5ad5e48c1394dd626ef58623ccb10efc33d2158d916cce8a",
+          "old": "ResNet 的經典貢獻常描述為解決 degradation／optimization problem，不應誇張成完全消除 vanishing gradient。題目四選一仍以 skip connection 最直接。",
+          "new": "ResNet 的經典貢獻，通常描述為解決 degradation 或 optimization problem（深了反而訓練不起來），不應該誇張成「完全消除 vanishing gradient」——梯度消失並沒有因此絕跡。不過就這一題四選一而言，skip connection 仍然是最直接的答案。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-machine-learning-050",
+      "officialQuestionNumber": 50,
+      "prose": {
+        "trap": {
+          "oldSha256": "8e33acd53ec682861d9f5bbc9c5e3373667efe04eeec31c9d1c5ccbd1275b885",
+          "old": "順序固定為 zero_grad → forward → loss → backward → clip → step。若使用自動混合精度，還要先 unscale gradients 再 clip，否則裁的是放大後梯度。",
+          "new": "順序是固定的，背起來：zero_grad → forward → loss → backward → clip → step。梯度必須先算出來才裁得到，也必須裁完才更新。另外如果使用自動混合精度，還要先 unscale gradients（把放大的梯度還原）再 clip，否則你裁的是被放大過的梯度，門檻等於形同虛設。"
+        }
+      }
+    }
+  ]
+}
