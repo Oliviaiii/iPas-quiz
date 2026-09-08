@@ -534,7 +534,7 @@
         "A": {
           "oldSha256": "1484b2ac83f7793561d9d32bb3d1554efcc9362defb87701b703db1d7f853f00",
           "old": "`from sklearn.decomposition import PCA` 正確匯入類別，與是否保留全部成分無關；修改 import 不能建立降維資訊瓶頸。",
-          "new": "這一行 `from sklearn.decomposition import PCA` 只是把 PCA 這個工具從套件裡拿出來備用，寫法本身沒有錯，也跟「要保留幾個主成分」毫無關係。降噪能不能成立，取決於後面有沒有把資訊擠過一個窄口；改 import 那一行，怎麼改都造不出這個窄口。"
+          "new": "這一行 `from sklearn.decomposition import PCA` 只是把 PCA 這個工具從套件裡拿出來備用，寫法本身沒有錯，也跟「要保留幾個主成分」毫無關係。降噪能不能成立，取決於後面有沒有降維、把資訊擠過一個窄口；改 import 那一行，怎麼改都造不出這個窄口。"
         },
         "B": {
           "oldSha256": "dbb10fd64a040fad08c85c0bb7d3e0bf15d501b2bef8575efa3a9ea5ebf3cdcf",
@@ -549,7 +549,7 @@
         "D": {
           "oldSha256": "161f1e4a53e4b3cf437b35f11472f6a4ca25003c196168bcb5b9dd9ecd85df7c",
           "old": "`pca.transform(noisy)` 將影像投影到主成分座標，正是降維步驟；是否真的降維由建立 PCA 時的 n_components 決定。",
-          "new": "`pca.transform(noisy)` 是把每張 noisy 影像換算到主成分那套新座標上，該做的它都做了。但它只負責換算，不負責決定「留幾個成分」——真正有沒有壓縮，是建立 PCA 物件時的 `n_components` 說了算。前面沒設限，這一行照樣把全部成分原封不動帶過去。"
+          "new": "`pca.transform(noisy)` 是把每張 noisy 影像換算到主成分那套新座標上，該做的它都做了。但它只負責換算，不負責決定「留幾個成分」——真正有沒有降維壓縮，是建立 PCA 物件時的 `n_components` 說了算。前面沒設限，這一行照樣把全部成分原封不動帶過去。"
         }
       }
     },

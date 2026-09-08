@@ -1413,7 +1413,7 @@ pass 455、corrected 125、human-decision 20。
 | 115-1 ai-tech-planning 001-025 | Q2 | A、C |
 | 115-1 ai-tech-planning 001-025 | Q14 | A |
 
-### 新發現：純中文術語的保留沒有自動防護
+### ~~新發現：純中文術語的保留沒有自動防護~~（2026-09-08 已處理，見下）
 
 `check-plain-language.py` 只檢查英文與數字，純中文術語掉了抓不到。以一份
 約 60 個常見中文術語的清單掃過全部 payload，有 117 處「原文有、改寫沒有」。
@@ -1428,7 +1428,7 @@ pass 455、corrected 125、human-decision 20。
 建議日後另做一次人工複核，逐處判斷，不要寫成腳本批次替換。掃描用的術語清單
 可從本次的 sweep 重建（見本次 session 紀錄）。
 
-### 新發現：又兩處原文連寫錯字
+### ~~新發現：又兩處原文連寫錯字~~（2026-09-08 已修，見下）
 
 除先前記錄的 `rollingfeatures`、`rankcorrelations`、`constrow` 之外，
 115-1 中級三（ai-tech-planning）另有兩處：
@@ -1468,3 +1468,46 @@ Q49 `concept` 的 `ExperimentTracking`、Q50 `answerReason` 的 `LateFusion`。
 
 四欄合計 4,200 欄。`content/plain-language/` 下的 61 個 payload 全部是已套用的
 歷史紀錄，只供稽核比對，不需要再套用。
+
+
+### 兩項待辦結案（2026-09-08）
+
+#### 一、五處原文連寫錯字已修
+
+`scripts/fix-runtogether-typos.py` 補上空格，五處都是兩個英文字被連在一起的
+排版錯誤，不是識別字或函式名：
+
+| 位置 | 原 | 修正 |
+| --- | --- | --- |
+| 114-2 中級大數據 Q50 選項 B | `constrow` | `const row` |
+| 115-1 中級三 Q49 concept | `ExperimentTracking` | `Experiment Tracking` |
+| 115-1 中級三 Q50 answerReason | `LateFusion` | `Late Fusion` |
+| 115-1 中級大數據 Q22 concept | `rollingfeatures` | `rolling features` |
+| 115-1 中級大數據 Q24 concept | `rankcorrelations` | `rank correlations` |
+
+腳本同時改題庫與 payload 的 `new`（不動 `old`／`oldSha256`），並逐字驗證
+「只插入一個空格、其餘一字不動」。`check-plain-language.py` 另加一份
+`TYPO_FIXES` 白名單：原文的連寫 token 必然消失，但只有在改寫確實出現補了
+空格的正確寫法時才豁免，寫錯成別的東西一樣抓得出來。
+
+#### 二、117 處中文術語掃描已逐處裁決
+
+先前那份掃描是以「欄位」為單位比對，訊號很吵。改以「題」為單位重新跑，
+原始命中 114 處（trap 改寫後的數字），裁決結果：
+
+| 分類 | 處數 | 處置 |
+| --- | --- | --- |
+| 該術語仍在同一題其他欄位 | 58 | 不算掉字，讀者照樣遇得到 |
+| 「量化」的動詞義 | 12 | 不算掉字，改寫成「換算成一個數字」正是白話化該做的事 |
+| 異體字／同義變體／義項不同 | 4 | 不算掉字（常態分佈、過度擬合、資料的密度、標準化語意模型） |
+| **真的掉了** | **40** | 已用 `fix-plain-language-restore-zh-terms.py` 補回 |
+
+補回的方式一律是「名詞＋白話並存」，不刪既有的白話說明，例如
+「看得懂是它的優點」→「可解釋性高、看得懂它憑什麼這樣判是它的優點」。
+
+**缺口已經自動化補上**：`check-plain-language.py` 新增第四項檢查 `zh-terms`，
+依 `content/glossary-zh.json`（59 個術語＋等價寫法、3 個排除詞、1 筆個案豁免）
+逐題驗證。刻意拿掉一個術語測試過，檢查會噴錯——不是永遠通過的假檢查。
+
+規則寫進 `PLAIN_LANGUAGE_GUIDE.md` 第 6.1 節，包含「新增術語前先看誤報」
+這條紀律：一個會噴大量誤報的檢查，跟沒有檢查一樣沒用。
