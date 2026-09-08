@@ -1,0 +1,561 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "aiap-114-intermediate-2-big-data",
+  "range": {
+    "start": 1,
+    "end": 50
+  },
+  "rewrittenAt": "2026-08-31",
+  "items": [
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-001",
+      "officialQuestionNumber": 1,
+      "prose": {
+        "trap": {
+          "oldSha256": "8f9f4dfd1788fc92ff5e7481cb49d10690a27c0885d6c7581190ba3f2281feca",
+          "old": "先看正負號判斷高於或低於平均值，再看絕對值判斷相距幾個標準差。不要把 Z 分數誤當原始值，也不要把常見的極端值經驗門檻當成任何資料都適用的絕對定義。",
+          "new": "讀 Z 分數分兩步：先看正負號，判斷它在平均值之上還是之下；再看絕對值，判斷它離平均有幾個標準差。兩個陷阱要避開：一是把 Z 分數誤當成原始數值（它已經是換算過的「幾個標準差」，不是原本的單位）；二是把「超過幾個標準差就算極端」這種常見的經驗門檻，當成任何資料都適用的絕對定義。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-002",
+      "officialQuestionNumber": 2,
+      "prose": {
+        "trap": {
+          "oldSha256": "753498a43f2391fdb22cefe2ef496a7fd7c2321fb7f1b0895d087d38a32d8c1a",
+          "old": "分清楚「單一統計量」與「摘要表」：`sum()`、`mean()` 各回一種統計，`describe()` 才一次彙整多種統計。也要注意 `describe()` 對數值欄與文字欄回傳的項目不同。",
+          "new": "分清楚「單一統計量」和「摘要表」：`sum()`、`mean()` 每次只回傳一種統計數字，`describe()` 才是一次把多種統計（筆數、平均、標準差、四分位數等）彙整成一張表。另外要注意 `describe()` 對數值欄和文字欄回傳的項目並不一樣——數值欄給平均和分位數，文字欄給的是出現次數和最常見的值。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-003",
+      "officialQuestionNumber": 3,
+      "prose": {
+        "trap": {
+          "oldSha256": "8fa2a41529edbc06c21c2f6816bf168a5b1c8b142e00fe1274c82042de87106f",
+          "old": "偏態方向由長尾決定，不是由峰在哪一側決定。另一個陷阱是把「不能算出精確數值」誤解成「不能判斷正負」；本題只要求較可能的符號，附圖已提供充分線索。",
+          "new": "偏態的方向是由「長尾拖向哪一邊」決定的，不是由「峰在哪一側」決定——這是最常記反的一點。另一個陷阱是把「不能算出精確數值」誤解成「不能判斷正負」：這題只要求判斷比較可能的符號，附圖已經提供了足夠的線索，不需要精算。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-004",
+      "officialQuestionNumber": 4,
+      "prose": {
+        "trap": {
+          "oldSha256": "46ca61b14ddaacf946bc0f45da513f22884b4c8d5fd313dd9d2ada442e419990",
+          "old": "連續型記住「PDF 積分得到 CDF、CDF 微分得到 PDF」；離散型則是 PMF 加總得到 CDF。不要把平均值、標準差這些單一摘要值與整條分佈函數混為一談。",
+          "new": "連續型記住這一組互逆關係：「PDF 積分之後得到 CDF，CDF 微分之後得到 PDF」——一個是密度、一個是累積。離散型則是把 PMF 一項一項加總得到 CDF。另外不要把平均值、標準差這些「單一摘要值」跟「整條分佈函數」混為一談：前者是從分佈壓縮出來的一個數字，後者是完整的形狀。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-005",
+      "officialQuestionNumber": 5,
+      "prose": {
+        "trap": {
+          "oldSha256": "b2488a2e30b7cd2e659772c38a3741ff6e51a86a9c4616e5bd6e5e32c774470a",
+          "old": "重點不是整數本身不能用，而是類別有沒有真實順序，以及模型會不會解讀數值距離。另要分清楚 scikit-learn 的 `LabelEncoder` 主要編碼目標 y，特徵欄位通常使用`OrdinalEncoder` 或 `OneHotEncoder`。",
+          "new": "重點不是「整數本身不能用」，而是要問兩件事：這個類別有沒有真實的順序？模型會不會去解讀數值之間的距離？兩個答案決定了能不能用整數編碼。另外要分清楚 scikit-learn 的分工：`LabelEncoder` 主要是拿來編碼目標 y 的，特徵欄位通常要用 `OrdinalEncoder` 或 `OneHotEncoder`。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-006",
+      "officialQuestionNumber": 6,
+      "prose": {
+        "trap": {
+          "oldSha256": "b38b79d4dcb4b9fcdbf0ccc45e74717013c4b2297b4711ef1f4f3b2153e71c7a",
+          "old": "看到「平均 0、標準差 1」就是 Standardization；看到「壓到 0～1」通常是 Min-Max。題目問的是不正確，C 前半句正確不代表整句正確，需檢查後半句是否偷換方法。",
+          "new": "看到「換算成平均 0、標準差 1」就是 Standardization；看到「壓到 0 到 1 之間」通常是 Min-Max。這兩個最常互相認錯。另外注意這題問的是「不正確」：選項 C 的前半句正確，不代表整句就正確——要檢查後半句有沒有偷偷把方法換掉，前對後錯是常見的出題手法。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-007",
+      "officialQuestionNumber": 7,
+      "prose": {
+        "trap": {
+          "oldSha256": "28b4da248c482a296ccad9c9d8ce8549951e3e3c58a3b46cd3daf536967cab83",
+          "old": "記住 Atomicity 是「全有或全無」，不是資料欄位的原子型別，也不是自動備援。ACID 四項常被交叉混淆：原子性管交易成敗，隔離性管並行可見，持久性管提交後不遺失。",
+          "new": "記住 Atomicity（原子性）指的是「全有或全無」——一筆交易要嘛整個成功，要嘛整個回復到動手前，中間狀態不會留下。它不是指資料欄位的原子型別，也不是自動備援。ACID 這四項常被交叉混淆，用一句話各記一個：原子性管交易的成敗，一致性管規則有沒有被破壞，隔離性管並行時彼此看不看得到，持久性管提交之後會不會遺失。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-008",
+      "officialQuestionNumber": 8,
+      "prose": {
+        "trap": {
+          "oldSha256": "963103495835fc34c4180af45168d580a692ef8dbefa4f960f7ce6510bcd8c15",
+          "old": "判斷關鍵在「有沒有創造新語意欄位」：兩欄相除得到比例是衍生；同欄標準化或取對數通常叫轉換；挑選欄位叫選擇；切區間才叫分箱。另須防範分母為零。",
+          "new": "判斷關鍵在「有沒有創造出一個新的語意欄位」：兩個欄位相除得到一個比例，那是衍生了新意義，屬於衍生特徵；同一欄做標準化或取對數，只是換個尺度，通常叫轉換；從既有欄位裡挑幾個留下叫選擇；把連續值切成區間才叫分箱。另外實作上要防範分母為零。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-009",
+      "officialQuestionNumber": 9,
+      "prose": {
+        "trap": {
+          "oldSha256": "c4ca049f8246292dbe3774adb2d809b5061903b0431e4ec948f1659f400261a7",
+          "old": "不要因 Z-score 名稱含「標準化」就一律選它；平均值與標準差都不穩健。看到 Outliers，先想到中位數與 IQR。Robust Scaling 只是降低尺度受影響，並不會自動刪除或判定離群值。",
+          "new": "不要因為 Z-score 的名稱裡有「標準化」三個字就一律選它——它用到的平均值和標準差本身都不穩健，一筆極端值就能把它們拉走。看到 Outliers（離群值），要先想到中位數和 IQR（四分位距）這種不怕極端值的工具。另外提醒：Robust Scaling 只是讓尺度轉換比較不受離群值影響，它並不會自動把離群值刪掉或判定出來。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-010",
+      "officialQuestionNumber": 10,
+      "prose": {
+        "trap": {
+          "oldSha256": "878edacca7f9e7f395a599a30535a3a014894f9f72f2b38cc4c88d410c1a5296",
+          "old": "不要只看到金融風險就選異常偵測；關鍵在輸出形式。預測已定義的違約標籤是分類，預測明日數量是迴歸／時間序列，找出與正常分佈不同的罕見觀測才是異常偵測。",
+          "new": "不要一看到金融風險就直覺選異常偵測；判斷的關鍵在「輸出的形式是什麼」。預測一個已經定義好的違約標籤（會不會違約）是分類；預測明天的數量是迴歸或時間序列；要找出「跟正常分佈長得不一樣的罕見觀測」，那才是異常偵測。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-011",
+      "officialQuestionNumber": 11,
+      "prose": {
+        "trap": {
+          "oldSha256": "ad6d05bdf7ce18d41b6e524978f8b9b57acb7e1c08458fc060a18c4a15abcf57",
+          "old": "儀表板只是顯示結果，不等於即時分析；備份只是保存資料，也不等於監控。題目同時出現『大量』與『即時』時，要選可分散擴展且能處理無界事件流的組合。",
+          "new": "儀表板只是把結果顯示出來，不等於它有在做即時分析；備份只是把資料保存起來，也不等於有在監控。題目同時出現「大量」和「即時」兩個條件時，要選一個既能分散擴展、又能處理無界事件流（資料源源不絕、沒有終點）的組合。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-012",
+      "officialQuestionNumber": 12,
+      "prose": {
+        "trap": {
+          "oldSha256": "23520d7a879c5b2a5e30f93cf750d42a237089fc4475362e9c26f9a09c1056f5",
+          "old": "Oversampling 與 undersampling 的方向容易看反：前者增加少數類列，後者刪減多數類列。隨機過採樣的問題不是資料變少，而是重複資訊可能讓模型記憶樣本。",
+          "new": "Oversampling 和 undersampling 的方向很容易看反，記住字面意思就好：over 是往上加，增加少數類的資料列；under 是往下砍，刪減多數類的資料列。另外要注意隨機過採樣的問題不是「資料變少」（它明明變多了），而是重複的資訊可能讓模型把那幾筆樣本背起來。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-013",
+      "officialQuestionNumber": 13,
+      "prose": {
+        "trap": {
+          "oldSha256": "895d7af8fdb968b354a5fdb0ea59b5475a0bdfb1c266fdf2213a9e47abb1a194",
+          "old": "匿名化保護身分、雜湊做單向摘要、一般加密保護靜態資料；只有同態加密的關鍵字是『不解密仍能運算』，且運算後結果仍需由私鑰持有者解密。",
+          "new": "四種手法各有各的關鍵字：匿名化保護的是身分，雜湊做的是單向摘要（推不回去），一般加密保護的是靜態存放的資料。只有同態加密的關鍵字是「不必解密就能直接運算」。另外補一句：同態加密算完之後的結果仍然是密文，還是要由持有私鑰的人解開才看得到。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-014",
+      "officialQuestionNumber": 14,
+      "prose": {
+        "trap": {
+          "oldSha256": "9da35ccd78ea1d9d622c464172f86fa3228b8e48eb1d97e6a0edbd48d1c1aa46",
+          "old": "先算原始 Gini，再看題目是否寫『正規化』。二元各半的原始值是 0.5，不是 1；只有再除以二元最大值 0.5 後才得到 normalized value 1。",
+          "new": "先算原始的 Gini，再回頭看題目有沒有寫「正規化」——這一步最容易漏掉。二元且各佔一半時，原始值是 0.5，不是 1；要再除以二元情況的最大值 0.5 之後，才會得到 normalized value 等於 1。看到 1 就填 1，往往就是掉進這個坑。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-015",
+      "officialQuestionNumber": 15,
+      "prose": {
+        "trap": {
+          "oldSha256": "efdbf535893b41fda29b6c1de89800acbc93911e274d10573ffc2c833c64781d",
+          "old": "Poisson 問『固定時間內幾次』，Exponential 問『等到下一次多久』。兩者可來自同一事件過程，但隨機變數型態一個是離散計數、一個是連續等待時間。",
+          "new": "兩者問的問題不同：Poisson 問的是「固定一段時間內會發生幾次」，Exponential 問的是「等到下一次要等多久」。它們可以來自同一個事件過程，但隨機變數的型態完全不同——一個是離散的計數（次數只能是整數），一個是連續的等待時間。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-016",
+      "officialQuestionNumber": 16,
+      "prose": {
+        "trap": {
+          "oldSha256": "ffd9701acf8a457e86084d6f29536a8579f714f4ccacbf0f604d9c29d78f664f",
+          "old": "先做差再除以標準差，並注意門檻有沒有等號。|Z|≥3 包含正三與負三；若寫 |Z|>3，恰好等於三才不會被標記。",
+          "new": "計算兩步驟：先做差（減掉平均），再除以標準差。然後最關鍵的是注意門檻有沒有等號：|Z|≥3 是包含正三和負三這兩個點的；如果題目寫的是 |Z|>3，那麼剛好等於三的那一筆就不會被標記出來。差一個等號，答案就不同。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-017",
+      "officialQuestionNumber": 17,
+      "prose": {
+        "trap": {
+          "oldSha256": "d891fd6c7014bdc90f8eb02935bca21934aa2ed256953cc4bbf3868daf009aa0",
+          "old": "One-hot 不會減少記憶體，target encoding 也不會自動防洩漏。另要先問類別是否真的有序：會員等級可能具業務順序，因此 B 的風險要依模型與語意判斷。",
+          "new": "兩個常見誤解要澄清：One-hot 不但不會減少記憶體，類別一多反而會暴增；target encoding 也不會自動防止資料洩漏，那要另外處理。另外要先問一個問題：這個類別是不是真的有順序？會員等級這種欄位可能真的具有業務上的順序，所以 B 講的風險要看模型類型和實際語意來判斷，不能一概而論。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-018",
+      "officialQuestionNumber": 18,
+      "prose": {
+        "trap": {
+          "oldSha256": "d2e8e7a41935ba9b367ec6d817c7d048b8bdae0a38541d7afdafcd15b0354242",
+          "old": "ACID 題先抓動詞：失敗全回復是 Atomicity、符合規則是 Consistency、並行互不干擾是 Isolation、提交後不遺失是 Durability。不要因題目出現『一致』兩字就直接選 Consistency。",
+          "new": "ACID 題有個快速解法：先抓句子裡的動詞。「失敗就全部回復」對應 Atomicity，「符合預設規則」對應 Consistency，「並行執行互不干擾」對應 Isolation，「提交之後不會遺失」對應 Durability。另外提醒：不要因為題目裡出現「一致」兩個字，就直接反射性選 Consistency——中文的「一致」在很多句子裡都會出現。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-019",
+      "officialQuestionNumber": 19,
+      "prose": {
+        "trap": {
+          "oldSha256": "8b69aee4a15c27acfdd9fcef8bcdd7d3bee6927f4a557e468001ddd2997f9744",
+          "old": "低延遲不等於只用快取，完整保存也不等於直接進資料庫。把需求拆成三條：邊緣負責快、stream 負責持續算、lake 負責完整留存與後續擴展。",
+          "new": "兩個誤解要避開：低延遲不等於「只用快取就好」，完整保存也不等於「直接寫進資料庫」。把需求拆成三條各自對應：邊緣負責「快」，stream（串流處理）負責「持續算」，lake（資料湖）負責「完整留存、方便日後擴展」。三條需求三種角色，不要想用一種東西全包。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-020",
+      "officialQuestionNumber": 20,
+      "prose": {
+        "trap": {
+          "oldSha256": "288fcbd68f1ff664e671e1db18ea71c07ed960658c8c731e1bc1e5b758d60558",
+          "old": "Hash 與 encryption 不同：雜湊不可逆，也不保留一般模型運算所需關係；同態加密可解密且可對密文計算。匿名化也不能自動提供 data-in-use confidentiality。",
+          "new": "Hash 和 encryption 是兩回事：雜湊是不可逆的，而且它不保留一般模型運算所需要的數值關係（雜湊後的值之間沒有大小或距離意義）；同態加密則是可以解密、而且可以直接對密文做計算。另外匿名化也不能自動提供 data-in-use confidentiality——資料在「被使用的當下」仍然是明文攤在記憶體裡。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-021",
+      "officialQuestionNumber": 21,
+      "prose": {
+        "trap": {
+          "oldSha256": "c051d056f94fed0d553a6239363dce9ae3fd4685a675a4ed3b177ef49a1e9c14",
+          "old": "資料密度不是『線越多越好』。判斷時要同時看單位空間的資訊量與讀者是否仍能解碼；若線條重疊到不可辨識，小多圖反而較好。本題 B 額外給了比例一致與標註清楚，才成為最佳答案。",
+          "new": "資料密度不是「線畫越多越好」。判斷時要同時看兩件事：單位空間裡裝了多少資訊，以及讀者是不是還解讀得出來。如果線條重疊到根本分不清誰是誰，那改用小多圖（把一張擠爆的圖拆成一排小圖）反而更好。這題的 B 之所以是最佳答案，是因為它額外給了「比例一致」和「標註清楚」這兩個條件。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-022",
+      "officialQuestionNumber": 22,
+      "prose": {
+        "trap": {
+          "oldSha256": "10cccd1e91514d7ceff5049d51c390088b4945b13019f9ed4390693700791b3b",
+          "old": "要比較兩個變數的詳細形狀用散佈圖，要總覽多個變數全部配對用相關矩陣熱力圖。投資上低相關只表示歷史線性共變較低，不能保證未來或壓力期間一定維持分散效果。",
+          "new": "要仔細比較兩個變數的詳細形狀，用散佈圖；要一次總覽多個變數的所有兩兩配對，用相關矩陣熱力圖。另外投資上要留意：低相關只表示「歷史上的線性共變比較低」，不能保證未來、更不能保證在壓力期間還維持得住分散效果——市場一崩，什麼都一起跌。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-023",
+      "officialQuestionNumber": 23,
+      "prose": {
+        "trap": {
+          "oldSha256": "82f5ad27e5c4599f7944690bbc73161cf955482833b346011b3018e7d201e9c2",
+          "old": "先比較 p 與 α 的大小，再用信賴區間交叉檢查。記得『無法拒絕』只表示目前資料證據不足，不代表兩個平均數已被證明完全相同；也不能在看完 p 值後任意把 α 改成 0.10。",
+          "new": "流程是先比較 p 值和 α 的大小，再用信賴區間交叉檢查一次。要記得「無法拒絕」只表示「目前的資料證據不足」，不代表兩個平均數已經被證明完全相同——沒抓到不等於沒有。另外一個嚴重的錯誤：不能在看完 p 值之後，才回頭把 α 從 0.05 改成 0.10 好讓結果變顯著。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-024",
+      "officialQuestionNumber": 24,
+      "prose": {
+        "trap": {
+          "oldSha256": "389137c269cb688a8ee39bd9c5ce352fce8c9eaa16b1ae2c9807c11859530a21",
+          "old": "資料湖是儲存與治理架構，不會自動保證資料品質；Spark／Ray 是計算層，也不等於模型訓練本身。A 成立是因為三者組成可擴展且可重現的流程，仍需 schema、版本、權限與品質檢查。",
+          "new": "兩個常見誤解：資料湖是儲存與治理的架構，它不會自動保證資料品質（進去是髒的，出來還是髒的）；Spark／Ray 是計算層，也不等於模型訓練本身。A 之所以成立，是因為這三者組合起來構成一條可擴展而且可重現的流程——但仍然需要另外做 schema 管理、版本控制、權限與品質檢查。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-025",
+      "officialQuestionNumber": 25,
+      "prose": {
+        "trap": {
+          "oldSha256": "09af166db36b586b0bb99546a4462ad7a133761d40e531cf1b295ce742cc312e",
+          "old": "離群值不是錯誤值的同義詞，尤其行銷分析中高額尾端可能很有商業價值。對數刻度改善顯示但會改變視覺距離，圖上應清楚標示；若有零或負值，需採適當轉換而非直接套 log。",
+          "new": "離群值不是錯誤值的同義詞——尤其在行銷分析裡，高額的那條尾巴可能正是最有商業價值的一群人，刪掉等於把大客戶丟掉。另外對數刻度可以改善顯示（讓密集的部分攤開），但它會改變視覺上的距離感，圖上一定要清楚標示。還有一點：資料若含有零或負值，不能直接套 log，要先做適當的轉換。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-026",
+      "officialQuestionNumber": 26,
+      "prose": {
+        "trap": {
+          "oldSha256": "cce5e2527489df04baff61e903b082b306280cc514563add53157df5df8667cb",
+          "old": "Confidence 會受後件 Y 本來就多常見影響，所以一定要搭配 lift。也不要把關聯寫成因果：規則只能說兩種觀看行為共現，不能證明科幻內容造成使用者觀看超級英雄電影。",
+          "new": "Confidence 會受到「後件 Y 本來就有多常見」的影響——如果幾乎人人都看超級英雄電影，那不管前件是什麼，Confidence 都會很高。所以一定要搭配 lift 一起看。另外不要把關聯寫成因果：這條規則只能說兩種觀看行為常常一起出現，不能證明「因為看了科幻，所以才去看超級英雄」。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-027",
+      "officialQuestionNumber": 27,
+      "prose": {
+        "trap": {
+          "oldSha256": "771b56cb4a494315e06579769e5d68253e3494155c3f3474de1b647a72a23f54",
+          "old": "近似不等於隨便猜測；成熟演算法會定義可驗證的排名誤差界線。另分清楚近似分位數與分位數迴歸：前者摘要觀測分佈，後者依特徵預測條件分位數。",
+          "new": "近似不等於隨便猜：成熟的演算法會定義出可驗證的排名誤差界線，告訴你「最多偏多少」。另外要分清楚近似分位數和分位數迴歸這兩個名字很像的東西：前者是在摘要「已觀測到的分佈」，後者是「依據特徵去預測某個條件下的分位數」，一個回顧、一個預測。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-028",
+      "officialQuestionNumber": 28,
+      "prose": {
+        "trap": {
+          "oldSha256": "851b0c6b87f9f9758795a66cde94caa858cc13a088623b7aab04af359af8a6a0",
+          "old": "『所有點是 noise』直接機制是 ε 鄰域中的點數不足，可能由 ε 太小、MinPts 太大或高維稀疏造成。本題未把 ε 數值列成選項，卻明示 >500 維，所以應選距離集中。",
+          "new": "「所有點都被判為 noise」的直接機制是：ε 鄰域裡的點數不夠。造成這件事的原因可能有三種——ε 設太小、MinPts 設太大，或是高維度導致資料太稀疏。這題並沒有把 ε 的數值列進選項，卻明白寫出資料超過 500 維，所以要選距離集中（高維度）這個原因。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-029",
+      "officialQuestionNumber": 29,
+      "prose": {
+        "trap": {
+          "oldSha256": "0765a130612b91c812ce3c8034ad020d9a476c7127e71009e66a2db4a402e2b1",
+          "old": "PCA 只會自動置中，不代表所有實作會自動縮放到單位方差。標準化也不是一律必要：同單位且絕對變異本來就有意義時可保留原尺度；本題因單位與量級明顯不同，才應標準化。",
+          "new": "兩個要澄清的點：PCA 只會自動置中（把平均移到原點），不代表所有實作都會自動把變異數縮放到 1。另外標準化也不是一律必要——當所有欄位單位相同、而且絕對變異本來就有意義時，保留原尺度反而更對。這題之所以應該標準化，是因為題目的單位與量級明顯不同。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-030",
+      "officialQuestionNumber": 30,
+      "prose": {
+        "trap": {
+          "oldSha256": "295fb52a0c11bc89751249b45eaddeb631377b96038d93a495c22075fb653b5b",
+          "old": "Covariance 與 Pearson 都有方向，但只有 Pearson 經標準化，能用固定範圍比較強度。若關係單調但非線性或有嚴重離群值，Spearman 可能更合適；本題已排除這些情況。",
+          "new": "Covariance 和 Pearson 都帶有方向（正負），但只有 Pearson 經過標準化，所以能用一個固定範圍（負一到正一）來比較強度；Covariance 的大小會被單位牽著走。另外如果關係是單調但非線性、或有嚴重離群值，Spearman 可能更合適——不過這題已經把這些情況排除掉了。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-031",
+      "officialQuestionNumber": 31,
+      "prose": {
+        "trap": {
+          "oldSha256": "46747ceb3179eaf95dd7940b55fc797364a11c7ed7b799916977d1fa95390f95",
+          "old": "不要只看到 n=5000 就選 A；要把 p 一起代入，檢查成功與失敗兩側。另要注意不同教材可能採 >5、≥5 或 ≥10 的經驗門檻，本題依官方選項 B 作答。",
+          "new": "不要只看到 n=5000 很大就直接選 A；要把 p 一起代進去，檢查「成功」和「失敗」兩側的期望次數都夠不夠——樣本再多，只要 p 極小，成功的那一側還是可能只有個位數。另外要注意不同教材採用的經驗門檻不一樣，有寫大於 5 的、有寫大於等於 5 的、也有寫大於等於 10 的；本題依官方選項選 B。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-032",
+      "officialQuestionNumber": 32,
+      "prose": {
+        "trap": {
+          "oldSha256": "c72ca85b071c6e089138db6e7d451d6d439fc871892a8a28ab1cec519d9c4e6b",
+          "old": "不要把模型拒答當成已刪除訓練資料，也不要把「拿掉姓名」當成完整匿名化。題目要的是實務與法規原則，應選源頭去識別加輸出稽核的多層方案。",
+          "new": "兩個要避開的錯誤：不要把「模型拒絕回答」當成「訓練資料已經被刪除」——資料還在裡面，只是被擋住了；也不要把「拿掉姓名」當成完整的匿名化，其他欄位交叉比對一樣認得出人。題目要的是符合實務與法規的原則，所以應該選「源頭去識別加上輸出稽核」這種多層防護的方案。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-033",
+      "officialQuestionNumber": 33,
+      "prose": {
+        "trap": {
+          "oldSha256": "8466af55ea669d6ae3c2a5ba5676ac42a98a21ff4d351b045d8ab53cf7af40c9",
+          "old": "極端損失不等於資料錯誤，風險模型最不該任意刪掉尾端。另要區分平均回歸與分位數回歸：前者問平均報酬如何變，後者可直接問最差 1% 或 5% 的條件報酬如何變。",
+          "new": "極端損失不等於資料錯誤——風險模型最不該做的事，就是把尾端那幾筆隨手刪掉，因為那正是風險管理最關心的部分。另外要區分平均回歸和分位數回歸：前者問的是「平均報酬會怎麼變」，後者可以直接問「最差的那 1% 或 5% 的條件報酬會怎麼變」，對風險分析更有用。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-034",
+      "officialQuestionNumber": 34,
+      "prose": {
+        "trap": {
+          "oldSha256": "43958862d5465c7189ec172946b47d2991fa97b5abfcf6f91d2f6d1ebbf2bf41",
+          "old": "判斷資料屬於節點還是關係，先問它是可獨立存在的實體，還是兩個實體之間的一次連結。本題的 timestamp/device type 描述的是「這次按讚」，不是使用者永久屬性。",
+          "new": "判斷一筆資料屬於節點還是關係，先問一句：它是「可以獨立存在的實體」，還是「兩個實體之間發生的一次連結」？這題的 timestamp（時間戳記）和 device type（裝置類型）描述的是「這一次按讚這個動作」發生在什麼時候、用什麼裝置，而不是使用者本身的永久屬性——所以它們屬於關係。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-035",
+      "officialQuestionNumber": 35,
+      "prose": {
+        "trap": {
+          "oldSha256": "124bdbe8f386c30bfa65bce25454e3f325fefa4db837935337987bdcd096156e",
+          "old": "知識圖譜不只是「有節點與邊」；題目強調語意擴展與推理時，要找能明確命名 predicate、重用詞彙與套用語意規則的資料模型，因此指向 RDF。",
+          "new": "知識圖譜不是「只要有節點和邊」就算數。題目一旦強調語意擴展和推理，就要找那種能明確命名 predicate（謂詞，也就是關係的名字）、能重複使用既有詞彙、而且能套用語意規則去推論的資料模型——這就指向 RDF，而不是一般的圖資料庫。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-036",
+      "officialQuestionNumber": 36,
+      "prose": {
+        "trap": {
+          "oldSha256": "53ac5df5666a1264ea21e5433d60b6d862dc40d848880941eee164ca28f7ac2f",
+          "old": "先看問題出在 X 還是 Y：標準化 X 不會修復 Y 的偏態。Box–Cox 一般要求輸入為正值，若 Y 含 0 或負數，需要平移有合理依據，或評估 Yeo–Johnson 等替代方法。",
+          "new": "先看問題是出在 X 還是 Y：把 X 標準化，並不會修好 Y 的偏態，兩邊是分開的。另外 Box–Cox 轉換一般要求輸入必須是正值；如果 Y 含有 0 或負數，就得先平移（而且平移要有合理依據），或改用 Yeo–Johnson 這類允許非正值的替代方法。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-037",
+      "officialQuestionNumber": 37,
+      "prose": {
+        "trap": {
+          "oldSha256": "71c8922ebe12c6d5c545b8159ee12f9ecf0a664e15855912d38c5706c8f0e2d3",
+          "old": "SMOTE 只能套在訓練資料，若先對全資料 SMOTE 再切交叉驗證，合成樣本會把驗證資訊洩漏進訓練。另要用 recall、precision、PR-AUC 等不平衡指標，不要只報 accuracy。",
+          "new": "SMOTE 只能套在訓練資料上。如果先對全部資料做 SMOTE、再切交叉驗證，合成出來的樣本會把驗證集的資訊洩漏進訓練集，分數就虛高了。另外評估要用 recall、precision、PR-AUC 這些適合不平衡資料的指標，不要只報 accuracy——不平衡時準確率再高也看不出真相。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-038",
+      "officialQuestionNumber": 38,
+      "prose": {
+        "trap": {
+          "oldSha256": "d851adedc4244dcb40ca064000451452d4dd06e30063cd644c4a9de283317beb",
+          "old": "先辨認應變數型態：合格／不合格是二元結果，彙總後是比例，不是連續平均。另要分清楚「有統計差異」與「差 2 個百分點有實務價值」，後者還需信賴區間與成本判斷。",
+          "new": "先辨認應變數的型態：合格／不合格是二元的結果，彙總起來得到的是一個比例，不是連續數值的平均——用錯模型就從根本錯了。另外要分清楚「有統計上的差異」和「差 2 個百分點在實務上有沒有價值」：前者只說差異不是巧合，後者還要看信賴區間和成本才能判斷。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-039",
+      "officialQuestionNumber": 39,
+      "prose": {
+        "trap": {
+          "oldSha256": "9a44a10c19ad07933abc20ee59d910c34f3aaa7838628aecf68069386ae80a65",
+          "old": "分層只確保標籤比例，不會自動讓模型公平、校準或處理不平衡損失。醫療資料若同一患者有多張影像，還要以患者為群組切分，否則同一人的資料可能同時落入訓練與驗證。",
+          "new": "分層抽樣只保證各類標籤的比例一致，它不會自動讓模型變公平、變得校準良好，也不會處理不平衡帶來的損失問題——分層做完，該有的問題還是在。另外醫療資料如果同一位患者有好幾張影像，還必須以「患者」為單位分群切分，否則同一個人的影像可能同時落進訓練集和驗證集，等於偷看答案。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-040",
+      "officialQuestionNumber": 40,
+      "prose": {
+        "trap": {
+          "oldSha256": "7b9228b655c2f84138d03a20367fb59a43b93f79207d164db1071e76c9c8fd94",
+          "old": "看每輪測試集大小：1 筆就是 LOOCV；一整折是一般 K-fold；只切一次是 hold-out；有放回重抽樣才是 bootstrap。LOOCV 雖是 K=N 的 K-fold 特例，考題有專名時要選最精確者。",
+          "new": "看每一輪的測試集有多大就能分辨：只有 1 筆是 LOOCV（留一法）；一整折是一般的 K-fold；只切一次、之後不再變動是 hold-out；有放回地重抽樣才是 bootstrap。另外 LOOCV 雖然本質上是 K 等於 N 時的 K-fold 特例，但考題如果有專有名稱可選，就要選最精確的那一個。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-041",
+      "officialQuestionNumber": 41,
+      "prose": {
+        "trap": {
+          "oldSha256": "8e178bfe827f8ec35e93cdabd59c567e7242ef6474218870829c3003ef12436c",
+          "old": "看到「最近中心＋取平均更新」就鎖定 K-means。GMM 也有平均參數，但使用機率軟指派；DBSCAN 看鄰域密度；階層式看群合併／拆分，不會反覆更新固定數目的中心。",
+          "new": "看到「分給最近的中心，再取平均更新中心」就直接鎖定 K-means。其他三個的識別特徵各不相同：GMM 雖然也有平均參數，但它用的是機率式的軟指派（一個點可以部分屬於好幾群）；DBSCAN 看的是鄰域密度；階層式看的是群怎麼合併或拆分，不會反覆去更新固定數目的中心。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-042",
+      "officialQuestionNumber": 42,
+      "prose": {
+        "trap": {
+          "oldSha256": "1aeeeca3e0eb0d7786f2b9d3e509329b51e605382591c906a35cc42b92c11b34",
+          "old": "PMF 的 m 是 mass：求剛好 k；CDF 是累積到 k：求 ≤k；SF 是右尾：求 >k。另不要把 Poisson 的 lambda 當成最大值，它同時是該分佈的平均數與變異數。",
+          "new": "三個函式問的是不同問題：PMF 的 m 是 mass（質量），求的是「剛好等於 k」的機率；CDF 是累積，求的是「小於等於 k」；SF 是右尾，求的是「大於 k」。搞清楚要的是哪一個範圍，就不會算錯。另外不要把 Poisson 的 lambda 當成最大值，它同時是這個分佈的平均數和變異數。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-043",
+      "officialQuestionNumber": 43,
+      "prose": {
+        "trap": {
+          "oldSha256": "99e37d9420cb5f12765c8ad6ca143e73467a9403af71bc6261cc142be10ef3dd",
+          "old": "看到年份顯示 `.0` 不代表它真的含有年份小數，可能只是整數欄為了容納 NaN 而被提升成 float。要用 `isna().sum()` 與原始 CSV 實際檢查，不能只憑前五列判定原因。",
+          "new": "看到年份顯示成 `.0` 結尾，不代表它真的含有年份的小數——很可能只是因為那一欄有缺失值，整數欄為了容納 NaN 而被自動提升成 float 型別。要用 `isna().sum()` 搭配原始 CSV 實際檢查，不能只憑印出來的前五列就下結論。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-044",
+      "officialQuestionNumber": 44,
+      "prose": {
+        "trap": {
+          "oldSha256": "17cec3c0d65478c3e60b4d1b1b108dad91be2e4c9a9a846d3cd0d6e55c553fb1",
+          "old": "注意 `Int64` 與 `int64` 大小寫不同：前者是 pandas nullable integer，後者通常是不能含 NaN 的 NumPy 整數。能轉型不等於處理正確，任意填 0/1 會扭曲年份分析。",
+          "new": "注意 `Int64` 和 `int64` 大小寫不同，是兩種東西：大寫開頭的 `Int64` 是 pandas 的 nullable integer（可以容納 NaN），小寫的 `int64` 通常是不能含 NaN 的 NumPy 整數。另外「能轉型成功」不等於「處理正確」——為了轉型而隨便把缺失填成 0 或 1，會直接扭曲年份的分析結果。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-045",
+      "officialQuestionNumber": 45,
+      "prose": {
+        "trap": {
+          "oldSha256": "1f9676cefc165fd98bdc70c16be84131f6d4cb31c57bdd10c6c96a3d8b8ef50a",
+          "old": "題目常用「總額、款數、平均」偷換聚合函式：總額用 sum，非缺失筆數用 count，類別出現次數用 value_counts，平均才用 mean。先圈出題目要求的量再看程式。",
+          "new": "題目常常用「總額、款數、平均」這幾個詞來偷換聚合函式，要一個一個對清楚：算總額用 sum，算非缺失的筆數用 count，算某個類別出現幾次用 value_counts，要平均才用 mean。作答時先把題目要的那個量圈出來，再回頭看程式碼寫的是哪一個。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-046",
+      "officialQuestionNumber": 46,
+      "prose": {
+        "trap": {
+          "oldSha256": "f6aeaac76f03ea15f1bda3c7fdece858e78fb99ab468edc18d4e7418eafb0e4a",
+          "old": "seaborn 長格式的關鍵是 `variable`/`value`，聚合關鍵是 `estimator=sum`；預設 barplot 通常算 mean。另要留意題目稱「比例」但程式畫的是總額，相對柱高可比較構成，真正百分比仍需額外正規化。",
+          "new": "seaborn 長格式的關鍵是有沒有 `variable`／`value` 這組欄位；而聚合的關鍵在 `estimator=sum` 這個參數——因為預設的 barplot 通常算的是 mean，不指定就會算成平均。另外要留意：題目說的是「比例」，但程式實際畫的是總額。柱子的相對高度可以拿來比較構成，但要得到真正的百分比，還需要額外做正規化。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-047",
+      "officialQuestionNumber": 47,
+      "prose": {
+        "trap": {
+          "oldSha256": "5e32f28f488a1005e52166f6c70062090ced0204d5c287a20942a2ee3ae7be36",
+          "old": "`head(5)` 是目前順序前五，`nlargest(5,column)` 才是指定欄位前五。條狀圖比較離散類別數值，折線圖會暗示類別之間有連續順序，題目指定圖形時也要一起核對。",
+          "new": "`head(5)` 取的是「目前順序」的前五列，`nlargest(5, column)` 才是依指定欄位取最大的前五——沒有先排序就用 head，取到的只是碰巧排在前面的五筆。另外圖形也要一起核對：條狀圖用來比較離散類別的數值，折線圖會暗示類別之間存在連續順序，題目指定了圖形時，這一項也算。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-048",
+      "officialQuestionNumber": 48,
+      "prose": {
+        "trap": {
+          "oldSha256": "04e329e83111046067447fc32ba245e9e32c88a4c489431561cf84619e473717",
+          "old": "先讀列標籤再讀數字：mean 是平均、50% 才是中位數、25%/75% 才是 Q1/Q3。count 是每欄非缺失數，不要把單欄 count=199 誤當整份資料只有 199 列。",
+          "new": "讀 describe 的輸出要先讀列標籤、再讀數字：mean 是平均、50% 才是中位數、25% 和 75% 才是 Q1 和 Q3——很多人直接把 mean 當中位數就錯了。另外 count 是「每一欄的非缺失筆數」，不要把某一欄的 count=199 誤當成整份資料只有 199 列，其他欄可能還更多。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-049",
+      "officialQuestionNumber": 49,
+      "prose": {
+        "trap": {
+          "oldSha256": "03b401d7b1dd0cb555e2aee548a67d2ae75a157aff98d371d7a1982770ecaee3",
+          "old": "pandas API 名稱是全小寫 `isna`/`isnull`，不是 JavaScript 風格的 `isNaN`。`.sum()`加總布林 True 才把逐格偵測結果轉成每欄缺失數。",
+          "new": "pandas 的 API 名稱是全小寫的 `isna`／`isnull`，不是 JavaScript 風格的 `isNaN`——大小寫寫錯就跑不動。另外 `.sum()` 這一步不能省：它把布林值 True 當成 1 加總起來，才會把「逐格偵測」的結果轉成「每一欄有幾個缺失」。少了它，你拿到的是一整張 True／False 的表。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-big-data-050",
+      "officialQuestionNumber": 50,
+      "prose": {
+        "trap": {
+          "oldSha256": "8f16e5d87bc3ae4c15c6eaa157239284fea2d1c0d7068d2884b6bfd2897c081a",
+          "old": "兩套 API 的順序都以 X/y 語意核對：scikit-learn 是 `fit(X,y)`，statsmodels 是`OLS(y,X)`。另分清 `coef_` 與 `intercept_`，以及整體 F 檢定顯著不代表每個個別係數都顯著。",
+          "new": "兩套 API 的參數順序要用 X／y 的語意去核對，不要憑印象：scikit-learn 寫的是 `fit(X,y)`，statsmodels 寫的是 `OLS(y,X)`——順序剛好相反，最容易寫顛倒。另外要分清 `coef_`（各個特徵的係數）和 `intercept_`（截距）；還要記得整體 F 檢定顯著，不代表每一個個別係數都顯著。"
+        }
+      }
+    }
+  ]
+}
