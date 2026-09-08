@@ -1,0 +1,561 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "aiap-114-intermediate-2-machine-learning",
+  "range": {
+    "start": 1,
+    "end": 50
+  },
+  "rewrittenAt": "2026-08-31",
+  "items": [
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-001",
+      "officialQuestionNumber": 1,
+      "prose": {
+        "trap": {
+          "oldSha256": "aec9cfdcaa3916033eea94918586a73d55f532f9c7916782b307f55c323d6ea1",
+          "old": "看到『不同月份』不能直接使用隨機 K-fold；仍選交叉驗證，但要用 time-aware split。統計顯著性檢定可輔助比較，不能取代外樣本預測評估。",
+          "new": "看到「不同月份」就不能直接用隨機的 K-fold——隨機切會讓後面月份的資料跑進訓練集，等於偷看未來。仍然要做交叉驗證，但必須改用 time-aware split（照時間順序切）。另外統計顯著性檢定可以輔助比較兩個模型，但它取代不了「拿沒看過的資料實測一次」這種外樣本預測評估。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-002",
+      "officialQuestionNumber": 2,
+      "prose": {
+        "trap": {
+          "oldSha256": "6609dc8fcf8e12c12dfaf5a85dfc470134af4400e8c7e34c71dd06b2021a4e91",
+          "old": "L1 對應『稀疏、可歸零』，L2 對應『平滑縮小、通常不歸零』。正則化強度與學習率也不能混為同一個參數。",
+          "new": "兩個對應記熟就好：L1 對應「稀疏、可以真的歸零」，L2 對應「平滑地整體縮小、通常不會歸零」。另外正則化強度和學習率是兩個完全不同的參數，一個管「罰得多重」，一個管「一步跨多大」，不要混成同一個。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-003",
+      "officialQuestionNumber": 3,
+      "prose": {
+        "trap": {
+          "oldSha256": "6ee992864b453d777687414e6f4184b262003b5820d097588710057c88a2d391",
+          "old": "Optimization 問『有沒有把訓練目標降好』，generalization 問『新資料表現好不好』。局部最優是前者；過擬合是後者，不能因都出現在訓練過程就混用。",
+          "new": "兩個詞問的是不同問題：Optimization（最佳化）問的是「有沒有把訓練目標降下去」，generalization（泛化）問的是「換新資料表現好不好」。卡在局部最優屬於前者，過擬合屬於後者。不要因為兩者都出現在訓練過程中，就把它們混著用。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-004",
+      "officialQuestionNumber": 4,
+      "prose": {
+        "trap": {
+          "oldSha256": "1aef5a48d21239ade218148b21faee589fc3a9e30f980f46f6b35e9b5a8b2a06",
+          "old": "『不是核心點』不等於一定是雜訊，還要再問是否在核心點鄰域內；在就是 border，不在才是 noise。這是本題最重要的判斷順序。",
+          "new": "「不是核心點」不等於一定就是雜訊——中間還有一步要問：它有沒有落在某個核心點的鄰域裡？有，那它是 border（邊界點）；沒有，才是 noise（雜訊點）。這個判斷順序是這一題最重要的地方，跳過中間那一步就會答錯。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-005",
+      "officialQuestionNumber": 5,
+      "prose": {
+        "trap": {
+          "oldSha256": "b928d9ac97a62b7bebabc04095d869a6ac5f304fef40f2754c69c22f2aff65d2",
+          "old": "卷積與 pooling 不同：卷積主要『學特徵』，pooling 主要『彙整／降採樣』。若卷積 stride 大於一也會降維，但那是設定效果，不是第一層的定義。",
+          "new": "卷積和 pooling 的職責不同：卷積主要是「學特徵」，pooling 主要是「彙整、降採樣」。要注意的是，如果卷積的 stride 設得大於一，它也會順帶把尺寸降下來——但那是參數設定造成的效果，不是卷積這一層的定義，別把兩者搞混。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-006",
+      "officialQuestionNumber": 6,
+      "prose": {
+        "trap": {
+          "oldSha256": "30531f12d14a893248b130a935c75eb1f8c60d45a0ed41b31d7642cb1b54a80e",
+          "old": "端到端學特徵是 CNN 的優點，但題目問『效率主要原因』，要回答 local connectivity 與 weight sharing。也不要把平移等變性誤寫成完整旋轉尺度不變。",
+          "new": "端到端自動學特徵確實是 CNN 的優點，但題目問的是「效率的主要原因」，要回答的是 local connectivity（每個神經元只看局部一小塊）和 weight sharing（同一組濾波器在整張圖上重複使用）這兩件事——它們才是省參數的關鍵。另外不要把平移等變性誤寫成「完整的旋轉與尺度不變」，CNN 沒有那麼萬能。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-007",
+      "officialQuestionNumber": 7,
+      "prose": {
+        "trap": {
+          "oldSha256": "b59b67025fa7083d26e3a04826d3c6891c1fbe9d01be09c837497ac1762011e5",
+          "old": "不要看到感測器就選 LSTM，關鍵是資料是否有『順序與跨時間依賴』。同樣地，影片才可能同時需要 CNN 與 LSTM，單張影像辨識不必。",
+          "new": "不要一看到感測器就直覺選 LSTM，關鍵在於「這份資料有沒有順序、有沒有跨時間的依賴關係」。同樣的道理：影片才可能同時需要 CNN（處理每一張的空間資訊）和 LSTM（處理張與張之間的時間關係），單張影像的辨識完全不需要 LSTM。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-008",
+      "officialQuestionNumber": 8,
+      "prose": {
+        "trap": {
+          "oldSha256": "db7d6c5cf385dcca62f7796aa5094fa9833cb0b30ce98a4683ec09c98e29e05a",
+          "old": "Cross-entropy 名稱也含 entropy，但資訊增益題的關鍵詞是『特徵分裂、父節點、子節點』，對應 decision tree，不是所有使用熵概念的分類模型。",
+          "new": "Cross-entropy 的名稱裡也有 entropy 這個字，很容易被誤選。但資訊增益題的關鍵詞是「特徵分裂、父節點、子節點」，這一組詞對應的是 decision tree，不是所有用到熵這個概念的分類模型。看關鍵詞，不要看名字裡有沒有同一個字。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-009",
+      "officialQuestionNumber": 9,
+      "prose": {
+        "trap": {
+          "oldSha256": "0c1245b3e04555b7a0bf6af20cbccd302114283b57a780e1c241729ee4bc95f6",
+          "old": "缺失值處理是『有缺值才做』，類別平衡是『分布不均才做』；feature scaling 則是距離式模型遇到不同量綱時的核心前處理。記得 scaler 不能先看完整資料。",
+          "new": "三件事的觸發條件不同：缺失值處理是「有缺值才要做」，類別平衡是「分布不均才要做」，而 feature scaling（特徵縮放）則是距離式模型遇到不同量綱時必做的核心前處理。另外要記得 scaler 不能先看過完整資料——只能用訓練集去 fit，否則就是洩漏。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-010",
+      "officialQuestionNumber": 10,
+      "prose": {
+        "trap": {
+          "oldSha256": "c77bd74339f368a423ca62a4d976dcead693430e546425e5648ec0dd38768c23",
+          "old": "AutoML 是加速器，不是『不用懂資料』。最適合標準任務的快速 baseline；需求越客製、風險越高、控制越細，越需要人工設計與獨立驗證。",
+          "new": "AutoML 是加速器，不是「不用懂資料也沒關係」的免死金牌。它最適合的場景是標準任務、要快速做出一個 baseline（基準模型）。需求越客製、風險越高、要控制的細節越多，就越需要人工設計和獨立驗證。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-011",
+      "officialQuestionNumber": 11,
+      "prose": {
+        "trap": {
+          "oldSha256": "bab10bab16d41b0f604639d34e9d606b57918e0c9675f7f310da73fe7096c7b9",
+          "old": "不要把『通常較有效率』誤解成必然找到最佳值；結論是在相同搜尋預算與合理抽樣分布下的比較，而非品質保證。",
+          "new": "不要把「通常比較有效率」誤解成「必然找得到最佳值」——這兩句話的強度差很多。這個結論成立的前提是「在相同的搜尋預算、而且抽樣分布設定合理」的情況下所做的比較，它是一種傾向，不是品質保證。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-012",
+      "officialQuestionNumber": 12,
+      "prose": {
+        "trap": {
+          "oldSha256": "32f9ab4bd7a262e249ea9081092a92856a77d0d840387ce64c8898e63e619475",
+          "old": "題幹把過快與過擬合並列，但過擬合還受模型容量、訓練輪數與正則化影響；學習率主要控制更新與收斂，仍須搭配驗證監控。",
+          "new": "題幹把「收斂太快」和「過擬合」並列在一起講，但要注意：過擬合還受到模型容量、訓練了幾輪、有沒有加正則化等因素影響，不是學習率一個人的責任。學習率主要控制的是更新的步幅和收斂的過程，最後仍然要搭配驗證集監控才知道有沒有過擬合。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-013",
+      "officialQuestionNumber": 13,
+      "prose": {
+        "trap": {
+          "oldSha256": "207df39c76088031704b51307d5b4e84a716a3508b8ec2361f8abf4e58545174",
+          "old": "不要把所有模型偏差都叫作 label bias；本題語境指標籤生成或人工標記的系統性偏差，需回頭檢查標註定義與流程。",
+          "new": "不要把所有的模型偏差都叫作 label bias，那個詞的範圍沒有那麼寬。這題語境指的是「標籤在產生或人工標記的過程中就帶進來的系統性偏差」——問題出在標註那一端。所以要處理它，得回頭去檢查標註的定義寫得清不清楚、標註流程有沒有問題。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-014",
+      "officialQuestionNumber": 14,
+      "prose": {
+        "trap": {
+          "oldSha256": "11700ce21aaee75d7ab9516a7d820665b74d7af3e8811c17cc9cc55fe827eb86",
+          "old": "『最為關鍵』是風險比較，不代表其他商業模型不需要透明度；應看錯誤後果、受影響權益，以及人類是否需據此做重大決策。",
+          "new": "「最為關鍵」是一種風險上的比較，它不代表其他商業模型就不需要透明度——只是相對而言沒那麼要命。判斷的依據有三個：出錯的後果有多嚴重、受影響的是誰的什麼權益、以及人類會不會依據這個結果去做重大決策。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-015",
+      "officialQuestionNumber": 15,
+      "prose": {
+        "trap": {
+          "oldSha256": "0db501dbb9646eda2be2020c669b29f3b1f2f8a2e3f07dcfdb2fe6db27a439f8",
+          "old": "看到 0.85 不要把所有比例概念混在一起；先辨認 R² 的分子分母是平方和，再排除 accuracy、error rate 與 confidence level。",
+          "new": "看到 0.85 這個數字，不要把所有「比例」的概念都混在一起——很多指標都會落在 0 到 1 之間。先辨認 R² 的分子和分母都是平方和（它衡量的是變異被解釋掉的比例），再回頭把 accuracy、error rate、confidence level 這幾個不同性質的東西排除掉。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-016",
+      "officialQuestionNumber": 16,
+      "prose": {
+        "trap": {
+          "oldSha256": "81c6a2966f08683614b162aa427d5aa0bb01c7efee691f3abb6a66c291ce8c61",
+          "old": "常見錯誤是直接算算術平均得到 0.7；記住 F1 的分子是 2PR、分母是 P+R，最後才依題目精度四捨五入。",
+          "new": "最常見的錯誤是直接把兩個數字取算術平均得到 0.7——那是錯的，F1 是調和平均，不是算術平均。記住 F1 的分子是 2PR、分母是 P+R（P 是精確率、R 是召回率），算完最後再依題目要求的精度四捨五入。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-017",
+      "officialQuestionNumber": 17,
+      "prose": {
+        "trap": {
+          "oldSha256": "1337ba1caad3efae26de982784a39402b50195b50a1f4ff3c7f061599751dbb5",
+          "old": "考試可能把『Adam 原生具有一階動差』當命題點，但不能因此說 SGD+Momentum 沒有動量；正式審題應要求題幹增加排他條件。",
+          "new": "考試可能把「Adam 原生就內建一階動差」當成命題點，但不能因此就說 SGD+Momentum 沒有動量——它名字裡的 Momentum 就是動量。這一題兩個選項其實都內建動量，嚴格說起來題目缺少排他條件；正式審題時應該要求題幹補上限定敘述。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-018",
+      "officialQuestionNumber": 18,
+      "prose": {
+        "trap": {
+          "oldSha256": "aaf209530e2450ce5afde5ab2581983c5e56290292f1301892f56ec288dd9c51",
+          "old": "『正則化』與『正規化』字面相近但不同；XGBoost 的 regularization 是限制樹複雜度，並不是神經網路的 Batch Normalization。",
+          "new": "「正則化」和「正規化」這兩個中文詞字面很像，但完全是不同的東西，最容易看走眼。XGBoost 講的 regularization 是在限制樹的複雜度（葉子數、葉權重），它跟神經網路的 Batch Normalization 沒有任何關係——一個是罰款，一個是把數值重新標準化。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-019",
+      "officialQuestionNumber": 19,
+      "prose": {
+        "trap": {
+          "oldSha256": "42ad25b5626c7205eccd2bd11a841cb17f1fcbff24831334771e91ea669571ed",
+          "old": "先注意題目有否定詞『最不適合』；Accuracy 不是永遠錯，而是在 3% 正類且關心漏診時，不能作為唯一或主要效能依據。",
+          "new": "先注意題目裡有否定詞「最不適合」。另外要理解 Accuracy 並不是永遠都錯——它只是在「正類只佔 3%、而且我們最在意漏診」這種情境下，不能拿來當作唯一或主要的效能依據，因為全部猜陰性就有 97 分。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-020",
+      "officialQuestionNumber": 20,
+      "prose": {
+        "trap": {
+          "oldSha256": "65c125785559bc5d02ff3edd1540096983f5766a1e14405d6e5687904840d355",
+          "old": "Polynomial features 包含平方項與交互項，但兩者不要混稱；本題明示『不同特徵之間』，所以應選 x1×x2 等交叉組合。",
+          "new": "Polynomial features 產生出來的東西同時包含「平方項」和「交互項」，但這兩者不要混著稱呼——平方項是同一個特徵自乘，交互項是不同特徵相乘。這題明白寫了「不同特徵之間」，所以要選 x1×x2 這種交叉組合，不是 x1 的平方。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-021",
+      "officialQuestionNumber": 21,
+      "prose": {
+        "trap": {
+          "oldSha256": "a5c47a11a35e47f1b2ac4f0ade3dfbffe15c7bf3e2d67ba44ad86b8e83c4c54d",
+          "old": "『多頭』的多不是把同一答案重算多次，而是讓不同投影學不同關係。不要把可平行計算誤當成主要目的，也不要把 residual connection 的功勞算給 multi-head。",
+          "new": "「多頭」的多，不是把同一個答案重算好幾次再平均，而是讓不同的投影去學不同的關係——一個頭盯語法、一個頭盯指代，各看各的。另外兩個誤解要避開：不要把「可以平行計算」當成多頭的主要目的（那是附帶好處），也不要把 residual connection 的功勞算到 multi-head 頭上。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-022",
+      "officialQuestionNumber": 22,
+      "prose": {
+        "trap": {
+          "oldSha256": "43e25297d7bfe5f996ea22dda3bd7077750d10c2fdd07cd7f7b50b1975ca9968",
+          "old": "先區分 P(X|Y) 與 P(Y|X)：模型需要的是看到行為 X 後購買 Y 的後驗，而 Bayes rule 用 likelihood 與 prior 反轉條件。",
+          "new": "先分清楚 P(X|Y) 和 P(Y|X) 的方向，這是最容易看反的地方：模型真正需要的是「看到行為 X 之後，會購買 Y」的後驗機率。而 Bayes rule 的作用，就是用 likelihood（概似）和 prior（先驗）把條件的方向反轉過來，從一個推到另一個。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-023",
+      "officialQuestionNumber": 23,
+      "prose": {
+        "trap": {
+          "oldSha256": "46745401535f58b180296b940a1fbaa615b43c2df1b6fd149cfb30fdced8ffd1",
+          "old": "模型（例如 SVR）回答『給定一組天氣會發多少』，Monte Carlo 回答『天氣不確定時，所有可能發電量如何分布』；兩者可搭配但層級不同。",
+          "new": "兩者回答的問題層級不同：模型（例如 SVR）回答的是「給定這一組天氣條件，會發多少電」；Monte Carlo 回答的是「天氣本身也不確定時，所有可能的發電量會呈現什麼樣的分布」。一個給點估計，一個給整條分布，可以搭配使用但不能互相取代。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-024",
+      "officialQuestionNumber": 24,
+      "prose": {
+        "trap": {
+          "oldSha256": "4842b4af5f4a04113c387446cef3966525b20ae9c4d65632b90a4374ddf92630",
+          "old": "Residual plot 有曲線不等於過擬合，反而常表示現有模型太簡單或函數形式錯。極端殘差也要區分 response outlier、high leverage 與 influential point。",
+          "new": "Residual plot 出現曲線，不等於過擬合——恰恰相反，它常常表示現有的模型太簡單，或是函數形式設錯了（該用曲線卻用了直線）。另外看到極端的殘差也要再細分：response outlier（y 值離譜）、high leverage（x 值離譜）、influential point（同時拉動了整條迴歸線），三者的處理方式不同。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-025",
+      "officialQuestionNumber": 25,
+      "prose": {
+        "trap": {
+          "oldSha256": "92b4a24369f10275f4fc41687668d4f5039fa816146feb40feb35d6743285239",
+          "old": "題目問『不是傳統流程』，不要因生成式模型很先進就選它。傳統評分卡的辨識詞是 binning、WOE/IV、logistic regression、PSI 與可解釋治理。",
+          "new": "題目問的是「不是傳統流程」，所以不要因為生成式模型聽起來很先進就選它——先進不等於傳統。傳統評分卡有一組很好認的辨識詞：binning（分箱）、WOE／IV、logistic regression、PSI，以及強調可解釋的治理要求。看到這幾個字就是傳統流程。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-026",
+      "officialQuestionNumber": 26,
+      "prose": {
+        "trap": {
+          "oldSha256": "aca020246bad149656ad5fc1d4c1d33cb30d081af0a64aa2a762c7c141f7eb75",
+          "old": "『可能改善泛化』不等於『降低複雜度』。有用的新特徵可讓任務更容易，但 feature expansion 的機制是增加資訊／表達，不是像正則化般限制模型。",
+          "new": "「可能改善泛化」不等於「降低了模型複雜度」，這是兩件事。有用的新特徵確實可以讓任務變得更容易學，但 feature expansion（特徵擴充）的機制是「增加資訊、增加表達能力」，它是把模型的可能性放大；而正則化的機制是「限制模型」，方向剛好相反。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-027",
+      "officialQuestionNumber": 27,
+      "prose": {
+        "trap": {
+          "oldSha256": "0b2b8b16f1c295458a1baae10d62f801f5eec414fda890515f4decbd6b3c6a3d",
+          "old": "增加層數只有在層間有非線性時才增加表達能力。Sigmoid 不是『錯誤函數』，只是本題比較深層 CNN 隱層時，ReLU 通常更適合。",
+          "new": "增加層數只有在「層與層之間有非線性」時才真的增加表達能力——中間沒有非線性的話，疊十層線性層等於一層線性層。另外 Sigmoid 不是「錯誤的函數」，它有它的用途，只是在這一題比較深層 CNN 的隱藏層時，ReLU 通常更適合，因為它的梯度不容易衰減。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-028",
+      "officialQuestionNumber": 28,
+      "prose": {
+        "trap": {
+          "oldSha256": "cc322b80b1cce17ef25cfaf6c1df4c6c8bf092a697042bef693b54319295bc11",
+          "old": "看到某群體特別差，先查該群體在訓練資料是否有代表性。模型再複雜、參數調得再好，也不能可靠外推到完全沒看過的資料區域。",
+          "new": "看到某一個群體的表現特別差，第一件事是回頭查：這個群體在訓練資料裡有沒有足夠的代表性？很可能根本沒幾筆。要記住一件事：模型再複雜、參數調得再好，也沒辦法可靠地外推到「它完全沒看過」的資料區域。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-029",
+      "officialQuestionNumber": 29,
+      "prose": {
+        "trap": {
+          "oldSha256": "e15ab18fa2c9088dee598aa3b3025b8ae8d10db0fa7bcecd6232b97718e6f9fb",
+          "old": "時間資料不可隨機打散，否則未來工況會洩漏到訓練。正則化處理模型容量，rolling validation 處理評估代表性；題目根因在後者。",
+          "new": "時間資料不可以隨機打散，否則未來的工況會洩漏到訓練集裡，評估分數就虛高了。另外要分清兩個工具各自處理什麼：正則化處理的是模型容量（會不會學太雜），rolling validation（滾動式驗證）處理的是評估有沒有代表性。這一題的根本原因出在後者。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-030",
+      "officialQuestionNumber": 30,
+      "prose": {
+        "trap": {
+          "oldSha256": "f368574312c34853d7f9218af2b8772515e73ab9610efd7ee5d1b684a1c1d6cf",
+          "old": "更換 averaging 方法只改報表，不會提升模型。F1 下滑要回到 Precision、Recall 與 confusion matrix 找 FP/FN，再查語言資料、tokenizer 與跨語言表示。",
+          "new": "更換 averaging 的方法（macro 換成 weighted 之類的）只改變報表怎麼算，不會讓模型變好——數字動了，模型一動也沒動。F1 下滑要回到 Precision、Recall 和 confusion matrix 去找出到底是 FP 變多還是 FN 變多，再往回查語言資料的分布、tokenizer 的處理、以及跨語言表示是否對齊。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-031",
+      "officialQuestionNumber": 31,
+      "prose": {
+        "trap": {
+          "oldSha256": "d2dbce614c7e14f50e8299bff5f1289259347e3c66ae02f909b8e204e42d713a",
+          "old": "不要把訓練損失最低誤認為泛化最佳，也不要把測試集當成可反覆查看的驗證集。題幹強調波動時，關鍵字是 patience。",
+          "new": "兩個誤解要避開：不要把「訓練損失最低」誤認為「泛化最佳」——那通常正是開始背答案的時候；也不要把測試集當成可以反覆查看的驗證集，看多了它就失去公正性了。另外題幹一旦強調「指標會波動」，關鍵字就是 patience（容忍幾輪沒進步才停）。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-032",
+      "officialQuestionNumber": 32,
+      "prose": {
+        "trap": {
+          "oldSha256": "77cc1af6e72c8b5f2498efd277a428ce8c11cba15c223f6d9a512ceabee93949",
+          "old": "L1 與 L2 都能正則化，但『係數縮為 0／稀疏』才是 L1 的辨識點；高度相關時也不代表被選中的特徵必然是唯一因果因素。",
+          "new": "L1 和 L2 都能做正則化，但「把係數縮成 0、產生稀疏解」才是 L1 專屬的辨識點，L2 只會壓小不會歸零。另外提醒一個常見的過度推論：當幾個特徵高度相關時，L1 選中的那一個並不必然就是唯一的因果因素——它只是在幾個可互相取代的候選裡挑了一個。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-033",
+      "officialQuestionNumber": 33,
+      "prose": {
+        "trap": {
+          "oldSha256": "2396d9860d7759e5a4fac7cb5cf8d730402d4c47b937f502c9605a35f8f7278f",
+          "old": "去除重複對稱配對只把 n² 次降成約 n²/2 次，改變的是常數，不會把複雜度變成 O(n)。",
+          "new": "去除重複的對稱配對（算過 A 對 B 就不用再算 B 對 A），只是把大約 n² 次降成大約 n²/2 次。改變的只是前面那個常數，複雜度的量級並沒有變——它不會因此變成 O(n)。省一半仍然是平方級，資料一大照樣爆炸。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-034",
+      "officialQuestionNumber": 34,
+      "prose": {
+        "trap": {
+          "oldSha256": "066470ada6eb82f2612404f8247b5cb049c47dbe1cbf3f125ca8a3926b54ec8d",
+          "old": "應試時可由『比例一致性＝分層』『資料利用率＝留一』鎖定官方 D；實務上切勿忽略每折只有一筆便不可能呈現兩類比例的矛盾。",
+          "new": "應試時可以用兩個關鍵字鎖定官方答案 D：「比例一致性」對應分層、「資料利用率最高」對應留一法。但實務上千萬別忽略這個名稱本身的矛盾——留一法每一折的測試集只有一筆資料，一筆資料不可能同時呈現正負兩類的比例，所以「分層留一」在定義上是自相矛盾的。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-035",
+      "officialQuestionNumber": 35,
+      "prose": {
+        "trap": {
+          "oldSha256": "dcc57bec27e68074a1b7b22261ce29726b183b2019a14e53af09d30397541547",
+          "old": "先算總和再算『累積』比例；不要把單一主成分比例、線性關係與是否過擬合混為一談。",
+          "new": "計算順序是：先把所有主成分的變異加總，再算「累積」比例——很多人只算了單一主成分那一個就交卷。另外不要把三件事混為一談：單一主成分的解釋比例、變數之間的線性關係、以及模型有沒有過擬合，這是三個不同層次的問題。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-036",
+      "officialQuestionNumber": 36,
+      "prose": {
+        "trap": {
+          "oldSha256": "4db60f49022e79cfa181b54205be2b82b3bf6c94cadd003d98570abb15abda7b",
+          "old": "看到『加噪音』要想到差分隱私；看到『密文上直接運算』才是同態加密。D 是能力描述，不代表所有模型都能零成本完整訓練。",
+          "new": "兩個關鍵字直接對應：看到「加噪音」就要想到差分隱私；看到「不用解密、直接在密文上運算」才是同態加密。另外選項 D 是一句「能力描述」，它說的是這個技術做得到什麼，不代表所有模型都能零成本地完整訓練——實際上同態運算的成本非常高。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-037",
+      "officialQuestionNumber": 37,
+      "prose": {
+        "trap": {
+          "oldSha256": "dea85906111277dbaf2505d9c6187d72afbe0b8b259954e2b795d02c777e7528",
+          "old": "題庫答案把每項技術做概念配對；工程上則不能把 plain hash 當成完整防竄改或防重放措施，必須看是否有金鑰認證與訊息新鮮度機制。",
+          "new": "題庫的答案是把每一項技術做概念上的配對，這樣答沒問題。但工程上要清楚：plain hash（單純的雜湊）不能當成完整的防竄改或防重放措施——攻擊者可以連內容帶雜湊一起換掉。真正要防，必須看有沒有金鑰認證，以及有沒有訊息新鮮度的機制（時間戳或序號）。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-038",
+      "officialQuestionNumber": 38,
+      "prose": {
+        "trap": {
+          "oldSha256": "dff62f96a507e852761b5a2a6cbf1965d837493245258c494ac4ce227309a096",
+          "old": "看到 `** 2` 不足以直接選 RMSE；一定要檢查最後是否再開平方根。本站已目視確認題圖完整回傳式沒有平方根。",
+          "new": "看到程式碼裡有 `** 2`（平方）還不足以直接選 RMSE——因為 MSE 也有平方。關鍵是一定要往下檢查：最後有沒有再開一次平方根？有開才是 RMSE，沒開就是 MSE。本站已經目視確認過題圖，完整的回傳式裡沒有平方根。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-039",
+      "officialQuestionNumber": 39,
+      "prose": {
+        "trap": {
+          "oldSha256": "f73ac506ab0af846e4126b2f4e370629017494b3cf43b723f400caf51ae84cb9",
+          "old": "不要只看到『正則化』就選 L1/L2；隨機 mask 是 Dropout 的關鍵。另注意題圖 p 是 keep probability，與 PyTorch `Dropout(p)` 的 drop probability 命名相反。",
+          "new": "不要只看到「正則化」三個字就選 L1／L2——隨機把神經元 mask 掉（遮住不用）才是 Dropout 的關鍵動作。另外有一個很容易踩的陷阱：題圖裡的 p 是 keep probability（保留的機率），而 PyTorch 的 `Dropout(p)` 裡那個 p 是 drop probability（丟掉的機率），兩者的命名剛好相反，代入前要看清楚。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-040",
+      "officialQuestionNumber": 40,
+      "prose": {
+        "trap": {
+          "oldSha256": "b9a5014edd5b5bc2cee118c24869ca3ac59669f5a6fa48399bbbf81085ed16dd",
+          "old": "分清 `*` 的逐元素運算與 `dot` 的一維向量內積，也要分清 inv、det、eig 三個線性代數 API；型別名稱則可能受平台與輸入 dtype 影響。",
+          "new": "先分清 `*` 和 `dot` 的差別：`*` 是逐元素相乘（對應位置各乘各的），`dot` 對一維向量是內積（乘完再加總成一個數）。另外也要分清 inv、det、eig 這三個線性代數 API 各做什麼（反矩陣、行列式、特徵值）。至於印出來的型別名稱，可能會受平台和輸入 dtype 影響，不必太執著。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-041",
+      "officialQuestionNumber": 41,
+      "prose": {
+        "trap": {
+          "oldSha256": "e8299c19b99dae6c6e73f103cc5f9d6d2c48b6d6e0a87c72f9913ecf27e7e78a",
+          "old": "條件機率最容易把方向看反：P(A|B) 的分母一定是 B。先口語讀成『在 B 發生的樣本裡，有多少也發生 A』，再寫程式。",
+          "new": "條件機率最容易把方向看反，記住一句口訣就好：P(A|B) 的分母一定是 B。動手寫程式之前，先把它用口語念一遍——「在 B 發生的那些樣本裡面，有多少也發生了 A」——念順了再寫，就不會把分子分母顛倒。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-042",
+      "officialQuestionNumber": 42,
+      "prose": {
+        "trap": {
+          "oldSha256": "b2d33c792f14eae56f065229ca674d5fe4d966e19ce55bbce5628720887e05e5",
+          "old": "參數量主要影響模型檔與權重記憶體，運算量還要乘上每個權重被使用的空間位置次數。VGG16 是『FC 參數多、Conv FLOPs 多』的典型。",
+          "new": "參數量主要影響的是模型檔案大小和權重佔的記憶體；而運算量還要再乘上「每一個權重被用在多少個空間位置」——卷積的同一組權重會在整張圖上滑過很多次。VGG16 正是「FC 層參數特別多、Conv 層 FLOPs 特別多」的典型例子，兩者的大戶不是同一層。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-043",
+      "officialQuestionNumber": 43,
+      "prose": {
+        "trap": {
+          "oldSha256": "84c534bba75e378192bf5fd69015d3ef14ef2e8d71a5661c4de10ba91ab8f73f",
+          "old": "別用 Param # 表格直接猜 FLOPs。卷積的每個參數會跨空間重用很多次，因此可呈現『參數較少、運算較多』。",
+          "new": "不要用 Param # 那一欄的表格直接去猜 FLOPs——參數多不等於運算多。原因是卷積的每一個參數會跨空間位置重複使用非常多次，所以完全可能呈現「參數比較少、但運算量反而更大」的情況。兩者要分開看。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-044",
+      "officialQuestionNumber": 44,
+      "prose": {
+        "trap": {
+          "oldSha256": "fc92275e2e2ebc7437d58f855a84e75dbf7e1b8dc7de8ccfd49f62768105bf01",
+          "old": "閱讀 summary 要沿資料流看，不可跳過 AdaptiveAvgPool。另記得 Param # 通常是 weight+bias；estimated total size 也不是 optimizer 完整訓練記憶體。",
+          "new": "閱讀 summary 要沿著資料流一層一層往下看，不可以跳過 AdaptiveAvgPool 這種會改變尺寸的層——跳過就會算錯後面的形狀。另外要記得 Param # 通常是 weight 加 bias 的總和；而 estimated total size 那一欄也不是 optimizer 訓練時真正需要的完整記憶體（優化器自己還要存狀態）。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-045",
+      "officialQuestionNumber": 45,
+      "prose": {
+        "trap": {
+          "oldSha256": "ea8454082f1dee3e4fec50d9752a8d063fc9653cc6c39fdc9fe8fdad6cececaa",
+          "old": "PyTorch 要凍結的是每個 Parameter 的 `requires_grad`，不是 Module 上同名屬性。也要先辨認 `features` 是卷積 backbone、`classifier` 是 FC head。",
+          "new": "PyTorch 要凍結的是每一個 Parameter 的 `requires_grad` 屬性，不是 Module 上同名的屬性——寫在 Module 上不會生效，這是最常見的錯誤。另外要先辨認清楚結構：`features` 是卷積的 backbone（負責抽特徵），`classifier` 是後面的 FC head（負責分類），要凍哪一段先看清楚。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-046",
+      "officialQuestionNumber": 46,
+      "prose": {
+        "trap": {
+          "oldSha256": "afdc8747196c0e7c43c87c2bf6808e2d92a01e0be7a48513c9dad285ce3ac2d3",
+          "old": "PCA 不是呼叫 fit 就自動降噪；若所有 components 都保留，正反轉換近似 identity。降噪來自捨棄部分成分，而不是 inverse_transform 本身。",
+          "new": "PCA 不是呼叫了 fit 就會自動降噪。如果所有 components（主成分）都保留下來，那麼正轉換再反轉換回來，結果會近似 identity（等於原封不動還你）。降噪的效果來自「刻意捨棄掉後面那些成分」這個動作，不是來自 inverse_transform 這個函式本身。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-047",
+      "officialQuestionNumber": 47,
+      "prose": {
+        "trap": {
+          "oldSha256": "8e8b61235c15c9cff971731f5d82ec189b4137c452451e314fd7bdcb11058a60",
+          "old": "`f1`、`f1_macro`、`f1_weighted` 是不同 scorer。多類問題不能直接用預設 binary `f1`；題目又明確要求『準確率』，最直接應用 accuracy。",
+          "new": "`f1`、`f1_macro`、`f1_weighted` 是三個不同的 scorer，不能混用。多類別問題不能直接用預設的 binary `f1`，因為它預設只看某一個正類。另外這題又明確要求的是「準確率」，那最直接的就是用 accuracy，不要自己加戲。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-048",
+      "officialQuestionNumber": 48,
+      "prose": {
+        "trap": {
+          "oldSha256": "dc7d0076cc13eaa0d1a50c4e439aa24ddb498ecf803a552dda35cf915ed020ac",
+          "old": "標準化是 mean 0、std 1；正規化到 [0,1] 是另一種縮放。最重要的實務陷阱是 test 不能自行 fit scaler，必須沿用 training statistics。",
+          "new": "先分清兩種縮放：標準化是換算成 mean 為 0、std 為 1；正規化到 [0,1] 則是另一種把數值壓進固定範圍的縮放，兩者目標不同。最重要的實務陷阱是：test 集不能自己 fit 一個 scaler，必須沿用 training statistics（訓練集算出來的參數），否則兩邊用的尺不一樣。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-049",
+      "officialQuestionNumber": 49,
+      "prose": {
+        "trap": {
+          "oldSha256": "c864985af254bafba9292207b5fbe439ae37f1de885bcd4a0d310d03017058a5",
+          "old": "Dense 參數別忘 bias：`input_dim×units + units`。Activation 公式也要分清：sigmoid 是 S 曲線，ReLU 是 max(0,x)，softmax 才常用於互斥多類輸出。",
+          "new": "算 Dense 層的參數別忘了 bias，公式是 `input_dim×units + units`——後面那一項就是每個神經元各一個偏置。另外 Activation 的公式也要分清楚：sigmoid 是壓在 0 到 1 之間的 S 曲線，ReLU 是 max(0,x)（負的一律變 0），而 softmax 才是用在互斥多類別輸出的那一個。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-114-02-machine-learning-050",
+      "officialQuestionNumber": 50,
+      "prose": {
+        "trap": {
+          "oldSha256": "4e68cb8016a8da83fb04e075bfbc0d00d87bfce88dbcfbc0137d5819d0423916",
+          "old": "fmt 字串先讀顏色再讀線型：b-=藍實線、r--=紅虛線。判讀 loss curve 時要看數值方向，validation 趨平而 training 繼續降是過擬合，不是驗證改善更多。",
+          "new": "讀 fmt 字串的順序是先讀顏色、再讀線型：`b-` 是藍色實線，`r--` 是紅色虛線。另外判讀 loss curve 時要看數值的方向：validation 的曲線走平、而 training 還在繼續往下降，那是過擬合的訊號，不是「驗證改善得比較多」——別把兩條線的關係讀反了。"
+        }
+      }
+    }
+  ]
+}
