@@ -6,7 +6,7 @@ adds the plain-language explanation a non-specialist needs, so the explanation
 can be read and remembered without a background in the field.
 
 A payload item carries either ``optionAnalysis`` (keyed by option letter) or
-``prose`` (keyed by ``concept`` / ``answerReason``); the two passes live in
+``prose`` (keyed by ``concept`` / ``answerReason`` / ``trap``); the passes live in
 separate files so they never contend for the same text.
 
 Usage::
@@ -40,7 +40,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 QUESTIONS = ROOT / "app" / "data" / "questions.json"
 LETTERS = ("A", "B", "C", "D")
-PROSE_FIELDS = ("concept", "answerReason")
+PROSE_FIELDS = ("concept", "answerReason", "trap")
 
 
 def sha256(text: str) -> str:
