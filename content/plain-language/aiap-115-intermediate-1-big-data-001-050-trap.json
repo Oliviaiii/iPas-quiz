@@ -1,0 +1,561 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "aiap-115-intermediate-1-big-data",
+  "range": {
+    "start": 1,
+    "end": 50
+  },
+  "rewrittenAt": "2026-08-31",
+  "items": [
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-001",
+      "officialQuestionNumber": 1,
+      "prose": {
+        "trap": {
+          "oldSha256": "fdf3503f3fbd4052d292daba627eafab1047c9898b6cf31b8b2ecf3c6fa4ac7a",
+          "old": "盒『長』看 IQR，鬚『長』看中央區外的延伸，不要混為一談。中位數偏下是高值側較長，所以是右偏跡象；但僅憑摘要圖不宜把偏態寫成無條件的確證。",
+          "new": "先分清盒鬚圖的兩種「長」：盒子的長度看的是 IQR（四分位距，中間五成資料的寬度），鬍鬚的長度看的是中央區之外還延伸多遠——兩者不要混為一談。中位數位置偏下，代表高值那一側比較長，是右偏的跡象；但只憑一張摘要圖，不宜把偏態寫成無條件的確證。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-002",
+      "officialQuestionNumber": 2,
+      "prose": {
+        "trap": {
+          "oldSha256": "190211fb3df7c10391c32e869f572c04fefa9c21e285a26445450b77263399c0",
+          "old": "p 常被誤看成筆數，但機率公式中的 pᵢ 必須介於 0 與 1，且總和為 1。另要看清題目問『不正確』；Gini 越低越純，並非數值越高代表分裂品質越好。",
+          "new": "p 常被誤看成「筆數」，但機率公式裡的 pᵢ 必須是介於 0 與 1 之間、而且全部加起來等於 1 的比例——填筆數進去就完全錯了。另外要看清題目問的是「不正確」。還有一個方向要記牢：Gini 越低代表越純，不是數值越高就代表分裂品質越好。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-003",
+      "officialQuestionNumber": 3,
+      "prose": {
+        "trap": {
+          "oldSha256": "5fca301e0b2c71107fbf97b1ef772f4ae100cac121895d355f0d21541b28a35c",
+          "old": "辨識三個關鍵：固定區間、事件計數、獨立且率穩定，先想到 Poisson；再比較平均與變異數。變異較大是模型假設問題，不是單純『資料不夠多』。",
+          "new": "辨識三個關鍵條件：固定的區間、數的是事件次數、而且事件彼此獨立、發生率穩定——三者齊備就先想到 Poisson。接著再比較平均數和變異數是不是相近。如果變異明顯偏大，那是模型假設不成立的問題，不是單純「資料不夠多」。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-004",
+      "officialQuestionNumber": 4,
+      "prose": {
+        "trap": {
+          "oldSha256": "aaec3f3c0f126d53b65663da9434928f472cffb99e46fcff8ccecca4938ce9d6",
+          "old": "ANOVA 顯著只表示至少一組平均不同，不會告訴你是哪一組；要再做有校正的事後比較。另外，若三種學習率共用完全相同的種子形成配對，設計會不同，但題目已明定彼此獨立。",
+          "new": "ANOVA 顯著只告訴你「至少有一組的平均和別人不同」，它不會告訴你是哪一組——想知道是哪一組，還要再做有校正的事後比較。另外補充一點：如果三種學習率共用完全相同的隨機種子而形成配對，實驗設計就不一樣了；不過這題已經明定它們彼此獨立。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-005",
+      "officialQuestionNumber": 5,
+      "prose": {
+        "trap": {
+          "oldSha256": "536e34db161d27b92f0810f4b7284229ec8248510b6471b3260d92017063c5cc",
+          "old": "負號看方向、絕對值看距離。門檻寫的是 |Z|≥2，因此 +2 與 -2 都會告警；告警只是一筆異常訊號，不能單憑單點就斷言整個輸入分布已漂移。",
+          "new": "讀 Z 分數是負號看方向、絕對值看距離。這題的門檻寫的是 |Z|≥2，取的是絕對值，所以 +2 和 -2 兩邊都會告警——只盯正的那一邊就會漏掉一半。另外告警只是一筆異常訊號，不能單憑一個點就斷言整個輸入分布已經漂移了。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-006",
+      "officialQuestionNumber": 6,
+      "prose": {
+        "trap": {
+          "oldSha256": "8503883f6b239772be58014b6abf0dc902b77d9496f91027d15800f3acc22905",
+          "old": "『不拒絕』不等於『接受並證實』，這是最常見陷阱。α 控制的是 H₀ 為真時誤拒絕的機率；證據不足也可能是型二錯誤，而非 H₀ 已被證明。",
+          "new": "「不拒絕」不等於「接受並證實」，這是統計裡最常見的陷阱。α 控制的是「當 H₀ 其實為真時，我們誤判去拒絕它」的機率。證據不足有可能只是型二錯誤（真的有差異但沒抓到），不代表 H₀ 已經被證明是對的。沒抓到，不等於沒有。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-007",
+      "officialQuestionNumber": 7,
+      "prose": {
+        "trap": {
+          "oldSha256": "fdfee3a700b89e2a2669a43fc8be170060473a369597b509bcff08e6c0cb9a70",
+          "old": "判斷重點是『同一批患者』，不是只有看組數。成對 t 檢定的分析單位是個人差值；近似常態也應檢查差值，而非把前後兩欄分開檢查後就結束。",
+          "new": "判斷的重點是「同一批患者前後量兩次」，不是只看有幾組。成對 t 檢定的分析單位是每個人自己的差值（後測減前測），不是兩群人。所以在檢查近似常態時，也應該檢查那一欄差值，而不是把前後兩欄分開檢查完就結束。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-008",
+      "officialQuestionNumber": 8,
+      "prose": {
+        "trap": {
+          "oldSha256": "65aedf613799a0bcd1b9b9340468508649af941ed87f038440e1943f6c04273d",
+          "old": "分母是平均數的標準誤 σ/√n，不是母體標準差 σ，也不是 σ√n。比較臨界值時還要看方向：右尾才用 Z 是否大於正的 1.645。",
+          "new": "分母要用的是「平均數的標準誤」σ/√n，不是母體標準差 σ，也不是 σ√n——這三個很容易寫錯，記住樣本越多、平均越穩，所以要除以根號 n。另外比較臨界值時還要看方向：右尾檢定才是看 Z 有沒有大於正的 1.645，雙尾又是另一組數字。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-009",
+      "officialQuestionNumber": 9,
+      "prose": {
+        "trap": {
+          "oldSha256": "035a03a7bd7a4f3d65428ef0e7d85242f8e9482794bc51f57cdff8d0dae82fa7",
+          "old": "降低 α 是降低型一錯誤，不是同時降低所有錯誤。在固定樣本下，α 與 β 通常有取捨；增加樣本可改善功效，但必須另外執行，並非 α 改變後自然發生。",
+          "new": "降低 α 降低的是型一錯誤（誤判有效），它不會同時把所有錯誤一起降低——事實上型二錯誤還會變多。在樣本數固定的情況下，α 和 β 通常是此消彼長的取捨。增加樣本確實可以改善檢定力，但那是另外一件必須主動去做的事，不會因為你調了 α 就自然發生。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-010",
+      "officialQuestionNumber": 10,
+      "prose": {
+        "trap": {
+          "oldSha256": "19d1ebab6202bed0260696ae009e1254570652d2a00f97753d27e5e77dc8fe4f",
+          "old": "資料洩漏不只發生在『直接把答案欄放進特徵』；只要測試集參與特徵選擇、縮放或超參數決策，就不再是乾淨測試。測試分數變高有時反而是洩漏警訊。",
+          "new": "資料洩漏不是只有「直接把答案欄放進特徵」那一種那麼明顯。只要測試集參與過特徵選擇、參與過縮放參數的計算、或參與過超參數的決策，那份測試集就已經不乾淨了。而且要警覺：測試分數突然變得特別高，有時候反而正是洩漏的警訊，不是好消息。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-011",
+      "officialQuestionNumber": 11,
+      "prose": {
+        "trap": {
+          "oldSha256": "84380c9d1f3497c43eaaaef938058d1ad1e1115903bbeeda2a01b0e9e0ccae1b",
+          "old": "先判斷類別是否有順序，再看模型能力。任何利用續約結果的 target encoding 都必須在訓練資料內、交叉驗證每一折內估計，不能在切分前計算。",
+          "new": "先判斷這個類別有沒有順序，再看模型有沒有能力處理。另外一個關鍵紀律：任何會用到「續約結果」的 target encoding，都必須在訓練資料內、而且在交叉驗證的每一折內各自估計，絕對不能在切分之前就先算好——先算就是把答案摻進特徵裡了。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-012",
+      "officialQuestionNumber": 12,
+      "prose": {
+        "trap": {
+          "oldSha256": "3d104f6436af17820394248a18eff801c28cb0c39211952ccb488e3e6eb46855",
+          "old": "要區分『少讀資料』與『分批讀完整資料』。chunksize 解決峰值記憶體，但跨批次排序、去重或全域標準化仍需設計累積統計或外部中間結果。",
+          "new": "要區分「少讀一點資料」和「分批把完整資料讀完」：chunksize 屬於後者，它解決的是峰值記憶體，資料一筆都沒少。但也因為是分批，跨批次的排序、去重或全域標準化就不能直接做——那些必須另外設計累積統計量，或先寫出外部的中間結果再彙整。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-013",
+      "officialQuestionNumber": 13,
+      "prose": {
+        "trap": {
+          "oldSha256": "7a2ecebbca9a9569a77811dbc52c79f44171014bc36c9a2249a30267d33110b1",
+          "old": "不要因單一產品『也能做』某功能就忽略主要工作負載。選 B 仍需承認其代價：跨庫同步、最終一致性、備援與監控都必須明確設計。",
+          "new": "不要因為某個產品「也能做」某項功能，就忽略了它主要的工作負載是什麼——能做不代表適合。另外選 B 也要誠實承認它的代價：跨資料庫的同步、最終一致性、備援和監控，這些都必須明確設計出來，不會自己長好。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-014",
+      "officialQuestionNumber": 14,
+      "prose": {
+        "trap": {
+          "oldSha256": "6f9847826327bf0c220a48997f626b0ecefe40f9d0bde38cb87791b30bea57ca",
+          "old": "分片與複寫常一起部署但目的不同：分片分散『不同資料』以擴展；複寫保留『相同資料』副本以提高可用性與讀取能力。",
+          "new": "分片和複寫常常一起部署，所以容易混在一起，但目的完全不同：分片是把「不同的資料」分散到多台機器上，為的是擴展容量；複寫是把「相同的資料」多留幾份副本，為的是提高可用性和讀取能力。一個是切開，一個是複製。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-015",
+      "officialQuestionNumber": 15,
+      "prose": {
+        "trap": {
+          "oldSha256": "3261a2d676689caf5ccfb5330ff02d05006cc2784d81e01cd41da51a2556f940",
+          "old": "訓練管線更快不代表模型泛化更好。快取本身不是錯，關鍵是快取後是否仍有隨機增強，以及反覆訓練是否只讓模型更熟悉同一組固定表示。",
+          "new": "訓練管線跑得更快，不代表模型泛化得更好——這是兩件不相干的事。快取本身不是錯，關鍵在兩個問題：快取之後是不是還有隨機增強？以及反覆訓練是不是只讓模型對同一組固定的表示越來越熟？如果每一輪看到的都一模一樣，那增強就形同虛設了。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-016",
+      "officialQuestionNumber": 16,
+      "prose": {
+        "trap": {
+          "oldSha256": "6da6e972c32c54d49ffc5e170c0f34bd1b3a996271ffe10a8f5ff0b39995a7ba",
+          "old": "特徵分解通常針對方陣，SVD 則可直接處理長方形矩陣。另注意 PCA 要先依定義中心化資料；不能把未中心化的任意 SVD 結果一律稱為 PCA。",
+          "new": "特徵分解通常只能針對方陣（列數等於欄數），SVD 則可以直接處理長方形矩陣，適用範圍更廣。另外要注意 PCA 依定義要先把資料中心化（減掉平均）；不能把任何一個未中心化的 SVD 結果，都一律稱為 PCA——少了那一步，意義就不同了。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-017",
+      "officialQuestionNumber": 17,
+      "prose": {
+        "trap": {
+          "oldSha256": "570f2b60e051a365c06928333dde1f0ed11ef02a4727e14dea4eb3309c844ce2",
+          "old": "這是組合題，不能只看其中一項合理措施。尤其要抓出兩個硬傷：隨機切分重複病患會洩漏；高度不平衡時只看 accuracy 或 ROC-AUC 可能過度樂觀。",
+          "new": "這是組合題，不能只看其中一項措施合不合理，要整組一起判。尤其要抓出兩個硬傷：一是隨機切分時，同一位病患的多筆資料會分落兩邊，造成洩漏；二是資料高度不平衡時，只看 accuracy 或 ROC-AUC 可能過度樂觀，看起來很漂亮但實際抓不到少數類。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-018",
+      "officialQuestionNumber": 18,
+      "prose": {
+        "trap": {
+          "oldSha256": "ece63b69b6a52911ab5b51fc5897521ec7cf24c580929300fa6546877d4525ac",
+          "old": "三個公式要分清：support 看全體共現，confidence 看 A 發生後 B 的比例，lift 再除以 B 的基準率。Lift 大於 1 不代表存在因果關係。",
+          "new": "三個公式要分清楚：support 看的是「A 和 B 一起出現」佔全體的比例，confidence 看的是「A 發生之後 B 也發生」的比例，lift 則是再把 confidence 除以 B 本身的基準率——校正掉 B 本來就很常見的影響。另外 Lift 大於 1 只代表有關聯，不代表存在因果關係。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-019",
+      "officialQuestionNumber": 19,
+      "prose": {
+        "trap": {
+          "oldSha256": "994f268cb5c354e831bdeabde011bbd174a5471739459600d950f6aaaf3d1e29",
+          "old": "題目寫最低支援度為 3，實際是支援『計數』門檻，不是 3%。逐筆交集計數後還要區分 frequent、maximal frequent 與單純項目數最多的候選。",
+          "new": "題目寫最低支援度為 3，這裡指的是支援「計數」的門檻（出現 3 次），不是 3%——單位看錯整題就錯了。另外逐筆算完交集計數之後，還要再區分三種東西：frequent（頻繁項目集）、maximal frequent（極大頻繁項目集），以及單純「項目數最多」的候選，三者定義不同。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-020",
+      "officialQuestionNumber": 20,
+      "prose": {
+        "trap": {
+          "oldSha256": "47e96a76d2209c68d66bd256072e699b7b701e790e4ef652c7a8b0c6e27f6c9c",
+          "old": "看到極端基準率先計算『全猜多數類』的 accuracy，再檢查少數類 recall。高 accuracy 不保證模型有偵測能力，也不能只換成 ROC-AUC 就忽略業務門檻。",
+          "new": "看到極端的基準率，第一件事是先算「全部都猜多數類」能拿到多少 accuracy——有了這個基準，才知道模型的分數到底有沒有意義。接著檢查少數類的 recall。高 accuracy 不保證模型有偵測能力；另外也不能只換成 ROC-AUC 就當作解決了，還是要回到實際的業務門檻去看。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-021",
+      "officialQuestionNumber": 21,
+      "prose": {
+        "trap": {
+          "oldSha256": "86fd1fd9b9b4a3d5f8108fe61a44bc74fd750626fb20aa9532b9dc8cf7e2806c",
+          "old": "能呼叫 Python 函式不代表適合 Spark 規模。看到 collect() 先檢查結果是否真的很小；標準差是可聚合統計，不必排序，也不應匯出後再單機計算。",
+          "new": "能呼叫 Python 函式，不代表它適合在 Spark 的規模下執行——單機跑得動不等於叢集上划算。看到 collect() 要先檢查：拉回來的結果真的很小嗎？另外標準差是可以聚合的統計量，不需要排序，更不應該把資料匯出之後再用單機計算。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-022",
+      "officialQuestionNumber": 22,
+      "prose": {
+        "trap": {
+          "oldSha256": "da84a42bc4e27bcbab7b2d065c806b081a71ce023764e00f6257c6d4a4c7ce60",
+          "old": "時間序列的第一個門檻是禁止未來洩漏；lag 與 rolling 也必須在每個驗證窗口內重新計算。MAPE 遇到零或近零分母會失真，不宜作唯一指標。",
+          "new": "時間序列的第一道門檻是「禁止未來洩漏」。這不只是切分要照時間，lag（落後項）和 rolling（滾動統計）這些特徵，也必須在每一個驗證窗口內重新計算，不能一次算完再切。另外 MAPE 遇到分母是零或接近零時會嚴重失真，不適合當唯一指標。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-023",
+      "officialQuestionNumber": 23,
+      "prose": {
+        "trap": {
+          "oldSha256": "bad8e5a384e67afac126483ee61c0b72b0d0e62443641a0c2bfd1fc3013834d5",
+          "old": "ROC 不要求永遠凹向左上，有限樣本的實際曲線可呈階梯甚至局部低於對角線；真正不可能的是依 FPR 由小到大時 TPR 反向下降。",
+          "new": "ROC 曲線並不要求永遠凹向左上角——在有限樣本下，實際畫出來的曲線可能呈階梯狀，甚至局部低於對角線，那都還算正常。真正不可能發生的是：當 FPR 由小到大排列時，TPR 卻反向下降——那違反了曲線的建構方式。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-024",
+      "officialQuestionNumber": 24,
+      "prose": {
+        "trap": {
+          "oldSha256": "29acb602a34fe681257636582b6302648357dde0fe9fed0125136ae39c801618",
+          "old": "本題問『不正確』。Rank-based 不等於完全不受離群值影響：極端點仍可能占據排名端點；另有大量相同的 1–5 分時，必須使用能處理 ties 的公式。",
+          "new": "這題問的是「不正確」。另外要澄清一個常見誤解：Rank-based（基於排名）的方法不等於完全不受離群值影響——極端的點仍然會占據排名的最前或最後端，還是有影響力，只是不會像原始數值那樣被放大。另外當資料有大量相同的 1 到 5 分時，必須使用能處理 ties（同分）的公式。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-025",
+      "officialQuestionNumber": 25,
+      "prose": {
+        "trap": {
+          "oldSha256": "1ec1412302a38329f600d9ea406ba97895c658d6472eaedf70160ec553727e47",
+          "old": "訓練方法與評估方法是兩件事：class weight 改 loss，Precision／Recall／PR-AUC 用來評估與選 threshold。C 最適合改善訓練，但不能因此繼續只報 Accuracy。",
+          "new": "訓練方法和評估方法是兩件事：class weight 動的是 loss（訓練時罰得多重），而 Precision／Recall／PR-AUC 是拿來評估、以及選 threshold 用的。C 最適合改善訓練，但不能因為改了訓練方法，報告時就繼續只報 Accuracy——那還是看不出真相。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-026",
+      "officialQuestionNumber": 26,
+      "prose": {
+        "trap": {
+          "oldSha256": "ab03e059724051007e21ef0baf95cf2a812d6af05fb395e203757e6fe7c553c6",
+          "old": "『切區間』是 discretization，『把類別變成 0/1 欄』才是 one-hot。另要注意夜晚 18–6 跨日，實作邊界不能用單純 18≤hour<6。",
+          "new": "「把連續值切成區間」是 discretization（離散化），「把類別攤成 0/1 的欄位」才是 one-hot，兩者是前後兩個不同的步驟。另外實作上要注意一個坑：夜晚 18 點到隔天 6 點是跨日的，邊界條件不能單純寫成 18≤hour<6——那個條件永遠不會成立。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-027",
+      "officialQuestionNumber": 27,
+      "prose": {
+        "trap": {
+          "oldSha256": "76ed4b8bd985a20bcc7e05865cdf0ed71bd9ef03ec3a098f01cf220c1ebd9133",
+          "old": "Data Density 不是『資訊越擠越好』；有效資料必須可比較。也不要把 data-ink ratio 誤讀成刪除所有非數據線條，必要的軸與標籤本身服務於資料理解。",
+          "new": "Data Density 不是「資訊擠得越滿越好」——有效的資料必須是讀者比較得出來的，擠到看不清就失去意義了。另外也不要把 data-ink ratio 誤讀成「刪掉所有非數據的線條」：必要的座標軸和標籤本身就是在服務資料理解，它們不是裝飾。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-028",
+      "officialQuestionNumber": 28,
+      "prose": {
+        "trap": {
+          "oldSha256": "06a7c59a372e4d85993e13ce2c602e31d9166c475ea0fa09c9a5d3212bbb6c79",
+          "old": "百分點與百分比增幅不同：4.0%−3.2%=0.8 個百分點，相對增幅是 25%。截軸若有合理分析目的，必須明確顯示起點與斷軸，長條圖尤其應慎用。",
+          "new": "百分點和百分比增幅是兩種東西：4.0% 減 3.2% 等於 0.8 個百分點，但換算成相對增幅是 25%——同一組數字，兩種講法差很多。另外截軸如果有合理的分析目的，必須明確顯示起點並標出斷軸符號；長條圖因為是靠長度表達數值，尤其應該慎用。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-029",
+      "officialQuestionNumber": 29,
+      "prose": {
+        "trap": {
+          "oldSha256": "bd8f989976bb4021a27d09882947ce78e197068fe530809233b4c53e8f152ba6",
+          "old": "題目問『隨時間趨勢』時優先折線，但監控值要明確標示 aggregation window；P99 不是第 99% 的請求數量，而是 99% 請求延遲不超過的分位值。",
+          "new": "題目問「隨時間的趨勢」時優先選折線圖，但監控值一定要明確標示 aggregation window（統計窗口，每幾分鐘算一次）。另外要澄清一個常見誤讀：P99 不是「第 99% 的請求數量」，而是「99% 的請求延遲都不超過的那個分位值」——它是時間，不是數量。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-030",
+      "officialQuestionNumber": 30,
+      "prose": {
+        "trap": {
+          "oldSha256": "87858e2a07f7e90a1153e7d9d97848af280cf906f6c59456b711d32da3282e5b",
+          "old": "『梯度較穩』只表示估計方差小，不等於泛化一定好；也不要把 stochastic noise 誤稱為 gradient explosion。Large batch 可透過學習率、warmup 與正則化改善，並非必然失敗。",
+          "new": "「梯度比較穩」只表示估計的方差比較小，不等於泛化一定會更好——這兩者沒有必然關係。另外不要把 stochastic noise（隨機噪音）誤稱為 gradient explosion（梯度爆炸），那是完全不同的現象。還有 Large batch 的問題可以透過調學習率、warmup 和正則化來改善，並不是必然失敗。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-031",
+      "officialQuestionNumber": 31,
+      "prose": {
+        "trap": {
+          "oldSha256": "5122579959ef5d9ffe01ccad4931ddf4116b02aef5c08f904719182e8ad0fd1f",
+          "old": "不要看到『統一管理』就把所有 MLOps 問題都歸入同一答案；先找題幹的重複物件。本題重複的是特徵工程，所以主要收益是重用與一致性。",
+          "new": "不要一看到「統一管理」四個字，就把所有 MLOps 的問題都歸到同一個答案——先回頭找題幹裡「重複的那個物件」是什麼。這一題重複的是特徵工程（兩隊各做一次同樣的特徵），所以主要收益就是重用和口徑一致，不是別的。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-032",
+      "officialQuestionNumber": 32,
+      "prose": {
+        "trap": {
+          "oldSha256": "f882c6bbdc3292ed2a243ab0ef26eb93ebe8385b8e31eaa47813bfa0d58ba75f",
+          "old": "任何會從多筆樣本學習參數或鄰近關係的步驟，都要在切分後只對訓練集 fit。指標選擇與資料切分是兩道不同檢查，不能用 PR-AUC 掩蓋洩漏。",
+          "new": "有一條通用紀律：任何會「從多筆樣本學習參數或鄰近關係」的步驟，都必須在切分之後，只對訓練集 fit。另外指標選擇和資料切分是兩道獨立的檢查，不能混為一談——不能因為改用了 PR-AUC 這個比較好的指標，就當作洩漏的問題被解決了。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-033",
+      "officialQuestionNumber": 33,
+      "prose": {
+        "trap": {
+          "oldSha256": "afa4accb0b95347e6508e2f811bc1822a70a117b73ad5c35072824f3d6dedd3d",
+          "old": "先分辨監督式分類、非監督式分群與降維。題目說資料已完整標註，就應選直接學習類別的模型；還要比較 8 類下 One-vs-One 的模型數量。",
+          "new": "先分辨三種東西：監督式分類、非監督式分群、以及降維。題目既然說資料已經完整標註，那就應該選「直接學習類別」的模型，把標籤用上。另外選型時還要比較成本：8 個類別在 One-vs-One 的作法下要訓練多少個模型（答案是 28 個），這也是判斷依據。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-034",
+      "officialQuestionNumber": 34,
+      "prose": {
+        "trap": {
+          "oldSha256": "be536d1d70c171a2efdccef7e04622a000ad0eb5261d424755e06495e20dc2fc",
+          "old": "『輸出在 0～1』與『機率已校準』不是同一件事。羅吉斯迴歸提供機率形式，但仍要在部署代表性資料上用校準曲線或 Brier score 檢查可靠度。",
+          "new": "「輸出落在 0 到 1 之間」和「這個機率已經校準」不是同一件事——前者只是數值範圍，後者才是「說 70% 的那群人，實際真的約七成發生」。羅吉斯迴歸提供的是機率的形式，但仍然要在具代表性的部署資料上，用校準曲線或 Brier score 檢查它可不可靠。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-035",
+      "officialQuestionNumber": 35,
+      "prose": {
+        "trap": {
+          "oldSha256": "f2f83d54c54a282de862347a8c53c1bd84b7d05cad028facbe3a2f465a31754d",
+          "old": "不要把位置編碼與 causal mask 混為一談：位置編碼回答『token 在哪裡』，遮罩回答『這個位置可以看哪些位置』，兩者功能互補。",
+          "new": "不要把位置編碼和 causal mask 混為一談，它們回答的是兩個不同的問題：位置編碼回答「這個 token 在哪裡」（第幾個字），遮罩回答「這個位置可以看到哪些位置」（能不能偷看後面）。兩者功能互補，缺一不可，但不能互相取代。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-036",
+      "officialQuestionNumber": 36,
+      "prose": {
+        "trap": {
+          "oldSha256": "6cf77b85c95e64626c8043e8b70aed384a3fc719cd408b1b148c82e4ea54a120",
+          "old": "自然語言回答流暢不等於數值正確。看到『數百億筆、精確聚合、資料庫權限與審計』，應讓資料庫執行 SQL，而非把原始資料塞入 LLM 上下文。",
+          "new": "自然語言回答得很流暢，不等於裡面的數值是正確的——語言模型很會把話講圓。看到「數百億筆、要精確聚合、還要有資料庫權限與審計」這一組條件，就應該讓資料庫去執行 SQL，而不是把原始資料硬塞進 LLM 的上下文裡。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-037",
+      "officialQuestionNumber": 37,
+      "prose": {
+        "trap": {
+          "oldSha256": "ef7365e617747212cc14d12337cf7063fcbc57dfeb2eb5be4c909379e022537b",
+          "old": "先鎖定攻擊者想知道什麼：『有沒有參與訓練』是成員推斷，『敏感欄位是什麼』是屬性推斷，『複製模型』則是模型竊取。",
+          "new": "先鎖定「攻擊者到底想知道什麼」，三種威脅就分得開了：想知道「這筆資料有沒有參與訓練」是成員推斷；想知道「某個沒公開的敏感欄位是什麼值」是屬性推斷；想把整個模型複製走的則是模型竊取。目標不同，防禦手段也不同。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-038",
+      "officialQuestionNumber": 38,
+      "prose": {
+        "trap": {
+          "oldSha256": "d7559c317c89f341520ede89d9d3defb563ee400d935c2f2073b77c320bb3bba",
+          "old": "要區分『DP 保護的查詢答案／模型』與『DP 合成資料集』：它們都可能符合差分隱私，但發布物不同。看到『合成資料』必須真的產生新紀錄。",
+          "new": "要區分兩種東西：「受 DP 保護的查詢答案或模型」和「DP 合成資料集」。兩者都可能符合差分隱私的定義，但發布出去的東西不一樣——一個發布的是答案或模型，一個發布的是一整份新資料。看到「合成資料」，就必須真的有產生出新的紀錄，不能只是把原資料加點雜訊。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-039",
+      "officialQuestionNumber": 39,
+      "prose": {
+        "trap": {
+          "oldSha256": "e3185b81773e6b0c284a2dbb75e5cdf17374e3894772d90023a1ce0b0c23107d",
+          "old": "關鍵不是字典是否獨立，而是預設 list 是否共用。可變預設參數會跨呼叫保留狀態；安全寫法是預設 None，函式內再建立 tags=[]。",
+          "new": "關鍵不在於「字典是不是各自獨立」，而在於預設的那個 list 是不是被共用了。Python 的可變預設參數只會在函式定義時建立一次，之後每次呼叫都用同一個，所以會跨呼叫保留狀態——上一次加進去的東西還在裡面。安全的寫法是把預設設成 None，進到函式內部再建立 tags=[]。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-040",
+      "officialQuestionNumber": 40,
+      "prose": {
+        "trap": {
+          "oldSha256": "25eff9447bd63d918eef61e064fd482d7953125893f58f0b4fb96b4bc158406f",
+          "old": "KNN 與 K-means 都有 K 且都可能計算距離，但 KNN 使用有標籤鄰居投票做監督式分類；K-means 使用 centroid 做非監督式分群。",
+          "new": "KNN 和 K-means 都有一個 K、也都會算距離，所以最容易搞混。差別在於：KNN 是拿「有標籤的鄰居」來投票，屬於監督式分類；K-means 是靠 centroid（群心）反覆更新，屬於非監督式分群。一個有答案可學，一個沒有。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-041",
+      "officialQuestionNumber": 41,
+      "prose": {
+        "trap": {
+          "oldSha256": "1b68dc93ae2451d38a62585f6940ce394404f97d4d416072efe59f7e2d0c7261",
+          "old": "50% 就是中位數。看到 mean 明顯大於 50% 且 max 極大，要先想到右偏與離群值；但中位數補值只是本題四選一的較佳方案，不代表完全保留原分布。",
+          "new": "先記住一件事：describe 輸出裡的 50% 就是中位數。看到 mean 明顯大於 50%、而且 max 極大，就要先想到這是右偏加上有離群值。另外要誠實看待：用中位數補值只是這四個選項裡相對較好的方案，它並不代表能完全保留原本的分布。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-042",
+      "officialQuestionNumber": 42,
+      "prose": {
+        "trap": {
+          "oldSha256": "0d3e5aeddeb90edef602bdd48dca968d5c0ddc1eacd7c03c4f7072e476718a92",
+          "old": "樹模型降低線性誤解，不等於把錯誤編碼變正確；代碼次序仍會限制可用切分。若沒有『不得修改編碼』限制，無序區域通常應 one-hot 編碼。",
+          "new": "樹模型確實能降低「把類別編號當成數值大小」的線性誤解，但那不等於把錯誤的編碼變成正確的——代碼的次序仍然會限制它可以怎麼切分。如果題目沒有「不得修改編碼」這個限制，無序的區域類別通常還是應該用 one-hot 編碼比較妥當。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-043",
+      "officialQuestionNumber": 43,
+      "prose": {
+        "trap": {
+          "oldSha256": "07d427ac4ed9af83810393cfcb12b4c2382e4ac8c4b0a197f41e364aab9adb8c",
+          "old": "題目問『不是』。另不要被附圖四捨五入後的 1.00 欺騙：若少數類測試樣本很少，完美分數的不確定性很大，也必須排查重複資料與洩漏。",
+          "new": "題目問的是「不是」，方向先確認。另外不要被附圖裡四捨五入之後顯示的 1.00 騙了：如果少數類的測試樣本本來就只有幾筆，那個完美分數的不確定性其實非常大。看到完美分數，反而要回頭排查有沒有重複資料和資料洩漏。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-044",
+      "officialQuestionNumber": 44,
+      "prose": {
+        "trap": {
+          "oldSha256": "95ddfea92699904ca5edc05bb7212be57f132da9aa96cabdf80937b92465b7c3",
+          "old": "先把文字成本翻成混淆矩陣：不能漏掉正類就是壓低 FN、提高 Recall；不能誤傷正常類才是壓低 FP、提高 Specificity／Precision。",
+          "new": "先把題目的文字成本翻譯成混淆矩陣的語言：「不能漏掉正類」就是要壓低 FN、提高 Recall；「不能誤傷正常類」才是要壓低 FP、提高 Specificity 或 Precision。翻譯完再看選項，就不會被文字繞暈。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-045",
+      "officialQuestionNumber": 45,
+      "prose": {
+        "trap": {
+          "oldSha256": "96bcc0a3afb979ee2792439e261098d4053e33f637451a4550d36434b9b090c2",
+          "old": "先辨認分析單位：資料列是訂單，問題要客戶。看到『總貢獻』必須 groupby + sum；max 是最大單筆，value_counts 是筆數，兩者都不是總額。",
+          "new": "先辨認分析單位：資料的每一列是一筆訂單，但問題問的是「客戶」——單位不同，就一定要先彙總。看到「總貢獻」就必須用 groupby 加 sum；至於 max 取的是最大的單筆、value_counts 算的是筆數，這兩個都不是總額。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-046",
+      "officialQuestionNumber": 46,
+      "prose": {
+        "trap": {
+          "oldSha256": "08625339a04763194719325252fae3f6529392c08f07664c847d2d08784a65ea",
+          "old": "欄位值篩選要把比較寫在 Series 上：`df['欄位'] == 值`。`.loc['值']` 查的是索引標籤，filter(items=...) 查的是軸標籤，都不是內容條件。",
+          "new": "依欄位值篩選，要把比較寫在 Series 上，也就是 `df['欄位'] == 值` 這種形式。另外兩個容易誤用的：`.loc['值']` 查的是索引標籤，filter(items=...) 查的是軸標籤——它們找的都是「名字」，不是內容條件。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-047",
+      "officialQuestionNumber": 47,
+      "prose": {
+        "trap": {
+          "oldSha256": "282d5fbceb17aea0bd4f54c18fc66201b4b942f54d23dde456afcb6cf90d36c8",
+          "old": "『只保留兩邊都有』就是 inner。還要分清 merge(on=共同欄) 與 join(on=左欄、右索引)；名稱都叫合併，但預設對齊位置不同。",
+          "new": "「只保留兩邊都有的」就是 inner join，這個對應要記牢。另外還要分清 merge 和 join 的預設對齊位置：merge(on=共同欄位) 是拿兩邊的欄位對；join(on=左欄) 則是拿左邊的欄位對右邊的索引。名稱都叫合併，但預設看的地方不同。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-048",
+      "officialQuestionNumber": 48,
+      "prose": {
+        "trap": {
+          "oldSha256": "52549fb1d372e28562be8056c87bde5e239da31f0e6e39d670f9c14aa40ae618",
+          "old": "fit 是學參數，transform 才產生轉換資料。考試單句選 C；真實評估流程則不能先對完整 X fit_transform，否則測試集資訊會滲入平均與標準差。",
+          "new": "fit 是「學出參數」，transform 才是「產生轉換後的資料」，兩個動作分開。考試單看這一句選 C 沒問題；但真實的評估流程絕對不能先對完整的 X 做 fit_transform——那樣測試集的資訊會滲進平均數和標準差裡，等於偷看。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-049",
+      "officialQuestionNumber": 49,
+      "prose": {
+        "trap": {
+          "oldSha256": "355daee2e592de131e0d617d57435b8dfd7f6867ef6ca601df9b5f74e1574a41",
+          "old": "先逐字追蹤切分器的輸入與四個輸出，不要只看 solver。另圖中是 train_size=0.2，代表訓練集只有 20%；這雖語法有效，實務上通常會再確認是否原意其實是 test_size=0.2。",
+          "new": "先逐字追蹤切分器的輸入和它回傳的四個輸出分別是什麼，不要只盯著 solver 看。另外圖中寫的是 train_size=0.2，意思是訓練集只佔 20%（測試集反而佔八成）——這在語法上完全有效，但實務上通常會回頭確認一下：原意是不是其實想寫 test_size=0.2？"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-big-data-050",
+      "officialQuestionNumber": 50,
+      "prose": {
+        "trap": {
+          "oldSha256": "32e3215a004dfa0d30732d85fc31fbe72a6f1bde7530031d0b4fbde8b083bb11",
+          "old": "混淆矩陣記成 row=true、column=predicted；weighted F1 的『weighted』是按 support，不是把 Precision 和 Recall 任意加權。高測試分數也不等同過擬合。",
+          "new": "混淆矩陣的方向記成「row 是 true、column 是 predicted」（列是真實、欄是預測），這樣就不會把行列讀反。另外 weighted F1 的「weighted」是按 support（各類的樣本數）加權，不是把 Precision 和 Recall 兩者任意加權——加權的對象是類別，不是指標。還有：測試分數很高也不等同於過擬合。"
+        }
+      }
+    }
+  ]
+}
