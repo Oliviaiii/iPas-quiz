@@ -9,8 +9,8 @@
   "reviewedAt": "2026-08-30",
   "reviewer": "Claude Code independent AI reviewer",
   "counts": {
-    "pass": 8,
-    "corrected": 2,
+    "pass": 7,
+    "corrected": 3,
     "humanDecision": 0,
     "blocked": 0
   },
@@ -71,8 +71,17 @@
       "officialQuestionNumber": 43,
       "officialAnswer": "B",
       "answerIndependentlyConfirmed": true,
-      "result": "pass",
-      "findings": [],
+      "result": "corrected",
+      "findings": [
+        {
+          "type": "explanation-inconsistency",
+          "location": "explanation.optionAnalysis.A",
+          "summary": "選項 (A) 的解析以「正確。」開頭，但官方答案是 (B)，且該段自己接著說明「原因 B 與原因 C 都不成立」，開頭標記與內容互相矛盾。",
+          "resolution": "白話化改寫時把開頭改為「正確答案不是這一組。」，保留原本的技術判斷不變，矛盾即消失。",
+          "detectedAt": "2026-09-07",
+          "resolvedAt": "2026-09-08"
+        }
+      ],
       "sourcesChecked": [
         {
           "title": "114 年第二次中級 AI 應用規劃師－大數據處理分析與應用公告試題",

@@ -1386,12 +1386,19 @@ python3 scripts/apply-plain-language.py content/plain-language/aiap-11{4-interme
 npm run prebuild && npm test && npm run lint && npm run build
 ```
 
-**2026-09-08 這一步被權限層擋下**（auto mode classifier 拒絕執行會寫入
-`app/data/questions.json` 的腳本），因此 `questions.json` 仍是 09-03 的內容，
-線上站台也還沒有中級的白話版。要完成，需要使用者放行該腳本的執行權限。
+**2026-09-08 已全部套用完成。** `check-plain-language.py` 回報
+`3600 applied, 0 pending`，`content/plain-language/` 從此只是稽核用的歷史紀錄，
+不需要再套用（再跑一次會被 sha256 防護擋下，那是防護生效，不是錯誤）。
 
-套用時記得同步處理：114-2 中級二 Q43 的批次報告回填（改判 corrected），
-理由見上面「套用前必須處理的三件事」第 1 點。
+套用後逐欄比對確認：`prompt`、`options`、`officialAnswer`、`passage`、`figures`、
+`explanationStatus`，以及 `explanation` 的 `trap`、`summary`、`references`、
+`editorialNote`、`author`、`authoredAt`、`reviewer`、`reviewedAt` 全數未動；
+600 題仍全為 `draft`，`reviewer` 仍為 0 題。變動的只有中級 300 題的
+`concept`、`answerReason`、`optionAnalysis`。
+
+114-2 中級二 Q43 的批次報告已回填：`scripts/fix-ai-review-114-2-big-data-043.py`
+把該題由 pass 改判 corrected 並補上 finding，全站統計因此變成
+pass 455、corrected 125、human-decision 20。
 
 ### 「低秩近似」已補回（第 2 點結案）
 
