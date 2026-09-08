@@ -334,7 +334,7 @@
         "concept": {
           "oldSha256": "a9636b78464c946c4f0849b1c2c5e9b90063a1635a0860b6bbf3c2516a1fdffd",
           "old": "官方題組先用 `np.random.normal(digits.data, 4)` 在 64 維手寫數字加入噪聲，再依序執行 `PCA()`、fit、transform、inverse_transform。PCA 降噪的假設是信號集中在前幾個高變異 principal components，雜訊較分散在後段；只有保留部分成分，inverse transform 才會以低秩近似重建。`PCA()` 預設 n_components=None，保留 min(n_samples,n_features) 全部成分，沒有資訊瓶頸，因而也沒有預期降噪。成分數應以解釋變異、交叉驗證與視覺品質選擇，太少會抹掉筆畫。",
-          "new": "官方題組先用 `np.random.normal(digits.data, 4)`，在每張 64 維（一張手寫數字用 64 個數字描述）的資料上加一層噪聲，再依序執行 `PCA()`、fit、transform、inverse_transform。\nPCA 能降噪，靠的是一個假設：真正的筆畫訊號集中在前面幾個變化最大的 principal components（主成分），雜訊則零零散散分布在後段那些成分裡。所以只有「刻意只留前面幾個」，inverse transform（還原回影像）時才會用少數幾個方向去近似重建，把後段的雜訊留在外面。\n問題就出在這裡：`PCA()` 不帶參數時 n_components=None，代表 min(n_samples, n_features)（樣本數與欄位數取小的那個）個成分全部照留。資訊從頭到尾沒被擠過任何窄口，還原出來自然跟原圖一樣髒。\n那要留幾個？看解釋變異的比例、交叉驗證結果與肉眼看起來的品質決定，留太少會連筆畫都一起抹掉。"
+          "new": "官方題組先用 `np.random.normal(digits.data, 4)`，在每張 64 維（一張手寫數字用 64 個數字描述）的資料上加一層噪聲，再依序執行 `PCA()`、fit、transform、inverse_transform。\nPCA 能降噪，靠的是一個假設：真正的筆畫訊號集中在前面幾個變化最大的 principal components（主成分），雜訊則零零散散分布在後段那些成分裡。所以只有「刻意只留前面幾個」，inverse transform（還原回影像）時才會用少數幾個方向去做低秩近似重建（低秩＝只留下少數幾個獨立方向），把後段的雜訊留在外面。\n問題就出在這裡：`PCA()` 不帶參數時 n_components=None，代表 min(n_samples, n_features)（樣本數與欄位數取小的那個）個成分全部照留。資訊從頭到尾沒被擠過任何窄口，還原出來自然跟原圖一樣髒。\n那要留幾個？看解釋變異的比例、交叉驗證結果與肉眼看起來的品質決定，留太少會連筆畫都一起抹掉。"
         },
         "answerReason": {
           "oldSha256": "8bc60994496a3ec0a7655657a8c490081ac3ca489aec98edcce544bb281d3dc4",

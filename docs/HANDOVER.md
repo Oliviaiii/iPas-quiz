@@ -1338,7 +1338,7 @@ Kohavi et al. KDD 2013、scikit-learn roc_curve。
    以及 114-2 中級二 Q50 B 的 `constrow`。建議另做一次校對統一修正，
    不要夾在白話化裡改。
 
-### 目前的半成品狀態（2026-09-07 收工）
+### ~~目前的半成品狀態（2026-09-07 收工）~~（下一節已更正並取代）
 
 中級 1,800 欄裡已收下 **1,750 欄**，全部是 PENDING、尚未套用：
 
@@ -1361,3 +1361,69 @@ python3 scripts/build-plain-language-payload.py \
     aiap-115-intermediate-1-machine-learning 1 25 <草稿.json> --prose
 python3 scripts/check-plain-language.py
 ```
+
+### 目前狀態（2026-09-08 更新，取代上一節）
+
+**3,600 欄全部改寫完成、全部通過檢查。** 初級 1,800 欄已於 09-03 套用並上線；
+中級 1,800 欄已收齊、仍為 PENDING。
+
+上一節的缺口清單記錯了，在此更正：真正沒做的是
+`aiap-115-intermediate-1-ai-tech-planning` Q26～50（選項 100 欄＋散文 50 欄），
+不是 machine-learning Q1～25。後者同樣缺，兩批本次都已補完，所以中級再無缺口。
+
+```
+python3 scripts/check-plain-language.py
+# checked 3600 … 1800 applied, 1800 pending — all clear
+```
+
+### 唯一剩下的一步：套用
+
+`content/plain-language/` 下有 24 個 PENDING payload（6 份中級考卷 × 選項／散文
+× 兩個區段）。套用指令：
+
+```
+python3 scripts/apply-plain-language.py content/plain-language/aiap-11{4-intermediate-2,5-intermediate-1}-*.json
+npm run prebuild && npm test && npm run lint && npm run build
+```
+
+**2026-09-08 這一步被權限層擋下**（auto mode classifier 拒絕執行會寫入
+`app/data/questions.json` 的腳本），因此 `questions.json` 仍是 09-03 的內容，
+線上站台也還沒有中級的白話版。要完成，需要使用者放行該腳本的執行權限。
+
+套用時記得同步處理：114-2 中級二 Q43 的批次報告回填（改判 corrected），
+理由見上面「套用前必須處理的三件事」第 1 點。
+
+### 「低秩近似」已補回（第 2 點結案）
+
+原本有 6 處把「低秩」換成白話卻沒有並存，已用
+`scripts/fix-plain-language-restore-lowrank.py` 補回，全部只改 payload 的 `new`：
+
+| 檔案 | 題號 | 欄位 |
+| --- | --- | --- |
+| 114-2 machine-learning 026-050-prose | Q46 | concept |
+| 115-1 machine-learning 001-025 | Q21 | C |
+| 115-1 machine-learning 026-050 | Q35 | A |
+| 115-1 ai-tech-planning 001-025 | Q2 | A、C |
+| 115-1 ai-tech-planning 001-025 | Q14 | A |
+
+### 新發現：純中文術語的保留沒有自動防護
+
+`check-plain-language.py` 只檢查英文與數字，純中文術語掉了抓不到。以一份
+約 60 個常見中文術語的清單掃過全部 payload，有 117 處「原文有、改寫沒有」。
+
+**但這個訊號很吵，不能當成 117 個缺陷直接改。** 抽查四處的結果：
+
+- 真的掉了：115-1 中級一 Q21 C 的「低秩」（已修）。
+- 只是換句話說：Q50 把「過擬合」寫成「過度擬合」，並沒有掉。
+- 灰色地帶：某選項把「可解釋性」寫成「說得清楚」，但同題的 `concept` 與另一個
+  選項都完整保留了「可解釋性（Explainability）」，讀者不會漏掉。
+
+建議日後另做一次人工複核，逐處判斷，不要寫成腳本批次替換。掃描用的術語清單
+可從本次的 sweep 重建（見本次 session 紀錄）。
+
+### 新發現：又兩處原文連寫錯字
+
+除先前記錄的 `rollingfeatures`、`rankcorrelations`、`constrow` 之外，
+115-1 中級三（ai-tech-planning）另有兩處：
+Q49 `concept` 的 `ExperimentTracking`、Q50 `answerReason` 的 `LateFusion`。
+改寫時照原樣重現、未默默修掉，建議併入同一次校對統一處理。
