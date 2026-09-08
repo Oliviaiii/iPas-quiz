@@ -1,0 +1,561 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "aiap-115-intermediate-1-ai-tech-planning",
+  "range": {
+    "start": 1,
+    "end": 50
+  },
+  "rewrittenAt": "2026-08-31",
+  "items": [
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-001",
+      "officialQuestionNumber": 1,
+      "prose": {
+        "trap": {
+          "oldSha256": "bc5ee0b25852158135f2cef7f3f0212b9258cee94487250be6c6bb80ab8badce",
+          "old": "不要把前處理流程中的相鄰步驟混為一談：先斷詞取得 token，再做 POS 標註取得語法類別；情感分析與翻譯則各有不同的輸出目標。",
+          "new": "不要把前處理流程裡相鄰的兩個步驟混為一談：先斷詞，得到一個個 token；再做 POS 標註，得到每個詞的語法類別（名詞、動詞）。一個是切開，一個是貼標籤，有先後順序。至於情感分析和翻譯，那是更後面的任務，各有各的輸出目標。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-002",
+      "officialQuestionNumber": 2,
+      "prose": {
+        "trap": {
+          "oldSha256": "07611ba0c59008e9806cce0a56b8e5d2b3b8b186afb1162b27194f042c32e85e",
+          "old": "看到『減少資源』不能立刻選任何壓縮技術：LoRA 減少的是微調時的可訓練參數；蒸餾、剪枝通常改變部署模型，稀疏注意力則處理長序列計算。",
+          "new": "看到「減少資源」四個字，不能立刻抓一個壓縮技術就填——要先問減的是哪一段的資源。LoRA 減少的是「微調時的可訓練參數」，模型本身沒變小；蒸餾和剪枝通常改變的是「部署用的模型」；稀疏注意力處理的則是「長序列的計算量」。三個減的地方完全不同。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-003",
+      "officialQuestionNumber": 3,
+      "prose": {
+        "trap": {
+          "oldSha256": "42f8ec78377695e39bfcdd459130a0499812f484d1e6a6db03192d59eaa8b0be",
+          "old": "記住『CBOW 快、Skip-gram 顧罕見詞』是通常的經驗取捨，不是所有資料與超參數下的絕對保證；本題問的是在十億 token 與大量長尾詞下最準確的概括。",
+          "new": "記住「CBOW 比較快、Skip-gram 比較顧得到罕見詞」是一般的經驗取捨，不是在所有資料和超參數設定下都成立的絕對保證。這題問的是：在十億級 token、而且有大量長尾詞的情況下，哪一句概括最準確——條件已經給定，就照條件選。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-004",
+      "officialQuestionNumber": 4,
+      "prose": {
+        "trap": {
+          "oldSha256": "4e6a9a6954e693f4bb9f96da01dc1401c3740eb8d3bc9954f73a6ae62bd68202",
+          "old": "MLM 的 mask 是訓練訊號，不是模型壓縮。另需區分雙向 encoder 的填空式預測與自回歸 decoder 的下一詞預測，兩者能使用的上下文方向不同。",
+          "new": "MLM 裡的 mask 是一種訓練訊號（把字遮起來讓模型猜），不是模型壓縮的手段，名字像而已。另外要區分兩種預測方式：雙向 encoder 做的是填空式預測（左右都能看），自回歸 decoder 做的是下一詞預測（只能看左邊）。可用的上下文方向不同，這是根本差異。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-005",
+      "officialQuestionNumber": 5,
+      "prose": {
+        "trap": {
+          "oldSha256": "0394e7ec9b7794480b2cfbf53b33991da5850751cc9303ab44186bc500d24c6e",
+          "old": "低維不代表只做壓縮：Word2Vec 還藉由上下文預測學得可比較的稠密表示。但它仍是局部視窗下的靜態詞向量，不要延伸成能理解所有長距語境。",
+          "new": "維度低不代表它只是在做壓縮：Word2Vec 是透過「用上下文預測」這件事，學到一組可以互相比較的稠密表示，那是有語意的。但也不要延伸過頭——它終究是在局部視窗下訓練出來的靜態詞向量，不會因為看了整篇文章而改變，理解不了長距離的語境。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-006",
+      "officialQuestionNumber": 6,
+      "prose": {
+        "trap": {
+          "oldSha256": "fe61462e6c0221fda0f917f8df6471cb3287c4e0f422d17c3928f49e2268e4d6",
+          "old": "判斷關鍵不是有沒有逐像素標記，而是同一類別的兩個物件是否需要分開。只需『哪些像素是行人』用語義分割；需要『每一名行人』則用實例分割。",
+          "new": "判斷的關鍵不是「有沒有逐像素標記」（兩種分割都有），而是「同一類別的兩個物件需不需要分開」。只要回答「哪些像素是行人」用語義分割；如果要數出「這是第一名、那是第二名行人」，就得用實例分割。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-007",
+      "officialQuestionNumber": 7,
+      "prose": {
+        "trap": {
+          "oldSha256": "f7e441a0de2582dc9831a621f08dfa2c2c55aac3dbb5cd4673fdbc2039b63689",
+          "old": "目標檢測能分個體但只有矩形框；語義分割有像素遮罩但不分同類個體。題幹同時要求這兩項能力時，才鎖定實例分割。",
+          "new": "把兩者的缺口記清楚：目標檢測能分出個體，但給的只有矩形框，框裡有多少背景不知道；語義分割有像素級的遮罩，但同一類的個體全部黏成一片。題幹如果同時要求這兩種能力，才鎖定實例分割——它把兩邊的優點都補上了。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-008",
+      "officialQuestionNumber": 8,
+      "prose": {
+        "trap": {
+          "oldSha256": "2af711029c68eb8fa9bdf23641c4bf4310be45d3d3dadc25716e46edd3cc418d",
+          "old": "先固定 ROC 軸向：X 是 FPR，Y 是 TPR。醫療上 TPR 常稱 sensitivity；specificity = 1−FPR，別把 precision 或 accuracy 填入橫軸。",
+          "new": "先把 ROC 的兩個軸釘死：X 軸是 FPR，Y 軸是 TPR，這個不能記反。另外醫療領域習慣把 TPR 稱為 sensitivity；而 specificity 等於 1 減 FPR。千萬不要把 precision 或 accuracy 填到橫軸上去——那是完全不同的指標。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-009",
+      "officialQuestionNumber": 9,
+      "prose": {
+        "trap": {
+          "oldSha256": "2d37503ba48ceb3bf5c5243c603717105760b4c8200074d77a6fbd3b716084c2",
+          "old": "區分『一個閾值的指標』與『跨閾值的曲線』。混淆矩陣足以算 precision、recall、accuracy 等操作點指標；ROC AUC 必須保留預測分數或多個閾值結果。",
+          "new": "區分「一個閾值下的指標」和「跨閾值的曲線」：混淆矩陣是在某一個固定閾值下產生的，所以它足夠算出 precision、recall、accuracy 這些操作點上的指標。但 ROC AUC 是把所有閾值掃一遍，必須保留原始的預測分數（或多個閾值的結果）才算得出來，光有一張矩陣不夠。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-010",
+      "officialQuestionNumber": 10,
+      "prose": {
+        "trap": {
+          "oldSha256": "54ac30fe51a269dfc4a46fa1e5b4c7f3deb226c1f1b8295b28151d37d1cb0091",
+          "old": "『同一模型端到端訓練』不等於『單階段』。判斷點是有沒有先產生候選區域，再對候選區域分類：Faster R-CNN 有，YOLO 沒有。",
+          "new": "「同一個模型端到端訓練」不等於「單階段」——這兩句話常被當成同義詞，其實不是。真正的判斷點是：有沒有先產生候選區域，再對候選區域做分類？Faster R-CNN 有這一步（兩階段），YOLO 沒有（一次搞定）。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-011",
+      "officialQuestionNumber": 11,
+      "prose": {
+        "trap": {
+          "oldSha256": "05cbe44b85fbf535ac8d080e502ebd30e32890463f85ee62785dcb4cd774c6b2",
+          "old": "看到『序列建模』不要立即選遞迴；題目問 Transformer 的 Self-Attention，辨識點是全序列位置直接互相評分。位置編碼處理順序，注意力處理內容間的關聯。",
+          "new": "看到「序列建模」不要立刻選遞迴架構。這題問的是 Transformer 的 Self-Attention，它的辨識點是「整個序列的所有位置直接互相評分」，不必一步一步傳。另外要分工清楚：位置編碼處理的是「順序」，注意力處理的是「內容之間的關聯」。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-012",
+      "officialQuestionNumber": 12,
+      "prose": {
+        "trap": {
+          "oldSha256": "aa0d8b2ce15dd61db62b561e9710caa138551c251d7371b930aa9b3cf1cedb09",
+          "old": "區分二元分類的單一 Sigmoid 與互斥多分類的 Softmax；另外，輸出可以解釋為機率，不代表在所有位置都有良好梯度，飽和區正是 Sigmoid 的限制。",
+          "new": "區分兩種輸出層：二元分類用單一個 Sigmoid，互斥的多分類用 Softmax。另外還有一個容易忽略的點：輸出可以被解讀為機率，不代表它在所有位置都有良好的梯度——Sigmoid 在兩端的飽和區梯度趨近於零，那正是它的限制。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-013",
+      "officialQuestionNumber": 13,
+      "prose": {
+        "trap": {
+          "oldSha256": "0571c763148ca0cb896c750925ae86486528e4f22ef80d26cd87a70ff6bb29f6",
+          "old": "不要把 prompt engineering 的人工文字提示與 Prompt Tuning 混為一談；本題明定 soft prompt，它是透過訓練得到的連續 embedding。判斷重點是主模型是否凍結。",
+          "new": "不要把 prompt engineering（人工寫出來的文字提示）和 Prompt Tuning 混為一談。這題明定的是 soft prompt，它不是人寫的文字，而是透過訓練得到的一段連續 embedding，人根本讀不懂。判斷的重點在於：主模型有沒有被凍結？有凍結才是這一類方法。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-014",
+      "officialQuestionNumber": 14,
+      "prose": {
+        "trap": {
+          "oldSha256": "cb5113b5e9d79fb69d60e2d410f51eb0735096eacd99b88e319146a98a838d65",
+          "old": "訓練穩定不等於抗遺忘：大 batch 和快速收斂只影響最佳化過程；真正對應本題的是限制基礎權重更新範圍。若資源允許，資料重放、正則化與持續學習也可另行評估。",
+          "new": "訓練穩定不等於抗遺忘，這是兩件事：大 batch 和快速收斂影響的是最佳化過程順不順利，跟「會不會忘掉舊本事」無關。真正對應這題的是「限制基礎權重的更新範圍」——不讓它被改得太多。如果資源允許，資料重放、正則化和持續學習的方法也可以另外評估。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-015",
+      "officialQuestionNumber": 15,
+      "prose": {
+        "trap": {
+          "oldSha256": "9fb9943f7febd968a6de266f29b358fdc252bd840e904748979696a5f99068e4",
+          "old": "重試不是無限重做：應設定次數、退避、逾時與冪等性。題目要的是容錯閉環，而不是追求輸出一致；相同模型的多個 Worker 仍可能一起犯同類錯誤。",
+          "new": "重試不是無限次重做：必須設定次數上限、退避時間、逾時，還要確保操作具備冪等性（重複做不會出錯）。另外題目要的是一個容錯的閉環，不是追求輸出一致——要注意，同一個模型的多個 Worker 仍然可能一起犯同一類錯誤，多開幾個不會變聰明。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-016",
+      "officialQuestionNumber": 16,
+      "prose": {
+        "trap": {
+          "oldSha256": "620f26a6c444f41e745b7e3a5f7a47839bf2bc39115facb47dea2ccd1b454539",
+          "old": "『有工具』不等於『會用工具』。需在提示與驗收規則中辨識時效性、來源品質及口徑；同時別把 ReAct 誤解成每輪都要呼叫全部工具，核心是依觀察迭代選擇下一個行動。",
+          "new": "「有工具」不等於「會用工具」——給了它搜尋能力，不代表它知道什麼時候該搜、搜回來的東西可不可信。必須在提示和驗收規則裡明確交代時效性、來源品質和口徑。另外別把 ReAct 誤解成「每一輪都要把所有工具呼叫一遍」，它的核心是依據觀察到的結果，迭代地決定下一個行動。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-017",
+      "officialQuestionNumber": 17,
+      "prose": {
+        "trap": {
+          "oldSha256": "44ac8aa2db4a98f9a59025e058e8540cb58e9b2c5add73bea15b737b47cbd53b",
+          "old": "判斷的是『資料表示＋模型歸納偏置』，不是只看模型熱門程度。Transformer 可跨模態使用，但必須搭配各模態的 tokenizer、patch 或數值時序編碼；BERT 這個具體模型不是萬用原始資料介面。",
+          "new": "判斷的依據是「資料表示＋模型的歸納偏置」，不是看哪個模型比較熱門。Transformer 確實可以跨模態使用，但必須搭配各模態各自的前處理——文字要 tokenizer、影像要切 patch、數值時序要編碼。另外 BERT 是一個具體的模型，它不是萬用的原始資料介面。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-018",
+      "officialQuestionNumber": 18,
+      "prose": {
+        "trap": {
+          "oldSha256": "96cc7520f94ce867455b847bd175308e08b0b3ba528e2b90c70bd42438f658d0",
+          "old": "融合是『把資訊合起來』，對齊則先讓不同模態的表示在語意上可比較。對比學習可作為對齊方法，但需要正負配對規則，不能把它誤稱為自動標註系統。",
+          "new": "融合是「把資訊合起來」，對齊則是更前面的一步：先讓不同模態的表示在語意上變得可以比較（同一個東西的圖和文字要落在相近的位置）。沒對齊就融合，等於把兩種語言硬拼在一起。另外對比學習可以作為對齊的方法，但它需要有正負配對的規則，不能把它誤稱為一個自動標註系統。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-019",
+      "officialQuestionNumber": 19,
+      "prose": {
+        "trap": {
+          "oldSha256": "8ac1f62e6b4b12d7352d416803aa3cea3d327be047cb296d73d615d3d1795fa6",
+          "old": "不要把『模型指標好』直接翻譯成『專案成功』，也不要只因單一線上指標下滑就立即回滾。先確認指標定義、基準、統計顯著性、因果對照與成本收益。",
+          "new": "兩個方向的誤判都要避免：不要把「模型指標好」直接翻譯成「專案成功」，也不要只因為某一個線上指標下滑就立刻回滾。先確認幾件事：指標是怎麼定義的、基準是什麼、差異有沒有統計顯著性、有沒有因果對照組，以及成本收益划不划算。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-020",
+      "officialQuestionNumber": 20,
+      "prose": {
+        "trap": {
+          "oldSha256": "073e9c42538658b7fe4611625caa785e83e9b2812ac1307626dd30ead23a872e",
+          "old": "『移除 (4)』是移出線上關鍵路徑，不代表企業不保存資料倉儲。也要區分即時特徵與即時訓練：先用串流更新特徵、批次更新模型，通常已能兼顧新鮮度與可控維運。",
+          "new": "「移除 (4)」的意思是把它移出線上的關鍵路徑，不代表這家企業從此不保存資料倉儲——移出路徑和刪掉是兩回事。另外也要區分「即時特徵」和「即時訓練」：先用串流更新特徵、模型仍用批次更新，通常就足以兼顧資料新鮮度和維運的可控性。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-021",
+      "officialQuestionNumber": 21,
+      "prose": {
+        "trap": {
+          "oldSha256": "33aca4ba365f2fffef3e1452f9b1d2e5501eb21f84a37dc96529ea9972eba125",
+          "old": "先比較成本落在哪一側：題目明說輸入為主，就不能只縮輸出。Prompt Caching 也不是把任何文字自動免費化；前綴內容、排列與模型支援條件會影響命中，仍須查看實際 usage。",
+          "new": "先看成本落在哪一側：題目既然明說是「輸入為主」，那就不能只想著縮短輸出——省錯地方等於沒省。另外 Prompt Caching 也不是把任何文字自動變免費：前綴的內容、排列順序、以及模型支不支援，都會影響命中率，最後仍然要看實際的 usage 數字才算數。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-022",
+      "officialQuestionNumber": 22,
+      "prose": {
+        "trap": {
+          "oldSha256": "d8fee62b3c5e643f6f4250eea650a261d6d4e3a784ee41199a76b255cbba58be",
+          "old": "不要把 MLOps 縮成『自動調參』或『模型上線』。題目列出的箭頭是一整條生命週期，還特別要求版本可追溯，故答案必須同時涵蓋自動化、監控、版本與持續更新。",
+          "new": "不要把 MLOps 縮成「自動調參」或「模型上線」這種單點的事——它的範圍大得多。題目列出的那一串箭頭是一整條生命週期，而且還特別要求版本可追溯。所以答案必須同時涵蓋四件事：自動化、監控、版本管理，以及持續更新。少一項就不完整。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-023",
+      "officialQuestionNumber": 23,
+      "prose": {
+        "trap": {
+          "oldSha256": "bf2b5f88d496bda8f2f334d89f48c6424e751e97c91ff34035b7066845fc4128",
+          "old": "『樣本少』不等於只能停案，也不等於移轉學習必然成功；應以分層驗證及新增資料評估。模型壓縮也不保證自動達到 100 毫秒，題目選的是最佳規劃，實作仍須在目標硬體量測。",
+          "new": "「樣本少」不等於只能停案，但也不等於移轉學習就一定會成功——兩個極端都要避免，應該用分層驗證加上新增資料來實際評估。另外模型壓縮也不保證自動達到 100 毫秒的目標；題目選的是最佳的「規劃」方向，實作時仍然必須在目標硬體上實測。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-024",
+      "officialQuestionNumber": 24,
+      "prose": {
+        "trap": {
+          "oldSha256": "ceb4ce6aacd24638c274ff28cca533e3258800af7e8189f2d2e6e702d9c7c5e9",
+          "old": "不要把 latency 與 throughput 混淆：前者是單次請求等多久，後者是單位時間處理多少。也不能只看平均延遲，少數極慢請求可能正是即時交易最需要發現的風險。",
+          "new": "不要把 latency 和 throughput 混淆：latency 是「單一次請求要等多久」，throughput 是「單位時間能處理多少」。兩者可能背道而馳。另外也不能只看平均延遲——少數幾筆極慢的請求，可能正是即時交易最需要被發現的風險所在，平均值會把它們藏起來。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-025",
+      "officialQuestionNumber": 25,
+      "prose": {
+        "trap": {
+          "oldSha256": "bd6e949d4ef73cc6f09ba9d1a4dcbb07588175fbebe09ecfd3cce1c7fd1574c1",
+          "old": "可驗證性問的是『別人能否依證據核對』，不是準確率是否很高。重現也必須限定資料、程式、環境與容許誤差；只留模型檔或報表，通常不足以還原完整評估。",
+          "new": "可驗證性問的是「別人能不能依照你留下的證據核對出同樣結果」，不是「準確率高不高」——兩者無關。另外要重現也必須把條件限定清楚：資料、程式、環境、以及容許的誤差範圍。只留一個模型檔或一份報表，通常不足以還原完整的評估過程。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-026",
+      "officialQuestionNumber": 26,
+      "prose": {
+        "trap": {
+          "oldSha256": "ab818e24cad229cb40248df8341f966c39a4d991238ec9721bb5e6a3558fe3ac",
+          "old": "不要把『模型整體準確』當成『單筆決策可說明』。也不要把 SHAP 等特徵歸因直接等同法律上已充分告知；技術解釋還需配合受眾、流程與實際監理要求。",
+          "new": "不要把「模型整體很準」當成「這一筆決策可以說明」——整體準確率一個字也解釋不了個案。另外也不要把 SHAP 這類特徵歸因，直接等同於法律上「已充分告知」；技術上的解釋還需要配合受眾看不看得懂、有沒有對應的流程，以及實際的監理要求。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-027",
+      "officialQuestionNumber": 27,
+      "prose": {
+        "trap": {
+          "oldSha256": "393531ef79df3c4f6252a484f01d2e38430d3c59aa40d89c178494d4526a16cd",
+          "old": "低信心閾值是『何時升級處理』的訊號，HITL 才回答『由誰做最後決策』。此外，人工簽核不會自動消除風險；介面必須提供足夠資訊，並防止醫師無條件照單全收。",
+          "new": "兩者回答的問題不同：低信心閾值回答的是「什麼時候該把案子升級處理」，HITL 回答的是「由誰做最後決策」。另外要提醒：人工簽核不會自動消除風險——介面必須提供足夠的資訊，而且要設法防止醫師養成無條件照單全收的習慣，否則簽核就只是形式。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-028",
+      "officialQuestionNumber": 28,
+      "prose": {
+        "trap": {
+          "oldSha256": "17fb5b41197760a2e6ad11097a683717a013610520efabcb89d76454cfc432a1",
+          "old": "SHAP 的符號是方向，不是重要或不重要；數值單位也不是固定百分比。先確認模型輸出是 raw margin、log-odds 還是 probability，再區分單筆局部解釋與整體特徵重要性。",
+          "new": "SHAP 值的正負符號代表的是「推動的方向」，不是「重要或不重要」——負號不代表不重要。另外數值的單位也不是固定的百分比：要先確認模型輸出的是 raw margin、log-odds 還是 probability，尺度不同讀法就不同。最後還要區分「單筆的局部解釋」和「整體的特徵重要性」。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-029",
+      "officialQuestionNumber": 29,
+      "prose": {
+        "trap": {
+          "oldSha256": "cf53e4c9c993faeebd2f5e2e2fdfce3feb711f5ab437ee24495784ff4699acaa",
+          "old": "方法都能叫『可解釋』，但計算機制與模型相依性不同：LIME、Kernel SHAP 靠擾動採樣，TreeExplainer 對應樹模型，Grad-CAM 才直接利用 CNN 卷積特徵與類別梯度。",
+          "new": "這些方法都可以叫「可解釋」，但計算機制和對模型的依賴程度完全不同：LIME 和 Kernel SHAP 靠的是擾動採樣（改一改輸入再看輸出怎麼變），TreeExplainer 專門對應樹模型的結構，而 Grad-CAM 才是直接利用 CNN 的卷積特徵和類別梯度。要低延遲就得看它需不需要反覆採樣。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-030",
+      "officialQuestionNumber": 30,
+      "prose": {
+        "trap": {
+          "oldSha256": "d1a11526ae66929964a403cc2874ad5273363484cf9d527486825eb249e41dbb",
+          "old": "PCA 是特徵萃取，不是依目標挑原始特徵；它保留的是最大變異，也不保證最有預測力。看到實作使用 SVD 不代表 C 錯，SVD 與協方差矩陣特徵值分解是相互對應的求解方式。",
+          "new": "PCA 是特徵萃取（造出新的欄位），不是依據目標去挑選原始特徵——它根本不看目標。而且它保留的是「最大變異」，變異大不等於最有預測力，這兩件事沒有必然關係。另外看到實作使用 SVD 不代表 C 就錯了：SVD 和協方差矩陣的特徵值分解，本來就是互相對應的兩種求解方式。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-031",
+      "officialQuestionNumber": 31,
+      "prose": {
+        "trap": {
+          "oldSha256": "c8e211a8216dc9620bcbeec0f4544834449cb90f8a37711e26d996e589642c50",
+          "old": "『高維下效果常變差』不等於『DBSCAN 只能用於低維』。先指出距離集中與鄰域稀疏的機制，再考慮標準化、特徵選擇、降維或改用適合的距離。",
+          "new": "「在高維度下效果常常變差」不等於「DBSCAN 只能用在低維」——程度問題不要講成硬性限制。回答時應該先指出機制：高維度會造成距離集中、鄰域稀疏；再談解法：標準化、特徵選擇、降維，或改用更適合的距離度量。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-032",
+      "officialQuestionNumber": 32,
+      "prose": {
+        "trap": {
+          "oldSha256": "e72144d4cbf6ed82a6f0cffb4b6c82158a115ee4f5a7de8e7b6d7289e71f90f5",
+          "old": "Flatten 與全域平均池化都可能出現在 CNN，但用途不同：Flatten 只重排形狀並保留所有元素；全域平均池化會彙整空間資訊並減少元素數。",
+          "new": "Flatten 和全域平均池化都可能出現在 CNN 的同一個位置，但用途完全不同：Flatten 只是把形狀重新排列，所有元素一個不少地留著；全域平均池化則是把每個通道的空間資訊彙整成一個數，元素數量大幅減少。一個保留全部，一個做了取捨。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-033",
+      "officialQuestionNumber": 33,
+      "prose": {
+        "trap": {
+          "oldSha256": "9283e3ca6de47a2ea2cc636a9579a862228ec9b085f134aafafc9ff7e25a7778",
+          "old": "合成資料的優勢是『可控制、可擴充』，不是『必然等同真實』。評估時要同時考慮覆蓋稀有情境與 synthetic-to-real domain gap。",
+          "new": "合成資料的優勢是「可控制、可擴充」——想要什麼情境就生什麼情境；它的優勢不是「必然等同於真實」。所以評估時要同時考慮兩件事：它有沒有涵蓋到那些罕見情境（好處），以及 synthetic-to-real 之間的 domain gap 有多大（代價）。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-034",
+      "officialQuestionNumber": 34,
+      "prose": {
+        "trap": {
+          "oldSha256": "162ba7b762979fbe968f3774accba4542fd8a0d17f9d2422857709f405762b1d",
+          "old": "不要把『縮短批次週期』當成真正線上學習。另需分清概念漂移、參數增量更新與 schema 擴張：B 是架構方向，但仍要設計動態特徵表示。",
+          "new": "不要把「縮短批次週期」當成真正的線上學習——再短的批次還是批次。另外要分清三件事：概念漂移（世界變了）、參數增量更新（模型怎麼跟上）、以及 schema 擴張（新欄位怎麼容納進來）。B 給的是架構方向沒錯，但仍然要另外設計動態的特徵表示方式。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-035",
+      "officialQuestionNumber": 35,
+      "prose": {
+        "trap": {
+          "oldSha256": "6f9b1997619639031660dd283d9003868b2e93162247a6d4c5cc338c434f6b26",
+          "old": "多模態的『融合』不是先把原始欄位拼起來。先分別抽取可靠表示，再選擇融合層次；也要避免單一模態因維度或尺度較大而主導模型。",
+          "new": "多模態的「融合」不是把原始欄位直接拼在一起就叫融合——那只是串接。正確的順序是：先分別抽取各自可靠的表示，再選擇要在哪一個層次融合。另外還要避免一件事：某一個模態因為維度比較大或數值尺度比較大，就在無形中主導了整個模型。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-036",
+      "officialQuestionNumber": 36,
+      "prose": {
+        "trap": {
+          "oldSha256": "b787ee12076d4ae149907afc82db4c45622b0f12c44a74afc14e9b512c94931c",
+          "old": "題目限制的是標註量，不是完全沒有外部知識。遷移學習重用預訓練權重；不要把『複製資料』誤認為產生新資訊，也別把分群當成分類。",
+          "new": "看清楚題目限制的是「標註量」，不是「完全沒有外部知識可用」——這兩者差很多。遷移學習正是在重用預訓練好的權重，那不算違規。另外兩個誤解要避開：不要把「複製資料」誤認為產生了新資訊，也不要把分群當成分類——分群沒有答案可對。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-037",
+      "officialQuestionNumber": 37,
+      "prose": {
+        "trap": {
+          "oldSha256": "fc5b4728704513bb7c91d1749ff1d3202cf3612d00345f8ef120e2b9d0f9640b",
+          "old": "先遵守『只改資料』的限制，再判斷重採樣方向。少數類要過採樣或多數類適度欠採樣；不能為追求整體 accuracy 繼續增加良品。",
+          "new": "先遵守題目「只能改資料」的限制，把動模型、動演算法的選項刪掉；再來判斷重採樣的方向。正確的方向是：少數類要過採樣，或多數類適度欠採樣。絕對不能為了追求整體 accuracy 好看，反而繼續增加良品的數量——那是往反方向走。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-038",
+      "officialQuestionNumber": 38,
+      "prose": {
+        "trap": {
+          "oldSha256": "3e2ad2b6f03f0041a5a0a51ecb51fbeb419a9aec97eeb389699b3b923fcd1e64",
+          "old": "標準化不等於離群值移除，也不會自動把資料限制在三個標準差內。先判斷是真實事件還是已知錯誤；只有後者才適合直接刪除或填補。",
+          "new": "標準化不等於離群值被移除了——換一把尺量，極端值還是極端值。它也不會自動把資料限制在三個標準差之內。正確的順序是：先判斷這筆極端值是「真實發生的事件」還是「已知的錯誤」，只有後者才適合直接刪除或填補，前者刪掉可能就把最重要的資訊丟了。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-039",
+      "officialQuestionNumber": 39,
+      "prose": {
+        "trap": {
+          "oldSha256": "0e6715599ea64c52afde6c4a84445290e75ed7308c403631de5a05e59d233840",
+          "old": "不要只按檔案副檔名選系統，要看資料成熟度與存取模式：原始、多樣、待探索資料進 lake；整理後、schema 穩定且需高效分析的資料進 warehouse。",
+          "new": "不要只按檔案的副檔名來選系統，要看兩件事：資料的成熟度和存取模式。原始的、格式多樣的、還在探索階段的資料，放進 lake；已經整理好、schema 穩定、而且需要高效分析的資料，放進 warehouse。看資料處在哪一個階段，不是看它長什麼樣。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-040",
+      "officialQuestionNumber": 40,
+      "prose": {
+        "trap": {
+          "oldSha256": "db378fb19704f0c80f5823f9d0aae95ad14e823844398bf5936375172ec2a0ed",
+          "old": "吞吐量與延遲不是同一指標：batch 可能讓每秒處理張數上升，卻增加單張等待時間。INT8 也不是必然加速，仍須確認硬體、算子與推論引擎支援。",
+          "new": "吞吐量和延遲不是同一個指標：加大 batch 可能讓每秒處理的張數上升（吞吐量變好），卻讓每一張要等的時間變長（延遲變差）。另外 INT8 也不是必然加速——還得確認硬體、算子和推論引擎都支援整數加速，不支援的話只是換個格式存而已。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-041",
+      "officialQuestionNumber": 41,
+      "prose": {
+        "trap": {
+          "oldSha256": "0b740b37c4685f004308ba4f8c0eefdce03e574ddc680158d9b7c8ee08dfa21b",
+          "old": "低 GPU 利用率不代表一定要換更快 GPU；先看時間軸是計算飽和、記憶體受限，還是 kernel 間空白。本題的小 batch 加空檔是排程與批次線索。",
+          "new": "GPU 利用率低，不代表就一定要換一張更快的 GPU——換了可能一樣低。先看時間軸上的樣態：是計算飽和、記憶體受限，還是 kernel 與 kernel 之間有空白？這題的「小 batch 加上明顯空檔」正是排程與批次設定的線索，不是算力不足。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-042",
+      "officialQuestionNumber": 42,
+      "prose": {
+        "trap": {
+          "oldSha256": "a99df071a0160da78f77a64fca528e842ea41334f6728c128de5c96be1ab3df0",
+          "old": "RMSE 會放大大殘差，但不保證少數族群一定在整體指標中顯著。問題若明確指出某 5% 子群退化，優先想到 slice-based monitoring，而不是單純換平均指標。",
+          "new": "RMSE 確實會放大大殘差，但那不保證少數族群的惡化一定能在整體指標上顯現出來——族群太小，還是會被平均掉。題目如果明確指出某個 5% 的子群退化了，就要優先想到 slice-based monitoring（分群監控），而不是單純換一個平均指標來算。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-043",
+      "officialQuestionNumber": 43,
+      "prose": {
+        "trap": {
+          "oldSha256": "9bc90b8b271616ce6df1e270d1f6b2ff7b7ec4e0a78461b5e4ed52ace0479723",
+          "old": "Shadow、canary 與 load test 的觀察對象不同：Shadow 看新舊技術輸出，canary 看真實使用者與業務指標，load test 看容量。題目點名 CTR、CVR，應選真實小流量曝險。",
+          "new": "三種驗證方式觀察的對象不同：Shadow 看的是新舊模型的技術輸出差異（使用者看不到新的）；canary 看的是真實使用者的反應和業務指標；load test 看的是系統容量撐不撐得住。題目既然點名了 CTR、CVR 這種業務指標，就應該選讓真實使用者小流量曝險的那一個。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-044",
+      "officialQuestionNumber": 44,
+      "prose": {
+        "trap": {
+          "oldSha256": "2e17cde0edbf6bdd96c89611c7c8c19b51e404eb566f31475aa950dbd4a1d415",
+          "old": "方法語意與內容格式要分開判斷：POST 是提交處理，Content-Type 描述 body。Base64 不是加密或壓縮，放進 URL 還會增加體積與日誌曝露。",
+          "new": "方法的語意和內容的格式要分開判斷：POST 表達的是「提交一件事請你處理」，而 Content-Type 描述的是 body 裡裝的是什麼格式，兩者各管各的。另外提醒：Base64 既不是加密也不是壓縮（它反而會變大約三分之一），放進 URL 還會增加體積並曝露在日誌裡。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-045",
+      "officialQuestionNumber": 45,
+      "prose": {
+        "trap": {
+          "oldSha256": "e407ec78190b736e28e844d95223844c63d2a6fc403d16bb2726dfa41e48b9e2",
+          "old": "Circuit Breaker 與 retry 方向不同：retry 再嘗試，breaker 在故障持續時停止嘗試。實務上重試要有限且退避，否則重試風暴也會造成 cascading failure。",
+          "new": "Circuit Breaker 和 retry 的方向剛好相反：retry 是「再試一次」，breaker 是「故障持續時就停止再試」。兩者常一起用，但概念不能混。另外實務上重試一定要有限次數並加上退避，否則大量重試同時湧上去，重試風暴本身就會造成 cascading failure。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-046",
+      "officialQuestionNumber": 46,
+      "prose": {
+        "trap": {
+          "oldSha256": "5ad6ef7e6cd6b7ed508c8b09baf590ffc02e12eb474d13599231b4c7fc0344be",
+          "old": "加密傳輸不等於資料沒有離開院內；Federated Learning 也不等於自動具備隱私保證，模型更新仍須安全聚合與洩漏風險控制。",
+          "new": "加密傳輸不等於資料沒有離開院內——加密的是路上的內容，資料還是送出去了，位置變了。另外 Federated Learning 也不等於自動就具備隱私保證：傳回去的模型更新本身仍可能洩漏資訊，還需要搭配安全聚合和洩漏風險的控制才算完整。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-047",
+      "officialQuestionNumber": 47,
+      "prose": {
+        "trap": {
+          "oldSha256": "a6ca28bc0804cd16b71c5ad7afb1576f1e6630273348e06d5925fe016ef6d579",
+          "old": "業務指標提升不能抵銷所有可靠性問題。漸進部署要同時看 primary metric 與 guardrails；『暫停擴量』也不等於永久放棄新模型。",
+          "new": "業務指標提升不能抵銷所有的可靠性問題——轉換率變好，不代表延遲爆掉可以忽略。漸進部署要同時看兩組東西：primary metric（主要業務指標）和 guardrails（護欄指標）。另外「暫停擴量」也不等於永久放棄新模型，它只是先停下來查清楚，之後還可以回來。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-048",
+      "officialQuestionNumber": 48,
+      "prose": {
+        "trap": {
+          "oldSha256": "a743b8edfde82e01d21b1cad7fa2fdba679fa2f5264150854a8a322601ae801b",
+          "old": "先問『變的是 X，還是 X 與 Y 的關係』：P(X) 變是 data drift，P(Y|X) 變是 concept drift。AUC 穩定是整體排序訊號，不代表每個切片或固定門檻表現穩定。",
+          "new": "先問一句：「變的是 X，還是 X 與 Y 之間的關係？」P(X) 變了是 data drift，P(Y|X) 變了是 concept drift。這一句話就把兩者分乾淨了。另外 AUC 穩定只是一個「整體排序能力」的訊號，它不代表每一個切片、或在某個固定門檻下的表現也一樣穩定。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-049",
+      "officialQuestionNumber": 49,
+      "prose": {
+        "trap": {
+          "oldSha256": "eda0bc5f3da55598ca1c951aedbce5c0347496f1480ef7ad19ecccf8f20425fc",
+          "old": "『持續監控』不代表每個指標都必須逐秒更新；延遲標籤與漂移可按小時或日計算。判斷重點是資料來自部署後運行，還是離線訓練 run。",
+          "new": "「持續監控」不代表每一個指標都必須逐秒更新——延遲回收的標籤和漂移指標，按小時或按天計算完全合理，頻率不是判斷標準。真正的判斷重點是：這個數字來自「部署之後的實際運行」，還是來自「離線的某一次訓練 run」？來源決定了它該放在哪一邊。"
+        }
+      }
+    },
+    {
+      "questionId": "aiap-intermediate-115-01-ai-tech-planning-050",
+      "officialQuestionNumber": 50,
+      "prose": {
+        "trap": {
+          "oldSha256": "6f067e4f9f813ef5ca9d78af34a41ff642bd2d67d2a07facc29457229ccf2b8d",
+          "old": "題目問『最不可能』，且關鍵是融合時點：輸入／特徵層是 early fusion，個別模型輸出／決策層才是 late fusion。獨立分支降低耦合，但不保證差模態完全沒有影響。",
+          "new": "題目問的是「最不可能」，而關鍵在於「融合的時間點」：在輸入或特徵層就合起來的是 early fusion，等各個模型各自產出結果、在決策層才整合的才是 late fusion。另外要誠實一點：獨立的分支確實降低了耦合，但不保證品質差的那個模態完全沒有影響——它在最後合票時還是有一票。"
+        }
+      }
+    }
+  ]
+}

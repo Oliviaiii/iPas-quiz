@@ -1314,10 +1314,10 @@ ONNX Runtime 量化文件、govinfo 45 CFR §160.103、BioBERT arXiv:1901.08746�
 torch.flatten、pandas SeriesGroupBy.sum、HomomorphicEncryption.org、
 Kohavi et al. KDD 2013、scikit-learn roc_curve。
 
-### 未解問題（不變）
+### 未解問題（2026-09-08 更新）
 
 1. 20 題 human-decision 待人類裁決。
-2. `trap`（容易混淆，600 則）尚未白話化，使用者未指定。
+2. ~~`trap` 尚未白話化~~ → 2026-09-08 已完成，見下方「trap 欄白話化」一節。
 3. 人工複核仍為 0／600，全站維持 `draft`。
 
 ### 套用前必須處理的三件事（2026-09-07 收稿時發現）
@@ -1434,3 +1434,37 @@ pass 455、corrected 125、human-decision 20。
 115-1 中級三（ai-tech-planning）另有兩處：
 Q49 `concept` 的 `ExperimentTracking`、Q50 `answerReason` 的 `LateFusion`。
 改寫時照原樣重現、未默默修掉，建議併入同一次校對統一處理。
+
+
+### trap 欄白話化（2026-09-08 完成）
+
+`explanation.trap`（容易混淆）600 則全部改寫並套用，四個解說欄位至此全部白話化，
+累計 4,200 欄。
+
+**工具鏈擴充**（沿用同一套 payload 機制，不另起爐灶）：
+
+- `build-plain-language-payload.py` 新增 `--trap`，輸出 `…-trap.json`，
+  payload 的 kind 仍用 `prose`，所以檢查與套用腳本不必改介面。
+- `apply-plain-language.py` 的 `PROSE_FIELDS` 加入 `trap`。
+- `check-plain-language.py` 完全不用改。
+
+**規則**寫在 `PLAIN_LANGUAGE_GUIDE.md` 第 5.2 節：維持單一段落不換行、
+120～220 字、保留原本的記憶法與判斷順序、講清楚「誤選的那個為什麼吸引人」、
+不重講一次選項分析。改寫後長度中位數 129 字（原文 90 字）。
+
+**驗證**：名詞／數字保留檢查 4,200 欄 all clear；逐欄比對確認官方題文與
+`concept`、`answerReason`、`optionAnalysis`、`references`、`editorialNote`、
+`reviewer`、`reviewedAt` 全數未動，只有 600 題的 `trap` 改變；
+600 題維持 `explanationStatus: draft`，`reviewer` 仍為 0 題。
+
+### 全站現況
+
+| 欄位 | 則數 | 狀態 |
+| --- | --- | --- |
+| `optionAnalysis` | 2,400 | 白話化完成、已上線 |
+| `concept` | 600 | 白話化完成、已上線 |
+| `answerReason` | 600 | 白話化完成、已上線 |
+| `trap` | 600 | 白話化完成、已上線 |
+
+四欄合計 4,200 欄。`content/plain-language/` 下的 61 個 payload 全部是已套用的
+歷史紀錄，只供稽核比對，不需要再套用。
